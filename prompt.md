@@ -1,0 +1,7 @@
+First, I want you to dispatch explore and research subagents to read the documents in instructions/. These document came from Perplexity AI. I asked Perplexity to create a creative brief, use case, and implementation plan for a new Adobe Commerce Optimizer project. It returned the original overview document. I then asked it to reduce the project scope which it did in the reduced-scope document. It then created an implmentation plan over the course of 12 steps which I stored in smaller documents and then compiled into the single implementation-plan document.
+
+Once you are familiar with the context, have a team of subagents analyze the javascript scripts in the scripts/ directory. These are scripts that perplexity wrote to implement the use case according to its implementation plan.
+
+Once you have that context, have the team analyze the actual project in /Users/steve/Repositories/app-builder/buildright-aco/buildright-aco-demo/aco-sample-catalog-data-ingestion. The files in the scripts/ directory there should match. Also analyze the package scripts to become familiar.
+
+With that context, I'd like you to dispatch a team of research agents to compare the scripts we have in the project to the use case defined in the instructions. Use the perplexity mcp to search the web with a subagent and use context7 for documentation searches for Adobe Commerce Optimizer to understand how it works.  Then, produce a report which details whether the scripts we have will produce the use case defined in the instructions.

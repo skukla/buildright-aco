@@ -1,0 +1,44 @@
+# RPTC Workflow - Active Work (Ephemeral)
+.rptc/research/
+.rptc/plans/
+.rptc/complete/
+
+# Keep project-specific SOPs in version control
+!.rptc/sop/
+
+# Keep RPTC instructions
+!.rptc/CLAUDE.md
+
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Temporary files
+tmp/
+temp/

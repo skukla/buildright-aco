@@ -1,0 +1,22 @@
+{
+  "rptc": {
+    "_rptcVersion": "2.1.1",
+    "defaultThinkingMode": "ultrathink",
+    "artifactLocation": ".rptc",
+    "docsLocation": "docs",
+    "testCoverageTarget": 85,
+    "maxPlanningAttempts": 10,
+    "customSopPath": ".rptc/sop",
+    "researchOutputFormat": "html",
+    "htmlReportTheme": "dark",
+    "verificationMode": "focused",
+    "tdgMode": "disabled",
+    "qualityGatesEnabled": false,
+    "ask": ["Bash(rm:*)"],
+    "discord": {
+      "webhookUrl": "",
+      "notificationsEnabled": false,
+      "verbosity": "summary"
+    }
+  }
+}
