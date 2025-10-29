@@ -1,0 +1,61 @@
+{
+  "name": "buildright-aco-complete-project",
+  "version": "1.0.0",
+  "description": "BuildRight ACO catalog data ingestion scripts with comprehensive documentation",
+  "type": "module",
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
+    "test:coverage": "NODE_OPTIONS=--experimental-vm-modules jest --coverage",
+    "validate": "node scripts/validate-project-context.js",
+    "generate:metadata": "node scripts/generate-metadata.js",
+    "generate:categories": "node scripts/generate-categories.js",
+    "generate:products": "node scripts/generate-products.js",
+    "generate:variants": "node scripts/generate-variants.js",
+    "generate:bundles": "node scripts/generate-bundles.js",
+    "generate:all-products": "npm run generate:products && npm run generate:variants && npm run generate:bundles",
+    "generate:price-books": "node scripts/generate-price-books.js",
+    "generate:prices": "node scripts/generate-prices-hierarchical.js",
+    "generate:all-pricing": "npm run generate:price-books && npm run generate:prices",
+    "generate:inventory": "node scripts/generate-inventory.js",
+    "generate:sources": "node scripts/generate-inventory.js --sources-only",
+    "generate:all-inventory": "npm run generate:sources && npm run generate:inventory",
+    "generate:all": "npm run generate:metadata && npm run generate:categories && npm run generate:all-products && npm run generate:all-pricing && npm run generate:all-inventory"
+  },
+  "keywords": [
+    "adobe-commerce",
+    "aco",
+    "catalog",
+    "data-ingestion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@adobe-commerce/aco-ts-sdk": "^1.1.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "dotenv": "^16.3.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {},
+    "coverageThreshold": {
+      "global": {
+        "branches": 85,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    },
+    "collectCoverageFrom": [
+      "scripts/**/*.js",
+      "!scripts/**/*.test.js",
+      "utils/**/*.js",
+      "!utils/**/*.test.js"
+    ]
+  }
+}

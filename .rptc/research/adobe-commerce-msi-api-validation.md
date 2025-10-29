@@ -3,7 +3,7 @@
 **Research Date:** 2025-10-27
 **Research Duration:** ~4 hours
 **Research Scope:** Multi-Source Inventory (MSI) API validation for BuildRight ACO project
-**Current Implementation Status:** 3/6 inventory sources implemented (50%)
+**Current Implementation Status:** 3/5 inventory sources implemented (60% - per Unified Distribution Model ADR-001)
 
 ---
 
@@ -14,7 +14,7 @@ This research validates the BuildRight inventory implementation against official
 **Key Findings:**
 - ✅ Official Adobe Commerce MSI API documentation is publicly accessible
 - ✅ Current implementation uses a **simplified subset** of the official Source schema
-- ⚠️ Implementation uses 3 sources vs. specified 6 sources in requirements
+- ⚠️ Implementation uses 3 sources vs. specified 5 sources in Unified Distribution Model (ADR-001)
 - ✅ Current field structure aligns with required API fields
 - ⚠️ Missing optional fields that enable advanced features (e.g., distance priority algorithm)
 - ✅ No Stock entity implementation detected in current code (simplified approach)

@@ -1,0 +1,190 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ACO Bundle Schema",
+  "description": "Schema for Adobe Commerce Order bundle product structure",
+  "type": "object",
+  "required": [
+    "sku",
+    "name",
+    "type",
+    "status",
+    "visibility",
+    "price",
+    "attributes",
+    "routes",
+    "groups"
+  ],
+  "properties": {
+    "sku": {
+      "type": "string",
+      "pattern": "^BUNDLE-[A-Z0-9\\-\\.]+$",
+      "minLength": 1,
+      "maxLength": 64,
+      "description": "Bundle SKU (must start with BUNDLE-)"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "description": "Bundle product name"
+    },
+    "type": {
+      "type": "string",
+      "const": "bundle",
+      "description": "Product type (must be bundle)"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["enabled", "disabled"],
+      "description": "Product status"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": ["catalog", "search", "both", "none"],
+      "description": "Product visibility settings"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Bundle base price"
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["code", "value"],
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Attribute code from metadata"
+          },
+          "value": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "number" },
+              { "type": "boolean" },
+              { "type": "array" }
+            ],
+            "description": "Attribute value"
+          }
+        }
+      },
+      "description": "Bundle attributes"
+    },
+    "routes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["categoryId"],
+        "properties": {
+          "categoryId": {
+            "type": "string",
+            "description": "Category ID reference"
+          },
+          "position": {
+            "type": "number",
+            "description": "Position in category"
+          }
+        }
+      },
+      "description": "Category assignments"
+    },
+    "groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "required", "multiSelect", "items"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Group name"
+          },
+          "required": {
+            "type": "boolean",
+            "description": "Whether group selection is required"
+          },
+          "multiSelect": {
+            "type": "boolean",
+            "description": "Whether multiple items can be selected"
+          },
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["sku", "defaultQty"],
+              "properties": {
+                "sku": {
+                  "type": "string",
+                  "pattern": "^(?!BUNDLE-)[A-Z0-9\\-\\.]+$",
+                  "description": "Item SKU (cannot be another bundle)"
+                },
+                "defaultQty": {
+                  "type": "number",
+                  "minimum": 1,
+                  "maximum": 100,
+                  "description": "Default quantity"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Item display name"
+                },
+                "price": {
+                  "type": "number",
+                  "minimum": 0,
+                  "description": "Item price adjustment"
+                }
+              }
+            },
+            "description": "Items in group"
+          },
+          "sortOrder": {
+            "type": "number",
+            "description": "Display order of group"
+          }
+        }
+      },
+      "description": "Bundle option groups"
+    },
+    "description": {
+      "type": "string",
+      "description": "Bundle description"
+    },
+    "shortDescription": {
+      "type": "string",
+      "description": "Short bundle description"
+    },
+    "bundleType": {
+      "type": "string",
+      "enum": ["fixed", "dynamic"],
+      "default": "fixed",
+      "description": "Bundle pricing type"
+    },
+    "shipmentType": {
+      "type": "string",
+      "enum": ["together", "separately"],
+      "default": "together",
+      "description": "How bundle items are shipped"
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Bundle weight"
+    },
+    "metaTitle": {
+      "type": "string",
+      "description": "Meta title for SEO"
+    },
+    "metaDescription": {
+      "type": "string",
+      "description": "Meta description for SEO"
+    },
+    "metaKeywords": {
+      "type": "string",
+      "description": "Meta keywords for SEO"
+    }
+  },
+  "additionalProperties": false
+}

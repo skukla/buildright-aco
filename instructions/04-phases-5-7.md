@@ -16,7 +16,7 @@
 
 ### Overview
 
-Create pricing data for all products across the price book hierarchy, including base prices, regional variations, volume discounts, and customer tier pricing. This phase will create approximately 450-500 price records demonstrating the full pricing flexibility of ACO.
+Create pricing data for all products across 4 business-type price books with regional adjustments applied via calculation logic. This phase creates approximately 1,400 price records (4 price books × 125 products, including tier and volume pricing) demonstrating the full pricing flexibility of ACO.
 
 ### Step 7.1: Understanding Price Structure
 
@@ -31,37 +31,46 @@ Create pricing data for all products across the price book hierarchy, including 
 ```json
 {
   "sku": "LBR-2X4-8-SPF-STD",
-  "priceBookId": "west-commercial-gc-tier1",
-  "regular": 8.50,
-  "discounts": [
-    { "code": "tier1_discount", "percentage": 5 }
-  ],
+  "priceBookId": "US_COMMERCIAL",
+  "amount": 8.09,
   "tierPrices": [
     { "qty": 100, "percentage": 3 },
-    { "qty": 294, "price": 7.50 },
-    { "qty": 588, "percentage": 15 }
+    { "qty": 500, "percentage": 8 }
   ]
 }
 ```
 
 **Resulting Prices:**
 
-- 1-99 units: \$8.08 (5% off)
-- 100-293 units: \$7.84 (5% + 3% tier)
-- 294-587 units: \$7.50 (bundle price)
-- 588+ units: \$6.87 (5% + 15% tier)
+- 1-99 units: \$8.09 (10% business discount applied)
+- 100-499 units: \$7.85 (10% + 3% tier)
+- 500+ units: \$7.44 (10% + 8% tier)
 
 
-### Step 7.2: Create Base Pricing Strategy Document
+### Step 7.2: Create Business-Type Pricing Strategy Document
 
 **Create file: `docs/pricing-strategy.md`**
 
 ```markdown
 # BuildRight Solutions - Pricing Strategy
 
-## Base Pricing (us-base-contract)
+## Business-Type Structure (Flat, 4 Price Books)
 
-All products start with base contract pricing. This is the MSRP for contractor sales.
+**US-Retail (0% discount)** - Walk-in customers, hardware stores
+- Base price with no discount
+- Example: 2x4x8 SPF Stud = $8.99
+
+**US-Contractor (5% discount)** - Licensed contractors, small builders
+- 5% discount off base price
+- Example: 2x4x8 SPF Stud = $8.54 ($8.99 × 0.95)
+
+**US-Commercial (10% discount)** - Commercial construction companies
+- 10% discount off base price
+- Example: 2x4x8 SPF Stud = $8.09 ($8.99 × 0.90)
+
+**US-Wholesale (15% discount)** - High-volume accounts, large GCs
+- 15% discount off base price
+- Example: 2x4x8 SPF Stud = $7.64 ($8.99 × 0.85)
 
 ### Structural Materials Base Prices
 - 2x4x8 SPF Stud: $8.99
@@ -72,44 +81,28 @@ All products start with base contract pricing. This is the MSRP for contractor s
 - Concrete Mix 80lb: $6.49
 - Rebar #4 20ft: $18.99
 
-### Regional Adjustments (Level 2)
+### Regional Adjustments (Applied in Calculation Logic)
 
-**West Region (+3% on lumber due to transportation)**
-- Applied at west-region-contract level
-- Does not apply to concrete/metal products
+**West Region Lumber Surcharge (+3%)**
+- Applied AFTER business-type discount
+- Only applies to Lumber category products
+- Example: US-Contractor West lumber = $8.99 × 0.95 × 1.03 = $8.80
 
-**East Region (Base pricing, no adjustment)**
-- Applied at east-region-contract level
-- Standard base pricing
+**Implementation:**
+```javascript
+function applyRegionalAdjustment(price, priceBook, product) {
+  if (priceBook.region === 'WEST' && isLumberProduct(product)) {
+    return price * 1.03;
+  }
+  return price;
+}
+```
 
-### Division Pricing (Level 3)
+### Volume Tiers (Applied on Top of Business-Type Discounts)
 
-**Commercial Division (-10% standard discount)**
-- Applied to west-commercial-contract and east-commercial-contract
-- Recognizes higher volume commercial customers
-
-**Residential Division (-5% standard discount)**
-- Applied to west-residential-contract and east-residential-contract
-- Standard builder discount
-
-### Customer Tier Pricing (Level 4)
-
-**Tier 1 General Contractors (Additional -5% + Volume Tiers)**
-- Applied to west-commercial-gc-tier1 and east-commercial-gc-tier1
-- Volume tiers:
-  - 100+ units: Additional 3% off
-  - Full bundle (varies by product): Fixed bundle price
-  - Double bundle: Additional 15% off
-
-## Retail Pricing (us-base-retail)
-
-Retail customers pay 20% markup over base contract pricing.
-
-### Example: 2x4x8 SPF Stud
-- Base Contract: $8.99
-- Base Retail: $10.79 (+20%)
-- West Retail: $10.79 (no regional adjustment for retail)
-- East Retail: $10.79 (no regional adjustment for retail)
+Volume tiers provide additional discounts for bulk purchases:
+- 100+ units: Additional 3% off
+- 500+ units: Additional 8% off
 
 ## Service Pricing
 

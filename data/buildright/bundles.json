@@ -1,0 +1,1624 @@
+[
+  {
+    "sku": "BUNDLE-FCDED404",
+    "name": "ProFrame Deck Building Bundle",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 1994.33,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_2"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 82
+      }
+    ],
+    "groups": [
+      {
+        "name": "Lumber Selection",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "LBR-26852468",
+            "defaultQty": 12,
+            "name": "PremiumBuild 2x8 Joist - 10ft",
+            "price": 17.136
+          },
+          {
+            "sku": "LBR-2D637246",
+            "defaultQty": 12,
+            "name": "SafeGuard 2x10 Joist - 12ft",
+            "price": 25.461
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Decking Material",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "LBR-2EBB314A",
+            "defaultQty": 20,
+            "name": "MaxStrength 2x6 Stud - 8ft",
+            "price": 13.941
+          },
+          {
+            "sku": "PLY-EB739D1A-0.5-4X10",
+            "defaultQty": 8,
+            "name": "ToughGrip OSB Panel - 10ft 0.5\" thick",
+            "price": 129.078
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Support Posts",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "LBR-9D32768F",
+            "defaultQty": 6,
+            "name": "ProFrame 4x4 Post - 8ft",
+            "price": 30.987000000000002
+          },
+          {
+            "sku": "LBR-0C7A6DBC",
+            "defaultQty": 8,
+            "name": "DuraBuilt 2x4 Stud - 8ft",
+            "price": 8.028
+          }
+        ],
+        "sortOrder": 3
+      },
+      {
+        "name": "Fasteners",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SCREW-48C3413B",
+            "defaultQty": 2,
+            "name": "StructureMaster Deck Screws #8 - 5lb Box",
+            "price": 26.334000000000003
+          },
+          {
+            "sku": "NAIL-244FD20C",
+            "defaultQty": 1,
+            "name": "PremiumBuild Framing Nails 16d - 50lb Box",
+            "price": 48.96
+          }
+        ],
+        "sortOrder": 4
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Complete materials for a 12x16 deck",
+    "shortDescription": "Deck Building Bundle - Bundle Package",
+    "weight": 168.99191146669534,
+    "metaTitle": "Deck Building Bundle Bundle | ProFrame",
+    "metaDescription": "Shop the Deck Building Bundle bundle from ProFrame. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, structural, ProFrame, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-EE01B258",
+    "name": "PremiumBuild Framing Package - 10x12 Shed",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 1250.16,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 80
+      }
+    ],
+    "groups": [
+      {
+        "name": "Wall Framing",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 24,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          },
+          {
+            "sku": "LBR-2EBB314A",
+            "defaultQty": 18,
+            "name": "MaxStrength 2x6 Stud - 8ft",
+            "price": 13.941
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Roof Structure",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "LBR-26852468",
+            "defaultQty": 10,
+            "name": "PremiumBuild 2x8 Joist - 10ft",
+            "price": 17.136
+          },
+          {
+            "sku": "PLY-EB739D1A-0.625-4X9",
+            "defaultQty": 6,
+            "name": "ToughGrip OSB Panel - 9ft 0.625\" thick",
+            "price": 128.403
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Sheathing",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "PLY-AF7C8BA7",
+            "defaultQty": 8,
+            "name": "FastenPro CDX Plywood 1/2\" - 4x8",
+            "price": 26.568
+          },
+          {
+            "sku": "PLY-3C2EC476",
+            "defaultQty": 6,
+            "name": "FastenPro T&G Subfloor 3/4\" - 4x8",
+            "price": 38.07
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "All structural materials for shed framing",
+    "shortDescription": "Framing Package - 10x12 Shed - Bundle Package",
+    "weight": 59.644061331471455,
+    "metaTitle": "Framing Package - 10x12 Shed Bundle | PremiumBuild",
+    "metaDescription": "Shop the Framing Package - 10x12 Shed bundle from PremiumBuild. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, structural, PremiumBuild, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-F57CEA64",
+    "name": "ToughGrip Foundation Materials Bundle",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 1031.57,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_2"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_2"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 8
+      }
+    ],
+    "groups": [
+      {
+        "name": "Form Boards",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "LBR-2D637246",
+            "defaultQty": 10,
+            "name": "SafeGuard 2x10 Joist - 12ft",
+            "price": 25.461
+          },
+          {
+            "sku": "LBR-96F409FB",
+            "defaultQty": 8,
+            "name": "FastenPro 2x12 Beam - 16ft",
+            "price": 42.597
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Plywood Forms",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "PLY-AF7C8BA7",
+            "defaultQty": 4,
+            "name": "FastenPro CDX Plywood 1/2\" - 4x8",
+            "price": 26.568
+          },
+          {
+            "sku": "PLY-2BA5387B",
+            "defaultQty": 2,
+            "name": "DuraBuilt Marine Plywood 3/4\" - 4x8",
+            "price": 72.846
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Stakes & Bracing",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "LBR-0C7A6DBC",
+            "defaultQty": 12,
+            "name": "DuraBuilt 2x4 Stud - 8ft",
+            "price": 8.028
+          },
+          {
+            "sku": "NAIL-65F44C61",
+            "defaultQty": 1,
+            "name": "SafeGuard Concrete Nails - 5lb Box",
+            "price": 24.372
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Materials for concrete foundation work",
+    "shortDescription": "Foundation Materials Bundle - Bundle Package",
+    "weight": 125.9664357062273,
+    "metaTitle": "Foundation Materials Bundle Bundle | ToughGrip",
+    "metaDescription": "Shop the Foundation Materials Bundle bundle from ToughGrip. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, structural, ToughGrip, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-BEC3CB65",
+    "name": "PremiumBuild Complete Wall System",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 2668.5,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 37
+      }
+    ],
+    "groups": [
+      {
+        "name": "Metal Studs",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "STUD-44C79532",
+            "defaultQty": 30,
+            "name": "StructureMaster Metal Stud 20ga - 3.5\" x 10ft",
+            "price": 7.641
+          },
+          {
+            "sku": "STUD-B6E3E673",
+            "defaultQty": 25,
+            "name": "ProFrame Metal Stud 20ga - 6\" x 10ft",
+            "price": 12.897
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Track System",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "STUD-95E9D258",
+            "defaultQty": 10,
+            "name": "ToughGrip Metal Track 20ga - 3.5\" x 10ft",
+            "price": 9.081
+          },
+          {
+            "sku": "STUD-07E7F7E4",
+            "defaultQty": 8,
+            "name": "PremiumBuild Hat Channel - 12ft",
+            "price": 13.707
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Drywall",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "DRYWALL-8F034793",
+            "defaultQty": 20,
+            "name": "ReliaBuild Drywall 1/2\" - 4x8",
+            "price": 12.69
+          },
+          {
+            "sku": "DRYWALL-A8217B48",
+            "defaultQty": 20,
+            "name": "MaxStrength Drywall 5/8\" - 4x8",
+            "price": 13.32
+          }
+        ],
+        "sortOrder": 3
+      },
+      {
+        "name": "Fasteners",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SCREW-704B6626",
+            "defaultQty": 3,
+            "name": "ProFrame Drywall Screws - 5lb Box",
+            "price": 21.258000000000003
+          },
+          {
+            "sku": "SCREW-D305E19A",
+            "defaultQty": 2,
+            "name": "BuildRight Pro Self-Drilling Screws - 1lb",
+            "price": 16.128000000000004
+          }
+        ],
+        "sortOrder": 4
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Everything needed for 100 linear feet of walls",
+    "shortDescription": "Complete Wall System - Bundle Package",
+    "weight": 182.72256857376667,
+    "metaTitle": "Complete Wall System Bundle | PremiumBuild",
+    "metaDescription": "Shop the Complete Wall System bundle from PremiumBuild. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, framing, PremiumBuild, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-3A939652",
+    "name": "MaxStrength Bathroom Renovation Kit",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 1420.38,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_2"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 85
+      }
+    ],
+    "groups": [
+      {
+        "name": "Moisture Resistant Walls",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "DRYWALL-67027AF0",
+            "defaultQty": 8,
+            "name": "ReliaBuild Moisture Resistant Drywall - 4x8",
+            "price": 17.208000000000002
+          },
+          {
+            "sku": "DRYWALL-038C3C6C",
+            "defaultQty": 6,
+            "name": "ReliaBuild Cement Board 1/2\" - 3x5",
+            "price": 16.83
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Framing",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "STUD-1AC33726-18GA-3.5-12",
+            "defaultQty": 12,
+            "name": "BuildRight Pro Metal Stud System - 12ft 18 gauge",
+            "price": 86.895
+          },
+          {
+            "sku": "STUD-984F2EC0",
+            "defaultQty": 4,
+            "name": "SafeGuard Metal Track 20ga - 6\" x 10ft",
+            "price": 13.266
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Accessories",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SCREW-704B6626",
+            "defaultQty": 2,
+            "name": "ProFrame Drywall Screws - 5lb Box",
+            "price": 21.258000000000003
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 1,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Moisture-resistant materials for bathroom",
+    "shortDescription": "Bathroom Renovation Kit - Bundle Package",
+    "weight": 88.11444492922837,
+    "metaTitle": "Bathroom Renovation Kit Bundle | MaxStrength",
+    "metaDescription": "Shop the Bathroom Renovation Kit bundle from MaxStrength. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, framing, MaxStrength, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-69ED02AC",
+    "name": "BuildRight Pro Soundproofing Package",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 2023.71,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 94
+      }
+    ],
+    "groups": [
+      {
+        "name": "Sound Drywall",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "DRYWALL-439D9A62",
+            "defaultQty": 12,
+            "name": "ReliaBuild Sound Dampening Drywall - 4x8",
+            "price": 30.987000000000002
+          },
+          {
+            "sku": "DRYWALL-1E512505",
+            "defaultQty": 8,
+            "name": "SafeGuard Fire Rated Drywall - 4x8",
+            "price": 20.43
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Double Stud Wall",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "STUD-44C79532",
+            "defaultQty": 24,
+            "name": "StructureMaster Metal Stud 20ga - 3.5\" x 10ft",
+            "price": 7.641
+          },
+          {
+            "sku": "STUD-B6E3E673",
+            "defaultQty": 20,
+            "name": "ProFrame Metal Stud 20ga - 6\" x 10ft",
+            "price": 12.897
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Track & Channel",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "STUD-95E9D258",
+            "defaultQty": 8,
+            "name": "ToughGrip Metal Track 20ga - 3.5\" x 10ft",
+            "price": 9.081
+          },
+          {
+            "sku": "STUD-07E7F7E4",
+            "defaultQty": 6,
+            "name": "PremiumBuild Hat Channel - 12ft",
+            "price": 13.707
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Materials for sound-dampening wall construction",
+    "shortDescription": "Soundproofing Package - Bundle Package",
+    "weight": 168.96162485655472,
+    "metaTitle": "Soundproofing Package Bundle | BuildRight Pro",
+    "metaDescription": "Shop the Soundproofing Package bundle from BuildRight Pro. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, framing, BuildRight Pro, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-30A77EB0",
+    "name": "ProFrame Whole House Window Package",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 5646.19,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_2"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 68
+      }
+    ],
+    "groups": [
+      {
+        "name": "Living Area Windows",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "WINDOW-6642736C",
+            "defaultQty": 4,
+            "name": "MaxStrength Double Hung Window - 36\"x60\"",
+            "price": 279.351
+          },
+          {
+            "sku": "WINDOW-51CD3FC4",
+            "defaultQty": 1,
+            "name": "MaxStrength Bay Window - 72\"x48\"",
+            "price": 796.815
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Bedroom Windows",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "WINDOW-8039584D",
+            "defaultQty": 6,
+            "name": "BuildRight Pro Single Hung Window - 36\"x48\"",
+            "price": 198.252
+          },
+          {
+            "sku": "WINDOW-6642736C",
+            "defaultQty": 4,
+            "name": "MaxStrength Double Hung Window - 36\"x60\"",
+            "price": 279.351
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Specialty Windows",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "WINDOW-5946F85C",
+            "defaultQty": 2,
+            "name": "BuildRight Pro Awning Window - 36\"x24\"",
+            "price": 190.17000000000002
+          },
+          {
+            "sku": "WINDOW-8F26E917",
+            "defaultQty": 2,
+            "name": "StructureMaster Casement Window - 30\"x48\"",
+            "price": 331.56
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Windows for a typical 3-bedroom home",
+    "shortDescription": "Whole House Window Package - Bundle Package",
+    "weight": 75.12503863550957,
+    "metaTitle": "Whole House Window Package Bundle | ProFrame",
+    "metaDescription": "Shop the Whole House Window Package bundle from ProFrame. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, windows-doors, ProFrame, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-146E0C58",
+    "name": "ToughGrip Complete Door Package",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 3170.91,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 66
+      }
+    ],
+    "groups": [
+      {
+        "name": "Entry Doors",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "DOOR-B9A85BDF-VAR-1213C3",
+            "defaultQty": 1,
+            "name": "MaxStrength Custom Entry Door - ",
+            "price": 220.113
+          },
+          {
+            "sku": "DOOR-81B579D4",
+            "defaultQty": 1,
+            "name": "ToughGrip Storm Door - 36\"x80\"",
+            "price": 245.484
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Interior Doors",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "DOOR-4DEEB6C4-VAR-AE8C6F",
+            "defaultQty": 8,
+            "name": "FastenPro Interior Door System - ",
+            "price": 184.89600000000002
+          },
+          {
+            "sku": "DOOR-75F9C73D",
+            "defaultQty": 2,
+            "name": "StructureMaster Bi-fold Closet Door - 36\"x80\"",
+            "price": 108.378
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Patio Access",
+        "required": false,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "DOOR-E93CC71C",
+            "defaultQty": 1,
+            "name": "DuraBuilt Sliding Patio Door - 72\"x80\"",
+            "price": 997.173
+          },
+          {
+            "sku": "DOOR-070629C1",
+            "defaultQty": 1,
+            "name": "PremiumBuild French Door - 60\"x80\"",
+            "price": 785.3130000000001
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "All doors for new construction home",
+    "shortDescription": "Complete Door Package - Bundle Package",
+    "weight": 169.17918330020234,
+    "metaTitle": "Complete Door Package Bundle | ToughGrip",
+    "metaDescription": "Shop the Complete Door Package bundle from ToughGrip. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, windows-doors, ToughGrip, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-6EAD6945",
+    "name": "SafeGuard Energy Efficiency Upgrade",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 4040.59,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 65
+      }
+    ],
+    "groups": [
+      {
+        "name": "Energy Windows",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "WINDOW-6642736C",
+            "defaultQty": 3,
+            "name": "MaxStrength Double Hung Window - 36\"x60\"",
+            "price": 279.351
+          },
+          {
+            "sku": "WINDOW-8F26E917",
+            "defaultQty": 2,
+            "name": "StructureMaster Casement Window - 30\"x48\"",
+            "price": 331.56
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Insulated Doors",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "DOOR-B9A85BDF-VAR-6CF1A4",
+            "defaultQty": 1,
+            "name": "MaxStrength Custom Entry Door - ",
+            "price": 216.513
+          },
+          {
+            "sku": "DOOR-81B579D4",
+            "defaultQty": 1,
+            "name": "ToughGrip Storm Door - 36\"x80\"",
+            "price": 245.484
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Weatherization",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SAFE-AC3312B9",
+            "defaultQty": 2,
+            "name": "SafeGuard Work Gloves - Heavy Duty",
+            "price": 13.599
+          },
+          {
+            "sku": "SCREW-AD274060",
+            "defaultQty": 1,
+            "name": "BuildRight Pro Wood Screws #10 - 1lb Box",
+            "price": 11.907
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "High-efficiency windows and doors",
+    "shortDescription": "Energy Efficiency Upgrade - Bundle Package",
+    "weight": 187.6086638018529,
+    "metaTitle": "Energy Efficiency Upgrade Bundle | SafeGuard",
+    "metaDescription": "Shop the Energy Efficiency Upgrade bundle from SafeGuard. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, windows-doors, SafeGuard, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-FD8BAF02",
+    "name": "StructureMaster Professional Framer Kit",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 497.88,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 98
+      }
+    ],
+    "groups": [
+      {
+        "name": "Framing Nails",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "NAIL-244FD20C",
+            "defaultQty": 4,
+            "name": "PremiumBuild Framing Nails 16d - 50lb Box",
+            "price": 48.96
+          },
+          {
+            "sku": "NAIL-7AD0771D",
+            "defaultQty": 2,
+            "name": "FastenPro Ring Shank Nails - 25lb Box",
+            "price": 42.201
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Specialty Fasteners",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "SCREW-0DAA49A4",
+            "defaultQty": 2,
+            "name": "SafeGuard Lag Screws 1/2\" - 50ct",
+            "price": 40.5
+          },
+          {
+            "sku": "SCREW-48C3413B",
+            "defaultQty": 3,
+            "name": "StructureMaster Deck Screws #8 - 5lb Box",
+            "price": 26.334000000000003
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Finish Work",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "NAIL-9D448DAA",
+            "defaultQty": 2,
+            "name": "StructureMaster Finish Nails 8d - 5lb Box",
+            "price": 18.198
+          },
+          {
+            "sku": "NAIL-D27A9BC3",
+            "defaultQty": 1,
+            "name": "MaxStrength Brad Nails 18ga - 5000ct",
+            "price": 28.152
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Complete fastener set for framing work",
+    "shortDescription": "Professional Framer Kit - Bundle Package",
+    "weight": 59.197044376841305,
+    "metaTitle": "Professional Framer Kit Bundle | StructureMaster",
+    "metaDescription": "Shop the Professional Framer Kit bundle from StructureMaster. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, fasteners, StructureMaster, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-CF3C554A",
+    "name": "FastenPro Roofing Fastener Bundle",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 421.87,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 3
+      }
+    ],
+    "groups": [
+      {
+        "name": "Roofing Nails",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "NAIL-2DBD44A2",
+            "defaultQty": 3,
+            "name": "SafeGuard Roofing Nails - 50lb Box",
+            "price": 50.103
+          },
+          {
+            "sku": "NAIL-7AD0771D",
+            "defaultQty": 2,
+            "name": "FastenPro Ring Shank Nails - 25lb Box",
+            "price": 42.201
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Sheathing Fasteners",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "NAIL-244FD20C",
+            "defaultQty": 2,
+            "name": "PremiumBuild Framing Nails 16d - 50lb Box",
+            "price": 48.96
+          },
+          {
+            "sku": "SCREW-48C3413B",
+            "defaultQty": 1,
+            "name": "StructureMaster Deck Screws #8 - 5lb Box",
+            "price": 26.334000000000003
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Safety Equipment",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SAFE-325D0586",
+            "defaultQty": 2,
+            "name": "ReliaBuild Safety Glasses - ANSI Z87.1",
+            "price": 7.596
+          },
+          {
+            "sku": "SAFE-AC3312B9",
+            "defaultQty": 2,
+            "name": "SafeGuard Work Gloves - Heavy Duty",
+            "price": 13.599
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "All fasteners needed for roof installation",
+    "shortDescription": "Roofing Fastener Bundle - Bundle Package",
+    "weight": 171.0176900592715,
+    "metaTitle": "Roofing Fastener Bundle Bundle | FastenPro",
+    "metaDescription": "Shop the Roofing Fastener Bundle bundle from FastenPro. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, fasteners, FastenPro, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-EA668F19",
+    "name": "DuraBuilt Cabinet Installation Kit",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 299.93,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_4"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 6
+      }
+    ],
+    "groups": [
+      {
+        "name": "Cabinet Screws",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "SCREW-A3256812",
+            "defaultQty": 4,
+            "name": "ReliaBuild Cabinet Screws - 100ct",
+            "price": 14.895000000000001
+          },
+          {
+            "sku": "SCREW-AD274060",
+            "defaultQty": 3,
+            "name": "BuildRight Pro Wood Screws #10 - 1lb Box",
+            "price": 11.907
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Wall Mounting",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SCREW-0DAA49A4",
+            "defaultQty": 1,
+            "name": "SafeGuard Lag Screws 1/2\" - 50ct",
+            "price": 40.5
+          },
+          {
+            "sku": "SCREW-704B6626",
+            "defaultQty": 2,
+            "name": "ProFrame Drywall Screws - 5lb Box",
+            "price": 21.258000000000003
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Finish Hardware",
+        "required": false,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "NAIL-9D448DAA",
+            "defaultQty": 1,
+            "name": "StructureMaster Finish Nails 8d - 5lb Box",
+            "price": 18.198
+          },
+          {
+            "sku": "NAIL-D27A9BC3",
+            "defaultQty": 1,
+            "name": "MaxStrength Brad Nails 18ga - 5000ct",
+            "price": 28.152
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Specialized fasteners for cabinet work",
+    "shortDescription": "Cabinet Installation Kit - Bundle Package",
+    "weight": 184.98057729330873,
+    "metaTitle": "Cabinet Installation Kit Bundle | DuraBuilt",
+    "metaDescription": "Shop the Cabinet Installation Kit bundle from DuraBuilt. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, fasteners, DuraBuilt, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-B15554D6",
+    "name": "ToughGrip Complete PPE Package",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 422.46,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_003",
+        "position": 45
+      }
+    ],
+    "groups": [
+      {
+        "name": "Head Protection",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "SAFE-54709A01",
+            "defaultQty": 4,
+            "name": "MaxStrength Hard Hat - Type 1 Class E",
+            "price": 16.776
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 2,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Eye & Ear Protection",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SAFE-325D0586",
+            "defaultQty": 6,
+            "name": "ReliaBuild Safety Glasses - ANSI Z87.1",
+            "price": 7.596
+          },
+          {
+            "sku": "SAFE-2B236287",
+            "defaultQty": 4,
+            "name": "FastenPro Ear Protection - 30dB NRR",
+            "price": 6.606
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Hand & Body Protection",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SAFE-AC3312B9",
+            "defaultQty": 6,
+            "name": "SafeGuard Work Gloves - Heavy Duty",
+            "price": 13.599
+          },
+          {
+            "sku": "SAFE-7F19B12C",
+            "defaultQty": 4,
+            "name": "BuildRight Pro Safety Vest - High Vis Orange",
+            "price": 13.572000000000001
+          }
+        ],
+        "sortOrder": 3
+      },
+      {
+        "name": "Respiratory Protection",
+        "required": false,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 2,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 2,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          }
+        ],
+        "sortOrder": 4
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Full personal protective equipment for construction site",
+    "shortDescription": "Complete PPE Package - Bundle Package",
+    "weight": 100.20388963176119,
+    "metaTitle": "Complete PPE Package Bundle | ToughGrip",
+    "metaDescription": "Shop the Complete PPE Package bundle from ToughGrip. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, safety, ToughGrip, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-E7EC0D01",
+    "name": "ToughGrip Fall Protection System",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 781.34,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_003",
+        "position": 77
+      }
+    ],
+    "groups": [
+      {
+        "name": "Harness System",
+        "required": true,
+        "multiSelect": false,
+        "items": [
+          {
+            "sku": "SAFE-6D8805D3",
+            "defaultQty": 2,
+            "name": "ToughGrip Fall Protection Harness",
+            "price": 149.11200000000002
+          },
+          {
+            "sku": "SAFE-7F19B12C",
+            "defaultQty": 2,
+            "name": "BuildRight Pro Safety Vest - High Vis Orange",
+            "price": 13.572000000000001
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Additional PPE",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SAFE-54709A01",
+            "defaultQty": 2,
+            "name": "MaxStrength Hard Hat - Type 1 Class E",
+            "price": 16.776
+          },
+          {
+            "sku": "SAFE-AC3312B9",
+            "defaultQty": 3,
+            "name": "SafeGuard Work Gloves - Heavy Duty",
+            "price": 13.599
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Emergency Equipment",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 1,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 1,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Complete fall arrest equipment set",
+    "shortDescription": "Fall Protection System - Bundle Package",
+    "weight": 152.92844777131847,
+    "metaTitle": "Fall Protection System Bundle | ToughGrip",
+    "metaDescription": "Shop the Fall Protection System bundle from ToughGrip. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, safety, ToughGrip, construction, bulk"
+  },
+  {
+    "sku": "BUNDLE-ACAAA502",
+    "name": "SafeGuard Site Safety Station",
+    "type": "bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 480.79,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_5"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_4"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_003",
+        "position": 11
+      }
+    ],
+    "groups": [
+      {
+        "name": "Emergency Equipment",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 2,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "defaultQty": 2,
+            "name": "ToughGrip 2x4 Stud - 8ft",
+            "price": 8.298
+          }
+        ],
+        "sortOrder": 1
+      },
+      {
+        "name": "Basic PPE",
+        "required": true,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SAFE-325D0586",
+            "defaultQty": 10,
+            "name": "ReliaBuild Safety Glasses - ANSI Z87.1",
+            "price": 7.596
+          },
+          {
+            "sku": "SAFE-2B236287",
+            "defaultQty": 10,
+            "name": "FastenPro Ear Protection - 30dB NRR",
+            "price": 6.606
+          }
+        ],
+        "sortOrder": 2
+      },
+      {
+        "name": "Visitor Safety",
+        "required": false,
+        "multiSelect": true,
+        "items": [
+          {
+            "sku": "SAFE-54709A01",
+            "defaultQty": 5,
+            "name": "MaxStrength Hard Hat - Type 1 Class E",
+            "price": 16.776
+          },
+          {
+            "sku": "SAFE-7F19B12C",
+            "defaultQty": 5,
+            "name": "BuildRight Pro Safety Vest - High Vis Orange",
+            "price": 13.572000000000001
+          }
+        ],
+        "sortOrder": 3
+      }
+    ],
+    "bundleType": "fixed",
+    "shipmentType": "together",
+    "description": "Emergency and safety equipment for job site",
+    "shortDescription": "Site Safety Station - Bundle Package",
+    "weight": 139.40321658244505,
+    "metaTitle": "Site Safety Station Bundle | SafeGuard",
+    "metaDescription": "Shop the Site Safety Station bundle from SafeGuard. Complete package for your construction needs.",
+    "metaKeywords": "bundle, package, safety, SafeGuard, construction, bulk"
+  }
+]

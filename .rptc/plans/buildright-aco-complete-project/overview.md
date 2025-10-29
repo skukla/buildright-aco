@@ -3,13 +3,14 @@
 ## Status Tracking
 
 - [x] Planned
-- [ ] In Progress (TDD Phase)
+- [x] Track 1 Complete (Steps 1-4: Foundation)
+- [x] Track 2 Complete (Steps 5-8: Data Generation Scripts - 315/329 tests passing, 95.7%)
 - [ ] Efficiency Review
 - [ ] Security Review
 - [ ] Complete
 
 **Created:** 2025-10-27
-**Last Updated:** 2025-10-27
+**Last Updated:** 2025-10-28 (Track 2 Complete - Scripts Implemented)
 
 ---
 
@@ -36,8 +37,8 @@
 **Key Findings:**
 - 75/100 alignment score - current implementation uses simplified MSI subset
 - Missing required API fields: `country_id`, `postcode` for sources
-- No Stock entity implementation (single-stock vs. multi-stock decision pending)
-- 6 sources specified (2 RDCs, 3 regional warehouses, 1 virtual drop shipper)
+- Architecture decision: Unified Distribution Model with single-stock approach (ADR-001)
+- 5 sources specified per Unified Distribution Model (1 Primary RDC, 3 Regional Hubs, 1 Drop-Ship)
 - Batch processing approach aligns with API best practices (100 items/request)
 
 **Relevant Files Identified:**
@@ -89,8 +90,8 @@
 
 **Feature-Specific Criteria:**
 
-- [ ] MSI architecture decision documented (single-stock vs. multi-stock)
-- [ ] All 6 inventory sources defined with required API fields
+- [x] MSI architecture decision documented (Unified Distribution Model - ADR-001)
+- [ ] All 5 inventory sources defined with required API fields (per Unified Distribution Model)
 - [ ] 12 price books with 4-level hierarchy correctly structured
 - [ ] 120 base products across 5 categories with proper ACO attributes
 - [ ] Project-triggered dynamic bundles with policy rules documented

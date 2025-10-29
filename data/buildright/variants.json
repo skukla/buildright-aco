@@ -1,0 +1,4236 @@
+[
+  {
+    "sku": "LBR-28A6D33B-CONFIG",
+    "name": "ToughGrip Dimensional Lumber - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 121.31,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 16
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 66
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "depth",
+        "values": [
+          "1.75",
+          "3.5",
+          "5.5"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "5.5",
+          "7.25",
+          "9.25",
+          "11.25"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "8",
+          "10",
+          "12",
+          "16",
+          "20"
+        ]
+      }
+    ],
+    "description": "Customizable Dimensional Lumber from ToughGrip. Available in multiple sizes and configurations.",
+    "shortDescription": "Dimensional Lumber - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Dimensional Lumber - Configurable | ToughGrip",
+    "metaDescription": "Shop customizable Dimensional Lumber from ToughGrip. Multiple sizes and options available.",
+    "metaKeywords": "configurable, structural, lumber, ToughGrip, custom, options"
+  },
+  {
+    "sku": "LBR-28A6D33B-3.5X5.5-12",
+    "name": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 12ft",
+    "type": "simple",
+    "parentSku": "LBR-28A6D33B-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 163.31,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 16
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 66
+      }
+    ],
+    "description": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 12ft. Part of the ToughGrip Dimensional Lumber - Configurable series.",
+    "shortDescription": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 12ft",
+    "weight": 44.46325467874448,
+    "metaTitle": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 12ft | BuildRight",
+    "metaDescription": "Shop ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 12ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 3.5, 5.5, 12"
+  },
+  {
+    "sku": "LBR-28A6D33B-3.5X5.5-20",
+    "name": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 20ft",
+    "type": "simple",
+    "parentSku": "LBR-28A6D33B-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 179.31,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 16
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 66
+      }
+    ],
+    "description": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 20ft. Part of the ToughGrip Dimensional Lumber - Configurable series.",
+    "shortDescription": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 20ft",
+    "weight": 9.045791627860531,
+    "metaTitle": "ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 20ft | BuildRight",
+    "metaDescription": "Shop ToughGrip Dimensional Lumber - 3.5\" × 5.5\" 20ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 3.5, 5.5, 20"
+  },
+  {
+    "sku": "LBR-28A6D33B-5.5X11.25-12",
+    "name": "ToughGrip Dimensional Lumber - 5.5\" × 11.25\" 12ft",
+    "type": "simple",
+    "parentSku": "LBR-28A6D33B-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 178.81,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_3"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 16
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 66
+      }
+    ],
+    "description": "ToughGrip Dimensional Lumber - 5.5\" × 11.25\" 12ft. Part of the ToughGrip Dimensional Lumber - Configurable series.",
+    "shortDescription": "ToughGrip Dimensional Lumber - 5.5\" × 11.25\" 12ft",
+    "weight": 39.83195530010013,
+    "metaTitle": "ToughGrip Dimensional Lumber - 5.5\" × 11.25\" 12ft | BuildRight",
+    "metaDescription": "Shop ToughGrip Dimensional Lumber - 5.5\" × 11.25\" 12ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 5.5, 11.25, 12"
+  },
+  {
+    "sku": "LBR-28A6D33B-5.5X5.5-16",
+    "name": "ToughGrip Dimensional Lumber - 5.5\" × 5.5\" 16ft",
+    "type": "simple",
+    "parentSku": "LBR-28A6D33B-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 175.31,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 16
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 66
+      }
+    ],
+    "description": "ToughGrip Dimensional Lumber - 5.5\" × 5.5\" 16ft. Part of the ToughGrip Dimensional Lumber - Configurable series.",
+    "shortDescription": "ToughGrip Dimensional Lumber - 5.5\" × 5.5\" 16ft",
+    "weight": 14.240640562139749,
+    "metaTitle": "ToughGrip Dimensional Lumber - 5.5\" × 5.5\" 16ft | BuildRight",
+    "metaDescription": "Shop ToughGrip Dimensional Lumber - 5.5\" × 5.5\" 16ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 5.5, 5.5, 16"
+  },
+  {
+    "sku": "LBR-2AFDD582-CONFIG",
+    "name": "ProFrame LVL Beam - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 160.21,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_4"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_6"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 15
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 74
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "depth",
+        "values": [
+          "1.75",
+          "3.5"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "9.25",
+          "11.875",
+          "14"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "12",
+          "16",
+          "20",
+          "24"
+        ]
+      }
+    ],
+    "description": "Customizable LVL Beam from ProFrame. Available in multiple sizes and configurations.",
+    "shortDescription": "LVL Beam - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "LVL Beam - Configurable | ProFrame",
+    "metaDescription": "Shop customizable LVL Beam from ProFrame. Multiple sizes and options available.",
+    "metaKeywords": "configurable, structural, lumber, ProFrame, custom, options"
+  },
+  {
+    "sku": "LBR-2AFDD582-1.75X11.875-24",
+    "name": "ProFrame LVL Beam - 1.75\" × 11.875\" 24ft",
+    "type": "simple",
+    "parentSku": "LBR-2AFDD582-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 235.46,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 15
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 74
+      }
+    ],
+    "description": "ProFrame LVL Beam - 1.75\" × 11.875\" 24ft. Part of the ProFrame LVL Beam - Configurable series.",
+    "shortDescription": "ProFrame LVL Beam - 1.75\" × 11.875\" 24ft",
+    "weight": 44.11640467081052,
+    "metaTitle": "ProFrame LVL Beam - 1.75\" × 11.875\" 24ft | BuildRight",
+    "metaDescription": "Shop ProFrame LVL Beam - 1.75\" × 11.875\" 24ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 1.75, 11.875, 24"
+  },
+  {
+    "sku": "LBR-2AFDD582-1.75X9.25-12",
+    "name": "ProFrame LVL Beam - 1.75\" × 9.25\" 12ft",
+    "type": "simple",
+    "parentSku": "LBR-2AFDD582-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 206.21,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 15
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 74
+      }
+    ],
+    "description": "ProFrame LVL Beam - 1.75\" × 9.25\" 12ft. Part of the ProFrame LVL Beam - Configurable series.",
+    "shortDescription": "ProFrame LVL Beam - 1.75\" × 9.25\" 12ft",
+    "weight": 40.76026441331965,
+    "metaTitle": "ProFrame LVL Beam - 1.75\" × 9.25\" 12ft | BuildRight",
+    "metaDescription": "Shop ProFrame LVL Beam - 1.75\" × 9.25\" 12ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 1.75, 9.25, 12"
+  },
+  {
+    "sku": "LBR-2AFDD582-3.5X9.25-16",
+    "name": "ProFrame LVL Beam - 3.5\" × 9.25\" 16ft",
+    "type": "simple",
+    "parentSku": "LBR-2AFDD582-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 217.71,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 15
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 74
+      }
+    ],
+    "description": "ProFrame LVL Beam - 3.5\" × 9.25\" 16ft. Part of the ProFrame LVL Beam - Configurable series.",
+    "shortDescription": "ProFrame LVL Beam - 3.5\" × 9.25\" 16ft",
+    "weight": 33.477458967118274,
+    "metaTitle": "ProFrame LVL Beam - 3.5\" × 9.25\" 16ft | BuildRight",
+    "metaDescription": "Shop ProFrame LVL Beam - 3.5\" × 9.25\" 16ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 3.5, 9.25, 16"
+  },
+  {
+    "sku": "LBR-2AFDD582-1.75X14-12",
+    "name": "ProFrame LVL Beam - 1.75\" × 14\" 12ft",
+    "type": "simple",
+    "parentSku": "LBR-2AFDD582-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 215.71,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 15
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 74
+      }
+    ],
+    "description": "ProFrame LVL Beam - 1.75\" × 14\" 12ft. Part of the ProFrame LVL Beam - Configurable series.",
+    "shortDescription": "ProFrame LVL Beam - 1.75\" × 14\" 12ft",
+    "weight": 16.493929033863324,
+    "metaTitle": "ProFrame LVL Beam - 1.75\" × 14\" 12ft | BuildRight",
+    "metaDescription": "Shop ProFrame LVL Beam - 1.75\" × 14\" 12ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 1.75, 14, 12"
+  },
+  {
+    "sku": "LBR-2AFDD582-1.75X11.875-16",
+    "name": "ProFrame LVL Beam - 1.75\" × 11.875\" 16ft",
+    "type": "simple",
+    "parentSku": "LBR-2AFDD582-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 219.46,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_6"
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_007",
+        "position": 15
+      },
+      {
+        "categoryId": "cat_002",
+        "position": 74
+      }
+    ],
+    "description": "ProFrame LVL Beam - 1.75\" × 11.875\" 16ft. Part of the ProFrame LVL Beam - Configurable series.",
+    "shortDescription": "ProFrame LVL Beam - 1.75\" × 11.875\" 16ft",
+    "weight": 11.724284890445082,
+    "metaTitle": "ProFrame LVL Beam - 1.75\" × 11.875\" 16ft | BuildRight",
+    "metaDescription": "Shop ProFrame LVL Beam - 1.75\" × 11.875\" 16ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, lumber, variant, 1.75, 11.875, 16"
+  },
+  {
+    "sku": "PLY-2446D11C-CONFIG",
+    "name": "ToughGrip Plywood Sheet - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 83.45,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_5"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 88
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "thickness",
+        "values": [
+          "0.25",
+          "0.375",
+          "0.5",
+          "0.75",
+          "1"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "4"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "8",
+          "10"
+        ]
+      }
+    ],
+    "description": "Customizable Plywood Sheet from ToughGrip. Available in multiple sizes and configurations.",
+    "shortDescription": "Plywood Sheet - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Plywood Sheet - Configurable | ToughGrip",
+    "metaDescription": "Shop customizable Plywood Sheet from ToughGrip. Multiple sizes and options available.",
+    "metaKeywords": "configurable, structural, plywood, ToughGrip, custom, options"
+  },
+  {
+    "sku": "PLY-2446D11C-0.375-4X10",
+    "name": "ToughGrip Plywood Sheet - 10ft 0.375\" thick",
+    "type": "simple",
+    "parentSku": "PLY-2446D11C-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 115.2,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 88
+      }
+    ],
+    "description": "ToughGrip Plywood Sheet - 10ft 0.375\" thick. Part of the ToughGrip Plywood Sheet - Configurable series.",
+    "shortDescription": "ToughGrip Plywood Sheet - 10ft 0.375\" thick",
+    "weight": 48.52584960103307,
+    "metaTitle": "ToughGrip Plywood Sheet - 10ft 0.375\" thick | BuildRight",
+    "metaDescription": "Shop ToughGrip Plywood Sheet - 10ft 0.375\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, plywood, variant, 0.375, 4, 10"
+  },
+  {
+    "sku": "PLY-2446D11C-0.5-4X10",
+    "name": "ToughGrip Plywood Sheet - 10ft 0.5\" thick",
+    "type": "simple",
+    "parentSku": "PLY-2446D11C-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 116.45,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 88
+      }
+    ],
+    "description": "ToughGrip Plywood Sheet - 10ft 0.5\" thick. Part of the ToughGrip Plywood Sheet - Configurable series.",
+    "shortDescription": "ToughGrip Plywood Sheet - 10ft 0.5\" thick",
+    "weight": 9.757266046831974,
+    "metaTitle": "ToughGrip Plywood Sheet - 10ft 0.5\" thick | BuildRight",
+    "metaDescription": "Shop ToughGrip Plywood Sheet - 10ft 0.5\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, plywood, variant, 0.5, 4, 10"
+  },
+  {
+    "sku": "PLY-2446D11C-0.5-4X8",
+    "name": "ToughGrip Plywood Sheet - 8ft 0.5\" thick",
+    "type": "simple",
+    "parentSku": "PLY-2446D11C-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 112.45,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 88
+      }
+    ],
+    "description": "ToughGrip Plywood Sheet - 8ft 0.5\" thick. Part of the ToughGrip Plywood Sheet - Configurable series.",
+    "shortDescription": "ToughGrip Plywood Sheet - 8ft 0.5\" thick",
+    "weight": 92.58689049984649,
+    "metaTitle": "ToughGrip Plywood Sheet - 8ft 0.5\" thick | BuildRight",
+    "metaDescription": "Shop ToughGrip Plywood Sheet - 8ft 0.5\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, plywood, variant, 0.5, 4, 8"
+  },
+  {
+    "sku": "PLY-EB739D1A-CONFIG",
+    "name": "ToughGrip OSB Panel - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 110.42,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_1"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 52
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "thickness",
+        "values": [
+          "0.4375",
+          "0.5",
+          "0.625",
+          "0.75"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "4"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "8",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "description": "Customizable OSB Panel from ToughGrip. Available in multiple sizes and configurations.",
+    "shortDescription": "OSB Panel - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "OSB Panel - Configurable | ToughGrip",
+    "metaDescription": "Shop customizable OSB Panel from ToughGrip. Multiple sizes and options available.",
+    "metaKeywords": "configurable, structural, plywood, ToughGrip, custom, options"
+  },
+  {
+    "sku": "PLY-EB739D1A-0.625-4X9",
+    "name": "ToughGrip OSB Panel - 9ft 0.625\" thick",
+    "type": "simple",
+    "parentSku": "PLY-EB739D1A-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 142.67,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_7"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 52
+      }
+    ],
+    "description": "ToughGrip OSB Panel - 9ft 0.625\" thick. Part of the ToughGrip OSB Panel - Configurable series.",
+    "shortDescription": "ToughGrip OSB Panel - 9ft 0.625\" thick",
+    "weight": 83.24310365982498,
+    "metaTitle": "ToughGrip OSB Panel - 9ft 0.625\" thick | BuildRight",
+    "metaDescription": "Shop ToughGrip OSB Panel - 9ft 0.625\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, plywood, variant, 0.625, 4, 9"
+  },
+  {
+    "sku": "PLY-EB739D1A-0.5-4X10",
+    "name": "ToughGrip OSB Panel - 10ft 0.5\" thick",
+    "type": "simple",
+    "parentSku": "PLY-EB739D1A-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 143.42,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 52
+      }
+    ],
+    "description": "ToughGrip OSB Panel - 10ft 0.5\" thick. Part of the ToughGrip OSB Panel - Configurable series.",
+    "shortDescription": "ToughGrip OSB Panel - 10ft 0.5\" thick",
+    "weight": 40.099865214480026,
+    "metaTitle": "ToughGrip OSB Panel - 10ft 0.5\" thick | BuildRight",
+    "metaDescription": "Shop ToughGrip OSB Panel - 10ft 0.5\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, plywood, variant, 0.5, 4, 10"
+  },
+  {
+    "sku": "PLY-EB739D1A-0.5-4X8",
+    "name": "ToughGrip OSB Panel - 8ft 0.5\" thick",
+    "type": "simple",
+    "parentSku": "PLY-EB739D1A-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 139.42,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "structural_materials"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 52
+      }
+    ],
+    "description": "ToughGrip OSB Panel - 8ft 0.5\" thick. Part of the ToughGrip OSB Panel - Configurable series.",
+    "shortDescription": "ToughGrip OSB Panel - 8ft 0.5\" thick",
+    "weight": 80.34872416190278,
+    "metaTitle": "ToughGrip OSB Panel - 8ft 0.5\" thick | BuildRight",
+    "metaDescription": "Shop ToughGrip OSB Panel - 8ft 0.5\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "structural, plywood, variant, 0.5, 4, 8"
+  },
+  {
+    "sku": "STUD-1AC33726-CONFIG",
+    "name": "BuildRight Pro Metal Stud System - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 65.55,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_3"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 70
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "gauge",
+        "values": [
+          "20",
+          "18",
+          "16"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "2.5",
+          "3.5",
+          "6"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "8",
+          "10",
+          "12"
+        ]
+      }
+    ],
+    "description": "Customizable Metal Stud System from BuildRight Pro. Available in multiple sizes and configurations.",
+    "shortDescription": "Metal Stud System - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Metal Stud System - Configurable | BuildRight Pro",
+    "metaDescription": "Shop customizable Metal Stud System from BuildRight Pro. Multiple sizes and options available.",
+    "metaKeywords": "configurable, framing, studs, BuildRight Pro, custom, options"
+  },
+  {
+    "sku": "STUD-1AC33726-18GA-3.5-12",
+    "name": "BuildRight Pro Metal Stud System - 12ft 18 gauge",
+    "type": "simple",
+    "parentSku": "STUD-1AC33726-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 96.55,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_7"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 70
+      }
+    ],
+    "description": "BuildRight Pro Metal Stud System - 12ft 18 gauge. Part of the BuildRight Pro Metal Stud System - Configurable series.",
+    "shortDescription": "BuildRight Pro Metal Stud System - 12ft 18 gauge",
+    "weight": 20.99872947484196,
+    "metaTitle": "BuildRight Pro Metal Stud System - 12ft 18 gauge | BuildRight",
+    "metaDescription": "Shop BuildRight Pro Metal Stud System - 12ft 18 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, studs, variant, 18, 3.5, 12"
+  },
+  {
+    "sku": "STUD-1AC33726-16GA-2.5-12",
+    "name": "BuildRight Pro Metal Stud System - 12ft 16 gauge",
+    "type": "simple",
+    "parentSku": "STUD-1AC33726-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 94.55,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 70
+      }
+    ],
+    "description": "BuildRight Pro Metal Stud System - 12ft 16 gauge. Part of the BuildRight Pro Metal Stud System - Configurable series.",
+    "shortDescription": "BuildRight Pro Metal Stud System - 12ft 16 gauge",
+    "weight": 25.128897139862598,
+    "metaTitle": "BuildRight Pro Metal Stud System - 12ft 16 gauge | BuildRight",
+    "metaDescription": "Shop BuildRight Pro Metal Stud System - 12ft 16 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, studs, variant, 16, 2.5, 12"
+  },
+  {
+    "sku": "STUD-1AC33726-20GA-6-8",
+    "name": "BuildRight Pro Metal Stud System - 8ft 20 gauge",
+    "type": "simple",
+    "parentSku": "STUD-1AC33726-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 93.55,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 70
+      }
+    ],
+    "description": "BuildRight Pro Metal Stud System - 8ft 20 gauge. Part of the BuildRight Pro Metal Stud System - Configurable series.",
+    "shortDescription": "BuildRight Pro Metal Stud System - 8ft 20 gauge",
+    "weight": 70.69013956267858,
+    "metaTitle": "BuildRight Pro Metal Stud System - 8ft 20 gauge | BuildRight",
+    "metaDescription": "Shop BuildRight Pro Metal Stud System - 8ft 20 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, studs, variant, 20, 6, 8"
+  },
+  {
+    "sku": "STUD-FD28E651-CONFIG",
+    "name": "PremiumBuild Steel Framing Track - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 82.62,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 27
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "gauge",
+        "values": [
+          "20",
+          "18"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "3.5",
+          "6",
+          "8"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "10",
+          "12"
+        ]
+      }
+    ],
+    "description": "Customizable Steel Framing Track from PremiumBuild. Available in multiple sizes and configurations.",
+    "shortDescription": "Steel Framing Track - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Steel Framing Track - Configurable | PremiumBuild",
+    "metaDescription": "Shop customizable Steel Framing Track from PremiumBuild. Multiple sizes and options available.",
+    "metaKeywords": "configurable, framing, studs, PremiumBuild, custom, options"
+  },
+  {
+    "sku": "STUD-FD28E651-18GA-8-10",
+    "name": "PremiumBuild Steel Framing Track - 10ft 18 gauge",
+    "type": "simple",
+    "parentSku": "STUD-FD28E651-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 118.62,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 27
+      }
+    ],
+    "description": "PremiumBuild Steel Framing Track - 10ft 18 gauge. Part of the PremiumBuild Steel Framing Track - Configurable series.",
+    "shortDescription": "PremiumBuild Steel Framing Track - 10ft 18 gauge",
+    "weight": 91.64862398367777,
+    "metaTitle": "PremiumBuild Steel Framing Track - 10ft 18 gauge | BuildRight",
+    "metaDescription": "Shop PremiumBuild Steel Framing Track - 10ft 18 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, studs, variant, 18, 8, 10"
+  },
+  {
+    "sku": "STUD-FD28E651-18GA-6-10",
+    "name": "PremiumBuild Steel Framing Track - 10ft 18 gauge",
+    "type": "simple",
+    "parentSku": "STUD-FD28E651-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 114.62,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_5"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 27
+      }
+    ],
+    "description": "PremiumBuild Steel Framing Track - 10ft 18 gauge. Part of the PremiumBuild Steel Framing Track - Configurable series.",
+    "shortDescription": "PremiumBuild Steel Framing Track - 10ft 18 gauge",
+    "weight": 54.84445455011188,
+    "metaTitle": "PremiumBuild Steel Framing Track - 10ft 18 gauge | BuildRight",
+    "metaDescription": "Shop PremiumBuild Steel Framing Track - 10ft 18 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, studs, variant, 18, 6, 10"
+  },
+  {
+    "sku": "STUD-FD28E651-20GA-3.5-10",
+    "name": "PremiumBuild Steel Framing Track - 10ft 20 gauge",
+    "type": "simple",
+    "parentSku": "STUD-FD28E651-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 109.62,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 27
+      }
+    ],
+    "description": "PremiumBuild Steel Framing Track - 10ft 20 gauge. Part of the PremiumBuild Steel Framing Track - Configurable series.",
+    "shortDescription": "PremiumBuild Steel Framing Track - 10ft 20 gauge",
+    "weight": 38.101148024714156,
+    "metaTitle": "PremiumBuild Steel Framing Track - 10ft 20 gauge | BuildRight",
+    "metaDescription": "Shop PremiumBuild Steel Framing Track - 10ft 20 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, studs, variant, 20, 3.5, 10"
+  },
+  {
+    "sku": "DRYWALL-B2F15E19-CONFIG",
+    "name": "FastenPro Gypsum Board - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 148.47,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 6
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "thickness",
+        "values": [
+          "0.375",
+          "0.5",
+          "0.625"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "4"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "8",
+          "10",
+          "12"
+        ]
+      }
+    ],
+    "description": "Customizable Gypsum Board from FastenPro. Available in multiple sizes and configurations.",
+    "shortDescription": "Gypsum Board - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Gypsum Board - Configurable | FastenPro",
+    "metaDescription": "Shop customizable Gypsum Board from FastenPro. Multiple sizes and options available.",
+    "metaKeywords": "configurable, framing, drywall, FastenPro, custom, options"
+  },
+  {
+    "sku": "DRYWALL-B2F15E19-0.5-4X8",
+    "name": "FastenPro Gypsum Board - 8ft 0.5\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-B2F15E19-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 177.47,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 6
+      }
+    ],
+    "description": "FastenPro Gypsum Board - 8ft 0.5\" thick. Part of the FastenPro Gypsum Board - Configurable series.",
+    "shortDescription": "FastenPro Gypsum Board - 8ft 0.5\" thick",
+    "weight": 46.643283237537034,
+    "metaTitle": "FastenPro Gypsum Board - 8ft 0.5\" thick | BuildRight",
+    "metaDescription": "Shop FastenPro Gypsum Board - 8ft 0.5\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, 0.5, 4, 8"
+  },
+  {
+    "sku": "DRYWALL-B2F15E19-0.625-4X10",
+    "name": "FastenPro Gypsum Board - 10ft 0.625\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-B2F15E19-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 182.72,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 6
+      }
+    ],
+    "description": "FastenPro Gypsum Board - 10ft 0.625\" thick. Part of the FastenPro Gypsum Board - Configurable series.",
+    "shortDescription": "FastenPro Gypsum Board - 10ft 0.625\" thick",
+    "weight": 57.27315487911606,
+    "metaTitle": "FastenPro Gypsum Board - 10ft 0.625\" thick | BuildRight",
+    "metaDescription": "Shop FastenPro Gypsum Board - 10ft 0.625\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, 0.625, 4, 10"
+  },
+  {
+    "sku": "DRYWALL-B2F15E19-0.625-4X12",
+    "name": "FastenPro Gypsum Board - 12ft 0.625\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-B2F15E19-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 186.72,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 6
+      }
+    ],
+    "description": "FastenPro Gypsum Board - 12ft 0.625\" thick. Part of the FastenPro Gypsum Board - Configurable series.",
+    "shortDescription": "FastenPro Gypsum Board - 12ft 0.625\" thick",
+    "weight": 15.399404266103826,
+    "metaTitle": "FastenPro Gypsum Board - 12ft 0.625\" thick | BuildRight",
+    "metaDescription": "Shop FastenPro Gypsum Board - 12ft 0.625\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, 0.625, 4, 12"
+  },
+  {
+    "sku": "DRYWALL-B2F15E19-0.625-4X8",
+    "name": "FastenPro Gypsum Board - 8ft 0.625\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-B2F15E19-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 178.72,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_4"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 6
+      }
+    ],
+    "description": "FastenPro Gypsum Board - 8ft 0.625\" thick. Part of the FastenPro Gypsum Board - Configurable series.",
+    "shortDescription": "FastenPro Gypsum Board - 8ft 0.625\" thick",
+    "weight": 61.006277825686276,
+    "metaTitle": "FastenPro Gypsum Board - 8ft 0.625\" thick | BuildRight",
+    "metaDescription": "Shop FastenPro Gypsum Board - 8ft 0.625\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, 0.625, 4, 8"
+  },
+  {
+    "sku": "DRYWALL-B2F15E19-0.375-4X10",
+    "name": "FastenPro Gypsum Board - 10ft 0.375\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-B2F15E19-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 180.22,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_1"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 6
+      }
+    ],
+    "description": "FastenPro Gypsum Board - 10ft 0.375\" thick. Part of the FastenPro Gypsum Board - Configurable series.",
+    "shortDescription": "FastenPro Gypsum Board - 10ft 0.375\" thick",
+    "weight": 39.20014859838418,
+    "metaTitle": "FastenPro Gypsum Board - 10ft 0.375\" thick | BuildRight",
+    "metaDescription": "Shop FastenPro Gypsum Board - 10ft 0.375\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, 0.375, 4, 10"
+  },
+  {
+    "sku": "DRYWALL-E68755BC-CONFIG",
+    "name": "StructureMaster Specialty Drywall - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 198.76,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 36
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "type",
+        "values": [
+          "moisture",
+          "fire",
+          "sound"
+        ]
+      },
+      {
+        "attribute": "thickness",
+        "values": [
+          "0.5",
+          "0.625"
+        ]
+      },
+      {
+        "attribute": "size",
+        "values": [
+          "4x8",
+          "4x10",
+          "4x12"
+        ]
+      }
+    ],
+    "description": "Customizable Specialty Drywall from StructureMaster. Available in multiple sizes and configurations.",
+    "shortDescription": "Specialty Drywall - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Specialty Drywall - Configurable | StructureMaster",
+    "metaDescription": "Shop customizable Specialty Drywall from StructureMaster. Multiple sizes and options available.",
+    "metaKeywords": "configurable, framing, drywall, StructureMaster, custom, options"
+  },
+  {
+    "sku": "DRYWALL-E68755BC-VAR-5039EE",
+    "name": "StructureMaster Specialty Drywall - 0.5\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-E68755BC-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 203.76,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_003",
+        "value": "4x12"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 36
+      }
+    ],
+    "description": "StructureMaster Specialty Drywall - 0.5\" thick. Part of the StructureMaster Specialty Drywall - Configurable series.",
+    "shortDescription": "StructureMaster Specialty Drywall - 0.5\" thick",
+    "weight": 7.427805663285687,
+    "metaTitle": "StructureMaster Specialty Drywall - 0.5\" thick | BuildRight",
+    "metaDescription": "Shop StructureMaster Specialty Drywall - 0.5\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, moisture, 0.5, 4x12"
+  },
+  {
+    "sku": "DRYWALL-E68755BC-VAR-802A42",
+    "name": "StructureMaster Specialty Drywall - 0.625\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-E68755BC-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 205.01,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_003",
+        "value": "4x10"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_4"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 36
+      }
+    ],
+    "description": "StructureMaster Specialty Drywall - 0.625\" thick. Part of the StructureMaster Specialty Drywall - Configurable series.",
+    "shortDescription": "StructureMaster Specialty Drywall - 0.625\" thick",
+    "weight": 82.65091422835873,
+    "metaTitle": "StructureMaster Specialty Drywall - 0.625\" thick | BuildRight",
+    "metaDescription": "Shop StructureMaster Specialty Drywall - 0.625\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, sound, 0.625, 4x10"
+  },
+  {
+    "sku": "DRYWALL-E68755BC-VAR-E78313",
+    "name": "StructureMaster Specialty Drywall - 0.625\" thick",
+    "type": "simple",
+    "parentSku": "DRYWALL-E68755BC-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 205.01,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "4x10"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 36
+      }
+    ],
+    "description": "StructureMaster Specialty Drywall - 0.625\" thick. Part of the StructureMaster Specialty Drywall - Configurable series.",
+    "shortDescription": "StructureMaster Specialty Drywall - 0.625\" thick",
+    "weight": 27.466381202669062,
+    "metaTitle": "StructureMaster Specialty Drywall - 0.625\" thick | BuildRight",
+    "metaDescription": "Shop StructureMaster Specialty Drywall - 0.625\" thick. Quality construction materials from BuildRight.",
+    "metaKeywords": "framing, drywall, variant, moisture, 0.625, 4x10"
+  },
+  {
+    "sku": "WINDOW-1B362CA8-CONFIG",
+    "name": "FastenPro Custom Window - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 69.43,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 81
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "style",
+        "values": [
+          "single-hung",
+          "double-hung",
+          "sliding"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "24",
+          "30",
+          "36",
+          "48"
+        ]
+      },
+      {
+        "attribute": "height",
+        "values": [
+          "36",
+          "48",
+          "60",
+          "72"
+        ]
+      }
+    ],
+    "description": "Customizable Custom Window from FastenPro. Available in multiple sizes and configurations.",
+    "shortDescription": "Custom Window - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Custom Window - Configurable | FastenPro",
+    "metaDescription": "Shop customizable Custom Window from FastenPro. Multiple sizes and options available.",
+    "metaKeywords": "configurable, windows-doors, windows, FastenPro, custom, options"
+  },
+  {
+    "sku": "WINDOW-1B362CA8-VAR-F279CE",
+    "name": "FastenPro Custom Window - ",
+    "type": "simple",
+    "parentSku": "WINDOW-1B362CA8-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 117.43,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_2"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_2"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 81
+      }
+    ],
+    "description": "FastenPro Custom Window - . Part of the FastenPro Custom Window - Configurable series.",
+    "shortDescription": "FastenPro Custom Window - ",
+    "weight": 65.09286451157782,
+    "metaTitle": "FastenPro Custom Window -  | BuildRight",
+    "metaDescription": "Shop FastenPro Custom Window - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, windows, variant, sliding, 24, 72"
+  },
+  {
+    "sku": "WINDOW-1B362CA8-VAR-14F2A6",
+    "name": "FastenPro Custom Window - ",
+    "type": "simple",
+    "parentSku": "WINDOW-1B362CA8-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 141.43,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 81
+      }
+    ],
+    "description": "FastenPro Custom Window - . Part of the FastenPro Custom Window - Configurable series.",
+    "shortDescription": "FastenPro Custom Window - ",
+    "weight": 83.86514831281507,
+    "metaTitle": "FastenPro Custom Window -  | BuildRight",
+    "metaDescription": "Shop FastenPro Custom Window - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, windows, variant, sliding, 36, 48"
+  },
+  {
+    "sku": "WINDOW-1B362CA8-VAR-D1D2CB",
+    "name": "FastenPro Custom Window - ",
+    "type": "simple",
+    "parentSku": "WINDOW-1B362CA8-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 141.43,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 81
+      }
+    ],
+    "description": "FastenPro Custom Window - . Part of the FastenPro Custom Window - Configurable series.",
+    "shortDescription": "FastenPro Custom Window - ",
+    "weight": 71.24672356352524,
+    "metaTitle": "FastenPro Custom Window -  | BuildRight",
+    "metaDescription": "Shop FastenPro Custom Window - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, windows, variant, single-hung, 36, 48"
+  },
+  {
+    "sku": "WINDOW-9564124D-CONFIG",
+    "name": "MaxStrength Energy Efficient Window - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 122.15,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 42
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "glazing",
+        "values": [
+          "double",
+          "triple"
+        ]
+      },
+      {
+        "attribute": "frame",
+        "values": [
+          "vinyl",
+          "fiberglass",
+          "wood"
+        ]
+      },
+      {
+        "attribute": "size",
+        "values": [
+          "30x48",
+          "36x48",
+          "36x60"
+        ]
+      }
+    ],
+    "description": "Customizable Energy Efficient Window from MaxStrength. Available in multiple sizes and configurations.",
+    "shortDescription": "Energy Efficient Window - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Energy Efficient Window - Configurable | MaxStrength",
+    "metaDescription": "Shop customizable Energy Efficient Window from MaxStrength. Multiple sizes and options available.",
+    "metaKeywords": "configurable, windows-doors, windows, MaxStrength, custom, options"
+  },
+  {
+    "sku": "WINDOW-9564124D-VAR-2F9BCD",
+    "name": "MaxStrength Energy Efficient Window - ",
+    "type": "simple",
+    "parentSku": "WINDOW-9564124D-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 122.15,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_003",
+        "value": "36x60"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 42
+      }
+    ],
+    "description": "MaxStrength Energy Efficient Window - . Part of the MaxStrength Energy Efficient Window - Configurable series.",
+    "shortDescription": "MaxStrength Energy Efficient Window - ",
+    "weight": 67.82985079233994,
+    "metaTitle": "MaxStrength Energy Efficient Window -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Energy Efficient Window - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, windows, variant, double, vinyl, 36x60"
+  },
+  {
+    "sku": "WINDOW-9564124D-VAR-CF300C",
+    "name": "MaxStrength Energy Efficient Window - ",
+    "type": "simple",
+    "parentSku": "WINDOW-9564124D-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 122.15,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "36x48"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 42
+      }
+    ],
+    "description": "MaxStrength Energy Efficient Window - . Part of the MaxStrength Energy Efficient Window - Configurable series.",
+    "shortDescription": "MaxStrength Energy Efficient Window - ",
+    "weight": 50.0132030458251,
+    "metaTitle": "MaxStrength Energy Efficient Window -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Energy Efficient Window - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, windows, variant, double, vinyl, 36x48"
+  },
+  {
+    "sku": "WINDOW-9564124D-VAR-CDD2DE",
+    "name": "MaxStrength Energy Efficient Window - ",
+    "type": "simple",
+    "parentSku": "WINDOW-9564124D-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 122.15,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_003",
+        "value": "36x48"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 42
+      }
+    ],
+    "description": "MaxStrength Energy Efficient Window - . Part of the MaxStrength Energy Efficient Window - Configurable series.",
+    "shortDescription": "MaxStrength Energy Efficient Window - ",
+    "weight": 11.40708625614973,
+    "metaTitle": "MaxStrength Energy Efficient Window -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Energy Efficient Window - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, windows, variant, double, wood, 36x48"
+  },
+  {
+    "sku": "WINDOW-9564124D-VAR-1FE9BF",
+    "name": "MaxStrength Energy Efficient Window - ",
+    "type": "simple",
+    "parentSku": "WINDOW-9564124D-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 122.15,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_003",
+        "value": "30x48"
+      },
+      {
+        "code": "attr_009",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 42
+      }
+    ],
+    "description": "MaxStrength Energy Efficient Window - . Part of the MaxStrength Energy Efficient Window - Configurable series.",
+    "shortDescription": "MaxStrength Energy Efficient Window - ",
+    "weight": 48.20832254514486,
+    "metaTitle": "MaxStrength Energy Efficient Window -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Energy Efficient Window - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, windows, variant, triple, wood, 30x48"
+  },
+  {
+    "sku": "DOOR-B9A85BDF-CONFIG",
+    "name": "MaxStrength Custom Entry Door - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 180.57,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 34
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "material",
+        "values": [
+          "steel",
+          "fiberglass",
+          "wood"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "30",
+          "32",
+          "36"
+        ]
+      },
+      {
+        "attribute": "height",
+        "values": [
+          "80",
+          "84",
+          "96"
+        ]
+      }
+    ],
+    "description": "Customizable Custom Entry Door from MaxStrength. Available in multiple sizes and configurations.",
+    "shortDescription": "Custom Entry Door - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Custom Entry Door - Configurable | MaxStrength",
+    "metaDescription": "Shop customizable Custom Entry Door from MaxStrength. Multiple sizes and options available.",
+    "metaKeywords": "configurable, windows-doors, doors, MaxStrength, custom, options"
+  },
+  {
+    "sku": "DOOR-B9A85BDF-VAR-4D9D7B",
+    "name": "MaxStrength Custom Entry Door - ",
+    "type": "simple",
+    "parentSku": "DOOR-B9A85BDF-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 252.57,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_001",
+        "value": "fiberglass"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 34
+      }
+    ],
+    "description": "MaxStrength Custom Entry Door - . Part of the MaxStrength Custom Entry Door - Configurable series.",
+    "shortDescription": "MaxStrength Custom Entry Door - ",
+    "weight": 58.262926960952086,
+    "metaTitle": "MaxStrength Custom Entry Door -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Custom Entry Door - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, fiberglass, 36, 84"
+  },
+  {
+    "sku": "DOOR-B9A85BDF-VAR-7725CB",
+    "name": "MaxStrength Custom Entry Door - ",
+    "type": "simple",
+    "parentSku": "DOOR-B9A85BDF-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 244.57,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_001",
+        "value": "fiberglass"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 34
+      }
+    ],
+    "description": "MaxStrength Custom Entry Door - . Part of the MaxStrength Custom Entry Door - Configurable series.",
+    "shortDescription": "MaxStrength Custom Entry Door - ",
+    "weight": 53.33301308021555,
+    "metaTitle": "MaxStrength Custom Entry Door -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Custom Entry Door - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, fiberglass, 32, 96"
+  },
+  {
+    "sku": "DOOR-B9A85BDF-VAR-F90848",
+    "name": "MaxStrength Custom Entry Door - ",
+    "type": "simple",
+    "parentSku": "DOOR-B9A85BDF-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 244.57,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_001",
+        "value": "wood"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_5"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 34
+      }
+    ],
+    "description": "MaxStrength Custom Entry Door - . Part of the MaxStrength Custom Entry Door - Configurable series.",
+    "shortDescription": "MaxStrength Custom Entry Door - ",
+    "weight": 50.407093784495764,
+    "metaTitle": "MaxStrength Custom Entry Door -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Custom Entry Door - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, wood, 32, 80"
+  },
+  {
+    "sku": "DOOR-B9A85BDF-VAR-1213C3",
+    "name": "MaxStrength Custom Entry Door - ",
+    "type": "simple",
+    "parentSku": "DOOR-B9A85BDF-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 244.57,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_001",
+        "value": "steel"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 34
+      }
+    ],
+    "description": "MaxStrength Custom Entry Door - . Part of the MaxStrength Custom Entry Door - Configurable series.",
+    "shortDescription": "MaxStrength Custom Entry Door - ",
+    "weight": 54.539899793239265,
+    "metaTitle": "MaxStrength Custom Entry Door -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Custom Entry Door - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, steel, 32, 84"
+  },
+  {
+    "sku": "DOOR-B9A85BDF-VAR-6CF1A4",
+    "name": "MaxStrength Custom Entry Door - ",
+    "type": "simple",
+    "parentSku": "DOOR-B9A85BDF-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 240.57,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_001",
+        "value": "steel"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_2"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 34
+      }
+    ],
+    "description": "MaxStrength Custom Entry Door - . Part of the MaxStrength Custom Entry Door - Configurable series.",
+    "shortDescription": "MaxStrength Custom Entry Door - ",
+    "weight": 40.74443222756704,
+    "metaTitle": "MaxStrength Custom Entry Door -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Custom Entry Door - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, steel, 30, 84"
+  },
+  {
+    "sku": "DOOR-4DEEB6C4-CONFIG",
+    "name": "FastenPro Interior Door System - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 157.44,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 78
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "style",
+        "values": [
+          "panel",
+          "flush",
+          "french"
+        ]
+      },
+      {
+        "attribute": "width",
+        "values": [
+          "24",
+          "28",
+          "30",
+          "32",
+          "36"
+        ]
+      },
+      {
+        "attribute": "height",
+        "values": [
+          "80",
+          "84"
+        ]
+      }
+    ],
+    "description": "Customizable Interior Door System from FastenPro. Available in multiple sizes and configurations.",
+    "shortDescription": "Interior Door System - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Interior Door System - Configurable | FastenPro",
+    "metaDescription": "Shop customizable Interior Door System from FastenPro. Multiple sizes and options available.",
+    "metaKeywords": "configurable, windows-doors, doors, FastenPro, custom, options"
+  },
+  {
+    "sku": "DOOR-4DEEB6C4-VAR-B64EF0",
+    "name": "FastenPro Interior Door System - ",
+    "type": "simple",
+    "parentSku": "DOOR-4DEEB6C4-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 213.44,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_5"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 78
+      }
+    ],
+    "description": "FastenPro Interior Door System - . Part of the FastenPro Interior Door System - Configurable series.",
+    "shortDescription": "FastenPro Interior Door System - ",
+    "weight": 61.3539177441755,
+    "metaTitle": "FastenPro Interior Door System -  | BuildRight",
+    "metaDescription": "Shop FastenPro Interior Door System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, panel, 28, 80"
+  },
+  {
+    "sku": "DOOR-4DEEB6C4-VAR-0B6A7A",
+    "name": "FastenPro Interior Door System - ",
+    "type": "simple",
+    "parentSku": "DOOR-4DEEB6C4-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 205.44,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 78
+      }
+    ],
+    "description": "FastenPro Interior Door System - . Part of the FastenPro Interior Door System - Configurable series.",
+    "shortDescription": "FastenPro Interior Door System - ",
+    "weight": 37.96154619798136,
+    "metaTitle": "FastenPro Interior Door System -  | BuildRight",
+    "metaDescription": "Shop FastenPro Interior Door System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, panel, 24, 84"
+  },
+  {
+    "sku": "DOOR-4DEEB6C4-VAR-AE8C6F",
+    "name": "FastenPro Interior Door System - ",
+    "type": "simple",
+    "parentSku": "DOOR-4DEEB6C4-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 205.44,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 78
+      }
+    ],
+    "description": "FastenPro Interior Door System - . Part of the FastenPro Interior Door System - Configurable series.",
+    "shortDescription": "FastenPro Interior Door System - ",
+    "weight": 44.540170449549414,
+    "metaTitle": "FastenPro Interior Door System -  | BuildRight",
+    "metaDescription": "Shop FastenPro Interior Door System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, flush, 24, 84"
+  },
+  {
+    "sku": "DOOR-4DEEB6C4-VAR-C3BA16",
+    "name": "FastenPro Interior Door System - ",
+    "type": "simple",
+    "parentSku": "DOOR-4DEEB6C4-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 217.44,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "windows_doors"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 78
+      }
+    ],
+    "description": "FastenPro Interior Door System - . Part of the FastenPro Interior Door System - Configurable series.",
+    "shortDescription": "FastenPro Interior Door System - ",
+    "weight": 77.57665339511664,
+    "metaTitle": "FastenPro Interior Door System -  | BuildRight",
+    "metaDescription": "Shop FastenPro Interior Door System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "windows-doors, doors, variant, flush, 30, 84"
+  },
+  {
+    "sku": "NAIL-3BAF0362-CONFIG",
+    "name": "MaxStrength Bulk Nail Pack - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 165.35,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 13
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "type",
+        "values": [
+          "framing",
+          "finish",
+          "roofing"
+        ]
+      },
+      {
+        "attribute": "size",
+        "values": [
+          "8d",
+          "10d",
+          "16d"
+        ]
+      },
+      {
+        "attribute": "quantity",
+        "values": [
+          "25lb",
+          "50lb"
+        ]
+      }
+    ],
+    "description": "Customizable Bulk Nail Pack from MaxStrength. Available in multiple sizes and configurations.",
+    "shortDescription": "Bulk Nail Pack - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Bulk Nail Pack - Configurable | MaxStrength",
+    "metaDescription": "Shop customizable Bulk Nail Pack from MaxStrength. Multiple sizes and options available.",
+    "metaKeywords": "configurable, fasteners, nails, MaxStrength, custom, options"
+  },
+  {
+    "sku": "NAIL-3BAF0362-VAR-BDA36C",
+    "name": "MaxStrength Bulk Nail Pack - ",
+    "type": "simple",
+    "parentSku": "NAIL-3BAF0362-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 165.35,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "16d"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 13
+      }
+    ],
+    "description": "MaxStrength Bulk Nail Pack - . Part of the MaxStrength Bulk Nail Pack - Configurable series.",
+    "shortDescription": "MaxStrength Bulk Nail Pack - ",
+    "weight": 70.99385026190143,
+    "metaTitle": "MaxStrength Bulk Nail Pack -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Bulk Nail Pack - . Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, framing, 16d, 50lb"
+  },
+  {
+    "sku": "NAIL-3BAF0362-VAR-82F096",
+    "name": "MaxStrength Bulk Nail Pack - ",
+    "type": "simple",
+    "parentSku": "NAIL-3BAF0362-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 165.35,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_003",
+        "value": "10d"
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 13
+      }
+    ],
+    "description": "MaxStrength Bulk Nail Pack - . Part of the MaxStrength Bulk Nail Pack - Configurable series.",
+    "shortDescription": "MaxStrength Bulk Nail Pack - ",
+    "weight": 98.25695340207636,
+    "metaTitle": "MaxStrength Bulk Nail Pack -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Bulk Nail Pack - . Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, framing, 10d, 25lb"
+  },
+  {
+    "sku": "NAIL-3BAF0362-VAR-7FA45E",
+    "name": "MaxStrength Bulk Nail Pack - ",
+    "type": "simple",
+    "parentSku": "NAIL-3BAF0362-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 165.35,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_003",
+        "value": "8d"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_5"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 13
+      }
+    ],
+    "description": "MaxStrength Bulk Nail Pack - . Part of the MaxStrength Bulk Nail Pack - Configurable series.",
+    "shortDescription": "MaxStrength Bulk Nail Pack - ",
+    "weight": 25.057680616182125,
+    "metaTitle": "MaxStrength Bulk Nail Pack -  | BuildRight",
+    "metaDescription": "Shop MaxStrength Bulk Nail Pack - . Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, finish, 8d, 25lb"
+  },
+  {
+    "sku": "NAIL-964A5658-CONFIG",
+    "name": "ReliaBuild Specialty Nails - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 175.26,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "coating",
+        "values": [
+          "galvanized",
+          "stainless",
+          "plain"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "2",
+          "2.5",
+          "3",
+          "3.5"
+        ]
+      },
+      {
+        "attribute": "gauge",
+        "values": [
+          "11",
+          "12",
+          "13"
+        ]
+      }
+    ],
+    "description": "Customizable Specialty Nails from ReliaBuild. Available in multiple sizes and configurations.",
+    "shortDescription": "Specialty Nails - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Specialty Nails - Configurable | ReliaBuild",
+    "metaDescription": "Shop customizable Specialty Nails from ReliaBuild. Multiple sizes and options available.",
+    "metaKeywords": "configurable, fasteners, nails, ReliaBuild, custom, options"
+  },
+  {
+    "sku": "NAIL-964A5658-12GA-2",
+    "name": "ReliaBuild Specialty Nails - 2ft 12 gauge",
+    "type": "simple",
+    "parentSku": "NAIL-964A5658-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 179.26,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_3"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_2"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Specialty Nails - 2ft 12 gauge. Part of the ReliaBuild Specialty Nails - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Nails - 2ft 12 gauge",
+    "weight": 10.394970181116355,
+    "metaTitle": "ReliaBuild Specialty Nails - 2ft 12 gauge | BuildRight",
+    "metaDescription": "Shop ReliaBuild Specialty Nails - 2ft 12 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, galvanized, 2, 12"
+  },
+  {
+    "sku": "NAIL-964A5658-13GA-2.5",
+    "name": "ReliaBuild Specialty Nails - 2.5ft 13 gauge",
+    "type": "simple",
+    "parentSku": "NAIL-964A5658-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 180.26,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Specialty Nails - 2.5ft 13 gauge. Part of the ReliaBuild Specialty Nails - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Nails - 2.5ft 13 gauge",
+    "weight": 58.41988098501222,
+    "metaTitle": "ReliaBuild Specialty Nails - 2.5ft 13 gauge | BuildRight",
+    "metaDescription": "Shop ReliaBuild Specialty Nails - 2.5ft 13 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, stainless, 2.5, 13"
+  },
+  {
+    "sku": "NAIL-964A5658-12GA-3.5",
+    "name": "ReliaBuild Specialty Nails - 3.5ft 12 gauge",
+    "type": "simple",
+    "parentSku": "NAIL-964A5658-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 182.26,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_2"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Specialty Nails - 3.5ft 12 gauge. Part of the ReliaBuild Specialty Nails - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Nails - 3.5ft 12 gauge",
+    "weight": 64.35379418514381,
+    "metaTitle": "ReliaBuild Specialty Nails - 3.5ft 12 gauge | BuildRight",
+    "metaDescription": "Shop ReliaBuild Specialty Nails - 3.5ft 12 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, plain, 3.5, 12"
+  },
+  {
+    "sku": "NAIL-964A5658-12GA-3.5-1",
+    "name": "ReliaBuild Specialty Nails - 3.5ft 12 gauge",
+    "type": "simple",
+    "parentSku": "NAIL-964A5658-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 182.26,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Specialty Nails - 3.5ft 12 gauge. Part of the ReliaBuild Specialty Nails - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Nails - 3.5ft 12 gauge",
+    "weight": 8.31601619874873,
+    "metaTitle": "ReliaBuild Specialty Nails - 3.5ft 12 gauge | BuildRight",
+    "metaDescription": "Shop ReliaBuild Specialty Nails - 3.5ft 12 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, galvanized, 3.5, 12"
+  },
+  {
+    "sku": "NAIL-964A5658-12GA-2.5",
+    "name": "ReliaBuild Specialty Nails - 2.5ft 12 gauge",
+    "type": "simple",
+    "parentSku": "NAIL-964A5658-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 180.26,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_002",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Specialty Nails - 2.5ft 12 gauge. Part of the ReliaBuild Specialty Nails - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Nails - 2.5ft 12 gauge",
+    "weight": 48.74628843914079,
+    "metaTitle": "ReliaBuild Specialty Nails - 2.5ft 12 gauge | BuildRight",
+    "metaDescription": "Shop ReliaBuild Specialty Nails - 2.5ft 12 gauge. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, nails, variant, stainless, 2.5, 12"
+  },
+  {
+    "sku": "SCREW-787E3AF6-CONFIG",
+    "name": "ToughGrip Construction Screws - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 154.94,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 55
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "type",
+        "values": [
+          "deck",
+          "drywall",
+          "wood"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "1.25",
+          "1.5",
+          "2",
+          "2.5",
+          "3"
+        ]
+      },
+      {
+        "attribute": "quantity",
+        "values": [
+          "1lb",
+          "5lb",
+          "25lb"
+        ]
+      }
+    ],
+    "description": "Customizable Construction Screws from ToughGrip. Available in multiple sizes and configurations.",
+    "shortDescription": "Construction Screws - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Construction Screws - Configurable | ToughGrip",
+    "metaDescription": "Shop customizable Construction Screws from ToughGrip. Multiple sizes and options available.",
+    "metaKeywords": "configurable, fasteners, screws, ToughGrip, custom, options"
+  },
+  {
+    "sku": "SCREW-787E3AF6-3",
+    "name": "ToughGrip Construction Screws - 3ft",
+    "type": "simple",
+    "parentSku": "SCREW-787E3AF6-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 160.94,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_4"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 55
+      }
+    ],
+    "description": "ToughGrip Construction Screws - 3ft. Part of the ToughGrip Construction Screws - Configurable series.",
+    "shortDescription": "ToughGrip Construction Screws - 3ft",
+    "weight": 73.97822860115126,
+    "metaTitle": "ToughGrip Construction Screws - 3ft | BuildRight",
+    "metaDescription": "Shop ToughGrip Construction Screws - 3ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, screws, variant, wood, 3, 5lb"
+  },
+  {
+    "sku": "SCREW-787E3AF6-2",
+    "name": "ToughGrip Construction Screws - 2ft",
+    "type": "simple",
+    "parentSku": "SCREW-787E3AF6-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 158.94,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_2"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 55
+      }
+    ],
+    "description": "ToughGrip Construction Screws - 2ft. Part of the ToughGrip Construction Screws - Configurable series.",
+    "shortDescription": "ToughGrip Construction Screws - 2ft",
+    "weight": 9.744752051655553,
+    "metaTitle": "ToughGrip Construction Screws - 2ft | BuildRight",
+    "metaDescription": "Shop ToughGrip Construction Screws - 2ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, screws, variant, deck, 2, 1lb"
+  },
+  {
+    "sku": "SCREW-787E3AF6-3-1",
+    "name": "ToughGrip Construction Screws - 3ft",
+    "type": "simple",
+    "parentSku": "SCREW-787E3AF6-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 160.94,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 55
+      }
+    ],
+    "description": "ToughGrip Construction Screws - 3ft. Part of the ToughGrip Construction Screws - Configurable series.",
+    "shortDescription": "ToughGrip Construction Screws - 3ft",
+    "weight": 29.356132850216763,
+    "metaTitle": "ToughGrip Construction Screws - 3ft | BuildRight",
+    "metaDescription": "Shop ToughGrip Construction Screws - 3ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, screws, variant, wood, 3, 1lb"
+  },
+  {
+    "sku": "SCREW-719983CE-CONFIG",
+    "name": "ReliaBuild Heavy Duty Fasteners - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 96.69,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "diameter",
+        "values": [
+          "0.25",
+          "0.375",
+          "0.5"
+        ]
+      },
+      {
+        "attribute": "length",
+        "values": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      {
+        "attribute": "finish",
+        "values": [
+          "zinc",
+          "galvanized",
+          "stainless"
+        ]
+      }
+    ],
+    "description": "Customizable Heavy Duty Fasteners from ReliaBuild. Available in multiple sizes and configurations.",
+    "shortDescription": "Heavy Duty Fasteners - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Heavy Duty Fasteners - Configurable | ReliaBuild",
+    "metaDescription": "Shop customizable Heavy Duty Fasteners from ReliaBuild. Multiple sizes and options available.",
+    "metaKeywords": "configurable, fasteners, screws, ReliaBuild, custom, options"
+  },
+  {
+    "sku": "SCREW-719983CE-4",
+    "name": "ReliaBuild Heavy Duty Fasteners - 4ft",
+    "type": "simple",
+    "parentSku": "SCREW-719983CE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 104.69,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_5"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Heavy Duty Fasteners - 4ft. Part of the ReliaBuild Heavy Duty Fasteners - Configurable series.",
+    "shortDescription": "ReliaBuild Heavy Duty Fasteners - 4ft",
+    "weight": 78.42377725682398,
+    "metaTitle": "ReliaBuild Heavy Duty Fasteners - 4ft | BuildRight",
+    "metaDescription": "Shop ReliaBuild Heavy Duty Fasteners - 4ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, screws, variant, 0.25, 4, zinc"
+  },
+  {
+    "sku": "SCREW-719983CE-4-1",
+    "name": "ReliaBuild Heavy Duty Fasteners - 4ft",
+    "type": "simple",
+    "parentSku": "SCREW-719983CE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 104.69,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Heavy Duty Fasteners - 4ft. Part of the ReliaBuild Heavy Duty Fasteners - Configurable series.",
+    "shortDescription": "ReliaBuild Heavy Duty Fasteners - 4ft",
+    "weight": 84.88786730910087,
+    "metaTitle": "ReliaBuild Heavy Duty Fasteners - 4ft | BuildRight",
+    "metaDescription": "Shop ReliaBuild Heavy Duty Fasteners - 4ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, screws, variant, 0.5, 4, zinc"
+  },
+  {
+    "sku": "SCREW-719983CE-4-2",
+    "name": "ReliaBuild Heavy Duty Fasteners - 4ft",
+    "type": "simple",
+    "parentSku": "SCREW-719983CE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 104.69,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_4"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "description": "ReliaBuild Heavy Duty Fasteners - 4ft. Part of the ReliaBuild Heavy Duty Fasteners - Configurable series.",
+    "shortDescription": "ReliaBuild Heavy Duty Fasteners - 4ft",
+    "weight": 37.69615040751926,
+    "metaTitle": "ReliaBuild Heavy Duty Fasteners - 4ft | BuildRight",
+    "metaDescription": "Shop ReliaBuild Heavy Duty Fasteners - 4ft. Quality construction materials from BuildRight.",
+    "metaKeywords": "fasteners, screws, variant, 0.5, 4, stainless"
+  },
+  {
+    "sku": "SAFE-23B6BDCE-CONFIG",
+    "name": "FastenPro PPE Kit - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 93.04,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_1"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 21
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "size",
+        "values": [
+          "S",
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ]
+      },
+      {
+        "attribute": "type",
+        "values": [
+          "basic",
+          "standard",
+          "premium"
+        ]
+      },
+      {
+        "attribute": "color",
+        "values": [
+          "orange",
+          "yellow",
+          "green"
+        ]
+      }
+    ],
+    "description": "Customizable PPE Kit from FastenPro. Available in multiple sizes and configurations.",
+    "shortDescription": "PPE Kit - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "PPE Kit - Configurable | FastenPro",
+    "metaDescription": "Shop customizable PPE Kit from FastenPro. Multiple sizes and options available.",
+    "metaKeywords": "configurable, safety, equipment, FastenPro, custom, options"
+  },
+  {
+    "sku": "SAFE-23B6BDCE-VAR-2D14D7",
+    "name": "FastenPro PPE Kit - ",
+    "type": "simple",
+    "parentSku": "SAFE-23B6BDCE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 93.04,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_003",
+        "value": "XXL"
+      },
+      {
+        "code": "attr_002",
+        "value": "orange"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_1"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 21
+      }
+    ],
+    "description": "FastenPro PPE Kit - . Part of the FastenPro PPE Kit - Configurable series.",
+    "shortDescription": "FastenPro PPE Kit - ",
+    "weight": 29.385280620486142,
+    "metaTitle": "FastenPro PPE Kit -  | BuildRight",
+    "metaDescription": "Shop FastenPro PPE Kit - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XXL, premium, orange"
+  },
+  {
+    "sku": "SAFE-23B6BDCE-VAR-5A6354",
+    "name": "FastenPro PPE Kit - ",
+    "type": "simple",
+    "parentSku": "SAFE-23B6BDCE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 93.04,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_003",
+        "value": "XXL"
+      },
+      {
+        "code": "attr_002",
+        "value": "green"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 21
+      }
+    ],
+    "description": "FastenPro PPE Kit - . Part of the FastenPro PPE Kit - Configurable series.",
+    "shortDescription": "FastenPro PPE Kit - ",
+    "weight": 6.804586053734918,
+    "metaTitle": "FastenPro PPE Kit -  | BuildRight",
+    "metaDescription": "Shop FastenPro PPE Kit - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XXL, standard, green"
+  },
+  {
+    "sku": "SAFE-23B6BDCE-VAR-7D62AF",
+    "name": "FastenPro PPE Kit - ",
+    "type": "simple",
+    "parentSku": "SAFE-23B6BDCE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 93.04,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_003",
+        "value": "XXL"
+      },
+      {
+        "code": "attr_002",
+        "value": "yellow"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_5"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 21
+      }
+    ],
+    "description": "FastenPro PPE Kit - . Part of the FastenPro PPE Kit - Configurable series.",
+    "shortDescription": "FastenPro PPE Kit - ",
+    "weight": 74.51266396302388,
+    "metaTitle": "FastenPro PPE Kit -  | BuildRight",
+    "metaDescription": "Shop FastenPro PPE Kit - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XXL, basic, yellow"
+  },
+  {
+    "sku": "SAFE-7ABE4E37-CONFIG",
+    "name": "ReliaBuild Safety Harness System - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 107.29,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_1"
+      },
+      {
+        "code": "attr_010",
+        "value": false
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 8
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "size",
+        "values": [
+          "universal",
+          "XL",
+          "XXL"
+        ]
+      },
+      {
+        "attribute": "type",
+        "values": [
+          "basic",
+          "positioning",
+          "retrieval"
+        ]
+      },
+      {
+        "attribute": "weight_capacity",
+        "values": [
+          "310",
+          "400",
+          "420"
+        ]
+      }
+    ],
+    "description": "Customizable Safety Harness System from ReliaBuild. Available in multiple sizes and configurations.",
+    "shortDescription": "Safety Harness System - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Safety Harness System - Configurable | ReliaBuild",
+    "metaDescription": "Shop customizable Safety Harness System from ReliaBuild. Multiple sizes and options available.",
+    "metaKeywords": "configurable, safety, equipment, ReliaBuild, custom, options"
+  },
+  {
+    "sku": "SAFE-7ABE4E37-VAR-DE79F5",
+    "name": "ReliaBuild Safety Harness System - ",
+    "type": "simple",
+    "parentSku": "SAFE-7ABE4E37-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 107.29,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "XL"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_3"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 8
+      }
+    ],
+    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
+    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "weight": 87.52209726838493,
+    "metaTitle": "ReliaBuild Safety Harness System -  | BuildRight",
+    "metaDescription": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XL, positioning, 420"
+  },
+  {
+    "sku": "SAFE-7ABE4E37-VAR-837420",
+    "name": "ReliaBuild Safety Harness System - ",
+    "type": "simple",
+    "parentSku": "SAFE-7ABE4E37-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 107.29,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_7"
+      },
+      {
+        "code": "attr_003",
+        "value": "XL"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 8
+      }
+    ],
+    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
+    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "weight": 77.09877732773255,
+    "metaTitle": "ReliaBuild Safety Harness System -  | BuildRight",
+    "metaDescription": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XL, positioning, 310"
+  },
+  {
+    "sku": "SAFE-7ABE4E37-VAR-EE8462",
+    "name": "ReliaBuild Safety Harness System - ",
+    "type": "simple",
+    "parentSku": "SAFE-7ABE4E37-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 107.29,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_3"
+      },
+      {
+        "code": "attr_003",
+        "value": "XL"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 8
+      }
+    ],
+    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
+    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "weight": 42.29831369467933,
+    "metaTitle": "ReliaBuild Safety Harness System -  | BuildRight",
+    "metaDescription": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XL, basic, 400"
+  },
+  {
+    "sku": "SAFE-7ABE4E37-VAR-6C19D7",
+    "name": "ReliaBuild Safety Harness System - ",
+    "type": "simple",
+    "parentSku": "SAFE-7ABE4E37-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 107.29,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_003",
+        "value": "XL"
+      },
+      {
+        "code": "attr_007",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 8
+      }
+    ],
+    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
+    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "weight": 21.380751736639418,
+    "metaTitle": "ReliaBuild Safety Harness System -  | BuildRight",
+    "metaDescription": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XL, retrieval, 310"
+  },
+  {
+    "sku": "SAFE-7ABE4E37-VAR-F776A7",
+    "name": "ReliaBuild Safety Harness System - ",
+    "type": "simple",
+    "parentSku": "SAFE-7ABE4E37-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 107.29,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_003",
+        "value": "XXL"
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_1"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 8
+      }
+    ],
+    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
+    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "weight": 97.13225666998525,
+    "metaTitle": "ReliaBuild Safety Harness System -  | BuildRight",
+    "metaDescription": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, XXL, positioning, 420"
+  },
+  {
+    "sku": "SAFE-4C04F304-CONFIG",
+    "name": "DuraBuilt Protective Eyewear - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 83.2,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 1
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "type",
+        "values": [
+          "safety-glasses",
+          "goggles",
+          "face-shield"
+        ]
+      },
+      {
+        "attribute": "lens",
+        "values": [
+          "clear",
+          "tinted",
+          "anti-fog"
+        ]
+      },
+      {
+        "attribute": "standard",
+        "values": [
+          "Z87.1",
+          "Z87.1+"
+        ]
+      }
+    ],
+    "description": "Customizable Protective Eyewear from DuraBuilt. Available in multiple sizes and configurations.",
+    "shortDescription": "Protective Eyewear - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Protective Eyewear - Configurable | DuraBuilt",
+    "metaDescription": "Shop customizable Protective Eyewear from DuraBuilt. Multiple sizes and options available.",
+    "metaKeywords": "configurable, safety, equipment, DuraBuilt, custom, options"
+  },
+  {
+    "sku": "SAFE-4C04F304-VAR-E20AD7",
+    "name": "DuraBuilt Protective Eyewear - ",
+    "type": "simple",
+    "parentSku": "SAFE-4C04F304-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 83.2,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_6"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_1"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 1
+      }
+    ],
+    "description": "DuraBuilt Protective Eyewear - . Part of the DuraBuilt Protective Eyewear - Configurable series.",
+    "shortDescription": "DuraBuilt Protective Eyewear - ",
+    "weight": 35.45773924815363,
+    "metaTitle": "DuraBuilt Protective Eyewear -  | BuildRight",
+    "metaDescription": "Shop DuraBuilt Protective Eyewear - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, safety-glasses, tinted, Z87.1+"
+  },
+  {
+    "sku": "SAFE-4C04F304-VAR-5A2DEB",
+    "name": "DuraBuilt Protective Eyewear - ",
+    "type": "simple",
+    "parentSku": "SAFE-4C04F304-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 83.2,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 1
+      }
+    ],
+    "description": "DuraBuilt Protective Eyewear - . Part of the DuraBuilt Protective Eyewear - Configurable series.",
+    "shortDescription": "DuraBuilt Protective Eyewear - ",
+    "weight": 20.299338705511456,
+    "metaTitle": "DuraBuilt Protective Eyewear -  | BuildRight",
+    "metaDescription": "Shop DuraBuilt Protective Eyewear - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, face-shield, anti-fog, Z87.1+"
+  },
+  {
+    "sku": "SAFE-4C04F304-VAR-7B0626",
+    "name": "DuraBuilt Protective Eyewear - ",
+    "type": "simple",
+    "parentSku": "SAFE-4C04F304-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 83.2,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 1
+      }
+    ],
+    "description": "DuraBuilt Protective Eyewear - . Part of the DuraBuilt Protective Eyewear - Configurable series.",
+    "shortDescription": "DuraBuilt Protective Eyewear - ",
+    "weight": 88.85222736925456,
+    "metaTitle": "DuraBuilt Protective Eyewear -  | BuildRight",
+    "metaDescription": "Shop DuraBuilt Protective Eyewear - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, face-shield, clear, Z87.1"
+  },
+  {
+    "sku": "SAFE-EC4751EE-CONFIG",
+    "name": "ToughGrip Hand Protection - Configurable",
+    "type": "configurable",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 191.71,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_4"
+      },
+      {
+        "code": "attr_003",
+        "value": "size_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 49
+      }
+    ],
+    "configurationDimensions": [
+      {
+        "attribute": "size",
+        "values": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      },
+      {
+        "attribute": "material",
+        "values": [
+          "leather",
+          "nitrile",
+          "kevlar"
+        ]
+      },
+      {
+        "attribute": "type",
+        "values": [
+          "general",
+          "chemical",
+          "cut-resistant"
+        ]
+      }
+    ],
+    "description": "Customizable Hand Protection from ToughGrip. Available in multiple sizes and configurations.",
+    "shortDescription": "Hand Protection - Multiple Options Available",
+    "weight": 0,
+    "metaTitle": "Hand Protection - Configurable | ToughGrip",
+    "metaDescription": "Shop customizable Hand Protection from ToughGrip. Multiple sizes and options available.",
+    "metaKeywords": "configurable, safety, equipment, ToughGrip, custom, options"
+  },
+  {
+    "sku": "SAFE-EC4751EE-VAR-A52E96",
+    "name": "ToughGrip Hand Protection - ",
+    "type": "simple",
+    "parentSku": "SAFE-EC4751EE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 191.71,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "S"
+      },
+      {
+        "code": "attr_001",
+        "value": "kevlar"
+      },
+      {
+        "code": "attr_002",
+        "value": false
+      },
+      {
+        "code": "attr_008",
+        "value": "warranty_option_1"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 49
+      }
+    ],
+    "description": "ToughGrip Hand Protection - . Part of the ToughGrip Hand Protection - Configurable series.",
+    "shortDescription": "ToughGrip Hand Protection - ",
+    "weight": 11.187706294556943,
+    "metaTitle": "ToughGrip Hand Protection -  | BuildRight",
+    "metaDescription": "Shop ToughGrip Hand Protection - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, S, kevlar, general"
+  },
+  {
+    "sku": "SAFE-EC4751EE-VAR-FEC93E",
+    "name": "ToughGrip Hand Protection - ",
+    "type": "simple",
+    "parentSku": "SAFE-EC4751EE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 191.71,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_5"
+      },
+      {
+        "code": "attr_003",
+        "value": "L"
+      },
+      {
+        "code": "attr_001",
+        "value": "leather"
+      },
+      {
+        "code": "attr_009",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 49
+      }
+    ],
+    "description": "ToughGrip Hand Protection - . Part of the ToughGrip Hand Protection - Configurable series.",
+    "shortDescription": "ToughGrip Hand Protection - ",
+    "weight": 89.86125458258263,
+    "metaTitle": "ToughGrip Hand Protection -  | BuildRight",
+    "metaDescription": "Shop ToughGrip Hand Protection - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, L, leather, cut-resistant"
+  },
+  {
+    "sku": "SAFE-EC4751EE-VAR-3584E3",
+    "name": "ToughGrip Hand Protection - ",
+    "type": "simple",
+    "parentSku": "SAFE-EC4751EE-CONFIG",
+    "status": "enabled",
+    "visibility": "catalog",
+    "price": 191.71,
+    "attributes": [
+      {
+        "code": "attr_001",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "attr_006",
+        "value": "brand_option_2"
+      },
+      {
+        "code": "attr_003",
+        "value": "M"
+      },
+      {
+        "code": "attr_001",
+        "value": "leather"
+      },
+      {
+        "code": "attr_005",
+        "value": "dimensions_option_4"
+      },
+      {
+        "code": "attr_010",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 49
+      }
+    ],
+    "description": "ToughGrip Hand Protection - . Part of the ToughGrip Hand Protection - Configurable series.",
+    "shortDescription": "ToughGrip Hand Protection - ",
+    "weight": 6.403628588376394,
+    "metaTitle": "ToughGrip Hand Protection -  | BuildRight",
+    "metaDescription": "Shop ToughGrip Hand Protection - . Quality construction materials from BuildRight.",
+    "metaKeywords": "safety, equipment, variant, M, leather, cut-resistant"
+  }
+]

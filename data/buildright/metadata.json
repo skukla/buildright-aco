@@ -1,0 +1,186 @@
+[
+  {
+    "attributeId": "attr_001",
+    "label": "Material",
+    "type": "text",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 1
+  },
+  {
+    "attributeId": "attr_002",
+    "label": "Color",
+    "type": "boolean",
+    "isRequired": false,
+    "defaultValue": false,
+    "sortOrder": 2
+  },
+  {
+    "attributeId": "attr_003",
+    "label": "Size",
+    "type": "multiselect",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 3,
+    "options": [
+      {
+        "value": "size_option_1",
+        "label": "4XL"
+      },
+      {
+        "value": "size_option_2",
+        "label": "XL"
+      },
+      {
+        "value": "size_option_3",
+        "label": "L"
+      },
+      {
+        "value": "size_option_4",
+        "label": "S"
+      },
+      {
+        "value": "size_option_5",
+        "label": "2XL"
+      },
+      {
+        "value": "size_option_6",
+        "label": "XS"
+      },
+      {
+        "value": "size_option_7",
+        "label": "3XL"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_004",
+    "label": "Weight",
+    "type": "text",
+    "isRequired": true,
+    "defaultValue": null,
+    "sortOrder": 4
+  },
+  {
+    "attributeId": "attr_005",
+    "label": "Dimensions",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": "dimensions_option_1",
+    "sortOrder": 5,
+    "options": [
+      {
+        "value": "dimensions_option_1",
+        "label": "Option 1"
+      },
+      {
+        "value": "dimensions_option_2",
+        "label": "Option 2"
+      },
+      {
+        "value": "dimensions_option_3",
+        "label": "Option 3"
+      },
+      {
+        "value": "dimensions_option_4",
+        "label": "Option 4"
+      },
+      {
+        "value": "dimensions_option_5",
+        "label": "Option 5"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_006",
+    "label": "Brand",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": "brand_option_1",
+    "sortOrder": 6,
+    "options": [
+      {
+        "value": "brand_option_1",
+        "label": "Option 1"
+      },
+      {
+        "value": "brand_option_2",
+        "label": "Option 2"
+      },
+      {
+        "value": "brand_option_3",
+        "label": "Option 3"
+      },
+      {
+        "value": "brand_option_4",
+        "label": "Option 4"
+      },
+      {
+        "value": "brand_option_5",
+        "label": "Option 5"
+      },
+      {
+        "value": "brand_option_6",
+        "label": "Option 6"
+      },
+      {
+        "value": "brand_option_7",
+        "label": "Option 7"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_007",
+    "label": "Model",
+    "type": "boolean",
+    "isRequired": false,
+    "defaultValue": false,
+    "sortOrder": 7
+  },
+  {
+    "attributeId": "attr_008",
+    "label": "Warranty",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": "warranty_option_1",
+    "sortOrder": 8,
+    "options": [
+      {
+        "value": "warranty_option_1",
+        "label": "Option 1"
+      },
+      {
+        "value": "warranty_option_2",
+        "label": "Option 2"
+      },
+      {
+        "value": "warranty_option_3",
+        "label": "Option 3"
+      },
+      {
+        "value": "warranty_option_4",
+        "label": "Option 4"
+      },
+      {
+        "value": "warranty_option_5",
+        "label": "Option 5"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_009",
+    "label": "Features",
+    "type": "boolean",
+    "isRequired": false,
+    "defaultValue": false,
+    "sortOrder": 9
+  },
+  {
+    "attributeId": "attr_010",
+    "label": "Specifications",
+    "type": "boolean",
+    "isRequired": false,
+    "defaultValue": false,
+    "sortOrder": 10
+  }
+]

@@ -15,16 +15,22 @@ Implement pricing data generation scripts to create a hierarchical price book st
 
 ### Price Book Generation Tests
 
-- [ ] **Test: Generate 12 price books in 4-level hierarchy**
+- [ ] **Test: Generate 4 business-type price books**
   - **Given:** Empty price books data structure
   - **When:** generate-price-books.js executes
-  - **Then:** Creates exactly 12 price books with parent-child relationships forming 4 levels
+  - **Then:** Creates exactly 4 price books with business-type structure (flat, no hierarchy)
   - **File:** `tests/unit/scripts/generate-price-books.test.js`
 
-- [ ] **Test: Validate price book hierarchy integrity**
-  - **Given:** Generated price books with parent references
-  - **When:** Validation runs
-  - **Then:** All parent IDs reference existing price books, no circular references, depth <= 4
+- [ ] **Test: Validate price book business-type fields**
+  - **Given:** Generated price books
+  - **When:** Field validation runs
+  - **Then:** All books have businessType (RETAIL, CONTRACTOR, COMMERCIAL, WHOLESALE) and discountPercentage (0, 0.05, 0.10, 0.15)
+  - **File:** `tests/unit/scripts/generate-price-books.test.js`
+
+- [ ] **Test: Verify flat structure (no hierarchy)**
+  - **Given:** Generated price books
+  - **When:** Structure validation runs
+  - **Then:** No books have parentId, level, or tier fields
   - **File:** `tests/unit/scripts/generate-price-books.test.js`
 
 - [ ] **Test: Price book required fields present**
@@ -35,10 +41,10 @@ Implement pricing data generation scripts to create a hierarchical price book st
 
 ### Hierarchical Pricing Generation Tests
 
-- [ ] **Test: Generate 1,500+ prices**
-  - **Given:** 125 valid SKUs and 12 price books
+- [ ] **Test: Generate 500+ prices**
+  - **Given:** 125 valid SKUs and 4 price books
   - **When:** generate-prices-hierarchical.js executes
-  - **Then:** Creates at least 1,500 price entries (12 books × 125 products minimum)
+  - **Then:** Creates at least 500 price entries (4 books × 125 products minimum, actual ~1,418 with tier/volume pricing)
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
 - [ ] **Test: All prices reference valid SKUs**
@@ -56,73 +62,74 @@ Implement pricing data generation scripts to create a hierarchical price book st
 ### Regional Adjustment Tests
 
 - [ ] **Test: West region lumber products get +3% adjustment**
-  - **Given:** Lumber category products and West region price book
-  - **When:** Regional adjustments applied
-  - **Then:** Lumber prices in West region are exactly 3% higher than base prices
+  - **Given:** Lumber category products and price book with region: 'WEST'
+  - **When:** Regional adjustments applied via applyRegionalAdjustment()
+  - **Then:** Lumber prices in West region are exactly 3% higher than discounted price (applied AFTER business-type discount)
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
 - [ ] **Test: Non-lumber products unchanged in West region**
-  - **Given:** Non-lumber products and West region price book
+  - **Given:** Non-lumber products and price book with region: 'WEST'
   - **When:** Regional adjustments applied
-  - **Then:** Non-lumber prices match base prices (no adjustment)
+  - **Then:** Non-lumber prices have only business-type discount, no regional adjustment
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
-- [ ] **Test: Other regions have no adjustments**
-  - **Given:** Products and non-West region price books
-  - **When:** Regional adjustments applied
-  - **Then:** Prices match base prices exactly
+- [ ] **Test: Business-type discounts apply before regional adjustments**
+  - **Given:** West lumber product with US_CONTRACTOR price book (5% discount)
+  - **When:** Price calculation runs
+  - **Then:** Final price = basePrice × 0.95 × 1.03
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
 ### Tier Pricing Tests
 
 - [ ] **Test: Generate tier pricing for eligible products**
-  - **Given:** Products marked for tier pricing
+  - **Given:** Products with tierPricing enabled
   - **When:** Tier pricing generation runs
-  - **Then:** Creates multiple price points per SKU (e.g., 1-10, 11-50, 51+ units)
+  - **Then:** Creates tier prices with additional discounts (e.g., 100+ units get 3% additional off, 500+ get 8% additional off)
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
 - [ ] **Test: Tier pricing decreases with volume**
   - **Given:** Generated tier prices for a SKU
   - **When:** Tier validation runs
-  - **Then:** Unit price decreases as quantity tier increases
+  - **Then:** Unit price decreases as quantity tier increases (business discount + tier discount stacked)
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
 ### Volume Discount Tests
 
 - [ ] **Test: Volume discounts applied to bulk purchases**
-  - **Given:** Products eligible for volume discounts
+  - **Given:** Products with volumeDiscounts enabled
   - **When:** Volume discount calculation runs
-  - **Then:** Discount percentage increases with quantity (e.g., 5% at 100 units, 10% at 500 units)
+  - **Then:** Creates volume discount entries with additional discounts at specified quantity thresholds
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
-- [ ] **Test: Volume discounts within business rules**
-  - **Given:** Generated volume discounts
-  - **When:** Business rule validation runs
-  - **Then:** Discounts <= 25% max, apply only to eligible categories
+- [ ] **Test: Volume discounts stack with business-type discounts**
+  - **Given:** Generated volume discounts for business-type price books
+  - **When:** Price validation runs
+  - **Then:** Volume discount applied on top of business-type discount (both discounts active)
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
-### Price Inheritance Chain Tests
+### Business-Type Discount Tests
 
-- [ ] **Test: Child price books inherit from parents**
-  - **Given:** Price books with parent-child relationships
-  - **When:** Inheritance validation runs
-  - **Then:** Child book without explicit price uses parent's price
+- [ ] **Test: Retail price book has 0% discount**
+  - **Given:** US_RETAIL price book
+  - **When:** Price generation runs
+  - **Then:** Prices match base prices exactly (no discount applied)
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
-- [ ] **Test: Child prices override parent prices**
-  - **Given:** Child price book with explicit price for SKU
-  - **When:** Price lookup runs
-  - **Then:** Child's explicit price used, not parent's
+- [ ] **Test: All business-type discounts apply correctly**
+  - **Given:** All 4 price books (RETAIL, CONTRACTOR, COMMERCIAL, WHOLESALE)
+  - **When:** Price generation runs for same product
+  - **Then:** Discounts are 0%, 5%, 10%, 15% respectively
   - **File:** `tests/unit/scripts/generate-prices-hierarchical.test.js`
 
 ## Files to Create/Modify
 
-- [ ] `scripts/generate-price-books.js` - Generate 12 price books in 4-level hierarchy
-- [ ] `scripts/generate-prices-hierarchical.js` - Generate 1,500+ prices with all pricing logic
+- [ ] `scripts/generate-price-books.js` - Generate 4 price books in flat business-type structure
+- [ ] `scripts/generate-prices-hierarchical.js` - Generate ~1,418 prices with business-type discounts, regional adjustments, tier and volume pricing
+- [ ] `utils/price-calculator.js` - Utility functions for business-type discounts and regional adjustments
 - [ ] `tests/unit/scripts/generate-price-books.test.js` - Unit tests for price book generation
 - [ ] `tests/unit/scripts/generate-prices-hierarchical.test.js` - Unit tests for price generation
-- [ ] `data/generated/price-books.json` - Output: Price book hierarchy data
-- [ ] `data/generated/prices.json` - Output: Comprehensive pricing data
+- [ ] `data/buildright/price-books.json` - Output: 4 business-type price books
+- [ ] `data/buildright/prices.json` - Output: Comprehensive pricing data
 
 ## Implementation Details
 
@@ -547,29 +554,33 @@ module.exports = { generatePricesHierarchical, validatePriceReferences, generate
 
 After completing this step:
 
-- **12 price books generated** in 4-level hierarchy (Base → Regional → Tier → Promotional)
-- **1,500+ prices created** covering all products across all price books
-- **Regional adjustments working** (West lumber products +3% higher)
-- **Tier pricing implemented** for eligible products with volume-based discounts
+- **4 price books generated** in flat business-type structure (US_RETAIL, US_CONTRACTOR, US_COMMERCIAL, US_WHOLESALE)
+- **~1,418 prices created** covering all products across all price books (712 standard, 652 tier, 54 volume)
+- **Business-type discounts working** (0%, 5%, 10%, 15% respectively)
+- **Regional adjustments working** (West lumber products +3% higher, applied AFTER business discount)
+- **Tier pricing implemented** for eligible products with volume-based additional discounts
 - **Volume discounts applied** to bulk-eligible products
-- **Price inheritance validated** - child books correctly inherit or override parent prices
 - **All references validated** - no orphaned prices, all SKUs and price books exist
 - **Tests passing** - 100% of price generation and validation tests green
+- **Deterministic output** - Same SEED produces identical price files
 
 ## Acceptance Criteria
 
 - [ ] All tests passing for this step (price books + prices generation)
-- [ ] `data/generated/price-books.json` contains exactly 12 price books
-- [ ] Price book hierarchy validated: 4 levels, no circular references
-- [ ] `data/generated/prices.json` contains at least 1,500 price entries
-- [ ] All prices reference valid SKUs from `all-products.json`
+- [ ] `data/buildright/price-books.json` contains exactly 4 price books
+- [ ] Price books have flat structure: no parentId, level, or tier fields
+- [ ] All price books have businessType field (RETAIL, CONTRACTOR, COMMERCIAL, WHOLESALE)
+- [ ] All price books have correct discountPercentage (0, 0.05, 0.10, 0.15)
+- [ ] `data/buildright/prices.json` contains at least 500 price entries (actual ~1,418)
+- [ ] All prices reference valid SKUs from products data
 - [ ] All prices reference valid price book IDs from `price-books.json`
-- [ ] West region lumber prices are 3% higher than base prices
+- [ ] Business-type discounts apply correctly (0%, 5%, 10%, 15%)
+- [ ] West region lumber prices are 3% higher than discounted prices (adjustment applied AFTER business discount)
 - [ ] Tier pricing decreases unit price as volume increases
-- [ ] Volume discounts apply correctly (5%, 10%, 15% at thresholds)
-- [ ] Price inheritance chains validated (children inherit from parents)
-- [ ] Code follows project style guide (no console.log, proper error handling)
-- [ ] Coverage ≥ 80% for new code
+- [ ] Volume discounts apply correctly and stack with business-type discounts
+- [ ] Deterministic output: same SEED produces identical files
+- [ ] Code follows project style guide (ES modules, no console.log, proper error handling)
+- [ ] Coverage ≥ 85% for new code
 
 ## Estimated Time
 

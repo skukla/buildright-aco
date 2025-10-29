@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ACO Metadata Attributes Schema",
+  "description": "Schema for validating ACO catalog metadata attribute definitions",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["attributeId", "label", "type", "isRequired", "sortOrder"],
+    "properties": {
+      "attributeId": {
+        "type": "string",
+        "pattern": "^attr_[0-9]{3}$",
+        "description": "Unique identifier for the attribute"
+      },
+      "label": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Display label for the attribute"
+      },
+      "type": {
+        "type": "string",
+        "enum": ["text", "select", "multiselect", "boolean", "number", "date"],
+        "description": "Data type of the attribute"
+      },
+      "isRequired": {
+        "type": "boolean",
+        "description": "Whether this attribute is required for products"
+      },
+      "defaultValue": {
+        "description": "Default value for the attribute",
+        "oneOf": [
+          { "type": "string" },
+          { "type": "number" },
+          { "type": "boolean" },
+          { "type": "null" }
+        ]
+      },
+      "sortOrder": {
+        "type": "number",
+        "minimum": 1,
+        "description": "Display order for the attribute"
+      },
+      "options": {
+        "type": "array",
+        "description": "Available options for select/multiselect attributes",
+        "items": {
+          "type": "object",
+          "required": ["value", "label"],
+          "properties": {
+            "value": {
+              "type": "string",
+              "minLength": 1
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "description": {
+        "type": "string",
+        "description": "Optional description of the attribute"
+      },
+      "validation": {
+        "type": "object",
+        "description": "Optional validation rules",
+        "properties": {
+          "minLength": { "type": "number" },
+          "maxLength": { "type": "number" },
+          "pattern": { "type": "string" },
+          "min": { "type": "number" },
+          "max": { "type": "number" }
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "minItems": 1,
+  "uniqueItems": true
+}

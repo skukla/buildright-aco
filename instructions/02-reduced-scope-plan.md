@@ -32,31 +32,72 @@ I'll maintain all the innovative concepts from the comprehensive brief but scale
 
 ***
 
-### Price Books: 54+ → **12 Price Books**
+### Price Books: 54+ → **4 Price Books**
 
-#### Level 1: Base Price Books (2)
+**Simplified Business-Type Structure:**
 
-1. **US-Base-Contract** (USD)
-2. **US-Base-Retail** (USD)
+1. **US-Retail** (0% discount) - Walk-in customers, hardware stores
+2. **US-Contractor** (5% discount) - Licensed contractors, small builders
+3. **US-Commercial** (10% discount) - Commercial construction companies
+4. **US-Wholesale** (15% discount) - High-volume accounts, large GCs
 
-#### Level 2: Regional Price Books (4)
+**Regional Pricing Adjustments:** Applied in price calculation logic (e.g., +3% West lumber surcharge), not via separate price books.
 
-3. **West-Region-Contract** (parent: US-Base-Contract)
-4. **East-Region-Contract** (parent: US-Base-Contract)
-5. **West-Region-Retail** (parent: US-Base-Retail)
-6. **East-Region-Retail** (parent: US-Base-Retail)
+**Customer Group Mapping:**
+- Each **Company** (Adobe Commerce B2B company entity) is assigned to one business type
+- Price book determines base pricing for all company locations
+- Discounts stack with volume tiers where applicable
 
-#### Level 3: Division Price Books (4)
+***
 
-7. **West-Commercial-Contract** (parent: West-Region-Contract)
-8. **West-Residential-Contract** (parent: West-Region-Contract)
-9. **East-Commercial-Contract** (parent: East-Region-Contract)
-10. **East-Residential-Contract** (parent: East-Region-Contract)
+### B2B Company & Location Structure
 
-#### Level 4: Customer Segment Price Books (2)
+BuildRight Solutions sells to **Companies**, and each Company has multiple **Locations** (physical storefronts, branches, or job sites).
 
-11. **West-Commercial-GC-Tier1** (parent: West-Commercial-Contract)
-12. **East-Commercial-GC-Tier1** (parent: East-Commercial-Contract)
+**Organizational Hierarchy:**
+
+```
+BuildRight Solutions (Supplier)
+    ↓
+Companies (Business Accounts)
+    ↓
+Locations (Branches/Stores/Sites)
+    ↓
+Buyers (Individual users at each location)
+```
+
+**Example Structure:**
+
+**Company:** Ace Hardware Corporation
+- **Business Type:** US-Retail (0% discount)
+- **Locations:**
+  - Ace Hardware - Phoenix Downtown (buyers: 3 users)
+  - Ace Hardware - Scottsdale (buyers: 2 users)
+  - Ace Hardware - Tempe (buyers: 2 users)
+
+**Company:** Southwest Builders LLC
+- **Business Type:** US-Contractor (5% discount)
+- **Locations:**
+  - Southwest Builders - Main Office (buyers: 5 users)
+  - Southwest Builders - North Yard (buyers: 2 users)
+
+**Company:** Metro Commercial Construction
+- **Business Type:** US-Commercial (10% discount)
+- **Locations:**
+  - Metro Commercial - HQ (buyers: 8 users)
+  - Metro Commercial - Project Site Alpha (buyers: 3 users)
+  - Metro Commercial - Project Site Beta (buyers: 3 users)
+
+**Adobe Commerce B2B Mapping:**
+- **Company** = Adobe Commerce B2B Company entity
+- **Location** = Company Team (sub-organization within company)
+- **Buyer** = Company User (assigned to one or more teams)
+- **Price Book** = Assigned at Company level, inherited by all locations/teams
+
+**Demo Dataset:**
+- **8 Companies** (2 per business type)
+- **20 Total Locations** (2-4 locations per company)
+- **50 Total Buyers** (2-5 buyers per location)
 
 ***
 

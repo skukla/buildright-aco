@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ACO Category Hierarchy Schema",
+  "description": "Schema for validating ACO catalog category hierarchy",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["categoryId", "name", "isActive", "sortOrder", "level"],
+    "properties": {
+      "categoryId": {
+        "type": "string",
+        "pattern": "^cat_[0-9]{3}$",
+        "description": "Unique identifier for the category"
+      },
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Display name for the category"
+      },
+      "parentId": {
+        "type": ["string", "null"],
+        "pattern": "^(cat_[0-9]{3})?$",
+        "description": "ID of parent category, null for root categories"
+      },
+      "isActive": {
+        "type": "boolean",
+        "description": "Whether this category is active/visible"
+      },
+      "sortOrder": {
+        "type": "number",
+        "minimum": 1,
+        "description": "Display order within parent category"
+      },
+      "level": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "description": "Depth level in hierarchy (0 = root)"
+      },
+      "description": {
+        "type": "string",
+        "description": "Optional category description"
+      },
+      "urlKey": {
+        "type": "string",
+        "pattern": "^[a-z0-9-]+$",
+        "description": "URL-friendly category key"
+      },
+      "metaTitle": {
+        "type": "string",
+        "description": "SEO meta title"
+      },
+      "metaDescription": {
+        "type": "string",
+        "description": "SEO meta description"
+      }
+    },
+    "additionalProperties": false
+  },
+  "minItems": 1,
+  "uniqueItems": true
+}
