@@ -18,9 +18,13 @@ describe('Utils Barrel Export', () => {
     expect(typeof utils.createLogger).toBe('function');
     expect(typeof utils.sanitizeLogData).toBe('function');
 
-    // ACO Client exports
-    expect(utils.AcoClient).toBeDefined();
-    expect(typeof utils.AcoClient.getInstance).toBe('function');
+    // ACO Client exports (SDK-based functions)
+    expect(typeof utils.createACOClient).toBe('function');
+    expect(typeof utils.getACOClient).toBe('function');
+    expect(typeof utils.resetACOClient).toBe('function');
+    expect(typeof utils.getGraphQLEndpoint).toBe('function');
+    expect(typeof utils.getACOUIUrl).toBe('function');
+    expect(typeof utils.batchProcess).toBe('function');
 
     // Batch Processor exports
     expect(utils.BatchProcessor).toBeDefined();

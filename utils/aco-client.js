@@ -29,7 +29,7 @@
 
 import { createClient } from '@adobe-commerce/aco-ts-sdk';
 import dotenv from 'dotenv';
-import { logger } from './logger.js';
+import logger from './logger.js';
 
 // Load environment variables
 dotenv.config();

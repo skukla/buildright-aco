@@ -111,7 +111,7 @@ export function loadConfig() {
     ACO_API_KEY: process.env.ACO_API_KEY,
     ACO_ENVIRONMENT_ID: process.env.ACO_ENVIRONMENT_ID,
     ACO_API_BASE_URL: process.env.ACO_API_BASE_URL,
-    LOG_LEVEL: process.env.LOG_LEVEL || DEFAULTS.LOG_LEVEL
+    LOG_LEVEL: (process.env.LOG_LEVEL || DEFAULTS.LOG_LEVEL).toLowerCase()
   };
 
   // Parse numeric values with defaults

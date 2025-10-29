@@ -24,7 +24,14 @@ export { loadConfig, validateConfigWithDefaults } from './config-loader.js';
 export { createLogger, sanitizeLogData } from './logger.js';
 
 // ACO Client
-export { AcoClient } from './aco-client.js';
+export {
+  createACOClient,
+  getACOClient,
+  resetACOClient,
+  getGraphQLEndpoint,
+  getACOUIUrl,
+  batchProcess
+} from './aco-client.js';
 
 // Batch Processing
 export { BatchProcessor } from './batch-processor.js';

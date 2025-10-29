@@ -19,7 +19,7 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 import { getGraphQLEndpoint } from './aco-client.js';
-import { logger } from './logger.js';
+import logger from './logger.js';
 
 // Load environment variables
 dotenv.config();
