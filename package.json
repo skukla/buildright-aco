@@ -46,6 +46,7 @@
     "@adobe-commerce/aco-ts-sdk": "^1.1.0",
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "axios": "^1.6.0",
     "dotenv": "^16.3.1",
     "winston": "^3.11.0"
   },
