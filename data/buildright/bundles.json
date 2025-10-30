@@ -23,19 +23,19 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_6"
-        ]
-      },
-      {
-        "code": "attr_003",
-        "values": [
-          "size_option_2"
+          "brand_option_4"
         ]
       },
       {
         "code": "attr_007",
         "values": [
-          "true"
+          "model_option_2"
+        ]
+      },
+      {
+        "code": "attr_013",
+        "values": [
+          "certification_option_4"
         ]
       }
     ],
@@ -80,7 +80,7 @@
             "userDefinedQty": false
           },
           {
-            "sku": "PLY-EB739D1A-0.625-4X8",
+            "sku": "PLY-EB739D1A-0.75-4X9",
             "qty": 8,
             "userDefinedQty": false
           }
@@ -162,19 +162,19 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_6"
+          "brand_option_4"
         ]
       },
       {
-        "code": "attr_005",
+        "code": "attr_010",
         "values": [
-          "dimensions_option_4"
+          "specifications_option_5"
         ]
       },
       {
-        "code": "attr_009",
+        "code": "attr_018",
         "values": [
-          "false"
+          "Premium Bundle"
         ]
       }
     ],
@@ -219,7 +219,7 @@
             "userDefinedQty": false
           },
           {
-            "sku": "PLY-EB739D1A-0.5-4X9",
+            "sku": "PLY-EB739D1A-0.5-4X8",
             "qty": 6,
             "userDefinedQty": false
           }
@@ -264,8 +264,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Foundation Materials Bundle",
-    "slug": "fastenpro-foundation-materials-bundle",
+    "name": "MaxStrength Foundation Materials Bundle",
+    "slug": "maxstrength-foundation-materials-bundle",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -283,32 +283,26 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_1"
+          "brand_option_2"
         ]
       },
       {
-        "code": "attr_008",
+        "code": "attr_015",
         "values": [
-          "warranty_option_1"
+          "Premium Bundle"
         ]
       },
       {
-        "code": "attr_003",
+        "code": "attr_014",
         "values": [
-          "size_option_7"
-        ]
-      },
-      {
-        "code": "attr_005",
-        "values": [
-          "dimensions_option_2"
+          "style_option_1"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 31
+        "position": 84
       }
     ],
     "bundles": [
@@ -359,7 +353,7 @@
         "defaultItemSkus": [],
         "items": [
           {
-            "sku": "LBR-D0414F1E",
+            "sku": "LBR-0C7A6DBC",
             "qty": 12,
             "userDefinedQty": false
           },
@@ -372,13 +366,13 @@
       }
     ],
     "metaTags": {
-      "title": "Foundation Materials Bundle Bundle | FastenPro",
-      "description": "Shop the Foundation Materials Bundle bundle from FastenPro. Complete package for your construction needs.",
+      "title": "Foundation Materials Bundle Bundle | MaxStrength",
+      "description": "Shop the Foundation Materials Bundle bundle from MaxStrength. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "structural",
-        "FastenPro",
+        "MaxStrength",
         "construction",
         "bulk"
       ]
@@ -389,8 +383,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Complete Wall System",
-    "slug": "reliabuild-complete-wall-system",
+    "name": "SafeGuard Complete Wall System",
+    "slug": "safeguard-complete-wall-system",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -408,32 +402,38 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_6"
+          "brand_option_2"
         ]
       },
       {
         "code": "attr_007",
         "values": [
-          "true"
+          "model_option_2"
         ]
       },
       {
-        "code": "attr_009",
+        "code": "attr_016",
         "values": [
-          "false"
+          "season_option_5"
         ]
       },
       {
-        "code": "attr_002",
+        "code": "attr_014",
         "values": [
-          "true"
+          "style_option_4"
+        ]
+      },
+      {
+        "code": "attr_017",
+        "values": [
+          "Premium Bundle"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 23
+        "position": 40
       }
     ],
     "bundles": [
@@ -462,11 +462,11 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "STUD-95E9D258"
+          "STUD-984F2EC0"
         ],
         "items": [
           {
-            "sku": "STUD-95E9D258",
+            "sku": "STUD-984F2EC0",
             "qty": 10,
             "userDefinedQty": false
           },
@@ -491,7 +491,7 @@
             "userDefinedQty": false
           },
           {
-            "sku": "DRYWALL-2507D228",
+            "sku": "DRYWALL-A8217B48",
             "qty": 20,
             "userDefinedQty": false
           }
@@ -509,7 +509,7 @@
             "userDefinedQty": false
           },
           {
-            "sku": "SCREW-4DC6B336",
+            "sku": "SCREW-D305E19A",
             "qty": 2,
             "userDefinedQty": false
           }
@@ -517,13 +517,13 @@
       }
     ],
     "metaTags": {
-      "title": "Complete Wall System Bundle | ReliaBuild",
-      "description": "Shop the Complete Wall System bundle from ReliaBuild. Complete package for your construction needs.",
+      "title": "Complete Wall System Bundle | SafeGuard",
+      "description": "Shop the Complete Wall System bundle from SafeGuard. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "framing",
-        "ReliaBuild",
+        "SafeGuard",
         "construction",
         "bulk"
       ]
@@ -534,8 +534,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "BuildRight Pro Bathroom Renovation Kit",
-    "slug": "buildright-pro-bathroom-renovation-kit",
+    "name": "StructureMaster Bathroom Renovation Kit",
+    "slug": "structuremaster-bathroom-renovation-kit",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -553,26 +553,26 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_5"
+          "brand_option_2"
         ]
       },
       {
-        "code": "attr_009",
+        "code": "attr_003",
         "values": [
-          "false"
+          "size_option_6"
         ]
       },
       {
-        "code": "attr_008",
+        "code": "attr_015",
         "values": [
-          "warranty_option_5"
+          "Premium Bundle"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 81
+        "position": 47
       }
     ],
     "bundles": [
@@ -601,11 +601,11 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "STUD-B6E3E673"
+          "STUD-44C79532"
         ],
         "items": [
           {
-            "sku": "STUD-B6E3E673",
+            "sku": "STUD-44C79532",
             "qty": 12,
             "userDefinedQty": false
           },
@@ -626,18 +626,23 @@
             "sku": "SCREW-704B6626",
             "qty": 2,
             "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "qty": 1,
+            "userDefinedQty": false
           }
         ]
       }
     ],
     "metaTags": {
-      "title": "Bathroom Renovation Kit Bundle | BuildRight Pro",
-      "description": "Shop the Bathroom Renovation Kit bundle from BuildRight Pro. Complete package for your construction needs.",
+      "title": "Bathroom Renovation Kit Bundle | StructureMaster",
+      "description": "Shop the Bathroom Renovation Kit bundle from StructureMaster. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "framing",
-        "BuildRight Pro",
+        "StructureMaster",
         "construction",
         "bulk"
       ]
@@ -648,8 +653,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "PremiumBuild Soundproofing Package",
-    "slug": "premiumbuild-soundproofing-package",
+    "name": "ToughGrip Soundproofing Package",
+    "slug": "toughgrip-soundproofing-package",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -667,26 +672,26 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_7"
+          "brand_option_2"
+        ]
+      },
+      {
+        "code": "attr_015",
+        "values": [
+          "Premium Bundle"
         ]
       },
       {
         "code": "attr_003",
         "values": [
-          "size_option_1"
-        ]
-      },
-      {
-        "code": "attr_005",
-        "values": [
-          "dimensions_option_5"
+          "size_option_6"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 50
+        "position": 70
       }
     ],
     "bundles": [
@@ -735,11 +740,11 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "STUD-984F2EC0"
+          "STUD-95E9D258"
         ],
         "items": [
           {
-            "sku": "STUD-984F2EC0",
+            "sku": "STUD-95E9D258",
             "qty": 8,
             "userDefinedQty": false
           },
@@ -752,13 +757,13 @@
       }
     ],
     "metaTags": {
-      "title": "Soundproofing Package Bundle | PremiumBuild",
-      "description": "Shop the Soundproofing Package bundle from PremiumBuild. Complete package for your construction needs.",
+      "title": "Soundproofing Package Bundle | ToughGrip",
+      "description": "Shop the Soundproofing Package bundle from ToughGrip. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "framing",
-        "PremiumBuild",
+        "ToughGrip",
         "construction",
         "bulk"
       ]
@@ -769,8 +774,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Whole House Window Package",
-    "slug": "reliabuild-whole-house-window-package",
+    "name": "SafeGuard Whole House Window Package",
+    "slug": "safeguard-whole-house-window-package",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -788,32 +793,26 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_4"
+          "brand_option_3"
         ]
       },
       {
-        "code": "attr_008",
+        "code": "attr_018",
         "values": [
-          "warranty_option_2"
+          "Premium Bundle"
         ]
       },
       {
-        "code": "attr_002",
+        "code": "attr_007",
         "values": [
-          "true"
-        ]
-      },
-      {
-        "code": "attr_003",
-        "values": [
-          "size_option_5"
+          "model_option_6"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 79
+        "position": 91
       }
     ],
     "bundles": [
@@ -849,6 +848,11 @@
             "sku": "WINDOW-8039584D",
             "qty": 6,
             "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "qty": 4,
+            "userDefinedQty": false
           }
         ]
       },
@@ -872,13 +876,13 @@
       }
     ],
     "metaTags": {
-      "title": "Whole House Window Package Bundle | ReliaBuild",
-      "description": "Shop the Whole House Window Package bundle from ReliaBuild. Complete package for your construction needs.",
+      "title": "Whole House Window Package Bundle | SafeGuard",
+      "description": "Shop the Whole House Window Package bundle from SafeGuard. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "windows-doors",
-        "ReliaBuild",
+        "SafeGuard",
         "construction",
         "bulk"
       ]
@@ -889,8 +893,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "DuraBuilt Complete Door Package",
-    "slug": "durabuilt-complete-door-package",
+    "name": "SafeGuard Complete Door Package",
+    "slug": "safeguard-complete-door-package",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -908,20 +912,32 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_1"
+          "brand_option_2"
         ]
       },
       {
-        "code": "attr_003",
+        "code": "attr_016",
         "values": [
-          "size_option_5"
+          "season_option_1"
+        ]
+      },
+      {
+        "code": "attr_004",
+        "values": [
+          "weight_option_3"
+        ]
+      },
+      {
+        "code": "attr_007",
+        "values": [
+          "model_option_3"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 20
+        "position": 80
       }
     ],
     "bundles": [
@@ -930,11 +946,11 @@
         "required": true,
         "multiSelect": false,
         "defaultItemSkus": [
-          "DOOR-B9A85BDF-VAR-B7BE8C"
+          "DOOR-B9A85BDF-VAR-3C4239"
         ],
         "items": [
           {
-            "sku": "DOOR-B9A85BDF-VAR-B7BE8C",
+            "sku": "DOOR-B9A85BDF-VAR-3C4239",
             "qty": 1,
             "userDefinedQty": false
           },
@@ -950,11 +966,11 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "DOOR-4DEEB6C4-VAR-AE8C6F"
+          "DOOR-89357B1F"
         ],
         "items": [
           {
-            "sku": "DOOR-4DEEB6C4-VAR-AE8C6F",
+            "sku": "DOOR-89357B1F",
             "qty": 8,
             "userDefinedQty": false
           },
@@ -985,13 +1001,13 @@
       }
     ],
     "metaTags": {
-      "title": "Complete Door Package Bundle | DuraBuilt",
-      "description": "Shop the Complete Door Package bundle from DuraBuilt. Complete package for your construction needs.",
+      "title": "Complete Door Package Bundle | SafeGuard",
+      "description": "Shop the Complete Door Package bundle from SafeGuard. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "windows-doors",
-        "DuraBuilt",
+        "SafeGuard",
         "construction",
         "bulk"
       ]
@@ -1021,26 +1037,32 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_6"
+          "brand_option_2"
         ]
       },
       {
-        "code": "attr_008",
+        "code": "attr_017",
         "values": [
-          "warranty_option_5"
+          "Premium Bundle"
         ]
       },
       {
-        "code": "attr_009",
+        "code": "attr_002",
         "values": [
-          "true"
+          "color_option_5"
+        ]
+      },
+      {
+        "code": "attr_015",
+        "values": [
+          "Premium Bundle"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 10
+        "position": 69
       }
     ],
     "bundles": [
@@ -1069,11 +1091,11 @@
         "required": true,
         "multiSelect": false,
         "defaultItemSkus": [
-          "DOOR-B9A85BDF-VAR-225E0D"
+          "DOOR-B9A85BDF-VAR-57A69E"
         ],
         "items": [
           {
-            "sku": "DOOR-B9A85BDF-VAR-225E0D",
+            "sku": "DOOR-B9A85BDF-VAR-57A69E",
             "qty": 1,
             "userDefinedQty": false
           },
@@ -1121,8 +1143,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "DuraBuilt Professional Framer Kit",
-    "slug": "durabuilt-professional-framer-kit",
+    "name": "PremiumBuild Professional Framer Kit",
+    "slug": "premiumbuild-professional-framer-kit",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1144,28 +1166,28 @@
         ]
       },
       {
-        "code": "attr_010",
+        "code": "attr_015",
         "values": [
-          "true"
+          "Premium Bundle"
         ]
       },
       {
-        "code": "attr_009",
+        "code": "attr_017",
         "values": [
-          "false"
+          "Premium Bundle"
         ]
       },
       {
-        "code": "attr_003",
+        "code": "attr_002",
         "values": [
-          "size_option_1"
+          "color_option_4"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 41
+        "position": 80
       }
     ],
     "bundles": [
@@ -1229,13 +1251,13 @@
       }
     ],
     "metaTags": {
-      "title": "Professional Framer Kit Bundle | DuraBuilt",
-      "description": "Shop the Professional Framer Kit bundle from DuraBuilt. Complete package for your construction needs.",
+      "title": "Professional Framer Kit Bundle | PremiumBuild",
+      "description": "Shop the Professional Framer Kit bundle from PremiumBuild. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "fasteners",
-        "DuraBuilt",
+        "PremiumBuild",
         "construction",
         "bulk"
       ]
@@ -1265,32 +1287,20 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_5"
+          "brand_option_4"
         ]
       },
       {
-        "code": "attr_007",
+        "code": "attr_003",
         "values": [
-          "true"
-        ]
-      },
-      {
-        "code": "attr_008",
-        "values": [
-          "warranty_option_2"
-        ]
-      },
-      {
-        "code": "attr_002",
-        "values": [
-          "false"
+          "size_option_7"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 100
+        "position": 20
       }
     ],
     "bundles": [
@@ -1371,8 +1381,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "DuraBuilt Cabinet Installation Kit",
-    "slug": "durabuilt-cabinet-installation-kit",
+    "name": "ReliaBuild Cabinet Installation Kit",
+    "slug": "reliabuild-cabinet-installation-kit",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1394,22 +1404,34 @@
         ]
       },
       {
-        "code": "attr_008",
+        "code": "attr_015",
         "values": [
-          "warranty_option_4"
+          "Premium Bundle"
         ]
       },
       {
-        "code": "attr_003",
+        "code": "attr_010",
         "values": [
-          "size_option_1"
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_013",
+        "values": [
+          "certification_option_3"
+        ]
+      },
+      {
+        "code": "attr_002",
+        "values": [
+          "color_option_3"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 24
+        "position": 60
       }
     ],
     "bundles": [
@@ -1473,13 +1495,13 @@
       }
     ],
     "metaTags": {
-      "title": "Cabinet Installation Kit Bundle | DuraBuilt",
-      "description": "Shop the Cabinet Installation Kit bundle from DuraBuilt. Complete package for your construction needs.",
+      "title": "Cabinet Installation Kit Bundle | ReliaBuild",
+      "description": "Shop the Cabinet Installation Kit bundle from ReliaBuild. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "fasteners",
-        "DuraBuilt",
+        "ReliaBuild",
         "construction",
         "bulk"
       ]
@@ -1490,8 +1512,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ToughGrip Complete PPE Package",
-    "slug": "toughgrip-complete-ppe-package",
+    "name": "StructureMaster Complete PPE Package",
+    "slug": "structuremaster-complete-ppe-package",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1509,26 +1531,26 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_1"
+          "brand_option_3"
         ]
       },
       {
-        "code": "attr_010",
+        "code": "attr_003",
         "values": [
-          "false"
+          "size_option_1"
         ]
       },
       {
-        "code": "attr_005",
+        "code": "attr_017",
         "values": [
-          "dimensions_option_4"
+          "Premium Bundle"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 61
+        "position": 60
       }
     ],
     "bundles": [
@@ -1543,6 +1565,11 @@
           {
             "sku": "SAFE-54709A01",
             "qty": 4,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-D0414F1E",
+            "qty": 2,
             "userDefinedQty": false
           }
         ]
@@ -1586,16 +1613,34 @@
             "userDefinedQty": false
           }
         ]
+      },
+      {
+        "group": "Respiratory Protection",
+        "required": false,
+        "multiSelect": false,
+        "defaultItemSkus": [],
+        "items": [
+          {
+            "sku": "LBR-2EBB314A",
+            "qty": 2,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-26852468",
+            "qty": 2,
+            "userDefinedQty": false
+          }
+        ]
       }
     ],
     "metaTags": {
-      "title": "Complete PPE Package Bundle | ToughGrip",
-      "description": "Shop the Complete PPE Package bundle from ToughGrip. Complete package for your construction needs.",
+      "title": "Complete PPE Package Bundle | StructureMaster",
+      "description": "Shop the Complete PPE Package bundle from StructureMaster. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "ToughGrip",
+        "StructureMaster",
         "construction",
         "bulk"
       ]
@@ -1606,8 +1651,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ToughGrip Fall Protection System",
-    "slug": "toughgrip-fall-protection-system",
+    "name": "DuraBuilt Fall Protection System",
+    "slug": "durabuilt-fall-protection-system",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1625,26 +1670,38 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_7"
+          "brand_option_1"
         ]
       },
       {
         "code": "attr_007",
         "values": [
-          "false"
+          "model_option_3"
         ]
       },
       {
-        "code": "attr_010",
+        "code": "attr_016",
         "values": [
-          "false"
+          "season_option_5"
+        ]
+      },
+      {
+        "code": "attr_013",
+        "values": [
+          "certification_option_1"
+        ]
+      },
+      {
+        "code": "attr_018",
+        "values": [
+          "Premium Bundle"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 45
+        "position": 13
       }
     ],
     "bundles": [
@@ -1687,16 +1744,34 @@
             "userDefinedQty": false
           }
         ]
+      },
+      {
+        "group": "Emergency Equipment",
+        "required": false,
+        "multiSelect": true,
+        "defaultItemSkus": [],
+        "items": [
+          {
+            "sku": "LBR-D0414F1E",
+            "qty": 1,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-2EBB314A",
+            "qty": 1,
+            "userDefinedQty": false
+          }
+        ]
       }
     ],
     "metaTags": {
-      "title": "Fall Protection System Bundle | ToughGrip",
-      "description": "Shop the Fall Protection System bundle from ToughGrip. Complete package for your construction needs.",
+      "title": "Fall Protection System Bundle | DuraBuilt",
+      "description": "Shop the Fall Protection System bundle from DuraBuilt. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "ToughGrip",
+        "DuraBuilt",
         "construction",
         "bulk"
       ]
@@ -1707,8 +1782,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "MaxStrength Site Safety Station",
-    "slug": "maxstrength-site-safety-station",
+    "name": "PremiumBuild Site Safety Station",
+    "slug": "premiumbuild-site-safety-station",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1726,35 +1801,49 @@
       {
         "code": "attr_006",
         "values": [
-          "brand_option_4"
+          "brand_option_2"
         ]
       },
       {
-        "code": "attr_003",
+        "code": "attr_020",
         "values": [
-          "size_option_1"
+          "finish_option_2"
         ]
       },
       {
-        "code": "attr_002",
+        "code": "attr_018",
         "values": [
-          "false"
-        ]
-      },
-      {
-        "code": "attr_005",
-        "values": [
-          "dimensions_option_3"
+          "Premium Bundle"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 61
+        "position": 49
       }
     ],
     "bundles": [
+      {
+        "group": "Emergency Equipment",
+        "required": true,
+        "multiSelect": true,
+        "defaultItemSkus": [
+          "LBR-D0414F1E"
+        ],
+        "items": [
+          {
+            "sku": "LBR-D0414F1E",
+            "qty": 2,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-2EBB314A",
+            "qty": 2,
+            "userDefinedQty": false
+          }
+        ]
+      },
       {
         "group": "Basic PPE",
         "required": true,
@@ -1795,13 +1884,13 @@
       }
     ],
     "metaTags": {
-      "title": "Site Safety Station Bundle | MaxStrength",
-      "description": "Shop the Site Safety Station bundle from MaxStrength. Complete package for your construction needs.",
+      "title": "Site Safety Station Bundle | PremiumBuild",
+      "description": "Shop the Site Safety Station bundle from PremiumBuild. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "MaxStrength",
+        "PremiumBuild",
         "construction",
         "bulk"
       ]

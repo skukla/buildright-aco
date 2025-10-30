@@ -34,7 +34,9 @@
     "reset:catalog": "node scripts/reset-catalog.js",
     "reset:dry-run": "node scripts/reset-catalog.js --dry-run",
     "reset:live": "node scripts/reset-aco-live.js",
-    "reset:live:dry-run": "node scripts/reset-aco-live.js --dry-run"
+    "reset:live:dry-run": "node scripts/reset-aco-live.js --dry-run",
+    "delete:skus": "node scripts/delete-products-by-sku-list.js",
+    "delete:skus:dry-run": "node scripts/delete-products-by-sku-list.js skus-to-delete.txt --dry-run"
   },
   "keywords": [
     "adobe-commerce",

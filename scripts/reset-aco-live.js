@@ -137,10 +137,22 @@ async function queryAllProductsFromACO(accessToken) {
     return allProducts;
 
   } catch (error) {
-    // Check if this is the "No index" error which typically means empty catalog
+    // Check if this is the "No index" error
     if (error.message && error.message.includes('No index was found')) {
-      logger.warn('No search index found - catalog may be empty or Live Search not indexed yet');
-      logger.warn('Returning empty product list');
+      logger.warn('');
+      logger.warn('⚠️  Live Search index not found');
+      logger.warn('');
+      logger.warn('This error occurs when:');
+      logger.warn('  1. The catalog is empty (no products ingested), OR');
+      logger.warn('  2. Products exist but Live Search indexing is pending');
+      logger.warn('');
+      logger.warn('If you see products in the ACO Admin UI (experience.adobe.com),');
+      logger.warn('then Live Search indexing is pending. This can take several minutes');
+      logger.warn('after product ingestion.');
+      logger.warn('');
+      logger.warn('Alternative: Use npm run reset:catalog to delete products');
+      logger.warn('listed in local JSON files (doesn\'t require Live Search index)');
+      logger.warn('');
       return [];
     }
 
