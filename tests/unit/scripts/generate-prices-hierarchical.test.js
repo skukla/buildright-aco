@@ -26,7 +26,7 @@ describe('Generate Prices Hierarchical Script', () => {
     // Mock price books from Step 1 - new 4-book business-type structure
     mockPriceBooks = [
       {
-        id: 'US_RETAIL',
+        priceBookId: 'US_RETAIL',
         name: 'US Retail Price Book',
         businessType: 'RETAIL',
         discountPercentage: 0.00,
@@ -35,7 +35,7 @@ describe('Generate Prices Hierarchical Script', () => {
         effectiveDate: '2024-01-01'
       },
       {
-        id: 'US_CONTRACTOR',
+        priceBookId: 'US_CONTRACTOR',
         name: 'US Contractor Price Book',
         businessType: 'CONTRACTOR',
         discountPercentage: 0.05,
@@ -44,7 +44,7 @@ describe('Generate Prices Hierarchical Script', () => {
         effectiveDate: '2024-01-01'
       },
       {
-        id: 'US_COMMERCIAL',
+        priceBookId: 'US_COMMERCIAL',
         name: 'US Commercial Price Book',
         businessType: 'COMMERCIAL',
         discountPercentage: 0.10,
@@ -53,7 +53,7 @@ describe('Generate Prices Hierarchical Script', () => {
         effectiveDate: '2024-01-01'
       },
       {
-        id: 'US_WHOLESALE',
+        priceBookId: 'US_WHOLESALE',
         name: 'US Wholesale Price Book',
         businessType: 'WHOLESALE',
         discountPercentage: 0.15,
@@ -295,7 +295,7 @@ describe('Generate Prices Hierarchical Script', () => {
 
       const westWholesalePriceBook = [
         {
-          id: 'US_WEST_WHOLESALE',
+          priceBookId: 'US_WEST_WHOLESALE',
           name: 'US West Wholesale',
           businessType: 'WHOLESALE',
           discountPercentage: 0.15,
@@ -496,7 +496,7 @@ describe('Generate Prices Hierarchical Script', () => {
       }
 
       const prices = generatePricesHierarchical(mockProducts, mockPriceBooks);
-      const validPriceBookIds = new Set(mockPriceBooks.map(pb => pb.id));
+      const validPriceBookIds = new Set(mockPriceBooks.map(pb => pb.priceBookId));
 
       prices.forEach(price => {
         expect(validPriceBookIds.has(price.priceBookId)).toBe(true);
