@@ -9,7 +9,7 @@ This project provides comprehensive data generation scripts and ingestion utilit
 - **Hierarchical pricing structure** (10 price books across 3 levels - base, segment, tier - with parent relationships)
 - **Project-based attributes** (semantic attributes for project types: new_construction, remodel, repair, restoration)
 - **Complex product catalog** (184 products including simple, configurable, bundles, and services)
-- **Multi-source inventory management** (6 inventory sources across 2 stocks - configured via Adobe Commerce MSI, not ACO; see [manual setup guide](docs/manual-setup/msi-configuration-guide.md))
+- **Multi-source inventory management** (6 inventory sources in 1 stock - configured via Adobe Commerce MSI, not ACO; see [manual setup guide](docs/manual-setup/msi-configuration-guide.md))
 - **B2B company structure** (3 demo companies with 6 locations - see [manual setup guide](docs/manual-setup/b2b-configuration-guide.md))
 - **Trigger-based policies** (dynamic catalog filtering - see [manual setup guide](docs/manual-setup/trigger-policy-guide.md))
 - **Deterministic data generation** (reproducible with SEED environment variable)
@@ -42,8 +42,8 @@ This project provides comprehensive data generation scripts and ingestion utilit
 - Complete setup guide (6-8 hours manual configuration)
 
 **Step 4 (MSI Strategy):**
-- 6 inventory sources across 2 stocks (Western/Eastern)
-- MSI configuration guide (3-5 hours manual setup)
+- 6 inventory sources in 1 stock (single-website deployment)
+- MSI configuration guide (2.5-4 hours manual setup)
 - ACO limitations documented (inventory not supported via API)
 
 **Step 5 (Trigger Policies):**
@@ -308,19 +308,16 @@ The system includes comprehensive security measures to ensure safe operation:
 
 ### Inventory Sources
 
-**6 Sources across 2 Stocks:**
+**6 Sources in 1 Stock (BuildRight-Main-Stock):**
 
-**Stock 1 (Western Sales Channel):**
-- Western RDC (Sacramento, CA)
-- Phoenix Metro Warehouse (Phoenix, AZ)
-- Denver Warehouse (Denver, CO)
+- Western RDC (Sacramento, CA) - Priority 1
+- Eastern RDC (Charlotte, NC) - Priority 2
+- Phoenix Metro Warehouse (Phoenix, AZ) - Priority 3
+- Denver Warehouse (Denver, CO) - Priority 4
+- Atlanta Metro Warehouse (Atlanta, GA) - Priority 5
+- Drop Shipper - Premium Window Systems (Virtual) - Priority 6
 
-**Stock 2 (Eastern Sales Channel):**
-- Eastern RDC (Charlotte, NC)
-- Atlanta Metro Warehouse (Atlanta, GA)
-
-**Virtual Source:**
-- Drop Shipper - Premium Window Systems
+**Architecture Note:** Single stock configuration for single-website deployment (Adobe Commerce 1:1 stock-to-website relationship)
 
 ### Product Catalog
 
@@ -511,19 +508,21 @@ After ACO data ingestion, the following manual configurations are required to co
 
 **Time Estimate:** 18-22 hours
 
-### Multi-Source Inventory (MSI) Setup (3-5 hours)
+### Multi-Source Inventory (MSI) Setup (2.5-4 hours)
 
 **Guide:** [docs/manual-setup/msi-configuration-guide.md](docs/manual-setup/msi-configuration-guide.md)
 
 **What You'll Configure:**
 - 6 inventory sources (Western RDC, Eastern RDC, Phoenix, Denver, Atlanta, Drop Shipper)
-- 2 stocks (Western Sales Channel, Eastern Sales Channel)
+- 1 stock (BuildRight-Main-Stock with all 6 sources)
 - Product-to-source assignments (184 products × 6 sources)
-- Source selection algorithms
+- Source selection algorithms and priorities
 
 **Important:** ACO does not support inventory management via API. MSI must be configured manually in Adobe Commerce Admin UI or via Adobe Commerce REST API.
 
-**Time Estimate:** 3-5 hours
+**Architecture Note:** Single stock for single-website deployment (Adobe Commerce 1:1 stock-to-website relationship)
+
+**Time Estimate:** 2.5-4 hours
 
 ### Trigger-Based Policy Configuration (45-60 minutes)
 

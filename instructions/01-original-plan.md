@@ -274,68 +274,47 @@ Each company is assigned to a specific Shared Catalog (price book) based on thei
 
 Adobe Commerce Optimizer (ACO) Data Ingestion API does not support inventory operations. Multi-Source Inventory (MSI) must be configured manually through Adobe Commerce Admin UI or the Adobe Commerce Inventory REST API as a separate step from catalog ingestion.
 
-**Configuration Guide:** See `docs/manual-setup/msi-configuration-guide.md` for complete setup instructions (estimated 3-5 hours for manual UI setup or 45-60 minutes for scripted REST API approach).
+**Configuration Guide:** See `docs/manual-setup/msi-configuration-guide.md` for complete setup instructions (estimated 2.5-4 hours for manual UI setup or 30-45 minutes for scripted REST API approach).
 
 **Why Separate?** ACO focuses on product catalog optimization and pricing management. Inventory management is handled by Adobe Commerce's robust Multi-Source Inventory system, which provides warehouse management, stock allocation algorithms, and source prioritization.
 
 ### Warehouse \& Distribution Network
 
-BuildRight Solutions operates **18 physical inventory sources** (conceptual architecture; demo uses 6 sources) mapped to Adobe Commerce MSI concepts:
+**Demo Implementation:** BuildRight Solutions operates **6 inventory sources** (simplified from 18-source conceptual architecture) mapped to Adobe Commerce MSI:
 
-#### Regional Distribution Centers (RDCs) - Level 1
+#### Regional Distribution Centers (RDCs)
 
-1. **Western RDC** - Sacramento, CA (500,000 sq ft)
-2. **Central RDC** - Dallas, TX (450,000 sq ft)
-3. **Eastern RDC** - Charlotte, NC (400,000 sq ft)
+1. **Western RDC** - Sacramento, CA (warehouse_west)
+2. **Eastern RDC** - Charlotte, NC (warehouse_east)
 
-#### Regional Warehouses - Level 2
+#### Regional Warehouses
 
-4. **Phoenix Metro Warehouse** - Phoenix, AZ
-5. **Portland Warehouse** - Portland, OR
-6. **Denver Warehouse** - Denver, CO
-7. **Kansas City Warehouse** - Kansas City, MO
-8. **Oklahoma City Warehouse** - Oklahoma City, OK
-9. **Atlanta Metro Warehouse** - Atlanta, GA
-10. **Tampa Warehouse** - Tampa, FL
-11. **Richmond Warehouse** - Richmond, VA
-
-#### Local Branch Yards - Level 3
-
-12. **San Diego Branch** - San Diego, CA
-13. **Las Vegas Branch** - Las Vegas, NV
-14. **Austin Branch** - Austin, TX
-15. **Raleigh Branch** - Raleigh, NC
-16. **Charleston Branch** - Charleston, SC
-17. **Orlando Branch** - Orlando, FL
-18. **Norfolk Branch** - Norfolk, VA
+3. **Phoenix Metro Warehouse** - Phoenix, AZ (warehouse_phoenix)
+4. **Denver Warehouse** - Denver, CO (warehouse_denver)
+5. **Atlanta Metro Warehouse** - Atlanta, GA (warehouse_atlanta)
 
 #### Virtual Sources
 
-19. **Drop Shipper - Specialty Millwork Co.** (Virtual)
-20. **Drop Shipper - Premium Window Systems** (Virtual)
-21. **Direct Ship - Manufacturer Partner Network** (Virtual)
+6. **Drop Shipper - Premium Window Systems** (dropship_premium_windows)
+
+**Conceptual Full Architecture:** The complete BuildRight network includes 18 sources across 3 regions plus virtual sources (see original concept documentation for full detail). The demo uses a simplified 6-source implementation that demonstrates the same MSI capabilities.
 
 ### MSI Stock Configuration
 
-**Stock 1: Western Sales Channel**
+**BuildRight-Main-Stock (Single Stock)**
 
-- Sources: Western RDC, Phoenix Metro, Portland, Denver, San Diego, Las Vegas
-- Sales Channels: BuildRight West Website, BuildRight West Mobile App
+- **Sources:** All 6 sources (warehouse_west, warehouse_east, warehouse_phoenix, warehouse_denver, warehouse_atlanta, dropship_premium_windows)
+- **Sales Channel:** Default Website (single-website deployment)
+- **Priority Configuration:**
+  - Priority 1-2: Regional Distribution Centers (primary fulfillment)
+  - Priority 3-5: Regional warehouses (secondary fulfillment)
+  - Priority 6: Virtual drop shipper (fallback)
 
-**Stock 2: Central Sales Channel**
-
-- Sources: Central RDC, Denver, Kansas City, Oklahoma City, Austin
-- Sales Channels: BuildRight Central Website, BuildRight Central Mobile App
-
-**Stock 3: Eastern Sales Channel**
-
-- Sources: Eastern RDC, Atlanta Metro, Tampa, Richmond, Raleigh, Charleston, Orlando, Norfolk
-- Sales Channels: BuildRight East Website, BuildRight East Mobile App
-
-**Stock 4: Specialty Products**
-
-- Sources: All Drop Shippers, Select RDCs
-- Sales Channels: BuildRight Pro Portal
+**Architecture Rationale:**
+- Adobe Commerce has a 1:1 relationship between stocks and websites
+- Single-website demo requires single stock
+- All 6 sources assigned to one stock with priority-based or distance-based selection
+- Demonstrates same MSI capabilities as multi-stock architecture
 
 
 ### Source Selection Algorithm Strategy
@@ -990,7 +969,7 @@ framing-drywall
 
 ## Key Differentiators from Carvelo
 
-1. **Multi-Source Inventory (MSI):** Leverages 18+ physical sources with sophisticated stock allocation
+1. **Multi-Source Inventory (MSI):** Leverages 6 physical sources (demo) with sophisticated stock allocation
 2. **Service Products:** SKUs for delivery, fabrication, installation, rentals, and technical services
 3. **Project-Based Commerce:** Project entity with saved lists, progress billing, and job site management
 4. **Bundles \& Kits:** Pre-configured and customizable bundle products
@@ -1003,7 +982,7 @@ framing-drywall
 
 ## Success Metrics
 
-- **18 inventory sources** across 3 regions
+- **6 inventory sources** across 2 regions (demo)
 - **54+ price books** in 4-level hierarchy
 - **150,000+ product SKUs** spanning 17 major categories
 - **2,000+ configurable products** (doors, windows, HVAC systems)

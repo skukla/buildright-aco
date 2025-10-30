@@ -27,7 +27,7 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 - **Hierarchical pricing structure**: 10 price books across 3 levels (base, segment, tier)
 - **Comprehensive product catalog**: 184 products (simple, configurable, bundles, services)
 - **Project-based attributes**: Semantic attributes for project types, customer segments
-- **Multi-source inventory**: 6 inventory sources across 2 stocks (configured via Adobe Commerce MSI)
+- **Multi-source inventory**: 6 inventory sources in 1 stock (configured via Adobe Commerce MSI)
 - **B2B company structure**: 3 demo companies with 6 locations across 3 divisions
 - **Dynamic catalog filtering**: Trigger-based policies for personalized product catalogs
 - **Deterministic data generation**: Reproducible with SEED environment variable
@@ -36,7 +36,7 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 **Deployment Time Estimates:**
 - **Automated ACO Ingestion**: 10-15 minutes (catalog + pricing data)
 - **Manual B2B Setup**: 6-8 hours (3 companies, 6 locations, 12 users)
-- **Manual MSI Setup**: 3-5 hours (6 sources, 2 stocks, product assignments)
+- **Manual MSI Setup**: 2.5-4 hours (6 sources, 1 stock, product assignments)
 - **Policy Configuration**: 45-60 minutes (6 example policies)
 - **Total Initial Setup**: 10-14 hours
 
@@ -48,7 +48,7 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 
 **Related Documentation:**
 - **[B2B Configuration Guide](./manual-setup/b2b-configuration-guide.md)** - Detailed B2B setup (3 companies, 6 locations)
-- **[MSI Configuration Guide](./manual-setup/msi-configuration-guide.md)** - Multi-source inventory setup (6 sources, 2 stocks)
+- **[MSI Configuration Guide](./manual-setup/msi-configuration-guide.md)** - Multi-source inventory setup (6 sources, 1 stock)
 - **[Trigger Policy Guide](./manual-setup/trigger-policy-guide.md)** - Policy configuration (6 examples)
 - **[BuildRight B2B Structure](./architecture/buildright-b2b-structure.md)** - B2B architecture diagram
 - **[ACO API Schema](./aco-api-schema.md)** - Complete GraphQL schema reference
@@ -93,7 +93,7 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 │  Manual Configuration Required:                                  │
 │  • B2B Features: 3 companies, 6 locations, 12 users              │
 │  • Shared Catalogs: Map to ACO price books                       │
-│  • Multi-Source Inventory (MSI): 6 sources, 2 stocks             │
+│  • Multi-Source Inventory (MSI): 6 sources, 1 stock              │
 │  • Trigger Policies: 6 example policies for personalization      │
 └──────────────────────────────────────────────────────────────────┘
 ```
@@ -575,17 +575,15 @@ Adobe Commerce Multi-Source Inventory (MSI) manages physical inventory across 6 
 
 **6 Inventory Sources:**
 
-**Stock 1 (Western Sales Channel):**
-1. **Western RDC** - Sacramento, CA (Regional Distribution Center)
-2. **Phoenix Metro Warehouse** - Phoenix, AZ
-3. **Denver Warehouse** - Denver, CO
+**BuildRight-Main-Stock (Single Stock):**
+1. **Western RDC** - Sacramento, CA (Priority 1)
+2. **Eastern RDC** - Charlotte, NC (Priority 2)
+3. **Phoenix Metro Warehouse** - Phoenix, AZ (Priority 3)
+4. **Denver Warehouse** - Denver, CO (Priority 4)
+5. **Atlanta Metro Warehouse** - Atlanta, GA (Priority 5)
+6. **Drop Shipper - Premium Window Systems** (Priority 6, virtual source)
 
-**Stock 2 (Eastern Sales Channel):**
-4. **Eastern RDC** - Charlotte, NC (Regional Distribution Center)
-5. **Atlanta Metro Warehouse** - Atlanta, GA
-
-**Virtual Source:**
-6. **Drop Shipper - Premium Window Systems** (virtual source, no physical inventory)
+**Architecture Note:** Adobe Commerce has a 1:1 relationship between stocks and websites. Since this demo uses a single website, all 6 sources are assigned to one stock.
 
 ### High-Level Setup Steps
 
@@ -594,11 +592,10 @@ Adobe Commerce Multi-Source Inventory (MSI) manages physical inventory across 6 
 - Create 6 sources with addresses and contact info
 - Enable/disable sources as needed
 
-**2. Create Stocks** (15-20 minutes)
+**2. Create Stock** (10-15 minutes)
 - Admin → Stores → Inventory → Stocks
-- Create Stock 1 (Western Sales Channel)
-- Create Stock 2 (Eastern Sales Channel)
-- Link sources to stocks
+- Create BuildRight-Main-Stock
+- Link all 6 sources to the single stock with priorities
 
 **3. Assign Products to Sources** (1.5-2.5 hours)
 - Admin → Catalog → Products
@@ -1190,9 +1187,9 @@ node scripts/ingest-prices.js
 - **Pricing Entries:** 1,418 prices across all price books
 - **Categories:** 19 categories in hierarchical structure
 - **Attributes:** 20 product attributes (including semantic project attributes)
-- **Inventory Sources:** 6 sources across 2 stocks
-- **B2B Companies:** 8 demo companies across 3 divisions
-- **B2B Locations:** 21 locations (teams) across 8 companies
+- **Inventory Sources:** 6 sources in 1 stock
+- **B2B Companies:** 3 demo companies across 3 divisions
+- **B2B Locations:** 6 locations (teams) across 3 companies
 - **Test Coverage:** 422 passing tests (84.6% pass rate), 85%+ code coverage, 43 security tests
 
 ### File Reference Map
@@ -1226,8 +1223,8 @@ node scripts/ingest-prices.js
 - `ingest-prices.js` - Price ingestion
 
 **Configuration Guides** (`docs/manual-setup/`):
-- `b2b-configuration-guide.md` - B2B setup (8 companies, 21 locations)
-- `msi-configuration-guide.md` - MSI setup (6 sources, 2 stocks)
+- `b2b-configuration-guide.md` - B2B setup (3 companies, 6 locations)
+- `msi-configuration-guide.md` - MSI setup (6 sources, 1 stock)
 - `trigger-policy-guide.md` - Policy configuration (6 examples)
 
 ### Command Reference

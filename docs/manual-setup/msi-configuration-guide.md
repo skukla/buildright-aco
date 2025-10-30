@@ -12,9 +12,9 @@ This guide provides configuration instructions for Adobe Commerce Multi-Source I
 - Integration: ACO products → Commerce catalog → MSI assignment
 - Configuration: Manual (Admin UI) or Programmatic (REST API)
 
-**Estimated Setup Time:** 3-5 hours
+**Estimated Setup Time:** 2.5-4 hours
 - Source creation: 30-45 minutes (6 sources)
-- Stock creation and linking: 15-20 minutes (2 stocks)
+- Stock creation and linking: 10-15 minutes (1 stock)
 - Product-to-source assignment: 1.5-2.5 hours (184 products × 6 sources)
 - Testing and validation: 30-45 minutes
 
@@ -157,17 +157,21 @@ Based on `data/buildright/sources.json`, BuildRight uses 6 inventory sources acr
 - Contact: dropship@premiumwindows.com
 - Phone: 800-555-0199
 
-### 2 Stock Definitions
+### 1 Stock Definition
 
-**Stock 1: US-West-Stock**
-- Sources: warehouse_west, warehouse_phoenix, warehouse_denver
-- Sales Channels: Default website
-- Priority: warehouse_west (1), warehouse_phoenix (2), warehouse_denver (3)
+**BuildRight-Main-Stock**
+- Sources: All 6 sources (warehouse_west, warehouse_east, warehouse_phoenix, warehouse_denver, warehouse_atlanta, dropship_premium_windows)
+- Sales Channels: Default website (single website deployment)
+- Priority: Configured by distance-based algorithm or manual priority
+  - RDCs (warehouse_west, warehouse_east): Priority 1-2
+  - Regional warehouses (warehouse_phoenix, warehouse_denver, warehouse_atlanta): Priority 3-5
+  - Virtual drop shipper (dropship_premium_windows): Priority 6 (fallback)
 
-**Stock 2: US-East-Stock**
-- Sources: warehouse_east, warehouse_atlanta, dropship_premium_windows
-- Sales Channels: Default website
-- Priority: warehouse_east (1), warehouse_atlanta (2), dropship_premium_windows (3)
+**Architecture Rationale:**
+- Adobe Commerce has a 1:1 relationship between stocks and websites
+- Since BuildRight uses a single website, we configure a single stock
+- All 6 inventory sources are assigned to this stock
+- Source selection algorithm determines which source fulfills each order based on distance, priority, or availability
 
 ---
 
@@ -211,39 +215,34 @@ Based on `data/buildright/sources.json`, BuildRight uses 6 inventory sources acr
 
 **Estimated Time:** 30-45 minutes
 
-### Step 3: Create Stocks and Link Sources
+### Step 3: Create Stock and Link Sources
 
 **Navigation:** Admin → Stores → Inventory → Stocks
 
-**Create Stock 1: US-West-Stock**
+**Create BuildRight-Main-Stock**
 
 1. Click **Add New Stock**
 2. Fill in:
-   - **Name:** US-West-Stock
+   - **Name:** BuildRight-Main-Stock
    - **Assign Sales Channels:** Main Website (or Default)
 3. In **Assign Sources** tab:
    - Click **Assign Sources**
-   - Select:
+   - Select all 6 sources:
      - warehouse_west (Priority: 1)
-     - warehouse_phoenix (Priority: 2)
-     - warehouse_denver (Priority: 3)
+     - warehouse_east (Priority: 2)
+     - warehouse_phoenix (Priority: 3)
+     - warehouse_denver (Priority: 4)
+     - warehouse_atlanta (Priority: 5)
+     - dropship_premium_windows (Priority: 6)
    - Click **Done**
 4. Click **Save & Continue**
 
-**Create Stock 2: US-East-Stock**
+**Priority Strategy:**
+- Priorities 1-2: Regional Distribution Centers (primary fulfillment)
+- Priorities 3-5: Regional warehouses (secondary fulfillment)
+- Priority 6: Drop shipper (fallback for out-of-stock items)
 
-1. Click **Add New Stock**
-2. Fill in:
-   - **Name:** US-East-Stock
-   - **Assign Sales Channels:** Main Website (or Default)
-3. In **Assign Sources** tab:
-   - Select:
-     - warehouse_east (Priority: 1)
-     - warehouse_atlanta (Priority: 2)
-     - dropship_premium_windows (Priority: 3)
-4. Click **Save & Continue**
-
-**Estimated Time:** 15-20 minutes
+**Estimated Time:** 10-15 minutes
 
 ### Step 4: Assign Products to Sources
 
@@ -388,17 +387,17 @@ ADMIN_TOKEN="your-token" COMMERCE_BASE_URL="https://your-instance.com" node scri
 
 **Estimated Time:** 5-10 minutes (scripted)
 
-### Step 2: Create Stocks and Link Sources via API
+### Step 2: Create Stock and Link All Sources via API
 
 **Script Example:**
 
 ```javascript
-// Create Stock 1: US-West-Stock
+// Create BuildRight-Main-Stock
 const stockResponse = await axios.post(
   `${BASE_URL}/rest/V1/inventory/stocks`,
   {
     stock: {
-      name: 'US-West-Stock',
+      name: 'BuildRight-Main-Stock',
       extension_attributes: {
         sales_channels: [
           { type: 'website', code: 'base' }
@@ -411,17 +410,24 @@ const stockResponse = await axios.post(
 
 const stockId = stockResponse.data.stock_id;
 
-// Link sources to stock
-const westSources = ['warehouse_west', 'warehouse_phoenix', 'warehouse_denver'];
+// Link all 6 sources to the single stock with priority
+const sources = [
+  { code: 'warehouse_west', priority: 1 },
+  { code: 'warehouse_east', priority: 2 },
+  { code: 'warehouse_phoenix', priority: 3 },
+  { code: 'warehouse_denver', priority: 4 },
+  { code: 'warehouse_atlanta', priority: 5 },
+  { code: 'dropship_premium_windows', priority: 6 }
+];
 
-for (let i = 0; i < westSources.length; i++) {
+for (const source of sources) {
   await axios.post(
     `${BASE_URL}/rest/V1/inventory/stock-source-links`,
     {
       links: [{
         stock_id: stockId,
-        source_code: westSources[i],
-        priority: i + 1
+        source_code: source.code,
+        priority: source.priority
       }]
     },
     { headers: { 'Authorization': `Bearer ${ADMIN_TOKEN}` } }
@@ -429,7 +435,7 @@ for (let i = 0; i < westSources.length; i++) {
 }
 ```
 
-**Estimated Time:** 10 minutes (scripted)
+**Estimated Time:** 5-10 minutes (scripted)
 
 ### Step 3: Assign Products to Sources via API
 
@@ -484,8 +490,8 @@ function determineQuantity(source) {
 
 - [ ] All 6 sources created in Admin → Stores → Inventory → Sources
 - [ ] All sources have correct region, city, postcode (required fields)
-- [ ] 2 stocks created with correct source assignments
-- [ ] Source priorities set correctly (RDCs = Priority 1, etc.)
+- [ ] 1 stock (BuildRight-Main-Stock) created with all 6 sources assigned
+- [ ] Source priorities set correctly (warehouse_west=1, warehouse_east=2, etc.)
 - [ ] Products show "In Stock" status
 - [ ] Source selection algorithm configured
 - [ ] Quantity displays correctly on product pages

@@ -25,10 +25,17 @@ I'll maintain all the innovative concepts from the comprehensive brief but scale
 **Virtual Sources (1):**
 6. **Drop Shipper - Premium Window Systems** (Virtual)
 
-**Stock Configuration (2 Stocks):**
+**Stock Configuration (1 Stock):**
 
-- **Stock 1: Western Sales Channel** (Sources: Western RDC, Phoenix, Denver)
-- **Stock 2: Eastern Sales Channel** (Sources: Eastern RDC, Atlanta)
+- **BuildRight-Main-Stock** (Sources: All 6 sources)
+  - warehouse_west (Priority 1)
+  - warehouse_east (Priority 2)
+  - warehouse_phoenix (Priority 3)
+  - warehouse_denver (Priority 4)
+  - warehouse_atlanta (Priority 5)
+  - dropship_premium_windows (Priority 6)
+
+**Architecture Note:** Adobe Commerce has a 1:1 relationship between stocks and websites. Since this demo uses a single website, we configure a single stock with all sources assigned.
 
 ***
 
