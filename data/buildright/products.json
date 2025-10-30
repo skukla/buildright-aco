@@ -1,2485 +1,364 @@
 [
   {
     "sku": "LBR-D0414F1E",
-    "name": "ToughGrip 2x4 Stud - 8ft",
     "type": "simple",
+    "name": "ToughGrip 2x4 Stud - 8ft",
     "status": "enabled",
     "visibility": "both",
-    "price": 9.22,
+    "price": 9.219257355304089,
+    "description": "High-quality 2x4 Stud - 8ft from ToughGrip",
+    "shortDescription": "2x4 Stud - 8ft - EA",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_003",
+        "code": "project_types",
         "value": [
-          "size_option_5",
-          "size_option_6",
-          "size_option_4"
+          "new_construction",
+          "remodel"
         ]
       },
       {
-        "code": "attr_005",
-        "value": "dimensions_option_4"
+        "code": "brand",
+        "value": "fastenpro"
       },
       {
-        "code": "attr_007",
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3",
+          "specifications_option_2",
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Premium quality"
+      },
+      {
+        "code": "attr_008",
         "value": false
       }
     ],
     "routes": [
       {
-        "categoryId": "cat_007",
+        "categoryId": "cat_002",
         "position": 64
       },
       {
-        "categoryId": "cat_002",
+        "categoryId": "cat_007",
         "position": 100
       }
     ],
-    "description": "High-quality 2x4 Stud - 8ft from ToughGrip",
-    "shortDescription": "2x4 Stud - 8ft - EA",
-    "weight": 11.238471781014685,
     "metaTitle": "2x4 Stud - 8ft | ToughGrip",
     "metaDescription": "Shop ToughGrip 2x4 Stud - 8ft at BuildRight. Professional grade construction materials.",
     "metaKeywords": "structural, lumber, ToughGrip, construction, building materials"
   },
   {
     "sku": "LBR-2EBB314A",
-    "name": "MaxStrength 2x6 Stud - 8ft",
     "type": "simple",
+    "name": "ProFrame 2x6 Stud - 8ft",
     "status": "enabled",
     "visibility": "both",
-    "price": 15.49,
+    "price": 15.150294066942434,
+    "description": "High-quality 2x6 Stud - 8ft from ProFrame",
+    "shortDescription": "2x6 Stud - 8ft - EA",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_4"
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
       },
       {
-        "code": "attr_005",
-        "value": "dimensions_option_2"
+        "code": "brand",
+        "value": "buildright_pro"
       },
       {
         "code": "attr_010",
-        "value": true
+        "value": [
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_3"
+        ]
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_2",
+          "specifications_option_1",
+          "specifications_option_3"
+        ]
       }
     ],
     "routes": [
       {
-        "categoryId": "cat_007",
-        "position": 85
+        "categoryId": "cat_002",
+        "position": 88
       },
       {
-        "categoryId": "cat_002",
-        "position": 12
+        "categoryId": "cat_007",
+        "position": 85
       }
     ],
-    "description": "High-quality 2x6 Stud - 8ft from MaxStrength",
-    "shortDescription": "2x6 Stud - 8ft - EA",
-    "weight": 22.00411976361839,
-    "metaTitle": "2x6 Stud - 8ft | MaxStrength",
-    "metaDescription": "Shop MaxStrength 2x6 Stud - 8ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, lumber, MaxStrength, construction, building materials"
+    "metaTitle": "2x6 Stud - 8ft | ProFrame",
+    "metaDescription": "Shop ProFrame 2x6 Stud - 8ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, lumber, ProFrame, construction, building materials"
   },
   {
     "sku": "LBR-26852468",
-    "name": "PremiumBuild 2x8 Joist - 10ft",
     "type": "simple",
+    "name": "StructureMaster 2x8 Joist - 10ft",
     "status": "enabled",
     "visibility": "both",
-    "price": 19.04,
+    "price": 19.907222629481566,
+    "description": "High-quality 2x8 Joist - 10ft from StructureMaster",
+    "shortDescription": "2x8 Joist - 10ft - EA",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_3"
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
       },
       {
-        "code": "attr_010",
-        "value": false
+        "code": "brand",
+        "value": "durabuilt"
       },
       {
-        "code": "attr_009",
-        "value": false
+        "code": "attr_011",
+        "value": "Professional grade"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_4"
       }
     ],
     "routes": [
       {
-        "categoryId": "cat_007",
-        "position": 16
+        "categoryId": "cat_002",
+        "position": 38
       },
       {
-        "categoryId": "cat_002",
-        "position": 32
+        "categoryId": "cat_007",
+        "position": 51
       }
     ],
-    "description": "High-quality 2x8 Joist - 10ft from PremiumBuild",
-    "shortDescription": "2x8 Joist - 10ft - EA",
-    "weight": 41.127898592561436,
-    "metaTitle": "2x8 Joist - 10ft | PremiumBuild",
-    "metaDescription": "Shop PremiumBuild 2x8 Joist - 10ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, lumber, PremiumBuild, construction, building materials"
+    "metaTitle": "2x8 Joist - 10ft | StructureMaster",
+    "metaDescription": "Shop StructureMaster 2x8 Joist - 10ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, lumber, StructureMaster, construction, building materials"
   },
   {
     "sku": "LBR-2D637246",
-    "name": "SafeGuard 2x10 Joist - 12ft",
     "type": "simple",
+    "name": "SafeGuard 2x10 Joist - 12ft",
     "status": "enabled",
     "visibility": "both",
-    "price": 28.29,
+    "price": 28.28637981614395,
+    "description": "High-quality 2x10 Joist - 12ft from SafeGuard",
+    "shortDescription": "2x10 Joist - 12ft - EA",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "both"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_3"
+      },
+      {
         "code": "attr_006",
-        "value": "brand_option_1"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_2"
+        "value": "color_option_2"
       }
     ],
     "routes": [
       {
-        "categoryId": "cat_007",
+        "categoryId": "cat_002",
         "position": 85
       },
       {
-        "categoryId": "cat_002",
+        "categoryId": "cat_007",
         "position": 71
       }
     ],
-    "description": "High-quality 2x10 Joist - 12ft from SafeGuard",
-    "shortDescription": "2x10 Joist - 12ft - EA",
-    "weight": 20.6189361902042,
     "metaTitle": "2x10 Joist - 12ft | SafeGuard",
     "metaDescription": "Shop SafeGuard 2x10 Joist - 12ft at BuildRight. Professional grade construction materials.",
     "metaKeywords": "structural, lumber, SafeGuard, construction, building materials"
   },
   {
     "sku": "LBR-96F409FB",
-    "name": "FastenPro 2x12 Beam - 16ft",
     "type": "simple",
+    "name": "FastenPro 2x12 Beam - 16ft",
     "status": "enabled",
     "visibility": "both",
-    "price": 47.33,
+    "price": 47.329200273067315,
+    "description": "High-quality 2x12 Beam - 16ft from FastenPro",
+    "shortDescription": "2x12 Beam - 16ft - EA",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2"
+        ]
+      },
+      {
         "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_1"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_2"
+        "value": "color_option_2"
       }
     ],
     "routes": [
       {
-        "categoryId": "cat_007",
+        "categoryId": "cat_002",
         "position": 44
       },
       {
-        "categoryId": "cat_002",
+        "categoryId": "cat_007",
         "position": 3
       }
     ],
-    "description": "High-quality 2x12 Beam - 16ft from FastenPro",
-    "shortDescription": "2x12 Beam - 16ft - EA",
-    "weight": 21.472010622020814,
     "metaTitle": "2x12 Beam - 16ft | FastenPro",
     "metaDescription": "Shop FastenPro 2x12 Beam - 16ft at BuildRight. Professional grade construction materials.",
     "metaKeywords": "structural, lumber, FastenPro, construction, building materials"
   },
   {
     "sku": "LBR-9D32768F",
-    "name": "ProFrame 4x4 Post - 8ft",
     "type": "simple",
+    "name": "ProFrame 4x4 Post - 8ft",
     "status": "enabled",
     "visibility": "both",
-    "price": 34.43,
+    "price": 34.42644524873535,
+    "description": "High-quality 4x4 Post - 8ft from ProFrame",
+    "shortDescription": "4x4 Post - 8ft - EA",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_6"
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
       },
       {
-        "code": "attr_008",
-        "value": "warranty_option_1"
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_4"
+        ]
       },
       {
         "code": "attr_007",
-        "value": false
+        "value": "size_option_3"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_2"
       }
     ],
     "routes": [
       {
-        "categoryId": "cat_007",
+        "categoryId": "cat_002",
         "position": 48
       },
       {
-        "categoryId": "cat_002",
+        "categoryId": "cat_007",
         "position": 54
       }
     ],
-    "description": "High-quality 4x4 Post - 8ft from ProFrame",
-    "shortDescription": "4x4 Post - 8ft - EA",
-    "weight": 15.300344831450072,
     "metaTitle": "4x4 Post - 8ft | ProFrame",
     "metaDescription": "Shop ProFrame 4x4 Post - 8ft at BuildRight. Professional grade construction materials.",
     "metaKeywords": "structural, lumber, ProFrame, construction, building materials"
   },
   {
     "sku": "PLY-7D58FF99",
-    "name": "FastenPro OSB Sheathing 7/16\" - 4x8",
     "type": "simple",
+    "name": "ReliaBuild OSB Sheathing 7/16\" - 4x8",
     "status": "enabled",
     "visibility": "both",
-    "price": 23.73,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "structural_materials"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_4"
-      },
-      {
-        "code": "attr_007",
-        "value": false
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_4"
-      },
-      {
-        "code": "attr_009",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_4"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 21
-      }
-    ],
-    "description": "High-quality OSB Sheathing 7/16\" - 4x8 from FastenPro",
+    "price": 19.209239245024154,
+    "description": "High-quality OSB Sheathing 7/16\" - 4x8 from ReliaBuild",
     "shortDescription": "OSB Sheathing 7/16\" - 4x8 - SHEET",
-    "weight": 49.77491309529865,
-    "metaTitle": "OSB Sheathing 7/16\" - 4x8 | FastenPro",
-    "metaDescription": "Shop FastenPro OSB Sheathing 7/16\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, plywood, FastenPro, construction, building materials"
-  },
-  {
-    "sku": "PLY-AF7C8BA7",
-    "name": "FastenPro CDX Plywood 1/2\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 29.52,
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_003",
+        "code": "project_types",
         "value": [
-          "size_option_6",
-          "size_option_2"
+          "new_construction",
+          "remodel"
         ]
       },
       {
-        "code": "attr_009",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 57
-      }
-    ],
-    "description": "High-quality CDX Plywood 1/2\" - 4x8 from FastenPro",
-    "shortDescription": "CDX Plywood 1/2\" - 4x8 - SHEET",
-    "weight": 40.428006697179754,
-    "metaTitle": "CDX Plywood 1/2\" - 4x8 | FastenPro",
-    "metaDescription": "Shop FastenPro CDX Plywood 1/2\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, plywood, FastenPro, construction, building materials"
-  },
-  {
-    "sku": "PLY-3C2EC476",
-    "name": "FastenPro T&G Subfloor 3/4\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 42.3,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "structural_materials"
+        "code": "brand",
+        "value": "durabuilt"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_009",
-        "value": true
+        "code": "commercial_residential",
+        "value": "residential"
       },
       {
         "code": "attr_010",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 1
-      }
-    ],
-    "description": "High-quality T&G Subfloor 3/4\" - 4x8 from FastenPro",
-    "shortDescription": "T&G Subfloor 3/4\" - 4x8 - SHEET",
-    "weight": 13.455169530797363,
-    "metaTitle": "T&G Subfloor 3/4\" - 4x8 | FastenPro",
-    "metaDescription": "Shop FastenPro T&G Subfloor 3/4\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, plywood, FastenPro, construction, building materials"
-  },
-  {
-    "sku": "PLY-2BA5387B",
-    "name": "DuraBuilt Marine Plywood 3/4\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 80.94,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "structural_materials"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      },
-      {
-        "code": "attr_003",
         "value": [
-          "size_option_2",
-          "size_option_6"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 69
-      }
-    ],
-    "description": "High-quality Marine Plywood 3/4\" - 4x8 from DuraBuilt",
-    "shortDescription": "Marine Plywood 3/4\" - 4x8 - SHEET",
-    "weight": 22.68074155863409,
-    "metaTitle": "Marine Plywood 3/4\" - 4x8 | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt Marine Plywood 3/4\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, plywood, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "PLY-4C31A6A6",
-    "name": "SafeGuard Hardwood Plywood 1/4\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 57.59,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "structural_materials"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 36
-      }
-    ],
-    "description": "High-quality Hardwood Plywood 1/4\" - 4x8 from SafeGuard",
-    "shortDescription": "Hardwood Plywood 1/4\" - 4x8 - SHEET",
-    "weight": 35.32915605713109,
-    "metaTitle": "Hardwood Plywood 1/4\" - 4x8 | SafeGuard",
-    "metaDescription": "Shop SafeGuard Hardwood Plywood 1/4\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, plywood, SafeGuard, construction, building materials"
-  },
-  {
-    "sku": "PLY-E0240635",
-    "name": "DuraBuilt Siding Panel 3/8\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 40.26,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "structural_materials"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_3",
-          "size_option_1",
-          "size_option_6"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 81
-      }
-    ],
-    "description": "High-quality Siding Panel 3/8\" - 4x8 from DuraBuilt",
-    "shortDescription": "Siding Panel 3/8\" - 4x8 - SHEET",
-    "weight": 5.744547846142458,
-    "metaTitle": "Siding Panel 3/8\" - 4x8 | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt Siding Panel 3/8\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, plywood, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "STUD-44C79532",
-    "name": "StructureMaster Metal Stud 20ga - 3.5\" x 10ft",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 8.49,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_2"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_7",
-          "size_option_2"
+          "custom_attribute_6_option_5",
+          "custom_attribute_6_option_4"
         ]
       },
       {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_5"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 13
-      }
-    ],
-    "description": "High-quality Metal Stud 20ga - 3.5\" x 10ft from StructureMaster",
-    "shortDescription": "Metal Stud 20ga - 3.5\" x 10ft - EA",
-    "weight": 12.028476720223425,
-    "metaTitle": "Metal Stud 20ga - 3.5\" x 10ft | StructureMaster",
-    "metaDescription": "Shop StructureMaster Metal Stud 20ga - 3.5\" x 10ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, studs, StructureMaster, construction, building materials"
-  },
-  {
-    "sku": "STUD-B6E3E673",
-    "name": "ProFrame Metal Stud 20ga - 6\" x 10ft",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 14.33,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
         "code": "attr_006",
-        "value": "brand_option_2"
+        "value": "color_option_4"
       },
       {
-        "code": "attr_005",
-        "value": "dimensions_option_5"
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 98
-      }
-    ],
-    "description": "High-quality Metal Stud 20ga - 6\" x 10ft from ProFrame",
-    "shortDescription": "Metal Stud 20ga - 6\" x 10ft - EA",
-    "weight": 35.05678416884354,
-    "metaTitle": "Metal Stud 20ga - 6\" x 10ft | ProFrame",
-    "metaDescription": "Shop ProFrame Metal Stud 20ga - 6\" x 10ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, studs, ProFrame, construction, building materials"
-  },
-  {
-    "sku": "STUD-95E9D258",
-    "name": "ToughGrip Metal Track 20ga - 3.5\" x 10ft",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 10.09,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_003",
+        "code": "attr_014",
         "value": [
-          "size_option_4",
-          "size_option_3"
-        ]
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_4"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 14
-      }
-    ],
-    "description": "High-quality Metal Track 20ga - 3.5\" x 10ft from ToughGrip",
-    "shortDescription": "Metal Track 20ga - 3.5\" x 10ft - EA",
-    "weight": 29.272796644024922,
-    "metaTitle": "Metal Track 20ga - 3.5\" x 10ft | ToughGrip",
-    "metaDescription": "Shop ToughGrip Metal Track 20ga - 3.5\" x 10ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, studs, ToughGrip, construction, building materials"
-  },
-  {
-    "sku": "STUD-984F2EC0",
-    "name": "SafeGuard Metal Track 20ga - 6\" x 10ft",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 14.74,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      },
-      {
-        "code": "attr_007",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 44
-      }
-    ],
-    "description": "High-quality Metal Track 20ga - 6\" x 10ft from SafeGuard",
-    "shortDescription": "Metal Track 20ga - 6\" x 10ft - EA",
-    "weight": 14.233667379819632,
-    "metaTitle": "Metal Track 20ga - 6\" x 10ft | SafeGuard",
-    "metaDescription": "Shop SafeGuard Metal Track 20ga - 6\" x 10ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, studs, SafeGuard, construction, building materials"
-  },
-  {
-    "sku": "STUD-8DEC7739",
-    "name": "BuildRight Pro Steel C-Channel - 8ft",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 20.42,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_7"
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_3",
-          "size_option_7",
-          "size_option_5"
-        ]
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 40
-      }
-    ],
-    "description": "High-quality Steel C-Channel - 8ft from BuildRight Pro",
-    "shortDescription": "Steel C-Channel - 8ft - EA",
-    "weight": 33.7960426960122,
-    "metaTitle": "Steel C-Channel - 8ft | BuildRight Pro",
-    "metaDescription": "Shop BuildRight Pro Steel C-Channel - 8ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, studs, BuildRight Pro, construction, building materials"
-  },
-  {
-    "sku": "STUD-07E7F7E4",
-    "name": "PremiumBuild Hat Channel - 12ft",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 15.23,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_007",
-        "value": false
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_5"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 79
-      }
-    ],
-    "description": "High-quality Hat Channel - 12ft from PremiumBuild",
-    "shortDescription": "Hat Channel - 12ft - EA",
-    "weight": 36.74362768407149,
-    "metaTitle": "Hat Channel - 12ft | PremiumBuild",
-    "metaDescription": "Shop PremiumBuild Hat Channel - 12ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, studs, PremiumBuild, construction, building materials"
-  },
-  {
-    "sku": "DRYWALL-8F034793",
-    "name": "ReliaBuild Drywall 1/2\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 14.1,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_6",
-          "size_option_2",
-          "size_option_3"
-        ]
-      },
-      {
-        "code": "attr_009",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 89
-      }
-    ],
-    "description": "High-quality Drywall 1/2\" - 4x8 from ReliaBuild",
-    "shortDescription": "Drywall 1/2\" - 4x8 - SHEET",
-    "weight": 35.16360904377122,
-    "metaTitle": "Drywall 1/2\" - 4x8 | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Drywall 1/2\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, drywall, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "DRYWALL-A8217B48",
-    "name": "MaxStrength Drywall 5/8\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 14.8,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_1"
-        ]
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_3"
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 83
-      }
-    ],
-    "description": "High-quality Drywall 5/8\" - 4x8 from MaxStrength",
-    "shortDescription": "Drywall 5/8\" - 4x8 - SHEET",
-    "weight": 31.632739677388567,
-    "metaTitle": "Drywall 5/8\" - 4x8 | MaxStrength",
-    "metaDescription": "Shop MaxStrength Drywall 5/8\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, drywall, MaxStrength, construction, building materials"
-  },
-  {
-    "sku": "DRYWALL-67027AF0",
-    "name": "ReliaBuild Moisture Resistant Drywall - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 19.12,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 5
-      }
-    ],
-    "description": "High-quality Moisture Resistant Drywall - 4x8 from ReliaBuild",
-    "shortDescription": "Moisture Resistant Drywall - 4x8 - SHEET",
-    "weight": 31.55359066955447,
-    "metaTitle": "Moisture Resistant Drywall - 4x8 | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Moisture Resistant Drywall - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, drywall, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "DRYWALL-1E512505",
-    "name": "SafeGuard Fire Rated Drywall - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 22.7,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_4"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_009",
-        "value": true
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_5"
-        ]
-      },
-      {
-        "code": "attr_010",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 59
-      }
-    ],
-    "description": "High-quality Fire Rated Drywall - 4x8 from SafeGuard",
-    "shortDescription": "Fire Rated Drywall - 4x8 - SHEET",
-    "weight": 24.162936698255564,
-    "metaTitle": "Fire Rated Drywall - 4x8 | SafeGuard",
-    "metaDescription": "Shop SafeGuard Fire Rated Drywall - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, drywall, SafeGuard, construction, building materials"
-  },
-  {
-    "sku": "DRYWALL-038C3C6C",
-    "name": "ReliaBuild Cement Board 1/2\" - 3x5",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 18.7,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_2"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_4",
-          "size_option_2",
-          "size_option_1"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 48
-      }
-    ],
-    "description": "High-quality Cement Board 1/2\" - 3x5 from ReliaBuild",
-    "shortDescription": "Cement Board 1/2\" - 3x5 - SHEET",
-    "weight": 6.005034057891478,
-    "metaTitle": "Cement Board 1/2\" - 3x5 | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Cement Board 1/2\" - 3x5 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, drywall, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "DRYWALL-439D9A62",
-    "name": "ReliaBuild Sound Dampening Drywall - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 34.43,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_7"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_3",
-          "size_option_6",
-          "size_option_4"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 59
-      }
-    ],
-    "description": "High-quality Sound Dampening Drywall - 4x8 from ReliaBuild",
-    "shortDescription": "Sound Dampening Drywall - 4x8 - SHEET",
-    "weight": 23.7476877080033,
-    "metaTitle": "Sound Dampening Drywall - 4x8 | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Sound Dampening Drywall - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, drywall, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "WINDOW-8039584D",
-    "name": "BuildRight Pro Single Hung Window - 36\"x48\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 220.28,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 12
-      }
-    ],
-    "description": "High-quality Single Hung Window - 36\"x48\" from BuildRight Pro",
-    "shortDescription": "Single Hung Window - 36\"x48\" - EA",
-    "weight": 39.60522939572354,
-    "metaTitle": "Single Hung Window - 36\"x48\" | BuildRight Pro",
-    "metaDescription": "Shop BuildRight Pro Single Hung Window - 36\"x48\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, windows, BuildRight Pro, construction, building materials"
-  },
-  {
-    "sku": "WINDOW-6642736C",
-    "name": "MaxStrength Double Hung Window - 36\"x60\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 310.39,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 23
-      }
-    ],
-    "description": "High-quality Double Hung Window - 36\"x60\" from MaxStrength",
-    "shortDescription": "Double Hung Window - 36\"x60\" - EA",
-    "weight": 43.209733625040265,
-    "metaTitle": "Double Hung Window - 36\"x60\" | MaxStrength",
-    "metaDescription": "Shop MaxStrength Double Hung Window - 36\"x60\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, windows, MaxStrength, construction, building materials"
-  },
-  {
-    "sku": "WINDOW-888AFAE6",
-    "name": "ToughGrip Sliding Window - 48\"x36\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 235.79,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_1"
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_2"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 16
-      }
-    ],
-    "description": "High-quality Sliding Window - 48\"x36\" from ToughGrip",
-    "shortDescription": "Sliding Window - 48\"x36\" - EA",
-    "weight": 42.37779285450363,
-    "metaTitle": "Sliding Window - 48\"x36\" | ToughGrip",
-    "metaDescription": "Shop ToughGrip Sliding Window - 48\"x36\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, windows, ToughGrip, construction, building materials"
-  },
-  {
-    "sku": "WINDOW-8F26E917",
-    "name": "StructureMaster Casement Window - 30\"x48\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 368.4,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_1"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_6",
-          "size_option_4",
-          "size_option_2"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 92
-      }
-    ],
-    "description": "High-quality Casement Window - 30\"x48\" from StructureMaster",
-    "shortDescription": "Casement Window - 30\"x48\" - EA",
-    "weight": 12.30691767265411,
-    "metaTitle": "Casement Window - 30\"x48\" | StructureMaster",
-    "metaDescription": "Shop StructureMaster Casement Window - 30\"x48\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, windows, StructureMaster, construction, building materials"
-  },
-  {
-    "sku": "WINDOW-51CD3FC4",
-    "name": "MaxStrength Bay Window - 72\"x48\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 885.35,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 27
-      }
-    ],
-    "description": "High-quality Bay Window - 72\"x48\" from MaxStrength",
-    "shortDescription": "Bay Window - 72\"x48\" - EA",
-    "weight": 45.09307988551123,
-    "metaTitle": "Bay Window - 72\"x48\" | MaxStrength",
-    "metaDescription": "Shop MaxStrength Bay Window - 72\"x48\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, windows, MaxStrength, construction, building materials"
-  },
-  {
-    "sku": "WINDOW-5946F85C",
-    "name": "BuildRight Pro Awning Window - 36\"x24\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 211.3,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 94
-      }
-    ],
-    "description": "High-quality Awning Window - 36\"x24\" from BuildRight Pro",
-    "shortDescription": "Awning Window - 36\"x24\" - EA",
-    "weight": 18.318048246818616,
-    "metaTitle": "Awning Window - 36\"x24\" | BuildRight Pro",
-    "metaDescription": "Shop BuildRight Pro Awning Window - 36\"x24\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, windows, BuildRight Pro, construction, building materials"
-  },
-  {
-    "sku": "DOOR-34C72FD2",
-    "name": "ReliaBuild Entry Door - Steel 36\"x80\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 310.06,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 10
-      }
-    ],
-    "description": "High-quality Entry Door - Steel 36\"x80\" from ReliaBuild",
-    "shortDescription": "Entry Door - Steel 36\"x80\" - EA",
-    "weight": 2.551957250364105,
-    "metaTitle": "Entry Door - Steel 36\"x80\" | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Entry Door - Steel 36\"x80\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, doors, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "DOOR-89357B1F",
-    "name": "DuraBuilt Interior Door - Hollow Core 32\"x80\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 115.16,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_7"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_3",
-          "size_option_4"
-        ]
-      },
-      {
-        "code": "attr_009",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 76
-      }
-    ],
-    "description": "High-quality Interior Door - Hollow Core 32\"x80\" from DuraBuilt",
-    "shortDescription": "Interior Door - Hollow Core 32\"x80\" - EA",
-    "weight": 20.776194462448448,
-    "metaTitle": "Interior Door - Hollow Core 32\"x80\" | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt Interior Door - Hollow Core 32\"x80\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, doors, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "DOOR-070629C1",
-    "name": "PremiumBuild French Door - 60\"x80\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 872.57,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_009",
-        "value": true
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 49
-      }
-    ],
-    "description": "High-quality French Door - 60\"x80\" from PremiumBuild",
-    "shortDescription": "French Door - 60\"x80\" - PAIR",
-    "weight": 7.095297220207423,
-    "metaTitle": "French Door - 60\"x80\" | PremiumBuild",
-    "metaDescription": "Shop PremiumBuild French Door - 60\"x80\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, doors, PremiumBuild, construction, building materials"
-  },
-  {
-    "sku": "DOOR-E93CC71C",
-    "name": "DuraBuilt Sliding Patio Door - 72\"x80\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 1107.97,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_4"
-      },
-      {
-        "code": "attr_009",
-        "value": false
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 30
-      }
-    ],
-    "description": "High-quality Sliding Patio Door - 72\"x80\" from DuraBuilt",
-    "shortDescription": "Sliding Patio Door - 72\"x80\" - EA",
-    "weight": 41.64097984537528,
-    "metaTitle": "Sliding Patio Door - 72\"x80\" | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt Sliding Patio Door - 72\"x80\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, doors, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "DOOR-75F9C73D",
-    "name": "StructureMaster Bi-fold Closet Door - 36\"x80\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 120.42,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_3",
-          "size_option_2",
-          "size_option_5"
-        ]
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 76
-      }
-    ],
-    "description": "High-quality Bi-fold Closet Door - 36\"x80\" from StructureMaster",
-    "shortDescription": "Bi-fold Closet Door - 36\"x80\" - EA",
-    "weight": 33.66388429732243,
-    "metaTitle": "Bi-fold Closet Door - 36\"x80\" | StructureMaster",
-    "metaDescription": "Shop StructureMaster Bi-fold Closet Door - 36\"x80\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, doors, StructureMaster, construction, building materials"
-  },
-  {
-    "sku": "DOOR-81B579D4",
-    "name": "ToughGrip Storm Door - 36\"x80\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 272.76,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_3"
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 77
-      }
-    ],
-    "description": "High-quality Storm Door - 36\"x80\" from ToughGrip",
-    "shortDescription": "Storm Door - 36\"x80\" - EA",
-    "weight": 40.18493308461501,
-    "metaTitle": "Storm Door - 36\"x80\" | ToughGrip",
-    "metaDescription": "Shop ToughGrip Storm Door - 36\"x80\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, doors, ToughGrip, construction, building materials"
-  },
-  {
-    "sku": "NAIL-244FD20C",
-    "name": "PremiumBuild Framing Nails 16d - 50lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 54.4,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_010",
-        "value": false
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 75
-      }
-    ],
-    "description": "High-quality Framing Nails 16d - 50lb Box from PremiumBuild",
-    "shortDescription": "Framing Nails 16d - 50lb Box - BOX",
-    "weight": 19.84737063331873,
-    "metaTitle": "Framing Nails 16d - 50lb Box | PremiumBuild",
-    "metaDescription": "Shop PremiumBuild Framing Nails 16d - 50lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, nails, PremiumBuild, construction, building materials"
-  },
-  {
-    "sku": "NAIL-9D448DAA",
-    "name": "StructureMaster Finish Nails 8d - 5lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 20.22,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_007",
-        "value": false
-      },
-      {
-        "code": "attr_009",
-        "value": false
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 47
-      }
-    ],
-    "description": "High-quality Finish Nails 8d - 5lb Box from StructureMaster",
-    "shortDescription": "Finish Nails 8d - 5lb Box - BOX",
-    "weight": 7.6777652831178935,
-    "metaTitle": "Finish Nails 8d - 5lb Box | StructureMaster",
-    "metaDescription": "Shop StructureMaster Finish Nails 8d - 5lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, nails, StructureMaster, construction, building materials"
-  },
-  {
-    "sku": "NAIL-2DBD44A2",
-    "name": "SafeGuard Roofing Nails - 50lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 55.67,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_7"
-      },
-      {
-        "code": "attr_010",
-        "value": false
-      },
-      {
-        "code": "attr_009",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 59
-      }
-    ],
-    "description": "High-quality Roofing Nails - 50lb Box from SafeGuard",
-    "shortDescription": "Roofing Nails - 50lb Box - BOX",
-    "weight": 16.015653259593833,
-    "metaTitle": "Roofing Nails - 50lb Box | SafeGuard",
-    "metaDescription": "Shop SafeGuard Roofing Nails - 50lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, nails, SafeGuard, construction, building materials"
-  },
-  {
-    "sku": "NAIL-D27A9BC3",
-    "name": "MaxStrength Brad Nails 18ga - 5000ct",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 31.28,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      },
-      {
-        "code": "attr_007",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 32
-      }
-    ],
-    "description": "High-quality Brad Nails 18ga - 5000ct from MaxStrength",
-    "shortDescription": "Brad Nails 18ga - 5000ct - BOX",
-    "weight": 16.688748214248918,
-    "metaTitle": "Brad Nails 18ga - 5000ct | MaxStrength",
-    "metaDescription": "Shop MaxStrength Brad Nails 18ga - 5000ct at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, nails, MaxStrength, construction, building materials"
-  },
-  {
-    "sku": "NAIL-65F44C61",
-    "name": "SafeGuard Concrete Nails - 5lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 27.08,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_009",
-        "value": true
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_1",
-          "size_option_5",
-          "size_option_6"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 23
-      }
-    ],
-    "description": "High-quality Concrete Nails - 5lb Box from SafeGuard",
-    "shortDescription": "Concrete Nails - 5lb Box - BOX",
-    "weight": 28.897696061012194,
-    "metaTitle": "Concrete Nails - 5lb Box | SafeGuard",
-    "metaDescription": "Shop SafeGuard Concrete Nails - 5lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, nails, SafeGuard, construction, building materials"
-  },
-  {
-    "sku": "NAIL-7AD0771D",
-    "name": "FastenPro Ring Shank Nails - 25lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 46.89,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_5"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 62
-      }
-    ],
-    "description": "High-quality Ring Shank Nails - 25lb Box from FastenPro",
-    "shortDescription": "Ring Shank Nails - 25lb Box - BOX",
-    "weight": 15.494922883107757,
-    "metaTitle": "Ring Shank Nails - 25lb Box | FastenPro",
-    "metaDescription": "Shop FastenPro Ring Shank Nails - 25lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, nails, FastenPro, construction, building materials"
-  },
-  {
-    "sku": "SCREW-48C3413B",
-    "name": "StructureMaster Deck Screws #8 - 5lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 29.26,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_4"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_5"
-        ]
-      },
-      {
-        "code": "attr_007",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 20
-      }
-    ],
-    "description": "High-quality Deck Screws #8 - 5lb Box from StructureMaster",
-    "shortDescription": "Deck Screws #8 - 5lb Box - BOX",
-    "weight": 14.299019342893278,
-    "metaTitle": "Deck Screws #8 - 5lb Box | StructureMaster",
-    "metaDescription": "Shop StructureMaster Deck Screws #8 - 5lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, screws, StructureMaster, construction, building materials"
-  },
-  {
-    "sku": "SCREW-704B6626",
-    "name": "ProFrame Drywall Screws - 5lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 23.62,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 73
-      }
-    ],
-    "description": "High-quality Drywall Screws - 5lb Box from ProFrame",
-    "shortDescription": "Drywall Screws - 5lb Box - BOX",
-    "weight": 36.00785149773949,
-    "metaTitle": "Drywall Screws - 5lb Box | ProFrame",
-    "metaDescription": "Shop ProFrame Drywall Screws - 5lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, screws, ProFrame, construction, building materials"
-  },
-  {
-    "sku": "SCREW-AD274060",
-    "name": "BuildRight Pro Wood Screws #10 - 1lb Box",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 13.23,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_7"
-      },
-      {
-        "code": "attr_009",
-        "value": false
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 50
-      }
-    ],
-    "description": "High-quality Wood Screws #10 - 1lb Box from BuildRight Pro",
-    "shortDescription": "Wood Screws #10 - 1lb Box - BOX",
-    "weight": 1.5879340174551746,
-    "metaTitle": "Wood Screws #10 - 1lb Box | BuildRight Pro",
-    "metaDescription": "Shop BuildRight Pro Wood Screws #10 - 1lb Box at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, screws, BuildRight Pro, construction, building materials"
-  },
-  {
-    "sku": "SCREW-4DC6B336",
-    "name": "ReliaBuild Self-Drilling Screws - 1lb",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 16.74,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_2"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_5"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 67
-      }
-    ],
-    "description": "High-quality Self-Drilling Screws - 1lb from ReliaBuild",
-    "shortDescription": "Self-Drilling Screws - 1lb - BOX",
-    "weight": 10.996601467019227,
-    "metaTitle": "Self-Drilling Screws - 1lb | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Self-Drilling Screws - 1lb at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, screws, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "SCREW-0DAA49A4",
-    "name": "SafeGuard Lag Screws 1/2\" - 50ct",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 45,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 96
-      }
-    ],
-    "description": "High-quality Lag Screws 1/2\" - 50ct from SafeGuard",
-    "shortDescription": "Lag Screws 1/2\" - 50ct - BOX",
-    "weight": 9.015125039971958,
-    "metaTitle": "Lag Screws 1/2\" - 50ct | SafeGuard",
-    "metaDescription": "Shop SafeGuard Lag Screws 1/2\" - 50ct at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, screws, SafeGuard, construction, building materials"
-  },
-  {
-    "sku": "SCREW-A3256812",
-    "name": "ReliaBuild Cabinet Screws - 100ct",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 16.55,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_4"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      },
-      {
-        "code": "attr_010",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 47
-      }
-    ],
-    "description": "High-quality Cabinet Screws - 100ct from ReliaBuild",
-    "shortDescription": "Cabinet Screws - 100ct - BOX",
-    "weight": 39.25695623748794,
-    "metaTitle": "Cabinet Screws - 100ct | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Cabinet Screws - 100ct at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, screws, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "SAFE-54709A01",
-    "name": "MaxStrength Hard Hat - Type 1 Class E",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 18.64,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_2"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 28
-      }
-    ],
-    "description": "High-quality Hard Hat - Type 1 Class E from MaxStrength",
-    "shortDescription": "Hard Hat - Type 1 Class E - EA",
-    "weight": 26.976314467366933,
-    "metaTitle": "Hard Hat - Type 1 Class E | MaxStrength",
-    "metaDescription": "Shop MaxStrength Hard Hat - Type 1 Class E at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "safety, equipment, MaxStrength, construction, building materials"
-  },
-  {
-    "sku": "SAFE-325D0586",
-    "name": "ReliaBuild Safety Glasses - ANSI Z87.1",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 8.44,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      },
-      {
-        "code": "attr_009",
-        "value": true
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 70
-      }
-    ],
-    "description": "High-quality Safety Glasses - ANSI Z87.1 from ReliaBuild",
-    "shortDescription": "Safety Glasses - ANSI Z87.1 - PAIR",
-    "weight": 16.727018840483865,
-    "metaTitle": "Safety Glasses - ANSI Z87.1 | ReliaBuild",
-    "metaDescription": "Shop ReliaBuild Safety Glasses - ANSI Z87.1 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "safety, equipment, ReliaBuild, construction, building materials"
-  },
-  {
-    "sku": "SAFE-AC3312B9",
-    "name": "SafeGuard Work Gloves - Heavy Duty",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 15.11,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_6",
-          "size_option_4",
-          "size_option_5"
-        ]
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      },
-      {
-        "code": "attr_010",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 36
-      }
-    ],
-    "description": "High-quality Work Gloves - Heavy Duty from SafeGuard",
-    "shortDescription": "Work Gloves - Heavy Duty - PAIR",
-    "weight": 5.128518851533774,
-    "metaTitle": "Work Gloves - Heavy Duty | SafeGuard",
-    "metaDescription": "Shop SafeGuard Work Gloves - Heavy Duty at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "safety, equipment, SafeGuard, construction, building materials"
-  },
-  {
-    "sku": "SAFE-7F19B12C",
-    "name": "BuildRight Pro Safety Vest - High Vis Orange",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 15.08,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_4"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      },
-      {
-        "code": "attr_010",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 80
-      }
-    ],
-    "description": "High-quality Safety Vest - High Vis Orange from BuildRight Pro",
-    "shortDescription": "Safety Vest - High Vis Orange - EA",
-    "weight": 32.251587077626766,
-    "metaTitle": "Safety Vest - High Vis Orange | BuildRight Pro",
-    "metaDescription": "Shop BuildRight Pro Safety Vest - High Vis Orange at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "safety, equipment, BuildRight Pro, construction, building materials"
-  },
-  {
-    "sku": "SAFE-2B236287",
-    "name": "FastenPro Ear Protection - 30dB NRR",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 7.34,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_7"
-      },
-      {
-        "code": "attr_009",
-        "value": false
-      },
-      {
-        "code": "attr_010",
-        "value": true
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_3"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 3
-      }
-    ],
-    "description": "High-quality Ear Protection - 30dB NRR from FastenPro",
-    "shortDescription": "Ear Protection - 30dB NRR - PAIR",
-    "weight": 44.58070542457546,
-    "metaTitle": "Ear Protection - 30dB NRR | FastenPro",
-    "metaDescription": "Shop FastenPro Ear Protection - 30dB NRR at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "safety, equipment, FastenPro, construction, building materials"
-  },
-  {
-    "sku": "SAFE-6D8805D3",
-    "name": "ToughGrip Fall Protection Harness",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 165.68,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_1"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 90
-      }
-    ],
-    "description": "High-quality Fall Protection Harness from ToughGrip",
-    "shortDescription": "Fall Protection Harness - EA",
-    "weight": 2.9456928977489905,
-    "metaTitle": "Fall Protection Harness | ToughGrip",
-    "metaDescription": "Shop ToughGrip Fall Protection Harness at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "safety, equipment, ToughGrip, construction, building materials"
-  },
-  {
-    "sku": "LBR-0C7A6DBC",
-    "name": "DuraBuilt 2x4 Stud - 8ft",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 8.92,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "structural_materials"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_5",
-          "size_option_1"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_007",
-        "position": 12
-      },
-      {
-        "categoryId": "cat_002",
-        "position": 80
-      }
-    ],
-    "description": "High-quality 2x4 Stud - 8ft from DuraBuilt",
-    "shortDescription": "2x4 Stud - 8ft - EA",
-    "weight": 13.604879623560645,
-    "metaTitle": "2x4 Stud - 8ft | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt 2x4 Stud - 8ft at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, lumber, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "DRYWALL-2507D228",
-    "name": "DuraBuilt Drywall 5/8\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 16.73,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_2"
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_2"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 55
-      }
-    ],
-    "description": "High-quality Drywall 5/8\" - 4x8 from DuraBuilt",
-    "shortDescription": "Drywall 5/8\" - 4x8 - SHEET",
-    "weight": 15.461598522244765,
-    "metaTitle": "Drywall 5/8\" - 4x8 | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt Drywall 5/8\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "framing, drywall, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "WINDOW-873F007E",
-    "name": "DuraBuilt Sliding Window - 48\"x36\"",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 273.02,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "windows_doors"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_5"
-      },
-      {
-        "code": "attr_007",
-        "value": true
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_010",
-        "value": false
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 17
-      }
-    ],
-    "description": "High-quality Sliding Window - 48\"x36\" from DuraBuilt",
-    "shortDescription": "Sliding Window - 48\"x36\" - EA",
-    "weight": 44.08737199524761,
-    "metaTitle": "Sliding Window - 48\"x36\" | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt Sliding Window - 48\"x36\" at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "windows-doors, windows, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "SCREW-D305E19A",
-    "name": "BuildRight Pro Self-Drilling Screws - 1lb",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 17.92,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_1"
-      },
-      {
-        "code": "attr_009",
-        "value": false
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_5"
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_007",
-        "value": false
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 68
-      }
-    ],
-    "description": "High-quality Self-Drilling Screws - 1lb from BuildRight Pro",
-    "shortDescription": "Self-Drilling Screws - 1lb - BOX",
-    "weight": 29.7818808354353,
-    "metaTitle": "Self-Drilling Screws - 1lb | BuildRight Pro",
-    "metaDescription": "Shop BuildRight Pro Self-Drilling Screws - 1lb at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "fasteners, screws, BuildRight Pro, construction, building materials"
-  },
-  {
-    "sku": "SAFE-F5871D82",
-    "name": "DuraBuilt Ear Protection - 30dB NRR",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 11.05,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_1"
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_5"
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_6",
-          "size_option_5"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 73
-      }
-    ],
-    "description": "High-quality Ear Protection - 30dB NRR from DuraBuilt",
-    "shortDescription": "Ear Protection - 30dB NRR - PAIR",
-    "weight": 33.04476965965925,
-    "metaTitle": "Ear Protection - 30dB NRR | DuraBuilt",
-    "metaDescription": "Shop DuraBuilt Ear Protection - 30dB NRR at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "safety, equipment, DuraBuilt, construction, building materials"
-  },
-  {
-    "sku": "PLY-6AD93F45",
-    "name": "MaxStrength Siding Panel 3/8\" - 4x8",
-    "type": "simple",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 40.85,
-    "attributes": [
-      {
-        "code": "attr_001",
-        "value": "structural_materials"
-      },
-      {
-        "code": "attr_006",
-        "value": "brand_option_1"
-      },
-      {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_003",
-        "value": [
-          "size_option_1",
-          "size_option_2",
-          "size_option_3"
+          "specifications_option_1",
+          "specifications_option_3"
         ]
       }
     ],
@@ -2489,245 +368,985 @@
         "position": 52
       }
     ],
-    "description": "High-quality Siding Panel 3/8\" - 4x8 from MaxStrength",
-    "shortDescription": "Siding Panel 3/8\" - 4x8 - SHEET",
-    "weight": 5.149014355684171,
-    "metaTitle": "Siding Panel 3/8\" - 4x8 | MaxStrength",
-    "metaDescription": "Shop MaxStrength Siding Panel 3/8\" - 4x8 at BuildRight. Professional grade construction materials.",
-    "metaKeywords": "structural, plywood, MaxStrength, construction, building materials"
+    "metaTitle": "OSB Sheathing 7/16\" - 4x8 | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild OSB Sheathing 7/16\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, plywood, ReliaBuild, construction, building materials"
   },
   {
-    "sku": "SVC-BE782144",
-    "name": "Structural Material Delivery",
-    "type": "service",
+    "sku": "PLY-AF7C8BA7",
+    "type": "simple",
+    "name": "ToughGrip CDX Plywood 1/2\" - 4x8",
     "status": "enabled",
     "visibility": "both",
-    "price": 117.99,
+    "price": 34.899048808449436,
+    "description": "High-quality CDX Plywood 1/2\" - 4x8 from ToughGrip",
+    "shortDescription": "CDX Plywood 1/2\" - 4x8 - SHEET",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "structural_materials"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_6"
-      },
-      {
-        "code": "attr_008",
-        "value": "warranty_option_2"
-      },
-      {
-        "code": "attr_002",
-        "value": true
-      },
-      {
-        "code": "attr_003",
+        "code": "project_types",
         "value": [
-          "size_option_1"
+          "new_construction",
+          "remodel"
         ]
       },
       {
-        "code": "attr_009",
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 58
+      }
+    ],
+    "metaTitle": "CDX Plywood 1/2\" - 4x8 | ToughGrip",
+    "metaDescription": "Shop ToughGrip CDX Plywood 1/2\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, plywood, ToughGrip, construction, building materials"
+  },
+  {
+    "sku": "PLY-3C2EC476",
+    "type": "simple",
+    "name": "SafeGuard T&G Subfloor 3/4\" - 4x8",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 46.608474735453946,
+    "description": "High-quality T&G Subfloor 3/4\" - 4x8 from SafeGuard",
+    "shortDescription": "T&G Subfloor 3/4\" - 4x8 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_1"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_3"
+      },
+      {
+        "code": "attr_011",
+        "value": "Standard"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 24
+      }
+    ],
+    "metaTitle": "T&G Subfloor 3/4\" - 4x8 | SafeGuard",
+    "metaDescription": "Shop SafeGuard T&G Subfloor 3/4\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, plywood, SafeGuard, construction, building materials"
+  },
+  {
+    "sku": "PLY-2BA5387B",
+    "type": "simple",
+    "name": "ReliaBuild Marine Plywood 3/4\" - 4x8",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 79.83087349488906,
+    "description": "High-quality Marine Plywood 3/4\" - 4x8 from ReliaBuild",
+    "shortDescription": "Marine Plywood 3/4\" - 4x8 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_3"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_5",
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_4"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 86
+      }
+    ],
+    "metaTitle": "Marine Plywood 3/4\" - 4x8 | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Marine Plywood 3/4\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, plywood, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "PLY-4C31A6A6",
+    "type": "simple",
+    "name": "ReliaBuild Hardwood Plywood 1/4\" - 4x8",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 57.55065250841466,
+    "description": "High-quality Hardwood Plywood 1/4\" - 4x8 from ReliaBuild",
+    "shortDescription": "Hardwood Plywood 1/4\" - 4x8 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_5"
+        ]
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 14
+      }
+    ],
+    "metaTitle": "Hardwood Plywood 1/4\" - 4x8 | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Hardwood Plywood 1/4\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, plywood, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "PLY-E0240635",
+    "type": "simple",
+    "name": "ProFrame Siding Panel 3/8\" - 4x8",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 35.312447072617914,
+    "description": "High-quality Siding Panel 3/8\" - 4x8 from ProFrame",
+    "shortDescription": "Siding Panel 3/8\" - 4x8 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_5",
+          "custom_attribute_6_option_6"
+        ]
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_2"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_1"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1",
+          "specifications_option_3"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 12
+      }
+    ],
+    "metaTitle": "Siding Panel 3/8\" - 4x8 | ProFrame",
+    "metaDescription": "Shop ProFrame Siding Panel 3/8\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, plywood, ProFrame, construction, building materials"
+  },
+  {
+    "sku": "STUD-44C79532",
+    "type": "simple",
+    "name": "BuildRight Pro Metal Stud 20ga - 3.5\" x 10ft",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 8.523456692939371,
+    "description": "High-quality Metal Stud 20ga - 3.5\" x 10ft from BuildRight Pro",
+    "shortDescription": "Metal Stud 20ga - 3.5\" x 10ft - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_4"
+        ]
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 13
+      }
+    ],
+    "metaTitle": "Metal Stud 20ga - 3.5\" x 10ft | BuildRight Pro",
+    "metaDescription": "Shop BuildRight Pro Metal Stud 20ga - 3.5\" x 10ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, studs, BuildRight Pro, construction, building materials"
+  },
+  {
+    "sku": "STUD-B6E3E673",
+    "type": "simple",
+    "name": "ProFrame Metal Stud 20ga - 6\" x 10ft",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 14.327680112015308,
+    "description": "High-quality Metal Stud 20ga - 6\" x 10ft from ProFrame",
+    "shortDescription": "Metal Stud 20ga - 6\" x 10ft - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_4"
+      },
+      {
+        "code": "attr_008",
         "value": true
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 44
+        "position": 98
       }
     ],
-    "description": "Professional structural material delivery provided by certified technicians",
-    "shortDescription": "Expert Structural Material Delivery",
-    "weight": 0,
-    "metaTitle": "Structural Material Delivery | BuildRight Services",
-    "metaDescription": "Professional Structural Material Delivery available. Expert installation and consultation services.",
-    "metaKeywords": "service, installation, consultation, structural, professional"
+    "metaTitle": "Metal Stud 20ga - 6\" x 10ft | ProFrame",
+    "metaDescription": "Shop ProFrame Metal Stud 20ga - 6\" x 10ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, studs, ProFrame, construction, building materials"
   },
   {
-    "sku": "SVC-DA991F80",
-    "name": "Lumber Cutting Service",
-    "type": "service",
+    "sku": "STUD-95E9D258",
+    "type": "simple",
+    "name": "ToughGrip Metal Track 20ga - 3.5\" x 10ft",
     "status": "enabled",
     "visibility": "both",
-    "price": 63.6,
+    "price": 11.734140397391347,
+    "description": "High-quality Metal Track 20ga - 3.5\" x 10ft from ToughGrip",
+    "shortDescription": "Metal Track 20ga - 3.5\" x 10ft - EA",
     "attributes": [
       {
-        "code": "attr_001",
-        "value": "structural_materials"
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_2"
       },
       {
         "code": "attr_006",
-        "value": "brand_option_1"
+        "value": "color_option_3"
       },
       {
         "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_4"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 28
+      }
+    ],
+    "metaTitle": "Metal Track 20ga - 3.5\" x 10ft | ToughGrip",
+    "metaDescription": "Shop ToughGrip Metal Track 20ga - 3.5\" x 10ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, studs, ToughGrip, construction, building materials"
+  },
+  {
+    "sku": "STUD-984F2EC0",
+    "type": "simple",
+    "name": "DuraBuilt Metal Track 20ga - 6\" x 10ft",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 14.251518250094502,
+    "description": "High-quality Metal Track 20ga - 6\" x 10ft from DuraBuilt",
+    "shortDescription": "Metal Track 20ga - 6\" x 10ft - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_4"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 94
+      }
+    ],
+    "metaTitle": "Metal Track 20ga - 6\" x 10ft | DuraBuilt",
+    "metaDescription": "Shop DuraBuilt Metal Track 20ga - 6\" x 10ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, studs, DuraBuilt, construction, building materials"
+  },
+  {
+    "sku": "STUD-8DEC7739",
+    "type": "simple",
+    "name": "ReliaBuild Steel C-Channel - 8ft",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 23.85435319219453,
+    "description": "High-quality Steel C-Channel - 8ft from ReliaBuild",
+    "shortDescription": "Steel C-Channel - 8ft - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3"
+        ]
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_5",
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_4"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 4
+      }
+    ],
+    "metaTitle": "Steel C-Channel - 8ft | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Steel C-Channel - 8ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, studs, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "STUD-07E7F7E4",
+    "type": "simple",
+    "name": "PremiumBuild Hat Channel - 12ft",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 15.22913074550644,
+    "description": "High-quality Hat Channel - 12ft from PremiumBuild",
+    "shortDescription": "Hat Channel - 12ft - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_008",
         "value": false
       },
       {
-        "code": "attr_003",
+        "code": "attr_014",
         "value": [
-          "size_option_5",
-          "size_option_7"
+          "specifications_option_1",
+          "specifications_option_3",
+          "specifications_option_2"
         ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Standard"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 8
+        "position": 79
       }
     ],
-    "description": "Professional lumber cutting service provided by certified technicians",
-    "shortDescription": "Expert Lumber Cutting Service",
-    "weight": 0,
-    "metaTitle": "Lumber Cutting Service | BuildRight Services",
-    "metaDescription": "Professional Lumber Cutting Service available. Expert installation and consultation services.",
-    "metaKeywords": "service, installation, consultation, structural, professional"
+    "metaTitle": "Hat Channel - 12ft | PremiumBuild",
+    "metaDescription": "Shop PremiumBuild Hat Channel - 12ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, studs, PremiumBuild, construction, building materials"
   },
   {
-    "sku": "SVC-8E4FBE5D",
-    "name": "Drywall Installation Service",
-    "type": "service",
+    "sku": "DRYWALL-8F034793",
+    "type": "simple",
+    "name": "DuraBuilt Drywall 1/2\" - 4x8",
     "status": "enabled",
     "visibility": "both",
-    "price": 390.58,
+    "price": 15.548830510838345,
+    "description": "High-quality Drywall 1/2\" - 4x8 from DuraBuilt",
+    "shortDescription": "Drywall 1/2\" - 4x8 - SHEET",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "framing_insulation"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_4"
-      },
-      {
-        "code": "attr_003",
+        "code": "project_types",
         "value": [
-          "size_option_4",
-          "size_option_1"
+          "remodel",
+          "repair",
+          "restoration"
         ]
       },
       {
-        "code": "attr_008",
-        "value": "warranty_option_5"
+        "code": "brand",
+        "value": "buildright_pro"
       },
       {
-        "code": "attr_005",
-        "value": "dimensions_option_3"
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1",
+          "specifications_option_2",
+          "specifications_option_3"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Standard"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 40
+        "position": 21
       }
     ],
-    "description": "Professional drywall installation service provided by certified technicians",
-    "shortDescription": "Expert Drywall Installation Service",
-    "weight": 0,
-    "metaTitle": "Drywall Installation Service | BuildRight Services",
-    "metaDescription": "Professional Drywall Installation Service available. Expert installation and consultation services.",
-    "metaKeywords": "service, installation, consultation, framing, professional"
+    "metaTitle": "Drywall 1/2\" - 4x8 | DuraBuilt",
+    "metaDescription": "Shop DuraBuilt Drywall 1/2\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, drywall, DuraBuilt, construction, building materials"
   },
   {
-    "sku": "SVC-B2559E94",
-    "name": "Framing Consultation",
-    "type": "service",
+    "sku": "DRYWALL-A8217B48",
+    "type": "simple",
+    "name": "MaxStrength Drywall 5/8\" - 4x8",
     "status": "enabled",
     "visibility": "both",
-    "price": 247.8,
+    "price": 14.795366287601816,
+    "description": "High-quality Drywall 5/8\" - 4x8 from MaxStrength",
+    "shortDescription": "Drywall 5/8\" - 4x8 - SHEET",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "framing_insulation"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_3"
-      },
-      {
-        "code": "attr_003",
+        "code": "project_types",
         "value": [
-          "size_option_3",
-          "size_option_5"
+          "remodel",
+          "repair",
+          "restoration"
         ]
       },
       {
-        "code": "attr_008",
-        "value": "warranty_option_5"
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_2"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_1"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 40
+        "position": 83
       }
     ],
-    "description": "Professional framing consultation provided by certified technicians",
-    "shortDescription": "Expert Framing Consultation",
-    "weight": 0,
-    "metaTitle": "Framing Consultation | BuildRight Services",
-    "metaDescription": "Professional Framing Consultation available. Expert installation and consultation services.",
-    "metaKeywords": "service, installation, consultation, framing, professional"
+    "metaTitle": "Drywall 5/8\" - 4x8 | MaxStrength",
+    "metaDescription": "Shop MaxStrength Drywall 5/8\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, drywall, MaxStrength, construction, building materials"
   },
   {
-    "sku": "SVC-74321042",
-    "name": "Door & Window Installation",
-    "type": "service",
+    "sku": "DRYWALL-67027AF0",
+    "type": "simple",
+    "name": "SafeGuard Moisture Resistant Drywall - 4x8",
     "status": "enabled",
     "visibility": "both",
-    "price": 334.92,
+    "price": 21.7509477155986,
+    "description": "High-quality Moisture Resistant Drywall - 4x8 from SafeGuard",
+    "shortDescription": "Moisture Resistant Drywall - 4x8 - SHEET",
     "attributes": [
       {
-        "code": "attr_001",
-        "value": "windows_doors"
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
       },
       {
         "code": "attr_006",
-        "value": "brand_option_4"
+        "value": "color_option_4"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 91
+      }
+    ],
+    "metaTitle": "Moisture Resistant Drywall - 4x8 | SafeGuard",
+    "metaDescription": "Shop SafeGuard Moisture Resistant Drywall - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, drywall, SafeGuard, construction, building materials"
+  },
+  {
+    "sku": "DRYWALL-1E512505",
+    "type": "simple",
+    "name": "DuraBuilt Fire Rated Drywall - 4x8",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 22.691163063371164,
+    "description": "High-quality Fire Rated Drywall - 4x8 from DuraBuilt",
+    "shortDescription": "Fire Rated Drywall - 4x8 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_008",
+        "value": false
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      },
+      {
+        "code": "attr_011",
+        "value": "Heavy duty"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 81
+      }
+    ],
+    "metaTitle": "Fire Rated Drywall - 4x8 | DuraBuilt",
+    "metaDescription": "Shop DuraBuilt Fire Rated Drywall - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, drywall, DuraBuilt, construction, building materials"
+  },
+  {
+    "sku": "DRYWALL-038C3C6C",
+    "type": "simple",
+    "name": "BuildRight Pro Cement Board 1/2\" - 3x5",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 19.965321661888307,
+    "description": "High-quality Cement Board 1/2\" - 3x5 from BuildRight Pro",
+    "shortDescription": "Cement Board 1/2\" - 3x5 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
       },
       {
         "code": "attr_010",
-        "value": true
-      },
-      {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
+        "value": [
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_4",
+          "custom_attribute_6_option_6"
+        ]
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 5
+        "position": 80
       }
     ],
-    "description": "Professional door & window installation provided by certified technicians",
-    "shortDescription": "Expert Door & Window Installation",
-    "weight": 0,
-    "metaTitle": "Door & Window Installation | BuildRight Services",
-    "metaDescription": "Professional Door & Window Installation available. Expert installation and consultation services.",
-    "metaKeywords": "service, installation, consultation, windows-doors, professional"
+    "metaTitle": "Cement Board 1/2\" - 3x5 | BuildRight Pro",
+    "metaDescription": "Shop BuildRight Pro Cement Board 1/2\" - 3x5 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, drywall, BuildRight Pro, construction, building materials"
   },
   {
-    "sku": "SVC-EEAD2FDF",
-    "name": "Window Measurement Service",
-    "type": "service",
+    "sku": "DRYWALL-439D9A62",
+    "type": "simple",
+    "name": "ToughGrip Sound Dampening Drywall - 4x8",
     "status": "enabled",
     "visibility": "both",
-    "price": 82.4,
+    "price": 31.814662935125952,
+    "description": "High-quality Sound Dampening Drywall - 4x8 from ToughGrip",
+    "shortDescription": "Sound Dampening Drywall - 4x8 - SHEET",
     "attributes": [
       {
-        "code": "attr_001",
-        "value": "windows_doors"
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_1"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Heavy duty"
       },
       {
         "code": "attr_006",
-        "value": "brand_option_7"
+        "value": "color_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 69
+      }
+    ],
+    "metaTitle": "Sound Dampening Drywall - 4x8 | ToughGrip",
+    "metaDescription": "Shop ToughGrip Sound Dampening Drywall - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, drywall, ToughGrip, construction, building materials"
+  },
+  {
+    "sku": "WINDOW-8039584D",
+    "type": "simple",
+    "name": "StructureMaster Single Hung Window - 36\"x48\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 238.84387585280643,
+    "description": "High-quality Single Hung Window - 36\"x48\" from StructureMaster",
+    "shortDescription": "Single Hung Window - 36\"x48\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
       },
       {
-        "code": "attr_008",
-        "value": "warranty_option_2"
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_011",
+        "value": "Standard"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3",
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 81
+      }
+    ],
+    "metaTitle": "Single Hung Window - 36\"x48\" | StructureMaster",
+    "metaDescription": "Shop StructureMaster Single Hung Window - 36\"x48\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, windows, StructureMaster, construction, building materials"
+  },
+  {
+    "sku": "WINDOW-6642736C",
+    "type": "simple",
+    "name": "FastenPro Double Hung Window - 36\"x60\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 352.507391009716,
+    "description": "High-quality Double Hung Window - 36\"x60\" from FastenPro",
+    "shortDescription": "Double Hung Window - 36\"x60\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_2",
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 47
+      }
+    ],
+    "metaTitle": "Double Hung Window - 36\"x60\" | FastenPro",
+    "metaDescription": "Shop FastenPro Double Hung Window - 36\"x60\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, windows, FastenPro, construction, building materials"
+  },
+  {
+    "sku": "WINDOW-888AFAE6",
+    "type": "simple",
+    "name": "ReliaBuild Sliding Window - 48\"x36\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 267.2717094641513,
+    "description": "High-quality Sliding Window - 48\"x36\" from ReliaBuild",
+    "shortDescription": "Sliding Window - 48\"x36\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_1"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Heavy duty"
       }
     ],
     "routes": [
@@ -2736,39 +1355,1504 @@
         "position": 78
       }
     ],
-    "description": "Professional window measurement service provided by certified technicians",
-    "shortDescription": "Expert Window Measurement Service",
-    "weight": 0,
-    "metaTitle": "Window Measurement Service | BuildRight Services",
-    "metaDescription": "Professional Window Measurement Service available. Expert installation and consultation services.",
-    "metaKeywords": "service, installation, consultation, windows-doors, professional"
+    "metaTitle": "Sliding Window - 48\"x36\" | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Sliding Window - 48\"x36\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, windows, ReliaBuild, construction, building materials"
   },
   {
-    "sku": "SVC-3774CB8D",
-    "name": "Fastener Consultation",
-    "type": "service",
+    "sku": "WINDOW-8F26E917",
+    "type": "simple",
+    "name": "PremiumBuild Casement Window - 30\"x48\"",
     "status": "enabled",
     "visibility": "both",
-    "price": 50.98,
+    "price": 385.1658177679245,
+    "description": "High-quality Casement Window - 30\"x48\" from PremiumBuild",
+    "shortDescription": "Casement Window - 30\"x48\" - EA",
     "attributes": [
       {
-        "code": "attr_001",
-        "value": "fasteners_hardware"
+        "code": "product_category",
+        "value": "windows_doors"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_6"
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_008",
+        "value": true
       },
       {
         "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 27
+      }
+    ],
+    "metaTitle": "Casement Window - 30\"x48\" | PremiumBuild",
+    "metaDescription": "Shop PremiumBuild Casement Window - 30\"x48\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, windows, PremiumBuild, construction, building materials"
+  },
+  {
+    "sku": "WINDOW-51CD3FC4",
+    "type": "simple",
+    "name": "ProFrame Bay Window - 72\"x48\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 909.4049453872279,
+    "description": "High-quality Bay Window - 72\"x48\" from ProFrame",
+    "shortDescription": "Bay Window - 72\"x48\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_011",
+        "value": "Premium quality"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_4"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "both"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 19
+      }
+    ],
+    "metaTitle": "Bay Window - 72\"x48\" | ProFrame",
+    "metaDescription": "Shop ProFrame Bay Window - 72\"x48\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, windows, ProFrame, construction, building materials"
+  },
+  {
+    "sku": "WINDOW-5946F85C",
+    "type": "simple",
+    "name": "ToughGrip Awning Window - 36\"x24\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 204.68752385335392,
+    "description": "High-quality Awning Window - 36\"x24\" from ToughGrip",
+    "shortDescription": "Awning Window - 36\"x24\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_4",
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_3"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 2
+      }
+    ],
+    "metaTitle": "Awning Window - 36\"x24\" | ToughGrip",
+    "metaDescription": "Shop ToughGrip Awning Window - 36\"x24\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, windows, ToughGrip, construction, building materials"
+  },
+  {
+    "sku": "DOOR-34C72FD2",
+    "type": "simple",
+    "name": "MaxStrength Entry Door - Steel 36\"x80\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 281.67139768678294,
+    "description": "High-quality Entry Door - Steel 36\"x80\" from MaxStrength",
+    "shortDescription": "Entry Door - Steel 36\"x80\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_2"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_2"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 27
+      }
+    ],
+    "metaTitle": "Entry Door - Steel 36\"x80\" | MaxStrength",
+    "metaDescription": "Shop MaxStrength Entry Door - Steel 36\"x80\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, doors, MaxStrength, construction, building materials"
+  },
+  {
+    "sku": "DOOR-89357B1F",
+    "type": "simple",
+    "name": "ReliaBuild Interior Door - Hollow Core 32\"x80\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 112.19253064700986,
+    "description": "High-quality Interior Door - Hollow Core 32\"x80\" from ReliaBuild",
+    "shortDescription": "Interior Door - Hollow Core 32\"x80\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_2",
+          "specifications_option_3",
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 19
+      }
+    ],
+    "metaTitle": "Interior Door - Hollow Core 32\"x80\" | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Interior Door - Hollow Core 32\"x80\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, doors, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "DOOR-070629C1",
+    "type": "simple",
+    "name": "ToughGrip French Door - 60\"x80\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 777.8492022016314,
+    "description": "High-quality French Door - 60\"x80\" from ToughGrip",
+    "shortDescription": "French Door - 60\"x80\" - PAIR",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_008",
         "value": false
       },
       {
-        "code": "attr_005",
-        "value": "dimensions_option_1"
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3",
+          "specifications_option_1",
+          "specifications_option_2"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 46
+      }
+    ],
+    "metaTitle": "French Door - 60\"x80\" | ToughGrip",
+    "metaDescription": "Shop ToughGrip French Door - 60\"x80\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, doors, ToughGrip, construction, building materials"
+  },
+  {
+    "sku": "DOOR-E93CC71C",
+    "type": "simple",
+    "name": "DuraBuilt Sliding Patio Door - 72\"x80\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 981.0970688336981,
+    "description": "High-quality Sliding Patio Door - 72\"x80\" from DuraBuilt",
+    "shortDescription": "Sliding Patio Door - 72\"x80\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
       },
       {
-        "code": "attr_002",
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_4"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_2",
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Heavy duty"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 48
+      }
+    ],
+    "metaTitle": "Sliding Patio Door - 72\"x80\" | DuraBuilt",
+    "metaDescription": "Shop DuraBuilt Sliding Patio Door - 72\"x80\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, doors, DuraBuilt, construction, building materials"
+  },
+  {
+    "sku": "DOOR-75F9C73D",
+    "type": "simple",
+    "name": "ReliaBuild Bi-fold Closet Door - 36\"x80\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 177.7973199159826,
+    "description": "High-quality Bi-fold Closet Door - 36\"x80\" from ReliaBuild",
+    "shortDescription": "Bi-fold Closet Door - 36\"x80\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_3"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Professional grade"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 97
+      }
+    ],
+    "metaTitle": "Bi-fold Closet Door - 36\"x80\" | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Bi-fold Closet Door - 36\"x80\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, doors, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "DOOR-81B579D4",
+    "type": "simple",
+    "name": "PremiumBuild Storm Door - 36\"x80\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 196.78712368793185,
+    "description": "High-quality Storm Door - 36\"x80\" from PremiumBuild",
+    "shortDescription": "Storm Door - 36\"x80\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3"
+        ]
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 1
+      }
+    ],
+    "metaTitle": "Storm Door - 36\"x80\" | PremiumBuild",
+    "metaDescription": "Shop PremiumBuild Storm Door - 36\"x80\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, doors, PremiumBuild, construction, building materials"
+  },
+  {
+    "sku": "NAIL-244FD20C",
+    "type": "simple",
+    "name": "ProFrame Framing Nails 16d - 50lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 53.51767343539636,
+    "description": "High-quality Framing Nails 16d - 50lb Box from ProFrame",
+    "shortDescription": "Framing Nails 16d - 50lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_6",
+          "custom_attribute_6_option_4",
+          "custom_attribute_6_option_2"
+        ]
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 72
+      }
+    ],
+    "metaTitle": "Framing Nails 16d - 50lb Box | ProFrame",
+    "metaDescription": "Shop ProFrame Framing Nails 16d - 50lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, nails, ProFrame, construction, building materials"
+  },
+  {
+    "sku": "NAIL-9D448DAA",
+    "type": "simple",
+    "name": "BuildRight Pro Finish Nails 8d - 5lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 23.75694197684384,
+    "description": "High-quality Finish Nails 8d - 5lb Box from BuildRight Pro",
+    "shortDescription": "Finish Nails 8d - 5lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_3"
+      },
+      {
+        "code": "attr_008",
+        "value": false
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 52
+      }
+    ],
+    "metaTitle": "Finish Nails 8d - 5lb Box | BuildRight Pro",
+    "metaDescription": "Shop BuildRight Pro Finish Nails 8d - 5lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, nails, BuildRight Pro, construction, building materials"
+  },
+  {
+    "sku": "NAIL-2DBD44A2",
+    "type": "simple",
+    "name": "StructureMaster Roofing Nails - 50lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 47.1872553253487,
+    "description": "High-quality Roofing Nails - 50lb Box from StructureMaster",
+    "shortDescription": "Roofing Nails - 50lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_008",
+        "value": false
+      },
+      {
+        "code": "attr_011",
+        "value": "Premium quality"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 47
+      }
+    ],
+    "metaTitle": "Roofing Nails - 50lb Box | StructureMaster",
+    "metaDescription": "Shop StructureMaster Roofing Nails - 50lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, nails, StructureMaster, construction, building materials"
+  },
+  {
+    "sku": "NAIL-D27A9BC3",
+    "type": "simple",
+    "name": "StructureMaster Brad Nails 18ga - 5000ct",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 26.61569833877296,
+    "description": "High-quality Brad Nails 18ga - 5000ct from StructureMaster",
+    "shortDescription": "Brad Nails 18ga - 5000ct - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_4"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "both"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 98
+      }
+    ],
+    "metaTitle": "Brad Nails 18ga - 5000ct | StructureMaster",
+    "metaDescription": "Shop StructureMaster Brad Nails 18ga - 5000ct at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, nails, StructureMaster, construction, building materials"
+  },
+  {
+    "sku": "NAIL-65F44C61",
+    "type": "simple",
+    "name": "ReliaBuild Concrete Nails - 5lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 23.87970423785956,
+    "description": "High-quality Concrete Nails - 5lb Box from ReliaBuild",
+    "shortDescription": "Concrete Nails - 5lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_3"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 61
+      }
+    ],
+    "metaTitle": "Concrete Nails - 5lb Box | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Concrete Nails - 5lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, nails, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "NAIL-7AD0771D",
+    "type": "simple",
+    "name": "StructureMaster Ring Shank Nails - 25lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 43.66921174790208,
+    "description": "High-quality Ring Shank Nails - 25lb Box from StructureMaster",
+    "shortDescription": "Ring Shank Nails - 25lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "attr_011",
+        "value": "Premium quality"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 81
+      }
+    ],
+    "metaTitle": "Ring Shank Nails - 25lb Box | StructureMaster",
+    "metaDescription": "Shop StructureMaster Ring Shank Nails - 25lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, nails, StructureMaster, construction, building materials"
+  },
+  {
+    "sku": "SCREW-48C3413B",
+    "type": "simple",
+    "name": "StructureMaster Deck Screws #8 - 5lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 32.55472588751219,
+    "description": "High-quality Deck Screws #8 - 5lb Box from StructureMaster",
+    "shortDescription": "Deck Screws #8 - 5lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "attr_011",
+        "value": "Professional grade"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3",
+          "specifications_option_2"
+        ]
+      },
+      {
+        "code": "commercial_residential",
+        "value": "both"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 42
+      }
+    ],
+    "metaTitle": "Deck Screws #8 - 5lb Box | StructureMaster",
+    "metaDescription": "Shop StructureMaster Deck Screws #8 - 5lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, screws, StructureMaster, construction, building materials"
+  },
+  {
+    "sku": "SCREW-704B6626",
+    "type": "simple",
+    "name": "ReliaBuild Drywall Screws - 5lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 22.58168363784518,
+    "description": "High-quality Drywall Screws - 5lb Box from ReliaBuild",
+    "shortDescription": "Drywall Screws - 5lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 30
+      }
+    ],
+    "metaTitle": "Drywall Screws - 5lb Box | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Drywall Screws - 5lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, screws, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "SCREW-AD274060",
+    "type": "simple",
+    "name": "SafeGuard Wood Screws #10 - 1lb Box",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 14.832941533454202,
+    "description": "High-quality Wood Screws #10 - 1lb Box from SafeGuard",
+    "shortDescription": "Wood Screws #10 - 1lb Box - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_008",
+        "value": false
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_2"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_2"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1",
+          "specifications_option_2",
+          "specifications_option_3"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 23
+      }
+    ],
+    "metaTitle": "Wood Screws #10 - 1lb Box | SafeGuard",
+    "metaDescription": "Shop SafeGuard Wood Screws #10 - 1lb Box at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, screws, SafeGuard, construction, building materials"
+  },
+  {
+    "sku": "SCREW-4DC6B336",
+    "type": "simple",
+    "name": "PremiumBuild Self-Drilling Screws - 1lb",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 18.998079539741425,
+    "description": "High-quality Self-Drilling Screws - 1lb from PremiumBuild",
+    "shortDescription": "Self-Drilling Screws - 1lb - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_4"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1",
+          "specifications_option_3",
+          "specifications_option_2"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 72
+      }
+    ],
+    "metaTitle": "Self-Drilling Screws - 1lb | PremiumBuild",
+    "metaDescription": "Shop PremiumBuild Self-Drilling Screws - 1lb at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, screws, PremiumBuild, construction, building materials"
+  },
+  {
+    "sku": "SCREW-0DAA49A4",
+    "type": "simple",
+    "name": "ReliaBuild Lag Screws 1/2\" - 50ct",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 47.66023922416393,
+    "description": "High-quality Lag Screws 1/2\" - 50ct from ReliaBuild",
+    "shortDescription": "Lag Screws 1/2\" - 50ct - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      },
+      {
+        "code": "attr_011",
+        "value": "Economy"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_6"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 93
+      }
+    ],
+    "metaTitle": "Lag Screws 1/2\" - 50ct | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Lag Screws 1/2\" - 50ct at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, screws, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "SCREW-A3256812",
+    "type": "simple",
+    "name": "MaxStrength Cabinet Screws - 100ct",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 14.816049099348508,
+    "description": "High-quality Cabinet Screws - 100ct from MaxStrength",
+    "shortDescription": "Cabinet Screws - 100ct - BOX",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_6"
+        ]
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_2",
+          "specifications_option_1",
+          "specifications_option_3"
+        ]
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 35
+      }
+    ],
+    "metaTitle": "Cabinet Screws - 100ct | MaxStrength",
+    "metaDescription": "Shop MaxStrength Cabinet Screws - 100ct at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, screws, MaxStrength, construction, building materials"
+  },
+  {
+    "sku": "SAFE-54709A01",
+    "type": "simple",
+    "name": "ToughGrip Hard Hat - Type 1 Class E",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 27.106842283674908,
+    "description": "High-quality Hard Hat - Type 1 Class E from ToughGrip",
+    "shortDescription": "Hard Hat - Type 1 Class E - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2"
+        ]
+      },
+      {
+        "code": "attr_008",
+        "value": true
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 92
+      }
+    ],
+    "metaTitle": "Hard Hat - Type 1 Class E | ToughGrip",
+    "metaDescription": "Shop ToughGrip Hard Hat - Type 1 Class E at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "safety, equipment, ToughGrip, construction, building materials"
+  },
+  {
+    "sku": "SAFE-325D0586",
+    "type": "simple",
+    "name": "SafeGuard Safety Glasses - ANSI Z87.1",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 9.679564476795292,
+    "description": "High-quality Safety Glasses - ANSI Z87.1 from SafeGuard",
+    "shortDescription": "Safety Glasses - ANSI Z87.1 - PAIR",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_1",
+          "custom_attribute_6_option_5",
+          "custom_attribute_6_option_6"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Standard"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 54
+      }
+    ],
+    "metaTitle": "Safety Glasses - ANSI Z87.1 | SafeGuard",
+    "metaDescription": "Shop SafeGuard Safety Glasses - ANSI Z87.1 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "safety, equipment, SafeGuard, construction, building materials"
+  },
+  {
+    "sku": "SAFE-AC3312B9",
+    "type": "simple",
+    "name": "SafeGuard Work Gloves - Heavy Duty",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 14.742023469294432,
+    "description": "High-quality Work Gloves - Heavy Duty from SafeGuard",
+    "shortDescription": "Work Gloves - Heavy Duty - PAIR",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_011",
+        "value": "Premium quality"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3"
+        ]
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_5",
+          "custom_attribute_6_option_3"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 39
+      }
+    ],
+    "metaTitle": "Work Gloves - Heavy Duty | SafeGuard",
+    "metaDescription": "Shop SafeGuard Work Gloves - Heavy Duty at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "safety, equipment, SafeGuard, construction, building materials"
+  },
+  {
+    "sku": "SAFE-7F19B12C",
+    "type": "simple",
+    "name": "ReliaBuild Safety Vest - High Vis Orange",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 21.073129657224346,
+    "description": "High-quality Safety Vest - High Vis Orange from ReliaBuild",
+    "shortDescription": "Safety Vest - High Vis Orange - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_011",
+        "value": "Professional grade"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 38
+      }
+    ],
+    "metaTitle": "Safety Vest - High Vis Orange | ReliaBuild",
+    "metaDescription": "Shop ReliaBuild Safety Vest - High Vis Orange at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "safety, equipment, ReliaBuild, construction, building materials"
+  },
+  {
+    "sku": "SAFE-2B236287",
+    "type": "simple",
+    "name": "MaxStrength Ear Protection - 30dB NRR",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 8.206364394261671,
+    "description": "High-quality Ear Protection - 30dB NRR from MaxStrength",
+    "shortDescription": "Ear Protection - 30dB NRR - PAIR",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_008",
+        "value": true
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_1"
+        ]
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_3",
+          "specifications_option_1",
+          "specifications_option_2"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 66
+      }
+    ],
+    "metaTitle": "Ear Protection - 30dB NRR | MaxStrength",
+    "metaDescription": "Shop MaxStrength Ear Protection - 30dB NRR at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "safety, equipment, MaxStrength, construction, building materials"
+  },
+  {
+    "sku": "SAFE-6D8805D3",
+    "type": "simple",
+    "name": "PremiumBuild Fall Protection Harness",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 172.59136679237307,
+    "description": "High-quality Fall Protection Harness from PremiumBuild",
+    "shortDescription": "Fall Protection Harness - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_6",
+          "custom_attribute_6_option_1",
+          "custom_attribute_6_option_2"
+        ]
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_2"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 73
+      }
+    ],
+    "metaTitle": "Fall Protection Harness | PremiumBuild",
+    "metaDescription": "Shop PremiumBuild Fall Protection Harness at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "safety, equipment, PremiumBuild, construction, building materials"
+  },
+  {
+    "sku": "LBR-0C7A6DBC",
+    "type": "simple",
+    "name": "MaxStrength 2x4 Stud - 8ft",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 9.10284805349207,
+    "description": "High-quality 2x4 Stud - 8ft from MaxStrength",
+    "shortDescription": "2x4 Stud - 8ft - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_3"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 85
+      },
+      {
+        "categoryId": "cat_007",
+        "position": 12
+      }
+    ],
+    "metaTitle": "2x4 Stud - 8ft | MaxStrength",
+    "metaDescription": "Shop MaxStrength 2x4 Stud - 8ft at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, lumber, MaxStrength, construction, building materials"
+  },
+  {
+    "sku": "DRYWALL-2507D228",
+    "type": "simple",
+    "name": "FastenPro Drywall 5/8\" - 4x8",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 15.028969765188624,
+    "description": "High-quality Drywall 5/8\" - 4x8 from FastenPro",
+    "shortDescription": "Drywall 5/8\" - 4x8 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_3"
+      },
+      {
+        "code": "attr_008",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 51
+      }
+    ],
+    "metaTitle": "Drywall 5/8\" - 4x8 | FastenPro",
+    "metaDescription": "Shop FastenPro Drywall 5/8\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "framing, drywall, FastenPro, construction, building materials"
+  },
+  {
+    "sku": "WINDOW-873F007E",
+    "type": "simple",
+    "name": "ProFrame Sliding Window - 48\"x36\"",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 237.70807982315685,
+    "description": "High-quality Sliding Window - 48\"x36\" from ProFrame",
+    "shortDescription": "Sliding Window - 48\"x36\" - EA",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "attr_008",
         "value": true
       }
     ],
@@ -2778,129 +2862,657 @@
         "position": 60
       }
     ],
-    "description": "Professional fastener consultation provided by certified technicians",
-    "shortDescription": "Expert Fastener Consultation",
-    "weight": 0,
-    "metaTitle": "Fastener Consultation | BuildRight Services",
-    "metaDescription": "Professional Fastener Consultation available. Expert installation and consultation services.",
-    "metaKeywords": "service, installation, consultation, fasteners, professional"
+    "metaTitle": "Sliding Window - 48\"x36\" | ProFrame",
+    "metaDescription": "Shop ProFrame Sliding Window - 48\"x36\" at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "windows-doors, windows, ProFrame, construction, building materials"
   },
   {
-    "sku": "SVC-72C95BE6",
-    "name": "Bulk Order Processing",
-    "type": "service",
+    "sku": "SCREW-D305E19A",
+    "type": "simple",
+    "name": "DuraBuilt Self-Drilling Screws - 1lb",
     "status": "enabled",
     "visibility": "both",
-    "price": 84.29,
+    "price": 16.61929702787627,
+    "description": "High-quality Self-Drilling Screws - 1lb from DuraBuilt",
+    "shortDescription": "Self-Drilling Screws - 1lb - BOX",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "fasteners_hardware"
       },
       {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1"
+        ]
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_4"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Premium quality"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 53
+      }
+    ],
+    "metaTitle": "Self-Drilling Screws - 1lb | DuraBuilt",
+    "metaDescription": "Shop DuraBuilt Self-Drilling Screws - 1lb at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "fasteners, screws, DuraBuilt, construction, building materials"
+  },
+  {
+    "sku": "SAFE-F5871D82",
+    "type": "simple",
+    "name": "ToughGrip Ear Protection - 30dB NRR",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 11.377445700288492,
+    "description": "High-quality Ear Protection - 30dB NRR from ToughGrip",
+    "shortDescription": "Ear Protection - 30dB NRR - PAIR",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "safety_equipment"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      },
+      {
+        "code": "attr_008",
+        "value": true
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_1"
+        ]
+      },
+      {
         "code": "attr_006",
-        "value": "brand_option_5"
+        "value": "color_option_4"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 12
+      }
+    ],
+    "metaTitle": "Ear Protection - 30dB NRR | ToughGrip",
+    "metaDescription": "Shop ToughGrip Ear Protection - 30dB NRR at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "safety, equipment, ToughGrip, construction, building materials"
+  },
+  {
+    "sku": "PLY-6AD93F45",
+    "type": "simple",
+    "name": "StructureMaster Siding Panel 3/8\" - 4x8",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 37.67270308997142,
+    "description": "High-quality Siding Panel 3/8\" - 4x8 from StructureMaster",
+    "shortDescription": "Siding Panel 3/8\" - 4x8 - SHEET",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_4",
+          "custom_attribute_6_option_1",
+          "custom_attribute_6_option_5"
+        ]
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
       },
       {
         "code": "attr_007",
-        "value": false
+        "value": "size_option_1"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 73
+      }
+    ],
+    "metaTitle": "Siding Panel 3/8\" - 4x8 | StructureMaster",
+    "metaDescription": "Shop StructureMaster Siding Panel 3/8\" - 4x8 at BuildRight. Professional grade construction materials.",
+    "metaKeywords": "structural, plywood, StructureMaster, construction, building materials"
+  },
+  {
+    "sku": "SVC-BE782144",
+    "type": "service",
+    "name": "Structural Material Delivery",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 129.85429691842492,
+    "description": "Professional structural material delivery provided by certified technicians",
+    "shortDescription": "Expert Structural Material Delivery",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
       },
       {
-        "code": "attr_002",
-        "value": false
-      },
-      {
-        "code": "attr_003",
+        "code": "project_types",
         "value": [
-          "size_option_1"
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "residential"
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_3"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 1
+      }
+    ],
+    "metaTitle": "Structural Material Delivery | BuildRight Services",
+    "metaDescription": "Professional Structural Material Delivery available. Expert installation and consultation services.",
+    "metaKeywords": "service, installation, consultation, structural, professional"
+  },
+  {
+    "sku": "SVC-DA991F80",
+    "type": "service",
+    "name": "Lumber Cutting Service",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 92.57179500654888,
+    "description": "Professional lumber cutting service provided by certified technicians",
+    "shortDescription": "Expert Lumber Cutting Service",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "structural_materials"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "both"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 50
+      }
+    ],
+    "metaTitle": "Lumber Cutting Service | BuildRight Services",
+    "metaDescription": "Professional Lumber Cutting Service available. Expert installation and consultation services.",
+    "metaKeywords": "service, installation, consultation, structural, professional"
+  },
+  {
+    "sku": "SVC-8E4FBE5D",
+    "type": "service",
+    "name": "Drywall Installation Service",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 260.27720573371147,
+    "description": "Professional drywall installation service provided by certified technicians",
+    "shortDescription": "Expert Drywall Installation Service",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_1"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_1",
+          "specifications_option_2"
+        ]
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_3",
+          "custom_attribute_6_option_6",
+          "custom_attribute_6_option_2"
+        ]
+      },
+      {
+        "code": "attr_008",
+        "value": false
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 12
+      }
+    ],
+    "metaTitle": "Drywall Installation Service | BuildRight Services",
+    "metaDescription": "Professional Drywall Installation Service available. Expert installation and consultation services.",
+    "metaKeywords": "service, installation, consultation, framing, professional"
+  },
+  {
+    "sku": "SVC-B2559E94",
+    "type": "service",
+    "name": "Framing Consultation",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 164.49418068607068,
+    "description": "Professional framing consultation provided by certified technicians",
+    "shortDescription": "Expert Framing Consultation",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "framing_insulation"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_2",
+          "custom_attribute_6_option_4",
+          "custom_attribute_6_option_6"
+        ]
+      },
+      {
+        "code": "attr_007",
+        "value": "size_option_2"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 44
+      }
+    ],
+    "metaTitle": "Framing Consultation | BuildRight Services",
+    "metaDescription": "Professional Framing Consultation available. Expert installation and consultation services.",
+    "metaKeywords": "service, installation, consultation, framing, professional"
+  },
+  {
+    "sku": "SVC-74321042",
+    "type": "service",
+    "name": "Door & Window Installation",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 449.59082610420455,
+    "description": "Professional door & window installation provided by certified technicians",
+    "shortDescription": "Expert Door & Window Installation",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "attr_010",
+        "value": [
+          "custom_attribute_6_option_4"
+        ]
+      },
+      {
+        "code": "attr_011",
+        "value": "Professional grade"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 21
+      }
+    ],
+    "metaTitle": "Door & Window Installation | BuildRight Services",
+    "metaDescription": "Professional Door & Window Installation available. Expert installation and consultation services.",
+    "metaKeywords": "service, installation, consultation, windows-doors, professional"
+  },
+  {
+    "sku": "SVC-EEAD2FDF",
+    "type": "service",
+    "name": "Window Measurement Service",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 77.14233100514036,
+    "description": "Professional window measurement service provided by certified technicians",
+    "shortDescription": "Expert Window Measurement Service",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "windows_doors"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "attr_011",
+        "value": "Economy"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_1"
+      },
+      {
+        "code": "attr_014",
+        "value": [
+          "specifications_option_2",
+          "specifications_option_1",
+          "specifications_option_3"
         ]
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 76
+        "position": 46
       }
     ],
+    "metaTitle": "Window Measurement Service | BuildRight Services",
+    "metaDescription": "Professional Window Measurement Service available. Expert installation and consultation services.",
+    "metaKeywords": "service, installation, consultation, windows-doors, professional"
+  },
+  {
+    "sku": "SVC-3774CB8D",
+    "type": "service",
+    "name": "Fastener Consultation",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 72.52992988681883,
+    "description": "Professional fastener consultation provided by certified technicians",
+    "shortDescription": "Expert Fastener Consultation",
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "attr_008",
+        "value": true
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 75
+      }
+    ],
+    "metaTitle": "Fastener Consultation | BuildRight Services",
+    "metaDescription": "Professional Fastener Consultation available. Expert installation and consultation services.",
+    "metaKeywords": "service, installation, consultation, fasteners, professional"
+  },
+  {
+    "sku": "SVC-72C95BE6",
+    "type": "service",
+    "name": "Bulk Order Processing",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 106.65903390928126,
     "description": "Professional bulk order processing provided by certified technicians",
     "shortDescription": "Expert Bulk Order Processing",
-    "weight": 0,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "commercial_residential",
+        "value": "both"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 93
+      }
+    ],
     "metaTitle": "Bulk Order Processing | BuildRight Services",
     "metaDescription": "Professional Bulk Order Processing available. Expert installation and consultation services.",
     "metaKeywords": "service, installation, consultation, fasteners, professional"
   },
   {
     "sku": "SVC-EF5DD3E8",
-    "name": "Safety Training Course",
     "type": "service",
+    "name": "Safety Training Course",
     "status": "enabled",
     "visibility": "both",
-    "price": 268,
+    "price": 351.5959799995627,
+    "description": "Professional safety training course provided by certified technicians",
+    "shortDescription": "Expert Safety Training Course",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "safety_equipment"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_2"
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
       },
       {
         "code": "attr_007",
-        "value": false
+        "value": "size_option_1"
       },
       {
-        "code": "attr_002",
-        "value": false
+        "code": "commercial_residential",
+        "value": "commercial"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_003",
-        "position": 76
+        "position": 67
       }
     ],
-    "description": "Professional safety training course provided by certified technicians",
-    "shortDescription": "Expert Safety Training Course",
-    "weight": 0,
     "metaTitle": "Safety Training Course | BuildRight Services",
     "metaDescription": "Professional Safety Training Course available. Expert installation and consultation services.",
     "metaKeywords": "service, installation, consultation, safety, professional"
   },
   {
     "sku": "SVC-A853D763",
-    "name": "PPE Fitting Service",
     "type": "service",
+    "name": "PPE Fitting Service",
     "status": "enabled",
     "visibility": "both",
-    "price": 94.05,
+    "price": 76.507772517627,
+    "description": "Professional ppe fitting service provided by certified technicians",
+    "shortDescription": "Expert PPE Fitting Service",
     "attributes": [
       {
-        "code": "attr_001",
+        "code": "product_category",
         "value": "safety_equipment"
       },
       {
-        "code": "attr_006",
-        "value": "brand_option_6"
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
       },
       {
-        "code": "attr_002",
-        "value": true
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "attr_006",
+        "value": "color_option_3"
       },
       {
         "code": "attr_008",
-        "value": "warranty_option_3"
+        "value": false
+      },
+      {
+        "code": "commercial_residential",
+        "value": "commercial"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_003",
-        "position": 23
+        "position": 42
       }
     ],
-    "description": "Professional ppe fitting service provided by certified technicians",
-    "shortDescription": "Expert PPE Fitting Service",
-    "weight": 0,
     "metaTitle": "PPE Fitting Service | BuildRight Services",
     "metaDescription": "Professional PPE Fitting Service available. Expert installation and consultation services.",
     "metaKeywords": "service, installation, consultation, safety, professional"

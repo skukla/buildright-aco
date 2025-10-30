@@ -16,7 +16,9 @@
 
 ### Overview
 
-Create pricing data for all products across 4 business-type price books with regional adjustments applied via calculation logic. This phase creates approximately 1,400 price records (4 price books × 125 products, including tier and volume pricing) demonstrating the full pricing flexibility of ACO.
+**Note:** This document describes the original plan for 4 flat price books. During implementation (Step 2), the pricing structure evolved to **10 hierarchical price books across 3 levels** to better demonstrate ACO's hierarchical pricing capabilities with parent-child relationships.
+
+Create pricing data for all products across **10 hierarchical price books** with parent-child inheritance. This phase creates approximately 1,400 price records demonstrating the full pricing flexibility of ACO's hierarchical pricing structure.
 
 ### Step 7.1: Understanding Price Structure
 
@@ -54,7 +56,11 @@ Create pricing data for all products across 4 business-type price books with reg
 ```markdown
 # BuildRight Solutions - Pricing Strategy
 
-## Business-Type Structure (Flat, 4 Price Books)
+## Hierarchical Structure (10 Price Books, 3 Levels) - As Implemented
+
+**Note:** This section describes the original flat structure. See implementation in `scripts/generate-price-books.js` for actual 10 hierarchical price books with parent-child relationships.
+
+**Original Flat Structure (Historical - Not Implemented):**
 
 **US-Retail (0% discount)** - Walk-in customers, hardware stores
 - Base price with no discount

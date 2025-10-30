@@ -95,10 +95,10 @@ function validatePrices(prices) {
       errors.push({ sku: price.sku, error: 'priceBookId is required' });
     }
 
-    if (typeof price.amount !== 'number' || price.amount < 0) {
+    if (typeof price.regular !== 'number' || price.regular < 0) {
       errors.push({
         sku: price.sku,
-        error: `Invalid amount: ${price.amount} (must be non-negative number)`
+        error: `Invalid regular: ${price.regular} (must be non-negative number)`
       });
     }
 
@@ -200,8 +200,11 @@ export async function ingestPrices(prices, options = {}) {
 
 // CLI execution
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const pricesPath = process.argv[2] || './data/buildright/prices.json';
   const skipSKUValidation = process.argv.includes('--skip-validation');
+
+  // Get file path from args, excluding flags
+  const fileArg = process.argv.slice(2).find(arg => !arg.startsWith('--'));
+  const pricesPath = fileArg || './data/buildright/prices.json';
 
   try {
     // Validate configuration
@@ -210,7 +213,21 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     // Read prices file
     logger.info('Reading prices from file', { path: pricesPath });
     const pricesData = await fs.readFile(pricesPath, 'utf8');
-    const prices = JSON.parse(pricesData);
+
+    let prices;
+    try {
+      prices = JSON.parse(pricesData);
+    } catch (parseError) {
+      logger.error('Failed to parse prices JSON file', {
+        path: pricesPath,
+        error: parseError.message
+      });
+      throw new Error(`Invalid JSON in prices file: ${parseError.message}`);
+    }
+
+    if (!Array.isArray(prices)) {
+      throw new Error('Prices file must contain an array of price objects');
+    }
 
     logger.info(`Loaded ${prices.length} prices from ${pricesPath}`);
 

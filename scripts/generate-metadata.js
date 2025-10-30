@@ -15,11 +15,18 @@ const __dirname = path.dirname(__filename);
 
 /**
  * Generate metadata attributes for ACO catalog
+ *
+ * This function generates product attributes that can be used for ACO policy filtering.
+ * When useSemantic=true, it generates semantic attributes (project_types, commercial_residential, brand)
+ * instead of generic codes (attr_001, attr_002, etc.).
+ *
  * @param {Object} config - Generation configuration
  * @param {number} config.count - Number of attributes to generate (default: 20)
  * @param {number} config.seed - Random seed for deterministic output
  * @param {string} config.outputPath - Output file path
  * @param {boolean} config.includeTextAttributes - Include text attributes without options
+ * @param {boolean} config.useSemantic - Use semantic attribute codes (project_types, brand) instead of generic (attr_001)
+ * @returns {Promise<Array>} Generated metadata attributes
  */
 export async function generateMetadata(config = {}) {
   // Validate configuration first before applying defaults
@@ -35,15 +42,78 @@ export async function generateMetadata(config = {}) {
     count = 20,
     seed = Date.now(),
     outputPath = './data/buildright/metadata.json',
-    includeTextAttributes = true
+    includeTextAttributes = true,
+    useSemantic = false
   } = config;
 
-  logger.info('Metadata Generation Started', { count, seed, outputPath });
+  logger.info('Metadata Generation Started', { count, seed, outputPath, useSemantic });
 
   // Initialize seeded random number generators
   const random = seedRandom(seed);
   const randomBool = seedRandomBoolean(seed + 1);
   const randomInt = seedRandomInt(seed + 2);
+
+  // Define semantic attributes for ACO policy filtering
+  const semanticAttributes = [
+    {
+      attributeId: 'product_category',
+      label: 'Product Category',
+      type: 'select',
+      isRequired: true,
+      defaultValue: null,
+      sortOrder: 1,
+      options: [
+        { value: 'structural_materials', label: 'Structural Materials' },
+        { value: 'finishing_materials', label: 'Finishing Materials' },
+        { value: 'fasteners_hardware', label: 'Fasteners & Hardware' },
+        { value: 'safety_equipment', label: 'Safety Equipment' },
+        { value: 'tools_equipment', label: 'Tools & Equipment' }
+      ]
+    },
+    {
+      attributeId: 'project_types',
+      label: 'Project Types',
+      type: 'multiselect',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 2,
+      options: [
+        { value: 'new_construction', label: 'New Construction' },
+        { value: 'remodel', label: 'Remodel' },
+        { value: 'repair', label: 'Repair' },
+        { value: 'restoration', label: 'Restoration' }
+      ]
+    },
+    {
+      attributeId: 'commercial_residential',
+      label: 'Commercial/Residential',
+      type: 'select',
+      isRequired: false,
+      defaultValue: 'residential',
+      sortOrder: 3,
+      options: [
+        { value: 'commercial', label: 'Commercial' },
+        { value: 'residential', label: 'Residential' },
+        { value: 'both', label: 'Both' }
+      ]
+    },
+    {
+      attributeId: 'brand',
+      label: 'Brand',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 4,
+      options: [
+        { value: 'buildright_pro', label: 'BuildRight Pro' },
+        { value: 'structuremaster', label: 'StructureMaster' },
+        { value: 'proframe', label: 'ProFrame' },
+        { value: 'safeguard', label: 'SafeGuard' },
+        { value: 'fastenpro', label: 'FastenPro' },
+        { value: 'durabuilt', label: 'DuraBuilt' }
+      ]
+    }
+  ];
 
   // Define attribute types with weights
   const attributeTypes = [
@@ -66,10 +136,26 @@ export async function generateMetadata(config = {}) {
   const attributes = [];
   const usedNames = new Set();
 
-  for (let i = 0; i < count; i++) {
-    // Force first attribute to be text if includeTextAttributes is true
+  // If using semantic naming, include semantic attributes first
+  if (useSemantic) {
+    semanticAttributes.forEach((semanticAttr, idx) => {
+      attributes.push({
+        ...semanticAttr,
+        sortOrder: idx + 1
+      });
+      usedNames.add(semanticAttr.label);
+    });
+  }
+
+  // Calculate how many additional attributes to generate
+  const additionalCount = useSemantic ? count - semanticAttributes.length : count;
+
+  for (let i = 0; i < additionalCount; i++) {
+    const attrIndex = useSemantic ? semanticAttributes.length + i : i;
+
+    // Force first attribute to be text if includeTextAttributes is true (and not using semantic)
     let selectedType;
-    if (i === 0 && includeTextAttributes) {
+    if (i === 0 && includeTextAttributes && !useSemantic) {
       selectedType = { type: 'text', hasOptions: false };
     } else {
       // Select type based on weighted distribution
@@ -97,12 +183,12 @@ export async function generateMetadata(config = {}) {
     }
 
     const attribute = {
-      attributeId: `attr_${String(i + 1).padStart(3, '0')}`,
+      attributeId: `attr_${String(attrIndex + 1).padStart(3, '0')}`,
       label: attributeName,
       type: selectedType.type,
       isRequired: randomBool(0.3), // 30% of attributes are required
       defaultValue: null,
-      sortOrder: i + 1
+      sortOrder: attrIndex + 1
     };
 
     // Set appropriate default values based on type

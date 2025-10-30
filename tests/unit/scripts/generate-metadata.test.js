@@ -269,4 +269,109 @@ describe('Metadata Generation', () => {
       );
     });
   });
+
+  describe('Semantic Attribute Generation (Step 1)', () => {
+    it('should generate semantic attribute codes instead of generic', async () => {
+      // Given: Metadata generation configuration with semantic naming enabled
+      const config = { count: 15, seed: 12345, useSemantic: true };
+
+      // When: generateMetadata() is called
+      await generateMetadata(config);
+
+      // Then: Attributes have semantic codes like 'project_types', 'commercial_residential', 'brand'
+      const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
+      const semanticAttributes = metadata.filter(attr =>
+        !attr.attributeId.match(/^attr_\d{3}$/)
+      );
+
+      expect(semanticAttributes.length).toBeGreaterThan(0);
+
+      // Should have specific semantic attributes
+      const attributeCodes = metadata.map(attr => attr.attributeId);
+      expect(attributeCodes).toContain('project_types');
+      expect(attributeCodes).toContain('commercial_residential');
+      expect(attributeCodes).toContain('brand');
+    });
+
+    it('should have project_types attribute with correct options', async () => {
+      // Given: Semantic metadata generation
+      const config = { count: 15, seed: 12345, useSemantic: true };
+
+      // When: Inspecting project_types attribute
+      await generateMetadata(config);
+      const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
+      const projectTypesAttr = metadata.find(attr => attr.attributeId === 'project_types');
+
+      // Then: Options include: new_construction, remodel, repair, restoration
+      expect(projectTypesAttr).toBeDefined();
+      expect(projectTypesAttr.type).toBe('multiselect');
+      expect(projectTypesAttr.options).toBeDefined();
+      expect(projectTypesAttr.options).toHaveLength(4);
+
+      const optionValues = projectTypesAttr.options.map(opt => opt.value);
+      expect(optionValues).toContain('new_construction');
+      expect(optionValues).toContain('remodel');
+      expect(optionValues).toContain('repair');
+      expect(optionValues).toContain('restoration');
+    });
+
+    it('should maintain deterministic output with SEED and semantic naming', async () => {
+      // Given: SEED=12345
+      const config = { count: 15, seed: 12345, useSemantic: true };
+
+      // When: Generating metadata twice
+      await generateMetadata(config);
+      const firstOutput = readFileSync(outputPath, 'utf8');
+
+      unlinkSync(outputPath);
+
+      await generateMetadata(config);
+      const secondOutput = readFileSync(outputPath, 'utf8');
+
+      // Then: Identical attribute structure both times
+      expect(firstOutput).toEqual(secondOutput);
+
+      const firstData = JSON.parse(firstOutput);
+      const secondData = JSON.parse(secondOutput);
+      expect(firstData).toEqual(secondData);
+    });
+
+    it('should include commercial_residential attribute as select type', async () => {
+      // Given: Semantic metadata generation
+      const config = { count: 15, seed: 12345, useSemantic: true };
+
+      // When: Generating metadata
+      await generateMetadata(config);
+      const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
+      const commercialResidentialAttr = metadata.find(attr =>
+        attr.attributeId === 'commercial_residential'
+      );
+
+      // Then: Attribute exists and is select type with proper options
+      expect(commercialResidentialAttr).toBeDefined();
+      expect(commercialResidentialAttr.type).toBe('select');
+      expect(commercialResidentialAttr.options).toBeDefined();
+      expect(commercialResidentialAttr.options.length).toBeGreaterThanOrEqual(2);
+
+      const optionValues = commercialResidentialAttr.options.map(opt => opt.value);
+      expect(optionValues).toContain('commercial');
+      expect(optionValues).toContain('residential');
+    });
+
+    it('should generate brand attribute as select type', async () => {
+      // Given: Semantic metadata generation
+      const config = { count: 15, seed: 12345, useSemantic: true };
+
+      // When: Generating metadata
+      await generateMetadata(config);
+      const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
+      const brandAttr = metadata.find(attr => attr.attributeId === 'brand');
+
+      // Then: Brand attribute exists as select with multiple options
+      expect(brandAttr).toBeDefined();
+      expect(brandAttr.type).toBe('select');
+      expect(brandAttr.options).toBeDefined();
+      expect(brandAttr.options.length).toBeGreaterThanOrEqual(5);
+    });
+  });
 });

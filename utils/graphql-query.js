@@ -19,28 +19,31 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 import { getGraphQLEndpoint } from './aco-client.js';
+import { getAccessToken } from './oauth-token-manager.js';
 import logger from './logger.js';
 
 // Load environment variables
 dotenv.config();
 
 /**
- * Gets the default GraphQL headers
+ * Gets the default GraphQL headers with OAuth authentication
  *
- * @param {string} [accessToken] - Optional OAuth access token
- * @returns {Object} HTTP headers for GraphQL requests
+ * @param {string} [accessToken] - Optional OAuth access token (fetched automatically if not provided)
+ * @returns {Promise<Object>} HTTP headers for GraphQL requests
  * @private
  */
-function getGraphQLHeaders(accessToken = null) {
+async function getGraphQLHeaders(accessToken = null) {
+  // Get access token if not provided
+  if (!accessToken) {
+    accessToken = await getAccessToken();
+  }
+
   const headers = {
     'Content-Type': 'application/json',
-    'AC-View-ID': process.env.VIEW_ID || 'default',
-    'AC-Source-Locale': process.env.SOURCE_LOCALE || 'en-US'
+    'Magento-Website-Code': process.env.WEBSITE_CODE || 'base',
+    'Magento-Store-View-Code': process.env.STORE_VIEW_CODE || 'default',
+    'Authorization': `Bearer ${accessToken}`
   };
-
-  if (accessToken) {
-    headers['Authorization'] = `Bearer ${accessToken}`;
-  }
 
   return headers;
 }
@@ -67,7 +70,7 @@ function getGraphQLHeaders(accessToken = null) {
  */
 export async function executeGraphQLQuery(query, variables = {}, accessToken = null) {
   const endpoint = getGraphQLEndpoint();
-  const headers = getGraphQLHeaders(accessToken);
+  const headers = await getGraphQLHeaders(accessToken);
 
   logger.debug('Executing GraphQL query:', {
     endpoint,
@@ -96,7 +99,8 @@ export async function executeGraphQLQuery(query, variables = {}, accessToken = n
     logger.error('GraphQL query failed:', {
       message: error.message,
       endpoint,
-      status: error.response?.status
+      status: error.response?.status,
+      responseData: error.response?.data
     });
     throw new Error(`GraphQL query failed: ${error.message}`);
   }

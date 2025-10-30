@@ -1,6 +1,6 @@
 {
   "rptc": {
-    "_rptcVersion": "2.1.1",
+    "_rptcVersion": "2.2.3",
     "defaultThinkingMode": "ultrathink",
     "artifactLocation": ".rptc",
     "docsLocation": "docs",
@@ -11,7 +11,7 @@
     "htmlReportTheme": "dark",
     "verificationMode": "focused",
     "tdgMode": "disabled",
-    "qualityGatesEnabled": false,
+    "qualityGatesEnabled": true,
     "ask": ["Bash(rm:*)"],
     "discord": {
       "webhookUrl": "",

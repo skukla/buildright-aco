@@ -32,21 +32,32 @@ I'll maintain all the innovative concepts from the comprehensive brief but scale
 
 ***
 
-### Price Books: 54+ → **4 Price Books**
+### Price Books: 54+ → **10 Hierarchical Price Books** (Updated in Step 2)
 
-**Simplified Business-Type Structure:**
+**Note:** Original plan specified 4 flat price books. During implementation (Step 2), this evolved to **10 hierarchical price books across 3 levels** to better demonstrate ACO's hierarchical pricing capabilities.
 
-1. **US-Retail** (0% discount) - Walk-in customers, hardware stores
-2. **US-Contractor** (5% discount) - Licensed contractors, small builders
-3. **US-Commercial** (10% discount) - Commercial construction companies
-4. **US-Wholesale** (15% discount) - High-volume accounts, large GCs
+**Implemented Hierarchical Structure:**
 
-**Regional Pricing Adjustments:** Applied in price calculation logic (e.g., +3% West lumber surcharge), not via separate price books.
+**Level 1 (Base with Currency):**
+1. **US-Retail** - Standard retail pricing (currency: USD)
+2. **US-Contract** - Contract base pricing (currency: USD)
+
+**Level 2 (Customer Segments):**
+3. **Retail-Consumer** - Consumer segment pricing (parent: US-Retail)
+4. **Contract-Commercial** - Commercial segment pricing (parent: US-Contract)
+5. **Contract-Residential** - Residential segment pricing (parent: US-Contract)
+6. **Contract-Pro** - Professional contractor pricing (parent: US-Contract)
+
+**Level 3 (Volume Tiers):**
+7. **Commercial-Tier1** - High-volume commercial (parent: Contract-Commercial)
+8. **Commercial-Tier2** - Standard commercial (parent: Contract-Commercial)
+9. **Residential-Builder** - Production builder pricing (parent: Contract-Residential)
+10. **Pro-Specialty** - Specialty trade pricing (parent: Contract-Pro)
 
 **Customer Group Mapping:**
-- Each **Company** (Adobe Commerce B2B company entity) is assigned to one business type
-- Price book determines base pricing for all company locations
-- Discounts stack with volume tiers where applicable
+- Each **Company** (Adobe Commerce B2B company entity) is assigned to one price book
+- Hierarchical structure allows price inheritance from parent books
+- Enables flexible 3-tier pricing strategy
 
 ***
 

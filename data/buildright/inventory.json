@@ -1,5 +1,344 @@
 [
   {
+    "sku": "BUNDLE-146E0C58",
+    "quantity": 115,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 65
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-30A77EB0",
+    "quantity": 174,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 100
+      },
+      {
+        "source_code": "warehouse_east",
+        "quantity": 24
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-3A939652",
+    "quantity": 88,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 38
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-69ED02AC",
+    "quantity": 132,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 82
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-6EAD6945",
+    "quantity": 196,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 100
+      },
+      {
+        "source_code": "warehouse_east",
+        "quantity": 46
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-ACAAA502",
+    "quantity": 191,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 100
+      },
+      {
+        "source_code": "warehouse_east",
+        "quantity": 41
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-B15554D6",
+    "quantity": 157,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 100
+      },
+      {
+        "source_code": "warehouse_east",
+        "quantity": 7
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-BEC3CB65",
+    "quantity": 110,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 60
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-CF3C554A",
+    "quantity": 190,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 100
+      },
+      {
+        "source_code": "warehouse_east",
+        "quantity": 40
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-E7EC0D01",
+    "quantity": 139,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 89
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-EA668F19",
+    "quantity": 189,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 100
+      },
+      {
+        "source_code": "warehouse_east",
+        "quantity": 39
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-EE01B258",
+    "quantity": 104,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 54
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-F57CEA64",
+    "quantity": 92,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 42
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-FCDED404",
+    "quantity": 141,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 91
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
+    "sku": "BUNDLE-FD8BAF02",
+    "quantity": 146,
+    "sources": [
+      {
+        "source_code": "warehouse_west",
+        "quantity": 96
+      },
+      {
+        "source_code": "warehouse_atlanta",
+        "quantity": 50
+      }
+    ],
+    "is_in_stock": true,
+    "manage_stock": true,
+    "use_config_manage_stock": true,
+    "min_qty": 0,
+    "max_sale_qty": 10000,
+    "backorders": "no_backorders",
+    "qty_increments": 1
+  },
+  {
     "sku": "DOOR-070629C1",
     "quantity": 148,
     "sources": [
@@ -31,132 +370,6 @@
       {
         "source_code": "warehouse_atlanta",
         "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-4DEEB6C4-CONFIG",
-    "quantity": 112,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 62
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-4DEEB6C4-VAR-0EB76A",
-    "quantity": 294,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 197
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 97
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-4DEEB6C4-VAR-3B284D",
-    "quantity": 114,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 64
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-4DEEB6C4-VAR-3FA75E",
-    "quantity": 136,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 86
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-4DEEB6C4-VAR-809D72",
-    "quantity": 143,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 93
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-4DEEB6C4-VAR-E2142E",
-    "quantity": 220,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 160
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 60
       }
     ],
     "is_in_stock": true,
@@ -220,90 +433,6 @@
       {
         "source_code": "warehouse_atlanta",
         "quantity": 90
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-B9A85BDF-CONFIG",
-    "quantity": 149,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 99
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-B9A85BDF-VAR-48073A",
-    "quantity": 121,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 71
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-B9A85BDF-VAR-7A89E1",
-    "quantity": 126,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 76
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DOOR-B9A85BDF-VAR-FA860F",
-    "quantity": 160,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 110
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
       }
     ],
     "is_in_stock": true,
@@ -539,354 +668,6 @@
     "qty_increments": 1
   },
   {
-    "sku": "DRYWALL-B2F15E19-0.375-4X12",
-    "quantity": 415,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 163
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 89
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 63
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-B2F15E19-0.5-4X10",
-    "quantity": 544,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 215
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 122
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 107
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-B2F15E19-0.5-4X12",
-    "quantity": 265,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 15
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-B2F15E19-0.5-4X8",
-    "quantity": 635,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 241
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 163
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 129
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 102
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-B2F15E19-0.625-4X10",
-    "quantity": 798,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 364
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 126
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 142
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 166
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-B2F15E19-CONFIG",
-    "quantity": 361,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 149
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 62
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-E68755BC-CONFIG",
-    "quantity": 354,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 138
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 66
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-E68755BC-VAR-5039EE",
-    "quantity": 832,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 337
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 157
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 138
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-E68755BC-VAR-6A5D5E",
-    "quantity": 339,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 139
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 50
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-E68755BC-VAR-6B0C35",
-    "quantity": 761,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 340
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 103
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 150
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 168
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-E68755BC-VAR-802A42",
-    "quantity": 742,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 253
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 179
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 186
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 124
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "DRYWALL-E68755BC-VAR-C13680",
-    "quantity": 265,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 15
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
     "sku": "LBR-0C7A6DBC",
     "quantity": 949,
     "sources": [
@@ -934,296 +715,6 @@
       {
         "source_code": "warehouse_denver",
         "quantity": 112
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-28A6D33B-3.5X5.5-12",
-    "quantity": 554,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 182
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 153
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 137
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 82
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-28A6D33B-3.5X5.5-20",
-    "quantity": 802,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 366
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 110
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 151
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 175
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-28A6D33B-5.5X11.25-12",
-    "quantity": 779,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 348
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 119
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 132
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 180
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-28A6D33B-5.5X5.5-16",
-    "quantity": 320,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 120
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 50
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-28A6D33B-CONFIG",
-    "quantity": 671,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 306
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 165
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-2AFDD582-1.75X11.875-24",
-    "quantity": 907,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 356
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 222
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 129
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-2AFDD582-1.75X9.25-12",
-    "quantity": 340,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 140
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 50
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-2AFDD582-1.75X9.25-24",
-    "quantity": 997,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 412
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 240
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 145
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-2AFDD582-3.5X9.25-16",
-    "quantity": 934,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 383
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 199
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 166
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 186
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "LBR-2AFDD582-CONFIG",
-    "quantity": 294,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 44
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 50
       }
     ],
     "is_in_stock": true,
@@ -1454,191 +945,6 @@
     "qty_increments": 1
   },
   {
-    "sku": "NAIL-3BAF0362-CONFIG",
-    "quantity": 845,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 280
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 161
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 124
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 145
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 115
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-3BAF0362-VAR-5CD64C",
-    "quantity": 1620,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-3BAF0362-VAR-82F096",
-    "quantity": 663,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 237
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 112
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 109
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 105
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 80
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-3BAF0362-VAR-A8F9B3",
-    "quantity": 1620,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-3BAF0362-VAR-B1FC8A",
-    "quantity": 826,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 272
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 128
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 169
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 137
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
     "sku": "NAIL-65F44C61",
     "quantity": 1303,
     "sources": [
@@ -1698,154 +1004,6 @@
       {
         "source_code": "warehouse_atlanta",
         "quantity": 113
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-964A5658-12GA-2",
-    "quantity": 544,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 169
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 105
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 70
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 71
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 109
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-964A5658-13GA-2.5",
-    "quantity": 1577,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 457
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-964A5658-13GA-3.5",
-    "quantity": 1095,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 339
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 150
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 186
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "NAIL-964A5658-CONFIG",
-    "quantity": 1371,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 310
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 162
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 179
       },
       {
         "source_code": "dropship_premium_windows",
@@ -1924,90 +1082,6 @@
       {
         "source_code": "dropship_premium_windows",
         "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-2446D11C-0.25-4X8",
-    "quantity": 357,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 240
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 117
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-2446D11C-0.5-4X10",
-    "quantity": 565,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 349
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 216
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-2446D11C-0.75-4X10",
-    "quantity": 339,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 232
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 107
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-2446D11C-CONFIG",
-    "quantity": 688,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 488
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 200
       }
     ],
     "is_in_stock": true,
@@ -2166,195 +1240,6 @@
     "qty_increments": 1
   },
   {
-    "sku": "PLY-EB739D1A-0.4375-4X8",
-    "quantity": 492,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 299
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 193
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-EB739D1A-0.4375-4X9",
-    "quantity": 269,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 169
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-EB739D1A-0.625-4X9",
-    "quantity": 386,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 246
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 140
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-EB739D1A-0.75-4X8",
-    "quantity": 656,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 467
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 189
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "PLY-EB739D1A-CONFIG",
-    "quantity": 524,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 354
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 170
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-23B6BDCE-CONFIG",
-    "quantity": 712,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 448
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 264
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-23B6BDCE-VAR-7D62AF",
-    "quantity": 237,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 137
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-23B6BDCE-VAR-925D98",
-    "quantity": 458,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 296
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 162
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-23B6BDCE-VAR-AD3FE3",
-    "quantity": 273,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 173
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
     "sku": "SAFE-2B236287",
     "quantity": 582,
     "sources": [
@@ -2386,90 +1271,6 @@
       {
         "source_code": "warehouse_east",
         "quantity": 234
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-4C04F304-CONFIG",
-    "quantity": 678,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 443
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 235
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-4C04F304-VAR-7AE29B",
-    "quantity": 591,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 432
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 159
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-4C04F304-VAR-7B0626",
-    "quantity": 552,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 347
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 205
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-4C04F304-VAR-A339DC",
-    "quantity": 434,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 280
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 154
       }
     ],
     "is_in_stock": true,
@@ -2523,111 +1324,6 @@
     "qty_increments": 1
   },
   {
-    "sku": "SAFE-7ABE4E37-CONFIG",
-    "quantity": 267,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 167
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-7ABE4E37-VAR-341D63",
-    "quantity": 329,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 220
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 109
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-7ABE4E37-VAR-67A550",
-    "quantity": 477,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 312
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 165
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-7ABE4E37-VAR-837420",
-    "quantity": 737,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 465
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 272
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-7ABE4E37-VAR-87C176",
-    "quantity": 500,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 346
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 154
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
     "sku": "SAFE-7F19B12C",
     "quantity": 293,
     "sources": [
@@ -2659,111 +1355,6 @@
       {
         "source_code": "warehouse_east",
         "quantity": 159
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-EC4751EE-CONFIG",
-    "quantity": 593,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 411
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 182
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-EC4751EE-VAR-09E218",
-    "quantity": 208,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 108
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-EC4751EE-VAR-3FC5C1",
-    "quantity": 263,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 163
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-EC4751EE-VAR-97D046",
-    "quantity": 417,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 302
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 115
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SAFE-EC4751EE-VAR-F3145C",
-    "quantity": 600,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 437
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 163
       }
     ],
     "is_in_stock": true,
@@ -2944,302 +1535,6 @@
     "qty_increments": 1
   },
   {
-    "sku": "SCREW-719983CE-2",
-    "quantity": 1620,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SCREW-719983CE-2-1",
-    "quantity": 1086,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 340
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 214
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 176
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 136
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SCREW-719983CE-4",
-    "quantity": 1620,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SCREW-719983CE-CONFIG",
-    "quantity": 1620,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SCREW-787E3AF6-1.25",
-    "quantity": 1500,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 380
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SCREW-787E3AF6-2.5",
-    "quantity": 1097,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 401
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 197
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 137
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 196
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 146
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SCREW-787E3AF6-3",
-    "quantity": 1213,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 409
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 184
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "SCREW-787E3AF6-CONFIG",
-    "quantity": 1362,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 500
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 242
-      },
-      {
-        "source_code": "warehouse_phoenix",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_denver",
-        "quantity": 200
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 200
-      },
-      {
-        "source_code": "dropship_premium_windows",
-        "quantity": 20
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
     "sku": "SCREW-A3256812",
     "quantity": 1146,
     "sources": [
@@ -3372,111 +1667,6 @@
     "qty_increments": 1
   },
   {
-    "sku": "STUD-1AC33726-18GA-2.5-8",
-    "quantity": 238,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 138
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-1AC33726-20GA-2.5-12",
-    "quantity": 400,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 277
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 123
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-1AC33726-20GA-3.5-12",
-    "quantity": 580,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 359
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 221
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-1AC33726-20GA-3.5-8",
-    "quantity": 616,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 410
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 206
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-1AC33726-CONFIG",
-    "quantity": 647,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 456
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 191
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
     "sku": "STUD-44C79532",
     "quantity": 693,
     "sources": [
@@ -3571,195 +1761,6 @@
       {
         "source_code": "warehouse_east",
         "quantity": 243
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-FD28E651-18GA-8-12",
-    "quantity": 711,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 451
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 260
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-FD28E651-20GA-3.5-12",
-    "quantity": 684,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 472
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 212
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-FD28E651-20GA-8-10",
-    "quantity": 302,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 202
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 100
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "STUD-FD28E651-CONFIG",
-    "quantity": 316,
-    "sources": [
-      {
-        "source_code": "warehouse_west",
-        "quantity": 208
-      },
-      {
-        "source_code": "warehouse_east",
-        "quantity": 108
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-1B362CA8-CONFIG",
-    "quantity": 100,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 50
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-1B362CA8-VAR-14F2A6",
-    "quantity": 107,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 57
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-1B362CA8-VAR-8A6F3C",
-    "quantity": 133,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 83
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-1B362CA8-VAR-A5BD24",
-    "quantity": 131,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 81
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-1B362CA8-VAR-E5A29A",
-    "quantity": 117,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 67
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
       }
     ],
     "is_in_stock": true,
@@ -3907,90 +1908,6 @@
       {
         "source_code": "warehouse_atlanta",
         "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-9564124D-CONFIG",
-    "quantity": 182,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 132
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-9564124D-VAR-0575FB",
-    "quantity": 143,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 93
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-9564124D-VAR-490BA1",
-    "quantity": 116,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 66
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 50
-      }
-    ],
-    "is_in_stock": true,
-    "manage_stock": true,
-    "use_config_manage_stock": true,
-    "min_qty": 0,
-    "max_sale_qty": 10000,
-    "backorders": "no_backorders",
-    "qty_increments": 1
-  },
-  {
-    "sku": "WINDOW-9564124D-VAR-B5F36E",
-    "quantity": 276,
-    "sources": [
-      {
-        "source_code": "warehouse_east",
-        "quantity": 188
-      },
-      {
-        "source_code": "warehouse_atlanta",
-        "quantity": 88
       }
     ],
     "is_in_stock": true,

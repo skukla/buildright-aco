@@ -44,6 +44,91 @@ BuildRight Solutions operates as a B2B2X building materials distribution company
 - **Central Region:** Texas, Colorado, Kansas, Missouri, Oklahoma
 - **Eastern Region:** North Carolina, South Carolina, Georgia, Florida, Virginia
 
+### B2B Company Structure
+
+BuildRight serves **8 demo companies** representing diverse customer types across the three operating divisions. These companies showcase BuildRight's hierarchical pricing model and multi-location service capabilities.
+
+#### Demo Companies Overview
+
+**BuildRight Commercial Division (3 companies):**
+
+1. **Premium Commercial Builders Inc.**
+   - Type: Large-scale commercial construction
+   - Pricing Tier: Commercial-Tier2 (highest volume tier)
+   - Locations: 3 (Los Angeles HQ, San Francisco Bay Area, Orange County)
+   - Region: Western (California)
+   - Users: 6-8 purchasing staff
+
+2. **Metro Construction Group**
+   - Type: Regional commercial construction
+   - Pricing Tier: Commercial-Tier1 (volume tier)
+   - Locations: 3 (Phoenix HQ, Tucson, Flagstaff)
+   - Region: Western (Arizona)
+   - Users: 6-8 purchasing staff
+
+3. **Industrial Builders Corp**
+   - Type: Industrial/commercial projects
+   - Pricing Tier: Contract-Commercial (segment level)
+   - Locations: 3 (Las Vegas HQ, Henderson, Reno)
+   - Region: Western (Nevada)
+   - Users: 6-7 purchasing staff
+
+**BuildRight Residential Division (3 companies):**
+
+4. **Coastal Residential Builders**
+   - Type: Production home builder
+   - Pricing Tier: Residential-Builder (production tier)
+   - Locations: 3 (San Diego HQ, Carlsbad, Chula Vista)
+   - Region: Western (California)
+   - Users: 5-7 purchasing staff
+
+5. **Family Homes LLC**
+   - Type: Custom home builder
+   - Pricing Tier: Contract-Residential (segment level)
+   - Locations: 2 (Austin HQ, San Antonio)
+   - Region: Central (Texas)
+   - Users: 4-5 purchasing staff
+
+6. **Classic Remodeling Co.**
+   - Type: Residential remodeling contractor
+   - Pricing Tier: Contract-Residential (segment level)
+   - Locations: 2 (Portland HQ, Beaverton)
+   - Region: Western (Oregon)
+   - Users: 4-5 purchasing staff
+
+**BuildRight Pro Division (2 companies):**
+
+7. **Elite Trade Contractors**
+   - Type: Specialty trade (electrical, plumbing, HVAC)
+   - Pricing Tier: Pro-Specialty (specialty tier)
+   - Locations: 3 (Seattle HQ, Bellevue, Tacoma)
+   - Region: Western (Washington)
+   - Users: 5-6 purchasing staff
+
+8. **Regional Pro Services**
+   - Type: Multi-trade contractor services
+   - Pricing Tier: Contract-Pro (segment level)
+   - Locations: 2 (Denver HQ, Colorado Springs)
+   - Region: Central (Colorado)
+   - Users: 4-5 purchasing staff
+
+**Summary Statistics:**
+- **Total Companies:** 8 companies across three divisions
+- **Total Locations:** 21 (2-3 per company average)
+- **Total Users:** 40-51 purchasing staff
+- **Geographic Coverage:** Western and Central US regions
+- **Price Book Levels:** 3-tier hierarchical structure (10 total catalogs)
+
+**Hierarchical Pricing Structure:**
+
+Each company is assigned to a specific Shared Catalog (price book) based on their volume, customer type, and division alignment:
+
+- **Level 1 - Base Catalogs:** US-Retail, US-Contract (currency-defined base pricing)
+- **Level 2 - Segment Catalogs:** Retail-Consumer, Contract-Commercial, Contract-Residential, Contract-Pro (division-specific pricing)
+- **Level 3 - Tier Catalogs:** Commercial-Tier1, Commercial-Tier2, Residential-Builder, Pro-Specialty (volume-based discounting)
+
+**Pricing Strategy:** Companies purchasing higher volumes receive access to deeper tier pricing (Level 3), while standard contractors use segment-level catalogs (Level 2). This demonstrates Adobe Commerce's flexible B2B pricing capabilities with hierarchical price book inheritance.
+
 ***
 
 ## Product Catalog Structure
@@ -220,9 +305,17 @@ BuildRight Solutions operates as a B2B2X building materials distribution company
 
 ## Multi-Source Inventory (MSI) Implementation
 
+**IMPORTANT: Manual Configuration Required**
+
+Adobe Commerce Optimizer (ACO) Data Ingestion API does not support inventory operations. Multi-Source Inventory (MSI) must be configured manually through Adobe Commerce Admin UI or the Adobe Commerce Inventory REST API as a separate step from catalog ingestion.
+
+**Configuration Guide:** See `docs/manual-setup/msi-configuration-guide.md` for complete setup instructions (estimated 3-5 hours for manual UI setup or 45-60 minutes for scripted REST API approach).
+
+**Why Separate?** ACO focuses on product catalog optimization and pricing management. Inventory management is handled by Adobe Commerce's robust Multi-Source Inventory system, which provides warehouse management, stock allocation algorithms, and source prioritization.
+
 ### Warehouse \& Distribution Network
 
-BuildRight Solutions operates **18 physical inventory sources** mapped to Adobe Commerce MSI concepts:
+BuildRight Solutions operates **18 physical inventory sources** (conceptual architecture; demo uses 6 sources) mapped to Adobe Commerce MSI concepts:
 
 #### Regional Distribution Centers (RDCs) - Level 1
 

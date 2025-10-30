@@ -32,27 +32,27 @@ function sortByHierarchy(priceBooks) {
   const levelMap = new Map();
 
   function calculateLevel(priceBook) {
-    if (levelMap.has(priceBook.id)) {
-      return levelMap.get(priceBook.id);
+    if (levelMap.has(priceBook.priceBookId)) {
+      return levelMap.get(priceBook.priceBookId);
     }
 
     // Base level (no parent)
     if (!priceBook.parentId) {
-      levelMap.set(priceBook.id, 1);
+      levelMap.set(priceBook.priceBookId, 1);
       return 1;
     }
 
     // Find parent
-    const parent = priceBooks.find(pb => pb.id === priceBook.parentId);
+    const parent = priceBooks.find(pb => pb.priceBookId === priceBook.parentId);
     if (!parent) {
-      logger.warn(`Parent not found for price book ${priceBook.id}: ${priceBook.parentId}`);
-      levelMap.set(priceBook.id, 1);
+      logger.warn(`Parent not found for price book ${priceBook.priceBookId}: ${priceBook.parentId}`);
+      levelMap.set(priceBook.priceBookId, 1);
       return 1;
     }
 
     // Level = parent level + 1
     const level = calculateLevel(parent) + 1;
-    levelMap.set(priceBook.id, level);
+    levelMap.set(priceBook.priceBookId, level);
     return level;
   }
 
@@ -61,14 +61,14 @@ function sortByHierarchy(priceBooks) {
 
   // Sort by level, then by ID
   return priceBooks.slice().sort((a, b) => {
-    const levelA = levelMap.get(a.id) || 1;
-    const levelB = levelMap.get(b.id) || 1;
+    const levelA = levelMap.get(a.priceBookId) || 1;
+    const levelB = levelMap.get(b.priceBookId) || 1;
 
     if (levelA !== levelB) {
       return levelA - levelB;
     }
 
-    return a.id.localeCompare(b.id);
+    return a.priceBookId.localeCompare(b.priceBookId);
   });
 }
 
@@ -91,7 +91,7 @@ export async function ingestPriceBooks(priceBooks, options = {}) {
   const sorted = sortByHierarchy(priceBooks);
 
   logger.info('Price books sorted by hierarchy', {
-    order: sorted.map(pb => ({ id: pb.id, parent: pb.parentId || 'none' }))
+    order: sorted.map(pb => ({ id: pb.priceBookId, parent: pb.parentId || 'none' }))
   });
 
   if (config.dryRun) {
@@ -116,13 +116,13 @@ export async function ingestPriceBooks(priceBooks, options = {}) {
   // Ingest sequentially in hierarchy order
   for (const priceBook of sorted) {
     try {
-      logger.info(`Ingesting price book: ${priceBook.id}`, {
+      logger.info(`Ingesting price book: ${priceBook.priceBookId}`, {
         name: priceBook.name,
         parent: priceBook.parentId || 'none'
       });
 
       await executeWithRetry(
-        () => client.createPriceBook(priceBook),
+        () => client.createPriceBooks([priceBook]),
         {
           maxRetries: config.maxRetries,
           initialDelayMs: config.initialRetryDelayMs,
@@ -131,16 +131,16 @@ export async function ingestPriceBooks(priceBooks, options = {}) {
       );
 
       results.ingested++;
-      logger.info(`Price book ingested: ${priceBook.id}`);
+      logger.info(`Price book ingested: ${priceBook.priceBookId}`);
 
     } catch (error) {
       results.failed++;
       results.errors.push({
-        id: priceBook.id,
+        id: priceBook.priceBookId,
         error: error.message
       });
 
-      logger.error(`Failed to ingest price book: ${priceBook.id}`, {
+      logger.error(`Failed to ingest price book: ${priceBook.priceBookId}`, {
         error: error.message
       });
 

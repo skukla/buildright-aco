@@ -183,11 +183,19 @@ export function createLogger(options = {}) {
         format: winston.format.combine(
           winston.format.colorize(),
           winston.format.timestamp(),
-          winston.format.printf(({ timestamp, level, message }) => {
+          winston.format.printf((info) => {
+            const { timestamp, level, message, ...meta } = info;
+
             const msg = typeof message === 'object'
               ? JSON.stringify(message, null, 2)
               : message;
-            return `${timestamp} [${level}]: ${msg}`;
+
+            // Include all metadata if present
+            const metaStr = Object.keys(meta).length > 0
+              ? '\n' + JSON.stringify(meta, null, 2)
+              : '';
+
+            return `${timestamp} [${level}]: ${msg}${metaStr}`;
           })
         )
       })

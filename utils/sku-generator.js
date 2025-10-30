@@ -80,8 +80,9 @@ export function generateSKU(options) {
     hash.update(`${prefix}-${name}-${seed}`);
     identifier = hash.digest('hex').substring(0, 8).toUpperCase();
   } else {
-    // Generate from name
-    const nameWords = name.split(/\s+/);
+    // Generate from name (handle null/undefined safely)
+    const safeName = name || 'UNNAMED';
+    const nameWords = safeName.split(/\s+/);
     const abbreviated = nameWords.map(word => {
       // Handle special words
       if (word.match(/^\d+x\d+/i)) {
@@ -95,8 +96,9 @@ export function generateSKU(options) {
 
     identifier = abbreviated.substring(0, 20);
 
-    // Add random suffix to ensure uniqueness
-    const randomSuffix = Math.random().toString(36).substring(2, 5).toUpperCase();
+    // Add cryptographically secure random suffix to ensure uniqueness
+    const randomBytes = crypto.randomBytes(4);
+    const randomSuffix = randomBytes.toString('hex').substring(0, 3).toUpperCase();
     identifier = `${identifier}-${randomSuffix}`;
   }
 

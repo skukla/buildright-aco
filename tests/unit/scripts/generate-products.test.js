@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const execAsync = promisify(exec);
 
-describe.skip('Generate Products Script', () => {
+describe('Generate Products Script', () => {
   const OUTPUT_FILE = path.join(__dirname, '../../../data/buildright/products.json');
   const CATEGORIES_FILE = path.join(__dirname, '../../../data/buildright/categories.json');
   const METADATA_FILE = path.join(__dirname, '../../../data/buildright/metadata.json');
@@ -58,10 +58,10 @@ describe.skip('Generate Products Script', () => {
 
       const simpleProducts = products.filter(p => p.type === 'simple');
 
-      // Count products by category (attr_001 is product_category)
+      // Count products by category (product_category attribute)
       const categoryCount = {};
       simpleProducts.forEach(product => {
-        const category = product.attributes.find(attr => attr.code === 'attr_001')?.value;
+        const category = product.attributes.find(attr => attr.code === 'product_category')?.value;
         categoryCount[category] = (categoryCount[category] || 0) + 1;
       });
 
@@ -81,10 +81,10 @@ describe.skip('Generate Products Script', () => {
 
       const serviceProducts = products.filter(p => p.type === 'service');
 
-      // Count services by category (attr_001 is product_category)
+      // Count services by category (product_category attribute)
       const categoryCount = {};
       serviceProducts.forEach(product => {
-        const category = product.attributes.find(attr => attr.code === 'attr_001')?.value;
+        const category = product.attributes.find(attr => attr.code === 'product_category')?.value;
         categoryCount[category] = (categoryCount[category] || 0) + 1;
       });
 
@@ -102,8 +102,8 @@ describe.skip('Generate Products Script', () => {
       const data = await fs.readFile(OUTPUT_FILE, 'utf-8');
       const products = JSON.parse(data);
 
-      // attr_001 is product_category, attr_006 is brand
-      const requiredAttributes = ['attr_001', 'attr_006'];
+      // product_category and brand are required
+      const requiredAttributes = ['product_category', 'brand'];
 
       products.forEach(product => {
         requiredAttributes.forEach(attrCode => {
@@ -338,6 +338,133 @@ describe.skip('Generate Products Script', () => {
         if (product.type === 'service') {
           expect(product.price).toBeGreaterThan(50); // Services typically more expensive
         }
+      });
+    });
+  });
+
+  describe('Project Type Tagging (Step 1)', () => {
+    it('should tag structural products with relevant project types', async () => {
+      // Given: Product generation with project type tagging enabled
+      await execAsync('node scripts/generate-products.js');
+      const data = await fs.readFile(OUTPUT_FILE, 'utf-8');
+      const products = JSON.parse(data);
+
+      // When: Generating lumber products (SKU LBR-*)
+      const lumberProducts = products.filter(p => p.sku.startsWith('LBR-'));
+
+      // Then: Products have project_types attribute with values ['new_construction', 'remodel']
+      expect(lumberProducts.length).toBeGreaterThan(0);
+      lumberProducts.forEach(product => {
+        const projectTypesAttr = product.attributes.find(attr => attr.code === 'project_types');
+        expect(projectTypesAttr).toBeDefined();
+        expect(projectTypesAttr.value).toBeDefined();
+        expect(Array.isArray(projectTypesAttr.value)).toBe(true);
+        expect(projectTypesAttr.value.length).toBeGreaterThan(0);
+
+        // Lumber should include new_construction and remodel
+        expect(projectTypesAttr.value).toContain('new_construction');
+        expect(projectTypesAttr.value).toContain('remodel');
+      });
+    });
+
+    it('should tag service products with all project types', async () => {
+      // Given: Product generation for service products
+      await execAsync('node scripts/generate-products.js');
+      const data = await fs.readFile(OUTPUT_FILE, 'utf-8');
+      const products = JSON.parse(data);
+
+      // When: Generating delivery services
+      const serviceProducts = products.filter(p => p.sku.startsWith('SVC-'));
+
+      // Then: Services have all 4 project types assigned
+      expect(serviceProducts.length).toBeGreaterThan(0);
+      serviceProducts.forEach(product => {
+        const projectTypesAttr = product.attributes.find(attr => attr.code === 'project_types');
+        expect(projectTypesAttr).toBeDefined();
+        expect(projectTypesAttr.value).toBeDefined();
+        expect(projectTypesAttr.value.length).toBe(4);
+
+        // Services should have all project types
+        expect(projectTypesAttr.value).toContain('new_construction');
+        expect(projectTypesAttr.value).toContain('remodel');
+        expect(projectTypesAttr.value).toContain('repair');
+        expect(projectTypesAttr.value).toContain('restoration');
+      });
+    });
+
+    it('should tag windows/doors products with appropriate project types', async () => {
+      // Given: Product generation for windows and doors category
+      await execAsync('node scripts/generate-products.js');
+      const data = await fs.readFile(OUTPUT_FILE, 'utf-8');
+      const products = JSON.parse(data);
+
+      // When: Generating window products
+      const windowProducts = products.filter(p =>
+        p.sku.startsWith('WIN-') || p.sku.startsWith('DOR-')
+      );
+
+      // Then: Products tagged with ['new_construction', 'remodel', 'repair']
+      if (windowProducts.length > 0) {
+        windowProducts.forEach(product => {
+          const projectTypesAttr = product.attributes.find(attr => attr.code === 'project_types');
+          expect(projectTypesAttr).toBeDefined();
+          expect(projectTypesAttr.value).toBeDefined();
+          expect(projectTypesAttr.value.length).toBeGreaterThanOrEqual(3);
+
+          // Windows/doors should include these project types
+          expect(projectTypesAttr.value).toContain('new_construction');
+          expect(projectTypesAttr.value).toContain('remodel');
+          expect(projectTypesAttr.value).toContain('repair');
+        });
+      }
+    });
+
+    it('should tag safety equipment with all project types', async () => {
+      // Given: Product generation for safety category
+      await execAsync('node scripts/generate-products.js');
+      const data = await fs.readFile(OUTPUT_FILE, 'utf-8');
+      const products = JSON.parse(data);
+
+      // When: Generating hard hats, safety gear
+      const safetyProducts = products.filter(p =>
+        p.sku.startsWith('SAF-') ||
+        p.name.toLowerCase().includes('safety') ||
+        p.name.toLowerCase().includes('hard hat') ||
+        p.name.toLowerCase().includes('glove')
+      );
+
+      // Then: Products have all project types (applicable to any work)
+      if (safetyProducts.length > 0) {
+        safetyProducts.forEach(product => {
+          const projectTypesAttr = product.attributes.find(attr => attr.code === 'project_types');
+          expect(projectTypesAttr).toBeDefined();
+          expect(projectTypesAttr.value).toBeDefined();
+          expect(projectTypesAttr.value.length).toBe(4);
+
+          // Safety equipment applicable to all project types
+          expect(projectTypesAttr.value).toContain('new_construction');
+          expect(projectTypesAttr.value).toContain('remodel');
+          expect(projectTypesAttr.value).toContain('repair');
+          expect(projectTypesAttr.value).toContain('restoration');
+        });
+      }
+    });
+
+    it('should ensure all products have project_types attribute', async () => {
+      // Given: Product generation complete
+      await execAsync('node scripts/generate-products.js');
+      const data = await fs.readFile(OUTPUT_FILE, 'utf-8');
+      const products = JSON.parse(data);
+
+      // When: Inspecting all products
+      // Then: Every product has project_types attribute
+      products.forEach(product => {
+        const projectTypesAttr = product.attributes.find(attr => attr.code === 'project_types');
+        expect(projectTypesAttr).toBeDefined();
+        expect(projectTypesAttr.value).toBeDefined();
+        expect(Array.isArray(projectTypesAttr.value)).toBe(true);
+        expect(projectTypesAttr.value.length).toBeGreaterThanOrEqual(1);
+        expect(projectTypesAttr.value.length).toBeLessThanOrEqual(4);
       });
     });
   });

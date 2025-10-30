@@ -9,8 +9,8 @@
     "properties": {
       "attributeId": {
         "type": "string",
-        "pattern": "^attr_[0-9]{3}$",
-        "description": "Unique identifier for the attribute"
+        "pattern": "^(attr_[0-9]{3}|[a-z_]+)$",
+        "description": "Unique identifier for the attribute (generic: attr_NNN or semantic: lowercase_with_underscores)"
       },
       "label": {
         "type": "string",

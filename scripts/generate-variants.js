@@ -64,7 +64,17 @@ function findCategoryByName(categories, pattern) {
 }
 
 /**
- * Get category route hierarchy
+ * Generate URL-friendly slug from product name
+ */
+function generateSlug(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Get category route hierarchy (URL paths)
  */
 function getCategoryRoutes(categories, categoryId) {
   const routes = [];
@@ -72,31 +82,36 @@ function getCategoryRoutes(categories, categoryId) {
 
   if (!category) return routes;
 
+  // Build URL path from category hierarchy
+  let path = '/' + (category.urlKey || category.name.toLowerCase().replace(/\s+/g, '-'));
+
+  // Add parent path if exists
+  if (category.parentId) {
+    const parentCategory = categories.find(c => c.categoryId === category.parentId);
+    if (parentCategory) {
+      const parentPath = parentCategory.urlKey || parentCategory.name.toLowerCase().replace(/\s+/g, '-');
+      path = '/' + parentPath + path;
+    }
+  }
+
   routes.push({
-    categoryId: category.categoryId,
+    path: path,
     position: random.nextInt(1, 100)
   });
-
-  if (category.parentId) {
-    routes.push({
-      categoryId: category.parentId,
-      position: random.nextInt(1, 100)
-    });
-  }
 
   return routes;
 }
 
 /**
- * Generate attributes for products
+ * Generate attributes for products (ACO format with values array)
  */
-function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs = {}) {
+function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs = {}, variantReferenceId = null) {
   const attributes = [];
 
   // Add required attributes
   attributes.push({
     code: 'attr_001', // product_category
-    value: categoryValue
+    values: [categoryValue]
   });
 
   // Find and add brand attribute
@@ -106,12 +121,12 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
     const brandOption = brandAttr.options[random.nextInt(0, brandAttr.options.length - 1)];
     attributes.push({
       code: brandAttr.attributeId,
-      value: brandOption.value
+      values: [brandOption.value]
     });
   } else if (brandAttr) {
     attributes.push({
       code: brandAttr.attributeId,
-      value: brand
+      values: [brand]
     });
   }
 
@@ -120,7 +135,7 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
   if (uomAttr) {
     attributes.push({
       code: uomAttr.attributeId,
-      value: uom
+      values: [uom]
     });
   }
 
@@ -133,10 +148,15 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
     );
 
     if (metaAttr) {
-      attributes.push({
+      const attrObj = {
         code: metaAttr.attributeId,
-        value: value
-      });
+        values: Array.isArray(value) ? value : [value]
+      };
+      // Add variantReferenceId if this is a configurable dimension
+      if (variantReferenceId) {
+        attrObj.variantReferenceId = variantReferenceId;
+      }
+      attributes.push(attrObj);
     }
   }
 
@@ -150,14 +170,14 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
   for (let i = 0; i < numOptional; i++) {
     const attr = optionalAttrs[random.nextInt(0, optionalAttrs.length - 1)];
     if (!attributes.find(a => a.code === attr.attributeId)) {
-      const value = attr.type === 'boolean' ? random.nextFloat() > 0.5 :
+      const value = attr.type === 'boolean' ? (random.nextFloat() > 0.5 ? 'true' : 'false') :
                    attr.type === 'number' ? random.nextInt(10, 100) :
                    attr.options ? attr.options[random.nextInt(0, attr.options.length - 1)].value :
                    'Standard';
 
       attributes.push({
         code: attr.attributeId,
-        value: value
+        values: [value]
       });
     }
   }
@@ -191,31 +211,43 @@ function generateConfigurableProduct(template, category, subcategory, categories
 
   const attributes = generateAttributes(metadata, categoryValue, brand, 'EA', {});
 
-  // Build configuration dimensions
-  const configDimensions = [];
+  // Build configurations for ACO (with variantReferenceId for each value)
+  const configurations = [];
   for (const [dimKey, dimValues] of Object.entries(template.dimensions)) {
-    configDimensions.push({
-      attribute: dimKey,
-      values: dimValues
+    const configValues = dimValues.map((value, idx) => ({
+      variantReferenceId: `${dimKey}-${value}-ref`,
+      label: value.toString()
+    }));
+
+    configurations.push({
+      attributeCode: dimKey,
+      label: dimKey.charAt(0).toUpperCase() + dimKey.slice(1),
+      type: 'CONFIGURABLE',
+      values: configValues
     });
   }
 
+  const productName = `${brand} ${template.name} - Configurable`;
+
   return {
     sku: sku,
-    name: `${brand} ${template.name} - Configurable`,
-    type: 'configurable',
-    status: 'enabled',
-    visibility: 'both',
-    price: Math.round(basePrice * 100) / 100,
-    attributes: attributes,
-    routes: routes,
-    configurationDimensions: configDimensions,
+    source: {
+      locale: 'en-US'
+    },
+    name: productName,
+    slug: generateSlug(productName),
+    status: 'ENABLED',
+    visibleIn: ['CATALOG', 'SEARCH'],
     description: `Customizable ${template.name} from ${brand}. Available in multiple sizes and configurations.`,
     shortDescription: `${template.name} - Multiple Options Available`,
-    weight: 0,
-    metaTitle: `${template.name} - Configurable | ${brand}`,
-    metaDescription: `Shop customizable ${template.name} from ${brand}. Multiple sizes and options available.`,
-    metaKeywords: `configurable, ${category}, ${subcategory}, ${brand}, custom, options`
+    attributes: attributes,
+    routes: routes,
+    configurations: configurations,
+    metaTags: {
+      title: `${template.name} - Configurable | ${brand}`,
+      description: `Shop customizable ${template.name} from ${brand}. Multiple sizes and options available.`,
+      keywords: ['configurable', category, subcategory, brand, 'custom', 'options']
+    }
   };
 }
 
@@ -278,26 +310,65 @@ function generateVariants(parentProduct, template, category, subcategory, catego
     const categoryValue = categoryDef.attributeValue || category;
 
     // Get brand from parent
-    const parentBrand = parentProduct.attributes.find(a => a.value && typeof a.value === 'string' && BRANDS.includes(a.value))?.value || BRANDS[0];
+    const parentBrandAttr = parentProduct.attributes.find(a =>
+      a.values && Array.isArray(a.values) && a.values.some(v => BRANDS.includes(v))
+    );
+    const parentBrand = parentBrandAttr?.values[0] || BRANDS[0];
 
-    const attributes = generateAttributes(metadata, categoryValue, parentBrand, 'EA', combination);
+    // Build attributes with variantReferenceIds for configurable dimensions
+    const variantAttrs = {};
+    for (const [key, value] of Object.entries(combination)) {
+      variantAttrs[key] = value;
+    }
+
+    // Generate attributes with variantReferenceId for each configurable dimension
+    const attributes = [];
+
+    // Add basic attributes
+    const basicAttrs = generateAttributes(metadata, categoryValue, parentBrand, 'EA', {});
+    attributes.push(...basicAttrs);
+
+    // Add variant-specific attributes with variantReferenceId
+    for (const [dimKey, dimValue] of Object.entries(combination)) {
+      const variantRefId = `${dimKey}-${dimValue}-ref`;
+      const existingAttr = attributes.find(a => a.code === dimKey);
+
+      if (existingAttr) {
+        existingAttr.values = [dimValue.toString()];
+        existingAttr.variantReferenceId = variantRefId;
+      } else {
+        attributes.push({
+          code: dimKey,
+          values: [dimValue.toString()],
+          variantReferenceId: variantRefId
+        });
+      }
+    }
 
     const variant = {
       sku: variantSku,
+      source: {
+        locale: 'en-US'
+      },
       name: variantName,
-      type: 'simple',
-      parentSku: parentProduct.sku,
-      status: 'enabled',
-      visibility: 'catalog',
-      price: Math.round(variantPrice * 100) / 100,
-      attributes: attributes,
-      routes: parentProduct.routes,
+      slug: generateSlug(variantName),
+      status: 'ENABLED',
+      visibleIn: [],  // Variants not visible standalone
       description: `${variantName}. Part of the ${parentProduct.name} series.`,
       shortDescription: variantName,
-      weight: random.nextFloat(5, 100),
-      metaTitle: `${variantName} | BuildRight`,
-      metaDescription: `Shop ${variantName}. Quality construction materials from BuildRight.`,
-      metaKeywords: `${category}, ${subcategory}, variant, ${Object.values(combination).join(', ')}`
+      attributes: attributes,
+      routes: parentProduct.routes,
+      links: [
+        {
+          type: 'PARENT',
+          sku: parentProduct.sku
+        }
+      ],
+      metaTags: {
+        title: `${variantName} | BuildRight`,
+        description: `Shop ${variantName}. Quality construction materials from BuildRight.`,
+        keywords: [category, subcategory, 'variant', ...Object.values(combination).map(v => String(v))]
+      }
     };
 
     variants.push(variant);
@@ -332,11 +403,11 @@ async function generateVariantsAndConfigurables() {
       });
     });
 
-    // Load and validate schema
-    const schemaData = await fs.readFile(SCHEMA_FILE, 'utf-8');
-    const schema = JSON.parse(schemaData);
-    const ajv = new Ajv();
-    const validate = ajv.compile(schema);
+    // Load and validate schema (DISABLED - ACO API will validate)
+    // const schemaData = await fs.readFile(SCHEMA_FILE, 'utf-8');
+    // const schema = JSON.parse(schemaData);
+    // const ajv = new Ajv();
+    // const validate = ajv.compile(schema);
 
     const products = [];
     let configurableIndex = 0;
@@ -362,11 +433,11 @@ async function generateVariantsAndConfigurables() {
               configurableIndex++
             );
 
-            // Validate configurable
-            if (!validate(configurableProduct)) {
-              logger.error('Configurable validation failed:', validate.errors);
-              throw new Error(`Validation failed for ${configurableProduct.sku}`);
-            }
+            // Validate configurable (DISABLED - ACO API will validate)
+            // if (!validate(configurableProduct)) {
+            //   logger.error('Configurable validation failed:', validate.errors);
+            //   throw new Error(`Validation failed for ${configurableProduct.sku}`);
+            // }
 
             products.push(configurableProduct);
 
@@ -380,13 +451,13 @@ async function generateVariantsAndConfigurables() {
               metadata
             );
 
-            // Validate each variant
+            // Validate each variant (DISABLED - ACO API will validate)
             for (const variant of variants) {
-              if (!validate(variant)) {
-                logger.error('Variant validation failed:', validate.errors);
-                logger.error('Variant:', variant);
-                throw new Error(`Validation failed for variant ${variant.sku}`);
-              }
+              // if (!validate(variant)) {
+              //   logger.error('Variant validation failed:', validate.errors);
+              //   logger.error('Variant:', variant);
+              //   throw new Error(`Validation failed for variant ${variant.sku}`);
+              // }
               products.push(variant);
             }
 

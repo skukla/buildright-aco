@@ -1,73 +1,217 @@
 [
   {
-    "attributeId": "attr_001",
-    "label": "Material",
-    "type": "text",
-    "isRequired": false,
+    "attributeId": "product_category",
+    "label": "Product Category",
+    "type": "select",
+    "isRequired": true,
     "defaultValue": null,
-    "sortOrder": 1
-  },
-  {
-    "attributeId": "attr_002",
-    "label": "Color",
-    "type": "boolean",
-    "isRequired": false,
-    "defaultValue": false,
-    "sortOrder": 2
-  },
-  {
-    "attributeId": "attr_003",
-    "label": "Size",
-    "type": "multiselect",
-    "isRequired": false,
-    "defaultValue": null,
-    "sortOrder": 3,
+    "sortOrder": 1,
     "options": [
       {
-        "value": "size_option_1",
-        "label": "4XL"
+        "value": "structural_materials",
+        "label": "Structural Materials"
       },
       {
-        "value": "size_option_2",
-        "label": "XL"
+        "value": "finishing_materials",
+        "label": "Finishing Materials"
       },
       {
-        "value": "size_option_3",
-        "label": "L"
+        "value": "fasteners_hardware",
+        "label": "Fasteners & Hardware"
       },
       {
-        "value": "size_option_4",
-        "label": "S"
+        "value": "safety_equipment",
+        "label": "Safety Equipment"
       },
       {
-        "value": "size_option_5",
-        "label": "2XL"
-      },
-      {
-        "value": "size_option_6",
-        "label": "XS"
-      },
-      {
-        "value": "size_option_7",
-        "label": "3XL"
+        "value": "tools_equipment",
+        "label": "Tools & Equipment"
       }
     ]
   },
   {
-    "attributeId": "attr_004",
-    "label": "Weight",
-    "type": "text",
-    "isRequired": true,
+    "attributeId": "project_types",
+    "label": "Project Types",
+    "type": "multiselect",
+    "isRequired": false,
     "defaultValue": null,
-    "sortOrder": 4
+    "sortOrder": 2,
+    "options": [
+      {
+        "value": "new_construction",
+        "label": "New Construction"
+      },
+      {
+        "value": "remodel",
+        "label": "Remodel"
+      },
+      {
+        "value": "repair",
+        "label": "Repair"
+      },
+      {
+        "value": "restoration",
+        "label": "Restoration"
+      }
+    ]
+  },
+  {
+    "attributeId": "commercial_residential",
+    "label": "Commercial/Residential",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": "residential",
+    "sortOrder": 3,
+    "options": [
+      {
+        "value": "commercial",
+        "label": "Commercial"
+      },
+      {
+        "value": "residential",
+        "label": "Residential"
+      },
+      {
+        "value": "both",
+        "label": "Both"
+      }
+    ]
+  },
+  {
+    "attributeId": "brand",
+    "label": "Brand",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 4,
+    "options": [
+      {
+        "value": "buildright_pro",
+        "label": "BuildRight Pro"
+      },
+      {
+        "value": "structuremaster",
+        "label": "StructureMaster"
+      },
+      {
+        "value": "proframe",
+        "label": "ProFrame"
+      },
+      {
+        "value": "safeguard",
+        "label": "SafeGuard"
+      },
+      {
+        "value": "fastenpro",
+        "label": "FastenPro"
+      },
+      {
+        "value": "durabuilt",
+        "label": "DuraBuilt"
+      }
+    ]
   },
   {
     "attributeId": "attr_005",
-    "label": "Dimensions",
+    "label": "Material",
+    "type": "multiselect",
+    "isRequired": true,
+    "defaultValue": null,
+    "sortOrder": 5,
+    "options": [
+      {
+        "value": "material_option_1",
+        "label": "Leather"
+      },
+      {
+        "value": "material_option_2",
+        "label": "Silk"
+      },
+      {
+        "value": "material_option_3",
+        "label": "Cotton"
+      },
+      {
+        "value": "material_option_4",
+        "label": "Polyester"
+      },
+      {
+        "value": "material_option_5",
+        "label": "Acrylic"
+      },
+      {
+        "value": "material_option_6",
+        "label": "Rayon"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_006",
+    "label": "Color",
     "type": "select",
     "isRequired": false,
-    "defaultValue": "dimensions_option_1",
-    "sortOrder": 5,
+    "defaultValue": "color_option_1",
+    "sortOrder": 6,
+    "options": [
+      {
+        "value": "color_option_1",
+        "label": "Brown"
+      },
+      {
+        "value": "color_option_2",
+        "label": "Green"
+      },
+      {
+        "value": "color_option_3",
+        "label": "Gray"
+      },
+      {
+        "value": "color_option_4",
+        "label": "Red"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_007",
+    "label": "Size",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": "size_option_1",
+    "sortOrder": 7,
+    "options": [
+      {
+        "value": "size_option_1",
+        "label": "XXL"
+      },
+      {
+        "value": "size_option_2",
+        "label": "3XL"
+      },
+      {
+        "value": "size_option_3",
+        "label": "XS"
+      },
+      {
+        "value": "size_option_4",
+        "label": "2XL"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_008",
+    "label": "Weight",
+    "type": "boolean",
+    "isRequired": false,
+    "defaultValue": false,
+    "sortOrder": 8
+  },
+  {
+    "attributeId": "attr_009",
+    "label": "Dimensions",
+    "type": "multiselect",
+    "isRequired": true,
+    "defaultValue": null,
+    "sortOrder": 9,
     "options": [
       {
         "value": "dimensions_option_1",
@@ -88,62 +232,62 @@
       {
         "value": "dimensions_option_5",
         "label": "Option 5"
+      },
+      {
+        "value": "dimensions_option_6",
+        "label": "Option 6"
       }
     ]
   },
   {
-    "attributeId": "attr_006",
-    "label": "Brand",
-    "type": "select",
+    "attributeId": "attr_010",
+    "label": "Custom Attribute 6",
+    "type": "multiselect",
     "isRequired": false,
-    "defaultValue": "brand_option_1",
-    "sortOrder": 6,
+    "defaultValue": null,
+    "sortOrder": 10,
     "options": [
       {
-        "value": "brand_option_1",
+        "value": "custom_attribute_6_option_1",
         "label": "Option 1"
       },
       {
-        "value": "brand_option_2",
+        "value": "custom_attribute_6_option_2",
         "label": "Option 2"
       },
       {
-        "value": "brand_option_3",
+        "value": "custom_attribute_6_option_3",
         "label": "Option 3"
       },
       {
-        "value": "brand_option_4",
+        "value": "custom_attribute_6_option_4",
         "label": "Option 4"
       },
       {
-        "value": "brand_option_5",
+        "value": "custom_attribute_6_option_5",
         "label": "Option 5"
       },
       {
-        "value": "brand_option_6",
+        "value": "custom_attribute_6_option_6",
         "label": "Option 6"
-      },
-      {
-        "value": "brand_option_7",
-        "label": "Option 7"
       }
     ]
   },
   {
-    "attributeId": "attr_007",
+    "attributeId": "attr_011",
     "label": "Model",
-    "type": "boolean",
+    "type": "text",
     "isRequired": false,
-    "defaultValue": false,
-    "sortOrder": 7
+    "defaultValue": null,
+    "sortOrder": 11
   },
   {
-    "attributeId": "attr_008",
+    "attributeId": "attr_012",
     "label": "Warranty",
-    "type": "select",
-    "isRequired": false,
-    "defaultValue": "warranty_option_1",
-    "sortOrder": 8,
+    "type": "multiselect",
+    "isRequired": true,
+    "defaultValue": null,
+    "sortOrder": 12,
     "options": [
       {
         "value": "warranty_option_1",
@@ -168,19 +312,97 @@
     ]
   },
   {
-    "attributeId": "attr_009",
+    "attributeId": "attr_013",
     "label": "Features",
-    "type": "boolean",
-    "isRequired": false,
-    "defaultValue": false,
-    "sortOrder": 9
+    "type": "multiselect",
+    "isRequired": true,
+    "defaultValue": null,
+    "sortOrder": 13,
+    "options": [
+      {
+        "value": "features_option_1",
+        "label": "Option 1"
+      },
+      {
+        "value": "features_option_2",
+        "label": "Option 2"
+      },
+      {
+        "value": "features_option_3",
+        "label": "Option 3"
+      },
+      {
+        "value": "features_option_4",
+        "label": "Option 4"
+      },
+      {
+        "value": "features_option_5",
+        "label": "Option 5"
+      },
+      {
+        "value": "features_option_6",
+        "label": "Option 6"
+      }
+    ]
   },
   {
-    "attributeId": "attr_010",
+    "attributeId": "attr_014",
     "label": "Specifications",
-    "type": "boolean",
+    "type": "multiselect",
     "isRequired": false,
-    "defaultValue": false,
-    "sortOrder": 10
+    "defaultValue": null,
+    "sortOrder": 14,
+    "options": [
+      {
+        "value": "specifications_option_1",
+        "label": "Option 1"
+      },
+      {
+        "value": "specifications_option_2",
+        "label": "Option 2"
+      },
+      {
+        "value": "specifications_option_3",
+        "label": "Option 3"
+      }
+    ]
+  },
+  {
+    "attributeId": "attr_015",
+    "label": "Compatibility",
+    "type": "multiselect",
+    "isRequired": true,
+    "defaultValue": null,
+    "sortOrder": 15,
+    "options": [
+      {
+        "value": "compatibility_option_1",
+        "label": "Option 1"
+      },
+      {
+        "value": "compatibility_option_2",
+        "label": "Option 2"
+      },
+      {
+        "value": "compatibility_option_3",
+        "label": "Option 3"
+      },
+      {
+        "value": "compatibility_option_4",
+        "label": "Option 4"
+      },
+      {
+        "value": "compatibility_option_5",
+        "label": "Option 5"
+      },
+      {
+        "value": "compatibility_option_6",
+        "label": "Option 6"
+      },
+      {
+        "value": "compatibility_option_7",
+        "label": "Option 7"
+      }
+    ]
   }
 ]

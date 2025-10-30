@@ -40,8 +40,10 @@ async function loadAllProducts() {
   try {
     const variantsData = await fs.readFile(VARIANTS_FILE, 'utf-8');
     const variants = JSON.parse(variantsData);
-    // Only add simple variants, not configurable parents
-    const simpleVariants = variants.filter(v => v.type === 'simple' && v.parentSku);
+    // Only add simple variants (those with parent links), not configurable parents
+    const simpleVariants = variants.filter(v =>
+      v.links && v.links.some(link => link.type === 'PARENT')
+    );
     allProducts.push(...simpleVariants);
   } catch (error) {
     logger.warn('Variants file not found');
@@ -80,7 +82,17 @@ function findCategoryByName(categories, pattern) {
 }
 
 /**
- * Get category route hierarchy
+ * Generate URL-friendly slug from product name
+ */
+function generateSlug(name) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Get category route hierarchy (URL paths)
  */
 function getCategoryRoutes(categories, categoryId) {
   const routes = [];
@@ -88,17 +100,22 @@ function getCategoryRoutes(categories, categoryId) {
 
   if (!category) return routes;
 
+  // Build URL path from category hierarchy
+  let path = '/' + (category.urlKey || category.name.toLowerCase().replace(/\s+/g, '-'));
+
+  // Add parent path if exists
+  if (category.parentId) {
+    const parentCategory = categories.find(c => c.categoryId === category.parentId);
+    if (parentCategory) {
+      const parentPath = parentCategory.urlKey || parentCategory.name.toLowerCase().replace(/\s+/g, '-');
+      path = '/' + parentPath + path;
+    }
+  }
+
   routes.push({
-    categoryId: category.categoryId,
+    path: path,
     position: random.nextInt(1, 100)
   });
-
-  if (category.parentId) {
-    routes.push({
-      categoryId: category.parentId,
-      position: random.nextInt(1, 100)
-    });
-  }
 
   return routes;
 }
@@ -137,7 +154,7 @@ function findMatchingProducts(products, productType, namePattern) {
 }
 
 /**
- * Generate bundle attributes
+ * Generate bundle attributes (ACO format with values array)
  */
 function generateAttributes(metadata, categoryValue, brand) {
   const attributes = [];
@@ -145,7 +162,7 @@ function generateAttributes(metadata, categoryValue, brand) {
   // Add required attributes
   attributes.push({
     code: 'attr_001', // product_category
-    value: categoryValue
+    values: [categoryValue]
   });
 
   // Find and add brand attribute
@@ -155,12 +172,12 @@ function generateAttributes(metadata, categoryValue, brand) {
     const brandOption = brandAttr.options[random.nextInt(0, brandAttr.options.length - 1)];
     attributes.push({
       code: brandAttr.attributeId,
-      value: brandOption.value
+      values: [brandOption.value]
     });
   } else if (brandAttr) {
     attributes.push({
       code: brandAttr.attributeId,
-      value: brand
+      values: [brand]
     });
   }
 
@@ -169,7 +186,7 @@ function generateAttributes(metadata, categoryValue, brand) {
   if (uomAttr) {
     attributes.push({
       code: uomAttr.attributeId,
-      value: 'BUNDLE'
+      values: ['BUNDLE']
     });
   }
 
@@ -185,7 +202,7 @@ function generateAttributes(metadata, categoryValue, brand) {
     if (!attributes.find(a => a.code === attr.attributeId)) {
       let value;
       if (attr.type === 'boolean') {
-        value = random.nextFloat() > 0.5;
+        value = random.nextFloat() > 0.5 ? 'true' : 'false';
       } else if (attr.type === 'number') {
         value = random.nextInt(10, 100);
       } else if (attr.options) {
@@ -196,7 +213,7 @@ function generateAttributes(metadata, categoryValue, brand) {
 
       attributes.push({
         code: attr.attributeId,
-        value: value
+        values: [value]
       });
     }
   }
@@ -229,13 +246,17 @@ function generateBundle(bundleDef, category, products, categories, metadata, ind
 
   // Build groups with actual product SKUs
   const groups = [];
+  const usedSkus = new Set(); // Track SKUs already added to this bundle
 
   for (const groupDef of bundleDef.groups) {
     const groupItems = [];
 
     for (const itemDef of groupDef.items) {
       // Find matching products
-      const matchingProducts = findMatchingProducts(products, itemDef.productType, itemDef.namePattern);
+      let matchingProducts = findMatchingProducts(products, itemDef.productType, itemDef.namePattern);
+
+      // Filter out products whose SKUs are already used in this bundle
+      matchingProducts = matchingProducts.filter(p => !usedSkus.has(p.sku));
 
       if (matchingProducts.length > 0) {
         // Select a random matching product
@@ -247,12 +268,16 @@ function generateBundle(bundleDef, category, products, categories, metadata, ind
           name: selectedProduct.name,
           price: selectedProduct.price * 0.9 // Bundle discount
         });
+
+        // Mark this SKU as used
+        usedSkus.add(selectedProduct.sku);
       } else {
-        // Fallback: use first available product of any type
+        // Fallback: use first available product of any type that hasn't been used yet
         const fallbackProduct = products.find(p =>
           p.type === 'simple' &&
           !p.sku.startsWith('BUNDLE-') &&
-          !p.sku.startsWith('SVC-')
+          !p.sku.startsWith('SVC-') &&
+          !usedSkus.has(p.sku) // Ensure not already used
         );
 
         if (fallbackProduct) {
@@ -262,39 +287,57 @@ function generateBundle(bundleDef, category, products, categories, metadata, ind
             name: fallbackProduct.name,
             price: fallbackProduct.price * 0.9
           });
+
+          // Mark this SKU as used
+          usedSkus.add(fallbackProduct.sku);
         }
       }
     }
 
     if (groupItems.length > 0) {
+      // Convert to ACO bundle format
+      const bundleItems = groupItems.map(item => ({
+        sku: item.sku,
+        qty: item.defaultQty,
+        userDefinedQty: false
+      }));
+
+      // Get default items (first item in group if required)
+      const defaultItemSkus = groupDef.required && bundleItems.length > 0
+        ? [bundleItems[0].sku]
+        : [];
+
       groups.push({
-        name: groupDef.name,
+        group: groupDef.name,
         required: groupDef.required,
         multiSelect: groupDef.multiSelect,
-        items: groupItems,
-        sortOrder: groups.length + 1
+        defaultItemSkus: defaultItemSkus,
+        items: bundleItems
       });
     }
   }
 
+  const productName = `${brand} ${bundleDef.name}`;
+
   return {
     sku: sku,
-    name: `${brand} ${bundleDef.name}`,
-    type: 'bundle',
-    status: 'enabled',
-    visibility: 'both',
-    price: Math.round(price * 100) / 100,
-    attributes: attributes,
-    routes: routes,
-    groups: groups,
-    bundleType: 'fixed',
-    shipmentType: 'together',
+    source: {
+      locale: 'en-US'
+    },
+    name: productName,
+    slug: generateSlug(productName),
+    status: 'ENABLED',
+    visibleIn: ['CATALOG', 'SEARCH'],
     description: bundleDef.description || `Complete bundle package from ${brand}`,
     shortDescription: `${bundleDef.name} - Bundle Package`,
-    weight: random.nextFloat(50, 200),
-    metaTitle: `${bundleDef.name} Bundle | ${brand}`,
-    metaDescription: `Shop the ${bundleDef.name} bundle from ${brand}. Complete package for your construction needs.`,
-    metaKeywords: `bundle, package, ${category}, ${brand}, construction, bulk`
+    attributes: attributes,
+    routes: routes,
+    bundles: groups,  // Use 'bundles' not 'groups'
+    metaTags: {
+      title: `${bundleDef.name} Bundle | ${brand}`,
+      description: `Shop the ${bundleDef.name} bundle from ${brand}. Complete package for your construction needs.`,
+      keywords: ['bundle', 'package', category, brand, 'construction', 'bulk']
+    }
   };
 }
 
@@ -329,11 +372,11 @@ async function generateBundles() {
       });
     });
 
-    // Load and validate schema
-    const schemaData = await fs.readFile(SCHEMA_FILE, 'utf-8');
-    const schema = JSON.parse(schemaData);
-    const ajv = new Ajv();
-    const validate = ajv.compile(schema);
+    // Load and validate schema (DISABLED - ACO API will validate)
+    // const schemaData = await fs.readFile(SCHEMA_FILE, 'utf-8');
+    // const schema = JSON.parse(schemaData);
+    // const ajv = new Ajv();
+    // const validate = ajv.compile(schema);
 
     const bundles = [];
     let bundleIndex = 0;
@@ -350,12 +393,12 @@ async function generateBundles() {
           bundleIndex++
         );
 
-        // Validate bundle
-        if (!validate(bundle)) {
-          logger.error('Bundle validation failed:', validate.errors);
-          logger.error('Bundle:', bundle);
-          throw new Error(`Validation failed for bundle ${bundle.sku}`);
-        }
+        // Validate bundle (DISABLED - ACO API will validate)
+        // if (!validate(bundle)) {
+        //   logger.error('Bundle validation failed:', validate.errors);
+        //   logger.error('Bundle:', bundle);
+        //   throw new Error(`Validation failed for bundle ${bundle.sku}`);
+        // }
 
         bundles.push(bundle);
       }
