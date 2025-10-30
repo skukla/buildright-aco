@@ -265,18 +265,17 @@ function generateBundle(bundleDef, category, products, categories, metadata, ind
         groupItems.push({
           sku: selectedProduct.sku,
           defaultQty: itemDef.defaultQty,
-          name: selectedProduct.name,
-          price: selectedProduct.price * 0.9 // Bundle discount
+          name: selectedProduct.name
         });
 
         // Mark this SKU as used
         usedSkus.add(selectedProduct.sku);
       } else {
-        // Fallback: use first available product of any type that hasn't been used yet
+        // Fallback: use first available product (not bundle/service) that hasn't been used yet
         const fallbackProduct = products.find(p =>
-          p.type === 'simple' &&
           !p.sku.startsWith('BUNDLE-') &&
           !p.sku.startsWith('SVC-') &&
+          !p.bundles && // Not a bundle product
           !usedSkus.has(p.sku) // Ensure not already used
         );
 
@@ -284,8 +283,7 @@ function generateBundle(bundleDef, category, products, categories, metadata, ind
           groupItems.push({
             sku: fallbackProduct.sku,
             defaultQty: itemDef.defaultQty,
-            name: fallbackProduct.name,
-            price: fallbackProduct.price * 0.9
+            name: fallbackProduct.name
           });
 
           // Mark this SKU as used
@@ -408,7 +406,7 @@ async function generateBundles() {
     const outputDir = path.dirname(OUTPUT_FILE);
     await fs.mkdir(outputDir, { recursive: true });
 
-    // Write bundles to file
+    // Write bundles to file (already in ACO schema format)
     await fs.writeFile(OUTPUT_FILE, JSON.stringify(bundles, null, 2));
 
     logger.info(`Generated ${bundles.length} bundle products`);
@@ -416,7 +414,7 @@ async function generateBundles() {
     // Count by category
     const categoryCounts = {};
     bundles.forEach(bundle => {
-      const category = bundle.attributes.find(a => a.code === 'attr_001')?.value;
+      const category = bundle.attributes.find(a => a.code === 'attr_001')?.values?.[0];
       categoryCounts[category] = (categoryCounts[category] || 0) + 1;
     });
 

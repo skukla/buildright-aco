@@ -60,7 +60,7 @@ function generateSlug(name) {
 }
 
 /**
- * Get category route hierarchy
+ * Get category route hierarchy (ACO format with path instead of categoryId)
  */
 function getCategoryRoutes(categories, categoryId) {
   const routes = [];
@@ -73,7 +73,7 @@ function getCategoryRoutes(categories, categoryId) {
     const parentCategory = categories.find(c => c.categoryId === category.parentId);
     if (parentCategory) {
       routes.push({
-        categoryId: parentCategory.categoryId,
+        path: `/${parentCategory.categoryId.replace(/_/g, '-')}`,
         position: random.nextInt(1, 100)
       });
     }
@@ -81,7 +81,7 @@ function getCategoryRoutes(categories, categoryId) {
 
   // Add the category itself
   routes.push({
-    categoryId: categoryId,
+    path: `/${categoryId.replace(/_/g, '-')}`,
     position: random.nextInt(1, 100)
   });
 
@@ -194,12 +194,19 @@ function getProjectTypesForProduct(category, subcategory, sku, productName) {
 function generateAttributes(metadata, categoryValue, brand, uom, random, category, subcategory, sku, productName) {
   const attributes = [];
 
+  // Helper to convert value to ACO values array
+  const toValuesArray = (value) => {
+    if (Array.isArray(value)) return value;
+    if (value === null || value === undefined || value === '') return [];
+    return [String(value)];
+  };
+
   // Add required attributes
   const productCategoryAttr = metadata.find(m => m.attributeId === 'product_category' || m.attributeId === 'attr_001');
   if (productCategoryAttr) {
     attributes.push({
       code: productCategoryAttr.attributeId,
-      value: categoryValue
+      values: toValuesArray(categoryValue)
     });
   }
 
@@ -209,7 +216,7 @@ function generateAttributes(metadata, categoryValue, brand, uom, random, categor
     const projectTypes = getProjectTypesForProduct(category, subcategory, sku, productName);
     attributes.push({
       code: 'project_types',
-      value: projectTypes
+      values: toValuesArray(projectTypes)
     });
   }
 
@@ -220,12 +227,12 @@ function generateAttributes(metadata, categoryValue, brand, uom, random, categor
     const brandOption = brandAttr.options[random.nextInt(0, brandAttr.options.length - 1)];
     attributes.push({
       code: brandAttr.attributeId,
-      value: brandOption.value
+      values: toValuesArray(brandOption.value)
     });
   } else if (brandAttr) {
     attributes.push({
       code: brandAttr.attributeId,
-      value: brand
+      values: toValuesArray(brand)
     });
   }
 
@@ -233,7 +240,7 @@ function generateAttributes(metadata, categoryValue, brand, uom, random, categor
   if (uomAttr) {
     attributes.push({
       code: uomAttr.attributeId,
-      value: uom
+      values: toValuesArray(uom)
     });
   }
 
@@ -252,7 +259,7 @@ function generateAttributes(metadata, categoryValue, brand, uom, random, categor
       const attrValue = getAttributeValue(attr, random);
       attributes.push({
         code: attr.attributeId,
-        value: attrValue
+        values: toValuesArray(attrValue)
       });
     }
   }
@@ -289,20 +296,28 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
 
   const attributes = generateAttributes(metadata, categoryValue, brand, template.uom, random, category, subcategory, sku, productName);
 
+  // Generate slug from product name
+  const slug = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+  // ACO FeedProduct schema
   return {
     sku: sku,
-    type: 'simple',
+    source: {
+      locale: 'en-US'
+    },
     name: productName,
-    status: 'enabled',
-    visibility: 'both',
-    price: price,
+    slug: slug,
+    status: 'ENABLED',
     description: `High-quality ${template.name} from ${brand}`,
     shortDescription: `${template.name} - ${template.uom}`,
+    visibleIn: ['CATALOG', 'SEARCH'],
+    metaTags: {
+      title: `${template.name} | ${brand}`,
+      description: `Shop ${brand} ${template.name} at BuildRight. Professional grade construction materials.`,
+      keywords: [category, subcategory, brand, 'construction', 'building materials']
+    },
     attributes: attributes,
-    routes: routes,
-    metaTitle: `${template.name} | ${brand}`,
-    metaDescription: `Shop ${brand} ${template.name} at BuildRight. Professional grade construction materials.`,
-    metaKeywords: [category, subcategory, brand, 'construction', 'building materials'].join(', ')
+    routes: routes
   };
 }
 
@@ -328,20 +343,28 @@ function generateServiceProduct(service, category, categories, metadata, index) 
 
   const attributes = generateAttributes(metadata, categoryValue, 'BuildRight Services', 'SERVICE', random, category, 'services', sku, service.name);
 
+  // Generate slug from service name
+  const slug = service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+
+  // ACO FeedProduct schema
   return {
     sku: sku,
-    type: 'service',
+    source: {
+      locale: 'en-US'
+    },
     name: service.name,
-    status: 'enabled',
-    visibility: 'both',
-    price: price,
+    slug: slug,
+    status: 'ENABLED',
     description: `Professional ${service.name.toLowerCase()} provided by certified technicians`,
     shortDescription: `Expert ${service.name}`,
+    visibleIn: ['CATALOG', 'SEARCH'],
+    metaTags: {
+      title: `${service.name} | BuildRight Services`,
+      description: `Professional ${service.name} available. Expert installation and consultation services.`,
+      keywords: ['service', 'installation', 'consultation', category, 'professional']
+    },
     attributes: attributes,
-    routes: routes,
-    metaTitle: `${service.name} | BuildRight Services`,
-    metaDescription: `Professional ${service.name} available. Expert installation and consultation services.`,
-    metaKeywords: ['service', 'installation', 'consultation', category, 'professional'].join(', ')
+    routes: routes
   };
 }
 
@@ -460,12 +483,16 @@ async function generateProducts() {
     const outputDir = path.dirname(OUTPUT_FILE);
     await fs.mkdir(outputDir, { recursive: true });
 
-    // Write products to file
+    // Write products to file (already in ACO schema format)
     await fs.writeFile(OUTPUT_FILE, JSON.stringify(products, null, 2));
 
+    // Count by checking SKU prefix
+    const simpleCount = products.filter(p => !p.sku.startsWith('SVC-')).length;
+    const serviceCount = products.filter(p => p.sku.startsWith('SVC-')).length;
+
     logger.info(`Generated ${products.length} products`);
-    logger.info(`- Simple products: ${products.filter(p => p.type === 'simple').length}`);
-    logger.info(`- Service products: ${products.filter(p => p.type === 'service').length}`);
+    logger.info(`- Simple products: ${simpleCount}`);
+    logger.info(`- Service products: ${serviceCount}`);
     logger.info(`Output written to: ${OUTPUT_FILE}`);
 
     logger.info('Product Generation Complete');

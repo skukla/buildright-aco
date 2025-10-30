@@ -471,11 +471,11 @@ async function generateVariantsAndConfigurables() {
     const outputDir = path.dirname(OUTPUT_FILE);
     await fs.mkdir(outputDir, { recursive: true });
 
-    // Write products to file
+    // Write products to file (already in ACO schema format)
     await fs.writeFile(OUTPUT_FILE, JSON.stringify(products, null, 2));
 
-    const configurableCount = products.filter(p => p.type === 'configurable').length;
-    const variantCount = products.filter(p => p.type === 'simple' && p.parentSku).length;
+    const configurableCount = products.filter(p => p.configurations && p.configurations.length > 0).length;
+    const variantCount = products.filter(p => p.links && p.links.some(l => l.type === 'PARENT')).length;
 
     logger.info(`Generated ${products.length} products`);
     logger.info(`- Configurable products: ${configurableCount}`);

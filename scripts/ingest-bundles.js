@@ -116,22 +116,9 @@ async function validateBundleReferences(bundles) {
 export async function ingestBundles(bundles, options = {}) {
   logger.info('Bundle Ingest Started', { totalBundles: bundles.length });
 
-  // Validate bundle item references (unless skipped)
-  if (!options.skipValidation) {
-    const validation = await validateBundleReferences(bundles);
-    if (!validation.valid) {
-      logger.error('Bundle validation failed: missing SKU references', {
-        missingCount: validation.errors.length,
-        errors: validation.errors.slice(0, 5) // Log first 5 errors
-      });
-      throw new Error(
-        `Bundle validation failed: ${validation.errors.length} missing SKUs. ` +
-        'Ingest products and variants first, or use --skip-validation flag.'
-      );
-    }
-  } else {
-    logger.warn('Skipping bundle validation (--skip-validation flag set)');
-  }
+  // Note: Bundle SKU validation removed - ACO will validate on ingestion
+  // GraphQL query was failing because productSearch requires Live Search indexing
+  // which may not be available or ready after product ingestion
 
   // Ingest bundles
   const result = await ingestProducts(bundles, options);
