@@ -10,7 +10,7 @@ This project provides comprehensive data generation scripts and ingestion utilit
 - **Project-based attributes** (semantic attributes for project types: new_construction, remodel, repair, restoration)
 - **Complex product catalog** (184 products including simple, configurable, bundles, and services)
 - **Multi-source inventory management** (6 inventory sources across 2 stocks - configured via Adobe Commerce MSI, not ACO; see [manual setup guide](docs/manual-setup/msi-configuration-guide.md))
-- **B2B company structure** (8 demo companies with 21 locations - see [manual setup guide](docs/manual-setup/b2b-configuration-guide.md))
+- **B2B company structure** (3 demo companies with 6 locations - see [manual setup guide](docs/manual-setup/b2b-configuration-guide.md))
 - **Trigger-based policies** (dynamic catalog filtering - see [manual setup guide](docs/manual-setup/trigger-policy-guide.md))
 - **Deterministic data generation** (reproducible with SEED environment variable)
 - **Test-driven development** (96%+ test pass rate with 85%+ coverage)
@@ -37,9 +37,9 @@ This project provides comprehensive data generation scripts and ingestion utilit
 - Flexible pricing strategy for B2B segmentation
 
 **Step 3 (B2B Configuration Guide):**
-- 8 demo companies across 3 divisions (Commercial, Residential, Pro)
-- 21 locations (teams) representing physical branches
-- Complete setup guide (18-22 hours manual configuration)
+- 3 demo companies across 3 divisions (Commercial, Residential, Pro)
+- 6 locations (teams) representing physical branches
+- Complete setup guide (6-8 hours manual configuration)
 
 **Step 4 (MSI Strategy):**
 - 6 inventory sources across 2 stocks (Western/Eastern)

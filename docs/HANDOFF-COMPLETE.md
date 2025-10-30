@@ -28,17 +28,17 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 - **Comprehensive product catalog**: 184 products (simple, configurable, bundles, services)
 - **Project-based attributes**: Semantic attributes for project types, customer segments
 - **Multi-source inventory**: 6 inventory sources across 2 stocks (configured via Adobe Commerce MSI)
-- **B2B company structure**: 8 demo companies with 21 locations across 3 divisions
+- **B2B company structure**: 3 demo companies with 6 locations across 3 divisions
 - **Dynamic catalog filtering**: Trigger-based policies for personalized product catalogs
 - **Deterministic data generation**: Reproducible with SEED environment variable
 - **Test-driven development**: 85%+ test coverage with comprehensive validation
 
 **Deployment Time Estimates:**
 - **Automated ACO Ingestion**: 10-15 minutes (catalog + pricing data)
-- **Manual B2B Setup**: 18-22 hours (8 companies, 21 locations, 40+ users)
+- **Manual B2B Setup**: 6-8 hours (3 companies, 6 locations, 12 users)
 - **Manual MSI Setup**: 3-5 hours (6 sources, 2 stocks, product assignments)
 - **Policy Configuration**: 45-60 minutes (6 example policies)
-- **Total Initial Setup**: 22-28 hours
+- **Total Initial Setup**: 10-14 hours
 
 **Production Readiness:**
 - All data generation scripts validated with comprehensive test suite (422/499 tests passing)
@@ -47,7 +47,7 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 - Troubleshooting procedures provided
 
 **Related Documentation:**
-- **[B2B Configuration Guide](./manual-setup/b2b-configuration-guide.md)** - Detailed B2B setup (8 companies, 21 locations)
+- **[B2B Configuration Guide](./manual-setup/b2b-configuration-guide.md)** - Detailed B2B setup (3 companies, 6 locations)
 - **[MSI Configuration Guide](./manual-setup/msi-configuration-guide.md)** - Multi-source inventory setup (6 sources, 2 stocks)
 - **[Trigger Policy Guide](./manual-setup/trigger-policy-guide.md)** - Policy configuration (6 examples)
 - **[BuildRight B2B Structure](./architecture/buildright-b2b-structure.md)** - B2B architecture diagram
@@ -91,7 +91,7 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 │  Adobe Commerce (Magento)                                        │
 │  ───────────────────────────────                                 │
 │  Manual Configuration Required:                                  │
-│  • B2B Features: 8 companies, 21 locations, 40+ users            │
+│  • B2B Features: 3 companies, 6 locations, 12 users              │
 │  • Shared Catalogs: Map to ACO price books                       │
 │  • Multi-Source Inventory (MSI): 6 sources, 2 stocks             │
 │  • Trigger Policies: 6 example policies for personalization      │
@@ -111,7 +111,7 @@ Welcome to the **BuildRight ACO Demo System** - a comprehensive Adobe Commerce O
 - `oauth-token-manager.js` - Authentication handling
 
 **3. Manual Configuration Guides** (`docs/manual-setup/`)
-- `b2b-configuration-guide.md` - 8 companies, 21 locations
+- `b2b-configuration-guide.md` - 3 companies, 6 locations
 - `msi-configuration-guide.md` - 6 inventory sources
 - `trigger-policy-guide.md` - 6 policy examples
 

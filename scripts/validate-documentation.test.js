@@ -46,19 +46,19 @@ describe('Creative Brief Integration Validation', () => {
       expect(hasB2BSection).toBe(true);
     });
 
-    it('should reference 8 demo companies', () => {
+    it('should reference 3 demo companies', () => {
       // Given: Creative brief with B2B section
       // When: Analyzing company references
-      // Then: Mentions or lists 8 companies
+      // Then: Mentions or lists 3 companies (simplified structure)
       const content = readFileSync(creativeBriefPath, 'utf-8');
 
       // Look for company count or listings
-      const hasEightCompanies =
-        content.includes('8 companies') ||
-        content.includes('eight companies') ||
-        content.match(/company\s+\d+/gi)?.length >= 8;
+      const hasThreeCompanies =
+        content.includes('3 companies') ||
+        content.includes('three companies') ||
+        content.match(/company\s+\d+/gi)?.length >= 3;
 
-      expect(hasEightCompanies).toBe(true);
+      expect(hasThreeCompanies).toBe(true);
     });
 
     it('should describe team/location structure', () => {
@@ -532,18 +532,18 @@ describe('Documentation Fact Consistency (Step 6)', () => {
   });
 
   describe('Architecture consistency', () => {
-    it('should consistently reference 8 B2B companies', () => {
+    it('should consistently reference 3 B2B companies', () => {
       // Given: B2B documentation
       // When: Checking company count
-      // Then: All docs state 8 companies
+      // Then: All docs state 3 companies (simplified structure)
       const b2bGuide = path.join(projectRoot, 'docs', 'manual-setup', 'b2b-configuration-guide.md');
       const handoff = path.join(projectRoot, 'docs', 'HANDOFF-COMPLETE.md');
 
       const b2bContent = readFileSync(b2bGuide, 'utf-8');
       const handoffContent = readFileSync(handoff, 'utf-8');
 
-      expect(b2bContent).toMatch(/8\s+(demo\s+)?companies/i);
-      expect(handoffContent).toMatch(/8\s+(demo\s+)?companies/i);
+      expect(b2bContent).toMatch(/3\s+(demo\s+)?companies/i);
+      expect(handoffContent).toMatch(/3\s+(demo\s+)?companies/i);
     });
 
     it('should consistently reference 6 inventory sources', () => {

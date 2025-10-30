@@ -46,77 +46,42 @@ BuildRight Solutions operates as a B2B2X building materials distribution company
 
 ### B2B Company Structure
 
-BuildRight serves **8 demo companies** representing diverse customer types across the three operating divisions. These companies showcase BuildRight's hierarchical pricing model and multi-location service capabilities.
+BuildRight serves **3 demo companies** representing the three core operating divisions. These companies showcase BuildRight's hierarchical pricing model and streamlined multi-location service capabilities.
 
 #### Demo Companies Overview
 
-**BuildRight Commercial Division (3 companies):**
+**BuildRight Commercial Division (1 company):**
 
 1. **Premium Commercial Builders Inc.**
    - Type: Large-scale commercial construction
    - Pricing Tier: Commercial-Tier2 (highest volume tier)
-   - Locations: 3 (Los Angeles HQ, San Francisco Bay Area, Orange County)
+   - Locations: 2 (Los Angeles HQ, San Francisco Bay Area)
    - Region: Western (California)
-   - Users: 6-8 purchasing staff
+   - Users: 4 purchasing staff
 
-2. **Metro Construction Group**
-   - Type: Regional commercial construction
-   - Pricing Tier: Commercial-Tier1 (volume tier)
-   - Locations: 3 (Phoenix HQ, Tucson, Flagstaff)
-   - Region: Western (Arizona)
-   - Users: 6-8 purchasing staff
+**BuildRight Residential Division (1 company):**
 
-3. **Industrial Builders Corp**
-   - Type: Industrial/commercial projects
-   - Pricing Tier: Contract-Commercial (segment level)
-   - Locations: 3 (Las Vegas HQ, Henderson, Reno)
-   - Region: Western (Nevada)
-   - Users: 6-7 purchasing staff
-
-**BuildRight Residential Division (3 companies):**
-
-4. **Coastal Residential Builders**
+2. **Coastal Residential Builders**
    - Type: Production home builder
    - Pricing Tier: Residential-Builder (production tier)
-   - Locations: 3 (San Diego HQ, Carlsbad, Chula Vista)
+   - Locations: 2 (San Diego HQ, Carlsbad)
    - Region: Western (California)
-   - Users: 5-7 purchasing staff
+   - Users: 4 purchasing staff
 
-5. **Family Homes LLC**
-   - Type: Custom home builder
-   - Pricing Tier: Contract-Residential (segment level)
-   - Locations: 2 (Austin HQ, San Antonio)
-   - Region: Central (Texas)
-   - Users: 4-5 purchasing staff
+**BuildRight Pro Division (1 company):**
 
-6. **Classic Remodeling Co.**
-   - Type: Residential remodeling contractor
-   - Pricing Tier: Contract-Residential (segment level)
-   - Locations: 2 (Portland HQ, Beaverton)
-   - Region: Western (Oregon)
-   - Users: 4-5 purchasing staff
-
-**BuildRight Pro Division (2 companies):**
-
-7. **Elite Trade Contractors**
+3. **Elite Trade Contractors**
    - Type: Specialty trade (electrical, plumbing, HVAC)
    - Pricing Tier: Pro-Specialty (specialty tier)
-   - Locations: 3 (Seattle HQ, Bellevue, Tacoma)
+   - Locations: 2 (Seattle HQ, Bellevue)
    - Region: Western (Washington)
-   - Users: 5-6 purchasing staff
-
-8. **Regional Pro Services**
-   - Type: Multi-trade contractor services
-   - Pricing Tier: Contract-Pro (segment level)
-   - Locations: 2 (Denver HQ, Colorado Springs)
-   - Region: Central (Colorado)
-   - Users: 4-5 purchasing staff
+   - Users: 4 purchasing staff
 
 **Summary Statistics:**
-- **Total Companies:** 8 companies across three divisions
-- **Total Locations:** 21 (2-3 per company average)
-- **Total Users:** 40-51 purchasing staff
-- **Geographic Coverage:** Western and Central US regions
+- **Total Companies:** 3 companies (1 per division)
+- **Total Locations:** 6 (2 per company)
+- **Total Users:** 12 purchasing staff (4 per company, 2 per location)
+- **Geographic Coverage:** West Coast US (California, Washington)
 - **Price Book Levels:** 3-tier hierarchical structure (10 total catalogs)
 
 **Hierarchical Pricing Structure:**

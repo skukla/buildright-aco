@@ -4,16 +4,16 @@
 
 This guide provides step-by-step instructions for manually configuring Adobe Commerce B2B companies, teams (locations), users, and Shared Catalog assignments for the BuildRight ACO demo system.
 
-**Purpose:** Configure 8 demo companies representing BuildRight's three divisions (Commercial, Residential, Pro) with realistic team structures showcasing BuildRight's building materials distribution model.
+**Purpose:** Configure 3 demo companies representing BuildRight's three divisions (Commercial, Residential, Pro) with streamlined team structures showcasing BuildRight's building materials distribution model.
 
 **Estimated Manual Setup Time:**
 - Initial B2B feature enablement: 0.5 hours
-- Shared Catalog assignments: 2-3 hours (catalogs already created from price books)
-- Company creation: 4 hours (8 companies @ 0.5 hours each)
-- Team/location setup: 4-5 hours (21 locations)
-- User creation: 5-6 hours (40-50 users)
-- Testing and validation: 2-3 hours
-- **Total: 18-22 hours for complete manual setup**
+- Shared Catalog assignments: 1-1.5 hours (catalogs already created from price books)
+- Company creation: 1.5 hours (3 companies @ 0.5 hours each)
+- Team/location setup: 1.5-2 hours (6 locations)
+- User creation: 2-2.5 hours (12 users)
+- Testing and validation: 1 hour
+- **Total: 6-8 hours for complete manual setup**
 
 **Related Documentation:**
 - Price book structure: `data/buildright/price-books.json`
@@ -115,21 +115,16 @@ Shared Catalogs function as price books in Adobe Commerce. BuildRight uses a hie
 
 ## Company Creation
 
-BuildRight operates 8 demo companies across three divisions: Commercial, Residential, and Pro.
+BuildRight operates 3 demo companies representing the three core divisions: Commercial, Residential, and Pro.
 
 ### Company Overview Matrix
 
 | # | Company Name | Division | Shared Catalog | Locations | Users |
 |---|--------------|----------|----------------|-----------|-------|
-| 1 | Premium Commercial Builders Inc. | Commercial | Commercial-Tier2 | 3 | 6-8 |
-| 2 | Metro Construction Group | Commercial | Commercial-Tier1 | 3 | 6-8 |
-| 3 | Coastal Residential Builders | Residential | Residential-Builder | 3 | 5-7 |
-| 4 | Family Homes LLC | Residential | Contract-Residential | 2 | 4-5 |
-| 5 | Elite Trade Contractors | Pro | Pro-Specialty | 3 | 5-6 |
-| 6 | Regional Pro Services | Pro | Contract-Pro | 2 | 4-5 |
-| 7 | Classic Remodeling Co. | Residential | Contract-Residential | 2 | 4-5 |
-| 8 | Industrial Builders Corp | Commercial | Contract-Commercial | 3 | 6-7 |
-| **Total** | | | | **21** | **40-51** |
+| 1 | Premium Commercial Builders Inc. | Commercial | Commercial-Tier2 | 2 | 4 |
+| 2 | Coastal Residential Builders | Residential | Residential-Builder | 2 | 4 |
+| 3 | Elite Trade Contractors | Pro | Pro-Specialty | 2 | 4 |
+| **Total** | | | | **6** | **12** |
 
 ---
 
@@ -173,40 +168,7 @@ BuildRight operates 8 demo companies across three divisions: Commercial, Residen
 
 ---
 
-### Company 2: Metro Construction Group
-
-**Division:** BuildRight Commercial
-**Shared Catalog:** Commercial-Tier1
-
-**Company Information:**
-- Company Name: **Metro Construction Group**
-- Company Legal Name: **Metro Construction Group LLC**
-- Company Email: **admin@metroconstruction.example.com**
-
-**Company Admin:**
-- Job Title: **Operations Director**
-- Email: **sarah.jones@metroconstruction.example.com**
-- First Name: **Sarah**
-- Last Name: **Jones**
-
-**Legal Address:**
-- Street Address: **2200 Industrial Boulevard**
-- City: **Phoenix**
-- State/Province: **Arizona**
-- ZIP/Postal Code: **85001**
-- Country: **United States**
-- Telephone: **+1 (602) 555-0202**
-
-**Advanced Settings:**
-- Shared Catalog: **Commercial-Tier1**
-- Allow Quotes: **Yes**
-- Enable Purchase Orders: **Yes**
-
-**Save Company**
-
----
-
-### Company 3: Coastal Residential Builders
+### Company 2: Coastal Residential Builders
 
 **Division:** BuildRight Residential
 **Shared Catalog:** Residential-Builder
@@ -239,40 +201,7 @@ BuildRight operates 8 demo companies across three divisions: Commercial, Residen
 
 ---
 
-### Company 4: Family Homes LLC
-
-**Division:** BuildRight Residential
-**Shared Catalog:** Contract-Residential
-
-**Company Information:**
-- Company Name: **Family Homes LLC**
-- Company Legal Name: **Family Homes LLC**
-- Company Email: **admin@familyhomes.example.com**
-
-**Company Admin:**
-- Job Title: **General Manager**
-- Email: **lisa.martinez@familyhomes.example.com**
-- First Name: **Lisa**
-- Last Name: **Martinez**
-
-**Legal Address:**
-- Street Address: **800 Main Street**
-- City: **Austin**
-- State/Province: **Texas**
-- ZIP/Postal Code: **78701**
-- Country: **United States**
-- Telephone: **+1 (512) 555-0404**
-
-**Advanced Settings:**
-- Shared Catalog: **Contract-Residential**
-- Allow Quotes: **Yes**
-- Enable Purchase Orders: **Yes**
-
-**Save Company**
-
----
-
-### Company 5: Elite Trade Contractors
+### Company 3: Elite Trade Contractors
 
 **Division:** BuildRight Pro
 **Shared Catalog:** Pro-Specialty
@@ -305,112 +234,13 @@ BuildRight operates 8 demo companies across three divisions: Commercial, Residen
 
 ---
 
-### Company 6: Regional Pro Services
-
-**Division:** BuildRight Pro
-**Shared Catalog:** Contract-Pro
-
-**Company Information:**
-- Company Name: **Regional Pro Services**
-- Company Legal Name: **Regional Pro Services Corp.**
-- Company Email: **admin@regionalproservices.example.com**
-
-**Company Admin:**
-- Job Title: **Managing Director**
-- Email: **jennifer.brown@regionalproservices.example.com**
-- First Name: **Jennifer**
-- Last Name: **Brown**
-
-**Legal Address:**
-- Street Address: **1200 Professional Drive**
-- City: **Denver**
-- State/Province: **Colorado**
-- ZIP/Postal Code: **80201**
-- Country: **United States**
-- Telephone: **+1 (303) 555-0606**
-
-**Advanced Settings:**
-- Shared Catalog: **Contract-Pro**
-- Allow Quotes: **Yes**
-- Enable Purchase Orders: **Yes**
-
-**Save Company**
-
----
-
-### Company 7: Classic Remodeling Co.
-
-**Division:** BuildRight Residential
-**Shared Catalog:** Contract-Residential
-
-**Company Information:**
-- Company Name: **Classic Remodeling Co.**
-- Company Legal Name: **Classic Remodeling Company Inc.**
-- Company Email: **admin@classicremodeling.example.com**
-
-**Company Admin:**
-- Job Title: **VP of Operations**
-- Email: **robert.wilson@classicremodeling.example.com**
-- First Name: **Robert**
-- Last Name: **Wilson**
-
-**Legal Address:**
-- Street Address: **450 Renovation Road**
-- City: **Portland**
-- State/Province: **Oregon**
-- ZIP/Postal Code: **97201**
-- Country: **United States**
-- Telephone: **+1 (503) 555-0707**
-
-**Advanced Settings:**
-- Shared Catalog: **Contract-Residential**
-- Allow Quotes: **Yes**
-- Enable Purchase Orders: **Yes**
-
-**Save Company**
-
----
-
-### Company 8: Industrial Builders Corp
-
-**Division:** BuildRight Commercial
-**Shared Catalog:** Contract-Commercial
-
-**Company Information:**
-- Company Name: **Industrial Builders Corp**
-- Company Legal Name: **Industrial Builders Corporation**
-- Company Email: **admin@industrialbuilders.example.com**
-
-**Company Admin:**
-- Job Title: **Procurement Manager**
-- Email: **patricia.davis@industrialbuilders.example.com**
-- First Name: **Patricia**
-- Last Name: **Davis**
-
-**Legal Address:**
-- Street Address: **3300 Industrial Park Blvd**
-- City: **Las Vegas**
-- State/Province: **Nevada**
-- ZIP/Postal Code: **89101**
-- Country: **United States**
-- Telephone: **+1 (702) 555-0808**
-
-**Advanced Settings:**
-- Shared Catalog: **Contract-Commercial**
-- Allow Quotes: **Yes**
-- Enable Purchase Orders: **Yes**
-
-**Save Company**
-
----
-
 ## Team Setup
 
 Teams represent organizational divisions, locations, or departments within companies. For BuildRight demo companies, teams represent geographic locations or branches.
 
 ### Team/Location Structure by Company
 
-#### Company 1: Premium Commercial Builders Inc. (3 locations)
+#### Company 1: Premium Commercial Builders Inc. (2 locations)
 
 **Navigation:** Customers → Companies → Select "Premium Commercial Builders Inc." → Company Structure
 
@@ -424,30 +254,9 @@ Teams represent organizational divisions, locations, or departments within compa
 - Description: **Northern California operations**
 - Parent: **Premium Commercial Builders Inc.** (root)
 
-**Team 3 - Orange County:**
-- Team Name: **Orange County Division**
-- Description: **Southern California satellite office**
-- Parent: **Premium Commercial Builders Inc.** (root)
-
 ---
 
-#### Company 2: Metro Construction Group (3 locations)
-
-**Team 1 - Phoenix HQ:**
-- Team Name: **Phoenix Headquarters**
-- Description: **Central Arizona operations**
-
-**Team 2 - Tucson:**
-- Team Name: **Tucson Office**
-- Description: **Southern Arizona operations**
-
-**Team 3 - Flagstaff:**
-- Team Name: **Flagstaff Branch**
-- Description: **Northern Arizona projects**
-
----
-
-#### Company 3: Coastal Residential Builders (3 locations)
+#### Company 2: Coastal Residential Builders (2 locations)
 
 **Team 1 - San Diego HQ:**
 - Team Name: **San Diego Headquarters**
@@ -457,25 +266,9 @@ Teams represent organizational divisions, locations, or departments within compa
 - Team Name: **Carlsbad Division**
 - Description: **North County coastal projects**
 
-**Team 3 - Chula Vista:**
-- Team Name: **Chula Vista Office**
-- Description: **South County operations**
-
 ---
 
-#### Company 4: Family Homes LLC (2 locations)
-
-**Team 1 - Austin HQ:**
-- Team Name: **Austin Headquarters**
-- Description: **Central Texas operations**
-
-**Team 2 - San Antonio:**
-- Team Name: **San Antonio Branch**
-- Description: **South Texas expansion**
-
----
-
-#### Company 5: Elite Trade Contractors (3 locations)
+#### Company 3: Elite Trade Contractors (2 locations)
 
 **Team 1 - Seattle HQ:**
 - Team Name: **Seattle Headquarters**
@@ -485,51 +278,9 @@ Teams represent organizational divisions, locations, or departments within compa
 - Team Name: **Bellevue Office**
 - Description: **Eastside service area**
 
-**Team 3 - Tacoma:**
-- Team Name: **Tacoma Branch**
-- Description: **South Sound operations**
-
 ---
 
-#### Company 6: Regional Pro Services (2 locations)
-
-**Team 1 - Denver HQ:**
-- Team Name: **Denver Headquarters**
-- Description: **Metro Denver operations**
-
-**Team 2 - Colorado Springs:**
-- Team Name: **Colorado Springs Office**
-- Description: **Southern Colorado service area**
-
----
-
-#### Company 7: Classic Remodeling Co. (2 locations)
-
-**Team 1 - Portland HQ:**
-- Team Name: **Portland Headquarters**
-- Description: **Metro Portland operations**
-
-**Team 2 - Beaverton:**
-- Team Name: **Beaverton Branch**
-- Description: **Westside service area**
-
----
-
-#### Company 8: Industrial Builders Corp (3 locations)
-
-**Team 1 - Las Vegas HQ:**
-- Team Name: **Las Vegas Headquarters**
-- Description: **Nevada commercial operations**
-
-**Team 2 - Henderson:**
-- Team Name: **Henderson Office**
-- Description: **Southern Nevada industrial**
-
-**Team 3 - Reno:**
-- Team Name: **Reno Branch**
-- Description: **Northern Nevada operations**
-
-**Total Locations: 21** (within 20-24 target range)
+**Total Locations: 6**
 
 ---
 
@@ -567,12 +318,11 @@ Adobe Commerce B2B provides these default roles:
 - Team: **San Francisco Bay Area**
 - Status: **Active**
 
-**Repeat for all companies**, creating 40-50 total users across 21 locations with distributed roles.
+**Repeat for all companies**, creating 12 total users across 6 locations with distributed roles.
 
 **User Distribution Recommendation:**
-- Large companies (3 locations): 6-8 users
-- Medium companies (2 locations): 4-5 users
-- Mix of roles: 60% Default User, 25% Senior Buyer, 10% Approver, 5% Administrator
+- Each company: 4 users (2 per location)
+- Mix of roles: 50% Default User, 25% Senior Buyer, 17% Approver, 8% Administrator
 
 ---
 
@@ -594,19 +344,19 @@ After completing configuration, verify:
 - [ ] Hierarchical structure (parentId references) validated
 
 **Companies:**
-- [ ] All 8 companies created
+- [ ] All 3 companies created
 - [ ] Company admins configured
 - [ ] Shared Catalog assigned correctly to each company
 - [ ] Legal addresses complete
 - [ ] Payment methods enabled
 
 **Teams:**
-- [ ] 21 teams created across all companies
+- [ ] 6 teams created across all companies (2 per company)
 - [ ] Team descriptions accurate
-- [ ] Geographic distribution realistic (Western, Central regions)
+- [ ] Geographic distribution realistic (West Coast focus)
 
 **Users:**
-- [ ] 40-51 users created
+- [ ] 12 users created (4 per company)
 - [ ] Users assigned to appropriate teams
 - [ ] Roles distributed appropriately
 - [ ] All users have active status
@@ -659,16 +409,11 @@ After any B2B configuration change:
 
 ## Appendix: Quick Reference
 
-### 8 Companies Summary
+### 3 Companies Summary
 
-1. **Premium Commercial Builders Inc.** → Commercial-Tier2 → 3 locations (LA, SF, OC)
-2. **Metro Construction Group** → Commercial-Tier1 → 3 locations (Phoenix, Tucson, Flagstaff)
-3. **Coastal Residential Builders** → Residential-Builder → 3 locations (San Diego, Carlsbad, Chula Vista)
-4. **Family Homes LLC** → Contract-Residential → 2 locations (Austin, San Antonio)
-5. **Elite Trade Contractors** → Pro-Specialty → 3 locations (Seattle, Bellevue, Tacoma)
-6. **Regional Pro Services** → Contract-Pro → 2 locations (Denver, Colorado Springs)
-7. **Classic Remodeling Co.** → Contract-Residential → 2 locations (Portland, Beaverton)
-8. **Industrial Builders Corp** → Contract-Commercial → 3 locations (Las Vegas, Henderson, Reno)
+1. **Premium Commercial Builders Inc.** → Commercial-Tier2 → 2 locations (LA, SF)
+2. **Coastal Residential Builders** → Residential-Builder → 2 locations (San Diego, Carlsbad)
+3. **Elite Trade Contractors** → Pro-Specialty → 2 locations (Seattle, Bellevue)
 
 ### Hierarchical Price Book Reference
 
@@ -679,12 +424,12 @@ After any B2B configuration change:
 ### Time Estimate Summary
 
 - Feature Enablement: 0.5 hours
-- Shared Catalog Setup: 2-3 hours
-- Company Creation: 4 hours
-- Team Setup: 4-5 hours
-- User Creation: 5-6 hours
-- Testing: 2-3 hours
-- **Total: 18-22 hours**
+- Shared Catalog Setup: 1-1.5 hours
+- Company Creation: 1.5 hours
+- Team Setup: 1.5-2 hours
+- User Creation: 2-2.5 hours
+- Testing: 1 hour
+- **Total: 6-8 hours**
 
 ---
 

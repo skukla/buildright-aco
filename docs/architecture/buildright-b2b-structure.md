@@ -36,21 +36,16 @@ Adobe Commerce B2B Structure
 │       ├── Residential-Builder (parent: Contract-Residential)
 │       └── Pro-Specialty (parent: Contract-Pro)
 │
-└── Companies [8 demo companies]
+└── Companies [3 demo companies]
     │
-    ├── BuildRight Commercial Division (3 companies)
-    │   ├── Premium Commercial Builders Inc. → Commercial-Tier2
-    │   ├── Metro Construction Group → Commercial-Tier1
-    │   └── Industrial Builders Corp → Contract-Commercial
+    ├── BuildRight Commercial Division (1 company)
+    │   └── Premium Commercial Builders Inc. → Commercial-Tier2
     │
-    ├── BuildRight Residential Division (3 companies)
-    │   ├── Coastal Residential Builders → Residential-Builder
-    │   ├── Family Homes LLC → Contract-Residential
-    │   └── Classic Remodeling Co. → Contract-Residential
+    ├── BuildRight Residential Division (1 company)
+    │   └── Coastal Residential Builders → Residential-Builder
     │
-    └── BuildRight Pro Division (2 companies)
-        ├── Elite Trade Contractors → Pro-Specialty
-        └── Regional Pro Services → Contract-Pro
+    └── BuildRight Pro Division (1 company)
+        └── Elite Trade Contractors → Pro-Specialty
 ```
 
 ---
@@ -61,88 +56,38 @@ Adobe Commerce B2B Structure
 
 #### Company 1: Premium Commercial Builders Inc.
 - **Shared Catalog:** Commercial-Tier2 (highest volume tier)
-- **Location Count:** 3 locations
+- **Location Count:** 2 locations
 - **Teams:**
   - Los Angeles Headquarters
   - San Francisco Bay Area
-  - Orange County Division
-- **User Count:** 6-8 users
+- **User Count:** 4 users
 - **Region:** Western (California)
-
-#### Company 2: Metro Construction Group
-- **Shared Catalog:** Commercial-Tier1 (volume tier 1)
-- **Location Count:** 3 locations
-- **Teams:**
-  - Phoenix Headquarters
-  - Tucson Office
-  - Flagstaff Branch
-- **User Count:** 6-8 users
-- **Region:** Western (Arizona)
-
-#### Company 3: Industrial Builders Corp
-- **Shared Catalog:** Contract-Commercial (segment level)
-- **Location Count:** 3 locations
-- **Teams:**
-  - Las Vegas Headquarters
-  - Henderson Office
-  - Reno Branch
-- **User Count:** 6-7 users
-- **Region:** Western (Nevada)
 
 ---
 
 ### BuildRight Residential Division
 
-#### Company 4: Coastal Residential Builders
+#### Company 2: Coastal Residential Builders
 - **Shared Catalog:** Residential-Builder (production builder tier)
-- **Location Count:** 3 locations
+- **Location Count:** 2 locations
 - **Teams:**
   - San Diego Headquarters
   - Carlsbad Division
-  - Chula Vista Office
-- **User Count:** 5-7 users
+- **User Count:** 4 users
 - **Region:** Western (California)
-
-#### Company 5: Family Homes LLC
-- **Shared Catalog:** Contract-Residential (segment level)
-- **Location Count:** 2 locations
-- **Teams:**
-  - Austin Headquarters
-  - San Antonio Branch
-- **User Count:** 4-5 users
-- **Region:** Central (Texas)
-
-#### Company 6: Classic Remodeling Co.
-- **Shared Catalog:** Contract-Residential (segment level)
-- **Location Count:** 2 locations
-- **Teams:**
-  - Portland Headquarters
-  - Beaverton Branch
-- **User Count:** 4-5 users
-- **Region:** Western (Oregon)
 
 ---
 
 ### BuildRight Pro Division
 
-#### Company 7: Elite Trade Contractors
+#### Company 3: Elite Trade Contractors
 - **Shared Catalog:** Pro-Specialty (specialty tier)
-- **Location Count:** 3 locations
+- **Location Count:** 2 locations
 - **Teams:**
   - Seattle Headquarters
   - Bellevue Office
-  - Tacoma Branch
-- **User Count:** 5-6 users
+- **User Count:** 4 users
 - **Region:** Western (Washington)
-
-#### Company 8: Regional Pro Services
-- **Shared Catalog:** Contract-Pro (segment level)
-- **Location Count:** 2 locations
-- **Teams:**
-  - Denver Headquarters
-  - Colorado Springs Office
-- **User Count:** 4-5 users
-- **Region:** Central (Colorado)
 
 ---
 
@@ -225,46 +170,37 @@ Commercial-Tier2 (volume tier 2 deeper discounts)
 
 ## Geographic Distribution
 
-### Western Region (6 companies)
-- California: Premium Commercial Builders, Coastal Residential Builders
-- Arizona: Metro Construction Group
-- Nevada: Industrial Builders Corp
-- Washington: Elite Trade Contractors
-- Oregon: Classic Remodeling Co.
+### West Coast Focus (3 companies)
+- California: Premium Commercial Builders, Coastal Residential Builders (2 companies)
+- Washington: Elite Trade Contractors (1 company)
 
-### Central Region (2 companies)
-- Texas: Family Homes LLC
-- Colorado: Regional Pro Services
-
-**Total Coverage:** 8 states across Western and Central US regions
+**Total Coverage:** 2 states (California, Washington) - West Coast region
 
 ---
 
 ## Team/Location Summary
 
-**Total Locations:** 21 across 8 companies
+**Total Locations:** 6 across 3 companies
 
 **Distribution:**
-- 3-location companies: 6 companies (18 locations)
-- 2-location companies: 2 companies (3 locations)
+- Each company: 2 locations
 
-**Average:** 2.6 locations per company
+**Average:** 2 locations per company
 
 ---
 
 ## User Distribution
 
-**Total Users:** 40-51 across all companies
+**Total Users:** 12 across all companies (4 per company)
 
 **Role Distribution (Recommended):**
-- Default User: 60% (24-30 users) - Standard buyers
-- Senior Buyer: 25% (10-13 users) - Experienced purchasing
-- Approver: 10% (4-5 users) - Order approval authority
-- Administrator: 5% (2-3 users) - Full company management
+- Default User: 50% (6 users) - Standard buyers
+- Senior Buyer: 25% (3 users) - Experienced purchasing
+- Approver: 17% (2 users) - Order approval authority
+- Administrator: 8% (1 user) - Full company management
 
 **User Assignment:**
-- Large companies (3 locations): 6-8 users
-- Medium companies (2 locations): 4-5 users
+- Each company: 4 users (2 per location)
 
 ---
 
@@ -283,14 +219,9 @@ Premium Commercial Builders Inc.
 │   ├── User 2: Michael Chen (Default User)
 │   └── User 3: Amanda Garcia (Approver)
 │
-├── Team 2: San Francisco Bay Area
-│   ├── User 4: Carlos Rodriguez (Project Manager / Default User)
-│   ├── User 5: Jessica Lee (Senior Buyer)
-│   └── User 6: Brian Wong (Default User)
-│
-└── Team 3: Orange County Division
-    ├── User 7: Rachel Patel (Default User)
-    └── User 8: David Kim (Senior Buyer)
+└── Team 2: San Francisco Bay Area
+    ├── User 4: Carlos Rodriguez (Project Manager / Default User)
+    └── User 5: Jessica Lee (Senior Buyer)
 ```
 
 ---
@@ -338,17 +269,17 @@ Premium Commercial Builders Inc.
 ### Scenario 1: Volume Tier Showcase
 **Company:** Premium Commercial Builders Inc.
 **Catalog:** Commercial-Tier2 (deepest discounts)
-**Demo:** Show high-volume customer receiving best pricing
+**Demo:** Show high-volume commercial customer receiving best pricing
 
-### Scenario 2: Segment Pricing
-**Company:** Family Homes LLC
-**Catalog:** Contract-Residential (residential segment)
-**Demo:** Show residential contractor pricing vs commercial
+### Scenario 2: Production Builder Pricing
+**Company:** Coastal Residential Builders
+**Catalog:** Residential-Builder (residential production tier)
+**Demo:** Show residential production builder pricing vs commercial
 
 ### Scenario 3: Multi-Location Operations
-**Company:** Metro Construction Group
-**Catalog:** Commercial-Tier1
-**Teams:** 3 locations (Phoenix, Tucson, Flagstaff)
+**Company:** Premium Commercial Builders Inc.
+**Catalog:** Commercial-Tier2
+**Teams:** 2 locations (Los Angeles HQ, San Francisco Bay Area)
 **Demo:** Show different teams within same company ordering
 
 ### Scenario 4: Specialty Trade Focus
@@ -362,10 +293,10 @@ Premium Commercial Builders Inc.
 
 ### Manual Setup Requirements
 - **Shared Catalogs:** 10 catalogs (already created from price books)
-- **Companies:** 8 companies to create
-- **Teams:** 21 teams to configure
-- **Users:** 40-51 users to create
-- **Estimated Time:** 18-22 hours
+- **Companies:** 3 companies to create
+- **Teams:** 6 teams to configure
+- **Users:** 12 users to create
+- **Estimated Time:** 6-8 hours
 
 ### Automation Opportunities
 - Company creation could be scripted (if ACO supports Company API)
@@ -403,7 +334,7 @@ BuildRight operates three specialized divisions:
 ## Next Steps
 
 1. **Manual Setup:** Follow `docs/manual-setup/b2b-configuration-guide.md` for detailed instructions
-2. **Creative Brief Update:** Reference 8 companies in `instructions/01-original-plan.md`
+2. **Creative Brief Update:** Reference 3 companies in `instructions/01-original-plan.md`
 3. **Storefront Testing:** Validate pricing and catalog visibility per company
 4. **Quote Workflows:** Configure approval workflows if using quotes
 5. **Analytics Setup:** Prepare for order tracking and reporting by company/division
@@ -414,13 +345,8 @@ BuildRight operates three specialized divisions:
 
 | Company | Division | Catalog | Level | Locations | Region |
 |---------|----------|---------|-------|-----------|--------|
-| Premium Commercial Builders Inc. | Commercial | Commercial-Tier2 | Tier (L3) | 3 | CA |
-| Metro Construction Group | Commercial | Commercial-Tier1 | Tier (L3) | 3 | AZ |
-| Industrial Builders Corp | Commercial | Contract-Commercial | Segment (L2) | 3 | NV |
-| Coastal Residential Builders | Residential | Residential-Builder | Tier (L3) | 3 | CA |
-| Family Homes LLC | Residential | Contract-Residential | Segment (L2) | 2 | TX |
-| Classic Remodeling Co. | Residential | Contract-Residential | Segment (L2) | 2 | OR |
-| Elite Trade Contractors | Pro | Pro-Specialty | Tier (L3) | 3 | WA |
-| Regional Pro Services | Pro | Contract-Pro | Segment (L2) | 2 | CO |
+| Premium Commercial Builders Inc. | Commercial | Commercial-Tier2 | Tier (L3) | 2 | CA |
+| Coastal Residential Builders | Residential | Residential-Builder | Tier (L3) | 2 | CA |
+| Elite Trade Contractors | Pro | Pro-Specialty | Tier (L3) | 2 | WA |
 
-**Total:** 8 companies, 21 locations, 3 divisions, 10 catalogs (3 levels)
+**Total:** 3 companies, 6 locations, 3 divisions, 10 catalogs (3 levels)

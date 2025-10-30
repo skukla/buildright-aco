@@ -69,7 +69,7 @@ describe('B2B Configuration Guide Structure Validation', () => {
       const companyPattern = /##?\s+Company\s+\d+|###?\s+\d+\.|###?\s+[A-Z][a-zA-Z\s&]+(?:Commercial|Residential|Pro|Construction|Builder|Contractor|Supply)/gi;
       const companyMatches = content.match(companyPattern) || [];
 
-      expect(companyMatches.length).toBeGreaterThanOrEqual(8);
+      expect(companyMatches.length).toBeGreaterThanOrEqual(3);
     });
 
     it('should include company names in the guide', () => {
@@ -185,13 +185,13 @@ describe('B2B Configuration Guide Structure Validation', () => {
         }
       }
 
-      // Should be between 20-24 locations total
-      expect(totalLocationCount).toBeGreaterThanOrEqual(20);
-      expect(totalLocationCount).toBeLessThanOrEqual(24);
+      // Should be 6 locations total (simplified structure)
+      expect(totalLocationCount).toBeGreaterThanOrEqual(6);
+      expect(totalLocationCount).toBeLessThanOrEqual(6);
     });
 
     it('should specify location details for each company', () => {
-      // Given: 8 companies defined
+      // Given: 3 companies defined (simplified structure)
       // When: Checking location information
       // Then: Each company has location details (city, state, or team name)
       const content = readFileSync(guideFilePath, 'utf-8');
