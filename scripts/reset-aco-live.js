@@ -2,8 +2,7 @@
 /**
  * Reset ACO Catalog - Live Data Query
  *
- * Queries ACO via GraphQL to find all existing products, prices, price books, and metadata,
- * then deletes them using the ACO SDK.
+ * Queries ACO via GraphQL to find all existing products, then deletes them using the ACO SDK.
  *
  * Unlike reset-catalog.js (which reads from local files), this script queries ACO directly
  * to find what actually exists in the catalog, then deletes it.
@@ -19,6 +18,14 @@
  *
  * # Force reset without confirmation
  * node scripts/reset-aco-live.js --force
+ *
+ * @note
+ * This script uses the productSearch GraphQL query which requires Live Search indexing.
+ * If the catalog is empty or not yet indexed, the script will detect this and report
+ * "No products found" rather than failing with an error.
+ *
+ * For deleting products based on local JSON files (e.g., after generation), use
+ * reset-catalog.js instead, which follows Adobe's reference implementation pattern.
  */
 
 import * as readline from 'readline/promises';
@@ -59,97 +66,89 @@ function getBatchNumber(index) {
 }
 
 /**
- * Query specific products from ACO by SKU list
+ * Query all products from ACO using productSearch with pagination
  *
- * Note: ACO GraphQL does not provide a "list all products" query.
- * The `products` query requires an array of SKUs to query.
- *
- * This function requires you to provide SKUs via environment variable or file.
+ * Uses the productSearch GraphQL query with empty phrase to retrieve all products.
+ * Implements pagination to handle large catalogs.
  *
  * @param {string} accessToken - OAuth access token
- * @param {Array<string>} skus - Array of SKUs to query
  * @returns {Promise<Array>} Array of product objects with SKUs
  */
-async function queryProductsBySKUs(accessToken, skus) {
-  if (!skus || skus.length === 0) {
-    logger.warn('No SKUs provided to query');
-    return [];
-  }
+async function queryAllProductsFromACO(accessToken) {
+  logger.info('Querying all products from ACO catalog...');
 
-  logger.info(`Querying ${skus.length} products from ACO by SKU...`);
+  const allProducts = [];
+  const pageSize = 100;
+  let currentPage = 1;
+  let totalCount = 0;
+  let hasMorePages = true;
 
   try {
-    const query = `
-      query GetProducts($skus: [String!]!) {
-        products(skus: $skus) {
-          sku
-          name
+    while (hasMorePages) {
+      const query = `
+        query SearchAllProducts($phrase: String!, $pageSize: Int, $currentPage: Int) {
+          productSearch(phrase: $phrase, page_size: $pageSize, current_page: $currentPage) {
+            total_count
+            items {
+              productView {
+                sku
+                name
+              }
+            }
+          }
         }
+      `;
+
+      const variables = {
+        phrase: '',
+        pageSize,
+        currentPage
+      };
+
+      const data = await executeGraphQLQuery(query, variables, accessToken);
+
+      if (data.productSearch) {
+        totalCount = data.productSearch.total_count || 0;
+
+        if (data.productSearch.items && Array.isArray(data.productSearch.items)) {
+          // Extract products from items
+          const products = data.productSearch.items
+            .map(item => item.productView)
+            .filter(Boolean);
+
+          allProducts.push(...products);
+
+          logger.info(`Page ${currentPage}: Retrieved ${products.length} products (${allProducts.length}/${totalCount} total)`);
+        }
+
+        // Check if there are more pages
+        // Since we're getting all results, check if we have more products
+        if (allProducts.length < totalCount) {
+          currentPage++;
+        } else {
+          hasMorePages = false;
+        }
+      } else {
+        hasMorePages = false;
       }
-    `;
-
-    const data = await executeGraphQLQuery(query, { skus }, accessToken);
-
-    if (data.products && Array.isArray(data.products)) {
-      logger.info(`✓ Retrieved ${data.products.length} products from ACO`);
-      return data.products;
     }
 
-    return [];
+    logger.info(`✓ Retrieved ${allProducts.length} total products from ACO`);
+    return allProducts;
 
   } catch (error) {
+    // Check if this is the "No index" error which typically means empty catalog
+    if (error.message && error.message.includes('No index was found')) {
+      logger.warn('No search index found - catalog may be empty or Live Search not indexed yet');
+      logger.warn('Returning empty product list');
+      return [];
+    }
+
     logger.error('Failed to query products from ACO:', error.message);
     throw error;
   }
 }
 
-/**
- * Load SKUs from file or environment variable
- *
- * @returns {Promise<Array<string>>} Array of SKUs to delete
- */
-async function loadSKUsToDelete() {
-  // Option 1: From environment variable (comma-separated)
-  if (process.env.SKUS_TO_DELETE) {
-    const skus = process.env.SKUS_TO_DELETE.split(',').map(s => s.trim()).filter(Boolean);
-    logger.info(`Loaded ${skus.length} SKUs from SKUS_TO_DELETE environment variable`);
-    return skus;
-  }
-
-  // Option 2: From file (skus-to-delete.txt, one SKU per line)
-  try {
-    const { promises: fs } = await import('fs');
-    const content = await fs.readFile('./skus-to-delete.txt', 'utf-8');
-    const skus = content.split('\n').map(s => s.trim()).filter(Boolean);
-    logger.info(`Loaded ${skus.length} SKUs from skus-to-delete.txt`);
-    return skus;
-  } catch (error) {
-    if (error.code !== 'ENOENT') {
-      throw error;
-    }
-  }
-
-  logger.warn('');
-  logger.warn('⚠️  No SKUs found to delete');
-  logger.warn('');
-  logger.warn('ACO GraphQL does not provide a "list all products" query.');
-  logger.warn('You must provide SKUs to delete via:');
-  logger.warn('');
-  logger.warn('Option 1: Environment variable');
-  logger.warn('  export SKUS_TO_DELETE="SKU1,SKU2,SKU3"');
-  logger.warn('  npm run reset:live');
-  logger.warn('');
-  logger.warn('Option 2: File (skus-to-delete.txt)');
-  logger.warn('  echo "SKU1" > skus-to-delete.txt');
-  logger.warn('  echo "SKU2" >> skus-to-delete.txt');
-  logger.warn('  npm run reset:live');
-  logger.warn('');
-  logger.warn('Option 3: Use file-based reset (if you generated the data)');
-  logger.warn('  npm run reset:catalog');
-  logger.warn('');
-
-  return [];
-}
 
 /**
  * Delete products from ACO
@@ -276,25 +275,15 @@ export async function resetACOLive(options = {}) {
   } = options;
 
   logger.info('ACO Live Reset Started', { dryRun, force });
-  logger.info('This script deletes products from ACO by SKU list');
-
-  // Load SKUs to delete
-  const skusToDelete = await loadSKUsToDelete();
-
-  if (skusToDelete.length === 0) {
-    return {
-      success: false,
-      reason: 'NO_SKUS_PROVIDED'
-    };
-  }
+  logger.info('This script queries all products from ACO and deletes them');
 
   // Get OAuth token
   const accessToken = await getAccessToken();
 
-  // Query products to verify they exist
+  // Query all products from ACO
   let products = [];
   try {
-    products = await queryProductsBySKUs(accessToken, skusToDelete);
+    products = await queryAllProductsFromACO(accessToken);
   } catch (error) {
     logger.error('Failed to query products from ACO');
     return {
@@ -385,12 +374,17 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     }
 
     if (results.reason === 'NO_DATA') {
-      logger.info('No data to delete');
+      logger.info('No data to delete - catalog is empty');
       process.exit(0);
     }
 
     if (results.reason === 'QUERY_FAILED') {
       logger.error('Failed to query ACO catalog');
+      process.exit(1);
+    }
+
+    if (results.reason === 'NO_SKUS_PROVIDED') {
+      logger.error('No SKUs provided - this should not happen');
       process.exit(1);
     }
 
