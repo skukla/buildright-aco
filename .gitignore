@@ -50,3 +50,4 @@ temp/
 # Claude settings
 .claude/settings.local.json  # Local overrides
 .claude/.env*           # Secrets
+skus-to-delete.txt

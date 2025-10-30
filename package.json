@@ -32,7 +32,9 @@
     "ingest:all": "npm run ingest:all-products && npm run ingest:inventory && npm run ingest:all-pricing",
     "validate:ingestion": "node scripts/validate-ingestion.js",
     "reset:catalog": "node scripts/reset-catalog.js",
-    "reset:dry-run": "node scripts/reset-catalog.js --dry-run"
+    "reset:dry-run": "node scripts/reset-catalog.js --dry-run",
+    "reset:live": "node scripts/reset-aco-live.js",
+    "reset:live:dry-run": "node scripts/reset-aco-live.js --dry-run"
   },
   "keywords": [
     "adobe-commerce",
