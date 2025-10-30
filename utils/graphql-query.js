@@ -41,6 +41,7 @@ async function getGraphQLHeaders(accessToken = null) {
   const headers = {
     'Content-Type': 'application/json',
     'Magento-Website-Code': process.env.WEBSITE_CODE || 'base',
+    'Magento-Store-Code': process.env.STORE_CODE || 'default',
     'Magento-Store-View-Code': process.env.STORE_VIEW_CODE || 'default',
     'Authorization': `Bearer ${accessToken}`
   };
@@ -150,55 +151,54 @@ export async function queryProductsBySKU(skus, accessToken = null) {
 /**
  * Searches products by various criteria
  *
+ * ⚠️ WARNING: This function uses an experimental GraphQL schema that may not match
+ * the actual ACO Merchandising API. The actual schema requires proper configuration
+ * and may have different field names/structures. Use queryProductsBySKU() for
+ * reliable product retrieval.
+ *
+ * Known issues:
+ * - Requires search index to be configured in ACO (fails on empty catalog)
+ * - Exact parameter names and response structure may differ from actual API
+ * - pagination, filtering parameters need verification against live API
+ *
  * @param {Object} searchCriteria - Search parameters
- * @param {string} [searchCriteria.searchTerm] - Text search term
- * @param {Array<string>} [searchCriteria.categories] - Category filters
+ * @param {string} [searchCriteria.searchTerm] - Text search term (defaults to '*')
+ * @param {string} [searchCriteria.phrase] - Search phrase (ACO parameter name)
  * @param {number} [searchCriteria.pageSize=20] - Results per page
- * @param {number} [searchCriteria.page=1] - Page number
+ * @param {number} [searchCriteria.currentPage=1] - Page number
  * @param {string} [accessToken] - Optional OAuth access token
  * @returns {Promise<Object>} Search results with products array and pagination info
  *
  * @example
  * const results = await queryProducts({
  *   searchTerm: 'lumber',
- *   categories: ['structural-materials'],
  *   pageSize: 10
  * });
  */
 export async function queryProducts(searchCriteria = {}, accessToken = null) {
   const {
-    searchTerm = '',
-    categories = [],
+    searchTerm = '*',  // Default to wildcard to get all products
+    phrase = searchTerm,  // ACO uses 'phrase' parameter
     pageSize = 20,
-    page = 1
+    currentPage = 1
   } = searchCriteria;
 
   const query = `
     query SearchProducts(
-      $searchTerm: String
-      $categories: [String]
+      $phrase: String!
       $pageSize: Int
-      $page: Int
+      $currentPage: Int
     ) {
       productSearch(
-        searchTerm: $searchTerm
-        categories: $categories
+        phrase: $phrase
         pageSize: $pageSize
-        page: $page
+        currentPage: $currentPage
       ) {
-        total
-        page
-        pageSize
-        products {
-          sku
-          name
-          slug
-          status
-          price {
-            regular {
-              amount
-              currency
-            }
+        total_count
+        items {
+          product {
+            sku
+            name
           }
         }
       }
@@ -206,14 +206,23 @@ export async function queryProducts(searchCriteria = {}, accessToken = null) {
   `;
 
   const variables = {
-    searchTerm,
-    categories: categories.length > 0 ? categories : undefined,
+    phrase,
     pageSize,
-    page
+    currentPage
   };
 
   const data = await executeGraphQLQuery(query, variables, accessToken);
-  return data.productSearch || { products: [], total: 0 };
+
+  // Transform response to match expected format
+  const items = data.productSearch?.items || [];
+  const products = items.map(item => item.product);
+
+  return {
+    products,
+    total: data.productSearch?.total_count || 0,
+    page: currentPage,
+    pageSize
+  };
 }
 
 /**
@@ -343,36 +352,38 @@ export async function queryPrices(skus, priceBookId, accessToken = null) {
 /**
  * Verifies data ingestion by checking product count
  *
+ * ⚠️ WARNING: Requires ACO search index to be configured. Will fail on empty
+ * catalogs or if search index is not set up. Wrap in try-catch for production use.
+ *
  * Useful for testing after bulk uploads to verify all products were ingested.
  *
  * @param {string} [accessToken] - Optional OAuth access token
  * @returns {Promise<Object>} Statistics about ingested data
+ * @throws {Error} If catalog is empty or search index not configured
  *
  * @example
- * const stats = await verifyDataIngestion();
- * console.log(`Found ${stats.productCount} products`);
+ * try {
+ *   const stats = await verifyDataIngestion();
+ *   console.log(`Found ${stats.productCount} products`);
+ * } catch (error) {
+ *   console.log('Catalog may be empty or index not configured');
+ * }
  */
 export async function verifyDataIngestion(accessToken = null) {
   const query = `
-    query VerifyIngestion {
-      productSearch {
-        total
-      }
-      categories {
-        slug
-      }
-      priceBooks {
-        id
+    query VerifyIngestion($phrase: String!) {
+      productSearch(phrase: $phrase) {
+        total_count
       }
     }
   `;
 
-  const data = await executeGraphQLQuery(query, {}, accessToken);
+  const data = await executeGraphQLQuery(query, { phrase: '*' }, accessToken);
 
   return {
-    productCount: data.productSearch?.total || 0,
-    categoryCount: data.categories?.length || 0,
-    priceBookCount: data.priceBooks?.length || 0
+    productCount: data.productSearch?.total_count || 0,
+    categoryCount: 0,  // Category count not available in simple query
+    priceBookCount: 0  // Price books require separate query
   };
 }
 

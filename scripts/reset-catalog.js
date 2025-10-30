@@ -146,7 +146,12 @@ export async function resetCatalog(options = {}) {
   logger.info('Catalog Reset Started', { dryRun, force });
 
   // Get current stats
-  const stats = await verifyDataIngestion();
+  let stats = { productCount: 0, categoryCount: 0, priceBookCount: 0 };
+  try {
+    stats = await verifyDataIngestion();
+  } catch (error) {
+    logger.warn('Could not verify ingestion stats (catalog may be empty):', error.message);
+  }
 
   logger.info('Current catalog stats', stats);
 
