@@ -2,8 +2,8 @@
 /**
  * Reset ACO Catalog Data
  *
- * Deletes products, inventory, and prices from ACO for testing and re-upload.
- * Includes safety features: dry-run mode and confirmation prompts.
+ * Deletes products, prices, and price books from ACO by reading local JSON files.
+ * Follows the pattern from adobe-commerce/aco-sample-catalog-data-ingestion.
  *
  * @module scripts/reset-catalog
  *
@@ -16,19 +16,17 @@
  *
  * # Force reset without confirmation
  * node scripts/reset-catalog.js --force
- *
- * # Reset specific data types
- * node scripts/reset-catalog.js --products-only
- * node scripts/reset-catalog.js --inventory-only
- * node scripts/reset-catalog.js --prices-only
  */
 
+import { promises as fs } from 'fs';
 import * as readline from 'readline/promises';
 import { stdin as input, stdout as output } from 'process';
 import { getACOClient } from '../utils/aco-client.js';
-import { verifyDataIngestion, queryProducts } from '../utils/graphql-query.js';
 import logger from '../utils/logger.js';
 import { validateIngestConfig } from './config/ingest-config.js';
+
+const BATCH_SIZE = 100;
+const DATA_DIR = './data/buildright';
 
 /**
  * Prompt user for confirmation
@@ -48,84 +46,225 @@ async function promptConfirmation(message) {
 }
 
 /**
- * Delete all products (cascade deletes inventory and prices)
+ * Get batch number for logging
  *
- * @param {Object} client - ACO client
- * @param {boolean} dryRun - Dry-run mode
- * @returns {Promise<Object>} Deletion results
+ * @param {number} index - Item index
+ * @returns {number} Batch number
  */
-async function deleteProducts(client, dryRun = false) {
-  logger.info('Fetching products to delete...');
+function getBatchNumber(index) {
+  return Math.floor(index / BATCH_SIZE) + 1;
+}
 
-  // Query all products
-  const searchResult = await queryProducts({ pageSize: 1000 });
-  const products = searchResult.products || [];
-
-  logger.info(`Found ${products.length} products to delete`);
-
-  if (dryRun) {
-    logger.info('[DRY-RUN] Would delete products:', {
-      count: products.length,
-      samples: products.slice(0, 5).map(p => p.sku)
-    });
-    return { deleted: 0, wouldDelete: products.length };
-  }
-
-  let deleted = 0;
-  let failed = 0;
-
-  for (const product of products) {
-    try {
-      await client.deleteProduct(product.sku);
-      deleted++;
-
-      if (deleted % 10 === 0) {
-        logger.info(`Deleted ${deleted}/${products.length} products`);
-      }
-    } catch (error) {
-      logger.warn(`Failed to delete product ${product.sku}: ${error.message}`);
-      failed++;
+/**
+ * Load JSON file safely
+ *
+ * @param {string} filepath - Path to JSON file
+ * @returns {Promise<Array>} Parsed JSON array or empty array if file doesn't exist
+ */
+async function loadJSON(filepath) {
+  try {
+    const data = await fs.readFile(filepath, 'utf-8');
+    return JSON.parse(data);
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      logger.warn(`File not found: ${filepath}`);
+      return [];
     }
+    throw error;
   }
-
-  logger.info(`Product deletion complete: ${deleted} deleted, ${failed} failed`);
-
-  return { deleted, failed };
 }
 
 /**
- * Delete all inventory (not currently supported by ACO API)
+ * Delete prices from ACO
  *
- * @param {boolean} dryRun - Dry-run mode
- * @returns {Promise<Object>} Deletion results
- */
-async function deleteInventory(dryRun = false) {
-  logger.warn('Inventory deletion: ACO API does not support bulk inventory deletion');
-  logger.info('Inventory is automatically deleted when products are deleted');
-
-  if (dryRun) {
-    return { deleted: 0, note: 'Inventory deleted with products' };
-  }
-
-  return { deleted: 0, note: 'Delete products to remove inventory' };
-}
-
-/**
- * Delete all prices and price books
- *
- * @param {Object} client - ACO client
+ * @param {Object} client - ACO SDK client
  * @param {boolean} dryRun - Dry-run mode
  * @returns {Promise<Object>} Deletion results
  */
 async function deletePrices(client, dryRun = false) {
-  logger.warn('Price deletion: Deleting products will cascade delete prices');
-  logger.info('Price books can be deleted separately if needed');
+  logger.info('Loading prices from file...');
+  const prices = await loadJSON(`${DATA_DIR}/prices.json`);
 
-  if (dryRun) {
-    return { deleted: 0, note: 'Prices deleted with products' };
+  if (prices.length === 0) {
+    logger.info('No prices found to delete');
+    return { deleted: 0, total: 0 };
   }
 
-  return { deleted: 0, note: 'Delete products to remove prices' };
+  logger.info(`Found ${prices.length} prices to delete`);
+
+  if (dryRun) {
+    logger.info('[DRY-RUN] Would delete prices in batches of', BATCH_SIZE);
+    return { deleted: 0, total: prices.length, dryRun: true };
+  }
+
+  let deletedCount = 0;
+  const pricesToDelete = prices.map(price => ({
+    sku: price.sku,
+    priceBookId: price.priceBookId
+  }));
+
+  // Process in batches
+  for (let i = 0; i < pricesToDelete.length; i += BATCH_SIZE) {
+    const batch = pricesToDelete.slice(i, i + BATCH_SIZE);
+    const batchNum = getBatchNumber(i);
+
+    try {
+      const response = await client.deletePrices(batch);
+      deletedCount += response.data?.accepted || 0;
+      logger.info(`Batch ${batchNum}: Deleted ${response.data?.accepted || 0} prices`);
+    } catch (error) {
+      logger.error(`Batch ${batchNum} failed:`, error.message);
+    }
+  }
+
+  logger.info(`Price deletion complete: ${deletedCount}/${prices.length} deleted`);
+  return { deleted: deletedCount, total: prices.length };
+}
+
+/**
+ * Delete price books from ACO
+ *
+ * @param {Object} client - ACO SDK client
+ * @param {boolean} dryRun - Dry-run mode
+ * @returns {Promise<Object>} Deletion results
+ */
+async function deletePriceBooks(client, dryRun = false) {
+  logger.info('Loading price books from file...');
+  const priceBooks = await loadJSON(`${DATA_DIR}/price-books.json`);
+
+  if (priceBooks.length === 0) {
+    logger.info('No price books found to delete');
+    return { deleted: 0, total: 0 };
+  }
+
+  logger.info(`Found ${priceBooks.length} price books to delete`);
+
+  if (dryRun) {
+    logger.info('[DRY-RUN] Would delete price books in batches of', BATCH_SIZE);
+    return { deleted: 0, total: priceBooks.length, dryRun: true };
+  }
+
+  let deletedCount = 0;
+  const priceBookIds = priceBooks.map(pb => ({
+    priceBookId: pb.priceBookId
+  }));
+
+  // Process in batches
+  for (let i = 0; i < priceBookIds.length; i += BATCH_SIZE) {
+    const batch = priceBookIds.slice(i, i + BATCH_SIZE);
+    const batchNum = getBatchNumber(i);
+
+    try {
+      const response = await client.deletePriceBooks(batch);
+      deletedCount += response.data?.accepted || 0;
+      logger.info(`Batch ${batchNum}: Deleted ${response.data?.accepted || 0} price books`);
+    } catch (error) {
+      logger.error(`Batch ${batchNum} failed:`, error.message);
+    }
+  }
+
+  logger.info(`Price book deletion complete: ${deletedCount}/${priceBooks.length} deleted`);
+  return { deleted: deletedCount, total: priceBooks.length };
+}
+
+/**
+ * Delete products from ACO
+ *
+ * @param {Object} client - ACO SDK client
+ * @param {boolean} dryRun - Dry-run mode
+ * @returns {Promise<Object>} Deletion results
+ */
+async function deleteProducts(client, dryRun = false) {
+  logger.info('Loading products from files...');
+
+  // Load all product types
+  const products = await loadJSON(`${DATA_DIR}/products.json`);
+  const variants = await loadJSON(`${DATA_DIR}/variants.json`);
+  const bundles = await loadJSON(`${DATA_DIR}/bundles.json`);
+
+  const allProducts = [...products, ...variants, ...bundles];
+
+  if (allProducts.length === 0) {
+    logger.info('No products found to delete');
+    return { deleted: 0, total: 0 };
+  }
+
+  logger.info(`Found ${allProducts.length} products to delete (${products.length} standard, ${variants.length} variants, ${bundles.length} bundles)`);
+
+  if (dryRun) {
+    logger.info('[DRY-RUN] Would delete products in batches of', BATCH_SIZE);
+    return { deleted: 0, total: allProducts.length, dryRun: true };
+  }
+
+  let deletedCount = 0;
+  const productsToDelete = allProducts.map(product => ({
+    sku: product.sku,
+    source: product.source || { locale: 'en-US' }
+  }));
+
+  // Process in batches
+  for (let i = 0; i < productsToDelete.length; i += BATCH_SIZE) {
+    const batch = productsToDelete.slice(i, i + BATCH_SIZE);
+    const batchNum = getBatchNumber(i);
+
+    try {
+      const response = await client.deleteProducts(batch);
+      deletedCount += response.data?.accepted || 0;
+      logger.info(`Batch ${batchNum}: Deleted ${response.data?.accepted || 0} products`);
+    } catch (error) {
+      logger.error(`Batch ${batchNum} failed:`, error.message);
+    }
+  }
+
+  logger.info(`Product deletion complete: ${deletedCount}/${allProducts.length} deleted`);
+  return { deleted: deletedCount, total: allProducts.length };
+}
+
+/**
+ * Delete metadata from ACO
+ *
+ * @param {Object} client - ACO SDK client
+ * @param {boolean} dryRun - Dry-run mode
+ * @returns {Promise<Object>} Deletion results
+ */
+async function deleteMetadata(client, dryRun = false) {
+  logger.info('Loading metadata from file...');
+  const metadata = await loadJSON(`${DATA_DIR}/metadata.json`);
+
+  if (metadata.length === 0) {
+    logger.info('No metadata found to delete');
+    return { deleted: 0, total: 0 };
+  }
+
+  logger.info(`Found ${metadata.length} metadata items to delete`);
+
+  if (dryRun) {
+    logger.info('[DRY-RUN] Would delete metadata in batches of', BATCH_SIZE);
+    return { deleted: 0, total: metadata.length, dryRun: true };
+  }
+
+  let deletedCount = 0;
+  const metadataToDelete = metadata.map(meta => ({
+    code: meta.attributeId,
+    source: { locale: 'en-US' }
+  }));
+
+  // Process in batches
+  for (let i = 0; i < metadataToDelete.length; i += BATCH_SIZE) {
+    const batch = metadataToDelete.slice(i, i + BATCH_SIZE);
+    const batchNum = getBatchNumber(i);
+
+    try {
+      const response = await client.deleteProductMetadata(batch);
+      deletedCount += response.data?.accepted || 0;
+      logger.info(`Batch ${batchNum}: Deleted ${response.data?.accepted || 0} metadata items`);
+    } catch (error) {
+      logger.error(`Batch ${batchNum} failed:`, error.message);
+    }
+  }
+
+  logger.info(`Metadata deletion complete: ${deletedCount}/${metadata.length} deleted`);
+  return { deleted: deletedCount, total: metadata.length };
 }
 
 /**
@@ -137,28 +276,38 @@ async function deletePrices(client, dryRun = false) {
 export async function resetCatalog(options = {}) {
   const {
     dryRun = false,
-    force = false,
-    productsOnly = false,
-    inventoryOnly = false,
-    pricesOnly = false
+    force = false
   } = options;
 
-  logger.info('Catalog Reset Started', { dryRun, force });
+  logger.info('Catalog Reset Started', { dryRun, force, dataDir: DATA_DIR });
 
-  // Get current stats
-  let stats = { productCount: 0, categoryCount: 0, priceBookCount: 0 };
-  try {
-    stats = await verifyDataIngestion();
-  } catch (error) {
-    logger.warn('Could not verify ingestion stats (catalog may be empty):', error.message);
+  // Load files to count items
+  const products = await loadJSON(`${DATA_DIR}/products.json`);
+  const variants = await loadJSON(`${DATA_DIR}/variants.json`);
+  const bundles = await loadJSON(`${DATA_DIR}/bundles.json`);
+  const prices = await loadJSON(`${DATA_DIR}/prices.json`);
+  const priceBooks = await loadJSON(`${DATA_DIR}/price-books.json`);
+  const metadata = await loadJSON(`${DATA_DIR}/metadata.json`);
+
+  const totalProducts = products.length + variants.length + bundles.length;
+  const stats = {
+    products: totalProducts,
+    prices: prices.length,
+    priceBooks: priceBooks.length,
+    metadata: metadata.length
+  };
+
+  logger.info('Data found in local files:', stats);
+
+  if (totalProducts === 0 && prices.length === 0 && priceBooks.length === 0 && metadata.length === 0) {
+    logger.warn('No data found to delete. Run generation scripts first.');
+    return { cancelled: false, success: true, reason: 'no_data' };
   }
-
-  logger.info('Current catalog stats', stats);
 
   // Confirm if not forced
   if (!dryRun && !force) {
     const confirmed = await promptConfirmation(
-      `Delete all catalog data (${stats.productCount} products)? This cannot be undone!`
+      `Delete all catalog data (${totalProducts} products, ${prices.length} prices, ${priceBooks.length} price books, ${metadata.length} metadata)? This cannot be undone!`
     );
 
     if (!confirmed) {
@@ -171,23 +320,40 @@ export async function resetCatalog(options = {}) {
 
   const results = {
     success: true,
-    dryRun,
-    products: null,
-    inventory: null,
-    prices: null
+    dryRun
   };
 
-  // Delete based on options
-  if (productsOnly || (!inventoryOnly && !pricesOnly)) {
-    results.products = await deleteProducts(client, dryRun);
-  }
-
-  if (inventoryOnly || (!productsOnly && !pricesOnly)) {
-    results.inventory = await deleteInventory(dryRun);
-  }
-
-  if (pricesOnly || (!productsOnly && !inventoryOnly)) {
+  // Delete in proper order (child data first, then parent data)
+  // 1. Delete prices (reference products and price books)
+  try {
     results.prices = await deletePrices(client, dryRun);
+  } catch (error) {
+    logger.error('Failed to delete prices:', error.message);
+    results.success = false;
+  }
+
+  // 2. Delete price books
+  try {
+    results.priceBooks = await deletePriceBooks(client, dryRun);
+  } catch (error) {
+    logger.error('Failed to delete price books:', error.message);
+    results.success = false;
+  }
+
+  // 3. Delete products (variants and bundles should be deleted with parents)
+  try {
+    results.products = await deleteProducts(client, dryRun);
+  } catch (error) {
+    logger.error('Failed to delete products:', error.message);
+    results.success = false;
+  }
+
+  // 4. Delete metadata (should be last)
+  try {
+    results.metadata = await deleteMetadata(client, dryRun);
+  } catch (error) {
+    logger.error('Failed to delete metadata:', error.message);
+    results.success = false;
   }
 
   logger.info('Catalog Reset Complete', results);
@@ -200,10 +366,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const args = process.argv.slice(2);
   const options = {
     dryRun: args.includes('--dry-run'),
-    force: args.includes('--force'),
-    productsOnly: args.includes('--products-only'),
-    inventoryOnly: args.includes('--inventory-only'),
-    pricesOnly: args.includes('--prices-only')
+    force: args.includes('--force')
   };
 
   try {
@@ -215,6 +378,11 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
     if (results.cancelled) {
       logger.info('Reset cancelled');
+      process.exit(0);
+    }
+
+    if (results.reason === 'no_data') {
+      logger.info('No data to delete');
       process.exit(0);
     }
 
