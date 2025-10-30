@@ -28,7 +28,7 @@ import { stdin as input, stdout as output } from 'process';
 import { getACOClient } from '../utils/aco-client.js';
 import { verifyDataIngestion, queryProducts } from '../utils/graphql-query.js';
 import logger from '../utils/logger.js';
-import { validateUploadConfig } from './config/upload-config.js';
+import { validateIngestConfig } from './config/ingest-config.js';
 
 /**
  * Prompt user for confirmation
@@ -203,7 +203,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
 
   try {
     // Validate configuration
-    validateUploadConfig();
+    validateIngestConfig();
 
     // Run reset
     const results = await resetCatalog(options);
