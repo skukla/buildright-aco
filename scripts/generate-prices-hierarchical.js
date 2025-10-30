@@ -56,9 +56,9 @@ export function generatePricesHierarchical(products, priceBooks, randomSeed = 12
 
       // Standard price entry
       prices.push({
-        id: `PRICE_${priceBook.id}_${product.sku}`,
+        id: `PRICE_${priceBook.priceBookId}_${product.sku}`,
         sku: product.sku,
-        priceBookId: priceBook.id,
+        priceBookId: priceBook.priceBookId,
         amount: formatPrice(finalPrice),
         currency: 'USD',
         uom: product.uom || 'EA',
@@ -75,9 +75,9 @@ export function generatePricesHierarchical(products, priceBooks, randomSeed = 12
           const tierPrice = finalPrice * (1 - tier.discount);
 
           prices.push({
-            id: `PRICE_${priceBook.id}_${product.sku}_TIER${idx + 1}`,
+            id: `PRICE_${priceBook.priceBookId}_${product.sku}_TIER${idx + 1}`,
             sku: product.sku,
-            priceBookId: priceBook.id,
+            priceBookId: priceBook.priceBookId,
             amount: formatPrice(tierPrice),
             currency: 'USD',
             uom: product.uom || 'EA',
@@ -101,9 +101,9 @@ export function generatePricesHierarchical(products, priceBooks, randomSeed = 12
           const volumePrice = finalPrice * (1 - vol.discount);
 
           prices.push({
-            id: `PRICE_${priceBook.id}_${product.sku}_VOL${vol.qty}`,
+            id: `PRICE_${priceBook.priceBookId}_${product.sku}_VOL${vol.qty}`,
             sku: product.sku,
-            priceBookId: priceBook.id,
+            priceBookId: priceBook.priceBookId,
             amount: formatPrice(volumePrice),
             currency: 'USD',
             uom: product.uom || 'EA',
@@ -289,7 +289,7 @@ async function main() {
     };
 
     priceBooks.forEach(pb => {
-      stats.pricesByBook[pb.id] = prices.filter(p => p.priceBookId === pb.id).length;
+      stats.pricesByBook[pb.priceBookId] = prices.filter(p => p.priceBookId === pb.priceBookId).length;
     });
 
     logger.info('Price generation statistics:', stats);
@@ -312,7 +312,7 @@ async function main() {
     const businessTypes = ['RETAIL', 'CONTRACTOR', 'COMMERCIAL', 'WHOLESALE'];
     businessTypes.forEach(businessType => {
       const typePrices = prices.filter(p => {
-        const pb = priceBooks.find(book => book.id === p.priceBookId);
+        const pb = priceBooks.find(book => book.priceBookId === p.priceBookId);
         return pb && pb.businessType === businessType && !p.tier && !p.volumeDiscount;
       });
       logger.info(`  ${businessType} prices: ${typePrices.length}`);
@@ -320,7 +320,7 @@ async function main() {
 
     // Log regional adjustments
     const westLumberPrices = prices.filter(p => {
-      const pb = priceBooks.find(book => book.id === p.priceBookId);
+      const pb = priceBooks.find(book => book.priceBookId === p.priceBookId);
       const prod = products.find(product => product.sku === p.sku);
       return pb && pb.region === 'West' && prod && isLumberProduct(prod) && !p.tier && !p.volumeDiscount;
     });
