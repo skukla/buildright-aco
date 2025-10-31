@@ -30,7 +30,7 @@ Adobe Commerce Optimizer (ACO) policies enable dynamic catalog filtering based o
 
 **Prerequisites:**
 - ACO instance configured with BuildRight product catalog
-- Product attributes created (project_types, commercial_residential, brand, etc.)
+- Product attributes created (product_category, lumber_species, brand, etc.)
 - Products ingested with attribute values
 - Access to ACO Admin UI or API
 
@@ -46,15 +46,17 @@ Adobe Commerce Optimizer (ACO) policies enable dynamic catalog filtering based o
 - [ACO API Schema](../aco-api-schema.md) - Complete GraphQL schema and query examples
 
 **BuildRight Attributes Used in Policies:**
+- `product_category` (select): structural_materials, framing_insulation, windows_doors, fasteners_hardware, safety_equipment
 - `project_types` (multiselect): new_construction, remodel, repair, restoration
-- `commercial_residential` (select): commercial, residential, both
-- `brand` (select): buildright_pro, structuremaster, proframe, safeguard, fastenpro, durabuilt
-- `product_category` (select): structural_materials, finishing_materials, fasteners_hardware, safety_equipment, tools_equipment
+- `brand` (select): buildright_pro, toughgrip, safeworks, quickfast, propanel, surebuild
+- `lumber_species` (select): douglas_fir, southern_pine, spruce_pine_fir, hem_fir
+- `ppe_category` (select): head_protection, eye_protection, hearing_protection, hand_protection, high_visibility
 
 **Common Trigger Headers:**
+- `AC-Policy-Product-Category` - Filter by product category
 - `AC-Policy-Project-Type` - Filter by project type
-- `AC-Policy-Customer-Segment` - Filter by commercial/residential
 - `AC-Policy-Brand` - Filter by brand preference
+- `AC-Policy-Lumber-Species` - Filter by lumber species
 
 ---
 
@@ -129,16 +131,25 @@ BuildRight uses a layered approach combining STATIC and EXCLUSIVE policies:
 │ ────────────────────────────────────────────────────────────    │
 │ ⚡ Trigger: AC-Policy-Project-Type HTTP Header                  │
 │ ✓ Values: new_construction, remodel, repair, restoration        │
-│ ✓ Filters by: project_types attribute                           │
+│ ✓ Filters by: project_types attribute (multiselect)             │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│ Layer 3: EXCLUSIVE Policies (Customer Context)                 │
+│ Layer 3: EXCLUSIVE Policies (Category Context)                 │
 │ ────────────────────────────────────────────────────────────    │
-│ ⚡ Trigger: AC-Policy-Customer-Segment HTTP Header              │
-│ ✓ Values: commercial, residential                               │
-│ ✓ Filters by: commercial_residential attribute                  │
+│ ⚡ Trigger: AC-Policy-Product-Category HTTP Header              │
+│ ✓ Values: structural_materials, framing_insulation, etc.        │
+│ ✓ Filters by: product_category attribute                        │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ Layer 4: EXCLUSIVE Policies (Brand Context)                    │
+│ ────────────────────────────────────────────────────────────    │
+│ ⚡ Trigger: AC-Policy-Brand HTTP Header                         │
+│ ✓ Values: toughgrip, safeworks, quickfast, etc.                 │
+│ ✓ Filters by: brand attribute                                   │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
@@ -177,9 +188,9 @@ Filter all products to show only structural materials:
 
 **When to Use:** When a catalog view should always show a specific product category.
 
-### Example 2: EXCLUSIVE Policy - Project Type Filtering (New Construction)
+### Example 2: EXCLUSIVE Policy - Project Type Filtering
 
-Filter products suitable for new construction projects:
+Filter products suitable for specific project types:
 
 ```json
 {
@@ -200,57 +211,57 @@ Filter products suitable for new construction projects:
 }
 ```
 
-**When to Use:** When requesting a catalog for a specific project type. The HTTP header value (e.g., "new_construction") is matched against products' `project_types` multiselect attribute.
+**When to Use:** When requesting a catalog for a specific project type. The HTTP header value (e.g., "new_construction") is matched against products' `project_types` multiselect attribute. Products tagged with multiple project types will appear when any match is found.
 
-### Example 3: EXCLUSIVE Policy - Commercial/Residential Filtering
+### Example 3: EXCLUSIVE Policy - Brand Filtering
 
-Filter products based on customer segment:
+Filter products by brand preference:
 
 ```json
 {
-  "policyId": "customer-segment-filter",
-  "name": "Commercial/Residential Segment Filter",
+  "policyId": "brand-filter",
+  "name": "Brand Preference Filter",
   "type": "EXCLUSIVE",
   "trigger": {
-    "name": "AC-Policy-Customer-Segment",
+    "name": "AC-Policy-Brand",
     "transport": "HTTP_HEADER"
   },
   "conditions": [
     {
-      "attribute": "commercial_residential",
-      "operator": "IN",
+      "attribute": "brand",
+      "operator": "EQUALS",
       "valueSource": "TRIGGER"
     }
   ]
 }
 ```
 
-**When to Use:** When requesting a catalog for commercial or residential customers. Products tagged "both" will appear in both contexts.
+**When to Use:** When requesting a catalog for a specific brand. The HTTP header value (e.g., "toughgrip") is matched against products' `brand` attribute.
 
-### Example 4: EXCLUSIVE Policy - Remodel Project Type
+### Example 4: EXCLUSIVE Policy - Product Category Filtering
 
-Filter products suitable for remodeling projects:
+Filter products by category:
 
 ```json
 {
-  "policyId": "project-remodel",
-  "name": "Remodel Project Filter",
+  "policyId": "category-structural",
+  "name": "Structural Materials Filter",
   "type": "EXCLUSIVE",
   "trigger": {
-    "name": "AC-Policy-Project-Type",
+    "name": "AC-Policy-Product-Category",
     "transport": "HTTP_HEADER"
   },
   "conditions": [
     {
-      "attribute": "project_types",
-      "operator": "CONTAINS",
-      "value": "remodel"
+      "attribute": "product_category",
+      "operator": "EQUALS",
+      "valueSource": "TRIGGER"
     }
   ]
 }
 ```
 
-**When to Use:** For contractors working on remodeling projects who need finishing materials, fixtures, and renovation-specific products.
+**When to Use:** When requesting a catalog for a specific product category. The HTTP header value (e.g., "structural_materials") is matched against products' `product_category` attribute.
 
 ### Example 5: EXCLUSIVE Policy - Brand Preference
 
@@ -288,14 +299,14 @@ Combine multiple attribute filters in a static policy:
   "type": "STATIC",
   "conditions": [
     {
-      "attribute": "commercial_residential",
-      "operator": "IN",
-      "value": ["commercial", "both"]
-    },
-    {
       "attribute": "product_category",
       "operator": "EQUALS",
       "value": "structural_materials"
+    },
+    {
+      "attribute": "brand",
+      "operator": "IN",
+      "value": ["toughgrip", "propanel"]
     }
   ]
 }
@@ -574,9 +585,10 @@ Restoration projects often require specialty products (historic materials, speci
    - Attributes must have values assigned to products
 
 2. **Use Appropriate Attribute Types:**
-   - Multiselect for project_types (products can belong to multiple)
-   - Select for commercial_residential (exclusive choice)
-   - Text attributes generally not suitable for policy filtering
+   - Multiselect attributes work great for project_types (products can belong to multiple)
+   - Select attributes best for product_category, brand, lumber_species (exclusive choice)
+   - Multiselect attributes can use CONTAINS operator (project_types, lumber_certification)
+   - Boolean attributes suitable for yes/no filtering (window_energy_star)
 
 3. **Tag Products Thoroughly:**
    - Products without attribute values won't match policies
@@ -745,7 +757,7 @@ ACO trigger-based policies enable BuildRight to deliver highly personalized prod
 **Key Takeaways:**
 - STATIC policies apply fixed rules to catalog views
 - EXCLUSIVE policies use HTTP headers for dynamic per-request filtering
-- Policies filter by product attributes (project_types, commercial_residential, brand, etc.)
+- Policies filter by product attributes (project_types, product_category, brand, etc.)
 - Multiple policies combine with logical AND
 - Proper attribute tagging on products is essential
 - Test policies individually before combining

@@ -58,10 +58,11 @@ Adobe Commerce B2B Structure
 - **Shared Catalog:** Commercial-Tier2 (highest volume tier)
 - **Location Count:** 2 locations
 - **Teams:**
-  - Los Angeles Headquarters
-  - San Francisco Bay Area
-- **User Count:** 4 users
-- **Region:** Western (California)
+  - Los Angeles Headquarters (CA)
+  - Phoenix Metro Division (AZ)
+- **User Count:** 4 users (2 per location)
+- **Region:** Western (California, Arizona)
+- **Business Focus:** Large-scale commercial construction projects (office buildings, hospitals, schools)
 
 ---
 
@@ -71,10 +72,11 @@ Adobe Commerce B2B Structure
 - **Shared Catalog:** Residential-Builder (production builder tier)
 - **Location Count:** 2 locations
 - **Teams:**
-  - San Diego Headquarters
-  - Carlsbad Division
-- **User Count:** 4 users
-- **Region:** Western (California)
+  - Dallas Headquarters (TX)
+  - Denver Division (CO)
+- **User Count:** 4 users (2 per location)
+- **Region:** Central (Texas, Colorado)
+- **Business Focus:** Production home builders and residential remodelers (50-200 homes annually)
 
 ---
 
@@ -84,10 +86,11 @@ Adobe Commerce B2B Structure
 - **Shared Catalog:** Pro-Specialty (specialty tier)
 - **Location Count:** 2 locations
 - **Teams:**
-  - Seattle Headquarters
-  - Bellevue Office
-- **User Count:** 4 users
-- **Region:** Western (Washington)
+  - Charlotte Headquarters (NC)
+  - Atlanta Division (GA)
+- **User Count:** 4 users (2 per location)
+- **Region:** Eastern (North Carolina, Georgia)
+- **Business Focus:** Specialty trade contractors (electrical, plumbing, HVAC)
 
 ---
 
@@ -170,11 +173,18 @@ Commercial-Tier2 (volume tier 2 deeper discounts)
 
 ## Geographic Distribution
 
-### West Coast Focus (3 companies)
-- California: Premium Commercial Builders, Coastal Residential Builders (2 companies)
-- Washington: Elite Trade Contractors (1 company)
+### National Coverage (3 companies across 3 regions)
 
-**Total Coverage:** 2 states (California, Washington) - West Coast region
+**Western Region:**
+- Premium Commercial Builders Inc.: California (Los Angeles HQ), Arizona (Phoenix)
+
+**Central Region:**
+- Coastal Residential Builders: Texas (Dallas HQ), Colorado (Denver)
+
+**Eastern Region:**
+- Elite Trade Contractors: North Carolina (Charlotte HQ), Georgia (Atlanta)
+
+**Total Coverage:** 6 states across 3 US regions (West, Central, East) - **National distribution**
 
 ---
 
@@ -213,16 +223,73 @@ Premium Commercial Builders Inc.
 │   Shared Catalog: Commercial-Tier2
 │   Company Admin: John Smith (jsmith@premiumcommercial.example.com)
 │   Legal Address: 1500 Commerce Drive, Los Angeles, CA 90001
+│   Region: Western (CA, AZ)
 │
-├── Team 1: Los Angeles Headquarters
-│   ├── User 1: Emily Johnson (Senior Buyer)
-│   ├── User 2: Michael Chen (Default User)
-│   └── User 3: Amanda Garcia (Approver)
+├── Team 1: Los Angeles Headquarters (CA)
+│   ├── User 1: John Smith (Company Admin / Approver)
+│   └── User 2: Emily Johnson (Senior Buyer)
 │
-└── Team 2: San Francisco Bay Area
-    ├── User 4: Carlos Rodriguez (Project Manager / Default User)
-    └── User 5: Jessica Lee (Senior Buyer)
+└── Team 2: Phoenix Metro Division (AZ)
+    ├── User 3: Michael Chen (Default User)
+    └── User 4: Amanda Garcia (Senior Buyer)
 ```
+
+---
+
+## Complete Company Overview: National Distribution
+
+### All Three Companies with Geographic Coverage
+
+```
+WESTERN REGION
+┌─────────────────────────────────────────────────────────────┐
+│ Premium Commercial Builders Inc.                            │
+│ Catalog: Commercial-Tier2 | Division: Commercial            │
+│                                                              │
+│ ├── Los Angeles HQ (CA)                                     │
+│ │   ├── John Smith (Company Admin)                          │
+│ │   └── Emily Johnson (Senior Buyer)                        │
+│ │                                                            │
+│ └── Phoenix Metro (AZ)                                      │
+│     ├── Michael Chen (Default User)                         │
+│     └── Amanda Garcia (Senior Buyer)                        │
+└─────────────────────────────────────────────────────────────┘
+
+CENTRAL REGION
+┌─────────────────────────────────────────────────────────────┐
+│ Coastal Residential Builders                                │
+│ Catalog: Residential-Builder | Division: Residential        │
+│                                                              │
+│ ├── Dallas HQ (TX)                                          │
+│ │   ├── Maria Garcia (Company Admin)                        │
+│ │   └── Robert Taylor (Senior Buyer)                        │
+│ │                                                            │
+│ └── Denver Division (CO)                                    │
+│     ├── Sarah Martinez (Default User)                       │
+│     └── James Wilson (Senior Buyer)                         │
+└─────────────────────────────────────────────────────────────┘
+
+EASTERN REGION
+┌─────────────────────────────────────────────────────────────┐
+│ Elite Trade Contractors                                     │
+│ Catalog: Pro-Specialty | Division: Pro                      │
+│                                                              │
+│ ├── Charlotte HQ (NC)                                       │
+│ │   ├── David Chen (Company Admin)                          │
+│ │   └── Lisa Anderson (Senior Buyer)                        │
+│ │                                                            │
+│ └── Atlanta Division (GA)                                   │
+│     ├── Kevin Brown (Default User)                          │
+│     └── Jennifer Davis (Senior Buyer)                       │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**National Coverage Summary:**
+- **6 states**: CA, AZ, TX, CO, NC, GA
+- **3 regions**: Western, Central, Eastern
+- **6 locations**: 2 per company
+- **12 users**: 4 per company, 2 per location
+- **3 pricing tiers**: Commercial-Tier2, Residential-Builder, Pro-Specialty
 
 ---
 
@@ -234,9 +301,10 @@ Premium Commercial Builders Inc.
 - Order data flows to ACO for analytics and optimization
 
 ### MSI Integration
-- Company locations may align with inventory sources
+- **National distribution centers**: Sacramento CA, Charlotte NC aligned with company regions
+- **Regional warehouses**: Phoenix AZ (West), Denver CO (Central), Atlanta GA (East)
 - Team structure mirrors geographic warehouse distribution
-- Order fulfillment optimized by location proximity
+- Order fulfillment optimized by location proximity to regional inventory
 
 ### Quote Management
 - All companies enabled for B2B quotes

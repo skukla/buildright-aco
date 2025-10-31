@@ -1,0 +1,2555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildRight ACO Setup & Demo Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --accent-primary: #58a6ff;
+            --accent-hover: #79c0ff;
+            --border-primary: #30363d;
+            --success: #3fb950;
+            --warning: #d29922;
+            --info: #58a6ff;
+            --code-bg: #161b22;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        aside {
+            width: 280px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            background-color: var(--bg-secondary);
+            border-right: 1px solid var(--border-primary);
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        aside h2 {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-primary);
+        }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        
+        .toc-level-1 {
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        
+        .toc-level-2 {
+            padding-left: 15px;
+            font-size: 0.95rem;
+        }
+        
+        .toc-level-3 {
+            padding-left: 30px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .toc-list a:hover {
+            color: var(--accent-primary);
+        }
+        
+        main {
+            margin-left: 300px;
+            padding: 40px 60px;
+            max-width: 900px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 1px solid var(--border-primary);
+            padding-bottom: 12px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid var(--border-primary);
+            padding-bottom: 10px;
+            margin-top: 48px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 32px;
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        code {
+            background-color: var(--code-bg);
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            color: var(--text-primary);
+        }
+        
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 16px 0;
+            border: 1px solid var(--border-primary);
+        }
+        
+        pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            background-color: var(--bg-secondary);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-primary);
+        }
+        
+        th {
+            background-color: var(--bg-tertiary);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        blockquote {
+            background-color: var(--bg-secondary);
+            border-left: 4px solid var(--accent-primary);
+            padding: 12px 20px;
+            margin: 16px 0;
+            border-radius: 4px;
+        }
+        
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 30px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+        
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-primary);
+            margin: 32px 0;
+        }
+        
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent-primary);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+        
+        #backToTop.visible {
+            opacity: 1;
+        }
+        
+        #backToTop:hover {
+            background-color: var(--accent-hover);
+        }
+        
+        @media (max-width: 768px) {
+            aside {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            
+            main {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <h2>Table of Contents</h2>
+            <ul class="toc-list"><li class="toc-level-1"><a href="#buildright-aco-setup-demonstration-guide">BuildRight ACO Setup & Demonstration Guide</a></li>
+<li class="toc-level-2"><a href="#document-purpose">Document Purpose</a></li>
+<li class="toc-level-2"><a href="#table-of-contents">Table of Contents</a></li>
+<li class="toc-level-3"><a href="#part-1-understanding">PART 1: UNDERSTANDING</a></li>
+<li class="toc-level-3"><a href="#part-2-setup-step-by-step-implementation">PART 2: SETUP (Step-by-Step Implementation)</a></li>
+<li class="toc-level-3"><a href="#part-3-demonstration">PART 3: DEMONSTRATION</a></li>
+<li class="toc-level-3"><a href="#part-4-reference">PART 4: REFERENCE</a></li>
+<li class="toc-level-1"><a href="#part-1-understanding">PART 1: UNDERSTANDING</a></li>
+<li class="toc-level-2"><a href="#1-getting-started">1. Getting Started</a></li>
+<li class="toc-level-3"><a href="#1-1-what-you-ll-accomplish">1.1 What You'll Accomplish</a></li>
+<li class="toc-level-3"><a href="#1-2-time-commitment">1.2 Time Commitment</a></li>
+<li class="toc-level-3"><a href="#1-3-what-you-ll-need">1.3 What You'll Need</a></li>
+<li class="toc-level-3"><a href="#1-4-document-conventions">1.4 Document Conventions</a></li>
+<li class="toc-level-1"><a href="#this-is-a-command-you-run-in-terminal">This is a command you run in terminal</a></li>
+<li class="toc-level-1"><a href="#this-is-content-for-env-file">This is content for .env file</a></li>
+<li class="toc-level-2"><a href="#2-business-context">2. Business Context</a></li>
+<li class="toc-level-3"><a href="#2-1-what-buildright-is">2.1 What BuildRight Is</a></li>
+<li class="toc-level-3"><a href="#2-2-the-business-challenge">2.2 The Business Challenge</a></li>
+<li class="toc-level-3"><a href="#2-3-the-aco-solution">2.3 The ACO Solution</a></li>
+<li class="toc-level-3"><a href="#2-4-business-value-delivered">2.4 Business Value Delivered</a></li>
+<li class="toc-level-3"><a href="#2-5-real-pricing-examples">2.5 Real Pricing Examples</a></li>
+<li class="toc-level-2"><a href="#3-solution-architecture">3. Solution Architecture</a></li>
+<li class="toc-level-3"><a href="#3-1-what-we-built">3.1 What We Built</a></li>
+<li class="toc-level-3"><a href="#3-2-component-architecture">3.2 Component Architecture</a></li>
+<li class="toc-level-3"><a href="#3-3-national-distribution-model">3.3 National Distribution Model</a></li>
+<li class="toc-level-3"><a href="#3-4-data-flow-overview">3.4 Data Flow Overview</a></li>
+<li class="toc-level-3"><a href="#3-5-what-aco-manages-vs-what-s-manual">3.5 What ACO Manages vs. What's Manual</a></li>
+<li class="toc-level-1"><a href="#part-2-setup-step-by-step-implementation">PART 2: SETUP (Step-by-Step Implementation)</a></li>
+<li class="toc-level-2"><a href="#4-prerequisites-environment-setup">4. Prerequisites & Environment Setup</a></li>
+<li class="toc-level-3"><a href="#4-1-required-access">4.1 Required Access</a></li>
+<li class="toc-level-3"><a href="#4-2-getting-your-credentials">4.2 Getting Your Credentials</a></li>
+<li class="toc-level-3"><a href="#4-3-clone-repository-and-install-dependencies">4.3 Clone Repository and Install Dependencies</a></li>
+<li class="toc-level-1"><a href="#clone-the-repository">Clone the repository</a></li>
+<li class="toc-level-1"><a href="#install-dependencies">Install dependencies</a></li>
+<li class="toc-level-1"><a href="#check-node-js-version">Check Node.js version</a></li>
+<li class="toc-level-1"><a href="#should-show-v20-14-0-or-higher">Should show: v20.14.0 or higher</a></li>
+<li class="toc-level-1"><a href="#check-npm-version">Check npm version</a></li>
+<li class="toc-level-1"><a href="#should-show-9-x-or-higher">Should show: 9.x or higher</a></li>
+<li class="toc-level-1"><a href="#verify-dependencies-installed">Verify dependencies installed</a></li>
+<li class="toc-level-1"><a href="#should-show-aco-ts-sdk">Should show: aco-ts-sdk</a></li>
+<li class="toc-level-3"><a href="#4-4-configure-environment-variables">4.4 Configure Environment Variables</a></li>
+<li class="toc-level-1"><a href="#adobe-commerce-optimizer-configuration">Adobe Commerce Optimizer Configuration</a></li>
+<li class="toc-level-1"><a href="#required-oauth-credentials-from-adobe-developer-console">Required: OAuth Credentials (from Adobe Developer Console)</a></li>
+<li class="toc-level-1"><a href="#required-instance-configuration">Required: Instance Configuration</a></li>
+<li class="toc-level-1"><a href="#optional-query-configuration">Optional: Query Configuration</a></li>
+<li class="toc-level-1"><a href="#optional-data-generation-for-reproducible-builds">Optional: Data Generation (for reproducible builds)</a></li>
+<li class="toc-level-1"><a href="#optional-logging">Optional: Logging</a></li>
+<li class="toc-level-3"><a href="#4-5-test-your-configuration">4.5 Test Your Configuration</a></li>
+<li class="toc-level-1"><a href="#create-a-simple-test-script">Create a simple test script</a></li>
+<li class="toc-level-2"><a href="#5-phase-1-data-generation">5. Phase 1 - Data Generation</a></li>
+<li class="toc-level-3"><a href="#5-1-understanding-data-generation">5.1 Understanding Data Generation</a></li>
+<li class="toc-level-3"><a href="#5-2-generate-all-data-at-once">5.2 Generate All Data at Once</a></li>
+<li class="toc-level-3"><a href="#5-3-verify-generated-files">5.3 Verify Generated Files</a></li>
+<li class="toc-level-3"><a href="#5-4-understanding-individual-generation-scripts-optional">5.4 Understanding Individual Generation Scripts (Optional)</a></li>
+<li class="toc-level-3"><a href="#5-5-inspect-generated-data">5.5 Inspect Generated Data</a></li>
+<li class="toc-level-1"><a href="#shows-1770">Shows: 1770</a></li>
+<li class="toc-level-2"><a href="#6-phase-2-data-ingestion-to-aco">6. Phase 2 - Data Ingestion to ACO</a></li>
+<li class="toc-level-3"><a href="#6-1-understanding-data-ingestion">6.1 Understanding Data Ingestion</a></li>
+<li class="toc-level-3"><a href="#6-2-pre-ingestion-checklist">6.2 Pre-Ingestion Checklist</a></li>
+<li class="toc-level-3"><a href="#6-3-ingest-metadata-product-attributes">6.3 Ingest Metadata (Product Attributes)</a></li>
+<li class="toc-level-3"><a href="#6-4-ingest-categories">6.4 Ingest Categories</a></li>
+<li class="toc-level-3"><a href="#6-5-ingest-products-simple-service">6.5 Ingest Products (Simple + Service)</a></li>
+<li class="toc-level-3"><a href="#6-6-ingest-variants-configurable-products">6.6 Ingest Variants (Configurable Products)</a></li>
+<li class="toc-level-3"><a href="#6-7-ingest-bundles">6.7 Ingest Bundles</a></li>
+<li class="toc-level-3"><a href="#6-8-ingest-price-books">6.8 Ingest Price Books</a></li>
+<li class="toc-level-3"><a href="#6-9-ingest-prices">6.9 Ingest Prices</a></li>
+<li class="toc-level-3"><a href="#6-10-verify-complete-ingestion">6.10 Verify Complete Ingestion</a></li>
+<li class="toc-level-2"><a href="#7-phase-3-multi-source-inventory-msi">7. Phase 3 - Multi-Source Inventory (MSI)</a></li>
+<li class="toc-level-3"><a href="#7-1-understanding-msi-architecture">7.1 Understanding MSI Architecture</a></li>
+<li class="toc-level-3"><a href="#7-2-step-1-enable-msi">7.2 Step 1: Enable MSI</a></li>
+<li class="toc-level-3"><a href="#7-3-step-2-create-inventory-sources">7.3 Step 2: Create Inventory Sources</a></li>
+<li class="toc-level-3"><a href="#7-4-step-3-create-stock-and-link-sources">7.4 Step 3: Create Stock and Link Sources</a></li>
+<li class="toc-level-3"><a href="#7-5-step-4-assign-products-to-sources">7.5 Step 4: Assign Products to Sources</a></li>
+<li class="toc-level-3"><a href="#7-6-step-5-configure-source-selection-algorithm">7.6 Step 5: Configure Source Selection Algorithm</a></li>
+<li class="toc-level-2"><a href="#8-phase-4-b2b-company-configuration">8. Phase 4 - B2B Company Configuration</a></li>
+<li class="toc-level-3"><a href="#8-1-understanding-b2b-structure">8.1 Understanding B2B Structure</a></li>
+<li class="toc-level-3"><a href="#8-2-step-1-enable-b2b-features">8.2 Step 1: Enable B2B Features</a></li>
+<li class="toc-level-3"><a href="#8-3-step-2-verify-shared-catalogs-exist">8.3 Step 2: Verify Shared Catalogs Exist</a></li>
+<li class="toc-level-3"><a href="#8-4-step-3-create-company-1-premium-commercial-builders-inc">8.4 Step 3: Create Company 1 - Premium Commercial Builders Inc.</a></li>
+<li class="toc-level-3"><a href="#8-5-step-4-create-teams-for-company-1">8.5 Step 4: Create Teams for Company 1</a></li>
+<li class="toc-level-3"><a href="#8-6-step-5-create-users-for-company-1">8.6 Step 5: Create Users for Company 1</a></li>
+<li class="toc-level-3"><a href="#8-7-step-6-create-company-2-coastal-residential-builders">8.7 Step 6: Create Company 2 - Coastal Residential Builders</a></li>
+<li class="toc-level-3"><a href="#8-8-step-7-create-company-3-elite-trade-contractors">8.8 Step 7: Create Company 3 - Elite Trade Contractors</a></li>
+<li class="toc-level-3"><a href="#8-9-validate-b2b-configuration">8.9 Validate B2B Configuration</a></li>
+<li class="toc-level-2"><a href="#9-phase-5-trigger-based-policies">9. Phase 5 - Trigger-Based Policies</a></li>
+<li class="toc-level-3"><a href="#9-1-understanding-trigger-policies">9.1 Understanding Trigger Policies</a></li>
+<li class="toc-level-3"><a href="#9-2-step-1-access-aco-policy-management">9.2 Step 1: Access ACO Policy Management</a></li>
+<li class="toc-level-3"><a href="#9-3-step-2-create-project-type-policy">9.3 Step 2: Create Project Type Policy</a></li>
+<li class="toc-level-3"><a href="#9-4-step-3-create-product-category-policy">9.4 Step 3: Create Product Category Policy</a></li>
+<li class="toc-level-3"><a href="#9-5-step-4-create-brand-policy">9.5 Step 4: Create Brand Policy</a></li>
+<li class="toc-level-3"><a href="#9-6-test-combined-policies">9.6 Test Combined Policies</a></li>
+<li class="toc-level-2"><a href="#10-complete-system-validation">10. Complete System Validation</a></li>
+<li class="toc-level-3"><a href="#10-1-validation-checklist">10.1 Validation Checklist</a></li>
+<li class="toc-level-3"><a href="#10-2-functional-test-scenarios">10.2 Functional Test Scenarios</a></li>
+<li class="toc-level-1"><a href="#part-3-demonstration">PART 3: DEMONSTRATION</a></li>
+<li class="toc-level-2"><a href="#11-demo-scenarios">11. Demo Scenarios</a></li>
+<li class="toc-level-3"><a href="#11-1-demo-scenario-1-hierarchical-pricing-5-minutes">11.1 Demo Scenario 1: Hierarchical Pricing (5 minutes)</a></li>
+<li class="toc-level-3"><a href="#11-2-demo-scenario-2-project-based-filtering-5-minutes">11.2 Demo Scenario 2: Project-Based Filtering (5 minutes)</a></li>
+<li class="toc-level-3"><a href="#11-3-demo-scenario-3-national-distribution-5-minutes">11.3 Demo Scenario 3: National Distribution (5 minutes)</a></li>
+<li class="toc-level-3"><a href="#11-4-demo-scenario-4-bundle-products-3-minutes">11.4 Demo Scenario 4: Bundle Products (3 minutes)</a></li>
+<li class="toc-level-2"><a href="#12-key-talking-points">12. Key Talking Points</a></li>
+<li class="toc-level-3"><a href="#12-1-business-value-messaging">12.1 Business Value Messaging</a></li>
+<li class="toc-level-3"><a href="#12-2-technical-differentiators">12.2 Technical Differentiators</a></li>
+<li class="toc-level-3"><a href="#12-3-overcoming-objections">12.3 Overcoming Objections</a></li>
+<li class="toc-level-1"><a href="#part-4-reference">PART 4: REFERENCE</a></li>
+<li class="toc-level-2"><a href="#13-troubleshooting">13. Troubleshooting</a></li>
+<li class="toc-level-3"><a href="#13-1-common-setup-issues">13.1 Common Setup Issues</a></li>
+<li class="toc-level-3"><a href="#13-2-performance-issues">13.2 Performance Issues</a></li>
+<li class="toc-level-2"><a href="#14-technical-reference">14. Technical Reference</a></li>
+<li class="toc-level-3"><a href="#14-1-file-structure">14.1 File Structure</a></li>
+<li class="toc-level-3"><a href="#14-2-npm-scripts-quick-reference">14.2 npm Scripts Quick Reference</a></li>
+<li class="toc-level-3"><a href="#14-3-key-constants">14.3 Key Constants</a></li>
+<li class="toc-level-2"><a href="#15-appendices">15. Appendices</a></li>
+<li class="toc-level-3"><a href="#appendix-a-data-statistics">Appendix A: Data Statistics</a></li>
+<li class="toc-level-3"><a href="#appendix-b-pricing-example-2x4x8-spf-stud">Appendix B: Pricing Example - 2x4x8 SPF Stud</a></li>
+<li class="toc-level-3"><a href="#appendix-c-project-types-distribution">Appendix C: Project Types Distribution</a></li>
+<li class="toc-level-3"><a href="#appendix-d-http-headers-reference">Appendix D: HTTP Headers Reference</a></li>
+<li class="toc-level-1"><a href="#10-brands-total">... (10 brands total)</a></li>
+<li class="toc-level-2"><a href="#final-notes">Final Notes</a></li>
+</ul>
+        </aside>
+        <main>
+            <h1 id="buildright-aco-setup-demonstration-guide">BuildRight ACO Setup & Demonstration Guide</h1>
+
+<p><strong>Complete Setup and Delivery Playbook</strong></p>
+
+<p><strong>Version:</strong> 2.0</p>
+<p><strong>Last Updated:</strong> October 30, 2025</p>
+<p><strong>Status:</strong> Production Ready</p>
+
+<hr>
+
+<h2 id="document-purpose">Document Purpose</h2>
+
+<p>This is the <strong>complete setup and demonstration delivery guide</strong> for the BuildRight Adobe Commerce Optimizer (ACO) implementation. Follow this guide from start to finish to:</p>
+
+<p>1. <strong>Build the demo environment</strong> from scratch</p>
+<p>2. <strong>Validate</strong> everything works correctly</p>
+<p>3. <strong>Deliver compelling demonstrations</strong> to prospects</p>
+
+<p><strong>Target Audience:</strong> Sales engineers, implementation specialists, solution architects responsible for setting up and demonstrating ACO capabilities</p>
+
+<p><strong>Total Time Estimate:</strong> 12-16 hours for complete setup (can be spread over multiple days)</p>
+
+<hr>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<h3 id="part-1-understanding">PART 1: UNDERSTANDING</h3>
+<p>1. <a href="#1-getting-started">Getting Started</a></p>
+<p>2. <a href="#2-business-context">Business Context</a></p>
+<p>3. <a href="#3-solution-architecture">Solution Architecture</a></p>
+
+<h3 id="part-2-setup-step-by-step-implementation">PART 2: SETUP (Step-by-Step Implementation)</h3>
+<p>4. <a href="#4-prerequisites--environment-setup">Prerequisites & Environment Setup</a></p>
+<p>5. <a href="#5-phase-1---data-generation">Phase 1 - Data Generation</a></p>
+<p>6. <a href="#6-phase-2---data-ingestion-to-aco">Phase 2 - Data Ingestion to ACO</a></p>
+<p>7. <a href="#7-phase-3---multi-source-inventory-msi">Phase 3 - Multi-Source Inventory (MSI)</a></p>
+<p>8. <a href="#8-phase-4---b2b-company-configuration">Phase 4 - B2B Company Configuration</a></p>
+<p>9. <a href="#9-phase-5---trigger-based-policies">Phase 5 - Trigger-Based Policies</a></p>
+<p>10. <a href="#10-complete-system-validation">Complete System Validation</a></p>
+
+<h3 id="part-3-demonstration">PART 3: DEMONSTRATION</h3>
+<p>11. <a href="#11-demo-scenarios">Demo Scenarios</a></p>
+<p>12. <a href="#12-key-talking-points">Key Talking Points</a></p>
+
+<h3 id="part-4-reference">PART 4: REFERENCE</h3>
+<p>13. <a href="#13-troubleshooting">Troubleshooting</a></p>
+<p>14. <a href="#14-technical-reference">Technical Reference</a></p>
+<p>15. <a href="#15-appendices">Appendices</a></p>
+
+<hr>
+
+<h1 id="part-1-understanding">PART 1: UNDERSTANDING</h1>
+
+<h2 id="1-getting-started">1. Getting Started</h2>
+
+<h3 id="1-1-what-you-ll-accomplish">1.1 What You'll Accomplish</h3>
+
+<p>By following this guide, you will build a complete, production-ready Adobe Commerce Optimizer demo showcasing:</p>
+
+<p><strong>Data Scale:</strong></p>
+<li>184 products across realistic product mix (simple, configurable, bundles, services)</li>
+<li>10 hierarchical price books across 3 levels</li>
+<li>6 inventory sources across 3 US regions</li>
+<li>3 B2B companies with 6 locations and 12 users</li>
+<li>34 rich metadata attributes for intelligent filtering</li>
+
+<p><strong>Key Capabilities:</strong></p>
+<li>Hierarchical B2B pricing with automatic volume discounts</li>
+<li>Project-based catalog filtering (new construction, remodel, repair, restoration)</li>
+<li>Company-specific catalogs with shared pricing</li>
+<li>Trigger-based dynamic catalogs using HTTP headers</li>
+<li>Multi-source inventory with national distribution</li>
+<li>Pre-configured bundles and service products</li>
+
+<h3 id="1-2-time-commitment">1.2 Time Commitment</h3>
+
+<p><strong>Total:</strong> 12-16 hours (can spread over 2-3 days)</p>
+
+<table>
+<tr><th>Phase</th><th>Activity</th><th>Time Estimate</th></tr>
+<tr><td>**Setup**</td><td>Prerequisites & Environment</td><td>30 minutes</td></tr>
+<tr><td>**Setup**</td><td>Data Generation</td><td>15 minutes</td></tr>
+<tr><td>**Setup**</td><td>Data Ingestion to ACO</td><td>1-2 hours</td></tr>
+<tr><td>**Setup**</td><td>Multi-Source Inventory (MSI)</td><td>2.5-4 hours</td></tr>
+<tr><td>**Setup**</td><td>B2B Company Configuration</td><td>6-8 hours</td></tr>
+<tr><td>**Setup**</td><td>Trigger-Based Policies</td><td>1-2 hours</td></tr>
+<tr><td>**Validation**</td><td>Complete System Testing</td><td>1 hour</td></tr>
+<tr><td>**Demo Prep**</td><td>Review Scenarios</td><td>30 minutes</td></tr>
+</table>
+
+<p><strong>Note:</strong> B2B configuration is the longest phase. You can save this for day 2 if needed.</p>
+
+<h3 id="1-3-what-you-ll-need">1.3 What You'll Need</h3>
+
+<p><strong>Required Access:</strong></p>
+<li>Adobe Commerce Optimizer instance (sandbox or production)</li>
+<li>Adobe Developer Console (for OAuth credentials)</li>
+<li>Adobe Commerce 2.4.x with B2B extension</li>
+<li>Admin access to Adobe Commerce</li>
+
+<p><strong>Required Tools:</strong></p>
+<li>Node.js 20.14.0+ and npm 9.x+</li>
+<li>Git for cloning repository</li>
+<li>Terminal/command line access</li>
+<li>Text editor for .env configuration</li>
+<li>Web browser for Adobe Commerce Admin UI</li>
+
+<p><strong>Required Knowledge:</strong></p>
+<li>Basic command line usage</li>
+<li>Understanding of Adobe Commerce concepts</li>
+<li>Familiarity with GraphQL queries (helpful but not required)</li>
+
+<h3 id="1-4-document-conventions">1.4 Document Conventions</h3>
+
+<p><strong>Command Prompts:</strong></p>
+<pre><code class="language-bash">
+# This is a command you run in terminal
+npm run generate:all
+</code></pre>
+
+<p><strong>Configuration Files:</strong></p>
+<pre><code class="language-env">
+# This is content for .env file
+CLIENT_ID=your-value-here
+</code></pre>
+
+<p><strong>Navigation Paths:</strong></p>
+<li><strong>Admin → Catalog → Products</strong> means: Log into Admin UI, click Catalog menu, click Products</li>
+
+<p><strong>Validation Checkpoints:</strong></p>
+<li>✅ Indicates a validation step you should complete</li>
+
+<p><strong>Important Notes:</strong></p>
+<blockquote><strong>IMPORTANT:</strong> Critical information you must read</blockquote>
+
+<p><strong>Tips:</strong></p>
+<blockquote><strong>TIP:</strong> Helpful information that will make your life easier</blockquote>
+
+<hr>
+
+<h2 id="2-business-context">2. Business Context</h2>
+
+<h3 id="2-1-what-buildright-is">2.1 What BuildRight Is</h3>
+
+<p><strong>BuildRight Solutions</strong> is a multi-regional building materials distributor serving professional contractors, builders, and project managers across North America. This is a <strong>fictional company</strong> created to demonstrate ACO capabilities in the construction materials vertical.</p>
+
+<p>Founded in 1978 as a single lumber yard in Sacramento, California, BuildRight has grown into a national building materials distributor with operations across three regions serving over 2,500 professional contractors.</p>
+
+<p><strong>Three Operating Divisions:</strong></p>
+
+<p>1. <strong>BuildRight Commercial</strong> - Large-scale commercial construction projects</p>
+<li>Focus: Office buildings, hospitals, schools, retail</li>
+<li>Customers: General contractors managing $5M-$50M+ projects</li>
+<li>Purchasing: Full pallets and truckloads with job site delivery</li>
+
+<p>2. <strong>BuildRight Residential</strong> - Production home builders and residential remodelers</p>
+<li>Focus: Production homes and residential renovation</li>
+<li>Customers: Home builders (50-200 homes annually), remodelers</li>
+<li>Purchasing: Standardized materials at scale, repeat orders</li>
+
+<p>3. <strong>BuildRight Pro</strong> - Specialty trade contractors</p>
+<li>Focus: Electrical, plumbing, HVAC specialty trades</li>
+<li>Customers: Licensed electricians, plumbers, HVAC technicians</li>
+<li>Purchasing: Trade-specific products, smaller quantities but frequently</li>
+
+<h3 id="2-2-the-business-challenge">2.2 The Business Challenge</h3>
+
+<p>Traditional one-size-fits-all catalogs don't work for construction materials distribution. Consider these pain points:</p>
+
+<p><strong>Problem 1: Catalog Overload</strong></p>
+<li>A commercial contractor building a 12-story office needs entirely different products than a residential remodeler replacing a kitchen</li>
+<li>Yet both browse the same massive 150,000+ SKU catalog</li>
+<li>Result: Contractors waste <strong>60-70% of search time</strong> browsing irrelevant products</li>
+
+<p><strong>Problem 2: Ordering Errors</strong></p>
+<li>Contractors order wrong materials for project type</li>
+<li>Heavy structural lumber shown to residential contractors</li>
+<li>Residential products shown to commercial builders</li>
+<li>Result: Returns, delays, and customer frustration</li>
+
+<p><strong>Problem 3: Pricing Complexity</strong></p>
+<li>Volume customers negotiate pricing manually with sales reps</li>
+<li>No transparency on tier-based discounts</li>
+<li>Quote requests delay purchasing decisions</li>
+<li>Result: Slow sales cycles and pricing inconsistency</li>
+
+<p><strong>Problem 4: Regional Availability</strong></p>
+<li>Products shown regardless of regional inventory</li>
+<li>Customers order products not available in their distribution center</li>
+<li>Result: Backorders and fulfillment delays</li>
+
+<h3 id="2-3-the-aco-solution">2.3 The ACO Solution</h3>
+
+<p>Adobe Commerce Optimizer enables BuildRight to deliver <strong>personalized, project-specific product catalogs</strong> that dynamically adapt to:</p>
+
+<p>1. <strong>Customer segment</strong> (Commercial, Residential, Pro)</p>
+<p>2. <strong>Project type</strong> (New construction, Remodel, Repair, Restoration)</p>
+<p>3. <strong>Purchasing volume</strong> (Tier-based automatic discounting)</p>
+<p>4. <strong>Geographic region</strong> (Only show in-stock regional products)</p>
+
+<p><strong>How It Works - Example Scenario:</strong></p>
+
+<p>When <strong>John Smith</strong> from Premium Commercial Builders Inc. logs in to order materials for a new construction project, the system:</p>
+
+<p>1. <strong>Identifies his company</strong> → Premium Commercial Builders = Commercial-Tier2 pricing</p>
+<p>2. <strong>Detects project context</strong> → New construction framing phase</p>
+<p>3. <strong>Filters products</strong> → Shows only structural materials tagged for new construction</p>
+<p>4. <strong>Applies pricing</strong> → Tier2 volume discounts automatically (5% better than standard)</p>
+<p>5. <strong>Shows availability</strong> → Only products in stock at Sacramento or Phoenix warehouses</p>
+
+<p><strong>Result:</strong> John sees ~48 products instead of 184, all relevant to his project, all correctly priced, all actually available. His search time drops <strong>70%</strong>.</p>
+
+<h3 id="2-4-business-value-delivered">2.4 Business Value Delivered</h3>
+
+<p><strong>For Contractors:</strong></p>
+<li>60-70% reduction in product search time</li>
+<li>Automatic volume discounts without negotiation</li>
+<li>Access only to products available in their region</li>
+<li>Pre-configured bundles reduce 50-item orders to 3-4 selections</li>
+
+<p><strong>For BuildRight:</strong></p>
+<li>Single product catalog serves all customer segments</li>
+<li>Automatic tier-based pricing rewards high-volume customers</li>
+<li>Real-time catalog composition without hundreds of static views</li>
+<li>Intelligent attribute assignment reduces data management overhead</li>
+
+<p><strong>For Adobe (Demo Value):</strong></p>
+<li>Demonstrates ACO's composable catalog capabilities</li>
+<li>Showcases trigger-based personalization with HTTP headers</li>
+<li>Validates B2B hierarchical pricing model</li>
+<li>Proves enterprise-scale product metadata management</li>
+
+<h3 id="2-5-real-pricing-examples">2.5 Real Pricing Examples</h3>
+
+<p><strong>Product:</strong> 2x4x8 SPF Stud Standard Grade (SKU: LBR-D0414F1E)</p>
+
+<table>
+<tr><th>Customer Type</th><th>Price Book</th><th>Unit Price</th><th>Savings vs Base</th></tr>
+<tr><td>Base Contract</td><td>US-Contract</td><td>$8.50</td><td>-</td></tr>
+<tr><td>Commercial Standard</td><td>Contract-Commercial</td><td>$8.50</td><td>$0</td></tr>
+<tr><td>Commercial Tier1</td><td>Commercial-Tier1</td><td>$8.25</td><td>$0.25 (3%)</td></tr>
+<tr><td>**Commercial Tier2**</td><td>**Commercial-Tier2**</td><td>**$8.08**</td><td>**$0.42 (5%)**</td></tr>
+<tr><td>Residential Builder</td><td>Residential-Builder</td><td>$8.50</td><td>$0</td></tr>
+</table>
+
+<p><strong>Volume Tier Pricing</strong> (additional discounts):</p>
+<li>1-99 units: $8.08/unit</li>
+<li>100-293 units: $7.84/unit (-3% additional)</li>
+<li>294+ units (full bundle): $7.50/unit (-12% total)</li>
+
+<p><strong>Business Impact:</strong></p>
+<li>On a 10,000-stud order (typical commercial project): <strong>$10,000 in savings</strong> (12%)</li>
+<li>Pricing is <strong>automatic</strong> - no manual quoting required</li>
+
+<hr>
+
+<h2 id="3-solution-architecture">3. Solution Architecture</h2>
+
+<h3 id="3-1-what-we-built">3.1 What We Built</h3>
+
+<p><strong>Data Overview:</strong></p>
+
+<table>
+<tr><th>Component</th><th>Count</th><th>Details</th></tr>
+<tr><td>**Products**</td><td>184 SKUs</td><td>70 simple + 10 service + 92 variants + 15 bundles</td></tr>
+<tr><td>**Price Books**</td><td>10 (3 levels)</td><td>Hierarchical B2B pricing structure</td></tr>
+<tr><td>**Inventory Sources**</td><td>6 locations</td><td>National distribution across 3 regions</td></tr>
+<tr><td>**Metadata Attributes**</td><td>34 attributes</td><td>Rich product specifications</td></tr>
+<tr><td>**Categories**</td><td>19 (2-level)</td><td>Intuitive navigation hierarchy</td></tr>
+<tr><td>**Price Entries**</td><td>1,770</td><td>Volume-based tiering</td></tr>
+<tr><td>**Inventory Records**</td><td>4,446</td><td>Multi-source allocation</td></tr>
+<tr><td>**B2B Companies**</td><td>3 companies</td><td>Across 3 divisions</td></tr>
+<tr><td>**B2B Locations**</td><td>6 locations</td><td>2 per company, nationally distributed</td></tr>
+<tr><td>**B2B Users**</td><td>12 users</td><td>4 per company, 2 per location</td></tr>
+</table>
+
+<h3 id="3-2-component-architecture">3.2 Component Architecture</h3>
+
+<pre><code class="language-text">
+┌─────────────────────────────────────────────────────────────┐
+│                    Product Catalog                           │
+│  184 SKUs with 34 metadata attributes                       │
+│  - 70 simple products                                        │
+│  - 10 service products                                       │
+│  - 20 configurable parents + 92 variants                    │
+│  - 15 bundle products                                        │
+└──────────────────┬──────────────────────────────────────────┘
+                   │
+                   │ Referenced by
+                   ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  Hierarchical Pricing                        │
+│  10 price books across 3 levels                             │
+│  - Level 1: Base (2 books)                                  │
+│  - Level 2: Segment (4 books)                               │
+│  - Level 3: Tier (4 books)                                  │
+│  1,770 price entries with volume tiers                     │
+└──────────────────┬──────────────────────────────────────────┘
+                   │
+                   │ Assigned to
+                   ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   B2B Companies                              │
+│  3 companies across 3 divisions                             │
+│  - Each assigned to one price book (tier level)             │
+│  - 6 locations (teams) across 6 states                      │
+│  - 12 users with role-based permissions                     │
+└──────────────────┬──────────────────────────────────────────┘
+                   │
+                   │ Filters via
+                   ▼
+┌─────────────────────────────────────────────────────────────┐
+│              Trigger-Based Policies                          │
+│  HTTP headers sent with API requests                        │
+│  - AC-Policy-Project-Type: new_construction                 │
+│  - AC-Policy-Product-Category: structural_materials         │
+│  - AC-Policy-Brand: buildright_pro                          │
+│  Real-time catalog composition without static views         │
+└──────────────────┬──────────────────────────────────────────┘
+                   │
+                   │ Checked against
+                   ▼
+┌─────────────────────────────────────────────────────────────┐
+│              Multi-Source Inventory                          │
+│  6 inventory sources across 3 regions                       │
+│  - 2 regional distribution centers (primary)                │
+│  - 3 regional warehouses (secondary)                        │
+│  - 1 virtual drop shipper (specialty)                       │
+│  4,446 inventory records for stock allocation               │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+
+<h3 id="3-3-national-distribution-model">3.3 National Distribution Model</h3>
+
+<p>BuildRight operates across <strong>3 US regions</strong> with <strong>6 locations</strong> nationally distributed:</p>
+
+<p><strong>Western Region (CA, AZ):</strong></p>
+<li>Premium Commercial Builders Inc.</li>
+<li>Los Angeles Headquarters (CA)</li>
+<li>Phoenix Metro Division (AZ)</li>
+<li>Inventory: Sacramento RDC (warehouse_west), Phoenix Warehouse (warehouse_phoenix)</li>
+
+<p><strong>Central Region (TX, CO):</strong></p>
+<li>Coastal Residential Builders</li>
+<li>Dallas Headquarters (TX)</li>
+<li>Denver Division (CO)</li>
+<li>Inventory: Denver Warehouse (warehouse_denver)</li>
+
+<p><strong>Eastern Region (NC, GA):</strong></p>
+<li>Elite Trade Contractors</li>
+<li>Charlotte Headquarters (NC)</li>
+<li>Atlanta Division (GA)</li>
+<li>Inventory: Charlotte RDC (warehouse_east), Atlanta Warehouse (warehouse_atlanta)</li>
+
+<p><strong>National Coverage:</strong> 6 states, 3 regions, demonstrating true national distribution</p>
+
+<h3 id="3-4-data-flow-overview">3.4 Data Flow Overview</h3>
+
+<pre><code class="language-text">
+SETUP PHASE:
+1. Generate Data (Local Scripts)
+   └─&gt; Node.js scripts create JSON files
+
+2. Ingest to ACO (API Upload)
+   └─&gt; Metadata → Categories → Products → Variants → Bundles
+   └─&gt; Price Books → Prices
+
+3. Configure MSI (Adobe Commerce Admin)
+   └─&gt; Create 6 inventory sources
+   └─&gt; Create 1 stock linking all sources
+   └─&gt; Assign 184 products to sources with quantities
+
+4. Configure B2B (Adobe Commerce Admin)
+   └─&gt; Create 3 companies
+   └─&gt; Create 6 teams/locations
+   └─&gt; Create 12 users
+   └─&gt; Assign shared catalogs (price books)
+
+5. Configure Policies (ACO Admin UI)
+   └─&gt; Create project type filter
+   └─&gt; Create category filter
+   └─&gt; Create brand filter
+
+RUNTIME (DEMO):
+1. User logs in → Company identified
+2. Frontend sends HTTP headers (project type, category, etc.)
+3. ACO applies policies → Filtered product catalog
+4. ACO applies pricing → Company's tier pricing
+5. MSI checks availability → Show only in-stock products
+6. User sees personalized, priced, available catalog
+</code></pre>
+
+<h3 id="3-5-what-aco-manages-vs-what-s-manual">3.5 What ACO Manages vs. What's Manual</h3>
+
+<p><strong>ACO Data Ingestion API Manages:</strong></p>
+<li>✅ Product catalog (simple, configurable, bundles)</li>
+<li>✅ Product attributes (34 metadata attributes)</li>
+<li>✅ Categories (19-category hierarchy)</li>
+<li>✅ Price books (10 hierarchical books)</li>
+<li>✅ Product prices (1,770 price entries)</li>
+
+<p><strong>Manual Configuration Required:</strong></p>
+<li>⚙️ <strong>Inventory (MSI)</strong> - ACO does not support inventory operations</li>
+<li>⚙️ <strong>B2B Companies</strong> - Adobe Commerce B2B admin workflow</li>
+<li>⚙️ <strong>Trigger Policies</strong> - ACO Policy API or ACO Admin UI</li>
+
+<p>This guide covers <strong>all steps</strong> - both automated (data ingestion) and manual (MSI, B2B, policies).</p>
+
+<hr>
+
+<p><strong>End of Part 1: Understanding</strong></p>
+
+<hr>
+
+<h1 id="part-2-setup-step-by-step-implementation">PART 2: SETUP (Step-by-Step Implementation)</h1>
+
+<h2 id="4-prerequisites-environment-setup">4. Prerequisites & Environment Setup</h2>
+
+<h3 id="4-1-required-access">4.1 Required Access</h3>
+
+<p>Before you begin, ensure you have:</p>
+
+<p><strong>ACO Instance Access:</strong></p>
+<li>Adobe Commerce Optimizer sandbox or production instance</li>
+<li>Tenant ID from Commerce Cloud Manager</li>
+<li>Region identifier (na1, eu1, etc.)</li>
+
+<p><strong>Adobe Developer Console:</strong></p>
+<li>Access to create/manage integrations</li>
+<li>Ability to generate OAuth credentials</li>
+<li>Permission to add Adobe Commerce Optimizer API</li>
+
+<p><strong>Adobe Commerce 2.4.x:</strong></p>
+<li>Admin access with full permissions</li>
+<li>B2B extension installed and enabled</li>
+<li>Multi-Source Inventory (MSI) enabled</li>
+
+<p><strong>Tools Installed:</strong></p>
+<li>Node.js 20.14.0 or higher</li>
+<li>npm 9.x or higher</li>
+<li>Git (for cloning repository)</li>
+<li>Text editor (VS Code, Sublime, etc.)</li>
+
+<h3 id="4-2-getting-your-credentials">4.2 Getting Your Credentials</h3>
+
+<h4 id="step-1-get-adobe-developer-console-credentials">Step 1: Get Adobe Developer Console Credentials</h4>
+
+<p>1. Go to <a href="https://developer.adobe.com/console">Adobe Developer Console</a></p>
+<p>2. Click <strong>Create new project</strong> (or select existing project)</p>
+<p>3. Click <strong>Add API</strong></p>
+<p>4. Search for and select <strong>"Adobe Commerce Optimizer"</strong></p>
+<p>5. Select <strong>OAuth Server-to-Server</strong> authentication</p>
+<p>6. Click <strong>Next</strong>, then <strong>Save configured API</strong></p>
+<p>7. Navigate to the <strong>Credentials</strong> tab</p>
+<p>8. Copy your <strong>Client ID</strong> and <strong>Client Secret</strong></p>
+
+<blockquote><strong>IMPORTANT:</strong> Keep these credentials secure. Never commit them to version control.</blockquote>
+
+<h4 id="step-2-get-your-tenant-id">Step 2: Get Your Tenant ID</h4>
+
+<p>1. Go to <a href="https://experience.adobe.com/">Commerce Cloud Manager</a></p>
+<p>2. Navigate to <strong>Commerce → Commerce Cloud Manager</strong></p>
+<p>3. Select your ACO instance from the list</p>
+<p>4. Click the <strong>info icon</strong> (ⓘ) to view instance details</p>
+<p>5. Look for endpoint URLs like:</p>
+<p>   ```</p>
+<p>   https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql</p>
+<p>   ```</p>
+<p>6. Copy the <code>{TENANT_ID}</code> portion (usually looks like: <code>8a72c12b-9...</code>)</p>
+
+<h4 id="step-3-identify-your-region-and-environment">Step 3: Identify Your Region and Environment</h4>
+
+<p><strong>Region:</strong> Determined by your instance location</p>
+<li><code>na1</code> - North America (most common)</li>
+<li><code>eu1</code> - Europe</li>
+<li><code>ap1</code> - Asia Pacific</li>
+
+<p><strong>Environment:</strong> Type of instance</p>
+<li><code>sandbox</code> - Test/development environment</li>
+<li><code>production</code> - Production environment</li>
+
+<h3 id="4-3-clone-repository-and-install-dependencies">4.3 Clone Repository and Install Dependencies</h3>
+
+<p>Open your terminal and run:</p>
+
+<pre><code class="language-bash">
+# Clone the repository
+git clone &lt;repository-url&gt;
+cd buildright-aco
+
+# Install dependencies
+npm install
+</code></pre>
+
+<p><strong>Verify installation:</strong></p>
+<pre><code class="language-bash">
+# Check Node.js version
+node --version
+# Should show: v20.14.0 or higher
+
+# Check npm version
+npm --version
+# Should show: 9.x or higher
+
+# Verify dependencies installed
+ls node_modules/@adobe-commerce
+# Should show: aco-ts-sdk
+</code></pre>
+
+<h3 id="4-4-configure-environment-variables">4.4 Configure Environment Variables</h3>
+
+<p>Create your <code>.env</code> file from the template:</p>
+
+<pre><code class="language-bash">
+cp .env.dist .env
+</code></pre>
+
+<p>Open <code>.env</code> in your text editor and fill in your credentials:</p>
+
+<pre><code class="language-env">
+##################################################
+# Adobe Commerce Optimizer Configuration
+##################################################
+
+# Required: OAuth Credentials (from Adobe Developer Console)
+CLIENT_ID=your-client-id-here
+CLIENT_SECRET=your-client-secret-here
+
+# Required: Instance Configuration
+TENANT_ID=your-tenant-id-here
+REGION=na1
+ENVIRONMENT=sandbox
+
+# Optional: Query Configuration
+VIEW_ID=default
+SOURCE_LOCALE=en-US
+
+# Optional: Data Generation (for reproducible builds)
+SEED=12345
+
+# Optional: Logging
+LOG_LEVEL=info
+</code></pre>
+
+<p><strong>Field Descriptions:</strong></p>
+<li><code>CLIENT_ID</code> - From Adobe Developer Console OAuth credentials</li>
+<li><code>CLIENT_SECRET</code> - From Adobe Developer Console OAuth credentials</li>
+<li><code>TENANT_ID</code> - From Commerce Cloud Manager instance details</li>
+<li><code>REGION</code> - Your instance region (na1, eu1, or ap1)</li>
+<li><code>ENVIRONMENT</code> - sandbox or production</li>
+<li><code>VIEW_ID</code> - Catalog view ID (usually "default")</li>
+<li><code>SOURCE_LOCALE</code> - Language/locale (en-US, en-GB, etc.)</li>
+<li><code>SEED</code> - Seed value for deterministic random generation (12345 recommended)</li>
+
+<h3 id="4-5-test-your-configuration">4.5 Test Your Configuration</h3>
+
+<p>Verify your credentials work by testing OAuth authentication:</p>
+
+<pre><code class="language-bash">
+# Create a simple test script
+node -e "
+import { getACOClient } from './utils/aco-client.js';
+const client = getACOClient();
+console.log('✅ ACO Client initialized successfully');
+console.log('Configuration:', {
+  region: process.env.REGION,
+  environment: process.env.ENVIRONMENT,
+  tenantId: process.env.TENANT_ID ? '***' + process.env.TENANT_ID.slice(-4) : 'MISSING'
+});
+"
+</code></pre>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+✅ ACO Client initialized successfully
+Configuration: { region: 'na1', environment: 'sandbox', tenantId: '***xxxx' }
+</code></pre>
+
+<p><strong>If you see errors:</strong></p>
+<li>"Missing required ACO configuration" → Check .env file exists and contains all variables</li>
+<li>"Invalid credentials" → Verify CLIENT_ID and CLIENT_SECRET are correct</li>
+<li>"Tenant not found" → Verify TENANT_ID matches your instance</li>
+
+<p>✅ <strong>VALIDATION CHECKPOINT:</strong> Your environment is configured correctly when the test script runs without errors.</p>
+
+<hr>
+
+<h2 id="5-phase-1-data-generation">5. Phase 1 - Data Generation</h2>
+
+<p><strong>Time Estimate:</strong> 15 minutes</p>
+<p><strong>What You'll Do:</strong> Generate all JSON data files locally using deterministic scripts</p>
+
+<h3 id="5-1-understanding-data-generation">5.1 Understanding Data Generation</h3>
+
+<p>BuildRight's demo data is generated using Node.js scripts that create realistic, schema-compliant JSON files. All generation is <strong>deterministic</strong> (using <code>SEED=12345</code>) so you get identical output every time.</p>
+
+<p><strong>What Gets Generated:</strong></p>
+
+<table>
+<tr><th>File</th><th>Records</th><th>Description</th></tr>
+<tr><td>`metadata.json`</td><td>34</td><td>Product attribute definitions</td></tr>
+<tr><td>`categories.json`</td><td>19</td><td>Category hierarchy (2 levels)</td></tr>
+<tr><td>`products.json`</td><td>70</td><td>Simple products</td></tr>
+<tr><td>`variants.json`</td><td>92</td><td>Configurable products + variants</td></tr>
+<tr><td>`bundles.json`</td><td>15</td><td>Bundle products</td></tr>
+<tr><td>`price-books.json`</td><td>10</td><td>Hierarchical price books</td></tr>
+<tr><td>`prices.json`</td><td>1,770</td><td>Pricing entries (simplified model)</td></tr>
+<tr><td>`inventory.json`</td><td>4,446</td><td>Multi-source inventory records</td></tr>
+</table>
+
+<p><strong>All files saved to:</strong> <code>data/buildright/</code></p>
+
+<h3 id="5-2-generate-all-data-at-once">5.2 Generate All Data at Once</h3>
+
+<p>The fastest way is to generate everything in one command:</p>
+
+<pre><code class="language-bash">
+SEED=12345 npm run generate:all
+</code></pre>
+
+<p><strong>What happens:</strong></p>
+<p>1. Generates metadata (34 attributes) → <code>data/buildright/metadata.json</code></p>
+<p>2. Generates categories (19 categories) → <code>data/buildright/categories.json</code></p>
+<p>3. Generates simple products (70 products) → <code>data/buildright/products.json</code></p>
+<p>4. Generates variants (92 variants) → <code>data/buildright/variants.json</code></p>
+<p>5. Generates bundles (15 bundles) → <code>data/buildright/bundles.json</code></p>
+<p>6. Generates price books (10 books) → <code>data/buildright/price-books.json</code></p>
+<p>7. Generates prices (1,770 entries) → <code>data/buildright/prices.json</code></p>
+<p>8. Generates inventory (4,446 records) → <code>data/buildright/inventory.json</code></p>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+✓ Generated metadata: 34 attributes
+✓ Generated categories: 19 categories
+✓ Generated products: 70 simple products
+✓ Generated variants: 92 variants (20 parents)
+✓ Generated bundles: 15 bundles
+✓ Generated price books: 10 price books
+✓ Generated prices: 1,770 price entries
+✓ Generated inventory: 4,446 inventory records
+
+✅ All data generated successfully to data/buildright/
+</code></pre>
+
+<p><strong>Time:</strong> ~15 seconds to complete all generation</p>
+
+<h3 id="5-3-verify-generated-files">5.3 Verify Generated Files</h3>
+
+<p>Check that all files were created:</p>
+
+<pre><code class="language-bash">
+ls -lh data/buildright/
+</code></pre>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+metadata.json        1.1 KB    34 records
+categories.json      177 B     19 records
+products.json        3.5 KB    70 records
+variants.json        8.9 KB    92 records
+bundles.json         2.0 KB    15 records
+price-books.json     51 B      10 records
+prices.json          360 KB    1,770 records
+inventory.json       200 KB    4,446 records
+sources.json         97 B      6 records
+</code></pre>
+
+<h3 id="5-4-understanding-individual-generation-scripts-optional">5.4 Understanding Individual Generation Scripts (Optional)</h3>
+
+<p>If you need to regenerate specific data types, use these individual commands:</p>
+
+<p><strong>Product Catalog:</strong></p>
+<pre><code class="language-bash">
+npm run generate:metadata      # Product attributes
+npm run generate:categories    # Category hierarchy
+npm run generate:products      # Simple + service products
+npm run generate:variants      # Configurable products + variants
+npm run generate:bundles       # Bundle products
+npm run generate:all-products  # All product types at once
+</code></pre>
+
+<p><strong>Pricing:</strong></p>
+<pre><code class="language-bash">
+npm run generate:price-books   # Price book structure
+npm run generate:prices        # All pricing data
+npm run generate:all-pricing   # Both at once
+</code></pre>
+
+<p><strong>Inventory:</strong></p>
+<pre><code class="language-bash">
+npm run generate:inventory     # Inventory records
+</code></pre>
+
+<h3 id="5-5-inspect-generated-data">5.5 Inspect Generated Data</h3>
+
+<p>Take a moment to understand what was generated:</p>
+
+<p><strong>View metadata (product attributes):</strong></p>
+<pre><code class="language-bash">
+head -20 data/buildright/metadata.json
+</code></pre>
+
+<p><strong>View first product:</strong></p>
+<pre><code class="language-bash">
+jq '.[0]' data/buildright/products.json
+</code></pre>
+
+<p><strong>Count price entries:</strong></p>
+<pre><code class="language-bash">
+jq '. | length' data/buildright/prices.json
+# Shows: 1770
+</code></pre>
+
+<p><strong>View price book hierarchy:</strong></p>
+<pre><code class="language-bash">
+jq '.[] | {id: .id, name: .name, parentId: .parentId}' data/buildright/price-books.json
+</code></pre>
+
+<p>✅ <strong>VALIDATION CHECKPOINT:</strong> All 8 JSON files exist in <code>data/buildright/</code> directory with non-zero file sizes.</p>
+
+<hr>
+
+<h2 id="6-phase-2-data-ingestion-to-aco">6. Phase 2 - Data Ingestion to ACO</h2>
+
+<p><strong>Time Estimate:</strong> 1-2 hours (includes API processing time)</p>
+<p><strong>What You'll Do:</strong> Upload generated data to Adobe Commerce Optimizer via Data Ingestion API</p>
+
+<h3 id="6-1-understanding-data-ingestion">6.1 Understanding Data Ingestion</h3>
+
+<p>ACO provides a REST API for ingesting catalog data. The BuildRight scripts handle:</p>
+<li>OAuth authentication</li>
+<li>Batch processing (respecting API limits)</li>
+<li>Retry logic for transient failures</li>
+<li>Progress logging</li>
+
+<p><strong>Ingestion Order (Important!):</strong></p>
+<pre><code class="language-text">
+1. Metadata (attributes)     ← Must be first
+2. Categories                ← Before products reference them
+3. Products (simple)         ← Before variants reference them
+4. Variants (configurable)   ← After parent products exist
+5. Bundles                   ← After component products exist
+6. Price Books               ← Before prices reference them
+7. Prices                    ← Last
+</code></pre>
+
+<blockquote><strong>IMPORTANT:</strong> Follow this order! Ingesting out of order will cause foreign key errors.</blockquote>
+
+<h3 id="6-2-pre-ingestion-checklist">6.2 Pre-Ingestion Checklist</h3>
+
+<p>Before you begin, verify:</p>
+
+<li>✅ All data files generated in Phase 1</li>
+<li>✅ <code>.env</code> configured with valid credentials</li>
+<li>✅ ACO client test passed (from Section 4.5)</li>
+<li>✅ Stable internet connection (upload takes time)</li>
+
+<h3 id="6-3-ingest-metadata-product-attributes">6.3 Ingest Metadata (Product Attributes)</h3>
+
+<p><strong>Time:</strong> 2-3 minutes</p>
+
+<pre><code class="language-bash">
+node scripts/ingest-metadata.js
+</code></pre>
+
+<p><strong>What this does:</strong></p>
+<li>Reads <code>data/buildright/metadata.json</code></li>
+<li>Creates 34 product attributes in ACO</li>
+<li>Attributes like: product_category, project_types, brand, lumber_species, etc.</li>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+📤 Ingesting metadata attributes to ACO...
+✓ Batch 1/1: 34 attributes
+✅ Successfully ingested 34 attributes
+</code></pre>
+
+<p><strong>Validation:</strong></p>
+<p>Log into ACO Admin UI → Catalog → Attributes</p>
+<li>Verify 34 BuildRight attributes appear</li>
+<li>Check attribute types (select, multiselect, text, number, boolean)</li>
+
+<h3 id="6-4-ingest-categories">6.4 Ingest Categories</h3>
+
+<p><strong>Time:</strong> 1-2 minutes</p>
+
+<pre><code class="language-bash">
+node scripts/ingest-categories.js
+</code></pre>
+
+<p><strong>What this does:</strong></p>
+<li>Reads <code>data/buildright/categories.json</code></li>
+<li>Creates 19-category hierarchy (5 parents, 14 children)</li>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+📤 Ingesting categories to ACO...
+✓ Batch 1/1: 19 categories
+✅ Successfully ingested 19 categories
+</code></pre>
+
+<p><strong>Validation:</strong></p>
+<p>ACO Admin UI → Catalog → Categories</p>
+<li>Verify 5 parent categories exist</li>
+<li>Verify 14 child categories with correct parent relationships</li>
+
+<h3 id="6-5-ingest-products-simple-service">6.5 Ingest Products (Simple + Service)</h3>
+
+<p><strong>Time:</strong> 10-15 minutes</p>
+
+<pre><code class="language-bash">
+node scripts/ingest-products.js
+</code></pre>
+
+<p><strong>What this does:</strong></p>
+<li>Reads <code>data/buildright/products.json</code></li>
+<li>Creates 70 products (60 simple + 10 service)</li>
+<li>Batches requests (100 products per batch)</li>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+📤 Ingesting 70 products to ACO...
+✓ Batch 1/1: 70 products
+✅ Successfully ingested 70 products
+⏱️  Time: 12 minutes
+</code></pre>
+
+<p><strong>Validation:</strong></p>
+<p>ACO Admin UI → Catalog → Products</p>
+<li>Total product count: 70</li>
+<li>Check a few SKUs exist (e.g., LBR-D0414F1E, SVC-DEL-JOBSITE)</li>
+
+<h3 id="6-6-ingest-variants-configurable-products">6.6 Ingest Variants (Configurable Products)</h3>
+
+<p><strong>Time:</strong> 15-20 minutes</p>
+
+<pre><code class="language-bash">
+node scripts/ingest-variants.js
+</code></pre>
+
+<p><strong>What this does:</strong></p>
+<li>Reads <code>data/buildright/variants.json</code></li>
+<li>Creates 20 configurable parent products</li>
+<li>Creates 92 variant products</li>
+<li>Links variants to parents via <code>variantReferenceId</code></li>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+📤 Ingesting 92 variants (20 configurables) to ACO...
+✓ Batch 1/1: 92 variants
+✅ Successfully ingested 92 variants
+⏱️  Time: 18 minutes
+</code></pre>
+
+<p><strong>Validation:</strong></p>
+<p>ACO Admin UI → Products</p>
+<li>Find a configurable product (e.g., LBR-LVL-BEAM-CONFIG)</li>
+<li>Verify it shows variants/configurations</li>
+
+<h3 id="6-7-ingest-bundles">6.7 Ingest Bundles</h3>
+
+<p><strong>Time:</strong> 8-10 minutes</p>
+
+<pre><code class="language-bash">
+node scripts/ingest-bundles.js
+</code></pre>
+
+<p><strong>What this does:</strong></p>
+<li>Reads <code>data/buildright/bundles.json</code></li>
+<li>Creates 15 bundle products with bundle groups</li>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+📤 Ingesting 15 bundles to ACO...
+✓ Batch 1/1: 15 bundles
+✅ Successfully ingested 15 bundles
+⏱️  Time: 9 minutes
+</code></pre>
+
+<p><strong>Validation:</strong></p>
+<p>ACO Admin UI → Products</p>
+<li>Find bundle product (e.g., BUNDLE-FRAME-2X4-STD)</li>
+<li>Verify bundle components listed</li>
+
+<h3 id="6-8-ingest-price-books">6.8 Ingest Price Books</h3>
+
+<p><strong>Time:</strong> 1-2 minutes</p>
+
+<pre><code class="language-bash">
+node scripts/ingest-price-books.js
+</code></pre>
+
+<p><strong>What this does:</strong></p>
+<li>Reads <code>data/buildright/price-books.json</code></li>
+<li>Creates 10 hierarchical price books</li>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+📤 Ingesting 10 price books to ACO...
+✓ Created price book: US-Retail (base)
+✓ Created price book: US-Contract (base)
+✓ Created price book: Retail-Consumer (parent: US-Retail)
+✓ Created price book: Contract-Commercial (parent: US-Contract)
+...
+✅ Successfully ingested 10 price books
+</code></pre>
+
+<p><strong>Validation:</strong></p>
+<p>ACO Admin UI → Pricing → Price Books</p>
+<li>Verify 10 price books exist</li>
+<li>Check hierarchical relationships (parentId linkage)</li>
+
+<h3 id="6-9-ingest-prices">6.9 Ingest Prices</h3>
+
+<p><strong>Time:</strong> 30-45 minutes (largest dataset)</p>
+
+<pre><code class="language-bash">
+node scripts/ingest-prices.js
+</code></pre>
+
+<p><strong>What this does:</strong></p>
+<li>Reads <code>data/buildright/prices.json</code></li>
+<li>Creates 1,770 price entries</li>
+<li>Batches in groups of 100</li>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+📤 Ingesting 1,770 prices to ACO...
+✓ Batch 1/300: 100 prices
+✓ Batch 2/300: 100 prices
+...
+✓ Batch 300/300: 53 prices
+✅ Successfully ingested 1,770 prices
+⏱️  Time: 42 minutes
+</code></pre>
+
+<blockquote><strong>NOTE:</strong> This is the longest ingestion step. Be patient!</blockquote>
+
+<p><strong>Validation:</strong></p>
+<p>ACO Admin UI → Pricing → Prices</p>
+<li>Search for a product SKU (e.g., LBR-D0414F1E)</li>
+<li>Verify pricing appears across multiple price books</li>
+<li>Check tier pricing exists (quantity-based discounts)</li>
+
+<h3 id="6-10-verify-complete-ingestion">6.10 Verify Complete Ingestion</h3>
+
+<p>Run the verification script:</p>
+
+<pre><code class="language-bash">
+node scripts/validate-ingestion.js
+</code></pre>
+
+<p><strong>Expected output:</strong></p>
+<pre><code class="language-text">
+🔍 Validating ACO data ingestion...
+
+Products: 184 ✓
+├─ Simple: 70 ✓
+├─ Configurable: 20 ✓
+├─ Variants: 92 ✓
+└─ Bundles: 15 ✓
+
+Categories: 19 ✓
+Attributes: 34 ✓
+Price Books: 10 ✓
+Price Entries: 1,770 ✓
+
+✅ All data successfully ingested!
+</code></pre>
+
+<p>✅ <strong>VALIDATION CHECKPOINT:</strong> All data types show correct counts in validation script.</p>
+
+<hr>
+
+<h2 id="7-phase-3-multi-source-inventory-msi">7. Phase 3 - Multi-Source Inventory (MSI)</h2>
+
+<p><strong>Time Estimate:</strong> 2.5-4 hours</p>
+<p><strong>What You'll Do:</strong> Configure 6 inventory sources and assign products via Adobe Commerce Admin UI</p>
+
+<blockquote><strong>IMPORTANT:</strong> ACO Data Ingestion API <strong>does not support inventory operations</strong>. Multi-Source Inventory must be configured manually in Adobe Commerce.</blockquote>
+
+<h3 id="7-1-understanding-msi-architecture">7.1 Understanding MSI Architecture</h3>
+
+<p>BuildRight uses <strong>6 inventory sources</strong> across <strong>3 US regions</strong> in <strong>1 stock</strong> (BuildRight-Main-Stock):</p>
+
+<p><strong>Regional Distribution Centers (Primary):</strong></p>
+<p>1. <strong>warehouse_west</strong> (Sacramento, CA) - Priority 1</p>
+<p>2. <strong>warehouse_east</strong> (Charlotte, NC) - Priority 2</p>
+
+<p><strong>Regional Warehouses (Secondary):</strong></p>
+<p>3. <strong>warehouse_phoenix</strong> (Phoenix, AZ) - Priority 3</p>
+<p>4. <strong>warehouse_denver</strong> (Denver, CO) - Priority 4</p>
+<p>5. <strong>warehouse_atlanta</strong> (Atlanta, GA) - Priority 5</p>
+
+<p><strong>Virtual Drop Shipper (Fallback):</strong></p>
+<p>6. <strong>dropship_premium_windows</strong> (Virtual) - Priority 6</p>
+
+<p><strong>Why 1 Stock?</strong> Adobe Commerce has a 1:1 relationship between stocks and websites. Since BuildRight uses a single website, we configure a single stock with all 6 sources assigned.</p>
+
+<h3 id="7-2-step-1-enable-msi">7.2 Step 1: Enable MSI</h3>
+
+<p><strong>Navigation:</strong> Admin → Stores → Configuration → Catalog → Inventory</p>
+
+<p>1. Set <strong>Stock Options → Manage Stock:</strong> Yes</p>
+<p>2. Click <strong>Save Config</strong></p>
+<p>3. Navigate to <strong>System → Cache Management</strong></p>
+<p>4. Click <strong>Flush Magento Cache</strong></p>
+
+<p>✅ <strong>Validation:</strong> Navigate to Stores → Inventory → Sources menu appears</p>
+
+<h3 id="7-3-step-2-create-inventory-sources">7.3 Step 2: Create Inventory Sources</h3>
+
+<p><strong>Navigation:</strong> Admin → Stores → Inventory → Sources</p>
+
+<p><strong>Create 6 sources (repeat for each):</strong></p>
+
+<h4 id="source-1-warehouse-west">Source 1: warehouse_west</h4>
+
+<p>1. Click <strong>Add New Source</strong></p>
+<p>2. Fill in:</p>
+<li><strong>Name:</strong> Western RDC - Sacramento</li>
+<li><strong>Code:</strong> warehouse_west (⚠️ CANNOT be changed after creation)</li>
+<li><strong>Enabled:</strong> Yes</li>
+<li><strong>Latitude:</strong> 38.5816</li>
+<li><strong>Longitude:</strong> -121.4944</li>
+<li><strong>Country:</strong> United States</li>
+<li><strong>State/Province:</strong> California</li>
+<li><strong>City:</strong> Sacramento</li>
+<li><strong>Street:</strong> 500 Commerce Way</li>
+<li><strong>Postcode:</strong> 95814</li>
+<li><strong>Phone:</strong> 916-555-0100</li>
+<li><strong>Email:</strong> warehouse.west@buildright.com</li>
+<li><strong>Use as Shipping Address:</strong> Yes</li>
+<p>3. Click <strong>Save and Close</strong></p>
+
+<h4 id="source-2-warehouse-east">Source 2: warehouse_east</h4>
+
+<li><strong>Name:</strong> Eastern RDC - Charlotte</li>
+<li><strong>Code:</strong> warehouse_east</li>
+<li><strong>Latitude:</strong> 35.2271</li>
+<li><strong>Longitude:</strong> -80.8431</li>
+<li><strong>State/Province:</strong> North Carolina</li>
+<li><strong>City:</strong> Charlotte</li>
+<li><strong>Postcode:</strong> 28202</li>
+<li><strong>Phone:</strong> 704-555-0200</li>
+<li><strong>Email:</strong> warehouse.east@buildright.com</li>
+
+<h4 id="source-3-warehouse-phoenix">Source 3: warehouse_phoenix</h4>
+
+<li><strong>Name:</strong> Phoenix Metro Warehouse</li>
+<li><strong>Code:</strong> warehouse_phoenix</li>
+<li><strong>Latitude:</strong> 33.4484</li>
+<li><strong>Longitude:</strong> -112.074</li>
+<li><strong>State/Province:</strong> Arizona</li>
+<li><strong>City:</strong> Phoenix</li>
+<li><strong>Postcode:</strong> 85001</li>
+<li><strong>Phone:</strong> 602-555-0300</li>
+<li><strong>Email:</strong> warehouse.phoenix@buildright.com</li>
+
+<h4 id="source-4-warehouse-denver">Source 4: warehouse_denver</h4>
+
+<li><strong>Name:</strong> Denver Warehouse</li>
+<li><strong>Code:</strong> warehouse_denver</li>
+<li><strong>Latitude:</strong> 39.7392</li>
+<li><strong>Longitude:</strong> -104.9903</li>
+<li><strong>State/Province:</strong> Colorado</li>
+<li><strong>City:</strong> Denver</li>
+<li><strong>Postcode:</strong> 80202</li>
+<li><strong>Phone:</strong> 303-555-0400</li>
+<li><strong>Email:</strong> warehouse.denver@buildright.com</li>
+
+<h4 id="source-5-warehouse-atlanta">Source 5: warehouse_atlanta</h4>
+
+<li><strong>Name:</strong> Atlanta Metro Warehouse</li>
+<li><strong>Code:</strong> warehouse_atlanta</li>
+<li><strong>Latitude:</strong> 33.749</li>
+<li><strong>Longitude:</strong> -84.388</li>
+<li><strong>State/Province:</strong> Georgia</li>
+<li><strong>City:</strong> Atlanta</li>
+<li><strong>Postcode:</strong> 30303</li>
+<li><strong>Phone:</strong> 404-555-0500</li>
+<li><strong>Email:</strong> warehouse.atlanta@buildright.com</li>
+
+<h4 id="source-6-dropship-premium-windows">Source 6: dropship_premium_windows</h4>
+
+<li><strong>Name:</strong> Drop Shipper - Premium Window Systems</li>
+<li><strong>Code:</strong> dropship_premium_windows</li>
+<li><strong>Enabled:</strong> Yes</li>
+<li><strong>Country:</strong> United States</li>
+<li><strong>State/Province:</strong> California (virtual)</li>
+<li><strong>City:</strong> Virtual</li>
+<li><strong>Postcode:</strong> 00000</li>
+<li><strong>Phone:</strong> 800-555-0199</li>
+<li><strong>Email:</strong> dropship@premiumwindows.com</li>
+
+<p>✅ <strong>Validation:</strong> All 6 sources appear in Admin → Stores → Inventory → Sources grid</p>
+
+<p><strong>Time:</strong> 30-45 minutes</p>
+
+<h3 id="7-4-step-3-create-stock-and-link-sources">7.4 Step 3: Create Stock and Link Sources</h3>
+
+<p><strong>Navigation:</strong> Admin → Stores → Inventory → Stocks</p>
+
+<p>1. Click <strong>Add New Stock</strong></p>
+<p>2. Fill in:</p>
+<li><strong>Name:</strong> BuildRight-Main-Stock</li>
+<li><strong>Assign Sales Channels:</strong> Main Website (or Default)</li>
+<p>3. Click <strong>Assign Sources</strong> tab</p>
+<p>4. Click <strong>Assign Sources</strong> button</p>
+<p>5. Select all 6 sources with priorities:</p>
+<li>warehouse_west → Priority: 1</li>
+<li>warehouse_east → Priority: 2</li>
+<li>warehouse_phoenix → Priority: 3</li>
+<li>warehouse_denver → Priority: 4</li>
+<li>warehouse_atlanta → Priority: 5</li>
+<li>dropship_premium_windows → Priority: 6</li>
+<p>6. Click <strong>Done</strong></p>
+<p>7. Click <strong>Save & Continue</strong></p>
+
+<p>✅ <strong>Validation:</strong> BuildRight-Main-Stock shows 6 assigned sources in grid</p>
+
+<p><strong>Time:</strong> 10-15 minutes</p>
+
+<h3 id="7-5-step-4-assign-products-to-sources">7.5 Step 4: Assign Products to Sources</h3>
+
+<p><strong>Navigation:</strong> Admin → Catalog → Products</p>
+
+<p>This is the most time-consuming step. You must assign each of the <strong>184 products</strong> to the <strong>6 sources</strong> with quantities.</p>
+
+<p><strong>For Each Product:</strong></p>
+
+<p>1. Click <strong>Edit</strong> on product</p>
+<p>2. Navigate to <strong>Sources</strong> tab</p>
+<p>3. Check <strong>Assign Sources</strong></p>
+<p>4. Select all 6 sources</p>
+<p>5. Enter quantities based on source type:</p>
+<li><strong>RDCs</strong> (warehouse_west, warehouse_east): 500-750 units each</li>
+<li><strong>Regional Warehouses</strong> (phoenix, denver, atlanta): 200-400 units each</li>
+<li><strong>Drop Shipper</strong> (dropship_premium_windows): 20-50 units</li>
+<p>6. Set <strong>Source Item Status:</strong> In Stock (for all)</p>
+<p>7. Click <strong>Save</strong></p>
+
+<p><strong>Recommended Quantities by Product Type:</strong></p>
+
+<table>
+<tr><th>Product Type</th><th>RDC Qty</th><th>Warehouse Qty</th><th>Drop Ship Qty</th></tr>
+<tr><td>High-volume lumber</td><td>750</td><td>400</td><td>50</td></tr>
+<tr><td>Standard materials</td><td>500</td><td>250</td><td>30</td></tr>
+<tr><td>Specialty items</td><td>300</td><td>150</td><td>20</td></tr>
+<tr><td>Service products</td><td>1000</td><td>500</td><td>0</td></tr>
+</table>
+
+<p><strong>Time-Saving Tips:</strong></p>
+<li>Focus on first 20 products to validate process</li>
+<li>Can batch-select multiple products → Actions → Update Attributes (limited functionality)</li>
+<li>Consider using REST API script for bulk assignment (see MSI guide)</li>
+
+<p>✅ <strong>Validation (sample check):</strong></p>
+<li>Edit product LBR-D0414F1E</li>
+<li>Sources tab shows all 6 sources</li>
+<li>Quantities assigned</li>
+<li>Status: In Stock</li>
+
+<p><strong>Time:</strong> 1.5-2.5 hours (25-50 seconds per product)</p>
+
+<blockquote><strong>TIP:</strong> This is tedious but important. Take breaks! You can split this across multiple sessions.</blockquote>
+
+<h3 id="7-6-step-5-configure-source-selection-algorithm">7.6 Step 5: Configure Source Selection Algorithm</h3>
+
+<p><strong>Navigation:</strong> Admin → Stores → Configuration → Catalog → Inventory → Distance Priority Algorithm</p>
+
+<p>1. <strong>Set Provider:</strong> Google MAP (or offline calculation)</p>
+<p>2. <strong>Set Computation Mode:</strong> Driving</p>
+<p>3. <strong>Set Value:</strong> Distance</p>
+<p>4. Click <strong>Save Config</strong></p>
+
+<p>This ensures orders are fulfilled from the nearest warehouse based on customer location.</p>
+
+<p><strong>Time:</strong> 5 minutes</p>
+
+<p>✅ <strong>VALIDATION CHECKPOINT:</strong></p>
+<li>All 6 sources created and enabled</li>
+<li>BuildRight-Main-Stock has all 6 sources assigned with priorities</li>
+<li>Sample products show inventory at multiple sources</li>
+<li>Products display "In Stock" on frontend</li>
+
+<hr>
+
+<h2 id="8-phase-4-b2b-company-configuration">8. Phase 4 - B2B Company Configuration</h2>
+
+<p><strong>Time Estimate:</strong> 6-8 hours</p>
+<p><strong>What You'll Do:</strong> Create 3 companies, 6 locations, 12 users, and assign shared catalogs</p>
+
+<h3 id="8-1-understanding-b2b-structure">8.1 Understanding B2B Structure</h3>
+
+<p>BuildRight's B2B structure demonstrates national distribution:</p>
+
+<p><strong>3 Companies:</strong></p>
+<p>1. <strong>Premium Commercial Builders Inc.</strong> → Commercial-Tier2 pricing</p>
+<p>2. <strong>Coastal Residential Builders</strong> → Residential-Builder pricing</p>
+<p>3. <strong>Elite Trade Contractors</strong> → Pro-Specialty pricing</p>
+
+<p><strong>6 Locations (2 per company):</strong></p>
+<li>Western: Los Angeles HQ (CA), Phoenix Metro (AZ)</li>
+<li>Central: Dallas HQ (TX), Denver Division (CO)</li>
+<li>Eastern: Charlotte HQ (NC), Atlanta Division (GA)</li>
+
+<p><strong>12 Users (4 per company, 2 per location):</strong></p>
+<li>Roles: Company Admin, Approver, Senior Buyer, Default User</li>
+
+<h3 id="8-2-step-1-enable-b2b-features">8.2 Step 1: Enable B2B Features</h3>
+
+<p><strong>Navigation:</strong> Admin → Stores → Configuration → General → B2B Features</p>
+
+<p>1. <strong>Set Store View:</strong> Default Config</p>
+<p>2. <strong>Enable Core Features:</strong></p>
+<li>Enable Company: <strong>Yes</strong></li>
+<li>Enable Shared Catalog: <strong>Yes</strong> (auto-enabled)</li>
+<li>Enable B2B Quote: <strong>Yes</strong></li>
+<li>Enable Requisition List: <strong>Yes</strong></li>
+<li>Enable Quick Order: <strong>Yes</strong></li>
+<p>3. <strong>Configure Payment Methods:</strong></p>
+<li>Applicable Payment Methods: <strong>All Enabled Payment Methods</strong></li>
+<li>Enable Purchase Order payment: <strong>Yes</strong></li>
+<p>4. <strong>Save Configuration</strong></p>
+<p>5. <strong>Clear Cache:</strong> System → Cache Management → Flush Magento Cache</p>
+
+<p>✅ <strong>Validation:</strong> Navigate to Customers → Companies menu appears</p>
+
+<p><strong>Time:</strong> 30 minutes</p>
+
+<h3 id="8-3-step-2-verify-shared-catalogs-exist">8.3 Step 2: Verify Shared Catalogs Exist</h3>
+
+<p><strong>Navigation:</strong> Admin → Catalog → Shared Catalogs</p>
+
+<p>Verify all 10 price books were created from ACO ingestion:</p>
+
+<p><strong>Base Level:</strong></p>
+<li>US-Retail</li>
+<li>US-Contract</li>
+
+<p><strong>Segment Level:</strong></p>
+<li>Retail-Consumer</li>
+<li>Contract-Commercial</li>
+<li>Contract-Residential</li>
+<li>Contract-Pro</li>
+
+<p><strong>Tier Level:</strong></p>
+<li>Commercial-Tier1</li>
+<li>Commercial-Tier2 ⭐</li>
+<li>Residential-Builder ⭐</li>
+<li>Pro-Specialty ⭐</li>
+
+<p>✅ <strong>Validation:</strong> All 10 catalogs appear in grid</p>
+
+<p><strong>Time:</strong> 5 minutes</p>
+
+<h3 id="8-4-step-3-create-company-1-premium-commercial-builders-inc">8.4 Step 3: Create Company 1 - Premium Commercial Builders Inc.</h3>
+
+<p><strong>Navigation:</strong> Admin → Customers → Companies → Add New Company</p>
+
+<p><strong>Company Information:</strong></p>
+<li>Company Name: <strong>Premium Commercial Builders Inc.</strong></li>
+<li>Company Legal Name: <strong>Premium Commercial Builders Inc.</strong></li>
+<li>Company Email: <strong>admin@premiumcommercial.example.com</strong></li>
+<li>Sales Representative: <strong>Default Sales Rep</strong></li>
+
+<p><strong>Company Admin:</strong></p>
+<li>Job Title: <strong>Purchasing Manager</strong></li>
+<li>Email: <strong>jsmith@premiumcommercial.example.com</strong></li>
+<li>First Name: <strong>John</strong></li>
+<li>Last Name: <strong>Smith</strong></li>
+<li>Gender: <strong>Male</strong> (optional)</li>
+
+<p><strong>Legal Address:</strong></p>
+<li>Street Address: <strong>1500 Commerce Drive</strong></li>
+<li>City: <strong>Los Angeles</strong></li>
+<li>State/Province: <strong>California</strong></li>
+<li>ZIP/Postal Code: <strong>90001</strong></li>
+<li>Country: <strong>United States</strong></li>
+<li>Telephone: <strong>+1 (323) 555-0101</strong></li>
+
+<p><strong>Advanced Settings:</strong></p>
+<li>Customer Group: <strong>General</strong></li>
+<li>Shared Catalog: <strong>Commercial-Tier2</strong> ⭐</li>
+<li>Allow Quotes: <strong>Yes</strong></li>
+<li>Enable Purchase Orders: <strong>Yes</strong></li>
+<li>Payment Methods: <strong>Purchase Order, Credit Card</strong></li>
+
+<p>Click <strong>Save Company</strong></p>
+
+<p>✅ <strong>Validation:</strong> Company appears in Customers → Companies grid</p>
+
+<p><strong>Time:</strong> 20-30 minutes</p>
+
+<h3 id="8-5-step-4-create-teams-for-company-1">8.5 Step 4: Create Teams for Company 1</h3>
+
+<p><strong>Navigation:</strong> Customers → Companies → Select "Premium Commercial Builders Inc." → Company Structure</p>
+
+<p><strong>Team 1 - Los Angeles Headquarters:</strong></p>
+<p>1. Click <strong>Add Team</strong></p>
+<p>2. Team Name: <strong>Los Angeles Headquarters</strong></p>
+<p>3. Description: <strong>Main office and purchasing center</strong></p>
+<p>4. Parent: <strong>Premium Commercial Builders Inc.</strong> (root)</p>
+<p>5. Click <strong>Save</strong></p>
+
+<p><strong>Team 2 - Phoenix Metro Division:</strong></p>
+<p>1. Click <strong>Add Team</strong></p>
+<p>2. Team Name: <strong>Phoenix Metro Division</strong></p>
+<p>3. Description: <strong>Arizona operations</strong></p>
+<p>4. Parent: <strong>Premium Commercial Builders Inc.</strong> (root)</p>
+<p>5. Click <strong>Save</strong></p>
+
+<p>✅ <strong>Validation:</strong> Company Structure shows 2 teams under root company</p>
+
+<p><strong>Time:</strong> 10 minutes</p>
+
+<h3 id="8-6-step-5-create-users-for-company-1">8.6 Step 5: Create Users for Company 1</h3>
+
+<p><strong>Navigation:</strong> Customers → Companies → Select Company → Company Users → Add User</p>
+
+<p><strong>User 1 - John Smith (LA HQ):</strong></p>
+<li>Email: <strong>jsmith@premiumcommercial.example.com</strong> (already exists as admin)</li>
+<li>First Name: <strong>John</strong></li>
+<li>Last Name: <strong>Smith</strong></li>
+<li>Job Title: <strong>Purchasing Manager</strong></li>
+<li>Role: <strong>Company Administrator</strong></li>
+<li>Team: <strong>Los Angeles Headquarters</strong></li>
+<li>Status: <strong>Active</strong></li>
+
+<p><strong>User 2 - Emily Johnson (LA HQ):</strong></p>
+<li>Email: <strong>ejohnson@premiumcommercial.example.com</strong></li>
+<li>First Name: <strong>Emily</strong></li>
+<li>Last Name: <strong>Johnson</strong></li>
+<li>Job Title: <strong>Senior Purchasing Agent</strong></li>
+<li>Role: <strong>Senior Buyer</strong></li>
+<li>Team: <strong>Los Angeles Headquarters</strong></li>
+<li>Status: <strong>Active</strong></li>
+
+<p><strong>User 3 - Michael Chen (Phoenix):</strong></p>
+<li>Email: <strong>mchen@premiumcommercial.example.com</strong></li>
+<li>First Name: <strong>Michael</strong></li>
+<li>Last Name: <strong>Chen</strong></li>
+<li>Job Title: <strong>Project Manager</strong></li>
+<li>Role: <strong>Default User</strong></li>
+<li>Team: <strong>Phoenix Metro Division</strong></li>
+<li>Status: <strong>Active</strong></li>
+
+<p><strong>User 4 - Amanda Garcia (Phoenix):</strong></p>
+<li>Email: <strong>agarcia@premiumcommercial.example.com</strong></li>
+<li>First Name: <strong>Amanda</strong></li>
+<li>Last Name: <strong>Garcia</strong></li>
+<li>Job Title: <strong>Buyer</strong></li>
+<li>Role: <strong>Senior Buyer</strong></li>
+<li>Team: <strong>Phoenix Metro Division</strong></li>
+<li>Status: <strong>Active</strong></li>
+
+<p>✅ <strong>Validation:</strong> 4 users appear in Company Users list</p>
+
+<p><strong>Time:</strong> 30-40 minutes</p>
+
+<h3 id="8-7-step-6-create-company-2-coastal-residential-builders">8.7 Step 6: Create Company 2 - Coastal Residential Builders</h3>
+
+<p>Repeat Steps 8.4-8.6 with these details:</p>
+
+<p><strong>Company Information:</strong></p>
+<li>Company Name: <strong>Coastal Residential Builders</strong></li>
+<li>Legal Name: <strong>Coastal Residential Builders Inc.</strong></li>
+<li>Company Email: <strong>admin@coastalresidential.example.com</strong></li>
+<li>Legal Address: <strong>5000 Builder Parkway, Dallas, TX 75201</strong></li>
+<li>Shared Catalog: <strong>Residential-Builder</strong> ⭐</li>
+
+<p><strong>Teams:</strong></p>
+<p>1. Dallas Headquarters (TX)</p>
+<p>2. Denver Division (CO)</p>
+
+<p><strong>Users:</strong></p>
+<p>1. Maria Garcia (Company Admin, Dallas)</p>
+<p>2. Robert Taylor (Senior Buyer, Dallas)</p>
+<p>3. Sarah Martinez (Default User, Denver)</p>
+<p>4. James Wilson (Senior Buyer, Denver)</p>
+
+<p><strong>Time:</strong> 60-70 minutes</p>
+
+<h3 id="8-8-step-7-create-company-3-elite-trade-contractors">8.8 Step 7: Create Company 3 - Elite Trade Contractors</h3>
+
+<p>Repeat Steps 8.4-8.6 with these details:</p>
+
+<p><strong>Company Information:</strong></p>
+<li>Company Name: <strong>Elite Trade Contractors</strong></li>
+<li>Legal Name: <strong>Elite Trade Contractors Inc.</strong></li>
+<li>Company Email: <strong>admin@elitetrade.example.com</strong></li>
+<li>Legal Address: <strong>2500 Trade Center Blvd, Charlotte, NC 28202</strong></li>
+<li>Shared Catalog: <strong>Pro-Specialty</strong> ⭐</li>
+
+<p><strong>Teams:</strong></p>
+<p>1. Charlotte Headquarters (NC)</p>
+<p>2. Atlanta Division (GA)</p>
+
+<p><strong>Users:</strong></p>
+<p>1. David Chen (Company Admin, Charlotte)</p>
+<p>2. Lisa Anderson (Senior Buyer, Charlotte)</p>
+<p>3. Kevin Brown (Default User, Atlanta)</p>
+<p>4. Jennifer Davis (Senior Buyer, Atlanta)</p>
+
+<p><strong>Time:</strong> 60-70 minutes</p>
+
+<h3 id="8-9-validate-b2b-configuration">8.9 Validate B2B Configuration</h3>
+
+<p><strong>Check Company Setup:</strong></p>
+<li>Admin → Customers → Companies</li>
+<li>Verify 3 companies exist</li>
+<li>Check each company's shared catalog assignment</li>
+
+<p><strong>Check Users:</strong></p>
+<li>Log out of admin</li>
+<li>Try logging in as a company user (e.g., jsmith@premiumcommercial.example.com)</li>
+<li>Verify you see catalog products</li>
+<li>Verify pricing matches assigned tier (Commercial-Tier2)</li>
+
+<p><strong>Check Teams:</strong></p>
+<li>While logged in as company admin</li>
+<li>Navigate to Company Structure</li>
+<li>Verify teams appear</li>
+
+<p>✅ <strong>VALIDATION CHECKPOINT:</strong></p>
+<li>3 companies created</li>
+<li>6 teams/locations configured</li>
+<li>12 users created and active</li>
+<li>Each company assigned correct shared catalog</li>
+<li>Can log in as company user and see products</li>
+
+<hr>
+
+<h2 id="9-phase-5-trigger-based-policies">9. Phase 5 - Trigger-Based Policies</h2>
+
+<p><strong>Time Estimate:</strong> 1-2 hours</p>
+<p><strong>What You'll Do:</strong> Configure policies in ACO Admin UI for dynamic catalog filtering</p>
+
+<h3 id="9-1-understanding-trigger-policies">9.1 Understanding Trigger Policies</h3>
+
+<p>Trigger-based policies enable real-time catalog filtering via HTTP headers sent with GraphQL API requests.</p>
+
+<p><strong>BuildRight Policies:</strong></p>
+<p>1. <strong>Project Type Policy</strong> - Filter by new_construction, remodel, repair, restoration</p>
+<p>2. <strong>Product Category Policy</strong> - Filter by structural_materials, framing_insulation, etc.</p>
+<p>3. <strong>Brand Policy</strong> - Filter by buildright_pro, toughgrip, etc.</p>
+
+<h3 id="9-2-step-1-access-aco-policy-management">9.2 Step 1: Access ACO Policy Management</h3>
+
+<p>1. Log into ACO Admin Console at:</p>
+<p>   ```</p>
+<p>   https://experience.adobe.com/#/@demosystem/in:{TENANT_ID}/commerce-optimizer-studio</p>
+<p>   ```</p>
+<p>2. Navigate to <strong>Catalog Management → Policies</strong></p>
+<p>3. Click <strong>Create New Policy</strong></p>
+
+<h3 id="9-3-step-2-create-project-type-policy">9.3 Step 2: Create Project Type Policy</h3>
+
+<p><strong>Policy Basics:</strong></p>
+<li><strong>Policy ID:</strong> <code>project-type-filter</code></li>
+<li><strong>Policy Name:</strong> Project Type Filter</li>
+<li><strong>Policy Type:</strong> EXCLUSIVE (trigger-based)</li>
+
+<p><strong>Trigger Configuration:</strong></p>
+<li><strong>Trigger Name:</strong> <code>AC-Policy-Project-Type</code></li>
+<li><strong>Transport:</strong> HTTP_HEADER</li>
+<li><strong>Data Type:</strong> string</li>
+
+<p><strong>Conditions:</strong></p>
+<li><strong>Attribute:</strong> <code>project_types</code></li>
+<li><strong>Operator:</strong> CONTAINS</li>
+<li><strong>Value Source:</strong> TRIGGER (from HTTP header)</li>
+
+<p><strong>Associate with Catalog View:</strong></p>
+<p>1. Navigate to <strong>Catalog Views</strong></p>
+<p>2. Select your default catalog view</p>
+<p>3. In <strong>Policies</strong> section, click <strong>Add Policy</strong></p>
+<p>4. Select <code>project-type-filter</code></p>
+<p>5. Set <strong>Priority:</strong> 1</p>
+<p>6. Save</p>
+
+<p>✅ <strong>Validation:</strong> Test with curl:</p>
+<pre><code class="language-bash">
+curl -X POST "https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql" \
+  -H "Authorization: Bearer {TOKEN}" \
+  -H "AC-Policy-Project-Type: new_construction" \
+  -d '{"query": "{ products { items { sku name } } }"}'
+</code></pre>
+
+<h3 id="9-4-step-3-create-product-category-policy">9.4 Step 3: Create Product Category Policy</h3>
+
+<p><strong>Policy Basics:</strong></p>
+<li><strong>Policy ID:</strong> <code>category-filter</code></li>
+<li><strong>Policy Name:</strong> Product Category Filter</li>
+<li><strong>Policy Type:</strong> EXCLUSIVE</li>
+
+<p><strong>Trigger Configuration:</strong></p>
+<li><strong>Trigger Name:</strong> <code>AC-Policy-Product-Category</code></li>
+<li><strong>Transport:</strong> HTTP_HEADER</li>
+
+<p><strong>Conditions:</strong></p>
+<li><strong>Attribute:</strong> <code>product_category</code></li>
+<li><strong>Operator:</strong> EQUALS</li>
+<li><strong>Value Source:</strong> TRIGGER</li>
+
+<p>Associate with catalog view, Priority: 2</p>
+
+<h3 id="9-5-step-4-create-brand-policy">9.5 Step 4: Create Brand Policy</h3>
+
+<p><strong>Policy Basics:</strong></p>
+<li><strong>Policy ID:</strong> <code>brand-filter</code></li>
+<li><strong>Policy Name:</strong> Brand Filter</li>
+<li><strong>Policy Type:</strong> EXCLUSIVE</li>
+
+<p><strong>Trigger Configuration:</strong></p>
+<li><strong>Trigger Name:</strong> <code>AC-Policy-Brand</code></li>
+<li><strong>Transport:</strong> HTTP_HEADER</li>
+
+<p><strong>Conditions:</strong></p>
+<li><strong>Attribute:</strong> <code>brand</code></li>
+<li><strong>Operator:</strong> EQUALS</li>
+<li><strong>Value Source:</strong> TRIGGER</li>
+
+<p>Associate with catalog view, Priority: 3</p>
+
+<h3 id="9-6-test-combined-policies">9.6 Test Combined Policies</h3>
+
+<p>Test multiple headers together:</p>
+
+<pre><code class="language-bash">
+curl -X POST "https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql" \
+  -H "Authorization: Bearer {TOKEN}" \
+  -H "AC-Policy-Project-Type: new_construction" \
+  -H "AC-Policy-Product-Category: structural_materials" \
+  -H "AC-Policy-Brand: buildright_pro" \
+  -d '{"query": "{ products { items { sku name } } }"}'
+</code></pre>
+
+<p><strong>Expected:</strong> Only products matching ALL conditions (logical AND)</p>
+
+<p>✅ <strong>VALIDATION CHECKPOINT:</strong></p>
+<li>3 policies created in ACO</li>
+<li>Policies associated with catalog view</li>
+<li>HTTP header filtering works via GraphQL</li>
+<li>Multiple policies combine with AND logic</li>
+
+<hr>
+
+<h2 id="10-complete-system-validation">10. Complete System Validation</h2>
+
+<p><strong>Time Estimate:</strong> 1 hour</p>
+<p><strong>What You'll Do:</strong> End-to-end testing of complete demo environment</p>
+
+<h3 id="10-1-validation-checklist">10.1 Validation Checklist</h3>
+
+<p><strong>ACO Data:</strong></p>
+<li>✅ 184 products exist (70 simple + 92 variants + 15 bundles + 10 services)</li>
+<li>✅ 34 attributes defined</li>
+<li>✅ 19 categories in hierarchy</li>
+<li>✅ 10 price books with hierarchical relationships</li>
+<li>✅ 1,770 price entries</li>
+<li>✅ Products have project_types attribute assigned</li>
+
+<p><strong>Inventory (MSI):</strong></p>
+<li>✅ 6 inventory sources created</li>
+<li>✅ 1 stock (BuildRight-Main-Stock) with all sources</li>
+<li>✅ Products assigned to sources with quantities</li>
+<li>✅ Products show "In Stock" status</li>
+
+<p><strong>B2B:</strong></p>
+<li>✅ 3 companies created</li>
+<li>✅ 6 teams/locations configured</li>
+<li>✅ 12 users created</li>
+<li>✅ Shared catalogs assigned correctly</li>
+<li>✅ Can log in as company user</li>
+
+<p><strong>Policies:</strong></p>
+<li>✅ 3 trigger policies created</li>
+<li>✅ Policies associated with catalog view</li>
+<li>✅ HTTP headers filter products correctly</li>
+
+<h3 id="10-2-functional-test-scenarios">10.2 Functional Test Scenarios</h3>
+
+<p><strong>Test 1: Hierarchical Pricing</strong></p>
+
+<p>1. Query product LBR-D0414F1E in ACO</p>
+<p>2. Verify pricing across price books:</p>
+<li>US-Contract: $8.50</li>
+<li>Commercial-Tier2: $8.08</li>
+<p>3. Log in as John Smith (Premium Commercial)</p>
+<p>4. View product on storefront</p>
+<p>5. Verify price shows $8.08 (Tier2 pricing)</p>
+
+<p><strong>Test 2: Project Type Filtering</strong></p>
+
+<p>1. Send GraphQL query with header:</p>
+<p>   ```</p>
+<p>   AC-Policy-Project-Type: new_construction</p>
+<p>   ```</p>
+<p>2. Verify only products tagged with new_construction appear</p>
+<p>3. Change header to <code>remodel</code></p>
+<p>4. Verify different product set appears</p>
+
+<p><strong>Test 3: Multi-Location B2B</strong></p>
+
+<p>1. Log in as Emily Johnson (LA HQ, Company 1)</p>
+<p>2. View products and pricing</p>
+<p>3. Log out</p>
+<p>4. Log in as Michael Chen (Phoenix, Company 1)</p>
+<p>5. Verify same pricing (both users in same company)</p>
+
+<p><strong>Test 4: Inventory Visibility</strong></p>
+
+<p>1. Check product on storefront</p>
+<p>2. Verify "In Stock" displays</p>
+<p>3. Check quantity available</p>
+<p>4. Verify sourcing information shows nearest warehouse</p>
+
+<p>✅ <strong>VALIDATION CHECKPOINT:</strong> All test scenarios pass successfully</p>
+
+<hr>
+
+<h1 id="part-3-demonstration">PART 3: DEMONSTRATION</h1>
+
+<h2 id="11-demo-scenarios">11. Demo Scenarios</h2>
+
+<p><strong>What You'll Learn:</strong> How to deliver effective demonstrations of BuildRight ACO capabilities</p>
+
+<h3 id="11-1-demo-scenario-1-hierarchical-pricing-5-minutes">11.1 Demo Scenario 1: Hierarchical Pricing (5 minutes)</h3>
+
+<p><strong>Objective:</strong> Show how ACO delivers automatic tier-based pricing</p>
+
+<p><strong>Setup:</strong></p>
+<li>Login to storefront as different company users</li>
+<li>Have product page open (e.g., 2x4x8 SPF Stud)</li>
+
+<p><strong>Demo Steps:</strong></p>
+
+<p>1. <strong>Show Base Pricing:</strong></p>
+<li>Log in as Retail customer (if configured)</li>
+<li>Navigate to product: LBR-D0414F1E (2x4x8 Stud)</li>
+<li>Point out price: $8.50</li>
+
+<p>2. <strong>Show Tier2 Pricing:</strong></p>
+<li>Log in as John Smith (Premium Commercial Builders)</li>
+<li>Navigate to same product</li>
+<li>Point out price: $8.08 (5% better)</li>
+
+<p>3. <strong>Show Volume Discounts:</strong></p>
+<li>Show quantity tier pricing:</li>
+<li>1-99 units: $8.08</li>
+<li>100-293 units: $7.84</li>
+<li>294+ units: $7.50</li>
+
+<p><strong>Talking Points:</strong></p>
+<li>"Premium Commercial is a high-volume customer assigned to Tier2 pricing"</li>
+<li>"Pricing is automatic - no manual quotes or negotiations"</li>
+<li>"On a 10,000-stud order, they save $10,000 vs base pricing"</li>
+<li>"BuildRight rewards loyalty with transparent, automated discounting"</li>
+
+<p><strong>Time:</strong> 5 minutes</p>
+
+<h3 id="11-2-demo-scenario-2-project-based-filtering-5-minutes">11.2 Demo Scenario 2: Project-Based Filtering (5 minutes)</h3>
+
+<p><strong>Objective:</strong> Demonstrate dynamic catalog personalization</p>
+
+<p><strong>Setup:</strong></p>
+<li>Have Postman or curl ready</li>
+<li>GraphQL endpoint configured with authorization</li>
+
+<p><strong>Demo Steps:</strong></p>
+
+<p>1. <strong>Show Full Catalog:</strong></p>
+<p>   ```bash</p>
+<p>   # Query without filters</p>
+<p>   curl ... -d '{"query": "{ products { totalCount } }"}'</p>
+<p>   # Result: 184 products</p>
+<p>   ```</p>
+
+<p>2. <strong>Apply New Construction Filter:</strong></p>
+<p>   ```bash</p>
+<p>   # Add project type header</p>
+<p>   curl -H "AC-Policy-Project-Type: new_construction" ...</p>
+<p>   # Result: ~45 products</p>
+<p>   ```</p>
+<li>Show product list contains structural materials</li>
+<li>Point out framing lumber, concrete, fasteners</li>
+
+<p>3. <strong>Switch to Remodel Filter:</strong></p>
+<p>   ```bash</p>
+<p>   curl -H "AC-Policy-Project-Type: remodel" ...</p>
+<p>   # Result: ~55 products</p>
+<p>   ```</p>
+<li>Show product list now emphasizes finishing materials</li>
+<li>Point out windows, doors, drywall</li>
+
+<p><strong>Talking Points:</strong></p>
+<li>"Contractors manage multiple projects simultaneously"</li>
+<li>"Each project type needs different materials"</li>
+<li>"Filtering reduces search time by 70%"</li>
+<li>"No static catalog views created - all dynamic via HTTP headers"</li>
+
+<p><strong>Time:</strong> 5 minutes</p>
+
+<h3 id="11-3-demo-scenario-3-national-distribution-5-minutes">11.3 Demo Scenario 3: National Distribution (5 minutes)</h3>
+
+<p><strong>Objective:</strong> Show multi-location B2B with regional inventory</p>
+
+<p><strong>Setup:</strong></p>
+<li>Have company structure visible in admin</li>
+<li>Inventory sources configured</li>
+
+<p><strong>Demo Steps:</strong></p>
+
+<p>1. <strong>Show Company Structure:</strong></p>
+<li>Admin → Customers → Companies → Premium Commercial Builders</li>
+<li>Point out 2 locations:</li>
+<li>Los Angeles HQ (CA)</li>
+<li>Phoenix Metro (AZ)</li>
+
+<p>2. <strong>Show Regional Inventory:</strong></p>
+<li>Navigate to product page</li>
+<li>Show inventory sources:</li>
+<li>Sacramento RDC (warehouse_west): 750 units</li>
+<li>Phoenix Warehouse (warehouse_phoenix): 400 units</li>
+
+<p>3. <strong>Show User Distribution:</strong></p>
+<li>Show Company Users:</li>
+<li>2 users in LA office</li>
+<li>2 users in Phoenix office</li>
+<li>All users receive same Tier2 pricing (company-level)</li>
+
+<p><strong>Talking Points:</strong></p>
+<li>"BuildRight operates nationally across 6 states in 3 regions"</li>
+<li>"Each company has multiple locations reflecting real distribution"</li>
+<li>"Inventory sourcing optimizes fulfillment from nearest warehouse"</li>
+<li>"Company-level pricing ensures consistency across all locations"</li>
+
+<p><strong>Time:</strong> 5 minutes</p>
+
+<h3 id="11-4-demo-scenario-4-bundle-products-3-minutes">11.4 Demo Scenario 4: Bundle Products (3 minutes)</h3>
+
+<p><strong>Objective:</strong> Show simplified ordering with pre-configured bundles</p>
+
+<p><strong>Setup:</strong></p>
+<li>Navigate to bundle product (BUNDLE-FRAME-2X4-STD)</li>
+
+<p><strong>Demo Steps:</strong></p>
+
+<p>1. <strong>Show Bundle Structure:</strong></p>
+<li>Product page for "Standard 2x4 Framing Package"</li>
+<li>Components listed:</li>
+<li>100 studs</li>
+<li>50 plates</li>
+<li>25 OSB sheets</li>
+<li>5 boxes nails</li>
+<li>10 tubes adhesive</li>
+
+<p>2. <strong>Show Bundle Pricing:</strong></p>
+<li>Bundle price: $1,450</li>
+<li>Individual items total: $1,520</li>
+<li>Savings: $70 (5%)</li>
+
+<p>3. <strong>Explain Time Savings:</strong></p>
+<li>Traditional: Search 5 products, add each to cart (8-10 min)</li>
+<li>Bundle: Select bundle, adjust quantities (2 min)</li>
+<li>Time saved: 75%</li>
+
+<p><strong>Talking Points:</strong></p>
+<li>"Contractors order the same combinations repeatedly"</li>
+<li>"Bundles reduce 50-item orders to 3-4 selections"</li>
+<li>"Pre-configured by BuildRight based on common project needs"</li>
+<li>"Customer can still modify quantities or substitute items"</li>
+
+<p><strong>Time:</strong> 3 minutes</p>
+
+<hr>
+
+<h2 id="12-key-talking-points">12. Key Talking Points</h2>
+
+<h3 id="12-1-business-value-messaging">12.1 Business Value Messaging</h3>
+
+<p><strong>For BuildRight (The Customer):</strong></p>
+<li>Single product catalog serves all customer segments</li>
+<li>Automatic tier-based pricing rewards high-volume customers</li>
+<li>Real-time catalog composition without managing hundreds of static views</li>
+<li>Reduced data management overhead through intelligent attribute assignment</li>
+
+<p><strong>For Contractors (End Users):</strong></p>
+<li>60-70% reduction in product search time</li>
+<li>Automatic volume discounts without negotiation</li>
+<li>See only products available in their region</li>
+<li>Pre-configured bundles streamline ordering</li>
+
+<p><strong>For Adobe (Why ACO):</strong></p>
+<li>Demonstrates composable catalog architecture</li>
+<li>Showcases trigger-based personalization</li>
+<li>Validates B2B hierarchical pricing capabilities</li>
+<li>Proves enterprise-scale metadata management</li>
+
+<h3 id="12-2-technical-differentiators">12.2 Technical Differentiators</h3>
+
+<p><strong>Hierarchical Pricing:</strong></p>
+<li>3-level price book structure (base → segment → tier)</li>
+<li>Parent-child inheritance reduces data duplication</li>
+<li>1,770 price entries managed efficiently</li>
+<li>Volume tier pricing automatic</li>
+
+<p><strong>Dynamic Filtering:</strong></p>
+<li>HTTP header-based triggers (no pre-built views)</li>
+<li>Multiple policies combine with logical AND</li>
+<li>Project types as multiselect attribute</li>
+<li>Intelligent category-aware assignment</li>
+
+<p><strong>B2B Architecture:</strong></p>
+<li>National distribution model (6 states, 3 regions)</li>
+<li>Company-specific catalog assignment</li>
+<li>Multi-location teams within companies</li>
+<li>Role-based user permissions</li>
+
+<h3 id="12-3-overcoming-objections">12.3 Overcoming Objections</h3>
+
+<p><strong>Objection:</strong> "This seems complex to set up"</p>
+<p><strong>Response:</strong> "The BuildRight demo took 12-16 hours total setup. Once configured, ongoing management is minimal. Adding new products, price changes, and catalog updates happen through API automation."</p>
+
+<p><strong>Objection:</strong> "What about inventory? I see that's manual"</p>
+<p><strong>Response:</strong> "Correct - ACO focuses on catalog and pricing, which is its core strength. Inventory is managed through Adobe Commerce's battle-tested MSI system. The integration between the two is seamless."</p>
+
+<p><strong>Objection:</strong> "Can this scale to our 50,000+ SKU catalog?"</p>
+<p><strong>Response:</strong> "Absolutely. BuildRight is intentionally sized for demos at 184 SKUs, but ACO is proven at enterprise scale with 100,000+ SKU catalogs. The deterministic generation scripts can be scaled to generate any catalog size you need."</p>
+
+<hr>
+
+<h1 id="part-4-reference">PART 4: REFERENCE</h1>
+
+<h2 id="13-troubleshooting">13. Troubleshooting</h2>
+
+<h3 id="13-1-common-setup-issues">13.1 Common Setup Issues</h3>
+
+<p><strong>Issue:</strong> OAuth authentication fails during data ingestion</p>
+
+<p><strong>Symptoms:</strong></p>
+<pre><code class="language-text">
+Error: Invalid credentials
+Status: 401 Unauthorized
+</code></pre>
+
+<p><strong>Solutions:</strong></p>
+<p>1. Verify CLIENT_ID and CLIENT_SECRET in <code>.env</code></p>
+<p>2. Check credentials in Adobe Developer Console</p>
+<p>3. Ensure ACO API is added to your project</p>
+<p>4. Verify TENANT_ID is correct</p>
+<p>5. Try regenerating OAuth credentials</p>
+
+<hr>
+
+<p><strong>Issue:</strong> Products not appearing in ACO after ingestion</p>
+
+<p><strong>Symptoms:</strong> Validation script shows 0 products</p>
+
+<p><strong>Solutions:</strong></p>
+<p>1. Check ingestion logs for errors</p>
+<p>2. Verify <code>.env</code> TENANT_ID matches your instance</p>
+<p>3. Query GraphQL directly:</p>
+<p>   ```bash</p>
+<p>   curl -X POST "{ENDPOINT}/graphql" \</p>
+<p>     -H "Authorization: Bearer {TOKEN}" \</p>
+<p>     -d '{"query": "{ products { totalCount } }"}'</p>
+<p>   ```</p>
+<p>4. Verify metadata ingested before products</p>
+<p>5. Check for schema validation errors in logs</p>
+
+<hr>
+
+<p><strong>Issue:</strong> Shared Catalogs not appearing in Adobe Commerce</p>
+
+<p><strong>Symptoms:</strong> Customers → Shared Catalogs menu missing</p>
+
+<p><strong>Solutions:</strong></p>
+<p>1. Verify B2B extension installed</p>
+<p>2. Check Stores → Configuration → B2B Features → Enabled</p>
+<p>3. Clear cache: System → Cache Management → Flush Magento Cache</p>
+<p>4. Reindex: System → Index Management → Reindex All</p>
+<p>5. Check price books ingested to ACO successfully</p>
+
+<hr>
+
+<p><strong>Issue:</strong> Trigger policies not filtering products</p>
+
+<p><strong>Symptoms:</strong> All products appear regardless of HTTP headers</p>
+
+<p><strong>Solutions:</strong></p>
+<p>1. Verify policy created in ACO Admin UI</p>
+<p>2. Check policy associated with catalog view</p>
+<p>3. Verify trigger name matches HTTP header exactly (case-sensitive)</p>
+<p>4. Check attribute exists and products have values assigned</p>
+<p>5. Test with curl to isolate frontend vs backend issue</p>
+<p>6. Review operator (use CONTAINS for multiselect, EQUALS for select)</p>
+
+<hr>
+
+<p><strong>Issue:</strong> Company users can't see products</p>
+
+<p><strong>Symptoms:</strong> User logs in but catalog is empty</p>
+
+<p><strong>Solutions:</strong></p>
+<p>1. Verify company assigned to shared catalog</p>
+<p>2. Check shared catalog has products assigned</p>
+<p>3. Navigate to Admin → Catalog → Shared Catalogs → [Catalog] → Set Pricing and Structure</p>
+<p>4. Verify products selected (use "Select All" or by category)</p>
+<p>5. Clear cache and reindex</p>
+<p>6. Check user's company membership is active</p>
+
+<hr>
+
+<h3 id="13-2-performance-issues">13.2 Performance Issues</h3>
+
+<p><strong>Issue:</strong> Data ingestion taking extremely long</p>
+
+<p><strong>Solutions:</strong></p>
+<p>1. Reduce batch size (try 50 instead of 100)</p>
+<p>2. Check network connection stability</p>
+<p>3. Verify ACO instance health in Cloud Manager</p>
+<p>4. Run during off-peak hours</p>
+<p>5. Consider splitting large datasets across multiple sessions</p>
+
+<hr>
+
+<p><strong>Issue:</strong> GraphQL queries timeout</p>
+
+<p><strong>Solutions:</strong></p>
+<p>1. Reduce pageSize in queries</p>
+<p>2. Add specific field selections (don't query all fields)</p>
+<p>3. Check ACO instance status</p>
+<p>4. Verify network latency to ACO endpoint</p>
+<p>5. Use pagination for large result sets</p>
+
+<hr>
+
+<h2 id="14-technical-reference">14. Technical Reference</h2>
+
+<h3 id="14-1-file-structure">14.1 File Structure</h3>
+
+<pre><code class="language-text">
+buildright-aco/
+├── data/buildright/          # Generated data files
+│   ├── metadata.json         # 34 attributes
+│   ├── categories.json       # 19 categories
+│   ├── products.json         # 70 simple products
+│   ├── variants.json         # 92 variants
+│   ├── bundles.json          # 15 bundles
+│   ├── price-books.json      # 10 price books
+│   ├── prices.json           # 1,770 prices
+│   ├── inventory.json        # 4,446 inventory records
+│   └── sources.json          # 6 inventory sources
+│
+├── scripts/                  # Generation scripts
+│   ├── generate-metadata.js
+│   ├── generate-categories.js
+│   ├── generate-products.js
+│   ├── generate-variants.js
+│   ├── generate-bundles.js
+│   ├── generate-price-books.js
+│   ├── generate-prices-hierarchical.js
+│   └── generate-inventory.js
+│
+├── utils/                    # Utility libraries
+│   ├── aco-client.js         # ACO SDK wrapper
+│   ├── graphql-query.js      # GraphQL utilities
+│   ├── oauth-token-manager.js # Token management
+│   └── ... (19 utilities total)
+│
+├── tests/                    # Test suites
+│   ├── unit/
+│   └── integration/
+│
+├── .env                      # Environment configuration
+├── package.json              # Dependencies and scripts
+└── README.md                 # Project overview
+</code></pre>
+
+<h3 id="14-2-npm-scripts-quick-reference">14.2 npm Scripts Quick Reference</h3>
+
+<p><strong>Data Generation:</strong></p>
+<pre><code class="language-bash">
+npm run generate:all              # Generate everything
+npm run generate:metadata          # Attributes only
+npm run generate:categories        # Categories only
+npm run generate:products          # Simple products only
+npm run generate:variants          # Configurable products
+npm run generate:bundles           # Bundles only
+npm run generate:price-books       # Price books only
+npm run generate:prices            # Prices only
+npm run generate:inventory         # Inventory only
+</code></pre>
+
+<p><strong>Data Ingestion:</strong></p>
+<pre><code class="language-bash">
+npm run ingest:all                 # Ingest everything (not recommended)
+node scripts/ingest-metadata.js    # Metadata
+node scripts/ingest-categories.js  # Categories
+node scripts/ingest-products.js    # Products
+node scripts/ingest-variants.js    # Variants
+node scripts/ingest-bundles.js     # Bundles
+node scripts/ingest-price-books.js # Price books
+node scripts/ingest-prices.js      # Prices
+</code></pre>
+
+<p><strong>Testing:</strong></p>
+<pre><code class="language-bash">
+npm test                           # Run all tests
+npm run test:coverage              # With coverage report
+</code></pre>
+
+<h3 id="14-3-key-constants">14.3 Key Constants</h3>
+
+<p><strong>Inventory Sources (6):</strong></p>
+<li>warehouse_west (Sacramento, CA) - Priority 1</li>
+<li>warehouse_east (Charlotte, NC) - Priority 2</li>
+<li>warehouse_phoenix (Phoenix, AZ) - Priority 3</li>
+<li>warehouse_denver (Denver, CO) - Priority 4</li>
+<li>warehouse_atlanta (Atlanta, GA) - Priority 5</li>
+<li>dropship_premium_windows - Priority 6</li>
+
+<p><strong>Price Books (10):</strong></p>
+<li>Level 1: US-Retail, US-Contract</li>
+<li>Level 2: Retail-Consumer, Contract-Commercial, Contract-Residential, Contract-Pro</li>
+<li>Level 3: Commercial-Tier1, Commercial-Tier2, Residential-Builder, Pro-Specialty</li>
+
+<p><strong>Product Counts:</strong></p>
+<li>Simple: 70</li>
+<li>Service: 10 (included in simple)</li>
+<li>Configurable Parents: 20</li>
+<li>Variants: 92</li>
+<li>Bundles: 15</li>
+<li><strong>Total:</strong> 184 products</li>
+
+<hr>
+
+<h2 id="15-appendices">15. Appendices</h2>
+
+<h3 id="appendix-a-data-statistics">Appendix A: Data Statistics</h3>
+
+<table>
+<tr><th>Metric</th><th>Value</th><th>Notes</th></tr>
+<tr><td>Total Products</td><td>184</td><td>70 simple + 92 variants + 15 bundles + 10 services</td></tr>
+<tr><td>Attributes</td><td>34</td><td>Metadata definitions</td></tr>
+<tr><td>Categories</td><td>19</td><td>2-level hierarchy (5 parents, 14 children)</td></tr>
+<tr><td>Price Books</td><td>10</td><td>3-level hierarchy</td></tr>
+<tr><td>Price Entries</td><td>1,770</td><td>Across all books and products</td></tr>
+<tr><td>Inventory Sources</td><td>6</td><td>Multi-region distribution</td></tr>
+<tr><td>Inventory Records</td><td>4,446</td><td>184 products × avg 6 sources</td></tr>
+<tr><td>B2B Companies</td><td>3</td><td>Across 3 divisions</td></tr>
+<tr><td>B2B Locations</td><td>6</td><td>2 per company</td></tr>
+<tr><td>B2B Users</td><td>12</td><td>4 per company</td></tr>
+</table>
+
+<h3 id="appendix-b-pricing-example-2x4x8-spf-stud">Appendix B: Pricing Example - 2x4x8 SPF Stud</h3>
+
+<table>
+<tr><th>Price Book</th><th>Level</th><th>Unit Price</th><th>Volume (100+)</th><th>Bundle (294+)</th></tr>
+<tr><td>US-Contract</td><td>1</td><td>$8.50</td><td>$8.25</td><td>$7.84</td></tr>
+<tr><td>Contract-Commercial</td><td>2</td><td>$8.50</td><td>$8.25</td><td>$7.84</td></tr>
+<tr><td>Commercial-Tier1</td><td>3</td><td>$8.25</td><td>$8.00</td><td>$7.64</td></tr>
+<tr><td>Commercial-Tier2</td><td>3</td><td>$8.08</td><td>$7.84</td><td>$7.50</td></tr>
+<tr><td>Residential-Builder</td><td>3</td><td>$8.50</td><td>$8.25</td><td>$7.84</td></tr>
+</table>
+
+<p><strong>Savings (10,000 studs @ Tier2 bundle pricing):</strong></p>
+<li>Base: $8.50 × 10,000 = $85,000</li>
+<li>Tier2: $7.50 × 10,000 = $75,000</li>
+<li><strong>Total Savings: $10,000 (12%)</strong></li>
+
+<h3 id="appendix-c-project-types-distribution">Appendix C: Project Types Distribution</h3>
+
+<table>
+<tr><th>Project Type</th><th>Description</th><th>Product Count (approx)</th></tr>
+<tr><td>new_construction</td><td>Ground-up building</td><td>~45 products</td></tr>
+<tr><td>remodel</td><td>Renovation work</td><td>~55 products</td></tr>
+<tr><td>repair</td><td>Maintenance/repair</td><td>~32 products</td></tr>
+<tr><td>restoration</td><td>Historic restoration</td><td>~28 products</td></tr>
+</table>
+
+<p><strong>Note:</strong> Products can have multiple project types (multiselect attribute)</p>
+
+<h3 id="appendix-d-http-headers-reference">Appendix D: HTTP Headers Reference</h3>
+
+<p><strong>Project Type Filtering:</strong></p>
+<pre><code class="language-bash">
+-H "AC-Policy-Project-Type: new_construction"
+-H "AC-Policy-Project-Type: remodel"
+-H "AC-Policy-Project-Type: repair"
+-H "AC-Policy-Project-Type: restoration"
+</code></pre>
+
+<p><strong>Product Category Filtering:</strong></p>
+<pre><code class="language-bash">
+-H "AC-Policy-Product-Category: structural_materials"
+-H "AC-Policy-Product-Category: framing_insulation"
+-H "AC-Policy-Product-Category: windows_doors"
+-H "AC-Policy-Product-Category: fasteners_hardware"
+-H "AC-Policy-Product-Category: safety_equipment"
+</code></pre>
+
+<p><strong>Brand Filtering:</strong></p>
+<pre><code class="language-bash">
+-H "AC-Policy-Brand: buildright_pro"
+-H "AC-Policy-Brand: toughgrip"
+-H "AC-Policy-Brand: safeguard"
+# ... (10 brands total)
+</code></pre>
+
+<p><strong>Combined Example:</strong></p>
+<pre><code class="language-bash">
+curl -X POST "{ENDPOINT}/graphql" \
+  -H "Authorization: Bearer {TOKEN}" \
+  -H "AC-Policy-Project-Type: new_construction" \
+  -H "AC-Policy-Product-Category: structural_materials" \
+  -H "AC-Policy-Brand: buildright_pro" \
+  -d '{"query": "{ products { items { sku name } } }"}'
+</code></pre>
+
+<hr>
+
+<h2 id="final-notes">Final Notes</h2>
+
+<p><strong>Document Version:</strong> 2.0</p>
+<p><strong>Target Audience:</strong> Sales Engineers, Implementation Specialists</p>
+<p><strong>Total Setup Time:</strong> 12-16 hours</p>
+<p><strong>Status:</strong> Production Ready</p>
+
+<p><strong>Related Documentation:</strong></p>
+<li>[B2B Architecture Diagram](./docs/architecture/buildright-b2b-structure.md)</li>
+<li>[MSI Configuration Details](./docs/manual-setup/msi-configuration-guide.md)</li>
+<li>[Trigger Policy Deep Dive](./docs/manual-setup/trigger-policy-guide.md)</li>
+<li>[Project README](./README.md)</li>
+
+<p><strong>Support:</strong></p>
+<p>For questions or issues during setup, refer to Section 13 (Troubleshooting) or review the related documentation links above.</p>
+
+<hr>
+
+<p><strong>End of BuildRight ACO Setup & Demonstration Guide</strong></p>
+
+        </main>
+    </div>
+    
+    <button id="backToTop" title="Back to top">↑</button>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script>
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) backToTopBtn.classList.add('visible');
+            else backToTopBtn.classList.remove('visible');
+        });
+        backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    </script>
+</body>
+</html>

@@ -91,15 +91,15 @@ describe('Trigger Policy Guide Validation', () => {
       expect(policyMatches.length).toBeGreaterThanOrEqual(5);
     });
 
-    it('should include project_types filter example', () => {
+    it('should include product_category filter example', () => {
       // Given: Trigger policy guide
       // When: Parsing policy examples section
-      // Then: At least one example policy filtering on project_types attribute with HTTP header trigger
+      // Then: At least one example policy filtering on product_category attribute with HTTP header trigger
 
-      expect(guideContent).toMatch(/project_types/);
+      expect(guideContent).toMatch(/product_category/);
 
       // Verify it's used in a policy context (with "attribute" nearby)
-      const policyContext = guideContent.match(/["']attribute["']\s*:\s*["']project_types["']/);
+      const policyContext = guideContent.match(/["']attribute["']\s*:\s*["']product_category["']/);
       expect(policyContext).toBeTruthy();
     });
 

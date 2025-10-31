@@ -23,11 +23,11 @@ import {
 describe('Project Context Validation', () => {
   describe('scanProjectDocumentation', () => {
     test('should identify all required documentation files', async () => {
-      // Given: Project directory structure with instructions/ folder
-      const instructionsDir = path.join(projectRoot, 'instructions');
+      // Given: Project directory structure with instructions/archive/ folder (active docs moved to archive)
+      const archiveDir = path.join(projectRoot, 'instructions', 'archive');
 
       // When: Validation script scans for required documents
-      const result = await scanProjectDocumentation(instructionsDir);
+      const result = await scanProjectDocumentation(archiveDir);
 
       // Then: Script returns list of found documents and flags missing files
       expect(result).toBeDefined();
@@ -36,10 +36,10 @@ describe('Project Context Validation', () => {
       expect(Array.isArray(result.foundDocuments)).toBe(true);
       expect(Array.isArray(result.missingDocuments)).toBe(true);
 
-      // Should find at least some documentation files
+      // Should find archived documentation files
       expect(result.foundDocuments.length).toBeGreaterThan(0);
 
-      // Should include THREAD-SUMMARY.md
+      // THREAD-SUMMARY.md should be in archive
       const threadSummaryFound = result.foundDocuments.some(
         doc => doc.includes('THREAD-SUMMARY.md')
       );
@@ -58,8 +58,8 @@ describe('Project Context Validation', () => {
 
   describe('parseThreadSummary', () => {
     test('should extract implementation status from THREAD-SUMMARY.md', async () => {
-      // Given: THREAD-SUMMARY.md file exists with implementation log entries
-      const threadSummaryPath = path.join(projectRoot, 'instructions', 'THREAD-SUMMARY.md');
+      // Given: THREAD-SUMMARY.md file exists with implementation log entries (now archived)
+      const threadSummaryPath = path.join(projectRoot, 'instructions', 'archive', 'THREAD-SUMMARY.md');
 
       // When: Parser extracts completed features, pending items, known issues
       const result = await parseThreadSummary(threadSummaryPath);
@@ -84,7 +84,7 @@ describe('Project Context Validation', () => {
     });
 
     test('should extract key statistics from implementation log', async () => {
-      const threadSummaryPath = path.join(projectRoot, 'instructions', 'THREAD-SUMMARY.md');
+      const threadSummaryPath = path.join(projectRoot, 'instructions', 'archive', 'THREAD-SUMMARY.md');
       const result = await parseThreadSummary(threadSummaryPath);
 
       // Should include statistics
@@ -304,15 +304,15 @@ describe('Project Context Validation', () => {
   describe('Integration test', () => {
     test('should run complete validation workflow', async () => {
       // This test verifies the entire validation workflow
-      const instructionsDir = path.join(projectRoot, 'instructions');
-      const threadSummaryPath = path.join(projectRoot, 'instructions', 'THREAD-SUMMARY.md');
+      const archiveDir = path.join(projectRoot, 'instructions', 'archive');
+      const threadSummaryPath = path.join(projectRoot, 'instructions', 'archive', 'THREAD-SUMMARY.md');
       const researchPath = path.join(projectRoot, '.rptc', 'research', 'adobe-commerce-msi-api-validation.md');
 
-      // Step 1: Scan documentation
-      const docResults = await scanProjectDocumentation(instructionsDir);
+      // Step 1: Scan documentation (now in archive)
+      const docResults = await scanProjectDocumentation(archiveDir);
       expect(docResults.foundDocuments.length).toBeGreaterThan(0);
 
-      // Step 2: Parse implementation status
+      // Step 2: Parse implementation status (from archive)
       const implResults = await parseThreadSummary(threadSummaryPath);
       expect(implResults.completedFeatures.length).toBeGreaterThan(0);
 

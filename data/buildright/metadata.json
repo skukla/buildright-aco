@@ -1,477 +1,1139 @@
 [
   {
-    "attributeId": "attr_001",
-    "label": "Material",
-    "type": "text",
+    "attributeId": "product_category",
+    "label": "Product Category",
+    "type": "select",
     "isRequired": true,
     "defaultValue": null,
-    "sortOrder": 1
+    "sortOrder": 1,
+    "options": [
+      {
+        "value": "structural_materials",
+        "label": "Structural Materials"
+      },
+      {
+        "value": "framing_insulation",
+        "label": "Framing & Insulation"
+      },
+      {
+        "value": "windows_doors",
+        "label": "Windows & Doors"
+      },
+      {
+        "value": "fasteners_hardware",
+        "label": "Fasteners & Hardware"
+      },
+      {
+        "value": "safety_equipment",
+        "label": "Safety Equipment"
+      }
+    ]
   },
   {
-    "attributeId": "attr_002",
-    "label": "Color",
-    "type": "multiselect",
+    "attributeId": "brand",
+    "label": "Brand",
+    "type": "select",
     "isRequired": false,
     "defaultValue": null,
     "sortOrder": 2,
     "options": [
       {
-        "value": "color_option_1",
-        "label": "Orange"
+        "value": "buildright_pro",
+        "label": "BuildRight Pro"
       },
       {
-        "value": "color_option_2",
-        "label": "Blue"
+        "value": "structuremaster",
+        "label": "StructureMaster"
       },
       {
-        "value": "color_option_3",
-        "label": "Black"
+        "value": "proframe",
+        "label": "ProFrame"
       },
       {
-        "value": "color_option_4",
-        "label": "White"
+        "value": "safeguard",
+        "label": "SafeGuard"
       },
       {
-        "value": "color_option_5",
-        "label": "Red"
+        "value": "fastenpro",
+        "label": "FastenPro"
       },
       {
-        "value": "color_option_6",
-        "label": "Green"
+        "value": "durabuilt",
+        "label": "DuraBuilt"
+      },
+      {
+        "value": "toughgrip",
+        "label": "ToughGrip"
+      },
+      {
+        "value": "maxstrength",
+        "label": "MaxStrength"
+      },
+      {
+        "value": "premiumbuild",
+        "label": "PremiumBuild"
+      },
+      {
+        "value": "reliabuild",
+        "label": "ReliaBuild"
       }
     ]
   },
   {
-    "attributeId": "attr_003",
-    "label": "Size",
+    "attributeId": "unit_of_measure",
+    "label": "Unit of Measure",
     "type": "select",
-    "isRequired": false,
-    "defaultValue": "size_option_1",
+    "isRequired": true,
+    "defaultValue": "EA",
     "sortOrder": 3,
     "options": [
       {
-        "value": "size_option_1",
-        "label": "L"
+        "value": "EA",
+        "label": "Each"
       },
       {
-        "value": "size_option_2",
-        "label": "M"
+        "value": "LF",
+        "label": "Linear Foot"
       },
       {
-        "value": "size_option_3",
-        "label": "XL"
+        "value": "SF",
+        "label": "Square Foot"
       },
       {
-        "value": "size_option_4",
-        "label": "XS"
+        "value": "BOX",
+        "label": "Box"
       },
       {
-        "value": "size_option_5",
-        "label": "3XL"
+        "value": "BUNDLE",
+        "label": "Bundle"
       },
       {
-        "value": "size_option_6",
-        "label": "5XL"
+        "value": "PALLET",
+        "label": "Pallet"
       },
       {
-        "value": "size_option_7",
-        "label": "2XL"
+        "value": "BAG",
+        "label": "Bag"
+      },
+      {
+        "value": "ROLL",
+        "label": "Roll"
+      },
+      {
+        "value": "PAIR",
+        "label": "Pair"
+      },
+      {
+        "value": "SHEET",
+        "label": "Sheet"
+      },
+      {
+        "value": "GALLON",
+        "label": "Gallon"
+      },
+      {
+        "value": "CASE",
+        "label": "Case"
       }
     ]
   },
   {
-    "attributeId": "attr_004",
-    "label": "Weight",
-    "type": "select",
+    "attributeId": "project_types",
+    "label": "Project Types",
+    "type": "multiselect",
     "isRequired": false,
-    "defaultValue": "weight_option_1",
+    "defaultValue": null,
     "sortOrder": 4,
     "options": [
       {
-        "value": "weight_option_1",
-        "label": "Option 1"
+        "value": "new_construction",
+        "label": "New Construction"
       },
       {
-        "value": "weight_option_2",
-        "label": "Option 2"
+        "value": "remodel",
+        "label": "Remodel/Renovation"
       },
       {
-        "value": "weight_option_3",
-        "label": "Option 3"
+        "value": "repair",
+        "label": "Repair/Maintenance"
+      },
+      {
+        "value": "restoration",
+        "label": "Restoration"
       }
     ]
   },
   {
-    "attributeId": "attr_005",
-    "label": "Dimensions",
-    "type": "boolean",
-    "isRequired": true,
-    "defaultValue": false,
-    "sortOrder": 5
-  },
-  {
-    "attributeId": "attr_006",
-    "label": "Brand",
-    "type": "multiselect",
-    "isRequired": false,
-    "defaultValue": null,
-    "sortOrder": 6,
-    "options": [
-      {
-        "value": "brand_option_1",
-        "label": "Brand B"
-      },
-      {
-        "value": "brand_option_2",
-        "label": "Brand E"
-      },
-      {
-        "value": "brand_option_3",
-        "label": "Brand F"
-      },
-      {
-        "value": "brand_option_4",
-        "label": "Brand A"
-      }
-    ]
-  },
-  {
-    "attributeId": "attr_007",
-    "label": "Model",
-    "type": "multiselect",
-    "isRequired": false,
-    "defaultValue": null,
-    "sortOrder": 7,
-    "options": [
-      {
-        "value": "model_option_1",
-        "label": "Option 1"
-      },
-      {
-        "value": "model_option_2",
-        "label": "Option 2"
-      },
-      {
-        "value": "model_option_3",
-        "label": "Option 3"
-      },
-      {
-        "value": "model_option_4",
-        "label": "Option 4"
-      },
-      {
-        "value": "model_option_5",
-        "label": "Option 5"
-      },
-      {
-        "value": "model_option_6",
-        "label": "Option 6"
-      }
-    ]
-  },
-  {
-    "attributeId": "attr_008",
-    "label": "Warranty",
-    "type": "text",
-    "isRequired": true,
-    "defaultValue": null,
-    "sortOrder": 8
-  },
-  {
-    "attributeId": "attr_009",
-    "label": "Features",
-    "type": "multiselect",
-    "isRequired": true,
-    "defaultValue": null,
-    "sortOrder": 9,
-    "options": [
-      {
-        "value": "features_option_1",
-        "label": "Option 1"
-      },
-      {
-        "value": "features_option_2",
-        "label": "Option 2"
-      },
-      {
-        "value": "features_option_3",
-        "label": "Option 3"
-      },
-      {
-        "value": "features_option_4",
-        "label": "Option 4"
-      },
-      {
-        "value": "features_option_5",
-        "label": "Option 5"
-      },
-      {
-        "value": "features_option_6",
-        "label": "Option 6"
-      }
-    ]
-  },
-  {
-    "attributeId": "attr_010",
-    "label": "Specifications",
-    "type": "multiselect",
+    "attributeId": "lumber_species",
+    "label": "Lumber Species",
+    "type": "select",
     "isRequired": false,
     "defaultValue": null,
     "sortOrder": 10,
     "options": [
       {
-        "value": "specifications_option_1",
-        "label": "Option 1"
+        "value": "southern_yellow_pine",
+        "label": "Southern Yellow Pine (SYP)"
       },
       {
-        "value": "specifications_option_2",
-        "label": "Option 2"
+        "value": "spruce_pine_fir",
+        "label": "Spruce-Pine-Fir (SPF)"
       },
       {
-        "value": "specifications_option_3",
-        "label": "Option 3"
+        "value": "douglas_fir_larch",
+        "label": "Douglas Fir-Larch (DF-L)"
       },
       {
-        "value": "specifications_option_4",
-        "label": "Option 4"
+        "value": "hem_fir",
+        "label": "Hem-Fir"
       },
       {
-        "value": "specifications_option_5",
-        "label": "Option 5"
+        "value": "western_red_cedar",
+        "label": "Western Red Cedar"
       },
       {
-        "value": "specifications_option_6",
-        "label": "Option 6"
+        "value": "redwood",
+        "label": "Redwood"
       }
     ]
   },
   {
-    "attributeId": "attr_011",
-    "label": "Compatibility",
-    "type": "multiselect",
-    "isRequired": true,
+    "attributeId": "lumber_grade",
+    "label": "Lumber Grade",
+    "type": "select",
+    "isRequired": false,
     "defaultValue": null,
     "sortOrder": 11,
     "options": [
       {
-        "value": "compatibility_option_1",
-        "label": "Option 1"
+        "value": "select_structural",
+        "label": "Select Structural"
       },
       {
-        "value": "compatibility_option_2",
-        "label": "Option 2"
+        "value": "no_1",
+        "label": "No. 1"
       },
       {
-        "value": "compatibility_option_3",
-        "label": "Option 3"
+        "value": "no_2",
+        "label": "No. 2"
       },
       {
-        "value": "compatibility_option_4",
-        "label": "Option 4"
+        "value": "no_3",
+        "label": "No. 3"
       },
       {
-        "value": "compatibility_option_5",
-        "label": "Option 5"
+        "value": "stud",
+        "label": "Stud"
+      },
+      {
+        "value": "utility",
+        "label": "Utility"
+      },
+      {
+        "value": "construction",
+        "label": "Construction"
+      },
+      {
+        "value": "standard",
+        "label": "Standard"
       }
     ]
   },
   {
-    "attributeId": "attr_012",
-    "label": "Condition",
-    "type": "multiselect",
-    "isRequired": true,
+    "attributeId": "lumber_treatment",
+    "label": "Lumber Treatment",
+    "type": "select",
+    "isRequired": false,
     "defaultValue": null,
     "sortOrder": 12,
     "options": [
       {
-        "value": "condition_option_1",
-        "label": "Poor"
+        "value": "kiln_dried",
+        "label": "Kiln-Dried (KD)"
       },
       {
-        "value": "condition_option_2",
-        "label": "New"
+        "value": "green",
+        "label": "Green (Unseasoned)"
       },
       {
-        "value": "condition_option_3",
-        "label": "Good"
+        "value": "pressure_treated_aca",
+        "label": "Pressure-Treated (ACA)"
       },
       {
-        "value": "condition_option_4",
-        "label": "Very Good"
+        "value": "pressure_treated_acq",
+        "label": "Pressure-Treated (ACQ)"
       },
       {
-        "value": "condition_option_5",
-        "label": "Fair"
+        "value": "pressure_treated_ca",
+        "label": "Pressure-Treated (CA-C)"
       },
       {
-        "value": "condition_option_6",
-        "label": "Like New"
+        "value": "fire_retardant",
+        "label": "Fire-Retardant Treated"
       }
     ]
   },
   {
-    "attributeId": "attr_013",
-    "label": "Certification",
-    "type": "select",
+    "attributeId": "lumber_certification",
+    "label": "Lumber Certification",
+    "type": "multiselect",
     "isRequired": false,
-    "defaultValue": "certification_option_1",
+    "defaultValue": null,
     "sortOrder": 13,
     "options": [
       {
-        "value": "certification_option_1",
-        "label": "Option 1"
+        "value": "fsc_certified",
+        "label": "FSC Certified"
       },
       {
-        "value": "certification_option_2",
-        "label": "Option 2"
+        "value": "fsc_mix",
+        "label": "FSC Mix"
       },
       {
-        "value": "certification_option_3",
-        "label": "Option 3"
+        "value": "sfi_certified",
+        "label": "SFI Certified"
       },
       {
-        "value": "certification_option_4",
-        "label": "Option 4"
+        "value": "pefc_certified",
+        "label": "PEFC Certified"
       },
       {
-        "value": "certification_option_5",
-        "label": "Option 5"
+        "value": "none",
+        "label": "No Certification"
       }
     ]
   },
   {
-    "attributeId": "attr_014",
-    "label": "Style",
-    "type": "multiselect",
-    "isRequired": false,
-    "defaultValue": null,
-    "sortOrder": 14,
-    "options": [
-      {
-        "value": "style_option_1",
-        "label": "Classic"
-      },
-      {
-        "value": "style_option_2",
-        "label": "Modern"
-      },
-      {
-        "value": "style_option_3",
-        "label": "Contemporary"
-      },
-      {
-        "value": "style_option_4",
-        "label": "Traditional"
-      }
-    ]
-  },
-  {
-    "attributeId": "attr_015",
-    "label": "Pattern",
-    "type": "text",
-    "isRequired": false,
-    "defaultValue": null,
-    "sortOrder": 15
-  },
-  {
-    "attributeId": "attr_016",
-    "label": "Season",
+    "attributeId": "drywall_thickness",
+    "label": "Drywall Thickness",
     "type": "select",
-    "isRequired": false,
-    "defaultValue": "season_option_1",
-    "sortOrder": 16,
-    "options": [
-      {
-        "value": "season_option_1",
-        "label": "Option 1"
-      },
-      {
-        "value": "season_option_2",
-        "label": "Option 2"
-      },
-      {
-        "value": "season_option_3",
-        "label": "Option 3"
-      },
-      {
-        "value": "season_option_4",
-        "label": "Option 4"
-      },
-      {
-        "value": "season_option_5",
-        "label": "Option 5"
-      }
-    ]
-  },
-  {
-    "attributeId": "attr_017",
-    "label": "Collection",
-    "type": "text",
-    "isRequired": false,
-    "defaultValue": null,
-    "sortOrder": 17
-  },
-  {
-    "attributeId": "attr_018",
-    "label": "Series",
-    "type": "text",
-    "isRequired": false,
-    "defaultValue": null,
-    "sortOrder": 18
-  },
-  {
-    "attributeId": "attr_019",
-    "label": "Grade",
-    "type": "multiselect",
-    "isRequired": true,
-    "defaultValue": null,
-    "sortOrder": 19,
-    "options": [
-      {
-        "value": "grade_option_1",
-        "label": "B"
-      },
-      {
-        "value": "grade_option_2",
-        "label": "D"
-      },
-      {
-        "value": "grade_option_3",
-        "label": "A+"
-      },
-      {
-        "value": "grade_option_4",
-        "label": "F"
-      },
-      {
-        "value": "grade_option_5",
-        "label": "C+"
-      }
-    ]
-  },
-  {
-    "attributeId": "attr_020",
-    "label": "Finish",
-    "type": "multiselect",
     "isRequired": false,
     "defaultValue": null,
     "sortOrder": 20,
     "options": [
       {
-        "value": "finish_option_1",
-        "label": "Option 1"
+        "value": "0.25",
+        "label": "1/4\""
       },
       {
-        "value": "finish_option_2",
-        "label": "Option 2"
+        "value": "0.375",
+        "label": "3/8\""
       },
       {
-        "value": "finish_option_3",
-        "label": "Option 3"
+        "value": "0.5",
+        "label": "1/2\""
       },
       {
-        "value": "finish_option_4",
-        "label": "Option 4"
+        "value": "0.625",
+        "label": "5/8\""
+      },
+      {
+        "value": "0.75",
+        "label": "3/4\""
+      }
+    ]
+  },
+  {
+    "attributeId": "drywall_product_type",
+    "label": "Drywall Product Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 21,
+    "options": [
+      {
+        "value": "regular",
+        "label": "Regular Gypsum"
+      },
+      {
+        "value": "moisture_resistant",
+        "label": "Moisture-Resistant (MR)"
+      },
+      {
+        "value": "mold_resistant",
+        "label": "Mold-Resistant"
+      },
+      {
+        "value": "fire_rated",
+        "label": "Fire-Rated"
+      },
+      {
+        "value": "sound_dampening",
+        "label": "Sound-Dampening"
+      },
+      {
+        "value": "impact_resistant",
+        "label": "Impact/Abuse-Resistant"
+      }
+    ]
+  },
+  {
+    "attributeId": "drywall_fire_rating",
+    "label": "Drywall Fire Rating",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 22,
+    "options": [
+      {
+        "value": "non_rated",
+        "label": "Non-Rated"
+      },
+      {
+        "value": "type_x",
+        "label": "Type X (1-hour)"
+      },
+      {
+        "value": "type_c",
+        "label": "Type C (Enhanced)"
+      }
+    ]
+  },
+  {
+    "attributeId": "drywall_edge_type",
+    "label": "Drywall Edge Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 23,
+    "options": [
+      {
+        "value": "tapered",
+        "label": "Tapered"
+      },
+      {
+        "value": "square",
+        "label": "Square"
+      },
+      {
+        "value": "beveled",
+        "label": "Beveled"
+      },
+      {
+        "value": "tongue_and_groove",
+        "label": "Tongue & Groove"
+      }
+    ]
+  },
+  {
+    "attributeId": "window_material",
+    "label": "Window Frame Material",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 30,
+    "options": [
+      {
+        "value": "vinyl",
+        "label": "Vinyl"
+      },
+      {
+        "value": "wood",
+        "label": "Wood"
+      },
+      {
+        "value": "aluminum",
+        "label": "Aluminum"
+      },
+      {
+        "value": "fiberglass",
+        "label": "Fiberglass"
+      },
+      {
+        "value": "composite",
+        "label": "Composite"
+      },
+      {
+        "value": "clad_wood",
+        "label": "Clad Wood"
+      }
+    ]
+  },
+  {
+    "attributeId": "window_operation_type",
+    "label": "Window Operation Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 31,
+    "options": [
+      {
+        "value": "single_hung",
+        "label": "Single-Hung"
+      },
+      {
+        "value": "double_hung",
+        "label": "Double-Hung"
+      },
+      {
+        "value": "casement",
+        "label": "Casement"
+      },
+      {
+        "value": "awning",
+        "label": "Awning"
+      },
+      {
+        "value": "sliding",
+        "label": "Sliding"
+      },
+      {
+        "value": "fixed",
+        "label": "Fixed/Picture"
+      },
+      {
+        "value": "bay",
+        "label": "Bay"
+      },
+      {
+        "value": "bow",
+        "label": "Bow"
+      }
+    ]
+  },
+  {
+    "attributeId": "window_glazing_type",
+    "label": "Window Glazing",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 32,
+    "options": [
+      {
+        "value": "single_pane",
+        "label": "Single Pane"
+      },
+      {
+        "value": "double_pane",
+        "label": "Double Pane"
+      },
+      {
+        "value": "triple_pane",
+        "label": "Triple Pane"
+      }
+    ]
+  },
+  {
+    "attributeId": "window_energy_star",
+    "label": "Energy Star Certified",
+    "type": "boolean",
+    "isRequired": false,
+    "defaultValue": false,
+    "sortOrder": 33
+  },
+  {
+    "attributeId": "door_type",
+    "label": "Door Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 40,
+    "options": [
+      {
+        "value": "entry",
+        "label": "Entry Door"
+      },
+      {
+        "value": "interior",
+        "label": "Interior Door"
+      },
+      {
+        "value": "patio",
+        "label": "Patio Door"
+      },
+      {
+        "value": "french",
+        "label": "French Door"
+      },
+      {
+        "value": "storm",
+        "label": "Storm Door"
+      },
+      {
+        "value": "bifold",
+        "label": "Bi-Fold Door"
+      }
+    ]
+  },
+  {
+    "attributeId": "door_material",
+    "label": "Door Material",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 41,
+    "options": [
+      {
+        "value": "wood",
+        "label": "Wood"
+      },
+      {
+        "value": "steel",
+        "label": "Steel"
+      },
+      {
+        "value": "fiberglass",
+        "label": "Fiberglass"
+      },
+      {
+        "value": "aluminum",
+        "label": "Aluminum"
+      },
+      {
+        "value": "vinyl",
+        "label": "Vinyl"
+      },
+      {
+        "value": "composite",
+        "label": "Composite"
+      }
+    ]
+  },
+  {
+    "attributeId": "door_core_type",
+    "label": "Door Core Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 42,
+    "options": [
+      {
+        "value": "solid_wood",
+        "label": "Solid Wood"
+      },
+      {
+        "value": "solid_core",
+        "label": "Solid Core"
+      },
+      {
+        "value": "hollow_core",
+        "label": "Hollow Core"
+      },
+      {
+        "value": "foam_core",
+        "label": "Foam Insulated"
+      }
+    ]
+  },
+  {
+    "attributeId": "fastener_type",
+    "label": "Fastener Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 50,
+    "options": [
+      {
+        "value": "nail",
+        "label": "Nail"
+      },
+      {
+        "value": "screw",
+        "label": "Screw"
+      },
+      {
+        "value": "bolt",
+        "label": "Bolt"
+      },
+      {
+        "value": "anchor",
+        "label": "Anchor"
+      },
+      {
+        "value": "staple",
+        "label": "Staple"
+      }
+    ]
+  },
+  {
+    "attributeId": "fastener_subtype",
+    "label": "Fastener Subtype",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 51,
+    "options": [
+      {
+        "value": "common_nail",
+        "label": "Common Nail"
+      },
+      {
+        "value": "finish_nail",
+        "label": "Finish Nail"
+      },
+      {
+        "value": "brad_nail",
+        "label": "Brad Nail"
+      },
+      {
+        "value": "roofing_nail",
+        "label": "Roofing Nail"
+      },
+      {
+        "value": "framing_nail",
+        "label": "Framing Nail"
+      },
+      {
+        "value": "wood_screw",
+        "label": "Wood Screw"
+      },
+      {
+        "value": "drywall_screw",
+        "label": "Drywall Screw"
+      },
+      {
+        "value": "deck_screw",
+        "label": "Deck Screw"
+      },
+      {
+        "value": "self_drilling_screw",
+        "label": "Self-Drilling Screw"
+      },
+      {
+        "value": "lag_screw",
+        "label": "Lag Screw"
+      }
+    ]
+  },
+  {
+    "attributeId": "fastener_material",
+    "label": "Fastener Material",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 52,
+    "options": [
+      {
+        "value": "steel",
+        "label": "Carbon Steel"
+      },
+      {
+        "value": "stainless_steel_304",
+        "label": "Stainless Steel 304"
+      },
+      {
+        "value": "stainless_steel_316",
+        "label": "Stainless Steel 316 (Marine)"
+      },
+      {
+        "value": "brass",
+        "label": "Brass"
+      },
+      {
+        "value": "aluminum",
+        "label": "Aluminum"
+      }
+    ]
+  },
+  {
+    "attributeId": "fastener_coating",
+    "label": "Fastener Coating/Finish",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 53,
+    "options": [
+      {
+        "value": "bright",
+        "label": "Bright (Uncoated)"
+      },
+      {
+        "value": "zinc_plated",
+        "label": "Zinc Plated"
+      },
+      {
+        "value": "galvanized",
+        "label": "Galvanized"
+      },
+      {
+        "value": "hot_dip_galvanized",
+        "label": "Hot-Dip Galvanized"
+      },
+      {
+        "value": "ceramic_coated",
+        "label": "Ceramic Coated"
+      },
+      {
+        "value": "polymer_coated",
+        "label": "Polymer Coated"
+      }
+    ]
+  },
+  {
+    "attributeId": "fastener_head_type",
+    "label": "Fastener Head Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 54,
+    "options": [
+      {
+        "value": "flat",
+        "label": "Flat/Countersunk"
+      },
+      {
+        "value": "pan",
+        "label": "Pan"
+      },
+      {
+        "value": "round",
+        "label": "Round"
+      },
+      {
+        "value": "hex",
+        "label": "Hex"
+      },
+      {
+        "value": "bugle",
+        "label": "Bugle"
+      },
+      {
+        "value": "truss",
+        "label": "Truss"
+      }
+    ]
+  },
+  {
+    "attributeId": "fastener_drive_type",
+    "label": "Fastener Drive Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 55,
+    "options": [
+      {
+        "value": "phillips",
+        "label": "Phillips"
+      },
+      {
+        "value": "square",
+        "label": "Square (Robertson)"
+      },
+      {
+        "value": "torx",
+        "label": "Torx (Star)"
+      },
+      {
+        "value": "hex",
+        "label": "Hex"
+      },
+      {
+        "value": "slotted",
+        "label": "Slotted"
+      },
+      {
+        "value": "combination",
+        "label": "Combination"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_category",
+    "label": "PPE Category",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 60,
+    "options": [
+      {
+        "value": "head_protection",
+        "label": "Head Protection"
+      },
+      {
+        "value": "eye_protection",
+        "label": "Eye Protection"
+      },
+      {
+        "value": "hearing_protection",
+        "label": "Hearing Protection"
+      },
+      {
+        "value": "hand_protection",
+        "label": "Hand Protection"
+      },
+      {
+        "value": "respiratory_protection",
+        "label": "Respiratory Protection"
+      },
+      {
+        "value": "fall_protection",
+        "label": "Fall Protection"
+      },
+      {
+        "value": "high_visibility",
+        "label": "High-Visibility Apparel"
+      },
+      {
+        "value": "foot_protection",
+        "label": "Foot Protection"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_ansi_standard",
+    "label": "ANSI Standard",
+    "type": "multiselect",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 61,
+    "options": [
+      {
+        "value": "z89_1",
+        "label": "ANSI Z89.1 (Head)"
+      },
+      {
+        "value": "z87_1",
+        "label": "ANSI Z87.1 (Eye)"
+      },
+      {
+        "value": "s3_19",
+        "label": "ANSI S3.19 (Hearing)"
+      },
+      {
+        "value": "isea_105",
+        "label": "ANSI/ISEA 105 (Hand)"
+      },
+      {
+        "value": "z359",
+        "label": "ANSI Z359 (Fall)"
+      },
+      {
+        "value": "isea_107",
+        "label": "ANSI/ISEA 107 (Hi-Vis)"
+      },
+      {
+        "value": "astm_f2413",
+        "label": "ASTM F2413 (Foot)"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_hard_hat_type",
+    "label": "Hard Hat Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 62,
+    "options": [
+      {
+        "value": "type_1",
+        "label": "Type 1 (Top Impact)"
+      },
+      {
+        "value": "type_2",
+        "label": "Type 2 (Top & Lateral)"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_hard_hat_class",
+    "label": "Hard Hat Electrical Class",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 63,
+    "options": [
+      {
+        "value": "class_e",
+        "label": "Class E (Electrical - 20kV)"
+      },
+      {
+        "value": "class_g",
+        "label": "Class G (General - 2.2kV)"
+      },
+      {
+        "value": "class_c",
+        "label": "Class C (Conductive)"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_nrr_rating",
+    "label": "NRR Rating (dB)",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 64,
+    "options": [
+      {
+        "value": "20",
+        "label": "20 dB"
+      },
+      {
+        "value": "22",
+        "label": "22 dB"
+      },
+      {
+        "value": "25",
+        "label": "25 dB"
+      },
+      {
+        "value": "27",
+        "label": "27 dB"
+      },
+      {
+        "value": "29",
+        "label": "29 dB"
+      },
+      {
+        "value": "30",
+        "label": "30 dB"
+      },
+      {
+        "value": "31",
+        "label": "31 dB"
+      },
+      {
+        "value": "32",
+        "label": "32 dB"
+      },
+      {
+        "value": "33",
+        "label": "33 dB"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_cut_resistance",
+    "label": "Cut Resistance Level",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 65,
+    "options": [
+      {
+        "value": "a1",
+        "label": "A1 (200-499g)"
+      },
+      {
+        "value": "a2",
+        "label": "A2 (500-999g)"
+      },
+      {
+        "value": "a3",
+        "label": "A3 (1000-1499g)"
+      },
+      {
+        "value": "a4",
+        "label": "A4 (1500-2199g)"
+      },
+      {
+        "value": "a5",
+        "label": "A5 (2200-2999g)"
+      },
+      {
+        "value": "a6",
+        "label": "A6 (3000-3999g)"
+      },
+      {
+        "value": "a7",
+        "label": "A7 (4000-4999g)"
+      },
+      {
+        "value": "a8",
+        "label": "A8 (5000-5999g)"
+      },
+      {
+        "value": "a9",
+        "label": "A9 (6000+g)"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_niosh_rating",
+    "label": "NIOSH Filter Rating",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 66,
+    "options": [
+      {
+        "value": "n95",
+        "label": "N95 (95% filtration)"
+      },
+      {
+        "value": "n99",
+        "label": "N99 (99% filtration)"
+      },
+      {
+        "value": "n100",
+        "label": "N100 (99.97% filtration)"
+      },
+      {
+        "value": "p95",
+        "label": "P95 (Oil-proof, 95%)"
+      },
+      {
+        "value": "p99",
+        "label": "P99 (Oil-proof, 99%)"
+      },
+      {
+        "value": "p100",
+        "label": "P100 (Oil-proof, 99.97%)"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_hi_vis_class",
+    "label": "High-Visibility Class",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 67,
+    "options": [
+      {
+        "value": "class_1",
+        "label": "Class 1 (Minimal)"
+      },
+      {
+        "value": "class_2",
+        "label": "Class 2 (Medium)"
+      },
+      {
+        "value": "class_3",
+        "label": "Class 3 (High)"
+      }
+    ]
+  },
+  {
+    "attributeId": "ppe_size",
+    "label": "PPE Size",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 68,
+    "options": [
+      {
+        "value": "xs",
+        "label": "XS"
+      },
+      {
+        "value": "s",
+        "label": "S"
+      },
+      {
+        "value": "m",
+        "label": "M"
+      },
+      {
+        "value": "l",
+        "label": "L"
+      },
+      {
+        "value": "xl",
+        "label": "XL"
+      },
+      {
+        "value": "xxl",
+        "label": "XXL"
+      },
+      {
+        "value": "xxxl",
+        "label": "3XL"
+      },
+      {
+        "value": "universal",
+        "label": "Universal"
       }
     ]
   }

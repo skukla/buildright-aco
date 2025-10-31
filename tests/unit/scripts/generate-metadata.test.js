@@ -43,9 +43,9 @@ describe('Metadata Generation', () => {
   });
 
   describe('Happy Path', () => {
-    it('should generate metadata with all 20 required attributes', async () => {
+    it('should generate metadata with all 34 industry-specific attributes', async () => {
       // Arrange
-      const config = { count: 20, seed: 12345 };
+      const config = {};
 
       // Act
       await generateMetadata(config);
@@ -53,25 +53,32 @@ describe('Metadata Generation', () => {
       // Assert
       expect(existsSync(outputPath)).toBe(true);
       const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
-      expect(metadata).toHaveLength(20);
+      expect(metadata).toHaveLength(34);
 
       // Verify each attribute has required fields
-      metadata.forEach((attr, index) => {
+      metadata.forEach((attr) => {
         expect(attr).toHaveProperty('attributeId');
-        expect(attr.attributeId).toBe(`attr_${String(index + 1).padStart(3, '0')}`);
+        // Semantic attribute IDs (not generic attr_XXX)
+        expect(attr.attributeId).not.toMatch(/^attr_\d{3}$/);
         expect(attr).toHaveProperty('label');
         expect(attr).toHaveProperty('type');
         expect(['text', 'select', 'multiselect', 'boolean']).toContain(attr.type);
         expect(attr).toHaveProperty('isRequired');
         expect(typeof attr.isRequired).toBe('boolean');
         expect(attr).toHaveProperty('sortOrder');
-        expect(attr.sortOrder).toBe(index + 1);
+        expect(typeof attr.sortOrder).toBe('number');
       });
+
+      // Verify core attributes exist
+      const attributeIds = metadata.map(a => a.attributeId);
+      expect(attributeIds).toContain('product_category');
+      expect(attributeIds).toContain('brand');
+      expect(attributeIds).toContain('unit_of_measure');
     });
 
     it('should pass ACO schema validation', async () => {
       // Arrange
-      const config = { count: 20, seed: 12345 };
+      const config = {};
 
       // Act
       await generateMetadata(config);
@@ -85,7 +92,7 @@ describe('Metadata Generation', () => {
 
     it('should include mixed attribute types', async () => {
       // Arrange
-      const config = { count: 20, seed: 12345 };
+      const config = {};
 
       // Act
       await generateMetadata(config);
@@ -98,13 +105,15 @@ describe('Metadata Generation', () => {
       }, {});
 
       expect(Object.keys(typeCount).length).toBeGreaterThan(1); // At least 2 different types
-      expect(typeCount.text || 0).toBeGreaterThan(0);
-      expect((typeCount.select || 0) + (typeCount.multiselect || 0)).toBeGreaterThan(0);
+      // Industry schema has 30 select, 3 multiselect, 1 boolean (no text)
+      expect((typeCount.select || 0)).toBeGreaterThan(0);
+      expect((typeCount.multiselect || 0)).toBeGreaterThanOrEqual(3);
+      expect((typeCount.boolean || 0)).toBeGreaterThan(0);
     });
 
     it('should include options for select/multiselect attributes', async () => {
       // Arrange
-      const config = { count: 20, seed: 12345 };
+      const config = {};
 
       // Act
       await generateMetadata(config);
@@ -120,7 +129,7 @@ describe('Metadata Generation', () => {
       selectAttributes.forEach(attr => {
         expect(attr).toHaveProperty('options');
         expect(Array.isArray(attr.options)).toBe(true);
-        expect(attr.options.length).toBeGreaterThanOrEqual(3);
+        expect(attr.options.length).toBeGreaterThanOrEqual(2); // Some attributes have 2-3 options
 
         attr.options.forEach(option => {
           expect(option).toHaveProperty('value');
@@ -132,8 +141,8 @@ describe('Metadata Generation', () => {
 
   describe('Deterministic Output', () => {
     it('should produce identical output with same seed', async () => {
-      // Arrange
-      const config = { count: 20, seed: 12345 };
+      // Arrange - industry metadata is fixed, not seeded
+      const config = {};
 
       // Act
       await generateMetadata(config);
@@ -153,10 +162,10 @@ describe('Metadata Generation', () => {
       expect(firstData).toEqual(secondData);
     });
 
-    it('should produce different output with different seeds', async () => {
-      // Arrange
-      const config1 = { count: 10, seed: 12345 };
-      const config2 = { count: 10, seed: 54321 };
+    it('should produce same output regardless of seed (fixed schema)', async () => {
+      // Arrange - industry metadata is fixed, seed doesn't affect output
+      const config1 = {};
+      const config2 = {};
 
       // Act
       await generateMetadata(config1);
@@ -167,32 +176,20 @@ describe('Metadata Generation', () => {
       await generateMetadata(config2);
       const secondOutput = readFileSync(outputPath, 'utf8');
 
-      // Assert
-      expect(firstOutput).not.toEqual(secondOutput);
+      // Assert - both should be identical (fixed schema)
+      expect(firstOutput).toEqual(secondOutput);
     });
   });
 
   describe('Edge Cases', () => {
-    it('should handle text attributes without option sets', async () => {
-      // Arrange
-      const config = { count: 5, seed: 12345, includeTextAttributes: true };
-
-      // Act
-      await generateMetadata(config);
-
-      // Assert
-      const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
-      const textAttributes = metadata.filter(attr => attr.type === 'text');
-
-      expect(textAttributes.length).toBeGreaterThan(0);
-      textAttributes.forEach(attr => {
-        expect(attr.options).toBeUndefined();
-      });
+    it.skip('should handle text attributes without option sets', async () => {
+      // Skipped: Industry schema has no text attributes (all select/multiselect/boolean)
+      // Text attributes are not used in construction material catalogs
     });
 
     it('should handle boolean attributes with proper defaults', async () => {
       // Arrange
-      const config = { count: 10, seed: 99999 }; // Seed that produces boolean attributes
+      const config = {};
 
       // Act
       await generateMetadata(config);
@@ -201,39 +198,26 @@ describe('Metadata Generation', () => {
       const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
       const booleanAttributes = metadata.filter(attr => attr.type === 'boolean');
 
-      if (booleanAttributes.length > 0) {
-        booleanAttributes.forEach(attr => {
-          expect(attr.options).toBeUndefined();
-          expect(attr).toHaveProperty('defaultValue');
-          expect(typeof attr.defaultValue).toBe('boolean');
-        });
-      }
+      expect(booleanAttributes.length).toBeGreaterThan(0);
+      booleanAttributes.forEach(attr => {
+        expect(attr.options).toBeUndefined();
+        expect(attr).toHaveProperty('defaultValue');
+        expect(typeof attr.defaultValue).toBe('boolean');
+      });
     });
   });
 
   describe('Error Conditions', () => {
-    it('should throw error for missing required configuration fields', async () => {
-      // Arrange
-      const invalidConfig = { seed: 12345 }; // missing count
-
-      // Act & Assert
-      await expect(generateMetadata(invalidConfig)).rejects.toThrow(/count.*required/i);
+    it.skip('should throw error for missing required configuration fields', async () => {
+      // Skipped: New metadata generation doesn't require count parameter (fixed schema)
     });
 
-    it('should throw error for invalid count value', async () => {
-      // Arrange
-      const invalidConfig = { count: 'invalid', seed: 12345 };
-
-      // Act & Assert
-      await expect(generateMetadata(invalidConfig)).rejects.toThrow(/count.*must be a number/i);
+    it.skip('should throw error for invalid count value', async () => {
+      // Skipped: New metadata generation doesn't use count parameter (fixed schema)
     });
 
-    it('should throw error for negative count', async () => {
-      // Arrange
-      const invalidConfig = { count: -1, seed: 12345 };
-
-      // Act & Assert
-      await expect(generateMetadata(invalidConfig)).rejects.toThrow(/count must be positive/i);
+    it.skip('should throw error for negative count', async () => {
+      // Skipped: New metadata generation doesn't use count parameter (fixed schema)
     });
   });
 
@@ -278,7 +262,7 @@ describe('Metadata Generation', () => {
       // When: generateMetadata() is called
       await generateMetadata(config);
 
-      // Then: Attributes have semantic codes like 'project_types', 'commercial_residential', 'brand'
+      // Then: Attributes have semantic codes like 'product_category', 'brand', 'lumber_species'
       const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
       const semanticAttributes = metadata.filter(attr =>
         !attr.attributeId.match(/^attr_\d{3}$/)
@@ -286,16 +270,16 @@ describe('Metadata Generation', () => {
 
       expect(semanticAttributes.length).toBeGreaterThan(0);
 
-      // Should have specific semantic attributes
+      // Should have specific semantic attributes from new industry schema
       const attributeCodes = metadata.map(attr => attr.attributeId);
-      expect(attributeCodes).toContain('project_types');
-      expect(attributeCodes).toContain('commercial_residential');
+      expect(attributeCodes).toContain('product_category');
       expect(attributeCodes).toContain('brand');
+      expect(attributeCodes).toContain('lumber_species');
     });
 
     it('should have project_types attribute with correct options', async () => {
-      // Given: Semantic metadata generation
-      const config = { count: 15, seed: 12345, useSemantic: true };
+      // Given: Industry metadata with project types
+      const config = {};
 
       // When: Inspecting project_types attribute
       await generateMetadata(config);
@@ -336,31 +320,14 @@ describe('Metadata Generation', () => {
       expect(firstData).toEqual(secondData);
     });
 
-    it('should include commercial_residential attribute as select type', async () => {
-      // Given: Semantic metadata generation
-      const config = { count: 15, seed: 12345, useSemantic: true };
-
-      // When: Generating metadata
-      await generateMetadata(config);
-      const metadata = JSON.parse(readFileSync(outputPath, 'utf8'));
-      const commercialResidentialAttr = metadata.find(attr =>
-        attr.attributeId === 'commercial_residential'
-      );
-
-      // Then: Attribute exists and is select type with proper options
-      expect(commercialResidentialAttr).toBeDefined();
-      expect(commercialResidentialAttr.type).toBe('select');
-      expect(commercialResidentialAttr.options).toBeDefined();
-      expect(commercialResidentialAttr.options.length).toBeGreaterThanOrEqual(2);
-
-      const optionValues = commercialResidentialAttr.options.map(opt => opt.value);
-      expect(optionValues).toContain('commercial');
-      expect(optionValues).toContain('residential');
+    it.skip('should include commercial_residential attribute as select type', async () => {
+      // Skipped: Industry schema doesn't include commercial_residential
+      // Replaced with category-specific attributes (lumber_species, drywall_thickness, etc.)
     });
 
     it('should generate brand attribute as select type', async () => {
-      // Given: Semantic metadata generation
-      const config = { count: 15, seed: 12345, useSemantic: true };
+      // Given: Industry-specific metadata generation
+      const config = {};
 
       // When: Generating metadata
       await generateMetadata(config);

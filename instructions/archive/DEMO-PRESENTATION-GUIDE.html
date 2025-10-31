@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildRight ACO Demo Presentation Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <style>
+        /* GitHub Dark Theme Colors - WCAG AA Compliant */
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-tertiary: #6e7681;
+            --accent-primary: #58a6ff;
+            --accent-hover: #79c0ff;
+            --border-primary: #30363d;
+            --border-secondary: #21262d;
+            --success: #3fb950;
+            --warning: #d29922;
+            --error: #f85149;
+            --info: #58a6ff;
+            --code-bg: #161b22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            font-size: 16px;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Sidebar TOC */
+        .sidebar {
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-primary);
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 2rem 1rem;
+            z-index: 100;
+        }
+
+        .sidebar h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin: 0.5rem 0;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: block;
+            padding: 0.25rem 0;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-hover);
+        }
+
+        .toc-list a.active {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        .toc-list .toc-h3 {
+            padding-left: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .toc-list .toc-h4 {
+            padding-left: 2rem;
+            font-size: 0.8rem;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            margin-left: 280px;
+            padding: 3rem;
+            max-width: 1200px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .metadata {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-primary);
+        }
+
+        .badge-info { background: rgba(88, 166, 255, 0.15); color: var(--info); border-color: var(--info); }
+        .badge-success { background: rgba(63, 185, 80, 0.15); color: var(--success); border-color: var(--success); }
+        .badge-warning { background: rgba(210, 153, 34, 0.15); color: var(--warning); border-color: var(--warning); }
+
+        /* Blockquote */
+        blockquote {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        blockquote strong {
+            color: var(--text-primary);
+        }
+
+        /* Headings */
+        h2 {
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem 0;
+            color: var(--text-primary);
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem 0;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Paragraph */
+        p {
+            margin: 1rem 0;
+            color: var(--text-primary);
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+            color: var(--text-primary);
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        /* Code */
+        code {
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            background: var(--code-bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #f0883e;
+            border: 1px solid var(--border-primary);
+        }
+
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border-primary);
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border: none;
+            color: inherit;
+            font-size: 0.9rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: var(--bg-tertiary);
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        th {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        td {
+            color: var(--text-secondary);
+        }
+
+        tbody tr:hover {
+            background: var(--bg-tertiary);
+        }
+
+        /* Links */
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        /* Strong/Bold */
+        strong, b {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Emphasis */
+        em, i {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* HR */
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-primary);
+            margin: 2rem 0;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        #backToTop.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #backToTop:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Progress Bar */
+        #progressBar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--accent-primary);
+            z-index: 1001;
+            transition: width 0.1s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1023px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s;
+            }
+
+            .sidebar.open {
+                transform: translateX(0);
+            }
+
+            main {
+                margin-left: 0;
+                padding: 2rem 1.5rem;
+            }
+
+            #menuToggle {
+                display: block;
+                position: fixed;
+                top: 1rem;
+                left: 1rem;
+                background: var(--accent-primary);
+                color: var(--bg-primary);
+                border: none;
+                padding: 0.75rem;
+                border-radius: 6px;
+                cursor: pointer;
+                z-index: 101;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #menuToggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.2rem;
+            }
+
+            main {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .sidebar, #backToTop, #progressBar, #menuToggle {
+                display: none;
+            }
+
+            main {
+                margin-left: 0;
+                max-width: 100%;
+            }
+
+            a {
+                color: black;
+                text-decoration: underline;
+            }
+
+            pre, code {
+                background: #f6f8fa;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* Callout Boxes */
+        .callout {
+            padding: 1rem 1.5rem;
+            border-left: 4px solid;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .callout-info {
+            background: rgba(88, 166, 255, 0.1);
+            border-color: var(--info);
+        }
+
+        .callout-success {
+            background: rgba(63, 185, 80, 0.1);
+            border-color: var(--success);
+        }
+
+        .callout-warning {
+            background: rgba(210, 153, 34, 0.1);
+            border-color: var(--warning);
+        }
+
+        /* Checkbox Lists */
+        ul.task-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        ul.task-list li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        ul.task-list li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div id="progressBar"></div>
+    <button id="menuToggle">☰</button>
+    <button id="backToTop">↑</button>
+
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Table of Contents</h2>
+            <ul class="toc-list">
+                <li><a href="#business-context" class="toc-h2">1. Business Context</a></li>
+                <li><a href="#demo-environment" class="toc-h2">2. Demo Environment Overview</a></li>
+                <li><a href="#demo-scenarios" class="toc-h2">3. Demo Scenarios</a></li>
+                <li><a href="#scenario-1" class="toc-h3">Scenario 1: Premium Commercial</a></li>
+                <li><a href="#scenario-2" class="toc-h3">Scenario 2: Residential Remodel</a></li>
+                <li><a href="#scenario-3" class="toc-h3">Scenario 3: Project Type Filtering</a></li>
+                <li><a href="#scenario-4" class="toc-h3">Scenario 4: Multi-Location</a></li>
+                <li><a href="#key-features" class="toc-h2">4. Key Features</a></li>
+                <li><a href="#feature-1" class="toc-h3">Feature 1: Hierarchical Pricing</a></li>
+                <li><a href="#feature-2" class="toc-h3">Feature 2: Project Type Filtering</a></li>
+                <li><a href="#feature-3" class="toc-h3">Feature 3: Company-Specific Catalogs</a></li>
+                <li><a href="#feature-4" class="toc-h3">Feature 4: Trigger-Based Catalogs</a></li>
+                <li><a href="#feature-5" class="toc-h3">Feature 5: Product Bundles</a></li>
+                <li><a href="#feature-6" class="toc-h3">Feature 6: Service Products</a></li>
+                <li><a href="#technical-architecture" class="toc-h2">5. Technical Architecture</a></li>
+                <li><a href="#demo-tips" class="toc-h2">6. Demo Tips & Troubleshooting</a></li>
+                <li><a href="#appendix" class="toc-h2">Appendix: Quick Reference</a></li>
+                <li><a href="#summary" class="toc-h2">Summary & Next Steps</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <header>
+                <h1>BuildRight ACO Demo Presentation Guide</h1>
+                <div class="metadata">
+                    <span class="badge badge-info">Version: 1.1</span>
+                    <span class="badge badge-success">Status: Production Ready</span>
+                    <span class="badge badge-warning">Time: 15-20 minutes</span>
+                </div>
+                <blockquote>
+                    <p><strong>Purpose</strong>: Quick reference for presenting the BuildRight ACO demo, connecting business narrative to technical implementation.</p>
+                    <p><strong>Audience</strong>: Sales engineers, solution architects, demo presenters</p>
+                    <p><strong>Time</strong>: 15-20 minute demo</p>
+                </blockquote>
+            </header>
+
+            <section id="business-context">
+                <h2>1. Business Context</h2>
+
+                <h3>BuildRight Solutions Overview</h3>
+                <p><strong>BuildRight Solutions</strong> is a fictional multi-regional building materials distributor serving professional contractors, builders, and project managers across North America. Founded in 1978, BuildRight has evolved into a B2B2X distribution company specializing in construction materials.</p>
+
+                <p><strong>The Challenge</strong>: Traditional one-size-fits-all catalogs don't work for construction materials distribution. A commercial contractor building a high-rise needs entirely different products than a residential remodeler replacing a kitchen, yet both are browsing the same massive catalog. This creates friction, ordering errors, and wasted time.</p>
+
+                <p><strong>The Solution</strong>: Adobe Commerce Optimizer (ACO) enables BuildRight to deliver personalized, project-specific product catalogs that dynamically adapt to customer type, project phase, and real-time requirements.</p>
+
+                <h3>Three-Division Operating Model</h3>
+                <p>BuildRight operates three specialized divisions, each serving distinct customer segments:</p>
+                <ol>
+                    <li><strong>BuildRight Commercial</strong> - Large-scale commercial construction projects (office buildings, hospitals, schools)</li>
+                    <li><strong>BuildRight Residential</strong> - Production home builders and residential remodelers</li>
+                    <li><strong>BuildRight Pro</strong> - Specialty trade contractors (electrical, plumbing, HVAC)</li>
+                </ol>
+
+                <h3>Customer Segments & Pain Points</h3>
+
+                <h4>Premium Commercial Builders</h4>
+                <ul>
+                    <li><strong>Profile</strong>: Large general contractors managing multi-million dollar projects</li>
+                    <li><strong>Pain Point</strong>: Need industrial-grade materials with bulk pricing, but standard catalogs show residential products</li>
+                    <li><strong>Value Proposition</strong>: See only commercial-grade products with tier-based volume pricing</li>
+                </ul>
+
+                <h4>Production Residential Builders</h4>
+                <ul>
+                    <li><strong>Profile</strong>: Home builders constructing 50-200 homes annually</li>
+                    <li><strong>Pain Point</strong>: Need standardized materials at scale, but catalogs include specialty items they'll never use</li>
+                    <li><strong>Value Proposition</strong>: Streamlined catalog with residential-focused products and builder pricing tiers</li>
+                </ul>
+
+                <h4>Specialty Trade Contractors</h4>
+                <ul>
+                    <li><strong>Profile</strong>: Licensed electricians, plumbers, HVAC technicians</li>
+                    <li><strong>Pain Point</strong>: Need specialty products for their specific trade, waste time browsing irrelevant categories</li>
+                    <li><strong>Value Proposition</strong>: Trade-specific product filtering with professional contractor pricing</li>
+                </ul>
+
+                <h3>Solution Value Proposition</h3>
+                <p>ACO personalization solves these challenges by:</p>
+                <ul>
+                    <li><strong>Eliminating irrelevant products</strong>: Contractors only see products appropriate for their segment and project type</li>
+                    <li><strong>Streamlining ordering</strong>: Project-specific catalogs reduce search time by 60-70%</li>
+                    <li><strong>Reducing errors</strong>: Automatic filtering prevents ordering wrong materials for project type</li>
+                    <li><strong>Optimizing pricing</strong>: Hierarchical price books reward volume customers automatically</li>
+                    <li><strong>Improving fulfillment</strong>: Location-based inventory ensures products are actually available</li>
+                </ul>
+            </section>
+
+            <section id="demo-environment">
+                <h2>2. Demo Environment Overview</h2>
+
+                <h3>What We Built</h3>
+                <p>The BuildRight ACO demo showcases a reduced-scope but fully functional implementation:</p>
+
+                <p><strong>Products</strong>: 184 total SKUs across 5 categories</p>
+                <ul>
+                    <li>70 Simple Products (dimensional lumber, concrete, fasteners)</li>
+                    <li>92 Configurable Product Variants (doors, windows, beams with size/finish options)</li>
+                    <li>15 Bundle Products (pre-configured kits: framing packages, drywall room kits)</li>
+                    <li>10 Service Products (delivery, fabrication, installation services)</li>
+                </ul>
+
+                <p><strong>Categories</strong>: 5 main categories with 19 total in 2-level hierarchical structure</p>
+                <ul>
+                    <li>Structural Materials (parent) → Lumber & Engineered Wood, Concrete & Cement Products (children)</li>
+                    <li>Framing & Insulation (parent) → Metal Framing, Drywall, Insulation (children)</li>
+                    <li>Roofing Materials (parent) → Shingles, Underlayment, Ventilation (children)</li>
+                    <li>Windows & Doors (parent) → Residential Windows, Commercial Doors, Door Hardware (children)</li>
+                    <li>Fasteners & Hardware (parent) → Nails, Screws, Adhesives (children)</li>
+                </ul>
+
+                <div class="callout callout-info">
+                    <strong>Enhancement Note</strong>: Expanded from 5 planned to 19 total categories to demonstrate realistic industry taxonomy and ACO's hierarchical category capabilities.
+                </div>
+
+                <p><strong>B2B Structure</strong>: 3 companies, 6 locations, 12 users</p>
+                <ul>
+                    <li>Premium Commercial Builders Inc. (2 locations in California)</li>
+                    <li>Coastal Residential Builders (2 locations in California)</li>
+                    <li>Elite Trade Contractors (2 locations in Washington)</li>
+                </ul>
+
+                <p><strong>Pricing</strong>: 10 hierarchical price books across 3 tiers</p>
+                <ul>
+                    <li>Level 1: Base catalogs (US-Retail, US-Contract)</li>
+                    <li>Level 2: Segment catalogs (Retail-Consumer, Contract-Commercial, Contract-Residential, Contract-Pro)</li>
+                    <li>Level 3: Volume tier catalogs (Commercial-Tier1, Commercial-Tier2, Residential-Builder, Pro-Specialty)</li>
+                </ul>
+
+                <p><strong>Inventory</strong>: 6 inventory sources (MSI configuration)</p>
+                <ul>
+                    <li>2 Regional Distribution Centers (Sacramento CA, Charlotte NC)</li>
+                    <li>3 Regional Warehouses (Phoenix, Denver, Atlanta)</li>
+                    <li>1 Virtual Drop Shipper (Premium Window Systems)</li>
+                </ul>
+
+                <h3>Key Personalization Capabilities</h3>
+
+                <h4>Project Type Filtering</h4>
+                <ul>
+                    <li>Products tagged with project types: new_construction, remodel, repair, restoration</li>
+                    <li>HTTP trigger headers filter products dynamically based on active project</li>
+                    <li>Same catalog shows different products for different project contexts</li>
+                </ul>
+
+                <h4>Hierarchical Pricing</h4>
+                <ul>
+                    <li>3-tier price book structure rewards volume customers</li>
+                    <li>Premium Commercial Builders get Tier2 pricing (deepest discounts)</li>
+                    <li>Residential builders get builder-specific pricing</li>
+                    <li>Pricing inheritance from parent catalogs</li>
+                </ul>
+
+                <h4>Company-Specific Catalogs</h4>
+                <ul>
+                    <li>Each B2B company assigned to specific shared catalog (price book)</li>
+                    <li>Users within company automatically see company pricing</li>
+                    <li>Multi-location companies share same pricing across branches</li>
+                </ul>
+
+                <h4>Brand & Category Filtering</h4>
+                <ul>
+                    <li>Products tagged with brands: BuildRight Pro, ToughGrip, SafeWorks, QuickFast</li>
+                    <li>Category filtering: structural_materials, framing_insulation, windows_doors, etc.</li>
+                    <li>HTTP headers enable dynamic filtering in real-time</li>
+                </ul>
+            </section>
+
+            <section id="demo-scenarios">
+                <h2>3. Demo Scenarios</h2>
+
+                <h3 id="scenario-1">Scenario 1: Premium Commercial Builder Experience</h3>
+                <p><strong>Business Story</strong>: Premium Commercial Builders Inc. is building a 12-story office building in Los Angeles. They're in the framing phase and need structural materials. As a high-volume customer (Tier2), they receive the deepest discounts and access to bulk ordering.</p>
+
+                <p><strong>Technical Setup</strong>:</p>
+                <ul>
+                    <li><strong>Company</strong>: Premium Commercial Builders Inc.</li>
+                    <li><strong>User</strong>: John Smith (john.smith@premiumcommercial.example.com)</li>
+                    <li><strong>Pricing Tier</strong>: Commercial-Tier2 (best pricing in demo)</li>
+                    <li><strong>Project Type</strong>: New Construction</li>
+                    <li><strong>Product Category</strong>: Structural Materials</li>
+                </ul>
+
+                <p><strong>Demo Steps</strong>:</p>
+                <ol>
+                    <li><strong>Log into ACO catalog</strong> as John Smith<br><em>Talking Point</em>: "This is a premium commercial contractor logged into their personalized BuildRight catalog."</li>
+                    <li><strong>Navigate to Structural Materials category</strong><br><em>Talking Point</em>: "Notice the catalog is already filtered to commercial-grade products. Residential items don't appear, reducing clutter."</li>
+                    <li><strong>Apply project type filter</strong>: Set HTTP header <code>AC-Policy-Project-Type: new_construction</code><br><em>Talking Point</em>: "We're simulating the contractor selecting their active project. ACO dynamically filters to show only products suitable for new construction."</li>
+                    <li><strong>View product results</strong><br><em>Talking Point</em>: "See products like 2x4x8 SPF Studs, LVL beams, OSB sheathing - all tagged for new construction framing work."</li>
+                    <li><strong>Show pricing for Tier2 customer</strong><br>Example: 2x4x8 SPF Stud shows $8.08 per unit (5% Tier2 discount applied)<br>View tier pricing: 100+ units = $7.84, 294+ units (full bundle) = $7.50<br><em>Talking Point</em>: "This high-volume customer automatically receives tier-based discounts. The more they buy, the better the pricing - no negotiations needed."</li>
+                </ol>
+
+                <p><strong>Expected Outcome</strong>: Streamlined catalog showing ~40-50 products instead of all 184, with best available pricing for this customer tier.</p>
+
+                <h3 id="scenario-2">Scenario 2: Residential Remodel Contractor Experience</h3>
+                <p><strong>Business Story</strong>: Coastal Residential Builders specializes in kitchen and bathroom remodels for homeowners. They need finishing materials, not heavy structural products. As a production builder, they receive builder-tier pricing.</p>
+
+                <p><strong>Technical Setup</strong>:</p>
+                <ul>
+                    <li><strong>Company</strong>: Coastal Residential Builders</li>
+                    <li><strong>User</strong>: Maria Garcia (maria.garcia@coastalresidential.example.com)</li>
+                    <li><strong>Pricing Tier</strong>: Residential-Builder</li>
+                    <li><strong>Project Type</strong>: Remodel</li>
+                    <li><strong>Product Category</strong>: Windows & Doors</li>
+                </ul>
+
+                <p><strong>Demo Steps</strong>:</p>
+                <ol>
+                    <li><strong>Log in as Maria Garcia</strong> (remodel contractor)<br><em>Talking Point</em>: "This residential contractor works primarily on remodels, not new construction."</li>
+                    <li><strong>Navigate to Windows & Doors</strong><br><em>Talking Point</em>: "Remodel projects often involve window and door replacement."</li>
+                    <li><strong>Apply project type filter</strong>: <code>AC-Policy-Project-Type: remodel</code><br><em>Talking Point</em>: "By filtering for remodel projects, we show products appropriate for replacement work - residential-grade windows, entry doors, hardware."</li>
+                    <li><strong>Compare to new construction view</strong> (toggle header to <code>new_construction</code>)<br><em>Talking Point</em>: "Notice how the product selection changes. New construction shows rough openings and bulk framing materials, while remodel focuses on finished products ready for installation."</li>
+                    <li><strong>Show Residential-Builder pricing</strong><br>Example: Residential vinyl window shows builder pricing, not retail<br><em>Talking Point</em>: "This builder receives contractor pricing across all purchases, different from both retail customers and commercial contractors."</li>
+                </ol>
+
+                <p><strong>Expected Outcome</strong>: Catalog emphasizes finishing materials and residential-grade products, excluding heavy commercial items. Pricing reflects residential builder tier.</p>
+
+                <h3 id="scenario-3">Scenario 3: Project Type Filtering Comparison</h3>
+                <p><strong>Business Story</strong>: Demonstrating how the same catalog view transforms based on project context. A contractor managing multiple project types can switch between them seamlessly.</p>
+
+                <p><strong>Technical Setup</strong>:</p>
+                <ul>
+                    <li><strong>Company</strong>: Premium Commercial Builders Inc.</li>
+                    <li><strong>User</strong>: John Smith</li>
+                    <li><strong>Demo</strong>: Compare 4 project type filters on same catalog view</li>
+                </ul>
+
+                <p><strong>Demo Steps</strong>:</p>
+                <ol>
+                    <li><strong>Start with base catalog</strong> (no project type header)<br><em>Talking Point</em>: "Without project context, the contractor sees all available products - 184 SKUs."</li>
+                    <li><strong>Apply New Construction filter</strong>: <code>AC-Policy-Project-Type: new_construction</code><br>Show products: Structural lumber, concrete forms, bulk fasteners<br><em>Talking Point</em>: "New construction emphasizes structural materials, bulk quantities, and products for ground-up building."</li>
+                    <li><strong>Switch to Remodel filter</strong>: <code>AC-Policy-Project-Type: remodel</code><br>Show products: Finished lumber, specialty fasteners, installation materials<br><em>Talking Point</em>: "Remodel projects focus on finished materials, replacement products, and smaller quantities."</li>
+                    <li><strong>Switch to Repair filter</strong>: <code>AC-Policy-Project-Type: repair</code><br>Show products: Quick-fix materials, standard sizes, readily available items<br><em>Talking Point</em>: "Repair projects need immediate availability and standard sizes. Products here are stocked items with minimal lead time."</li>
+                    <li><strong>Switch to Restoration filter</strong>: <code>AC-Policy-Project-Type: restoration</code><br>Show products: Specialty materials, historic-compatible products<br><em>Talking Point</em>: "Restoration work requires specialty products not typically used in standard construction - period-appropriate materials, specialty finishes."</li>
+                </ol>
+
+                <p><strong>Expected Outcome</strong>: Clear demonstration of how product selection changes dramatically based on project type, even for the same user and company.</p>
+
+                <h3 id="scenario-4">Scenario 4: Multi-Location Company Demo</h3>
+                <p><strong>Business Story</strong>: Premium Commercial Builders operates two branches: Los Angeles HQ and San Francisco Bay Area. Both locations share the same pricing tier but may have different users and project focuses.</p>
+
+                <p><strong>Technical Setup</strong>:</p>
+                <ul>
+                    <li><strong>Company</strong>: Premium Commercial Builders Inc.</li>
+                    <li><strong>Location 1</strong>: Los Angeles HQ (Team 1)</li>
+                    <li><strong>Location 2</strong>: San Francisco Bay Area (Team 2)</li>
+                    <li><strong>Show</strong>: Both teams access same catalog with same pricing</li>
+                </ul>
+
+                <p><strong>Demo Steps</strong>:</p>
+                <ol>
+                    <li><strong>Log in as LA user</strong> (John Smith - LA Headquarters)<br>Show catalog access with Commercial-Tier2 pricing<br><em>Talking Point</em>: "This is the LA headquarters team member accessing the catalog."</li>
+                    <li><strong>View user's team assignment</strong><br><em>Talking Point</em>: "This user is assigned to the Los Angeles Headquarters team within Premium Commercial Builders."</li>
+                    <li><strong>Log in as SF user</strong> (Carlos Rodriguez - SF Bay Area)<br>Show same catalog with same pricing<br><em>Talking Point</em>: "Now we're logged in as a team member from the San Francisco office."</li>
+                    <li><strong>Compare pricing between locations</strong><br><em>Talking Point</em>: "Both locations receive identical Commercial-Tier2 pricing because they're part of the same company. Pricing is assigned at the company level, not per location."</li>
+                    <li><strong>Show team-based reporting potential</strong><br><em>Talking Point</em>: "While both teams share pricing, BuildRight can track which location is ordering what products, enabling branch-specific analytics and inventory planning."</li>
+                </ol>
+
+                <p><strong>Expected Outcome</strong>: Demonstrates multi-location B2B structure with shared pricing but separate team tracking.</p>
+            </section>
+
+            <section id="key-features">
+                <h2>4. Key Features & Talking Points</h2>
+
+                <h3 id="feature-1">Feature 1: Hierarchical Pricing</h3>
+                <p><strong>What It Does</strong>: 3-tier price book structure with inheritance from parent catalogs. Companies assigned to tier-level catalogs inherit pricing from segment and base levels.</p>
+
+                <p><strong>Business Value</strong>: "This hierarchical structure allows BuildRight to reward high-volume customers with deeper discounts automatically. A commercial contractor buying $2M annually receives Tier2 pricing across all products without manual discounting or contract negotiations. Pricing updates cascade from base to tier levels, simplifying management."</p>
+
+                <p><strong>Demo Highlight</strong>:</p>
+                <ul>
+                    <li>Show 2x4x8 SPF Stud pricing across tiers</li>
+                    <li>Base Contract: $8.50</li>
+                    <li>Commercial-Tier1: $8.25 (volume discount)</li>
+                    <li>Commercial-Tier2: $8.08 (best volume discount)</li>
+                    <li>Show tier pricing at quantity breaks: 100+, 294+ (full bundle), 588+</li>
+                </ul>
+
+                <h3 id="feature-2">Feature 2: Project Type Filtering</h3>
+                <p><strong>What It Does</strong>: Products tagged with multiselect <code>project_types</code> attribute (new_construction, remodel, repair, restoration). HTTP trigger header <code>AC-Policy-Project-Type</code> filters products dynamically based on active project context. <strong>Intelligent assignment logic</strong> automatically assigns appropriate project types based on product category (services get all 4, structural gets 2-3, fasteners get all 4).</p>
+
+                <p><strong>Business Value</strong>: "Contractors managing multiple projects don't waste time browsing irrelevant products. A framing crew working on new construction sees structural materials, while a remodel team sees finishing products. This reduces ordering errors by 60% and cuts search time by 70%, per BuildRight's internal analysis. The intelligent assignment algorithm ensures products are tagged appropriately based on their category - no manual tagging required."</p>
+
+                <p><strong>Demo Highlight</strong>:</p>
+                <ul>
+                    <li>Toggle between project types using HTTP headers</li>
+                    <li>Show how product count and selection changes dramatically</li>
+                    <li>Highlight products that appear in multiple project types (fasteners, adhesives appear in all 4)</li>
+                    <li>Explain intelligent assignment: "Services automatically tagged with all 4 types, structural materials get 2-3 types based on typical use"</li>
+                    <li>Reference implementation: <code>scripts/generate-products.js:122-167</code></li>
+                </ul>
+
+                <h3 id="feature-3">Feature 3: Company-Specific Catalogs</h3>
+                <p><strong>What It Does</strong>: Each B2B company assigned to specific shared catalog (price book) in Adobe Commerce. All users within company inherit company's pricing and product access.</p>
+
+                <p><strong>Business Value</strong>: "BuildRight serves diverse customer segments - commercial contractors, residential builders, and specialty trades - each with different needs and pricing expectations. Company-specific catalogs ensure every user sees the right products at the right price, automatically. New users onboarded to a company immediately receive appropriate catalog access."</p>
+
+                <p><strong>Demo Highlight</strong>:</p>
+                <ul>
+                    <li>Log in as users from different companies</li>
+                    <li>Show different pricing for same product across companies</li>
+                    <li>Demonstrate automatic catalog assignment (no manual configuration per user)</li>
+                </ul>
+
+                <h3 id="feature-4">Feature 4: Trigger-Based Dynamic Catalogs</h3>
+                <p><strong>What It Does</strong>: HTTP headers sent with GraphQL API requests trigger real-time catalog filtering. Headers like <code>AC-Policy-Project-Type</code>, <code>AC-Policy-Brand</code>, <code>AC-Policy-Product-Category</code> filter products without creating separate static catalog views.</p>
+
+                <p><strong>Business Value</strong>: "Traditional B2B platforms require creating hundreds of pre-configured catalogs for every combination of customer type and project context. ACO's trigger-based policies enable unlimited catalog variations from a single product dataset. BuildRight can introduce new project types or customer segments without rebuilding catalogs."</p>
+
+                <p><strong>Demo Highlight</strong>:</p>
+                <ul>
+                    <li>Show GraphQL request with multiple trigger headers</li>
+                    <li>Demonstrate combining filters (project type + brand + category)</li>
+                    <li>Show how catalog adapts in real-time without page reloads</li>
+                </ul>
+
+                <h3 id="feature-5">Feature 5: Product Bundles & Kits</h3>
+                <p><strong>What It Does</strong>: 15 pre-configured bundle products combine frequently purchased items (e.g., "Standard Framing Package" includes studs, plates, sheathing, fasteners). Bundles include items from multiple categories with default quantities.</p>
+
+                <p><strong>Business Value</strong>: "Construction projects require purchasing dozens of related products. Bundles reduce the 50-item framing order down to 3-4 bundle selections. This speeds ordering, ensures nothing is forgotten, and reduces errors. Pre-configured bundles also enable BuildRight to promote preferred product combinations and move excess inventory."</p>
+
+                <p><strong>Demo Highlight</strong>:</p>
+                <ul>
+                    <li>Show bundle product structure (BUNDLE-FRAME-2X4-STD)</li>
+                    <li>Display bundle components with quantities</li>
+                    <li>Compare ordering bundles vs individual products (time savings)</li>
+                </ul>
+
+                <h3 id="feature-6">Feature 6: Service Products Integration</h3>
+                <p><strong>What It Does</strong>: 10 service SKUs exist alongside physical products (delivery, fabrication, installation, equipment rental, technical services). Services can be ordered as standalone items or bundled with products.</p>
+
+                <p><strong>Business Value</strong>: "BuildRight differentiates by offering full-service fulfillment. Contractors can order job-site delivery with forklift, precision lumber cutting, or window installation - all in the same order as materials. This creates a comprehensive project management platform, not just a catalog."</p>
+
+                <p><strong>Demo Highlight</strong>:</p>
+                <ul>
+                    <li>Show service product: SVC-DEL-JOBSITE (Job Site Delivery with Equipment)</li>
+                    <li>Demonstrate adding service to cart with material products</li>
+                    <li>Discuss integration potential with scheduling and dispatch systems</li>
+                </ul>
+            </section>
+
+            <section id="technical-architecture">
+                <h2>5. Technical Architecture</h2>
+
+                <h3>Data Model Overview</h3>
+
+                <p><strong>Products</strong>: 184 SKUs stored as composable catalog entities</p>
+                <ul>
+                    <li>Simple products (single SKU, fixed attributes)</li>
+                    <li>Configurable products (parent SKU with variants based on size, color, finish)</li>
+                    <li>Bundle products (container SKU with component items)</li>
+                    <li>Service products (non-physical SKUs for services)</li>
+                </ul>
+
+                <p><strong>Attributes</strong>: 34 metadata attributes for rich product descriptions (enhanced from 20 planned)</p>
+                <ul>
+                    <li><strong>Classification (8)</strong>: product_category, brand, unit_of_measure, model_number, lumber_species, lumber_grade, lumber_treatment, safety_rating</li>
+                    <li><strong>Physical properties (5)</strong>: weight_lbs, length_inches, width_inches, height_thickness_inches, coverage_per_unit</li>
+                    <li><strong>Material specs (6)</strong>: material_type, fire_rating, leed_eligible, commercial_residential, interior_exterior, moisture_resistant</li>
+                    <li><strong>Application (2)</strong>: <strong>project_types</strong> (multiselect with intelligent assignment), service_duration_hours</li>
+                    <li><strong>Ordering (8)</strong>: minimum_order_quantity, order_increment, units_per_package, units_per_pallet, pallet_quantity_available, special_order_item, lead_time_days, stock_status</li>
+                    <li><strong>Performance (5)</strong>: r_value, insulation_type, warranty_years, hazmat_classification, sustainability_certified</li>
+                </ul>
+
+                <p><strong>Product Relationships</strong>:</p>
+                <ul>
+                    <li>Categories (hierarchical): structural-materials > lumber-engineered-wood > dimension-lumber</li>
+                    <li>Variants (configurable): LBR-LVL-BEAM-CONFIG > LBR-LVL-BEAM-1.75X9.25-20 (32 variants)</li>
+                    <li>Bundles: BUNDLE-FRAME-2X4-STD contains LBR-2X4-8-SPF-STD (100 qty) + PLY-OSB-7/16-4X8 (25 qty) + fasteners</li>
+                </ul>
+
+                <p><strong>Price Books</strong>: 10 hierarchical shared catalogs</p>
+                <ul>
+                    <li>Level 1: Base catalogs with currency (US-Retail, US-Contract)</li>
+                    <li>Level 2: Segment catalogs (Retail-Consumer, Contract-Commercial, Contract-Residential, Contract-Pro)</li>
+                    <li>Level 3: Volume tier catalogs (Commercial-Tier1, Commercial-Tier2, Residential-Builder, Pro-Specialty)</li>
+                </ul>
+
+                <p><strong>Companies & Users</strong>: B2B structure</p>
+                <ul>
+                    <li>3 Companies (one per division)</li>
+                    <li>6 Locations/Teams (2 per company)</li>
+                    <li>12 Users (4 per company, 2 per location)</li>
+                </ul>
+
+                <h3>ACO Integration Points</h3>
+
+                <p><strong>What ACO Provides</strong>:</p>
+
+                <h4>Real-Time Personalization</h4>
+                <ul>
+                    <li>Catalog filtering based on HTTP headers (project type, brand, category)</li>
+                    <li>Dynamic product visibility without pre-built catalog views</li>
+                    <li>Sub-second response times for personalized queries</li>
+                </ul>
+
+                <h4>Trigger Policies</h4>
+                <ul>
+                    <li>HTTP_HEADER transport for passing context with API requests</li>
+                    <li>Operators: EQUALS, CONTAINS, IN, NOT_EQUALS, LESS_THAN, GREATER_THAN</li>
+                    <li>Multiple policies combine with logical AND</li>
+                </ul>
+
+                <h4>GraphQL API</h4>
+                <ul>
+                    <li>Query products with filters, pagination, sorting</li>
+                    <li>Retrieve product attributes, pricing, inventory (via separate MSI API)</li>
+                    <li>Search products with relevance ranking</li>
+                </ul>
+
+                <h4>Multi-Tenant Catalog Management</h4>
+                <ul>
+                    <li>Shared catalogs (price books) assigned to B2B companies</li>
+                    <li>Hierarchical price book inheritance</li>
+                    <li>Company-level customization without duplicating product data</li>
+                </ul>
+
+                <h3>What's Outside ACO Scope</h3>
+
+                <h4>Inventory Management</h4>
+                <ul>
+                    <li>ACO does not manage inventory (quantity, stock status, allocation)</li>
+                    <li>Adobe Commerce Multi-Source Inventory (MSI) handles 6 inventory sources</li>
+                    <li>Manual configuration required via Adobe Commerce Admin or REST API</li>
+                </ul>
+
+                <h4>Order Management</h4>
+                <ul>
+                    <li>ACO provides product catalog and pricing</li>
+                    <li>Orders placed through Adobe Commerce storefront/API</li>
+                    <li>Order fulfillment, shipping, invoicing handled by Adobe Commerce</li>
+                </ul>
+
+                <h4>User Authentication</h4>
+                <ul>
+                    <li>B2B company users authenticate via Adobe Commerce</li>
+                    <li>ACO receives authenticated requests with company context</li>
+                    <li>No user management within ACO</li>
+                </ul>
+            </section>
+
+            <section id="demo-tips">
+                <h2>6. Demo Tips & Troubleshooting</h2>
+
+                <h3>Pre-Demo Checklist</h3>
+                <ul class="task-list">
+                    <li><strong>ACO environment is accessible</strong>
+                        <ul>
+                            <li>Confirm GraphQL endpoint URL</li>
+                            <li>Verify access token is valid and not expired</li>
+                            <li>Test basic GraphQL query (e.g., retrieve 5 products)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sample products are ingested</strong>
+                        <ul>
+                            <li>Confirm 184 products exist in catalog</li>
+                            <li>Verify product attributes are populated (project_types, brand, product_category)</li>
+                            <li>Check at least 3 products per category exist</li>
+                        </ul>
+                    </li>
+                    <li><strong>Price books are configured</strong>
+                        <ul>
+                            <li>Verify 10 shared catalogs exist with hierarchical relationships</li>
+                            <li>Check pricing is set for sample products in multiple price books</li>
+                            <li>Confirm tier pricing (quantity breaks) is configured for key products</li>
+                        </ul>
+                    </li>
+                    <li><strong>Policies are active</strong>
+                        <ul>
+                            <li>Verify trigger-based policies are created (Project-Type, Brand, Category)</li>
+                            <li>Confirm policies are associated with catalog views</li>
+                            <li>Test policies with sample HTTP headers</li>
+                        </ul>
+                    </li>
+                    <li><strong>B2B companies are set up</strong>
+                        <ul>
+                            <li>Verify 3 demo companies exist (Premium Commercial, Coastal Residential, Elite Trade)</li>
+                            <li>Confirm each company assigned to appropriate shared catalog</li>
+                            <li>Check sample users exist and can authenticate</li>
+                        </ul>
+                    </li>
+                    <li><strong>HTTP header testing tools ready</strong>
+                        <ul>
+                            <li>Prepare curl commands or Postman collection with sample headers</li>
+                            <li>Have browser developer tools ready to inspect GraphQL requests</li>
+                            <li>Bookmark ACO GraphQL playground (if available)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Common Questions & Answers</h3>
+
+                <p><strong>Q</strong>: "How many products can ACO handle? What's the scalability limit?"</p>
+                <p><strong>A</strong>: "ACO is designed for enterprise-scale catalogs. Adobe has demonstrated catalogs with 1M+ products in production. The BuildRight demo uses 184 products to keep the demo manageable, but a real implementation could include BuildRight's full 150,000+ product inventory across all categories, brands, and variants. Performance remains sub-second even at scale due to ACO's optimized indexing and caching."</p>
+
+                <p><strong>Q</strong>: "Can we integrate ACO with our existing ERP system (SAP, Oracle, NetSuite)?"</p>
+                <p><strong>A</strong>: "Yes. ACO integrates with Adobe Commerce, which has robust ERP integration capabilities. Your ERP remains the source of truth for product master data, pricing, and inventory. Adobe Commerce syncs that data (via REST API, middleware, or batch imports), and ACO provides the personalized catalog layer. BuildRight's architecture would sync product data from their ERP nightly, with real-time pricing and inventory updates via API."</p>
+
+                <p><strong>Q</strong>: "How do we assign customers to different price books? Is it manual?"</p>
+                <p><strong>A</strong>: "It's flexible. In Adobe Commerce B2B, you assign each company to a shared catalog (price book) manually during company setup, or automate it based on business rules (sales volume, customer segment, region). Once assigned, all users within that company automatically inherit the pricing. For BuildRight, we'd assign companies to tiers based on annual purchasing volume, automatically upgrading them when they reach thresholds."</p>
+
+                <p><strong>Q</strong>: "What happens if a contractor's project type changes mid-project?"</p>
+                <p><strong>A</strong>: "The frontend application simply changes the HTTP header value in subsequent API requests. If a contractor switches from 'framing' to 'drywall' phase, the UI updates the <code>AC-Policy-Project-Type</code> header from <code>new_construction</code> to <code>remodel</code>, and the next catalog query returns the new filtered product set. No backend configuration changes needed - it's dynamic and instantaneous."</p>
+
+                <p><strong>Q</strong>: "Can we add new product attributes without rebuilding the catalog?"</p>
+                <p><strong>A</strong>: "Yes. ACO's composable catalog model allows you to add new attributes at any time. In fact, BuildRight's implementation demonstrates this flexibility - the original plan specified 20 attributes for the reduced scope, but we expanded to 34 attributes during implementation to better demonstrate industry coverage. We added lumber-specific attributes (species, grade, treatment), insulation properties (r_value, insulation_type), and the innovative project_types multiselect attribute - all without disrupting existing product data or catalog structure."</p>
+
+                <h3>Troubleshooting During Demo</h3>
+
+                <h4>Issue: Policy not filtering products (all products appear)</h4>
+                <p><strong>Quick Fix</strong>:</p>
+                <ol>
+                    <li>Verify HTTP header name matches trigger name exactly: <code>AC-Policy-Project-Type</code> (case-sensitive)</li>
+                    <li>Check header is being sent (use browser DevTools Network tab)</li>
+                    <li>Confirm policy is associated with catalog view and enabled</li>
+                </ol>
+
+                <h4>Issue: No products returned (empty result set)</h4>
+                <p><strong>Quick Fix</strong>:</p>
+                <ol>
+                    <li>Remove all trigger headers and test base catalog (isolate issue)</li>
+                    <li>Check trigger header value matches product attribute values (e.g., use <code>new_construction</code>, not <code>new-construction</code>)</li>
+                    <li>Query products directly to verify attribute values exist</li>
+                </ol>
+
+                <h4>Issue: Wrong pricing displayed</h4>
+                <p><strong>Quick Fix</strong>:</p>
+                <ol>
+                    <li>Verify which company/user is logged in (check shared catalog assignment)</li>
+                    <li>Confirm price book hierarchy is correct (child inherits from parent)</li>
+                    <li>Check product has pricing set in the assigned shared catalog</li>
+                </ol>
+            </section>
+
+            <section id="appendix">
+                <h2>Appendix: Quick Reference</h2>
+
+                <h3>Demo User Credentials</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Company</th>
+                            <th>Division</th>
+                            <th>User Name</th>
+                            <th>Email</th>
+                            <th>Pricing Tier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Premium Commercial Builders Inc.</td>
+                            <td>Commercial</td>
+                            <td>John Smith</td>
+                            <td>john.smith@premiumcommercial.example.com</td>
+                            <td>Commercial-Tier2</td>
+                        </tr>
+                        <tr>
+                            <td>Coastal Residential Builders</td>
+                            <td>Residential</td>
+                            <td>Maria Garcia</td>
+                            <td>maria.garcia@coastalresidential.example.com</td>
+                            <td>Residential-Builder</td>
+                        </tr>
+                        <tr>
+                            <td>Elite Trade Contractors</td>
+                            <td>Pro</td>
+                            <td>David Chen</td>
+                            <td>david.chen@elitetrade.example.com</td>
+                            <td>Pro-Specialty</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p><em>(Note: Actual credentials and authentication method depend on Adobe Commerce configuration)</em></p>
+
+                <h3>HTTP Headers for Demo Scenarios</h3>
+
+                <p><strong>Scenario 1: Commercial New Construction</strong></p>
+                <pre><code class="language-bash">-H "AC-Policy-Project-Type: new_construction"
+-H "AC-Policy-Product-Category: structural_materials"</code></pre>
+
+                <p><strong>Scenario 2: Residential Remodel</strong></p>
+                <pre><code class="language-bash">-H "AC-Policy-Project-Type: remodel"
+-H "AC-Policy-Product-Category: windows_doors"</code></pre>
+
+                <p><strong>Scenario 3: Project Type Comparison</strong></p>
+                <pre><code class="language-bash"># Test 1: New Construction
+-H "AC-Policy-Project-Type: new_construction"
+
+# Test 2: Remodel
+-H "AC-Policy-Project-Type: remodel"
+
+# Test 3: Repair
+-H "AC-Policy-Project-Type: repair"
+
+# Test 4: Restoration
+-H "AC-Policy-Project-Type: restoration"</code></pre>
+
+                <h3>GraphQL Query Examples</h3>
+
+                <p><strong>Basic Product Query</strong> (no filtering):</p>
+                <pre><code class="language-graphql">query {
+  products(pageSize: 20) {
+    items {
+      sku
+      name
+      price {
+        regular
+      }
+      attributes {
+        code
+        values
+      }
+    }
+  }
+}</code></pre>
+
+                <p><strong>Product Query with Project Type Filter</strong> (requires HTTP header <code>AC-Policy-Project-Type: new_construction</code>):</p>
+                <pre><code class="language-graphql">query {
+  products(pageSize: 20) {
+    items {
+      sku
+      name
+      attributes(codes: ["project_types", "product_category", "brand"]) {
+        code
+        values
+      }
+    }
+  }
+}</code></pre>
+            </section>
+
+            <section id="summary">
+                <h2>Summary & Next Steps</h2>
+
+                <h3>Key Takeaways</h3>
+
+                <h4>Business Value</h4>
+                <ul>
+                    <li>ACO enables BuildRight to serve diverse customer segments with personalized catalogs</li>
+                    <li>60% reduction in ordering errors through project-specific product filtering</li>
+                    <li>70% faster product discovery by eliminating irrelevant catalog clutter</li>
+                    <li>Hierarchical pricing rewards volume customers automatically</li>
+                    <li>Intelligent attribute assignment reduces manual data entry and ensures consistency</li>
+                </ul>
+
+                <h4>Technical Innovation</h4>
+                <ul>
+                    <li>Trigger-based policies enable unlimited catalog variations from single product dataset</li>
+                    <li>Real-time filtering via HTTP headers (no pre-built catalog views required)</li>
+                    <li>Composable catalog model supports complex B2B scenarios</li>
+                    <li>Integration with Adobe Commerce B2B for company/pricing management</li>
+                    <li><strong>Intelligent project type assignment</strong>: Category-aware algorithm automatically assigns appropriate project types based on product classification</li>
+                </ul>
+
+                <h4>Demo Highlights</h4>
+                <ul>
+                    <li>4 demo scenarios covering commercial, residential, project types, multi-location</li>
+                    <li>6 key features with business value talking points</li>
+                    <li>184 products across 19 categories (5 parent, 14 child) demonstrating real-world construction materials</li>
+                    <li>10 hierarchical price books showing volume tier pricing</li>
+                    <li><strong>34 metadata attributes</strong> (enhanced from 20 planned) demonstrating comprehensive industry coverage</li>
+                    <li><strong>Intelligent assignment logic</strong> showcasing AI-driven data management capabilities</li>
+                </ul>
+
+                <h3>Next Steps for Presenters</h3>
+                <ol>
+                    <li><strong>Practice the Demo</strong>:
+                        <ul>
+                            <li>Run through all 4 scenarios at least twice before presenting</li>
+                            <li>Test HTTP header commands in advance</li>
+                            <li>Have backup curl commands ready in case of UI issues</li>
+                        </ul>
+                    </li>
+                    <li><strong>Customize for Audience</strong>:
+                        <ul>
+                            <li>Use short version (10 min) for executives</li>
+                            <li>Use standard version (20 min) for business stakeholders</li>
+                            <li>Use deep dive version (30-45 min) for technical architects</li>
+                        </ul>
+                    </li>
+                    <li><strong>Prepare for Questions</strong>:
+                        <ul>
+                            <li>Review "Common Questions & Answers" section</li>
+                            <li>Know ACO's limitations (inventory management not included)</li>
+                            <li>Understand integration points with Adobe Commerce and ERP systems</li>
+                        </ul>
+                    </li>
+                    <li><strong>Follow-Up Materials</strong>:
+                        <ul>
+                            <li>Share this guide with attendees post-demo</li>
+                            <li>Provide link to BuildRight architecture documentation</li>
+                            <li>Offer to schedule technical deep dive session</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <hr>
+
+                <p><strong>Document Version</strong>: 1.1<br>
+                <strong>Last Updated</strong>: 2025-10-30<br>
+                <strong>Enhancement Documentation Added</strong>: Implementation enhancements (34 attributes, project_types intelligent assignment, 19 categories)</p>
+
+                <p><strong>Related Documentation</strong>:</p>
+                <ul>
+                    <li><code>/docs/architecture/buildright-b2b-structure.md</code> - B2B company/team hierarchy</li>
+                    <li><code>/docs/manual-setup/trigger-policy-guide.md</code> - Complete policy configuration guide</li>
+                    <li><code>/instructions/01-original-plan.md</code> - Full creative brief with Implementation Enhancements section</li>
+                    <li><code>/instructions/02-reduced-scope-plan.md</code> - Implementation scope with actual implementation details (34 attributes, 19 categories)</li>
+                    <li><code>/.rptc/research/data-mapping-to-creative-brief/research.md</code> - Comprehensive verification report (92% alignment)</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-graphql.min.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1023) {
+                if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sidebar.classList.remove('open');
+                }
+            }
+        });
+
+        // Active Section Highlighting in TOC
+        const sections = document.querySelectorAll('section[id]');
+        const tocLinks = document.querySelectorAll('.toc-list a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth Scrolling for TOC Links
+        document.querySelectorAll('.toc-list a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Close mobile menu after clicking
+                    if (window.innerWidth <= 1023) {
+                        sidebar.classList.remove('open');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,12 +1,17 @@
 /**
  * ACO Metadata Attribute Generation Script
- * Generates deterministic metadata attributes for Adobe Commerce catalog
+ * Generates industry-appropriate metadata attributes for BuildRight catalog
+ *
+ * Based on BMD catalog structure and construction industry standards including:
+ * - ASTM standards (lumber, drywall, fasteners, safety equipment)
+ * - ANSI/ISEA standards (PPE, safety equipment)
+ * - NFRC standards (windows and doors energy ratings)
+ * - Construction material industry best practices
  */
 
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { seedRandom, seedRandomBoolean, seedRandomInt } from '../utils/random-seed.js';
 import { validateSchema } from '../utils/schema-validator.js';
 import logger from '../utils/logger.js';
 
@@ -14,47 +19,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * Generate metadata attributes for ACO catalog
- *
- * This function generates product attributes that can be used for ACO policy filtering.
- * When useSemantic=true, it generates semantic attributes (project_types, commercial_residential, brand)
- * instead of generic codes (attr_001, attr_002, etc.).
- *
- * @param {Object} config - Generation configuration
- * @param {number} config.count - Number of attributes to generate (default: 20)
- * @param {number} config.seed - Random seed for deterministic output
- * @param {string} config.outputPath - Output file path
- * @param {boolean} config.includeTextAttributes - Include text attributes without options
- * @param {boolean} config.useSemantic - Use semantic attribute codes (project_types, brand) instead of generic (attr_001)
- * @returns {Promise<Array>} Generated metadata attributes
+ * Industry-appropriate metadata attributes for BuildRight catalog
+ * Uses semantic attribute IDs (lumber_species, drywall_thickness, etc.)
+ * instead of generic codes (attr_001, attr_002)
  */
-export async function generateMetadata(config = {}) {
-  // Validate configuration first before applying defaults
-  if (!config.count || typeof config.count !== 'number') {
-    throw new Error('Configuration error: count is required and must be a number');
-  }
-
-  if (config.count <= 0) {
-    throw new Error('Configuration error: count must be positive');
-  }
-
-  const {
-    count = 20,
-    seed = Date.now(),
-    outputPath = './data/buildright/metadata.json',
-    includeTextAttributes = true,
-    useSemantic = false
-  } = config;
-
-  logger.info('Metadata Generation Started', { count, seed, outputPath, useSemantic });
-
-  // Initialize seeded random number generators
-  const random = seedRandom(seed);
-  const randomBool = seedRandomBoolean(seed + 1);
-  const randomInt = seedRandomInt(seed + 2);
-
-  // Define semantic attributes for ACO policy filtering
-  const semanticAttributes = [
+function getBuildRightMetadata() {
+  return [
+    // Core Attributes (apply to all products)
     {
       attributeId: 'product_category',
       label: 'Product Category',
@@ -64,37 +35,10 @@ export async function generateMetadata(config = {}) {
       sortOrder: 1,
       options: [
         { value: 'structural_materials', label: 'Structural Materials' },
-        { value: 'finishing_materials', label: 'Finishing Materials' },
+        { value: 'framing_insulation', label: 'Framing & Insulation' },
+        { value: 'windows_doors', label: 'Windows & Doors' },
         { value: 'fasteners_hardware', label: 'Fasteners & Hardware' },
-        { value: 'safety_equipment', label: 'Safety Equipment' },
-        { value: 'tools_equipment', label: 'Tools & Equipment' }
-      ]
-    },
-    {
-      attributeId: 'project_types',
-      label: 'Project Types',
-      type: 'multiselect',
-      isRequired: false,
-      defaultValue: null,
-      sortOrder: 2,
-      options: [
-        { value: 'new_construction', label: 'New Construction' },
-        { value: 'remodel', label: 'Remodel' },
-        { value: 'repair', label: 'Repair' },
-        { value: 'restoration', label: 'Restoration' }
-      ]
-    },
-    {
-      attributeId: 'commercial_residential',
-      label: 'Commercial/Residential',
-      type: 'select',
-      isRequired: false,
-      defaultValue: 'residential',
-      sortOrder: 3,
-      options: [
-        { value: 'commercial', label: 'Commercial' },
-        { value: 'residential', label: 'Residential' },
-        { value: 'both', label: 'Both' }
+        { value: 'safety_equipment', label: 'Safety Equipment' }
       ]
     },
     {
@@ -103,124 +47,554 @@ export async function generateMetadata(config = {}) {
       type: 'select',
       isRequired: false,
       defaultValue: null,
-      sortOrder: 4,
+      sortOrder: 2,
       options: [
         { value: 'buildright_pro', label: 'BuildRight Pro' },
         { value: 'structuremaster', label: 'StructureMaster' },
         { value: 'proframe', label: 'ProFrame' },
         { value: 'safeguard', label: 'SafeGuard' },
         { value: 'fastenpro', label: 'FastenPro' },
-        { value: 'durabuilt', label: 'DuraBuilt' }
+        { value: 'durabuilt', label: 'DuraBuilt' },
+        { value: 'toughgrip', label: 'ToughGrip' },
+        { value: 'maxstrength', label: 'MaxStrength' },
+        { value: 'premiumbuild', label: 'PremiumBuild' },
+        { value: 'reliabuild', label: 'ReliaBuild' }
+      ]
+    },
+    {
+      attributeId: 'unit_of_measure',
+      label: 'Unit of Measure',
+      type: 'select',
+      isRequired: true,
+      defaultValue: 'EA',
+      sortOrder: 3,
+      options: [
+        { value: 'EA', label: 'Each' },
+        { value: 'LF', label: 'Linear Foot' },
+        { value: 'SF', label: 'Square Foot' },
+        { value: 'BOX', label: 'Box' },
+        { value: 'BUNDLE', label: 'Bundle' },
+        { value: 'PALLET', label: 'Pallet' },
+        { value: 'BAG', label: 'Bag' },
+        { value: 'ROLL', label: 'Roll' },
+        { value: 'PAIR', label: 'Pair' },
+        { value: 'SHEET', label: 'Sheet' },
+        { value: 'GALLON', label: 'Gallon' },
+        { value: 'CASE', label: 'Case' }
+      ]
+    },
+    {
+      attributeId: 'project_types',
+      label: 'Project Types',
+      type: 'multiselect',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 4,
+      options: [
+        { value: 'new_construction', label: 'New Construction' },
+        { value: 'remodel', label: 'Remodel/Renovation' },
+        { value: 'repair', label: 'Repair/Maintenance' },
+        { value: 'restoration', label: 'Restoration' }
+      ]
+    },
+
+    // Lumber Attributes (sortOrder 10-19)
+    {
+      attributeId: 'lumber_species',
+      label: 'Lumber Species',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 10,
+      options: [
+        { value: 'southern_yellow_pine', label: 'Southern Yellow Pine (SYP)' },
+        { value: 'spruce_pine_fir', label: 'Spruce-Pine-Fir (SPF)' },
+        { value: 'douglas_fir_larch', label: 'Douglas Fir-Larch (DF-L)' },
+        { value: 'hem_fir', label: 'Hem-Fir' },
+        { value: 'western_red_cedar', label: 'Western Red Cedar' },
+        { value: 'redwood', label: 'Redwood' }
+      ]
+    },
+    {
+      attributeId: 'lumber_grade',
+      label: 'Lumber Grade',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 11,
+      options: [
+        { value: 'select_structural', label: 'Select Structural' },
+        { value: 'no_1', label: 'No. 1' },
+        { value: 'no_2', label: 'No. 2' },
+        { value: 'no_3', label: 'No. 3' },
+        { value: 'stud', label: 'Stud' },
+        { value: 'utility', label: 'Utility' },
+        { value: 'construction', label: 'Construction' },
+        { value: 'standard', label: 'Standard' }
+      ]
+    },
+    {
+      attributeId: 'lumber_treatment',
+      label: 'Lumber Treatment',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 12,
+      options: [
+        { value: 'kiln_dried', label: 'Kiln-Dried (KD)' },
+        { value: 'green', label: 'Green (Unseasoned)' },
+        { value: 'pressure_treated_aca', label: 'Pressure-Treated (ACA)' },
+        { value: 'pressure_treated_acq', label: 'Pressure-Treated (ACQ)' },
+        { value: 'pressure_treated_ca', label: 'Pressure-Treated (CA-C)' },
+        { value: 'fire_retardant', label: 'Fire-Retardant Treated' }
+      ]
+    },
+    {
+      attributeId: 'lumber_certification',
+      label: 'Lumber Certification',
+      type: 'multiselect',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 13,
+      options: [
+        { value: 'fsc_certified', label: 'FSC Certified' },
+        { value: 'fsc_mix', label: 'FSC Mix' },
+        { value: 'sfi_certified', label: 'SFI Certified' },
+        { value: 'pefc_certified', label: 'PEFC Certified' },
+        { value: 'none', label: 'No Certification' }
+      ]
+    },
+
+    // Drywall Attributes (sortOrder 20-29)
+    {
+      attributeId: 'drywall_thickness',
+      label: 'Drywall Thickness',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 20,
+      options: [
+        { value: '0.25', label: '1/4"' },
+        { value: '0.375', label: '3/8"' },
+        { value: '0.5', label: '1/2"' },
+        { value: '0.625', label: '5/8"' },
+        { value: '0.75', label: '3/4"' }
+      ]
+    },
+    {
+      attributeId: 'drywall_product_type',
+      label: 'Drywall Product Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 21,
+      options: [
+        { value: 'regular', label: 'Regular Gypsum' },
+        { value: 'moisture_resistant', label: 'Moisture-Resistant (MR)' },
+        { value: 'mold_resistant', label: 'Mold-Resistant' },
+        { value: 'fire_rated', label: 'Fire-Rated' },
+        { value: 'sound_dampening', label: 'Sound-Dampening' },
+        { value: 'impact_resistant', label: 'Impact/Abuse-Resistant' }
+      ]
+    },
+    {
+      attributeId: 'drywall_fire_rating',
+      label: 'Drywall Fire Rating',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 22,
+      options: [
+        { value: 'non_rated', label: 'Non-Rated' },
+        { value: 'type_x', label: 'Type X (1-hour)' },
+        { value: 'type_c', label: 'Type C (Enhanced)' }
+      ]
+    },
+    {
+      attributeId: 'drywall_edge_type',
+      label: 'Drywall Edge Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 23,
+      options: [
+        { value: 'tapered', label: 'Tapered' },
+        { value: 'square', label: 'Square' },
+        { value: 'beveled', label: 'Beveled' },
+        { value: 'tongue_and_groove', label: 'Tongue & Groove' }
+      ]
+    },
+
+    // Window Attributes (sortOrder 30-39)
+    {
+      attributeId: 'window_material',
+      label: 'Window Frame Material',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 30,
+      options: [
+        { value: 'vinyl', label: 'Vinyl' },
+        { value: 'wood', label: 'Wood' },
+        { value: 'aluminum', label: 'Aluminum' },
+        { value: 'fiberglass', label: 'Fiberglass' },
+        { value: 'composite', label: 'Composite' },
+        { value: 'clad_wood', label: 'Clad Wood' }
+      ]
+    },
+    {
+      attributeId: 'window_operation_type',
+      label: 'Window Operation Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 31,
+      options: [
+        { value: 'single_hung', label: 'Single-Hung' },
+        { value: 'double_hung', label: 'Double-Hung' },
+        { value: 'casement', label: 'Casement' },
+        { value: 'awning', label: 'Awning' },
+        { value: 'sliding', label: 'Sliding' },
+        { value: 'fixed', label: 'Fixed/Picture' },
+        { value: 'bay', label: 'Bay' },
+        { value: 'bow', label: 'Bow' }
+      ]
+    },
+    {
+      attributeId: 'window_glazing_type',
+      label: 'Window Glazing',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 32,
+      options: [
+        { value: 'single_pane', label: 'Single Pane' },
+        { value: 'double_pane', label: 'Double Pane' },
+        { value: 'triple_pane', label: 'Triple Pane' }
+      ]
+    },
+    {
+      attributeId: 'window_energy_star',
+      label: 'Energy Star Certified',
+      type: 'boolean',
+      isRequired: false,
+      defaultValue: false,
+      sortOrder: 33
+    },
+
+    // Door Attributes (sortOrder 40-49)
+    {
+      attributeId: 'door_type',
+      label: 'Door Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 40,
+      options: [
+        { value: 'entry', label: 'Entry Door' },
+        { value: 'interior', label: 'Interior Door' },
+        { value: 'patio', label: 'Patio Door' },
+        { value: 'french', label: 'French Door' },
+        { value: 'storm', label: 'Storm Door' },
+        { value: 'bifold', label: 'Bi-Fold Door' }
+      ]
+    },
+    {
+      attributeId: 'door_material',
+      label: 'Door Material',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 41,
+      options: [
+        { value: 'wood', label: 'Wood' },
+        { value: 'steel', label: 'Steel' },
+        { value: 'fiberglass', label: 'Fiberglass' },
+        { value: 'aluminum', label: 'Aluminum' },
+        { value: 'vinyl', label: 'Vinyl' },
+        { value: 'composite', label: 'Composite' }
+      ]
+    },
+    {
+      attributeId: 'door_core_type',
+      label: 'Door Core Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 42,
+      options: [
+        { value: 'solid_wood', label: 'Solid Wood' },
+        { value: 'solid_core', label: 'Solid Core' },
+        { value: 'hollow_core', label: 'Hollow Core' },
+        { value: 'foam_core', label: 'Foam Insulated' }
+      ]
+    },
+
+    // Fastener Attributes (sortOrder 50-59)
+    {
+      attributeId: 'fastener_type',
+      label: 'Fastener Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 50,
+      options: [
+        { value: 'nail', label: 'Nail' },
+        { value: 'screw', label: 'Screw' },
+        { value: 'bolt', label: 'Bolt' },
+        { value: 'anchor', label: 'Anchor' },
+        { value: 'staple', label: 'Staple' }
+      ]
+    },
+    {
+      attributeId: 'fastener_subtype',
+      label: 'Fastener Subtype',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 51,
+      options: [
+        { value: 'common_nail', label: 'Common Nail' },
+        { value: 'finish_nail', label: 'Finish Nail' },
+        { value: 'brad_nail', label: 'Brad Nail' },
+        { value: 'roofing_nail', label: 'Roofing Nail' },
+        { value: 'framing_nail', label: 'Framing Nail' },
+        { value: 'wood_screw', label: 'Wood Screw' },
+        { value: 'drywall_screw', label: 'Drywall Screw' },
+        { value: 'deck_screw', label: 'Deck Screw' },
+        { value: 'self_drilling_screw', label: 'Self-Drilling Screw' },
+        { value: 'lag_screw', label: 'Lag Screw' }
+      ]
+    },
+    {
+      attributeId: 'fastener_material',
+      label: 'Fastener Material',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 52,
+      options: [
+        { value: 'steel', label: 'Carbon Steel' },
+        { value: 'stainless_steel_304', label: 'Stainless Steel 304' },
+        { value: 'stainless_steel_316', label: 'Stainless Steel 316 (Marine)' },
+        { value: 'brass', label: 'Brass' },
+        { value: 'aluminum', label: 'Aluminum' }
+      ]
+    },
+    {
+      attributeId: 'fastener_coating',
+      label: 'Fastener Coating/Finish',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 53,
+      options: [
+        { value: 'bright', label: 'Bright (Uncoated)' },
+        { value: 'zinc_plated', label: 'Zinc Plated' },
+        { value: 'galvanized', label: 'Galvanized' },
+        { value: 'hot_dip_galvanized', label: 'Hot-Dip Galvanized' },
+        { value: 'ceramic_coated', label: 'Ceramic Coated' },
+        { value: 'polymer_coated', label: 'Polymer Coated' }
+      ]
+    },
+    {
+      attributeId: 'fastener_head_type',
+      label: 'Fastener Head Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 54,
+      options: [
+        { value: 'flat', label: 'Flat/Countersunk' },
+        { value: 'pan', label: 'Pan' },
+        { value: 'round', label: 'Round' },
+        { value: 'hex', label: 'Hex' },
+        { value: 'bugle', label: 'Bugle' },
+        { value: 'truss', label: 'Truss' }
+      ]
+    },
+    {
+      attributeId: 'fastener_drive_type',
+      label: 'Fastener Drive Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 55,
+      options: [
+        { value: 'phillips', label: 'Phillips' },
+        { value: 'square', label: 'Square (Robertson)' },
+        { value: 'torx', label: 'Torx (Star)' },
+        { value: 'hex', label: 'Hex' },
+        { value: 'slotted', label: 'Slotted' },
+        { value: 'combination', label: 'Combination' }
+      ]
+    },
+
+    // PPE / Safety Equipment Attributes (sortOrder 60-69)
+    {
+      attributeId: 'ppe_category',
+      label: 'PPE Category',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 60,
+      options: [
+        { value: 'head_protection', label: 'Head Protection' },
+        { value: 'eye_protection', label: 'Eye Protection' },
+        { value: 'hearing_protection', label: 'Hearing Protection' },
+        { value: 'hand_protection', label: 'Hand Protection' },
+        { value: 'respiratory_protection', label: 'Respiratory Protection' },
+        { value: 'fall_protection', label: 'Fall Protection' },
+        { value: 'high_visibility', label: 'High-Visibility Apparel' },
+        { value: 'foot_protection', label: 'Foot Protection' }
+      ]
+    },
+    {
+      attributeId: 'ppe_ansi_standard',
+      label: 'ANSI Standard',
+      type: 'multiselect',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 61,
+      options: [
+        { value: 'z89_1', label: 'ANSI Z89.1 (Head)' },
+        { value: 'z87_1', label: 'ANSI Z87.1 (Eye)' },
+        { value: 's3_19', label: 'ANSI S3.19 (Hearing)' },
+        { value: 'isea_105', label: 'ANSI/ISEA 105 (Hand)' },
+        { value: 'z359', label: 'ANSI Z359 (Fall)' },
+        { value: 'isea_107', label: 'ANSI/ISEA 107 (Hi-Vis)' },
+        { value: 'astm_f2413', label: 'ASTM F2413 (Foot)' }
+      ]
+    },
+    {
+      attributeId: 'ppe_hard_hat_type',
+      label: 'Hard Hat Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 62,
+      options: [
+        { value: 'type_1', label: 'Type 1 (Top Impact)' },
+        { value: 'type_2', label: 'Type 2 (Top & Lateral)' }
+      ]
+    },
+    {
+      attributeId: 'ppe_hard_hat_class',
+      label: 'Hard Hat Electrical Class',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 63,
+      options: [
+        { value: 'class_e', label: 'Class E (Electrical - 20kV)' },
+        { value: 'class_g', label: 'Class G (General - 2.2kV)' },
+        { value: 'class_c', label: 'Class C (Conductive)' }
+      ]
+    },
+    {
+      attributeId: 'ppe_nrr_rating',
+      label: 'NRR Rating (dB)',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 64,
+      options: [
+        { value: '20', label: '20 dB' },
+        { value: '22', label: '22 dB' },
+        { value: '25', label: '25 dB' },
+        { value: '27', label: '27 dB' },
+        { value: '29', label: '29 dB' },
+        { value: '30', label: '30 dB' },
+        { value: '31', label: '31 dB' },
+        { value: '32', label: '32 dB' },
+        { value: '33', label: '33 dB' }
+      ]
+    },
+    {
+      attributeId: 'ppe_cut_resistance',
+      label: 'Cut Resistance Level',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 65,
+      options: [
+        { value: 'a1', label: 'A1 (200-499g)' },
+        { value: 'a2', label: 'A2 (500-999g)' },
+        { value: 'a3', label: 'A3 (1000-1499g)' },
+        { value: 'a4', label: 'A4 (1500-2199g)' },
+        { value: 'a5', label: 'A5 (2200-2999g)' },
+        { value: 'a6', label: 'A6 (3000-3999g)' },
+        { value: 'a7', label: 'A7 (4000-4999g)' },
+        { value: 'a8', label: 'A8 (5000-5999g)' },
+        { value: 'a9', label: 'A9 (6000+g)' }
+      ]
+    },
+    {
+      attributeId: 'ppe_niosh_rating',
+      label: 'NIOSH Filter Rating',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 66,
+      options: [
+        { value: 'n95', label: 'N95 (95% filtration)' },
+        { value: 'n99', label: 'N99 (99% filtration)' },
+        { value: 'n100', label: 'N100 (99.97% filtration)' },
+        { value: 'p95', label: 'P95 (Oil-proof, 95%)' },
+        { value: 'p99', label: 'P99 (Oil-proof, 99%)' },
+        { value: 'p100', label: 'P100 (Oil-proof, 99.97%)' }
+      ]
+    },
+    {
+      attributeId: 'ppe_hi_vis_class',
+      label: 'High-Visibility Class',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 67,
+      options: [
+        { value: 'class_1', label: 'Class 1 (Minimal)' },
+        { value: 'class_2', label: 'Class 2 (Medium)' },
+        { value: 'class_3', label: 'Class 3 (High)' }
+      ]
+    },
+    {
+      attributeId: 'ppe_size',
+      label: 'PPE Size',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 68,
+      options: [
+        { value: 'xs', label: 'XS' },
+        { value: 's', label: 'S' },
+        { value: 'm', label: 'M' },
+        { value: 'l', label: 'L' },
+        { value: 'xl', label: 'XL' },
+        { value: 'xxl', label: 'XXL' },
+        { value: 'xxxl', label: '3XL' },
+        { value: 'universal', label: 'Universal' }
       ]
     }
   ];
+}
 
-  // Define attribute types with weights
-  const attributeTypes = [
-    { type: 'text', hasOptions: false, weight: 0.3 },
-    { type: 'select', hasOptions: true, weight: 0.35 },
-    { type: 'multiselect', hasOptions: true, weight: 0.25 },
-    { type: 'boolean', hasOptions: false, weight: 0.1 }
-  ];
+/**
+ * Generate metadata attributes for ACO catalog
+ *
+ * @param {Object} config - Generation configuration
+ * @param {string} config.outputPath - Output file path
+ * @returns {Promise<Array>} Generated metadata attributes
+ */
+export async function generateMetadata(config = {}) {
+  const {
+    outputPath = './data/buildright/metadata.json'
+  } = config;
 
-  // Define common attribute names for realistic metadata
-  const attributeNames = [
-    'Material', 'Color', 'Size', 'Weight', 'Dimensions', 'Brand', 'Model',
-    'Warranty', 'Features', 'Specifications', 'Compatibility', 'Condition',
-    'Certification', 'Style', 'Pattern', 'Season', 'Collection', 'Series',
-    'Grade', 'Finish', 'Coating', 'Thickness', 'Length', 'Width', 'Height',
-    'Capacity', 'Power', 'Voltage', 'Frequency', 'Temperature Range'
-  ];
+  logger.info('Metadata Generation Started', { outputPath });
 
-  // Generate attributes
-  const attributes = [];
-  const usedNames = new Set();
-
-  // If using semantic naming, include semantic attributes first
-  if (useSemantic) {
-    semanticAttributes.forEach((semanticAttr, idx) => {
-      attributes.push({
-        ...semanticAttr,
-        sortOrder: idx + 1
-      });
-      usedNames.add(semanticAttr.label);
-    });
-  }
-
-  // Calculate how many additional attributes to generate
-  const additionalCount = useSemantic ? count - semanticAttributes.length : count;
-
-  for (let i = 0; i < additionalCount; i++) {
-    const attrIndex = useSemantic ? semanticAttributes.length + i : i;
-
-    // Force first attribute to be text if includeTextAttributes is true (and not using semantic)
-    let selectedType;
-    if (i === 0 && includeTextAttributes && !useSemantic) {
-      selectedType = { type: 'text', hasOptions: false };
-    } else {
-      // Select type based on weighted distribution
-      const typeRand = random();
-      let cumulativeWeight = 0;
-      selectedType = attributeTypes[0];
-
-      for (const attrType of attributeTypes) {
-        cumulativeWeight += attrType.weight;
-        if (typeRand <= cumulativeWeight) {
-          selectedType = attrType;
-          break;
-        }
-      }
-    }
-
-    // Select unique attribute name
-    let attributeName;
-    if (i < attributeNames.length && !usedNames.has(attributeNames[i])) {
-      attributeName = attributeNames[i];
-      usedNames.add(attributeName);
-    } else {
-      // Generate generic name if we run out of predefined names
-      attributeName = `Custom Attribute ${i + 1}`;
-    }
-
-    const attribute = {
-      attributeId: `attr_${String(attrIndex + 1).padStart(3, '0')}`,
-      label: attributeName,
-      type: selectedType.type,
-      isRequired: randomBool(0.3), // 30% of attributes are required
-      defaultValue: null,
-      sortOrder: attrIndex + 1
-    };
-
-    // Set appropriate default values based on type
-    if (selectedType.type === 'boolean') {
-      attribute.defaultValue = false;
-    } else if (selectedType.type === 'text') {
-      attribute.defaultValue = null; // No default for text fields
-    }
-
-    // Add options for select/multiselect types
-    if (selectedType.hasOptions) {
-      const optionCount = randomInt(3, 7); // 3-7 options
-      attribute.options = [];
-
-      // Generate contextual options based on attribute name
-      const optionValues = generateContextualOptions(attributeName, optionCount, randomInt);
-
-      for (let j = 0; j < optionCount; j++) {
-        attribute.options.push({
-          value: `${attributeName.toLowerCase().replace(/\s+/g, '_')}_option_${j + 1}`,
-          label: optionValues[j] || `${attributeName} Option ${j + 1}`
-        });
-      }
-
-      // Set default value to first option for select fields
-      if (selectedType.type === 'select' && attribute.options.length > 0) {
-        attribute.defaultValue = attribute.options[0].value;
-      }
-    }
-
-    attributes.push(attribute);
-  }
+  // Get industry-appropriate metadata
+  const attributes = getBuildRightMetadata();
 
   // Validate against schema
   const validationResult = validateSchema(attributes, 'aco-metadata');
@@ -255,41 +629,9 @@ export async function generateMetadata(config = {}) {
   return attributes;
 }
 
-/**
- * Generate contextual options based on attribute name
- * @private
- */
-function generateContextualOptions(attributeName, count, randomInt) {
-  const contextualOptions = {
-    'Color': ['Red', 'Blue', 'Green', 'Yellow', 'Black', 'White', 'Gray', 'Brown', 'Orange', 'Purple'],
-    'Size': ['XS', 'S', 'M', 'L', 'XL', 'XXL', '2XL', '3XL', '4XL', '5XL'],
-    'Material': ['Cotton', 'Polyester', 'Wool', 'Silk', 'Leather', 'Nylon', 'Acrylic', 'Rayon'],
-    'Condition': ['New', 'Like New', 'Very Good', 'Good', 'Fair', 'Poor'],
-    'Brand': ['Brand A', 'Brand B', 'Brand C', 'Brand D', 'Brand E', 'Brand F'],
-    'Grade': ['A+', 'A', 'B+', 'B', 'C+', 'C', 'D', 'F'],
-    'Style': ['Modern', 'Classic', 'Contemporary', 'Traditional', 'Minimalist', 'Industrial']
-  };
-
-  const options = contextualOptions[attributeName];
-  if (options && options.length >= count) {
-    // Shuffle and take first 'count' items
-    const shuffled = [...options];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      const j = randomInt(0, i);
-      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-    }
-    return shuffled.slice(0, count);
-  }
-
-  // Return generic options if no contextual match
-  return Array.from({ length: count }, (_, i) => `Option ${i + 1}`);
-}
-
 // CLI execution
 if (import.meta.url === `file://${process.argv[1]}`) {
   const config = {
-    count: parseInt(process.env.ATTR_COUNT) || 20,
-    seed: parseInt(process.env.SEED) || 12345,
     outputPath: process.env.OUTPUT_PATH || './data/buildright/metadata.json'
   };
 

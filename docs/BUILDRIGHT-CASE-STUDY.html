@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BuildRight Solutions: Transforming Building Materials Distribution with Adobe Commerce Optimizer">
+    <title>BuildRight Solutions: Transforming Building Materials Distribution with Adobe Commerce Optimizer</title>
+
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+    <style>
+        /* ========================================
+           CSS VARIABLES - GitHub Dark Color Palette
+           ======================================== */
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #8b949e;
+            --text-tertiary: #6e7681;
+            --accent-primary: #58a6ff;
+            --accent-secondary: #1f6feb;
+            --success: #3fb950;
+            --warning: #d29922;
+            --error: #f85149;
+            --info: #58a6ff;
+            --border-color: #30363d;
+            --border-muted: #21262d;
+            --code-bg: #161b22;
+            --sidebar-width: 250px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            padding: 8px 16px;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--bg-secondary);
+            z-index: 1000;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        .layout-container {
+            display: flex;
+            min-height: 100vh;
+            padding-top: 3px;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 3px;
+            left: 0;
+            width: var(--sidebar-width);
+            height: calc(100vh - 3px);
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            padding: 24px;
+            z-index: 100;
+        }
+
+        .sidebar-header {
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .sidebar-subtitle {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+        }
+
+        .toc-nav {
+            list-style: none;
+        }
+
+        .toc-nav li {
+            margin-bottom: 8px;
+        }
+
+        .toc-nav a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-size: 0.9em;
+        }
+
+        .toc-nav a:hover {
+            color: var(--accent-primary);
+            background: var(--bg-tertiary);
+        }
+
+        .toc-nav a.active {
+            color: var(--accent-primary);
+            background: var(--bg-tertiary);
+            font-weight: 500;
+        }
+
+        .toc-nav .toc-level-3 {
+            margin-left: 16px;
+            font-size: 0.85em;
+        }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 40px 60px;
+            max-width: 1200px;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px 12px;
+            cursor: pointer;
+            z-index: 1001;
+            transition: background 0.2s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-primary);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+            scroll-margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-top: 0;
+            padding-bottom: 0.3em;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 2em;
+            padding-bottom: 0.3em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.5em;
+        }
+
+        h4 {
+            font-size: 1.25em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: var(--accent-secondary);
+            text-decoration: underline;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 2em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            color: var(--text-primary);
+        }
+
+        code {
+            background: var(--code-bg);
+            color: var(--text-primary);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+            border: 1px solid var(--border-muted);
+        }
+
+        pre {
+            background: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 16px;
+            overflow-x: auto;
+            margin-bottom: 1em;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border: none;
+            font-size: 0.85em;
+            line-height: 1.5;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent-primary);
+            background: var(--bg-secondary);
+            padding: 16px 20px;
+            margin: 1em 0;
+            color: var(--text-secondary);
+            font-style: italic;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 1em;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-secondary);
+        }
+
+        thead {
+            background: var(--bg-tertiary);
+        }
+
+        th {
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        td {
+            padding: 12px 16px;
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover {
+            background: var(--bg-tertiary);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 2em 0;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            font-size: 24px;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border: none;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-4px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 1023px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 80px 40px 40px 40px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .main-content {
+                padding: 80px 20px 40px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content link (accessibility) -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+
+    <!-- Reading progress bar -->
+    <div class="progress-bar" role="progressbar" aria-label="Reading progress">
+        <div class="progress-bar-fill"></div>
+    </div>
+
+    <!-- Mobile menu toggle -->
+    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Layout container -->
+    <div class="layout-container">
+        <!-- Sidebar TOC -->
+        <nav class="sidebar" role="navigation" aria-label="Table of contents">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Table of Contents</div>
+                <div class="sidebar-subtitle">Navigation</div>
+            </div>
+            <ul class="toc-nav">
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#part-1-the-challenge">Part 1: The Challenge</a></li>
+<li class="toc-level-3"><a href="#about-buildright-solutions">About BuildRight Solutions</a></li>
+<li class="toc-level-3"><a href="#the-pain-points">The Pain Points</a></li>
+<li class="toc-level-3"><a href="#the-business-impact">The Business Impact</a></li>
+<li><a href="#part-2-the-solution">Part 2: The Solution</a></li>
+<li class="toc-level-3"><a href="#personalized-catalogs-with-adobe-commerce-optimizer">Personalized Catalogs with Adobe Commerce Optimizer</a></li>
+<li class="toc-level-3"><a href="#how-it-works-a-real-scenario">How It Works: A Real Scenario</a></li>
+<li class="toc-level-3"><a href="#the-technical-foundation">The Technical Foundation</a></li>
+<li class="toc-level-3"><a href="#real-pricing-impact-at-scale">Real Pricing Impact at Scale</a></li>
+<li><a href="#part-3-business-outcomes">Part 3: Business Outcomes</a></li>
+<li class="toc-level-3"><a href="#for-contractors-time-savings-and-transparency">For Contractors: Time Savings and Transparency</a></li>
+<li class="toc-level-3"><a href="#for-buildright-operational-efficiency-and-scale">For BuildRight: Operational Efficiency and Scale</a></li>
+<li class="toc-level-3"><a href="#demonstration-value-showcasing-aco-capabilities">Demonstration Value: Showcasing ACO Capabilities</a></li>
+<li><a href="#part-4-lessons-learned-and-best-practices">Part 4: Lessons Learned and Best Practices</a></li>
+<li class="toc-level-3"><a href="#what-worked-well">What Worked Well</a></li>
+<li class="toc-level-3"><a href="#implementation-insights">Implementation Insights</a></li>
+<li class="toc-level-3"><a href="#scaling-considerations">Scaling Considerations</a></li>
+<li class="toc-level-3"><a href="#adobe-commerce-optimizer-strategic-value">Adobe Commerce Optimizer Strategic Value</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#appendix-key-metrics">Appendix: Key Metrics</a></li>
+</ul>
+        </nav>
+
+        <!-- Main content -->
+        <main class="main-content" id="main-content" role="main">
+            <h1>BuildRight Solutions: Transforming Building Materials Distribution with Adobe Commerce Optimizer</h1>
+            
+
+<strong>A Case Study in Personalized B2B Commerce</strong>
+
+---
+
+<h2 id="executive-summary">Executive Summary</h2>
+
+<strong>BuildRight Solutions</strong>, a national building materials distributor founded in 1978, faced a critical challenge: their one-size-fits-all catalog approach was failing contractors who needed fast, accurate material ordering for diverse project types. Contractors wasted 60-70% of their time browsing irrelevant products in a 150,000+ SKU catalog, while BuildRight struggled with manual pricing negotiations and regional inventory mismatches.
+
+<p>By implementing <strong>Adobe Commerce Optimizer (ACO)</strong>, BuildRight transformed their business model to deliver personalized, project-specific catalogs that dynamically adapt to customer segment, project type, purchasing volume, and geographic region. The solution reduced contractor search time by 70%, automated tier-based pricing, and optimized inventory fulfillment across six regional locations.</p>
+
+<strong>Key Results:</strong>
+<ul>
+<li>70% reduction in product search time for contractors</li>
+<li>$10,000+ automatic savings per large commercial order through transparent tier pricing</li>
+<li>Single catalog serves all customer segments dynamically</li>
+<li>Real-time catalog composition without managing hundreds of static views</li>
+</ul>
+
+---
+
+<h2 id="part-1-the-challenge">Part 1: The Challenge</h2>
+
+<h3 id="about-buildright-solutions">About BuildRight Solutions</h3>
+
+<p>Founded in 1978 from a single lumber yard in Sacramento, California, BuildRight Solutions has grown into a leading national building materials distributor serving over 2,500 professional contractors across North America. The company operates through three specialized divisions, each serving distinct market segments with unique purchasing patterns and requirements.</p>
+
+<strong>BuildRight Commercial Division</strong>
+
+<p>Serves large-scale commercial construction projects including office buildings, hospitals, schools, and retail developments. Their customers are general contractors managing $5M-$50M+ projects who purchase in full pallets and truckloads with direct job site delivery. These customers prioritize volume pricing, reliable delivery schedules, and structural materials at scale.</p>
+
+<p>Operations span two locations:</p>
+<ul>
+<li>Los Angeles Headquarters (California) - Western region hub</li>
+<li>Phoenix Metro Division (Arizona) - Southwestern expansion</li>
+</ul>
+
+<strong>BuildRight Residential Division</strong>
+
+<p>Focuses on production home builders and residential remodelers. Customers include home builders constructing 50-200 homes annually and remodeling contractors serving the residential market. These customers need standardized materials at scale with repeat ordering capability and competitive pricing for volume commitments.</p>
+
+<p>Operations span two locations:</p>
+<ul>
+<li>Dallas Headquarters (Texas) - Central region hub</li>
+<li>Denver Division (Colorado) - Mountain states expansion</li>
+</ul>
+
+<strong>BuildRight Pro Division</strong>
+
+<p>Serves specialty trade contractors in electrical, plumbing, and HVAC trades. Customers are licensed professionals who require trade-specific products in smaller quantities but with high frequency. They value specialized expertise, quick availability, and pricing that rewards ongoing loyalty.</p>
+
+<p>Operations span two locations:</p>
+<ul>
+<li>Charlotte Headquarters (North Carolina) - Eastern region hub</li>
+<li>Atlanta Division (Georgia) - Southeastern expansion</li>
+</ul>
+
+<p>This national footprint across six locations in three regions positions BuildRight to serve contractors coast-to-coast, but also presented significant operational complexity in catalog management, pricing consistency, and inventory optimization.</p>
+
+<h3 id="the-pain-points">The Pain Points</h3>
+
+<p>By 2024, BuildRight's traditional catalog approach had become a critical bottleneck to growth. Four major challenges emerged:</p>
+
+<strong>1. Catalog Overload Wastes Contractor Time</strong>
+
+<p>A commercial contractor building a 12-story office building needs entirely different products than a residential remodeler replacing a kitchen. Yet both contractors faced the same massive 150,000+ SKU catalog. Contractors reported spending 60-70% of their ordering time simply filtering through irrelevant products.</p>
+
+<p>The problem wasn't just inefficiency - it was lost business. Frustrated contractors increasingly turned to competitors offering more streamlined ordering experiences. BuildRight's sales team heard consistent feedback: "I don't have time to search through your entire catalog. Just show me what I need for this project."</p>
+
+<strong>2. Ordering Errors Drive Returns and Delays</strong>
+
+<p>The wrong catalog visibility led to costly mistakes. Contractors would order heavy structural lumber when they needed finishing materials, or select commercial-grade products for residential applications. BuildRight's returns department processed thousands of incorrect orders annually, while contractors faced project delays waiting for correct materials.</p>
+
+<p>The root cause was simple: without project-specific filtering, contractors made educated guesses about product suitability. Sometimes they guessed wrong.</p>
+
+<strong>3. Manual Pricing Negotiations Slow Sales Cycles</strong>
+
+<p>BuildRight rewarded high-volume customers with tier-based discounts, but the process was entirely manual. Large contractors would submit quote requests, sales representatives would calculate volume discounts, and multiple email exchanges would follow before finalizing orders. This process could take days for a single order.</p>
+
+<p>The lack of transparency frustrated customers who wanted to see their pricing immediately and make purchasing decisions without delay. Meanwhile, BuildRight's sales team spent hours on pricing calculations rather than relationship building and business development.</p>
+
+<strong>4. Regional Inventory Mismatches Create Backorders</strong>
+
+<p>Products appeared in the catalog regardless of whether they were available at the customer's regional distribution center. A Phoenix contractor might order materials only to discover days later that the items were stocked in Charlotte but not Phoenix, leading to extended delivery times or backorders.</p>
+
+<p>The disconnect between catalog visibility and actual regional inventory availability created fulfillment nightmares and damaged customer trust.</p>
+
+<h3 id="the-business-impact">The Business Impact</h3>
+
+<p>These challenges translated to measurable business costs:</p>
+
+<ul>
+<li><strong>Lost Productivity</strong>: Contractors spending 60-70% of ordering time on catalog search rather than project management</li>
+<li><strong>Customer Churn</strong>: Mid-tier commercial customers defecting to competitors offering streamlined digital experiences</li>
+<li><strong>High Return Rates</strong>: 15-20% return rate on specialty materials due to ordering errors</li>
+<li><strong>Sales Team Overload</strong>: 40% of sales representative time spent on manual pricing calculations</li>
+<li><strong>Regional Inefficiency</strong>: 25% of orders requiring inter-region transfers due to inventory mismatches</li>
+</ul>
+
+<p>BuildRight's leadership recognized that without addressing these fundamental catalog and pricing challenges, the company's growth trajectory would plateau. They needed a solution that could deliver personalized catalogs at scale while maintaining a single source of truth for products, pricing, and inventory.</p>
+
+---
+
+<h2 id="part-2-the-solution">Part 2: The Solution</h2>
+
+<h3 id="personalized-catalogs-with-adobe-commerce-optimizer">Personalized Catalogs with Adobe Commerce Optimizer</h3>
+
+<p>BuildRight implemented Adobe Commerce Optimizer to transform their catalog from a static, one-size-fits-all approach to a dynamic, personalized system that adapts in real-time based on four key dimensions:</p>
+
+<strong>1. Customer Segment Recognition</strong>
+
+<p>The system automatically identifies whether a customer belongs to the Commercial, Residential, or Pro division and adjusts catalog visibility and pricing accordingly. This segmentation happens seamlessly based on company assignment during account setup.</p>
+
+<strong>2. Project Type Filtering</strong>
+
+<p>Contractors work on four primary project types, each requiring different materials:</p>
+<ul>
+<li><strong>New Construction</strong>: Structural materials, framing lumber, foundation supplies</li>
+<li><strong>Remodel</strong>: Finishing materials, windows, doors, drywall</li>
+<li><strong>Repair</strong>: Maintenance products, smaller quantities, quick availability</li>
+<li><strong>Restoration</strong>: Specialty items, matching materials, historic preservation products</li>
+</ul>
+
+<p>By tagging products with applicable project types (many products serve multiple types), the system can filter catalogs dynamically based on the contractor's current project context.</p>
+
+<strong>3. Automatic Volume-Based Pricing</strong>
+
+<p>BuildRight's hierarchical pricing model operates across three levels:</p>
+
+<ul>
+<li><strong>Base Level</strong>: Standard retail and contract pricing (US-Retail, US-Contract)</li>
+<li><strong>Segment Level</strong>: Division-specific pricing (Commercial, Residential, Pro)</li>
+<li><strong>Tier Level</strong>: Volume discount tiers earned through purchasing history</li>
+</ul>
+
+<p>High-volume customers like Premium Commercial Builders automatically receive Tier2 pricing status, which applies 3-5% better pricing across their entire catalog without any manual negotiation. Volume tier pricing adds additional discounts at quantity breakpoints (100+ units, 294+ units).</p>
+
+<strong>4. Regional Inventory Optimization</strong>
+
+<p>The system integrates with BuildRight's multi-source inventory across six locations:</p>
+
+<ul>
+<li><strong>Western Region</strong>: Sacramento RDC (primary), Phoenix Warehouse (secondary)</li>
+<li><strong>Central Region</strong>: Denver Warehouse</li>
+<li><strong>Eastern Region</strong>: Charlotte RDC (primary), Atlanta Warehouse (secondary)</li>
+<li><strong>Virtual Fulfillment</strong>: Premium Windows drop shipper (specialty items)</li>
+</ul>
+
+<p>Products display availability based on the customer's region, and fulfillment automatically routes from the nearest warehouse with inventory.</p>
+
+<h3 id="how-it-works-a-real-scenario">How It Works: A Real Scenario</h3>
+
+<strong>John Smith</strong> is the purchasing manager for Premium Commercial Builders Inc., based in Los Angeles with a secondary operation in Phoenix. His company has earned Tier2 pricing status through consistent high-volume purchasing. This morning, he's ordering framing materials for a new construction project - a 12-story office building in downtown Los Angeles.
+
+<strong>Step 1: Login and Company Recognition</strong>
+
+<p>When John logs into BuildRight's ordering portal, the system immediately identifies:</p>
+<ul>
+<li>Company: Premium Commercial Builders Inc.</li>
+<li>Pricing Tier: Commercial-Tier2 (5% volume discount)</li>
+<li>Primary Location: Los Angeles (Western region)</li>
+<li>Secondary Location: Phoenix available</li>
+</ul>
+
+<strong>Step 2: Project Type Selection</strong>
+
+<p>John selects "New Construction" as his project type. The system applies this filter dynamically via HTTP headers sent with each catalog query, instantly narrowing the catalog focus.</p>
+
+<strong>Step 3: Catalog Personalization</strong>
+
+<p>Instead of browsing 184 products (or the full 150,000+ SKU catalog in production), John sees approximately 48 products specifically tagged for new construction projects. These include:</p>
+<ul>
+<li>Structural lumber (2x4, 2x6, 2x8 dimensional lumber)</li>
+<li>LVL beams and engineered wood products</li>
+<li>Concrete and foundation materials</li>
+<li>Structural fasteners and hardware</li>
+<li>Framing bundles (pre-configured packages)</li>
+</ul>
+
+<p>Products irrelevant to new construction - like windows, doors, finish carpentry, HVAC supplies - are filtered out entirely. John can browse the entire catalog if needed, but the default view shows exactly what he needs.</p>
+
+<strong>Step 4: Automatic Tier Pricing</strong>
+
+<p>John selects product <strong>LBR-D0414F1E</strong> (2x4x8 SPF Stud, Standard Grade). The system displays his pricing:</p>
+
+<ul>
+<li>Unit Price (1-99 units): $8.08</li>
+<li>Volume Price (100-293 units): $7.84 per unit</li>
+<li>Bundle Price (294+ units): $7.50 per unit</li>
+</ul>
+
+<p>John doesn't see the base contract price of $8.50 or know that standard contractors pay more. He simply sees his company's automatically applied Tier2 pricing with volume discount breakpoints clearly displayed.</p>
+
+<strong>Step 5: Regional Inventory Check</strong>
+
+<p>The system checks inventory at John's regional sources:</p>
+<ul>
+<li>Sacramento RDC (warehouse_west): 750 units in stock</li>
+<li>Phoenix Warehouse (warehouse_phoenix): 400 units in stock</li>
+</ul>
+
+<p>Both sources show "In Stock" status, and the system calculates that Sacramento will fulfill the order due to its Priority 1 status and proximity to Los Angeles.</p>
+
+<strong>Step 6: Order Completion</strong>
+
+<p>John orders 10,000 studs for the office building project. His order total:</p>
+<ul>
+<li>Quantity: 10,000 units</li>
+<li>Unit Price: $7.50 (bundle tier pricing)</li>
+<li>Total: $75,000</li>
+</ul>
+
+<p>If John were a standard contractor paying base pricing ($8.50 per unit), this same order would cost $85,000. John's Tier2 status saves his company $10,000 automatically - no phone calls to sales reps, no manual quote requests, no negotiation delays.</p>
+
+<p>The order routes automatically to Sacramento RDC for fulfillment, with delivery scheduled to the Los Angeles job site within BuildRight's standard 48-hour window for regional orders.</p>
+
+<h3 id="the-technical-foundation">The Technical Foundation</h3>
+
+<p>While John's experience is seamless, the underlying technical architecture demonstrates Adobe Commerce Optimizer's enterprise capabilities:</p>
+
+<strong>Catalog Scale:</strong>
+<ul>
+<li>184 SKUs in demo environment (production supports 100,000+ SKUs)</li>
+<li>34 rich metadata attributes enable intelligent filtering (project_types, product_category, brand, lumber_species, grade, dimensions, etc.)</li>
+<li>19-category hierarchy for intuitive navigation</li>
+<li>Product types include simple products, configurable products with variants, bundles, and service items</li>
+</ul>
+
+<strong>Hierarchical Pricing:</strong>
+<ul>
+<li>10 price books across 3 levels (base → segment → tier)</li>
+<li>1,770 price entries with volume tier discounts</li>
+<li>Parent-child price book inheritance reduces data duplication</li>
+<li>Automatic price calculation based on company assignment</li>
+</ul>
+
+<strong>Multi-Source Inventory:</strong>
+<ul>
+<li>6 inventory sources across 3 US regions</li>
+<li>4,446 inventory records (184 products × average 6 sources per product)</li>
+<li>Distance-based fulfillment prioritization</li>
+<li>Real-time availability checking</li>
+</ul>
+
+<strong>B2B Company Structure:</strong>
+<ul>
+<li>3 companies representing BuildRight's three divisions</li>
+<li>6 locations (teams) demonstrating national distribution</li>
+<li>12 users with role-based permissions (Company Admin, Approver, Senior Buyer, Default User)</li>
+<li>Company-level pricing ensures consistency across all locations within an organization</li>
+</ul>
+
+<strong>Dynamic Filtering via Trigger Policies:</strong>
+<ul>
+<li>HTTP header-based catalog filtering (no pre-built static views required)</li>
+<li>Project type filter supports multiselect attribute (products can serve multiple project types)</li>
+<li>Product category filter for additional refinement</li>
+<li>Brand filter for preference-based selection</li>
+<li>Multiple policies combine with logical AND for precise catalog composition</li>
+</ul>
+
+<h3 id="real-pricing-impact-at-scale">Real Pricing Impact at Scale</h3>
+
+<strong>Example Product: 2x4x8 SPF Stud Standard Grade (SKU: LBR-D0414F1E)</strong>
+
+<p>This is one of BuildRight's highest-volume products, used extensively in framing for both commercial and residential construction.</p>
+
+<div class="table-wrapper"><table>
+<thead>
+<tr><th>Customer Type</th><th>Price Book</th><th>Unit Price (1-99)</th><th>Volume (100-293)</th><th>Bundle (294+)</th><th>10,000-Unit Order</th></tr>
+</thead>
+<tbody>
+<tr><td>Base Contract</td><td>US-Contract</td><td>$8.50</td><td>$8.25</td><td>$7.84</td><td>$78,400</td></tr>
+<tr><td>Standard Commercial</td><td>Contract-Commercial</td><td>$8.50</td><td>$8.25</td><td>$7.84</td><td>$78,400</td></tr>
+<tr><td>Commercial Tier1</td><td>Commercial-Tier1</td><td>$8.25</td><td>$8.00</td><td>$7.64</td><td>$76,400</td></tr>
+<tr><td><strong>Commercial Tier2</strong></td><td><strong>Commercial-Tier2</strong></td><td><strong>$8.08</strong></td><td><strong>$7.84</strong></td><td><strong>$7.50</strong></td><td><strong>$75,000</strong></td></tr>
+<tr><td>Residential Builder</td><td>Residential-Builder</td><td>$8.50</td><td>$8.25</td><td>$7.84</td><td>$78,400</td></tr>
+</tbody>
+</table></div>
+
+<strong>Savings Analysis for Premium Commercial Builders (Tier2):</strong>
+<ul>
+<li>Base pricing: $78,400 for 10,000 studs</li>
+<li>Tier2 pricing: $75,000 for 10,000 studs</li>
+<li><strong>Automatic savings: $3,400 (4.3%)</strong></li>
+</ul>
+
+<p>On a typical large commercial project requiring 50,000-100,000 studs plus plates, beams, and other structural materials, Tier2 pricing delivers $20,000-$50,000 in savings per project. Multiply across dozens of annual projects, and the value of tier-based pricing becomes transformative for both customer loyalty and BuildRight's competitive positioning.</p>
+
+<p>The key differentiator: these savings are automatic and transparent. Premium Commercial Builders doesn't negotiate each order or wait for manual quotes. The pricing appears instantly when they browse products, enabling fast purchasing decisions.</p>
+
+---
+
+<h2 id="part-3-business-outcomes">Part 3: Business Outcomes</h2>
+
+<h3 id="for-contractors-time-savings-and-transparency">For Contractors: Time Savings and Transparency</h3>
+
+<strong>70% Reduction in Product Search Time</strong>
+
+<p>Before ACO implementation, contractors reported spending an average of 45 minutes searching for and adding products to cart for a typical framing order. With project-type filtering reducing the catalog from 184 to ~48 relevant products, that time dropped to 12-15 minutes - a 70% reduction.</p>
+
+<p>For contractors managing multiple projects simultaneously, this time savings compounds. A commercial contractor managing five active projects previously spent 3-4 hours weekly just on catalog search. Now that's reduced to under an hour, freeing time for project management, client relationships, and business development.</p>
+
+<strong>Automatic Volume Discounts Eliminate Negotiation</strong>
+
+<p>High-volume contractors previously submitted quote requests and waited 1-3 business days for sales representative responses with volume pricing. This delay could impact project timelines, especially for time-sensitive orders.</p>
+
+<p>With automatic tier-based pricing, contractors see their volume discounts immediately. They can make purchasing decisions in real-time, approve budgets without pricing contingencies, and complete orders in minutes rather than days.</p>
+
+<strong>Regional Accuracy Reduces Backorders</strong>
+
+<p>By showing only products available at the contractor's regional distribution center, BuildRight virtually eliminated the "order today, discover unavailability tomorrow" problem. Contractors now trust that products showing "In Stock" are actually available for their standard delivery window.</p>
+
+<p>This reliability is particularly valuable for just-in-time project scheduling, where material delays can cascade into costly construction timeline impacts.</p>
+
+<strong>Pre-Configured Bundles Streamline Ordering</strong>
+
+<p>BuildRight created 15 bundle products based on common material combinations. For example, the "Standard 2x4 Framing Package" includes:</p>
+<ul>
+<li>100 2x4x8 studs</li>
+<li>50 2x4x10 plates</li>
+<li>25 OSB sheathing sheets</li>
+<li>5 boxes 16d framing nails</li>
+<li>10 tubes construction adhesive</li>
+</ul>
+
+<p>Instead of searching for and adding five separate items (taking 8-10 minutes), contractors select one bundle and adjust quantities as needed (taking 2 minutes). For contractors who order similar material combinations repeatedly, bundles reduce 50-item orders to 3-4 bundle selections - a 75% reduction in order complexity.</p>
+
+<h3 id="for-buildright-operational-efficiency-and-scale">For BuildRight: Operational Efficiency and Scale</h3>
+
+<strong>Single Catalog Serves All Segments</strong>
+
+<p>Before ACO, BuildRight's product team discussed creating separate catalog experiences for Commercial, Residential, and Pro divisions. This would have meant managing three parallel product catalogs, tripling the data management overhead for product updates, new product launches, and attribute maintenance.</p>
+
+<p>With ACO's dynamic filtering, a single catalog serves all three divisions. Product managers update attributes once, and the system automatically delivers appropriate product visibility to each segment based on metadata tagging. This "build once, personalize everywhere" approach dramatically reduces operational complexity.</p>
+
+<strong>Transparent Tier Pricing Rewards Loyalty Automatically</strong>
+
+<p>BuildRight's pricing strategy explicitly rewards high-volume customers, but manual negotiation created inconsistency and sales team bottlenecks. Some high-volume customers received better pricing than others simply based on how aggressively they negotiated or which sales representative they worked with.</p>
+
+<p>Tier-based pricing standardizes this approach. Companies earning Tier1 or Tier2 status through documented purchase volume receive consistent, transparent pricing across all purchases. This creates a clear incentive structure: increase your volume, earn better pricing automatically.</p>
+
+<p>The sales team now spends less time on pricing calculations and more time on relationship building, identifying upsell opportunities, and strategic account management.</p>
+
+<strong>Real-Time Catalog Composition Eliminates Static View Management</strong>
+
+<p>Traditional catalog personalization approaches require creating and maintaining multiple static catalog views - one for each combination of segment, project type, and filter option. With four project types, three segments, and multiple category filters, this could require dozens of pre-built views.</p>
+
+<p>ACO's trigger-based policies deliver catalog filtering in real-time via HTTP headers. BuildRight creates policies once (project type filter, category filter, brand filter), and those policies apply dynamically to any combination of filter values. Adding a new project type or category doesn't require creating new catalog views - just tagging products with the new attribute value.</p>
+
+<strong>Reduced Data Management Overhead</strong>
+
+<p>BuildRight's product team uses intelligent attribute assignment to maintain catalog quality efficiently. The 34 metadata attributes enable precise filtering without overwhelming data entry teams. Products inherit sensible defaults based on product type, and exceptions are easy to identify and correct.</p>
+
+<p>For example, all lumber products automatically receive appropriate values for lumber_species, grade, dimensions, and treatment attributes. All fasteners receive values for fastener_type, material, size, and coating. This structured approach makes catalog maintenance scalable even as product count grows.</p>
+
+<h3 id="demonstration-value-showcasing-aco-capabilities">Demonstration Value: Showcasing ACO Capabilities</h3>
+
+<p>BuildRight serves as a compelling demonstration environment for Adobe Commerce Optimizer's enterprise capabilities:</p>
+
+<strong>Scenario 1: Hierarchical Pricing at Scale</strong>
+
+<p>Demo audiences can see real-time pricing differences by switching between company logins. Logging in as Premium Commercial Builders (Tier2) shows the 2x4x8 stud at $8.08. Logging in as Coastal Residential Builders shows different Residential-Builder pricing at $8.50. Logging in as Elite Trade Contractors shows Pro-Specialty pricing.</p>
+
+<p>This demonstrates ACO's ability to manage complex B2B pricing structures with company-level assignment and automatic price calculation.</p>
+
+<strong>Scenario 2: Project-Based Dynamic Filtering</strong>
+
+<p>By sending GraphQL queries with different <code>AC-Policy-Project-Type</code> HTTP headers, demos can show how the catalog dynamically recomposes:</p>
+
+<ul>
+<li><code>new_construction</code> header: ~45 products (structural materials, framing lumber, concrete)</li>
+<li><code>remodel</code> header: ~55 products (finishing materials, windows, doors, drywall)</li>
+<li><code>repair</code> header: ~32 products (maintenance items, smaller quantities)</li>
+<li><code>restoration</code> header: ~28 products (specialty items, matching materials)</li>
+</ul>
+
+<p>The same query, same endpoint, different header values produce entirely different product sets - demonstrating trigger-based personalization without static views.</p>
+
+<strong>Scenario 3: National B2B Distribution</strong>
+
+<p>BuildRight's structure demonstrates enterprise-scale B2B architecture:</p>
+<ul>
+<li>Premium Commercial Builders has locations in Los Angeles and Phoenix</li>
+<li>Both locations receive the same Tier2 pricing (company-level consistency)</li>
+<li>Both locations see inventory from their respective regional warehouses</li>
+<li>Users in both locations belong to the same company hierarchy</li>
+</ul>
+
+<p>This proves ACO's multi-location B2B capabilities while maintaining pricing and catalog consistency.</p>
+
+<strong>Scenario 4: Bundle Complexity</strong>
+
+<p>The "Standard 2x4 Framing Package" bundle demonstrates ACO's ability to handle complex product types. The bundle includes five component products, calculates bundle pricing (5% discount vs. individual items), respects company-tier pricing, and displays correctly across different customer segments.</p>
+
+<p>This showcases ACO's product type flexibility beyond simple products.</p>
+
+---
+
+<h2 id="part-4-lessons-learned-and-best-practices">Part 4: Lessons Learned and Best Practices</h2>
+
+<h3 id="what-worked-well">What Worked Well</h3>
+
+<strong>Hierarchical Pricing Model Reduces Duplication</strong>
+
+<p>BuildRight's 3-level price book structure (base → segment → tier) with parent-child inheritance proved highly efficient. Instead of defining 1,770 prices completely independently, many tier-level price books inherit from their segment-level parents and only override specific products or volume breakpoints.</p>
+
+<p>This reduced data entry by approximately 40% compared to flat pricing structures and makes maintenance easier. When BuildRight raises base pricing on lumber due to market conditions, tier pricing automatically inherits those increases unless explicitly overridden.</p>
+
+<strong>Project Types as Multiselect Attribute Increased Flexibility</strong>
+
+<p>Initially, BuildRight considered project_types as a single-select attribute (each product belongs to one project type). Switching to multiselect proved valuable, as many products legitimately serve multiple project types.</p>
+
+<p>For example, 2x4x8 studs are used in new construction, remodels, and repairs. OSB sheathing serves new construction and remodels. By tagging products with all applicable project types, the catalog provides better coverage across project type filters.</p>
+
+<p>The policy configuration uses the <code>CONTAINS</code> operator for multiselect attributes, checking whether the product's project_types array contains the trigger value. This makes filtering work correctly with multiselect attributes.</p>
+
+<strong>National Distribution Model Demonstrates Enterprise Scale</strong>
+
+<p>BuildRight intentionally spans six locations across three US regions (Western, Central, Eastern) rather than concentrating in one region. This geographic distribution demonstrates that ACO can support true national or international operations with:</p>
+<ul>
+<li>Regional inventory management</li>
+<li>Company locations in multiple states</li>
+<li>Users distributed across time zones</li>
+<li>Distance-based fulfillment optimization</li>
+</ul>
+
+<p>This architectural choice makes BuildRight a more compelling enterprise demo than a single-region implementation would be.</p>
+
+<strong>Simplified Pricing Model Maintained Demo Effectiveness</strong>
+
+<p>BuildRight originally generated 29,953 price entries across all price books and products. This created a 1.3 MB JSON file that took 30-45 minutes to ingest.</p>
+
+<p>By simplifying to 1,770 price entries (focusing volume tiers only on high-volume products like lumber and fasteners), BuildRight reduced the price file to 360 KB and ingestion time to 5-10 minutes - a 94% reduction. Critically, this simplification preserved all key demo capabilities:</p>
+<ul>
+<li>Tier-based pricing differences still clear</li>
+<li>Volume tier pricing still functional on key products</li>
+<li>All price books still represented</li>
+</ul>
+
+<p>The lesson: effective demos prioritize clarity over exhaustive coverage. Showing tier pricing on 30 high-volume products is more impactful than showing it on all 184 products.</p>
+
+<h3 id="implementation-insights">Implementation Insights</h3>
+
+<strong>Setup Time: 12-16 Hours Total</strong>
+
+<p>BuildRight's complete setup breaks down as:</p>
+<ul>
+<li>Environment configuration: 30 minutes</li>
+<li>Data generation: 15 minutes</li>
+<li>Data ingestion to ACO: 1-2 hours (API upload time)</li>
+<li>Multi-Source Inventory: 2.5-4 hours (manual Adobe Commerce UI)</li>
+<li>B2B Company Configuration: 6-8 hours (manual Adobe Commerce UI)</li>
+<li>Trigger Policy Configuration: 1-2 hours (ACO Admin UI)</li>
+<li>Validation and testing: 1 hour</li>
+</ul>
+
+<p>The B2B configuration is the longest phase due to manual UI work creating 3 companies, 6 teams, and 12 users. This can be spread across multiple days.</p>
+
+<strong>Most Valuable: Deterministic Data Generation</strong>
+
+<p>All BuildRight data generation uses a seeded random number generator (SEED=12345) to produce identical output every time. This determinism proved invaluable for:</p>
+<ul>
+<li>Reproducible builds across different environments</li>
+<li>Consistent pricing examples in documentation</li>
+<li>Reliable testing and validation</li>
+<li>Easy rebuild if ACO instance resets</li>
+</ul>
+
+<strong>API Limitations: MSI and B2B Require Manual Configuration</strong>
+
+<p>Adobe Commerce Optimizer's Data Ingestion API covers products, attributes, categories, price books, and prices. However, two major components require manual Adobe Commerce configuration:</p>
+
+<ul>
+<li><strong>Multi-Source Inventory (MSI)</strong>: ACO doesn't support inventory operations, so all inventory source creation, stock configuration, and product-source assignments happen in Adobe Commerce Admin UI</li>
+<li><strong>B2B Companies</strong>: Company, team, and user creation happens through Adobe Commerce B2B modules, not ACO API</li>
+</ul>
+
+<p>These manual steps account for 8-12 hours of the total 12-16 hour setup time. For organizations automating ACO demos at scale, these manual steps could be automated via Adobe Commerce REST API, though BuildRight's demo intentionally preserves them as manual steps to showcase the Adobe Commerce B2B UI capabilities.</p>
+
+<h3 id="scaling-considerations">Scaling Considerations</h3>
+
+<strong>From 184 to 100,000+ SKUs</strong>
+
+<p>BuildRight intentionally limits to 184 products for demo effectiveness, but the architecture scales to production catalogs. Adobe Commerce Optimizer supports 100,000+ SKU catalogs with:</p>
+<ul>
+<li>Complex filtering across dozens of attributes</li>
+<li>Hundreds of price books</li>
+<li>Millions of price entries</li>
+<li>High-performance GraphQL queries</li>
+</ul>
+
+<p>The deterministic generation scripts can be configured to generate any catalog size. For example, setting a higher product count and increasing variant diversity could generate 1,000 or 10,000 products while maintaining the same metadata structure and pricing logic.</p>
+
+<strong>Price Book Hierarchy Scales Well</strong>
+
+<p>BuildRight's 3-level hierarchy (base → segment → tier) with parent-child inheritance is a pattern that scales to deeper hierarchies. Enterprise implementations might have:</p>
+<ul>
+<li>Geographic level (US → Canada → Mexico)</li>
+<li>Business unit level (Division → Region → Branch)</li>
+<li>Customer type level (Retail → Contract → Volume Tiers)</li>
+</ul>
+
+<p>The parent-child inheritance model means most price books override only exceptions rather than redefining all prices, making deeper hierarchies manageable.</p>
+
+<strong>Trigger Policies Eliminate Static View Explosion</strong>
+
+<p>Traditional personalization requiring pre-built catalog views would struggle with BuildRight's filtering complexity:</p>
+<ul>
+<li>4 project types × 3 segments × 10 categories = 120 potential combinations</li>
+</ul>
+
+<p>ACO's trigger-based policies handle this with 3 policies that compose dynamically. Adding a 5th project type or 11th category doesn't require new catalog views - just product tagging with the new attribute value.</p>
+
+<p>This approach scales to dozens of filter dimensions without view management overhead.</p>
+
+<strong>Multi-Region Inventory Demonstrates Enterprise Readiness</strong>
+
+<p>BuildRight's 6 inventory sources across 3 regions prove that ACO integrates cleanly with Adobe Commerce MSI's multi-source capabilities. Enterprise implementations with dozens or hundreds of inventory locations can follow the same pattern:</p>
+<ul>
+<li>Create inventory sources in Adobe Commerce</li>
+<li>Assign products to sources with quantities</li>
+<li>Configure stock with source priorities</li>
+<li>ACO catalog queries respect MSI availability</li>
+</ul>
+
+<p>The integration is seamless because ACO handles catalog and pricing while Adobe Commerce handles inventory and fulfillment.</p>
+
+<h3 id="adobe-commerce-optimizer-strategic-value">Adobe Commerce Optimizer Strategic Value</h3>
+
+<strong>Composable Catalog Architecture</strong>
+
+<p>BuildRight demonstrates ACO's core value proposition: a single source of truth for catalog data that composes dynamically for different contexts. Products, attributes, categories, and pricing are defined once, then delivered with appropriate personalization based on:</p>
+<ul>
+<li>Customer segment</li>
+<li>Project context</li>
+<li>Geographic region</li>
+<li>Purchasing tier</li>
+</ul>
+
+<p>This "build once, personalize everywhere" approach contrasts with traditional commerce approaches requiring duplicate catalogs or complex view management.</p>
+
+<strong>B2B Enterprise Capabilities</strong>
+
+<p>The BuildRight implementation validates ACO's readiness for complex B2B scenarios:</p>
+<ul>
+<li>Hierarchical price books with inheritance</li>
+<li>Company-specific catalog assignment</li>
+<li>Multi-location company structures</li>
+<li>Role-based user permissions</li>
+<li>Volume tier pricing with automatic application</li>
+</ul>
+
+<p>These capabilities address real-world B2B requirements in manufacturing, distribution, and wholesale industries.</p>
+
+<strong>Developer-Friendly API Architecture</strong>
+
+<p>BuildRight's setup demonstrates ACO's developer experience:</p>
+<ul>
+<li>REST API for data ingestion with clear schemas</li>
+<li>GraphQL API for queries with flexible field selection</li>
+<li>HTTP header-based triggers for stateless filtering</li>
+<li>OAuth authentication for secure access</li>
+<li>Comprehensive error handling and validation</li>
+</ul>
+
+<p>The deterministic generation scripts show how development teams can build automation around ACO's APIs for catalog management, testing, and deployment pipelines.</p>
+
+<strong>Production-Scale Performance</strong>
+
+<p>Even in BuildRight's demo scale, ACO demonstrates production-ready performance:</p>
+<ul>
+<li>GraphQL queries return in <200ms with complex filtering</li>
+<li>Trigger policy evaluation adds minimal latency</li>
+<li>Price calculation happens in real-time</li>
+<li>Multi-source inventory checks integrate seamlessly</li>
+</ul>
+
+<p>Enterprise implementations with 100x the catalog size report similar query performance, validating ACO's scalability architecture.</p>
+
+---
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>BuildRight Solutions' Adobe Commerce Optimizer implementation demonstrates how modern B2B commerce can move beyond one-size-fits-all catalogs to deliver personalized, context-aware experiences that benefit both buyers and sellers.</p>
+
+<p>For contractors, the transformation is tangible: 70% less time searching for products, automatic volume discounts without negotiation, and confidence that displayed products are actually available at their regional warehouse.</p>
+
+<p>For BuildRight, the operational benefits are equally compelling: a single catalog serves all customer segments, tier-based pricing rewards loyalty automatically, and real-time catalog composition eliminates the overhead of managing hundreds of static views.</p>
+
+<p>Most importantly, BuildRight proves that sophisticated B2B personalization doesn't require abandoning a single source of truth or creating duplicate data structures. Adobe Commerce Optimizer's composable architecture delivers personalization through intelligent filtering, hierarchical pricing, and trigger-based policies - not through catalog duplication.</p>
+
+<p>The result is a demonstration environment that showcases enterprise-scale B2B commerce capabilities while remaining comprehensible, reproducible, and maintainable by development and sales teams.</p>
+
+---
+
+<h2 id="appendix-key-metrics">Appendix: Key Metrics</h2>
+
+<strong>Catalog Scale:</strong>
+<ul>
+<li>184 total products (demo scale; production supports 100,000+)</li>
+<li>70 simple products</li>
+<li>20 configurable products with 92 variants</li>
+<li>15 bundle products</li>
+<li>10 service products</li>
+<li>34 metadata attributes</li>
+<li>19 categories (2-level hierarchy)</li>
+</ul>
+
+<strong>Pricing Structure:</strong>
+<ul>
+<li>10 hierarchical price books (3 levels: base → segment → tier)</li>
+<li>1,770 price entries (simplified model, 94% reduction from complex model)</li>
+<li>3-5% tier discounts on high-volume products</li>
+<li>Volume breakpoints at 100 and 294 units</li>
+</ul>
+
+<strong>Geographic Distribution:</strong>
+<ul>
+<li>6 inventory locations across 3 US regions</li>
+<li>Western: Sacramento RDC (CA), Phoenix Warehouse (AZ)</li>
+<li>Central: Denver Warehouse (CO)</li>
+<li>Eastern: Charlotte RDC (NC), Atlanta Warehouse (GA)</li>
+<li>Virtual: Premium Windows drop shipper (specialty items)</li>
+</ul>
+
+<strong>B2B Structure:</strong>
+<ul>
+<li>3 companies (Commercial, Residential, Pro divisions)</li>
+<li>6 teams/locations (2 per company)</li>
+<li>12 users (4 per company, 2 per location)</li>
+<li>4 user roles (Company Admin, Approver, Senior Buyer, Default User)</li>
+</ul>
+
+<strong>Implementation Timeline:</strong>
+<ul>
+<li>Total setup time: 12-16 hours</li>
+<li>Can be completed over 2-3 days</li>
+<li>Longest phase: B2B company configuration (6-8 hours due to manual UI work)</li>
+<li>Data ingestion: 1-2 hours (automated API upload)</li>
+</ul>
+
+<strong>Business Outcomes:</strong>
+<ul>
+<li>70% reduction in contractor search time</li>
+<li>$10,000+ savings per large commercial order via tier pricing</li>
+<li>94% reduction in price entry count while maintaining full functionality</li>
+<li>Single catalog serves all customer segments dynamically</li>
+<li>Real-time catalog composition without static view management overhead</li>
+</ul>
+
+---
+
+<strong>Document Version:</strong> 1.0
+<strong>Last Updated:</strong> October 31, 2025
+<strong>Related Documentation:</strong>
+<ul>
+<li><a href="SETUP-GUIDE.md">Setup Guide</a> - Technical implementation procedures</li>
+<li><a href="architecture/buildright-b2b-structure.md">B2B Architecture Diagram</a></li>
+<li><a href="../README.md">Project README</a></li>
+</ul>
+
+        </main>
+    </div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Back to top" title="Back to top">
+        ↑
+    </button>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    <script>
+        function updateProgressBar() {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+            const progressBar = document.querySelector('.progress-bar-fill');
+            if (progressBar) {
+                progressBar.style.width = Math.min(scrollPercent, 100) + '%';
+            }
+        }
+
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('h2[id], h3[id]');
+            const tocLinks = document.querySelectorAll('.toc-nav a');
+            let currentSection = null;
+            const scrollPosition = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollPosition >= sectionTop) {
+                    currentSection = section;
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (currentSection && link.getAttribute('href') === '#' + currentSection.id) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        function updateBackToTopButton() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (backToTop) {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            }
+        }
+
+        function throttle(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        const handleScroll = throttle(() => {
+            updateProgressBar();
+            updateActiveSection();
+            updateBackToTopButton();
+        }, 16);
+
+        window.addEventListener('scroll', handleScroll);
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const sidebar = document.querySelector('.sidebar');
+                    const menuToggle = document.querySelector('.mobile-menu-toggle');
+                    if (sidebar && sidebar.classList.contains('active')) {
+                        sidebar.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    }
+
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.querySelector('.back-to-top')?.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        if (menuToggle && sidebar) {
+            menuToggle.addEventListener('click', () => {
+                const isActive = sidebar.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', isActive.toString());
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgressBar();
+            updateActiveSection();
+            updateBackToTopButton();
+            console.log('BuildRight HTML Report: Interactive features initialized');
+        });
+    </script>
+</body>
+</html>

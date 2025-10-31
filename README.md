@@ -561,10 +561,20 @@ After ACO data ingestion, the following manual configurations are required to co
 - [Adobe Developer Console](https://developer.adobe.com/console)
 
 ### Project Documentation
-- [Reduced Scope Plan](./instructions/02-reduced-scope-plan.md)
-- [Implementation Guides](./instructions/)
-- [Architecture Decisions](./docs/architecture/)
-- [Thread Summary](./instructions/THREAD-SUMMARY.md)
+
+**Getting Started:**
+- **[BuildRight Case Study](docs/BUILDRIGHT-CASE-STUDY.md)** 📊 **READ FIRST** - Business context, challenge, solution, and outcomes
+  ([HTML version](docs/BUILDRIGHT-CASE-STUDY.html))
+- **[Setup Guide](docs/SETUP-GUIDE.md)** ⚙️ **IMPLEMENT HERE** - Complete implementation procedures from scratch
+  ([HTML version](docs/SETUP-GUIDE.html))
+
+**Detailed Reference:**
+- [MSI Configuration Guide](docs/manual-setup/msi-configuration-guide.md) - Multi-source inventory setup (detailed)
+- [B2B Configuration Guide](docs/manual-setup/b2b-configuration-guide.md) - Company and user setup (detailed)
+- [Trigger Policy Guide](docs/manual-setup/trigger-policy-guide.md) - Dynamic catalog filtering (detailed)
+- [B2B Company Structure](docs/architecture/buildright-b2b-structure.md) - National distribution architecture (6 states, 3 regions)
+- [Architecture Documentation](docs/architecture/) - Technical deep-dives
+- [Archived Documentation](instructions/archive/) - Previous versions and original planning documents
 
 ---
 
@@ -591,5 +601,6 @@ For questions or issues:
 
 ---
 
-**Last Updated:** October 29, 2025
-**Version:** Track 2 Complete (40% project completion)
+**Last Updated:** October 30, 2025
+**Version:** Implementation Complete with National Distribution
+**Status:** 100% Functional (92% alignment with original vision, exceeds reduced scope)

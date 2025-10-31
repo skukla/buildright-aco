@@ -60,7 +60,7 @@ function generateSlug(name) {
 }
 
 /**
- * Get category route hierarchy (ACO format with path instead of categoryId)
+ * Get category route hierarchy (ACO format with categoryId)
  */
 function getCategoryRoutes(categories, categoryId) {
   const routes = [];
@@ -73,7 +73,7 @@ function getCategoryRoutes(categories, categoryId) {
     const parentCategory = categories.find(c => c.categoryId === category.parentId);
     if (parentCategory) {
       routes.push({
-        path: `/${parentCategory.categoryId.replace(/_/g, '-')}`,
+        categoryId: parentCategory.categoryId,
         position: random.nextInt(1, 100)
       });
     }
@@ -81,7 +81,7 @@ function getCategoryRoutes(categories, categoryId) {
 
   // Add the category itself
   routes.push({
-    path: `/${categoryId.replace(/_/g, '-')}`,
+    categoryId: categoryId,
     position: random.nextInt(1, 100)
   });
 
@@ -119,104 +119,65 @@ function getAttributeValue(attribute, random) {
   }
 }
 
-// Project type mapping configuration for ACO policy filtering
-const PROJECT_TYPE_RULES = [
-  {
-    name: 'service_products',
-    matcher: (sku) => sku.startsWith('SVC-'),
-    projectTypes: ['new_construction', 'remodel', 'repair', 'restoration']
-  },
-  {
-    name: 'safety_equipment',
-    matcher: (sku, productName) => {
-      const safetyKeywords = ['safety', 'hard hat', 'glove', 'vest', 'goggles', 'protection'];
-      return sku.startsWith('SAF-') ||
-             safetyKeywords.some(keyword => productName.toLowerCase().includes(keyword));
-    },
-    projectTypes: ['new_construction', 'remodel', 'repair', 'restoration']
-  },
-  {
-    name: 'windows_doors',
-    matcher: (sku, productName, subcategory) =>
-      sku.startsWith('WIN-') || sku.startsWith('DOR-') ||
-      subcategory === 'windows' || subcategory === 'doors',
-    projectTypes: ['new_construction', 'remodel', 'repair']
-  },
-  {
-    name: 'structural_materials',
-    matcher: (sku, productName, subcategory, category) =>
-      category === 'structural' || sku.startsWith('LBR-') || sku.startsWith('PLY-') ||
-      sku.startsWith('CON-') || subcategory === 'lumber' ||
-      subcategory === 'plywood' || subcategory === 'concrete',
-    projectTypes: ['new_construction', 'remodel']
-  },
-  {
-    name: 'fasteners',
-    matcher: (sku, productName, subcategory, category) =>
-      category === 'fasteners' || sku.startsWith('FST-'),
-    projectTypes: ['new_construction', 'remodel', 'repair', 'restoration']
-  },
-  {
-    name: 'finishing_materials',
-    matcher: (sku, productName, subcategory, category) =>
-      category === 'finishing' || subcategory === 'paint' || subcategory === 'drywall',
-    projectTypes: ['remodel', 'repair', 'restoration']
-  }
-];
-
 /**
- * Determine project types for a product based on category and type
- *
- * This function maps products to ACO project types for policy-based filtering.
- * Uses PROJECT_TYPE_RULES configuration for maintainability and extensibility.
- *
- * @param {string} category - Product category (e.g., 'structural', 'finishing')
- * @param {string} subcategory - Product subcategory (e.g., 'lumber', 'paint')
- * @param {string} sku - Product SKU (used for pattern matching)
- * @param {string} productName - Product name (used for keyword matching)
- * @returns {Array<string>} Array of applicable project types
+ * Get project types for a product based on its category
+ * Returns array of project type values
+ * @param {string} categoryValue - Product category
+ * @param {object} random - Random number generator
+ * @param {boolean} isService - Whether this is a service product
  */
-function getProjectTypesForProduct(category, subcategory, sku, productName) {
-  // Apply rules in order, return first match
-  for (const rule of PROJECT_TYPE_RULES) {
-    if (rule.matcher(sku, productName, subcategory, category)) {
-      return rule.projectTypes;
-    }
+function getProjectTypes(categoryValue, random, isService = false) {
+  const allTypes = ['new_construction', 'remodel', 'repair', 'restoration'];
+
+  // Services are always available for all project types
+  if (isService) {
+    return allTypes;
   }
 
-  // Default: new_construction and remodel for most building materials
-  return ['new_construction', 'remodel'];
+  switch(categoryValue) {
+    case 'structural_materials':
+      // Structural materials primarily for new construction and remodels
+      const structuralTypes = ['new_construction', 'remodel'];
+      // 40% chance to also include repair
+      if (random.nextFloat() < 0.4) {
+        structuralTypes.push('repair');
+      }
+      return structuralTypes;
+
+    case 'framing_insulation':
+      // Framing used in construction, remodels, and restoration
+      return ['new_construction', 'remodel', 'restoration'];
+
+    case 'windows_doors':
+      // Windows/doors for construction, remodels, and restoration
+      return ['new_construction', 'remodel', 'restoration'];
+
+    case 'fasteners_hardware':
+      // Fasteners used in all project types
+      return allTypes;
+
+    case 'safety_equipment':
+      // PPE needed for all project types
+      return allTypes;
+
+    default:
+      // Default: new construction and remodel
+      return ['new_construction', 'remodel'];
+  }
 }
 
 /**
- * Generate product attributes (ACO format with values array)
+ * Generate product attributes (ACO format with value field)
  */
-function generateAttributes(metadata, categoryValue, brand, uom, random, category, subcategory, sku, productName) {
+function generateAttributes(metadata, categoryValue, brand, uom, random, category, subcategory, sku, productName, isService = false) {
   const attributes = [];
 
-  // Helper to convert value to ACO values array
-  const toValuesArray = (value) => {
-    if (Array.isArray(value)) return value;
-    if (value === null || value === undefined || value === '') return [];
-    return [String(value)];
-  };
-
   // Add required attributes
-  const productCategoryAttr = metadata.find(m => m.attributeId === 'product_category' || m.attributeId === 'attr_001');
+  const productCategoryAttr = metadata.find(m => m.attributeId === 'product_category');
   if (productCategoryAttr) {
     attributes.push({
-      code: productCategoryAttr.attributeId,
-      values: toValuesArray(categoryValue)
-    });
-  }
-
-  // Add project_types attribute for ACO policy filtering
-  const projectTypesAttr = metadata.find(m => m.attributeId === 'project_types');
-  if (projectTypesAttr) {
-    const projectTypes = getProjectTypesForProduct(category, subcategory, sku, productName);
-    attributes.push({
-      code: 'project_types',
-      values: toValuesArray(projectTypes)
+      code: 'product_category',
+      value: categoryValue
     });
   }
 
@@ -227,12 +188,12 @@ function generateAttributes(metadata, categoryValue, brand, uom, random, categor
     const brandOption = brandAttr.options[random.nextInt(0, brandAttr.options.length - 1)];
     attributes.push({
       code: brandAttr.attributeId,
-      values: toValuesArray(brandOption.value)
+      value: brandOption.value
     });
   } else if (brandAttr) {
     attributes.push({
       code: brandAttr.attributeId,
-      values: toValuesArray(brand)
+      value: brand
     });
   }
 
@@ -240,14 +201,23 @@ function generateAttributes(metadata, categoryValue, brand, uom, random, categor
   if (uomAttr) {
     attributes.push({
       code: uomAttr.attributeId,
-      values: toValuesArray(uom)
+      value: uom
     });
   }
 
-  // Add some optional attributes (excluding project_types and product_category which are already added)
+  // Add project_types attribute with intelligent assignment based on category
+  const projectTypesAttr = metadata.find(m => m.attributeId === 'project_types');
+  if (projectTypesAttr) {
+    const projectTypes = getProjectTypes(categoryValue, random, isService);
+    attributes.push({
+      code: 'project_types',
+      value: projectTypes
+    });
+  }
+
+  // Add some optional attributes (excluding already-added attributes)
   const optionalAttrs = metadata.filter(m =>
     !m.isRequired &&
-    m.attributeId !== 'attr_001' &&
     m.attributeId !== 'product_category' &&
     m.attributeId !== 'project_types'
   );
@@ -259,7 +229,7 @@ function generateAttributes(metadata, categoryValue, brand, uom, random, categor
       const attrValue = getAttributeValue(attr, random);
       attributes.push({
         code: attr.attributeId,
-        values: toValuesArray(attrValue)
+        value: attrValue
       });
     }
   }
@@ -302,20 +272,11 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
   // ACO FeedProduct schema
   return {
     sku: sku,
-    source: {
-      locale: 'en-US'
-    },
+    type: 'simple',
     name: productName,
-    slug: slug,
-    status: 'ENABLED',
-    description: `High-quality ${template.name} from ${brand}`,
-    shortDescription: `${template.name} - ${template.uom}`,
-    visibleIn: ['CATALOG', 'SEARCH'],
-    metaTags: {
-      title: `${template.name} | ${brand}`,
-      description: `Shop ${brand} ${template.name} at BuildRight. Professional grade construction materials.`,
-      keywords: [category, subcategory, brand, 'construction', 'building materials']
-    },
+    status: 'enabled',
+    visibility: 'both',
+    price: price,
     attributes: attributes,
     routes: routes
   };
@@ -341,7 +302,7 @@ function generateServiceProduct(service, category, categories, metadata, index) 
   const categoryDef = PRODUCT_CATEGORIES[category];
   const categoryValue = categoryDef.attributeValue || category;
 
-  const attributes = generateAttributes(metadata, categoryValue, 'BuildRight Services', 'SERVICE', random, category, 'services', sku, service.name);
+  const attributes = generateAttributes(metadata, categoryValue, 'BuildRight Services', 'SERVICE', random, category, 'services', sku, service.name, true);
 
   // Generate slug from service name
   const slug = service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -349,20 +310,11 @@ function generateServiceProduct(service, category, categories, metadata, index) 
   // ACO FeedProduct schema
   return {
     sku: sku,
-    source: {
-      locale: 'en-US'
-    },
+    type: 'service',
     name: service.name,
-    slug: slug,
-    status: 'ENABLED',
-    description: `Professional ${service.name.toLowerCase()} provided by certified technicians`,
-    shortDescription: `Expert ${service.name}`,
-    visibleIn: ['CATALOG', 'SEARCH'],
-    metaTags: {
-      title: `${service.name} | BuildRight Services`,
-      description: `Professional ${service.name} available. Expert installation and consultation services.`,
-      keywords: ['service', 'installation', 'consultation', category, 'professional']
-    },
+    status: 'enabled',
+    visibility: 'both',
+    price: price,
     attributes: attributes,
     routes: routes
   };

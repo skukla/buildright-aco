@@ -1,18 +1,18 @@
 # BuildRight ACO Project Context Analysis Report
 
-**Generated:** 2025-10-30T04:52:00.761Z
+**Generated:** 2025-10-31T17:31:57.539Z
 
 ---
 
 ## 1. Documentation Summary
 
-**Total Documents Found:** 10
+**Total Documents Found:** 14
 
 ### Document Breakdown:
 - Plans: 2
 - Phases: 7
 - Summary: 1
-- Other: 0
+- Other: 4
 
 ✅ All critical documents present
 
