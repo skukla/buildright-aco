@@ -33,6 +33,7 @@ This guide provides step-by-step implementation procedures for setting up the Bu
 | 4. Multi-Source Inventory | 2.5-4 hrs | Manual UI |
 | 5. B2B Configuration | 6-8 hrs | Manual UI |
 | 6. Trigger Policies | 1-2 hrs | ACO Admin UI |
+| 6.5. Project Builder Policies | 30-45 min | ACO Admin UI (Optional) |
 | 7. Validation | 1 hr | Testing |
 
 ### Key Data Counts
@@ -585,6 +586,77 @@ curl -X POST "https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql" \
 
 ---
 
+## Phase 6.5: Project Builder Policies (Optional Enhancement)
+
+> **Context:** The Project Builder wizard requires additional trigger policies to support complexity-based and budget-based filtering. These policies enable the wizard to generate customized material kits based on project requirements.
+
+### Overview
+
+The Project Builder wizard collects four pieces of information:
+1. **Project Type** - Uses existing `AC-Policy-Project-Type` policy
+2. **Project Detail** - Uses existing `AC-Policy-Product-Category` policy (maps room/area to categories)
+3. **Complexity** - Requires new policy for complexity/quality tier filtering
+4. **Budget** - Requires new policy for price range filtering
+
+### Required Product Attributes
+
+Before creating policies, ensure products have these attributes:
+
+**1. Complexity/Quality Tier Attribute**
+- **Attribute Code:** `quality_tier` or `complexity_level`
+- **Type:** Select
+- **Values:** `basic`, `moderate`, `complex` (or `standard`, `premium`, `professional`)
+- **Purpose:** Filter products by quality/complexity level
+
+**2. Price Range Attribute (Optional)**
+- Products can be filtered by price using existing price data
+- Alternative: Use price range policies that filter by `price` attribute value
+
+### Policies to Create
+
+**4. Complexity/Quality Tier Filter**
+- **Policy ID:** `complexity-filter`
+- **Policy Name:** Complexity/Quality Tier Filter
+- **Policy Type:** EXCLUSIVE (trigger-based)
+- **Trigger Name:** `AC-Policy-Complexity`
+- **Transport:** HTTP_HEADER
+- **Attribute:** `quality_tier` (or `complexity_level`)
+- **Operator:** EQUALS
+- **Value Source:** TRIGGER
+- **Priority:** 4
+
+**5. Budget Range Filter (Price-Based)**
+- **Policy ID:** `budget-range-filter`
+- **Policy Name:** Budget Range Filter
+- **Policy Type:** EXCLUSIVE (trigger-based)
+- **Trigger Name:** `AC-Policy-Budget-Range`
+- **Transport:** HTTP_HEADER
+- **Attribute:** `price` (or create `price_tier` attribute)
+- **Operator:** BETWEEN or LESS_THAN_OR_EQUAL
+- **Value Source:** TRIGGER (may require range parsing)
+- **Priority:** 5
+
+> **Note:** Budget filtering may require custom logic if ACO doesn't support range operators directly. Alternative approach: Create price tier attributes (e.g., `price_tier: under_5k`, `5k_15k`, etc.) and filter by that attribute.
+
+### Testing Project Builder Policies
+
+```bash
+# Test with complexity
+curl -X POST "https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql" \
+  -H "Authorization: Bearer {TOKEN}" \
+  -H "AC-Policy-Project-Type: remodel" \
+  -H "AC-Policy-Product-Category: fasteners_hardware" \
+  -H "AC-Policy-Complexity: moderate" \
+  -H "AC-Policy-Budget-Range: 5k_15k" \
+  -d '{"query": "{ products { items { sku name } } }"}'
+```
+
+**Expected:** Products filtered by project type, category, complexity level, and within budget range
+
+✅ **Checkpoint:** Project Builder policies created and tested; wizard can generate filtered product sets
+
+---
+
 ## Phase 7: Complete Validation
 
 ### Validation Checklist
@@ -612,9 +684,10 @@ node scripts/validate-ingestion.js
 - ✅ Can log in as company user and see products
 
 **Policies:**
-- ✅ 3 trigger policies created
+- ✅ 3 base trigger policies created (project type, category, brand)
 - ✅ Policies associated with catalog view
 - ✅ HTTP headers filter products correctly
+- ⚠️ Project Builder policies (optional): 2 additional policies for complexity and budget filtering (see Phase 6.5)
 
 ### Functional Tests
 
@@ -813,12 +886,18 @@ node scripts/validate-ingestion.js           # Verify all data ingested
 ### Architecture
 - [B2B Structure Diagram](architecture/buildright-b2b-structure.md) - Company and location hierarchy
 
+### Frontend Implementation
+- [BuildRight Website README](../buildright-website/README.md) - Frontend prototype documentation
+- Project Builder wizard and dynamic bundle functionality (frontend-only, no ACO changes required)
+
 ### Project Information
 - [Project README](README.md) - Repository overview and quick start
 
 ---
 
-**Document Version:** 1.0
-**Last Updated:** October 31, 2025
+**Document Version:** 1.1
+**Last Updated:** December 2024
 **Total Setup Time:** 12-16 hours (can be spread over 2-3 days)
 **Status:** Production Ready
+
+**Note on Project Builder:** The Project Builder wizard requires additional ACO policies (Phase 6.5) beyond the base 3 policies. These policies enable complexity-based and budget-based filtering. The frontend wizard sends HTTP headers that trigger these policies to generate customized product bundles. See [BuildRight Website README](../buildright-website/README.md) for frontend implementation details.

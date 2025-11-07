@@ -565,8 +565,125 @@ The result is a demonstration environment that showcases enterprise-scale B2B co
 
 ---
 
-**Document Version:** 1.0
-**Last Updated:** October 31, 2025
+## Part 5: Project Builder Enhancement
+
+### Guided Project Workflow
+
+In addition to dynamic catalog filtering, BuildRight offers a **Project Builder** wizard that guides contractors through a step-by-step process to create customized material kits for their specific projects. This enhancement complements the existing catalog filtering capabilities by providing a more structured, guided experience for users who prefer a curated approach.
+
+### How Project Builder Works
+
+The Project Builder wizard collects four key pieces of information:
+
+**1. Project Type**
+Contractors select from the same four project types used in catalog filtering:
+- New Construction
+- Remodel
+- Repair
+- Restoration
+
+**2. Project Details**
+Based on the project type, contractors provide additional context:
+- **Remodel**: Bathroom, Kitchen, Basement, Whole House, Exterior, Other
+- **New Construction**: Residential Home, Commercial Building, Addition, Other
+- **Repair**: Plumbing, Electrical, Structural, Roofing, Other
+- **Restoration**: Historic Home, Commercial Building, Specific Room, Other
+
+**3. Project Complexity**
+Contractors indicate the complexity level, which affects product selection and quantities:
+- **Basic**: DIY-friendly projects with standard materials (fewer items, lower quantities)
+- **Moderate**: Projects requiring some professional help with mid-range materials (standard item count and quantities)
+- **Complex**: Professional-grade projects requiring premium materials (more items, higher quantities)
+
+**4. Budget Range**
+Contractors select their budget range, which influences product selection and total kit value:
+- Under $5,000
+- $5,000 - $15,000
+- $15,000 - $30,000
+- $30,000 - $50,000
+- $50,000+
+
+### Dynamic Bundle Generation
+
+Based on the wizard selections, the system generates a **dynamic bundle product** that includes:
+
+- **Curated Product Selection**: Products are selected based on:
+  - Project type (filters by `project_types` attribute)
+  - Project detail (maps to specific product categories)
+  - Complexity level (affects number of items and quality tier)
+  - Budget range (constrains total value and item count)
+
+- **Suggested Quantities**: Each product in the bundle includes a suggested quantity based on:
+  - Project complexity (basic = lower quantities, complex = higher quantities)
+  - Project scope (whole house = more, specific room = less)
+  - Budget constraints (ensures total stays within range)
+
+- **Inclusion Reasons**: Each product includes a brief explanation of why it's included in the bundle, helping contractors understand the recommendation.
+
+### Bundle as Dynamic Product
+
+The generated bundle is treated as a **dynamic bundle product** in the cart:
+
+- **Single Cart Entry**: The bundle appears as one item in the cart with a total price
+- **Expandable View**: Contractors can expand the bundle to see all component items
+- **Quantity Modification**: Contractors can adjust quantities of individual items within the bundle
+- **Bundle Customization**: Contractors can choose to customize the bundle by viewing a filtered catalog based on their wizard selections
+
+### Integration with Catalog Filtering
+
+The Project Builder complements (rather than replaces) the existing catalog filtering:
+
+- **Wizard Selections as Filters**: When contractors complete the wizard, they can choose to view a filtered catalog based on their selections
+- **Same Underlying System**: Both Project Builder and catalog filtering use the same ACO trigger policies (`AC-Policy-Project-Type`, etc.)
+- **Flexible Workflow**: Contractors can:
+  - Use Project Builder for guided kit creation
+  - Use catalog filtering for manual product selection
+  - Combine both approaches (start with builder, then customize in catalog)
+
+### Business Value
+
+**For Contractors:**
+- **Faster Material Selection**: Guided workflow reduces decision fatigue
+- **Comprehensive Kits**: Ensures no essential materials are missed
+- **Budget Alignment**: Kits are automatically constrained to selected budget range
+- **Educational**: Inclusion reasons help contractors learn about material requirements
+
+**For BuildRight:**
+- **Higher Order Values**: Bundles encourage complete material sets
+- **Reduced Support**: Guided workflow reduces questions about what materials are needed
+- **Upsell Opportunities**: Complexity and budget selections identify high-value customers
+- **Data Insights**: Wizard selections provide data on project types and budgets
+
+### Technical Implementation
+
+The Project Builder requires additional ACO trigger policies beyond the base catalog filtering:
+
+**Required ACO Policies:**
+- **Complexity Filter Policy**: `AC-Policy-Complexity` header filters products by quality/complexity tier (basic, moderate, complex)
+- **Budget Range Filter Policy**: `AC-Policy-Budget-Range` header filters products by price range
+- **Product Attributes**: Products must have `quality_tier` or `complexity_level` attribute assigned
+- **Price Tier Attribute** (optional): Products may have `price_tier` attribute for budget filtering
+
+**Frontend Implementation:**
+- **Wizard State**: Stored in `sessionStorage` for persistence across steps
+- **Bundle Generation**: JavaScript-based recommendation engine uses product metadata and ACO-filtered results
+- **HTTP Headers**: Wizard sends multiple policy headers (`AC-Policy-Project-Type`, `AC-Policy-Product-Category`, `AC-Policy-Complexity`, `AC-Policy-Budget-Range`) to ACO GraphQL API
+- **Cart Integration**: Bundles stored in `localStorage` cart with special `type: 'bundle'` identifier
+
+**Integration Flow:**
+1. User completes wizard (project type, detail, complexity, budget)
+2. Frontend sends GraphQL query with multiple policy headers
+3. ACO applies all policies (logical AND) to filter catalog
+4. Frontend receives filtered product set
+5. Recommendation engine selects products and generates bundle
+6. Bundle added to cart as dynamic product
+
+This demonstrates how frontend enhancements can leverage ACO's policy system to create sophisticated, personalized experiences while maintaining a single source of truth for catalog data.
+
+---
+
+**Document Version:** 1.1
+**Last Updated:** December 2024
 **Related Documentation:**
 - [Setup Guide](SETUP-GUIDE.md) - Technical implementation procedures
 - [B2B Architecture Diagram](architecture/buildright-b2b-structure.md)

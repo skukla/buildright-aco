@@ -51,12 +51,16 @@ Adobe Commerce Optimizer (ACO) policies enable dynamic catalog filtering based o
 - `brand` (select): buildright_pro, toughgrip, safeworks, quickfast, propanel, surebuild
 - `lumber_species` (select): douglas_fir, southern_pine, spruce_pine_fir, hem_fir
 - `ppe_category` (select): head_protection, eye_protection, hearing_protection, hand_protection, high_visibility
+- `quality_tier` or `complexity_level` (select): basic, moderate, complex (Project Builder)
+- `price_tier` (select, optional): under_5k, 5k_15k, 15k_30k, 30k_50k, 50k_plus (Project Builder)
 
 **Common Trigger Headers:**
 - `AC-Policy-Product-Category` - Filter by product category
 - `AC-Policy-Project-Type` - Filter by project type
 - `AC-Policy-Brand` - Filter by brand preference
 - `AC-Policy-Lumber-Species` - Filter by lumber species
+- `AC-Policy-Complexity` - Filter by quality/complexity tier (Project Builder)
+- `AC-Policy-Budget-Range` - Filter by price range (Project Builder)
 
 ---
 
@@ -154,10 +158,28 @@ BuildRight uses a layered approach combining STATIC and EXCLUSIVE policies:
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
+│ Layer 5: EXCLUSIVE Policies (Complexity - Project Builder)    │
+│ ────────────────────────────────────────────────────────────    │
+│ ⚡ Trigger: AC-Policy-Complexity HTTP Header                    │
+│ ✓ Values: basic, moderate, complex                              │
+│ ✓ Filters by: quality_tier or complexity_level attribute        │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
+│ Layer 6: EXCLUSIVE Policies (Budget Range - Project Builder)   │
+│ ────────────────────────────────────────────────────────────    │
+│ ⚡ Trigger: AC-Policy-Budget-Range HTTP Header                 │
+│ ✓ Values: under_5k, 5k_15k, 15k_30k, 30k_50k, 50k_plus        │
+│ ✓ Filters by: price_tier attribute or price range              │
+└────────────────────────────┬────────────────────────────────────┘
+                             │
+                             ▼
+┌─────────────────────────────────────────────────────────────────┐
 │              Personalized Product Catalog                       │
 │ ────────────────────────────────────────────────────────────    │
 │ Result: Products matching ALL policy conditions (Logical AND)   │
-│ Example: West Region + New Construction + Commercial            │
+│ Example: West Region + New Construction + Moderate + 5k_15k     │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -541,6 +563,37 @@ Restoration projects often require specialty products (historic materials, speci
 - Catalog shows specialty items not typically needed for new construction
 
 **Benefit:** Restoration contractors find specialty products easily without cluttered catalogs.
+
+### Use Case 5: Project Builder Wizard
+
+The Project Builder wizard guides contractors through a step-by-step process to create customized material kits. It requires additional policies beyond basic catalog filtering.
+
+**Implementation:**
+- **Project Type Policy**: Uses existing `AC-Policy-Project-Type` header
+- **Project Detail Policy**: Uses existing `AC-Policy-Product-Category` header (maps room/area to categories)
+- **Complexity Policy**: New `AC-Policy-Complexity` header filters by `quality_tier` or `complexity_level` attribute
+  - Values: `basic`, `moderate`, `complex`
+  - Products must have quality/complexity tier attribute assigned
+- **Budget Range Policy**: New `AC-Policy-Budget-Range` header filters by price range
+  - Values: `under_5k`, `5k_15k`, `15k_30k`, `30k_50k`, `50k_plus`
+  - May require `price_tier` attribute or price range filtering logic
+
+**Example Query:**
+```bash
+curl -X POST "https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql" \
+  -H "Authorization: Bearer {TOKEN}" \
+  -H "AC-Policy-Project-Type: remodel" \
+  -H "AC-Policy-Product-Category: fasteners_hardware" \
+  -H "AC-Policy-Complexity: moderate" \
+  -H "AC-Policy-Budget-Range: 5k_15k" \
+  -d '{"query": "{ products { items { sku name } } }"}'
+```
+
+**Required Product Attributes:**
+- `quality_tier` or `complexity_level` (select): `basic`, `moderate`, `complex`
+- `price_tier` (optional, select): `under_5k`, `5k_15k`, `15k_30k`, `30k_50k`, `50k_plus`
+
+**Benefit:** Contractors receive curated product bundles tailored to their specific project requirements, complexity level, and budget constraints, reducing decision fatigue and ensuring comprehensive material selection.
 
 ---
 
