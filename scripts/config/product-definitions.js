@@ -100,8 +100,8 @@ export const PRODUCT_CATEGORIES = {
     }
   },
   framing: {
-    name: 'Framing & Insulation',
-    attributeValue: 'framing_insulation',
+    name: 'Framing & Drywall',
+    attributeValue: 'framing_drywall',
     subcategories: {
       studs: {
         simple: [
@@ -297,63 +297,69 @@ export const PRODUCT_CATEGORIES = {
       ]
     }
   },
-  safety: {
-    name: 'Safety Equipment',
-    attributeValue: 'safety_equipment',
+  roofing: {
+    name: 'Roofing',
+    attributeValue: 'roofing',
     subcategories: {
-      equipment: {
+      shingles: {
         simple: [
-          { name: 'Hard Hat - Type 1 Class E', uom: 'EA', priceRange: [18, 28] },
-          { name: 'Safety Glasses - ANSI Z87.1', uom: 'PAIR', priceRange: [8, 16] },
-          { name: 'Work Gloves - Heavy Duty', uom: 'PAIR', priceRange: [12, 20] },
-          { name: 'Safety Vest - High Vis Orange', uom: 'EA', priceRange: [14, 22] },
-          { name: 'Ear Protection - 30dB NRR', uom: 'PAIR', priceRange: [6, 12] },
-          { name: 'Fall Protection Harness', uom: 'EA', priceRange: [120, 180] },
-          { name: 'Respirator Mask - N95', uom: 'BOX', priceRange: [28, 42] },
-          { name: 'Safety Boots - Steel Toe', uom: 'PAIR', priceRange: [80, 140] },
-          { name: 'First Aid Kit - 50 Person', uom: 'EA', priceRange: [68, 98] },
-          { name: 'Fire Extinguisher - 10lb ABC', uom: 'EA', priceRange: [58, 88] },
-          { name: 'Safety Goggles - Chemical', uom: 'PAIR', priceRange: [12, 18] },
-          { name: 'Face Shield - Full Coverage', uom: 'EA', priceRange: [22, 32] }
+          { name: 'Asphalt Shingles 3-Tab - Bundle', uom: 'BUNDLE', priceRange: [28, 38] },
+          { name: 'Architectural Shingles - Bundle', uom: 'BUNDLE', priceRange: [38, 52] },
+          { name: 'Premium Designer Shingles - Bundle', uom: 'BUNDLE', priceRange: [58, 78] },
+          { name: 'Impact Resistant Shingles - Bundle', uom: 'BUNDLE', priceRange: [48, 68] },
+          { name: 'Starter Strip Shingles - Roll', uom: 'ROLL', priceRange: [32, 44] },
+          { name: 'Ridge Cap Shingles - Bundle', uom: 'BUNDLE', priceRange: [42, 56] }
         ],
         configurable: [
           {
-            name: 'PPE Kit',
+            name: 'Architectural Shingle System',
             dimensions: {
-              size: ['S', 'M', 'L', 'XL', 'XXL'],
-              type: ['basic', 'standard', 'premium'],
-              color: ['orange', 'yellow', 'green']
+              style: ['dimensional', 'laminated', 'designer'],
+              color: ['charcoal', 'weathered-wood', 'slate', 'brown'],
+              warranty: ['25yr', '30yr', 'lifetime']
             }
           },
           {
-            name: 'Safety Harness System',
+            name: 'Specialty Roofing Shingles',
             dimensions: {
-              size: ['universal', 'XL', 'XXL'],
-              type: ['basic', 'positioning', 'retrieval'],
-              weight_capacity: ['310', '400', '420']
+              type: ['impact-resistant', 'cool-roof', 'solar-reflective'],
+              profile: ['standard', 'high-profile', 'ultra-profile'],
+              coverage: ['100sf', '133sf']
+            }
+          }
+        ]
+      },
+      underlayment: {
+        simple: [
+          { name: 'Roofing Felt 15lb - Roll', uom: 'ROLL', priceRange: [18, 26] },
+          { name: 'Roofing Felt 30lb - Roll', uom: 'ROLL', priceRange: [28, 38] },
+          { name: 'Synthetic Underlayment - Roll', uom: 'ROLL', priceRange: [68, 92] },
+          { name: 'Ice & Water Shield - Roll', uom: 'ROLL', priceRange: [78, 108] },
+          { name: 'Self-Adhering Underlayment - Roll', uom: 'ROLL', priceRange: [88, 118] },
+          { name: 'Ventilated Underlayment - Roll', uom: 'ROLL', priceRange: [98, 132] }
+        ],
+        configurable: [
+          {
+            name: 'Premium Underlayment System',
+            dimensions: {
+              type: ['felt', 'synthetic', 'self-adhering'],
+              weight: ['15lb', '30lb', '50lb'],
+              coverage: ['500sf', '1000sf']
             }
           },
           {
-            name: 'Protective Eyewear',
+            name: 'Waterproofing Membrane',
             dimensions: {
-              type: ['safety-glasses', 'goggles', 'face-shield'],
-              lens: ['clear', 'tinted', 'anti-fog'],
-              standard: ['Z87.1', 'Z87.1+']
-            }
-          },
-          {
-            name: 'Hand Protection',
-            dimensions: {
-              size: ['S', 'M', 'L', 'XL'],
-              material: ['leather', 'nitrile', 'kevlar'],
-              type: ['general', 'chemical', 'cut-resistant']
+              application: ['eaves', 'valleys', 'full-deck'],
+              width: ['36in', '48in'],
+              length: ['66ft', '75ft']
             }
           }
         ]
       },
       services: [
-        { name: 'Safety Training Course', priceRange: [200, 400] },
-        { name: 'PPE Fitting Service', priceRange: [50, 100] }
+        { name: 'Roof Inspection Service', priceRange: [150, 300] },
+        { name: 'Roofing Material Delivery', priceRange: [100, 200] }
       ]
     }
   }

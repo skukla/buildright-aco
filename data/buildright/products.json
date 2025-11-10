@@ -617,7 +617,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -631,8 +631,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -673,7 +672,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -687,8 +686,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -729,7 +727,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -743,8 +741,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -773,7 +770,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -787,8 +784,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -821,7 +817,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -835,8 +831,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -865,7 +860,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -879,8 +874,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -917,7 +911,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -931,8 +925,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -965,7 +958,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -979,8 +972,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -1017,7 +1009,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -1031,8 +1023,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -1061,7 +1052,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -1075,8 +1066,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -1105,7 +1095,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -1119,8 +1109,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -1153,7 +1142,7 @@
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -1167,8 +1156,7 @@
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -2411,321 +2399,16 @@
     ]
   },
   {
-    "sku": "SAFE-54709A01",
+    "sku": "ROOF-23151318",
     "type": "simple",
-    "name": "ToughGrip Hard Hat - Type 1 Class E",
+    "name": "ToughGrip Asphalt Shingles 3-Tab - Bundle",
     "status": "enabled",
     "visibility": "both",
-    "price": 25.848871949989757,
+    "price": 35.84887194998976,
     "attributes": [
       {
         "code": "product_category",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "brand",
-        "value": "toughgrip"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "EA"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "window_material",
-        "value": "clad_wood"
-      },
-      {
-        "code": "fastener_coating",
-        "value": "ceramic_coated"
-      },
-      {
-        "code": "ppe_category",
-        "value": "eye_protection"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 89
-      }
-    ]
-  },
-  {
-    "sku": "SAFE-325D0586",
-    "type": "simple",
-    "name": "SafeGuard Safety Glasses - ANSI Z87.1",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 13.602300646529674,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "brand",
-        "value": "toughgrip"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "PAIR"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "door_type",
-        "value": "bifold"
-      },
-      {
-        "code": "ppe_cut_resistance",
-        "value": "a7"
-      },
-      {
-        "code": "fastener_type",
-        "value": "nail"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 96
-      }
-    ]
-  },
-  {
-    "sku": "SAFE-AC3312B9",
-    "type": "simple",
-    "name": "ReliaBuild Work Gloves - Heavy Duty",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 17.09458351372489,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "brand",
-        "value": "fastenpro"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "PAIR"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "fastener_head_type",
-        "value": "truss"
-      },
-      {
-        "code": "ppe_niosh_rating",
-        "value": "n99"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 47
-      }
-    ]
-  },
-  {
-    "sku": "SAFE-7F19B12C",
-    "type": "simple",
-    "name": "MaxStrength Safety Vest - High Vis Orange",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 19.99300861637714,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "brand",
-        "value": "proframe"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "EA"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "fastener_material",
-        "value": "stainless_steel_316"
-      },
-      {
-        "code": "lumber_grade",
-        "value": "stud"
-      },
-      {
-        "code": "door_type",
-        "value": "patio"
-      },
-      {
-        "code": "drywall_product_type",
-        "value": "fire_rated"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 7
-      }
-    ]
-  },
-  {
-    "sku": "SAFE-2B236287",
-    "type": "simple",
-    "name": "ReliaBuild Ear Protection - 30dB NRR",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 6.328876018677315,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "brand",
-        "value": "premiumbuild"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "PAIR"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "fastener_coating",
-        "value": "polymer_coated"
-      },
-      {
-        "code": "ppe_ansi_standard",
-        "value": [
-          "s3_19",
-          "isea_105",
-          "z87_1"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 70
-      }
-    ]
-  },
-  {
-    "sku": "SAFE-6D8805D3",
-    "type": "simple",
-    "name": "SafeGuard Fall Protection Harness",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 145.42731286279266,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "brand",
-        "value": "structuremaster"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "EA"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "drywall_fire_rating",
-        "value": "type_c"
-      },
-      {
-        "code": "ppe_category",
-        "value": "respiratory_protection"
-      },
-      {
-        "code": "ppe_ansi_standard",
-        "value": [
-          "astm_f2413",
-          "isea_107"
-        ]
-      },
-      {
-        "code": "window_glazing_type",
-        "value": "single_pane"
-      },
-      {
-        "code": "lumber_grade",
-        "value": "select_structural"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 85
-      }
-    ]
-  },
-  {
-    "sku": "LBR-0C7A6DBC",
-    "type": "simple",
-    "name": "StructureMaster 2x4 Stud - 8ft",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 11.166197301431652,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "structural_materials"
+        "value": "roofing"
       },
       {
         "code": "brand",
@@ -2733,7 +2416,7 @@
       },
       {
         "code": "unit_of_measure",
-        "value": "EA"
+        "value": "BUNDLE"
       },
       {
         "code": "project_types",
@@ -2743,40 +2426,315 @@
         ]
       },
       {
-        "code": "ppe_category",
-        "value": "respiratory_protection"
-      },
-      {
         "code": "ppe_hi_vis_class",
-        "value": "class_1"
+        "value": "class_2"
       },
       {
-        "code": "fastener_coating",
-        "value": "galvanized"
+        "code": "fastener_drive_type",
+        "value": "slotted"
+      },
+      {
+        "code": "drywall_product_type",
+        "value": "mold_resistant"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_002",
-        "position": 30
+        "position": 89
       },
       {
-        "categoryId": "cat_007",
-        "position": 73
+        "categoryId": "cat_010",
+        "position": 66
       }
     ]
   },
   {
-    "sku": "DRYWALL-2507D228",
+    "sku": "ROOF-D793BF8B",
     "type": "simple",
-    "name": "ProFrame Drywall 5/8\" - 4x8",
+    "name": "MaxStrength Architectural Shingles - Bundle",
     "status": "enabled",
     "visibility": "both",
-    "price": 14.105398297358956,
+    "price": 51.37012911465491,
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "fastenpro"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "BUNDLE"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "ppe_cut_resistance",
+        "value": "a7"
+      },
+      {
+        "code": "fastener_type",
+        "value": "nail"
+      },
+      {
+        "code": "ppe_size",
+        "value": "xxl"
+      },
+      {
+        "code": "door_material",
+        "value": "fiberglass"
+      },
+      {
+        "code": "lumber_certification",
+        "value": [
+          "none",
+          "pefc_certified",
+          "fsc_certified"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 63
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 40
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-7B1F4022",
+    "type": "simple",
+    "name": "MaxStrength Premium Designer Shingles - Bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 72.98252154094284,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "BUNDLE"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "door_type",
+        "value": "entry"
+      },
+      {
+        "code": "fastener_type",
+        "value": "bolt"
+      },
+      {
+        "code": "window_glazing_type",
+        "value": "single_pane"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 7
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 28
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-F252FD03",
+    "type": "simple",
+    "name": "ReliaBuild Impact Resistant Shingles - Bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 49.09625339559105,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "BUNDLE"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "ppe_hi_vis_class",
+        "value": "class_3"
+      },
+      {
+        "code": "ppe_hard_hat_type",
+        "value": "type_1"
+      },
+      {
+        "code": "window_operation_type",
+        "value": "awning"
+      },
+      {
+        "code": "window_glazing_type",
+        "value": "double_pane"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 70
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 85
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-9406AB24",
+    "type": "simple",
+    "name": "PremiumBuild Starter Strip Shingles - Roll",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 33.37858390872301,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "premiumbuild"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "ROLL"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "fastener_type",
+        "value": "anchor"
+      },
+      {
+        "code": "ppe_hi_vis_class",
+        "value": "class_3"
+      },
+      {
+        "code": "window_glazing_type",
+        "value": "single_pane"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 93
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 24
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-7662E2BB",
+    "type": "simple",
+    "name": "BuildRight Pro Ridge Cap Shingles - Bundle",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 43.09034121087303,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "proframe"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "BUNDLE"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "window_glazing_type",
+        "value": "double_pane"
+      },
+      {
+        "code": "drywall_edge_type",
+        "value": "beveled"
+      },
+      {
+        "code": "fastener_material",
+        "value": "aluminum"
+      },
+      {
+        "code": "drywall_product_type",
+        "value": "fire_rated"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 14
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 80
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-905BF883",
+    "type": "simple",
+    "name": "FastenPro Roofing Felt 15lb - Roll",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 19.79069137656628,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
       },
       {
         "code": "brand",
@@ -2784,14 +2742,13 @@
       },
       {
         "code": "unit_of_measure",
-        "value": "SHEET"
+        "value": "ROLL"
       },
       {
         "code": "project_types",
         "value": [
           "new_construction",
-          "remodel",
-          "restoration"
+          "remodel"
         ]
       },
       {
@@ -2821,168 +2778,34 @@
     ],
     "routes": [
       {
-        "categoryId": "cat_001",
+        "categoryId": "cat_002",
+        "position": 3
+      },
+      {
+        "categoryId": "cat_010",
         "position": 97
       }
     ]
   },
   {
-    "sku": "WINDOW-873F007E",
+    "sku": "ROOF-1B7CF825",
     "type": "simple",
-    "name": "FastenPro Sliding Window - 48\"x36\"",
+    "name": "FastenPro Roofing Felt 30lb - Roll",
     "status": "enabled",
     "visibility": "both",
-    "price": 222.3824810992845,
+    "price": 28.39708018321408,
     "attributes": [
       {
         "code": "product_category",
-        "value": "windows_doors"
+        "value": "roofing"
       },
       {
         "code": "brand",
-        "value": "proframe"
+        "value": "structuremaster"
       },
       {
         "code": "unit_of_measure",
-        "value": "EA"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "restoration"
-        ]
-      },
-      {
-        "code": "ppe_hard_hat_type",
-        "value": "type_1"
-      },
-      {
-        "code": "ppe_nrr_rating",
-        "value": "20"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 55
-      }
-    ]
-  },
-  {
-    "sku": "SCREW-D305E19A",
-    "type": "simple",
-    "name": "DuraBuilt Self-Drilling Screws - 1lb",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 18.34537720789452,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "fasteners_hardware"
-      },
-      {
-        "code": "brand",
-        "value": "safeguard"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "BOX"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "drywall_product_type",
-        "value": "mold_resistant"
-      },
-      {
-        "code": "drywall_fire_rating",
-        "value": "type_x"
-      },
-      {
-        "code": "fastener_drive_type",
-        "value": "hex"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 17
-      }
-    ]
-  },
-  {
-    "sku": "SAFE-F5871D82",
-    "type": "simple",
-    "name": "StructureMaster Ear Protection - 30dB NRR",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 7.522334755175903,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "safety_equipment"
-      },
-      {
-        "code": "brand",
-        "value": "durabuilt"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "PAIR"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "window_material",
-        "value": "wood"
-      },
-      {
-        "code": "fastener_material",
-        "value": "aluminum"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 60
-      }
-    ]
-  },
-  {
-    "sku": "PLY-6AD93F45",
-    "type": "simple",
-    "name": "StructureMaster Siding Panel 3/8\" - 4x8",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 37.99846989195723,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "structural_materials"
-      },
-      {
-        "code": "brand",
-        "value": "durabuilt"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "SHEET"
+        "value": "ROLL"
       },
       {
         "code": "project_types",
@@ -2992,18 +2815,242 @@
         ]
       },
       {
+        "code": "drywall_edge_type",
+        "value": "tongue_and_groove"
+      },
+      {
+        "code": "lumber_treatment",
+        "value": "pressure_treated_acq"
+      },
+      {
+        "code": "window_energy_star",
+        "value": false
+      },
+      {
+        "code": "ppe_category",
+        "value": "head_protection"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 55
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 23
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-ED3E9B3B",
+    "type": "simple",
+    "name": "ProFrame Synthetic Underlayment - Roll",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 79.58135796132561,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "toughgrip"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "ROLL"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "drywall_thickness",
+        "value": "0.375"
+      },
+      {
+        "code": "fastener_material",
+        "value": "stainless_steel_316"
+      },
+      {
+        "code": "door_core_type",
+        "value": "solid_core"
+      },
+      {
+        "code": "drywall_edge_type",
+        "value": "square"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 26
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 51
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-5A1F5021",
+    "type": "simple",
+    "name": "DuraBuilt Ice & Water Shield - Roll",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 104.50886894506816,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "reliabuild"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "ROLL"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "fastener_subtype",
+        "value": "finish_nail"
+      },
+      {
         "code": "fastener_type",
         "value": "nail"
       },
       {
         "code": "ppe_niosh_rating",
         "value": "n95"
+      },
+      {
+        "code": "drywall_edge_type",
+        "value": "tapered"
       }
     ],
     "routes": [
       {
-        "categoryId": "cat_001",
-        "position": 94
+        "categoryId": "cat_002",
+        "position": 17
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 60
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-A8DE0B49",
+    "type": "simple",
+    "name": "PremiumBuild Self-Adhering Underlayment - Roll",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 88.36797046678512,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "buildright_pro"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "ROLL"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "ppe_hard_hat_type",
+        "value": "type_1"
+      },
+      {
+        "code": "fastener_drive_type",
+        "value": "combination"
+      },
+      {
+        "code": "lumber_treatment",
+        "value": "pressure_treated_aca"
+      },
+      {
+        "code": "fastener_material",
+        "value": "steel"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 33
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 68
+      }
+    ]
+  },
+  {
+    "sku": "ROOF-05516930",
+    "type": "simple",
+    "name": "DuraBuilt Ventilated Underlayment - Roll",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 115.26817441790746,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "ROLL"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel"
+        ]
+      },
+      {
+        "code": "window_operation_type",
+        "value": "bay"
+      },
+      {
+        "code": "drywall_thickness",
+        "value": "0.5"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 85
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 73
       }
     ]
   },
@@ -3013,52 +3060,7 @@
     "name": "Structural Material Delivery",
     "status": "enabled",
     "visibility": "both",
-    "price": 95.82472668067771,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "structural_materials"
-      },
-      {
-        "code": "brand",
-        "value": "premiumbuild"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "SERVICE"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "window_material",
-        "value": "composite"
-      },
-      {
-        "code": "lumber_species",
-        "value": "hem_fir"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 6
-      }
-    ]
-  },
-  {
-    "sku": "SVC-DA991F80",
-    "type": "service",
-    "name": "Lumber Cutting Service",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 88.92754914189109,
+    "price": 129.2034656061807,
     "attributes": [
       {
         "code": "product_category",
@@ -3082,130 +3084,40 @@
         ]
       },
       {
+        "code": "ppe_cut_resistance",
+        "value": "a5"
+      },
+      {
+        "code": "lumber_species",
+        "value": "hem_fir"
+      },
+      {
         "code": "lumber_treatment",
-        "value": "pressure_treated_aca"
-      },
-      {
-        "code": "fastener_material",
-        "value": "steel"
-      },
-      {
-        "code": "door_core_type",
-        "value": "foam_core"
-      },
-      {
-        "code": "ppe_category",
-        "value": "eye_protection"
+        "value": "kiln_dried"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 18
+        "position": 68
       }
     ]
   },
   {
-    "sku": "SVC-8E4FBE5D",
+    "sku": "SVC-DA991F80",
     "type": "service",
-    "name": "Drywall Installation Service",
+    "name": "Lumber Cutting Service",
     "status": "enabled",
     "visibility": "both",
-    "price": 209.75964665867372,
+    "price": 73.6249946167809,
     "attributes": [
       {
         "code": "product_category",
-        "value": "framing_insulation"
+        "value": "structural_materials"
       },
       {
         "code": "brand",
-        "value": "premiumbuild"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "SERVICE"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "fastener_subtype",
-        "value": "deck_screw"
-      },
-      {
-        "code": "fastener_head_type",
-        "value": "hex"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 35
-      }
-    ]
-  },
-  {
-    "sku": "SVC-B2559E94",
-    "type": "service",
-    "name": "Framing Consultation",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 224.45114854464828,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "framing_insulation"
-      },
-      {
-        "code": "brand",
-        "value": "durabuilt"
-      },
-      {
-        "code": "unit_of_measure",
-        "value": "SERVICE"
-      },
-      {
-        "code": "project_types",
-        "value": [
-          "new_construction",
-          "remodel",
-          "repair",
-          "restoration"
-        ]
-      },
-      {
-        "code": "fastener_type",
-        "value": "nail"
-      }
-    ],
-    "routes": [
-      {
-        "categoryId": "cat_001",
-        "position": 89
-      }
-    ]
-  },
-  {
-    "sku": "SVC-74321042",
-    "type": "service",
-    "name": "Door & Window Installation",
-    "status": "enabled",
-    "visibility": "both",
-    "price": 320.93204186341353,
-    "attributes": [
-      {
-        "code": "product_category",
-        "value": "windows_doors"
-      },
-      {
-        "code": "brand",
-        "value": "proframe"
+        "value": "maxstrength"
       },
       {
         "code": "unit_of_measure",
@@ -3223,34 +3135,30 @@
       {
         "code": "lumber_grade",
         "value": "select_structural"
-      },
-      {
-        "code": "fastener_subtype",
-        "value": "framing_nail"
       }
     ],
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 48
+        "position": 22
       }
     ]
   },
   {
-    "sku": "SVC-EEAD2FDF",
+    "sku": "SVC-8E4FBE5D",
     "type": "service",
-    "name": "Window Measurement Service",
+    "name": "Drywall Installation Service",
     "status": "enabled",
     "visibility": "both",
-    "price": 111.85313464927168,
+    "price": 314.65137606237613,
     "attributes": [
       {
         "code": "product_category",
-        "value": "windows_doors"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
-        "value": "fastenpro"
+        "value": "maxstrength"
       },
       {
         "code": "unit_of_measure",
@@ -3264,6 +3172,10 @@
           "repair",
           "restoration"
         ]
+      },
+      {
+        "code": "door_core_type",
+        "value": "hollow_core"
       },
       {
         "code": "drywall_fire_rating",
@@ -3285,21 +3197,21 @@
     "routes": [
       {
         "categoryId": "cat_001",
-        "position": 86
+        "position": 44
       }
     ]
   },
   {
-    "sku": "SVC-3774CB8D",
+    "sku": "SVC-B2559E94",
     "type": "service",
-    "name": "Fastener Consultation",
+    "name": "Framing Consultation",
     "status": "enabled",
     "visibility": "both",
-    "price": 63.59514594711138,
+    "price": 177.19029189422275,
     "attributes": [
       {
         "code": "product_category",
-        "value": "fasteners_hardware"
+        "value": "framing_drywall"
       },
       {
         "code": "brand",
@@ -3339,16 +3251,16 @@
     ]
   },
   {
-    "sku": "SVC-72C95BE6",
+    "sku": "SVC-74321042",
     "type": "service",
-    "name": "Bulk Order Processing",
+    "name": "Door & Window Installation",
     "status": "enabled",
     "visibility": "both",
-    "price": 105.2772402904356,
+    "price": 380.7393074411616,
     "attributes": [
       {
         "code": "product_category",
-        "value": "fasteners_hardware"
+        "value": "windows_doors"
       },
       {
         "code": "brand",
@@ -3392,16 +3304,16 @@
     ]
   },
   {
-    "sku": "SVC-EF5DD3E8",
+    "sku": "SVC-EEAD2FDF",
     "type": "service",
-    "name": "Safety Training Course",
+    "name": "Window Measurement Service",
     "status": "enabled",
     "visibility": "both",
-    "price": 312.22739224891524,
+    "price": 103.05684806222881,
     "attributes": [
       {
         "code": "product_category",
-        "value": "safety_equipment"
+        "value": "windows_doors"
       },
       {
         "code": "brand",
@@ -3437,22 +3349,22 @@
     ],
     "routes": [
       {
-        "categoryId": "cat_003",
+        "categoryId": "cat_001",
         "position": 98
       }
     ]
   },
   {
-    "sku": "SVC-A853D763",
+    "sku": "SVC-3774CB8D",
     "type": "service",
-    "name": "PPE Fitting Service",
+    "name": "Fastener Consultation",
     "status": "enabled",
     "visibility": "both",
     "price": 92.82267095652534,
     "attributes": [
       {
         "code": "product_category",
-        "value": "safety_equipment"
+        "value": "fasteners_hardware"
       },
       {
         "code": "brand",
@@ -3482,8 +3394,167 @@
     ],
     "routes": [
       {
-        "categoryId": "cat_003",
+        "categoryId": "cat_001",
         "position": 21
+      }
+    ]
+  },
+  {
+    "sku": "SVC-72C95BE6",
+    "type": "service",
+    "name": "Bulk Order Processing",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 144.040516051017,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "fasteners_hardware"
+      },
+      {
+        "code": "brand",
+        "value": "structuremaster"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "SERVICE"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "ppe_ansi_standard",
+        "value": [
+          "isea_107",
+          "isea_105",
+          "z87_1"
+        ]
+      },
+      {
+        "code": "fastener_head_type",
+        "value": "round"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_001",
+        "position": 33
+      }
+    ]
+  },
+  {
+    "sku": "SVC-1F7FC9F7",
+    "type": "service",
+    "name": "Roof Inspection Service",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 261.9259894415392,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "durabuilt"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "SERVICE"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "fastener_subtype",
+        "value": "framing_nail"
+      },
+      {
+        "code": "ppe_niosh_rating",
+        "value": "n99"
+      },
+      {
+        "code": "window_material",
+        "value": "vinyl"
+      },
+      {
+        "code": "lumber_species",
+        "value": "western_red_cedar"
+      },
+      {
+        "code": "lumber_treatment",
+        "value": "pressure_treated_ca"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 69
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 2
+      }
+    ]
+  },
+  {
+    "sku": "SVC-887043F3",
+    "type": "service",
+    "name": "Roofing Material Delivery",
+    "status": "enabled",
+    "visibility": "both",
+    "price": 166.16696122389612,
+    "attributes": [
+      {
+        "code": "product_category",
+        "value": "roofing"
+      },
+      {
+        "code": "brand",
+        "value": "safeguard"
+      },
+      {
+        "code": "unit_of_measure",
+        "value": "SERVICE"
+      },
+      {
+        "code": "project_types",
+        "value": [
+          "new_construction",
+          "remodel",
+          "repair",
+          "restoration"
+        ]
+      },
+      {
+        "code": "lumber_treatment",
+        "value": "green"
+      },
+      {
+        "code": "drywall_thickness",
+        "value": "0.25"
+      }
+    ],
+    "routes": [
+      {
+        "categoryId": "cat_002",
+        "position": 92
+      },
+      {
+        "categoryId": "cat_010",
+        "position": 62
       }
     ]
   }
