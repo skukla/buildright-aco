@@ -65,12 +65,32 @@ export async function ingestProducts(products, options = {}) {
     throw new Error(`Product validation failed: ${validation.errors.length} errors`);
   }
 
+  // Log persona-specific attributes for verification
+  logger.info('Verifying persona-specific attributes in products...');
+  const personaAttrs = [
+    'construction_phase', 'quality_tier', 'package_tier', 'room_category',
+    'deck_compatible', 'deck_shape', 'deck_material_type', 'deck_railing_compatible',
+    'store_velocity_category', 'recommended_restock_quantity', 'typical_days_supply', 'restock_priority'
+  ];
+  
+  const attrCounts = {};
+  products.forEach(product => {
+    product.attributes?.forEach(attr => {
+      if (personaAttrs.includes(attr.code)) {
+        attrCounts[attr.code] = (attrCounts[attr.code] || 0) + 1;
+      }
+    });
+  });
+  
+  logger.info('Persona attribute coverage:', attrCounts);
+
   if (config.dryRun) {
     logger.info('Dry-run mode: validation passed, no ingest performed');
     return {
       dryRun: true,
       validationPassed: true,
-      wouldIngest: products.length
+      wouldIngest: products.length,
+      personaAttributeCoverage: attrCounts
     };
   }
 
