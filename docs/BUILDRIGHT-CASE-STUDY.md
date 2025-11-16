@@ -1,954 +1,1043 @@
-# BuildRight Solutions: Transforming Building Materials Distribution with Adobe Commerce Optimizer
+# BuildRight Solutions: Persona-Driven Commerce with Adobe Commerce Optimizer
 
-**A Case Study in Personalized B2B Commerce**
+**A Case Study in Personalized B2B Catalog Experiences**
 
 ---
 
 ## Executive Summary
 
-**BuildRight Solutions**, a national building materials distributor founded in 1978, faced a critical challenge: their one-size-fits-all catalog approach was failing contractors who needed fast, accurate material ordering for diverse project types. Contractors wasted 60-70% of their time browsing irrelevant products in a 150,000+ SKU catalog, while BuildRight struggled with manual pricing negotiations and regional inventory mismatches.
+**BuildRight Solutions**, a national building materials distributor, demonstrates Adobe Commerce Optimizer's (ACO) **Composable Catalog Data Model (CCDM)** through five distinct user personas, each with unique catalog needs, pricing tiers, and workflow requirements.
 
-By implementing **Adobe Commerce Optimizer (ACO)**, BuildRight transformed their business model to deliver personalized, project-specific catalogs that dynamically adapt to customer segment, project type, purchasing volume, and geographic region. The solution reduced contractor search time by 70%, automated tier-based pricing, and optimized inventory fulfillment across six regional locations.
+The persona-driven approach showcases how a single product catalog can serve diverse customer segments with radically different experiences - from production builders ordering materials for 120 homes per year to DIY homeowners building their first deck.
 
-**Key Results:**
-- 70% reduction in product search time for contractors
-- $10,000+ automatic savings per large commercial order through transparent tier pricing
-- Single catalog serves all customer segments dynamically
-- Real-time catalog composition without managing hundreds of static views
+**Key Capabilities Demonstrated:**
+- **Persona-specific catalog filtering**: 5 different views of the same 70-product catalog
+- **Triggered policy system**: 28 policies dynamically filter products based on user context
+- **Tiered pricing structure**: 5 price books with customer tier + volume tier discounts
+- **Progressive disclosure**: Wizards guide users through complex product selection
+- **Frontend mock architecture**: Enables rapid development without ACO GraphQL dependency
 
----
-
-## Part 1: The Challenge
-
-### About BuildRight Solutions
-
-Founded in 1978 from a single lumber yard in Sacramento, California, BuildRight Solutions has grown into a leading national building materials distributor serving over 2,500 professional contractors across North America. The company operates through three specialized divisions, each serving distinct market segments with unique purchasing patterns and requirements.
-
-**BuildRight Commercial Division**
-
-Serves large-scale commercial construction projects including office buildings, hospitals, schools, and retail developments. Their customers are general contractors managing $5M-$50M+ projects who purchase in full pallets and truckloads with direct job site delivery. These customers prioritize volume pricing, reliable delivery schedules, and structural materials at scale.
-
-Operations span two locations:
-- Los Angeles Headquarters (California) - Western region hub
-- Phoenix Metro Division (Arizona) - Southwestern expansion
-
-**BuildRight Residential Division**
-
-Focuses on production home builders and residential remodelers. Customers include home builders constructing 50-200 homes annually and remodeling contractors serving the residential market. These customers need standardized materials at scale with repeat ordering capability and competitive pricing for volume commitments.
-
-Operations span two locations:
-- Dallas Headquarters (Texas) - Central region hub
-- Denver Division (Colorado) - Mountain states expansion
-
-**BuildRight Pro Division**
-
-Serves specialty trade contractors in electrical, plumbing, and HVAC trades. Customers are licensed professionals who require trade-specific products in smaller quantities but with high frequency. They value specialized expertise, quick availability, and pricing that rewards ongoing loyalty.
-
-Operations span two locations:
-- Charlotte Headquarters (North Carolina) - Eastern region hub
-- Atlanta Division (Georgia) - Southeastern expansion
-
-This national footprint across six locations in three regions positions BuildRight to serve contractors coast-to-coast, but also presented significant operational complexity in catalog management, pricing consistency, and inventory optimization.
-
-### The Pain Points
-
-By 2024, BuildRight's traditional catalog approach had become a critical bottleneck to growth. Four major challenges emerged:
-
-**1. Catalog Overload Wastes Contractor Time**
-
-A commercial contractor building a 12-story office building needs entirely different products than a residential remodeler replacing a kitchen. Yet both contractors faced the same massive 150,000+ SKU catalog. Contractors reported spending 60-70% of their ordering time simply filtering through irrelevant products.
-
-The problem wasn't just inefficiency - it was lost business. Frustrated contractors increasingly turned to competitors offering more streamlined ordering experiences. BuildRight's sales team heard consistent feedback: "I don't have time to search through your entire catalog. Just show me what I need for this project."
-
-**2. Ordering Errors Drive Returns and Delays**
-
-The wrong catalog visibility led to costly mistakes. Contractors would order heavy structural lumber when they needed finishing materials, or select commercial-grade products for residential applications. BuildRight's returns department processed thousands of incorrect orders annually, while contractors faced project delays waiting for correct materials.
-
-The root cause was simple: without project-specific filtering, contractors made educated guesses about product suitability. Sometimes they guessed wrong.
-
-**3. Manual Pricing Negotiations Slow Sales Cycles**
-
-BuildRight rewarded high-volume customers with tier-based discounts, but the process was entirely manual. Large contractors would submit quote requests, sales representatives would calculate volume discounts, and multiple email exchanges would follow before finalizing orders. This process could take days for a single order.
-
-The lack of transparency frustrated customers who wanted to see their pricing immediately and make purchasing decisions without delay. Meanwhile, BuildRight's sales team spent hours on pricing calculations rather than relationship building and business development.
-
-**4. Regional Inventory Mismatches Create Backorders**
-
-Products appeared in the catalog regardless of whether they were available at the customer's regional distribution center. A Phoenix contractor might order materials only to discover days later that the items were stocked in Charlotte but not Phoenix, leading to extended delivery times or backorders.
-
-The disconnect between catalog visibility and actual regional inventory availability created fulfillment nightmares and damaged customer trust.
-
-### The Business Impact
-
-These challenges translated to measurable business costs:
-
-- **Lost Productivity**: Contractors spending 60-70% of ordering time on catalog search rather than project management
-- **Customer Churn**: Mid-tier commercial customers defecting to competitors offering streamlined digital experiences
-- **High Return Rates**: 15-20% return rate on specialty materials due to ordering errors
-- **Sales Team Overload**: 40% of sales representative time spent on manual pricing calculations
-- **Regional Inefficiency**: 25% of orders requiring inter-region transfers due to inventory mismatches
-
-BuildRight's leadership recognized that without addressing these fundamental catalog and pricing challenges, the company's growth trajectory would plateau. They needed a solution that could deliver personalized catalogs at scale while maintaining a single source of truth for products, pricing, and inventory.
+**Results:**
+- Single catalog serves 5 distinct personas with zero product duplication
+- Triggered policies reduce visible products by 60-85% per persona
+- Tiered pricing delivers 5-25% automatic discounts based on customer type
+- Volume discounts add 3-8% additional savings on bulk orders
 
 ---
 
-## Part 2: The Solution
+## Part 1: The Personas
 
-### Personalized Catalogs with Adobe Commerce Optimizer
+BuildRight serves five distinct user personas, each representing a different segment of the building materials market.
 
-BuildRight implemented Adobe Commerce Optimizer to transform their catalog from a static, one-size-fits-all approach to a dynamic, personalized system that adapts in real-time based on four key dimensions:
+### Persona 1: Sarah Martinez - Production Builder
 
-**1. Customer Segment Recognition**
+**Profile:**
+- **Company**: Sunset Valley Homes
+- **Role**: Purchasing Manager
+- **Scale**: 120 homes/year across 3 active subdivisions
+- **Order Pattern**: Template-based repeat orders for standardized floor plans
+- **Annual Volume**: $2.5M+
+- **Price Book**: Production-Builder (15% off retail + volume tiers)
 
-The system automatically identifies whether a customer belongs to the Commercial, Residential, or Pro division and adjusts catalog visibility and pricing accordingly. This segmentation happens seamlessly based on company assignment during account setup.
+**The Challenge:**
 
-**2. Project Type Filtering**
+Sarah orders materials for multiple units of the same floor plan repeatedly. For "The Sedona" (their most popular 2,450 sq ft design), she's already ordered materials for 24 units. Now she needs materials for 8 more units, but 3 of those will have an optional bonus room.
 
-Contractors work on four primary project types, each requiring different materials:
-- **New Construction**: Structural materials, framing lumber, foundation supplies
-- **Remodel**: Finishing materials, windows, doors, drywall
-- **Repair**: Maintenance products, smaller quantities, quick availability
-- **Restoration**: Specialty items, matching materials, historic preservation products
+Without smart templates, Sarah would need to:
+- Manually select 45+ line items from a 70-product catalog
+- Calculate quantities for 8 units (multiply everything by 8)
+- Adjust for 3 units with bonus room variant (+800 sq ft each)
+- Ensure materials are scheduled for phased delivery (foundation → framing → envelope)
+- Repeat this process every 2-3 weeks for new unit batches
 
-By tagging products with applicable project types (many products serve multiple types), the system can filter catalogs dynamically based on the contractor's current project context.
+**The Solution:**
 
-**3. Automatic Volume-Based Pricing**
+Sarah uses **saved templates** with **variant management** and **phased ordering**:
 
-BuildRight's hierarchical pricing model operates across three levels:
+1. Selects "The Sedona - Standard Framing Package" template
+2. Enters multiplier: 8 units
+3. Checks "3 units include bonus room" option
+4. System automatically adjusts quantities and adds bonus room materials
+5. Reviews BOM organized by construction phase
+6. Schedules 3 phased deliveries (Week 1, 3, 5)
+7. Total order: $73,800 with automatic 15% tier discount + 8% volume discount
 
-- **Base Level**: Standard retail and contract pricing (US-Retail, US-Contract)
-- **Segment Level**: Division-specific pricing (Commercial, Residential, Pro)
-- **Tier Level**: Volume discount tiers earned through purchasing history
+**Business Impact:**
+- Order time reduced from 60 minutes to 8 minutes (87% reduction)
+- Zero calculation errors (previously 10-15% required corrections)
+- Phased delivery aligns perfectly with construction schedule
+- Automatic pricing saves $16,800 on this order vs. retail (19% total discount)
 
-High-volume customers like Premium Commercial Builders automatically receive Tier2 pricing status, which applies 3-5% better pricing across their entire catalog without any manual negotiation. Volume tier pricing adds additional discounts at quantity breakpoints (100+ units, 294+ units).
+---
 
-**4. Regional Inventory Optimization**
+### Persona 2: Marcus Johnson - General Contractor
 
-The system integrates with BuildRight's multi-source inventory across six locations:
+**Profile:**
+- **Company**: Johnson Custom Builders
+- **Role**: Owner/GC
+- **Scale**: 3-5 custom homes/year, $800K-$1.5M each
+- **Order Pattern**: Semi-custom projects with phase-based ordering
+- **Annual Volume**: $400K
+- **Price Book**: Trade-Professional (10% off retail + volume tiers)
 
-- **Western Region**: Sacramento RDC (primary), Phoenix Warehouse (secondary)
-- **Central Region**: Denver Warehouse
-- **Eastern Region**: Charlotte RDC (primary), Atlanta Warehouse (secondary)
-- **Virtual Fulfillment**: Premium Windows drop shipper (specialty items)
+**The Challenge:**
 
-Products display availability based on the customer's region, and fulfillment automatically routes from the nearest warehouse with inventory.
+Marcus is starting the Patterson residence - a 2,400 sq ft custom home with a 600 sq ft detached garage. Unlike Sarah's standardized homes, this is a unique design. He needs to generate a comprehensive materials list for Phase 1 (foundation & framing) without manually browsing through products irrelevant to this phase.
 
-### How It Works: A Real Scenario
+Without smart filtering, Marcus would need to:
+- Browse all 70 products looking for foundation and framing materials
+- Determine which quality grade is appropriate (builder-grade vs. professional vs. premium)
+- Manually exclude envelope and finishing materials (not needed until Phase 2-3)
+- Calculate quantities based on square footage and project specs
+- Remember to order Phase 2 materials in 6 weeks
 
-**John Smith** is the purchasing manager for Premium Commercial Builders Inc., based in Los Angeles with a secondary operation in Phoenix. His company has earned Tier2 pricing status through consistent high-volume purchasing. This morning, he's ordering framing materials for a new construction project - a 12-story office building in downtown Los Angeles.
+**The Solution:**
 
-**Step 1: Login and Company Recognition**
+Marcus uses the **project wizard** with **quality tier** and **phase filtering**:
 
-When John logs into BuildRight's ordering portal, the system immediately identifies:
-- Company: Premium Commercial Builders Inc.
-- Pricing Tier: Commercial-Tier2 (5% volume discount)
-- Primary Location: Los Angeles (Western region)
-- Secondary Location: Phoenix available
+1. Starts "New Project: Patterson Residence"
+2. Wizard Step 1: Project Type → "New Construction - Residential"
+3. Wizard Step 2: Square footage → 2,400 main + 600 garage = 3,000 total
+4. Wizard Step 3: Quality → "Professional Grade" (client expectations)
+5. Wizard Step 4: Phase → "Phase 1: Foundation & Framing Only"
+6. System generates BOM showing only 18 products (filtered from 70)
+7. Reviews, adjusts quantities, adds upgraded LVL beams
+8. Saves project for future Phase 2 ordering
+9. Total Phase 1 order: $25,750 with automatic 10% tier discount + 3% volume discount
 
-**Step 2: Project Type Selection**
+**Business Impact:**
+- Catalog reduced from 70 products to 18 relevant items (74% reduction)
+- Selection time reduced from 45 minutes to 12 minutes (73% reduction)
+- Quality tier filtering prevents ordering wrong grade materials
+- Project persistence enables easy Phase 2 ordering in 6 weeks
+- Automatic pricing saves $3,300 on this order vs. retail (11% total discount)
 
-John selects "New Construction" as his project type. The system applies this filter dynamically via HTTP headers sent with each catalog query, instantly narrowing the catalog focus.
+---
 
-**Step 3: Catalog Personalization**
+### Persona 3: Lisa Chen - Remodeling Contractor
 
-Instead of browsing 184 products (or the full 150,000+ SKU catalog in production), John sees approximately 48 products specifically tagged for new construction projects. These include:
-- Structural lumber (2x4, 2x6, 2x8 dimensional lumber)
-- LVL beams and engineered wood products
-- Concrete and foundation materials
-- Structural fasteners and hardware
-- Framing bundles (pre-configured packages)
+**Profile:**
+- **Company**: Chen Kitchen & Bath Remodeling
+- **Role**: Owner
+- **Scale**: 30-40 kitchen/bath remodels/year, $20K-$60K each
+- **Order Pattern**: Package-based with client customization
+- **Annual Volume**: $900K
+- **Price Book**: Trade-Professional (10% off retail + volume tiers)
 
-Products irrelevant to new construction - like windows, doors, finish carpentry, HVAC supplies - are filtered out entirely. John can browse the entire catalog if needed, but the default view shows exactly what he needs.
+**The Challenge:**
 
-**Step 4: Automatic Tier Pricing**
+Lisa is consulting with a client about a bathroom remodel. The client wants to see package options at different price points before committing. They've expressed interest in "premium" finishes but need to see the actual pricing difference between Good, Better, and Best packages.
 
-John selects product **LBR-D0414F1E** (2x4x8 SPF Stud, Standard Grade). The system displays his pricing:
+Without package comparison, Lisa would need to:
+- Manually create three separate quotes
+- Research compatible fixtures for each tier
+- Calculate totals for 18+ items per package
+- Explain price differences without visual comparison
+- Risk client sticker shock or budget misalignment
 
-- Unit Price (1-99 units): $8.08
-- Volume Price (100-293 units): $7.84 per unit
-- Bundle Price (294+ units): $7.50 per unit
+**The Solution:**
 
-John doesn't see the base contract price of $8.50 or know that standard contractors pay more. He simply sees his company's automatically applied Tier2 pricing with volume discount breakpoints clearly displayed.
+Lisa uses **Good/Better/Best packages** with **visual comparison** and **within-tier customization**:
 
-**Step 5: Regional Inventory Check**
+1. Selects "Bathroom Remodel Packages"
+2. Chooses bathroom size: "Full bath (40-100 sq ft)"
+3. Sees three packages side-by-side:
+   - **Good Package**: $8,500 (builder-grade: standard tub, laminate vanity, ceramic tile)
+   - **Better Package**: $14,200 (mid-range: acrylic tub, semi-custom vanity, porcelain tile)
+   - **Best Package**: $23,800 (premium: soaking tub, custom vanity, natural stone)
+4. Client selects "Better Package"
+5. Lisa customizes within the tier:
+   - Upgrades tub to 66" soaker (+$425)
+   - Upgrades tile to large format 24x48 (+$680)
+   - Swaps all fixtures to matte black (+$180)
+   - Adds heated floor mat (+$425) and LED lighting (+$165)
+6. Final total: $16,070 (customized Better package)
+7. Emails quote to client for approval
 
-The system checks inventory at John's regional sources:
-- Sacramento RDC (warehouse_west): 750 units in stock
-- Phoenix Warehouse (warehouse_phoenix): 400 units in stock
+**Business Impact:**
+- Client consultation time reduced from 90 minutes to 25 minutes (72% reduction)
+- Visual comparison accelerates decision-making
+- Within-tier customization prevents budget overruns
+- Client approval rate increased (clear pricing, no surprises)
+- Automatic pricing saves $1,900 on this order vs. retail (10% total discount)
 
-Both sources show "In Stock" status, and the system calculates that Sacramento will fulfill the order due to its Priority 1 status and proximity to Los Angeles.
+---
 
-**Step 6: Order Completion**
+### Persona 4: David Thompson - Pro Homeowner (DIY)
 
-John orders 10,000 studs for the office building project. His order total:
-- Quantity: 10,000 units
-- Unit Price: $7.50 (bundle tier pricing)
-- Total: $75,000
+**Profile:**
+- **Type**: Software Engineer, DIY enthusiast
+- **Project**: Building a 16x20 deck in his Portland backyard
+- **Order Pattern**: Single project, first-time deck builder
+- **Budget**: $6,000-$8,000
+- **Price Book**: Retail-Registered (5% loyalty discount, or retail)
 
-If John were a standard contractor paying base pricing ($8.50 per unit), this same order would cost $85,000. John's Tier2 status saves his company $10,000 automatically - no phone calls to sales reps, no manual quote requests, no negotiation delays.
+**The Challenge:**
 
-The order routes automatically to Sacramento RDC for fulfillment, with delivery scheduled to the Los Angeles job site within BuildRight's standard 48-hour window for regional orders.
+David wants to build a deck but has never done this before. He knows roughly what he wants (16x20, doesn't want to spend $10K hiring a contractor) but doesn't know:
+- Which products are compatible with each other
+- If he should use wood, composite, or PVC decking
+- What railing system works with his decking choice
+- If he's forgetting any critical components
 
-### The Technical Foundation
+Without progressive guidance, David would need to:
+- Research deck building extensively before shopping
+- Browse all 70 products trying to identify deck-specific items
+- Risk ordering incompatible products (wood railings for composite deck)
+- Worry about missing critical hardware or fasteners
+- Second-guess every decision due to lack of expertise
 
-While John's experience is seamless, the underlying technical architecture demonstrates Adobe Commerce Optimizer's enterprise capabilities:
+**The Solution:**
 
-**Catalog Scale:**
-- 184 SKUs in demo environment (production supports 100,000+ SKUs)
-- 34 rich metadata attributes enable intelligent filtering (project_types, product_category, brand, lumber_species, grade, dimensions, etc.)
-- 19-category hierarchy for intuitive navigation
-- Product types include simple products, configurable products with variants, bundles, and service items
+David uses the **progressive deck wizard** with **triggered policies** and **compatibility validation**:
 
-**Hierarchical Pricing:**
-- 10 price books across 3 levels (base → segment → tier)
-- 1,770 price entries with volume tier discounts
-- Parent-child price book inheritance reduces data duplication
-- Automatic price calculation based on company assignment
+1. Starts "Build Your Deck" wizard
+2. **Step 1: Shape** → Selects "Rectangular" (others greyed if no kits available)
+   - Triggered Policy: `AC-Policy-Deck-Shape: rectangular`
+   - Catalog filtered: 70 products → 45 products (rectangular-compatible)
 
-**Multi-Source Inventory:**
-- 6 inventory sources across 3 US regions
-- 4,446 inventory records (184 products × average 6 sources per product)
-- Distance-based fulfillment prioritization
-- Real-time availability checking
+3. **Step 2: Size** → Selects "16x20 (320 sq ft)"
+   - System shows size options with pricing and popularity ratings
+   - Triggered Policy: `AC-Policy-Deck-Size: 16x20`
+   - Catalog filtered: 45 products → 35 products (sufficient stock for 320 sq ft)
 
-**B2B Company Structure:**
-- 3 companies representing BuildRight's three divisions
-- 6 locations (teams) demonstrating national distribution
-- 12 users with role-based permissions (Company Admin, Approver, Senior Buyer, Default User)
-- Company-level pricing ensures consistency across all locations within an organization
+4. **Step 3: Material** → Selects "Composite Decking" ($4,850)
+   - Sees comparison: Wood ($2,850, seal every 2 years), Composite ($4,850, wash annually), PVC ($6,200, minimal maintenance)
+   - Triggered Policy: `AC-Policy-Deck-Material: composite`
+   - Catalog filtered: 35 products → 22 products (composite-compatible only)
 
-**Dynamic Filtering via Trigger Policies:**
-- HTTP header-based catalog filtering (no pre-built static views required)
-- Project type filter supports multiselect attribute (products can serve multiple project types)
-- Product category filter for additional refinement
-- Brand filter for preference-based selection
-- Multiple policies combine with logical AND for precise catalog composition
+5. **Step 4: Railing** → Selects "Aluminum - Black" (+$1,680)
+   - Only sees railings compatible with composite decking
+   - Wood railing options are hidden (incompatible)
+   - Triggered Policy: `AC-Policy-Railing: aluminum`
+   - Catalog filtered: 22 products → 18 products (aluminum railing components)
 
-### Real Pricing Impact at Scale
+6. **Step 5: Accessories** → Adds post caps ($192) and LED lights ($285)
+   - System suggests popular add-ons for this configuration
+   - Validates completeness (hidden fasteners, structural hardware, etc.)
 
-**Example Product: 2x4x8 SPF Stud Standard Grade (SKU: LBR-D0414F1E)**
+7. **Complete Kit Review**:
+   - Decking boards (composite) - calculated for 320 sq ft + 15% waste
+   - Joist lumber (PT) - calculated for structure
+   - Hidden fastener system for composite
+   - Aluminum railing - 60 linear feet
+   - Post caps, LED lights
+   - All necessary hardware
+   - Installation guide + cut list
+   - **Total: $6,817** (within budget!)
 
-This is one of BuildRight's highest-volume products, used extensively in framing for both commercial and residential construction.
+**Business Impact:**
+- Catalog reduced from 70 products to 18 relevant items (74% reduction)
+- Zero incompatible product selections (policies prevent mismatches)
+- Shopping time reduced from 2+ hours of research to 20 minutes
+- Confidence increased through educational content
+- Complete kit ensures no forgotten components
+- Automatic pricing saves $360 with loyalty discount (5% off retail)
 
-| Customer Type | Price Book | Unit Price (1-99) | Volume (100-293) | Bundle (294+) | 10,000-Unit Order |
-|---------------|------------|-------------------|------------------|---------------|-------------------|
-| Base Contract | US-Contract | $8.50 | $8.25 | $7.84 | $78,400 |
-| Standard Commercial | Contract-Commercial | $8.50 | $8.25 | $7.84 | $78,400 |
-| Commercial Tier1 | Commercial-Tier1 | $8.25 | $8.00 | $7.64 | $76,400 |
-| **Commercial Tier2** | **Commercial-Tier2** | **$8.08** | **$7.84** | **$7.50** | **$75,000** |
-| Residential Builder | Residential-Builder | $8.50 | $8.25 | $7.84 | $78,400 |
+---
 
-**Savings Analysis for Premium Commercial Builders (Tier2):**
-- Base pricing: $78,400 for 10,000 studs
-- Tier2 pricing: $75,000 for 10,000 studs
-- **Automatic savings: $3,400 (4.3%)**
+### Persona 5: Kevin Rodriguez - Store Manager
 
-On a typical large commercial project requiring 50,000-100,000 studs plus plates, beams, and other structural materials, Tier2 pricing delivers $20,000-$50,000 in savings per project. Multiply across dozens of annual projects, and the value of tier-based pricing becomes transformative for both customer loyalty and BuildRight's competitive positioning.
+**Profile:**
+- **Company**: Pacific Northwest Hardware (Regional chain - 15 stores)
+- **Role**: Store Manager, Store #7 - Tacoma, WA
+- **Order Pattern**: Restock orders 2-3 times per week
+- **Annual Volume**: Store ordering budget: $450K/year
+- **Price Book**: Wholesale-Reseller (25% off retail, cost-based)
 
-The key differentiator: these savings are automatic and transparent. Premium Commercial Builders doesn't negotiate each order or wait for manual quotes. The pricing appears instantly when they browse products, enabling fast purchasing decisions.
+**The Challenge:**
+
+It's Thursday morning, and Kevin is doing his weekly restock order. His POS system shows he's low on fasteners, common lumber, and hand tools. He needs to replenish these items before the weekend rush, but browsing all 70 products for restock needs is inefficient.
+
+Without velocity filtering, Kevin would need to:
+- Manually review his entire inventory
+- Identify which items are critically low
+- Calculate reorder quantities based on his experience
+- Miss items that are low but not yet critical
+- Spend 60-90 minutes on what should be a routine task
+
+**The Solution:**
+
+Kevin uses the **restock dashboard** with **velocity-based filtering** and **smart quantity suggestions**:
+
+1. Logs in → Lands on "Store #7 - Tacoma Restock Dashboard"
+2. Sees overview:
+   - Current inventory status: 73% optimal
+   - Items needing attention: 28 SKUs
+   - Weekend forecast: High traffic expected
+
+3. Filters by **High Velocity + Critical Priority**:
+   - Triggered Policy: `AC-Policy-Velocity: high` + `AC-Policy-Priority: critical`
+   - Catalog filtered: 70 products → 12 products (fast-moving, critically low)
+   
+4. Reviews critical items with smart suggestions:
+   - **Deck Screws 3" Exterior**: Current 4 boxes (24% optimal), Avg daily sales 3.2 boxes
+     - Days until out: **1.2 days** ⚠️
+     - Suggested: Order 15 boxes (2-week supply)
+     - Kevin's adjustment: **Order 25 boxes** (weekend deck promo planned)
+   
+   - **Framing Nails 16D**: Current 12 boxes (40% optimal), Avg daily sales 2.1 boxes
+     - Days until out: 5.7 days
+     - Suggested: Order 10 boxes
+     - Kevin's adjustment: **Keep at 10 boxes**
+
+5. Expands to **Medium Velocity + High Priority** for additional items
+6. Total restock order: $3,850 with automatic 25% wholesale discount
+7. Order completion time: 18 minutes
+
+**Business Impact:**
+- Catalog reduced from 70 products to 12-28 relevant items (depending on filters)
+- Restock time reduced from 90 minutes to 18 minutes (80% reduction)
+- Zero out-of-stock incidents (predictive suggestions)
+- Velocity filtering focuses on highest-impact items
+- Wholesale pricing (25% off retail) enables competitive margins
+- Smart suggestions reduce ordering errors
+
+---
+
+## Part 2: The Technology - Composable Catalog Data Model (CCDM)
+
+### What is CCDM?
+
+Adobe Commerce Optimizer's **Composable Catalog Data Model (CCDM)** separates product data from business context, enabling a single catalog to serve multiple customer segments with radically different views.
+
+**Key Principle**: Products are defined once, but their **visibility**, **pricing**, and **presentation** adapt based on customer context, project type, workflow step, and business rules.
+
+### How BuildRight Uses CCDM
+
+#### 1. Single Source of Truth
+
+**70 products** in the master catalog serve all 5 personas:
+- Simple products (dimensional lumber, fasteners, tools)
+- Configurable products (windows, doors with options)
+- Bundle products (framing packages, hardware kits)
+- Service products (delivery, installation)
+
+Each product is tagged with **persona-specific attributes**:
+```javascript
+{
+  sku: "LBR-D0414F1E",
+  name: "2x4x8 SPF Stud",
+  attributes: {
+    construction_phase: "foundation_framing",    // Marcus, Sarah
+    quality_tier: "professional",                // Marcus
+    deck_compatible: true,                       // David
+    store_velocity_category: "high",             // Kevin
+    package_tier: ["good", "better", "best"],    // Lisa (multi-value)
+    room_category: "any"                         // Lisa
+  }
+}
+```
+
+#### 2. Triggered Policies - Dynamic Filtering
+
+**28 triggered policies** filter the catalog based on user selections:
+
+| Policy Category | Trigger | Filter Logic | Personas |
+|----------------|---------|--------------|----------|
+| **Construction Phase** | Wizard step | `construction_phase = foundation_framing` | Marcus, Sarah |
+| **Quality Tier** | User selection | `quality_tier = professional` | Marcus |
+| **Package Tier** | Package choice | `package_tier contains "better"` | Lisa |
+| **Deck Shape** | Shape selection | `deck_shape = rectangular` | David |
+| **Deck Material** | Material choice | `deck_material_type = composite` | David |
+| **Deck Compatible** | Wizard entry | `deck_compatible = true` | David |
+| **Store Velocity** | Dashboard filter | `store_velocity_category = high` | Kevin |
+| **Restock Priority** | Urgency filter | `restock_priority = critical` | Kevin |
+| **Room Category** | Room selection | `room_category = bathroom` | Lisa |
+| **Project Type** | Project wizard | `project_types contains "new_construction"` | All |
+
+**Policy Application Example** (David's Deck Builder):
+
+```
+Starting catalog: 70 products
+
+Step 1: Shape = Rectangular
+  HTTP Header: AC-Policy-Deck-Shape: rectangular
+  Result: 70 → 45 products (remove L-shaped specific items)
+
+Step 2: Material = Composite
+  HTTP Header: AC-Policy-Deck-Material: composite
+  Result: 45 → 22 products (remove wood/PVC specific items)
+
+Step 3: Deck Compatible Filter
+  HTTP Header: AC-Policy-Deck-Compatible: true
+  Result: 22 → 18 products (remove general construction materials)
+
+Final catalog: 18 products (74% reduction)
+```
+
+**Policies combine with AND logic**: All active policies must be satisfied for a product to appear.
+
+#### 3. Tiered Pricing Structure
+
+**5 price books** create persona-specific pricing:
+
+| Price Book | Parent | Discount | Personas | Use Case |
+|-----------|--------|----------|----------|----------|
+| **US-Retail** | None (base) | 0% | General public | Retail catalog pricing |
+| **Production-Builder** | US-Retail | -15% | Sarah | High-volume builders |
+| **Trade-Professional** | US-Retail | -10% | Marcus, Lisa | Licensed contractors |
+| **Wholesale-Reseller** | US-Retail | -25% | Kevin | Stores buying for resale |
+| **Retail-Registered** | US-Retail | -5% | David (optional) | Loyalty discount |
+
+**Customer Tier Pricing** (who you are) + **Volume Tier Pricing** (how much you buy) = Total Discount
+
+**Volume Tier Breakpoints**:
+- **1-99 units**: Base tier price
+- **100-293 units**: Additional 3% discount
+- **294+ units**: Additional 8% discount (pallet pricing)
+
+**Example: 2x4x8 Stud Pricing**
+
+| Customer | Tier Discount | Volume Discount | Unit Price | 10K Units | Savings vs Retail |
+|----------|--------------|----------------|------------|-----------|-------------------|
+| General Public | 0% | -8% (pallet) | $9.20 | $92,000 | Baseline |
+| David (DIY) | -5% | -8% | $8.74 | $87,400 | $4,600 (5%) |
+| Marcus/Lisa (Trade) | -10% | -8% | $8.28 | $82,800 | $9,200 (10%) |
+| Sarah (Builder) | -15% | -8% | $7.82 | $78,200 | $13,800 (15%) |
+| Kevin (Wholesale) | -25% | -8% | $6.90 | $69,000 | $23,000 (25%) |
+
+**Key Insight**: Sarah orders 500 units:
+- At 50 units: $8.50/unit = $425
+- At 200 units: $8.25/unit = $1,650 (saves $50 with volume tier)
+- At 500 units: $7.82/unit = $3,910 (saves $340 with pallet tier)
+
+Ordering in full pallets provides an additional 8% discount beyond her 15% customer tier discount.
+
+#### 4. Progressive Disclosure
+
+Complex product selection is broken into steps, with each step filtering the catalog for the next:
+
+**David's Deck Wizard Flow**:
+1. Shape selection → filters out incompatible shapes
+2. Size selection → filters out insufficient stock
+3. Material selection → filters out incompatible materials
+4. Railing selection → filters out incompatible railings
+5. Accessories → suggests compatible add-ons
+
+At each step, David sees **only relevant choices**. Incompatible options are hidden, preventing mistakes.
 
 ---
 
 ## Part 3: Business Outcomes
 
-### For Contractors: Time Savings and Transparency
+### For Customers: Time Savings and Transparency
 
-**70% Reduction in Product Search Time**
+**Dramatic Reduction in Product Selection Time**
 
-Before ACO implementation, contractors reported spending an average of 45 minutes searching for and adding products to cart for a typical framing order. With project-type filtering reducing the catalog from 184 to ~48 relevant products, that time dropped to 12-15 minutes - a 70% reduction.
+| Persona | Before | After | Time Savings | Method |
+|---------|--------|-------|--------------|--------|
+| Sarah (Builder) | 60 min | 8 min | 87% | Templates + multipliers |
+| Marcus (GC) | 45 min | 12 min | 73% | Project wizard + phase filtering |
+| Lisa (Remodeler) | 90 min | 25 min | 72% | Package comparison |
+| David (DIY) | 120 min | 20 min | 83% | Progressive deck wizard |
+| Kevin (Store Mgr) | 90 min | 18 min | 80% | Velocity filtering + smart suggestions |
 
-For contractors managing multiple projects simultaneously, this time savings compounds. A commercial contractor managing five active projects previously spent 3-4 hours weekly just on catalog search. Now that's reduced to under an hour, freeing time for project management, client relationships, and business development.
+**Average time savings: 79% across all personas**
 
-**Automatic Volume Discounts Eliminate Negotiation**
+**Automatic Tier Pricing Eliminates Manual Quotes**
 
-High-volume contractors previously submitted quote requests and waited 1-3 business days for sales representative responses with volume pricing. This delay could impact project timelines, especially for time-sensitive orders.
+Before BuildRight Version 2.0:
+- High-volume customers submitted quote requests
+- Sales reps manually calculated discounts
+- 1-3 business day turnaround time
+- Inconsistent pricing (negotiation-based)
 
-With automatic tier-based pricing, contractors see their volume discounts immediately. They can make purchasing decisions in real-time, approve budgets without pricing contingencies, and complete orders in minutes rather than days.
+After:
+- All pricing appears instantly
+- Discounts apply automatically based on customer group
+- Volume tier discounts calculate in real-time
+- Transparent, consistent pricing
 
-**Regional Accuracy Reduces Backorders**
+**Example**: Sarah ordering 10,000 studs sees her pricing immediately:
+- Unit price: $7.82 (15% tier + 8% volume)
+- Total: $78,200
+- Savings vs. retail: $13,800 (displayed at checkout)
 
-By showing only products available at the contractor's regional distribution center, BuildRight virtually eliminated the "order today, discover unavailability tomorrow" problem. Contractors now trust that products showing "In Stock" are actually available for their standard delivery window.
+No phone calls, no quote requests, no waiting.
 
-This reliability is particularly valuable for just-in-time project scheduling, where material delays can cascade into costly construction timeline impacts.
+**Catalog Accuracy Prevents Ordering Errors**
 
-**Pre-Configured Bundles Streamline Ordering**
+| Persona | Problem Prevented | How |
+|---------|------------------|-----|
+| Marcus | Ordering wrong quality grade | Quality tier filtering |
+| David | Mixing incompatible products | Progressive policies (can't select wood railing for composite deck) |
+| Lisa | Budget overruns | Within-tier customization constraints |
+| Kevin | Out-of-stock items | Velocity-based prioritization |
+| Sarah | Incorrect phase materials | Phase-based BOM templates |
 
-BuildRight created 15 bundle products based on common material combinations. For example, the "Standard 2x4 Framing Package" includes:
-- 100 2x4x8 studs
-- 50 2x4x10 plates
-- 25 OSB sheathing sheets
-- 5 boxes 16d framing nails
-- 10 tubes construction adhesive
+**Pre-configured Packages Streamline Complex Orders**
 
-Instead of searching for and adding five separate items (taking 8-10 minutes), contractors select one bundle and adjust quantities as needed (taking 2 minutes). For contractors who order similar material combinations repeatedly, bundles reduce 50-item orders to 3-4 bundle selections - a 75% reduction in order complexity.
+Lisa's bathroom packages demonstrate the power of pre-configuration:
+- **Good Package**: 12 products, $8,500 (builder-grade)
+- **Better Package**: 14 products, $14,200 (mid-range)
+- **Best Package**: 16 products, $23,800 (premium)
+
+Instead of selecting 12-16 individual products (10-15 minutes), Lisa selects one package (30 seconds) and customizes (5 minutes).
+
+Package selection reduces order complexity by 75%.
 
 ### For BuildRight: Operational Efficiency and Scale
 
-**Single Catalog Serves All Segments**
+**Single Catalog Serves All Personas**
 
-Before ACO, BuildRight's product team discussed creating separate catalog experiences for Commercial, Residential, and Pro divisions. This would have meant managing three parallel product catalogs, tripling the data management overhead for product updates, new product launches, and attribute maintenance.
+Traditional approach would require:
+- 5 separate catalogs (one per persona)
+- 350 total product entries (70 products × 5 catalogs)
+- 5× maintenance overhead for product updates
 
-With ACO's dynamic filtering, a single catalog serves all three divisions. Product managers update attributes once, and the system automatically delivers appropriate product visibility to each segment based on metadata tagging. This "build once, personalize everywhere" approach dramatically reduces operational complexity.
+CCDM approach:
+- 1 catalog with 70 products
+- Persona views generated dynamically via policies
+- Single-source product updates
+- Zero product duplication
+
+**Maintenance savings: 80% reduction in catalog management effort**
 
 **Transparent Tier Pricing Rewards Loyalty Automatically**
 
-BuildRight's pricing strategy explicitly rewards high-volume customers, but manual negotiation created inconsistency and sales team bottlenecks. Some high-volume customers received better pricing than others simply based on how aggressively they negotiated or which sales representative they worked with.
+Before tiered pricing:
+- Manual negotiation with each customer
+- Inconsistent discounts (negotiation skills varied)
+- Sales team spent 40% of time on pricing
+- Customer frustration with opaque pricing
 
-Tier-based pricing standardizes this approach. Companies earning Tier1 or Tier2 status through documented purchase volume receive consistent, transparent pricing across all purchases. This creates a clear incentive structure: increase your volume, earn better pricing automatically.
-
-The sales team now spends less time on pricing calculations and more time on relationship building, identifying upsell opportunities, and strategic account management.
+After tiered pricing:
+- Automatic discounts based on documented criteria
+- Consistent pricing for all customers in same tier
+- Sales team focuses on relationships, not calculations
+- Customer satisfaction increased (transparent, predictable)
 
 **Real-Time Catalog Composition Eliminates Static View Management**
 
-Traditional catalog personalization approaches require creating and maintaining multiple static catalog views - one for each combination of segment, project type, and filter option. With four project types, three segments, and multiple category filters, this could require dozens of pre-built views.
+Traditional personalization requires:
+- Pre-built static views for each persona × project type × phase
+- 5 personas × 3 project types × 3 phases = 45 potential static views
+- Manual maintenance when adding products or attributes
 
-ACO's trigger-based policies deliver catalog filtering in real-time via HTTP headers. BuildRight creates policies once (project type filter, category filter, brand filter), and those policies apply dynamically to any combination of filter values. Adding a new project type or category doesn't require creating new catalog views - just tagging products with the new attribute value.
+CCDM trigger-based policies:
+- 28 policies that compose dynamically
+- Policies combine via AND logic (no view explosion)
+- Adding new project type = tag products + create 1 policy
+- No static view maintenance
 
-**Reduced Data Management Overhead**
-
-BuildRight's product team uses intelligent attribute assignment to maintain catalog quality efficiently. The 34 metadata attributes enable precise filtering without overwhelming data entry teams. Products inherit sensible defaults based on product type, and exceptions are easy to identify and correct.
-
-For example, all lumber products automatically receive appropriate values for lumber_species, grade, dimensions, and treatment attributes. All fasteners receive values for fastener_type, material, size, and coating. This structured approach makes catalog maintenance scalable even as product count grows.
-
-### Demonstration Value: Showcasing ACO Capabilities
-
-BuildRight serves as a compelling demonstration environment for Adobe Commerce Optimizer's enterprise capabilities:
-
-**Scenario 1: Hierarchical Pricing at Scale**
-
-Demo audiences can see real-time pricing differences by switching between company logins. Logging in as Premium Commercial Builders (Tier2) shows the 2x4x8 stud at $8.08. Logging in as Coastal Residential Builders shows different Residential-Builder pricing at $8.50. Logging in as Elite Trade Contractors shows Pro-Specialty pricing.
-
-This demonstrates ACO's ability to manage complex B2B pricing structures with company-level assignment and automatic price calculation.
-
-**Scenario 2: Project-Based Dynamic Filtering**
-
-By sending GraphQL queries with different `AC-Policy-Project-Type` HTTP headers, demos can show how the catalog dynamically recomposes:
-
-- `new_construction` header: ~45 products (structural materials, framing lumber, concrete)
-- `remodel` header: ~55 products (finishing materials, windows, doors, drywall)
-- `repair` header: ~32 products (maintenance items, smaller quantities)
-- `restoration` header: ~28 products (specialty items, matching materials)
-
-The same query, same endpoint, different header values produce entirely different product sets - demonstrating trigger-based personalization without static views.
-
-**Scenario 3: National B2B Distribution**
-
-BuildRight's structure demonstrates enterprise-scale B2B architecture:
-- Premium Commercial Builders has locations in Los Angeles and Phoenix
-- Both locations receive the same Tier2 pricing (company-level consistency)
-- Both locations see inventory from their respective regional warehouses
-- Users in both locations belong to the same company hierarchy
-
-This proves ACO's multi-location B2B capabilities while maintaining pricing and catalog consistency.
-
-**Scenario 4: Bundle Complexity**
-
-The "Standard 2x4 Framing Package" bundle demonstrates ACO's ability to handle complex product types. The bundle includes five component products, calculates bundle pricing (5% discount vs. individual items), respects company-tier pricing, and displays correctly across different customer segments.
-
-This showcases ACO's product type flexibility beyond simple products.
+**Scalability**: Adding a 6th persona requires:
+- 0 new product entries (same 70 products)
+- 3-5 new policies (persona-specific filtering)
+- 1 new price book (pricing tier)
+- ~2 hours implementation time
 
 ---
 
-## Part 4: Lessons Learned and Best Practices
+## Part 4: Technical Architecture
+
+### Data Generation Pipeline
+
+**1. Product Generation** (`npm run generate:products`)
+- Generates 70 products with persona-specific attributes
+- Output: `data/buildright/products.json` (ACO format)
+- Includes: Simple products, configurables, bundles, services
+
+**2. Price Book Generation** (`npm run generate:price-books`)
+- Generates 5 hierarchical price books
+- Output: `data/buildright/price-books.json`
+- Structure: 1 base + 4 customer tier books
+
+**3. Price Generation** (`npm run generate:prices`)
+- Generates retail pricing + volume tier breakpoints
+- Output: `data/buildright/prices.json`
+- Includes: 1-99, 100-293, 294+ quantity tiers for high-volume products
+
+**4. Policy Guide Generation** (`npm run generate:policy-guide`)
+- Documents 28 policies for manual ACO Admin UI configuration
+- Output: `data/buildright/POLICY-SETUP-GUIDE.md`
+- Includes: HTTP header format, filter logic, use cases
+
+**5. EDS Data Generation** (`npm run generate:eds-data`)
+- Transforms ACO format → EDS frontend format
+- Output: `../buildright-eds/data/mock-products.json`
+- Output: `../buildright-eds/data/project-recommendations.json`
+
+**Complete Pipeline**: `npm run generate:all` (runs all 5 steps)
+
+### Persona-Specific Attributes
+
+All products are tagged with attributes that enable persona filtering:
+
+```javascript
+// Marcus (GC) - Project wizard attributes
+construction_phase: "foundation_framing" | "envelope" | "interior_finish"
+quality_tier: "builder_grade" | "professional" | "premium"
+
+// Lisa (Remodeler) - Package builder attributes
+package_tier: ["good", "better", "best"]  // Multi-value
+room_category: "bathroom" | "kitchen" | "any"
+
+// David (DIY) - Deck wizard attributes
+deck_compatible: true | false
+deck_shape: "rectangular" | "l_shaped" | "multi_level"
+deck_material_type: "wood" | "composite" | "pvc"
+deck_railing_compatible: true | false
+
+// Kevin (Store Mgr) - Restock dashboard attributes
+store_velocity_category: "high" | "medium" | "low"
+recommended_restock_quantity: integer
+typical_days_supply: integer
+restock_priority: "critical" | "high" | "medium"
+
+// Sarah (Builder) - Template attributes
+construction_phase: "foundation_framing" | "envelope" | "interior_finish"
+```
+
+### Frontend Mock Architecture
+
+The `buildright-eds` repository uses a **mock ACO service** for frontend development:
+
+**Why Mock?**
+- Real ACO instance exists in `buildright-aco` (data is ingested via API)
+- Frontend needs development environment without GraphQL dependency
+- Mock reads same data structure as real ACO for consistency
+
+**Mock Service** (`buildright-eds/scripts/aco-service.js`):
+```javascript
+// Simulates ACO GraphQL queries
+async function getProducts(filters, policies) {
+  // Read from mock-products.json
+  const products = await loadMockProducts();
+  
+  // Apply policy filters (client-side simulation)
+  const filtered = applyPolicies(products, policies);
+  
+  // Apply attribute filters
+  const results = applyFilters(filtered, filters);
+  
+  return results;
+}
+```
+
+**Data Flow**:
+```
+buildright-aco (Backend Data)
+├─ generate-products.js → products.json (ACO format)
+├─ generate-prices.js → prices.json (ACO format)
+├─ ingest-*.js → Upload to real ACO instance
+└─ generate-eds-data.js → Transform to EDS format
+                          ├─ mock-products.json
+                          └─ project-recommendations.json
+
+buildright-eds (Frontend)
+└─ scripts/aco-service.js → Reads mock-products.json
+                           → Simulates ACO queries
+                           → Applies policy filters
+```
+
+### Policy Configuration
+
+Policies are created manually in ACO Admin UI (no API support). Each policy defines:
+
+**Trigger**: When the policy activates
+- HTTP Header (e.g., `AC-Policy-Phase: foundation_framing`)
+- User selection
+- Wizard step
+- Dashboard filter
+
+**Filter Type**: How the policy filters products
+- `attribute_match`: Product attribute must equal value
+- `attribute_contains`: Product attribute must contain value (for multi-value)
+- `include_categories`: Product must be in specified categories
+- `exclude_categories`: Product must not be in specified categories
+
+**Example Policy** (David's Deck Material Selection):
+```yaml
+Policy ID: composite_decking
+Name: Composite Decking Material
+Trigger: HTTP Header: AC-Policy-Deck-Material
+Filter Type: attribute_match
+Attribute: deck_material_type
+Value: composite
+Description: Shows composite decking products and compatible accessories
+```
+
+When David selects "Composite" in the deck wizard, the frontend sends:
+```http
+POST /graphql
+Headers:
+  AC-Policy-Deck-Material: composite
+  AC-Policy-Deck-Shape: rectangular
+Body:
+  query { products { sku name price } }
+```
+
+ACO applies both policies (AND logic) and returns only products matching:
+- `deck_shape = rectangular` AND
+- `deck_material_type = composite`
+
+Result: 70 products → 22 products
+
+---
+
+## Part 5: Lessons Learned and Best Practices
 
 ### What Worked Well
 
-**Hierarchical Pricing Model Reduces Duplication**
+**1. Simplified Pricing Model (5 books vs. 10 books)**
 
-BuildRight's 3-level price book structure (base → segment → tier) with parent-child inheritance proved highly efficient. Instead of defining 1,770 prices completely independently, many tier-level price books inherit from their segment-level parents and only override specific products or volume breakpoints.
+The original BuildRight implementation used 10 price books with 3-level hierarchy:
+```
+Base (2) → Segment (4) → Tier (4) = 10 total books
+```
 
-This reduced data entry by approximately 40% compared to flat pricing structures and makes maintenance easier. When BuildRight raises base pricing on lumber due to market conditions, tier pricing automatically inherits those increases unless explicitly overridden.
+Version 2.0 simplified to 5 books with 2-level hierarchy:
+```
+Base (1) → Customer Tier (4) = 5 total books
+```
 
-**Project Types as Multiselect Attribute Increased Flexibility**
+**Benefits**:
+- 50% fewer price books to maintain
+- Clearer value proposition (direct discount off retail)
+- Easier to explain to customers ("You save 15% as a Production Builder")
+- Simpler ingestion process
 
-Initially, BuildRight considered project_types as a single-select attribute (each product belongs to one project type). Switching to multiselect proved valuable, as many products legitimately serve multiple project types.
+**Lesson**: Hierarchical pricing is powerful, but deeper isn't always better. Two levels (base + customer tier) with volume tier pricing within each book provides full B2B functionality with minimal complexity.
 
-For example, 2x4x8 studs are used in new construction, remodels, and repairs. OSB sheathing serves new construction and remodels. By tagging products with all applicable project types, the catalog provides better coverage across project type filters.
+**2. Persona-Specific Attributes Enable Precise Filtering**
 
-The policy configuration uses the `CONTAINS` operator for multiselect attributes, checking whether the product's project_types array contains the trigger value. This makes filtering work correctly with multiselect attributes.
+Tagging products with 12 persona-specific attributes enables 28 distinct policies:
+- `construction_phase`: 3 policies (foundation, envelope, interior)
+- `quality_tier`: 3 policies (builder, professional, premium)
+- `package_tier`: 3 policies (good, better, best)
+- `deck_shape`: 3 policies (rectangular, l_shaped, multi_level)
+- `deck_material_type`: 3 policies (wood, composite, pvc)
+- `store_velocity_category`: 3 policies (high, medium, low)
+- `restock_priority`: 3 policies (critical, high, medium)
+- `room_category`: 3 policies (bathroom, kitchen, any)
+- `deck_compatible`: 1 policy (true)
+- `project_types`: 3 policies (new_construction, remodel, repair)
 
-**National Distribution Model Demonstrates Enterprise Scale**
+**Lesson**: Thoughtful attribute design enables exponential policy coverage. 12 attributes × 2-3 values each = 28 policies covering 5 personas.
 
-BuildRight intentionally spans six locations across three US regions (Western, Central, Eastern) rather than concentrating in one region. This geographic distribution demonstrates that ACO can support true national or international operations with:
-- Regional inventory management
-- Company locations in multiple states
-- Users distributed across time zones
-- Distance-based fulfillment optimization
+**3. Volume Tier Pricing Applies Universally**
 
-This architectural choice makes BuildRight a more compelling enterprise demo than a single-region implementation would be.
+Rather than creating separate price books for volume tiers, volume tier pricing is defined **within each customer tier book**:
 
-**Simplified Pricing Model Maintained Demo Effectiveness**
+```javascript
+{
+  sku: "LBR-D0414F1E",
+  priceBookId: "Production-Builder",
+  prices: [
+    { quantity: 1, value: 8.50 },    // 1-99 units
+    { quantity: 100, value: 8.25 },  // 100-293 units
+    { quantity: 294, value: 7.82 }   // 294+ units (pallet)
+  ]
+}
+```
 
-BuildRight originally generated 29,953 price entries across all price books and products. This created a 1.3 MB JSON file that took 30-45 minutes to ingest.
+**Benefits**:
+- No price book explosion (5 books, not 15)
+- Volume discounts apply to all customer tiers
+- Easy to maintain (update one product's volume tiers, not 5 separate books)
 
-By simplifying to 1,770 price entries (focusing volume tiers only on high-volume products like lumber and fasteners), BuildRight reduced the price file to 360 KB and ingestion time to 5-10 minutes - a 94% reduction. Critically, this simplification preserved all key demo capabilities:
-- Tier-based pricing differences still clear
-- Volume tier pricing still functional on key products
-- All price books still represented
+**Lesson**: Volume tier pricing should be orthogonal to customer tier pricing. Keep them in the same price book structure rather than creating separate books.
 
-The lesson: effective demos prioritize clarity over exhaustive coverage. Showing tier pricing on 30 high-volume products is more impactful than showing it on all 184 products.
+**4. Frontend Mock Accelerates Development**
+
+Creating a frontend mock ACO service that reads the same data structure as real ACO enabled:
+- Rapid frontend iteration without backend dependency
+- Policy filter testing without ACO Admin UI configuration
+- Demo environments without ACO credentials
+- Consistent data structure for eventual ACO GraphQL integration
+
+**Lesson**: Mock the backend early with production-compatible data structures. This enables parallel backend and frontend development.
+
+**5. Progressive Disclosure Reduces Cognitive Load**
+
+David's deck wizard demonstrates the power of step-by-step filtering:
+- Step 1: Choose from 3 shapes (not 70 products)
+- Step 2: Choose from 4 sizes (not 45 products)
+- Step 3: Choose from 3 materials (not 35 products)
+- Step 4: Choose from 3 railing options (not 22 products)
+- Final: Review complete kit (18 products)
+
+At no point does David see the full 70-product catalog. Each step filters for the next.
+
+**Lesson**: Break complex selections into sequential steps with triggered policies. Users make better decisions when choices are limited and contextualized.
 
 ### Implementation Insights
 
-**Setup Time: 12-16 Hours Total**
+**Setup Time: 4-6 Hours for Data Generation**
 
-BuildRight's complete setup breaks down as:
-- Environment configuration: 30 minutes
-- Data generation: 15 minutes
-- Data ingestion to ACO: 1-2 hours (API upload time)
-- Multi-Source Inventory: 2.5-4 hours (manual Adobe Commerce UI)
-- B2B Company Configuration: 6-8 hours (manual Adobe Commerce UI)
-- Trigger Policy Configuration: 1-2 hours (ACO Admin UI)
-- Validation and testing: 1 hour
+BuildRight Version 2.0 data generation breaks down as:
+- Product generation: 5 minutes
+- Price book generation: 30 seconds
+- Price generation: 2 minutes
+- Policy guide generation: 10 seconds
+- EDS data transformation: 5 seconds
+- **Total automated**: ~8 minutes
 
-The B2B configuration is the longest phase due to manual UI work creating 3 companies, 6 teams, and 12 users. This can be spread across multiple days.
+Manual ACO configuration:
+- Price book ingestion: 30 minutes
+- Price ingestion: 1-2 hours (1,770 price entries)
+- Product ingestion: 2-3 hours (70 products with attributes)
+- Policy configuration: 45-60 minutes (28 policies, manual UI)
+- **Total manual**: 4-6 hours
+
+**Lesson**: Data generation is fast and reproducible (8 minutes). ACO ingestion is the time bottleneck (4-6 hours). For demos, generate data frequently, ingest infrequently.
 
 **Most Valuable: Deterministic Data Generation**
 
-All BuildRight data generation uses a seeded random number generator (SEED=12345) to produce identical output every time. This determinism proved invaluable for:
-- Reproducible builds across different environments
-- Consistent pricing examples in documentation
+All BuildRight data generation uses seeded random number generation (SEED=12345):
+```javascript
+const SEED = 12345;
+const random = new SeededRandom(SEED);
+```
+
+**Benefits**:
+- Identical output every time (reproducible builds)
+- Consistent documentation examples
 - Reliable testing and validation
 - Easy rebuild if ACO instance resets
 
-**API Limitations: MSI and B2B Require Manual Configuration**
+**Lesson**: Use seeded randomness for demo data. Reproducibility is more valuable than variety.
 
-Adobe Commerce Optimizer's Data Ingestion API covers products, attributes, categories, price books, and prices. However, two major components require manual Adobe Commerce configuration:
+**Avoid: Deep Price Book Hierarchies**
 
-- **Multi-Source Inventory (MSI)**: ACO doesn't support inventory operations, so all inventory source creation, stock configuration, and product-source assignments happen in Adobe Commerce Admin UI
-- **B2B Companies**: Company, team, and user creation happens through Adobe Commerce B2B modules, not ACO API
+The original 10-book, 3-level hierarchy proved unnecessarily complex:
+```
+US-Retail (base)
+└─ Retail-Consumer (segment)
 
-These manual steps account for 8-12 hours of the total 12-16 hour setup time. For organizations automating ACO demos at scale, these manual steps could be automated via Adobe Commerce REST API, though BuildRight's demo intentionally preserves them as manual steps to showcase the Adobe Commerce B2B UI capabilities.
+US-Contract (base)
+├─ Contract-Commercial (segment)
+│  ├─ Commercial-Tier1 (tier)
+│  └─ Commercial-Tier2 (tier)
+├─ Contract-Residential (segment)
+│  └─ Residential-Builder (tier)
+└─ Contract-Pro (segment)
+   └─ Pro-Specialty (tier)
+```
+
+The simplified 5-book, 2-level hierarchy provides the same functionality:
+```
+US-Retail (base)
+├─ Production-Builder
+├─ Trade-Professional
+├─ Wholesale-Reseller
+└─ Retail-Registered
+```
+
+**Lesson**: Two-level hierarchies (base + customer tier) are sufficient for most B2B scenarios. Deeper hierarchies add complexity without proportional value.
 
 ### Scaling Considerations
 
-**From 184 to 100,000+ SKUs**
+**From 70 to 10,000+ Products**
 
-BuildRight intentionally limits to 184 products for demo effectiveness, but the architecture scales to production catalogs. Adobe Commerce Optimizer supports 100,000+ SKU catalogs with:
-- Complex filtering across dozens of attributes
-- Hundreds of price books
-- Millions of price entries
-- High-performance GraphQL queries
+BuildRight intentionally limits to 70 products for demo clarity, but the architecture scales:
 
-The deterministic generation scripts can be configured to generate any catalog size. For example, setting a higher product count and increasing variant diversity could generate 1,000 or 10,000 products while maintaining the same metadata structure and pricing logic.
+| Aspect | Demo Scale | Production Scale | Notes |
+|--------|-----------|------------------|-------|
+| **Products** | 70 | 10,000+ | ACO supports 250M SKUs |
+| **Attributes** | 12 persona-specific | 50-100 total | Include standard attributes (brand, color, size) |
+| **Policies** | 28 | 50-100 | More personas = more policies |
+| **Price Books** | 5 | 10-20 | Regional variations, channel-specific |
+| **Price Entries** | 1,770 | 100,000+ | High-volume products get volume tiers |
 
-**Price Book Hierarchy Scales Well**
+**Lesson**: The pattern scales linearly. More products require more attributes and policies, but the architecture remains constant.
 
-BuildRight's 3-level hierarchy (base → segment → tier) with parent-child inheritance is a pattern that scales to deeper hierarchies. Enterprise implementations might have:
-- Geographic level (US → Canada → Mexico)
-- Business unit level (Division → Region → Branch)
-- Customer type level (Retail → Contract → Volume Tiers)
+**Adding a 6th Persona**
 
-The parent-child inheritance model means most price books override only exceptions rather than redefining all prices, making deeper hierarchies manageable.
+To add a new persona (e.g., "Property Manager"):
+1. Define persona attributes (e.g., `property_type`, `unit_count`)
+2. Tag existing products with new attributes (~30 minutes)
+3. Create 3-5 new policies in ACO Admin UI (~20 minutes)
+4. Create new price book if pricing differs (~5 minutes)
+5. Update frontend with new persona flow (~2-4 hours)
 
-**Trigger Policies Eliminate Static View Explosion**
+**Total**: ~3-5 hours for new persona
 
-Traditional personalization requiring pre-built catalog views would struggle with BuildRight's filtering complexity:
-- 4 project types × 3 segments × 10 categories = 120 potential combinations
+**Lesson**: The marginal cost of additional personas is low. The first 5 personas establish the pattern; subsequent personas follow the template.
 
-ACO's trigger-based policies handle this with 3 policies that compose dynamically. Adding a 5th project type or 11th category doesn't require new catalog views - just product tagging with the new attribute value.
+---
 
-This approach scales to dozens of filter dimensions without view management overhead.
+## Part 6: Adobe Commerce Optimizer Strategic Value
 
-**Multi-Region Inventory Demonstrates Enterprise Readiness**
+### Composable Catalog Architecture
 
-BuildRight's 6 inventory sources across 3 regions prove that ACO integrates cleanly with Adobe Commerce MSI's multi-source capabilities. Enterprise implementations with dozens or hundreds of inventory locations can follow the same pattern:
-- Create inventory sources in Adobe Commerce
-- Assign products to sources with quantities
-- Configure stock with source priorities
-- ACO catalog queries respect MSI availability
+BuildRight demonstrates ACO's core value: **one catalog, infinite views**.
 
-The integration is seamless because ACO handles catalog and pricing while Adobe Commerce handles inventory and fulfillment.
+Traditional commerce platforms require:
+- Separate catalogs per customer segment
+- Product duplication across catalogs
+- Complex synchronization logic
+- N-times maintenance overhead
 
-### Adobe Commerce Optimizer Strategic Value
+ACO's CCDM approach:
+- Single source of truth (70 products)
+- Dynamic views via triggered policies
+- Zero product duplication
+- Single-point maintenance
 
-**Composable Catalog Architecture**
+**Result**: 5 personas experience 5 completely different catalogs from the same 70 products.
 
-BuildRight demonstrates ACO's core value proposition: a single source of truth for catalog data that composes dynamically for different contexts. Products, attributes, categories, and pricing are defined once, then delivered with appropriate personalization based on:
-- Customer segment
-- Project context
-- Geographic region
-- Purchasing tier
+### B2B Enterprise Capabilities
 
-This "build once, personalize everywhere" approach contrasts with traditional commerce approaches requiring duplicate catalogs or complex view management.
+BuildRight showcases ACO's B2B readiness:
 
-**B2B Enterprise Capabilities**
+**Hierarchical Pricing**
+- Base + customer tier structure
+- Volume tier pricing within each book
+- Automatic discount application
+- Transparent savings calculation
 
-The BuildRight implementation validates ACO's readiness for complex B2B scenarios:
-- Hierarchical price books with inheritance
-- Company-specific catalog assignment
-- Multi-location company structures
-- Role-based user permissions
-- Volume tier pricing with automatic application
+**Customer Segmentation**
+- 5 distinct customer groups
+- Persona-specific pricing
+- Targeted catalog views
+- Segment-based policies
 
-These capabilities address real-world B2B requirements in manufacturing, distribution, and wholesale industries.
+**Complex Product Types**
+- Simple products (lumber, fasteners)
+- Configurable products (windows with options)
+- Bundle products (framing packages)
+- Service products (delivery, installation)
 
-**Developer-Friendly API Architecture**
+**Dynamic Filtering**
+- 28 triggered policies
+- AND logic for policy combination
+- HTTP header-based triggers
+- Real-time catalog composition
 
-BuildRight's setup demonstrates ACO's developer experience:
-- REST API for data ingestion with clear schemas
-- GraphQL API for queries with flexible field selection
-- HTTP header-based triggers for stateless filtering
-- OAuth authentication for secure access
-- Comprehensive error handling and validation
+### Developer-Friendly API Architecture
 
-The deterministic generation scripts show how development teams can build automation around ACO's APIs for catalog management, testing, and deployment pipelines.
+BuildRight's implementation demonstrates ACO's developer experience:
 
-**Production-Scale Performance**
+**Data Ingestion** (REST API):
+- Products: `POST /products`
+- Price Books: `POST /priceBooks`
+- Prices: `POST /prices`
+- Clear JSON schemas
+- Batch ingestion support
 
-Even in BuildRight's demo scale, ACO demonstrates production-ready performance:
-- GraphQL queries return in <200ms with complex filtering
-- Trigger policy evaluation adds minimal latency
-- Price calculation happens in real-time
-- Multi-source inventory checks integrate seamlessly
+**Data Querying** (GraphQL API):
+- Flexible field selection
+- Filter and sort capabilities
+- HTTP header-based policy triggers
+- Pagination support
 
-Enterprise implementations with 100x the catalog size report similar query performance, validating ACO's scalability architecture.
+**Frontend Integration**:
+- Mock service for development
+- Production-compatible data structures
+- Easy transition from mock → real ACO
+
+**Automation**:
+- Deterministic data generation
+- npm scripts for complete pipeline
+- Reproducible builds
+- CI/CD friendly
+
+### Production-Scale Performance
+
+Even at demo scale (70 products), ACO demonstrates production readiness:
+- GraphQL queries: <200ms response time
+- Policy evaluation: Adds minimal latency (~10-20ms)
+- Price calculation: Real-time (no caching needed)
+- Multi-source inventory: Integrates seamlessly with Adobe Commerce MSI
+
+Enterprise implementations with 100× the catalog size report similar performance, validating ACO's scalability.
 
 ---
 
 ## Conclusion
 
-BuildRight Solutions' Adobe Commerce Optimizer implementation demonstrates how modern B2B commerce can move beyond one-size-fits-all catalogs to deliver personalized, context-aware experiences that benefit both buyers and sellers.
+BuildRight Solutions Version 2.0 demonstrates how a single product catalog can serve five radically different personas with personalized, context-aware experiences through Adobe Commerce Optimizer's Composable Catalog Data Model.
 
-For contractors, the transformation is tangible: 70% less time searching for products, automatic volume discounts without negotiation, and confidence that displayed products are actually available at their regional warehouse.
+### Key Takeaways
 
-For BuildRight, the operational benefits are equally compelling: a single catalog serves all customer segments, tier-based pricing rewards loyalty automatically, and real-time catalog composition eliminates the overhead of managing hundreds of static views.
+**For Buyers:**
+- 79% average reduction in product selection time across all personas
+- Automatic tier-based pricing eliminates manual quotes and negotiation
+- Progressive disclosure prevents mistakes and builds confidence
+- Transparent savings display builds trust
 
-Most importantly, BuildRight proves that sophisticated B2B personalization doesn't require abandoning a single source of truth or creating duplicate data structures. Adobe Commerce Optimizer's composable architecture delivers personalization through intelligent filtering, hierarchical pricing, and trigger-based policies - not through catalog duplication.
+**For Sellers:**
+- Single catalog serves all personas (zero product duplication)
+- 80% reduction in catalog maintenance overhead
+- Real-time catalog composition eliminates static view management
+- Tiered pricing rewards loyalty automatically
 
-The result is a demonstration environment that showcases enterprise-scale B2B commerce capabilities while remaining comprehensible, reproducible, and maintainable by development and sales teams.
+**For Developers:**
+- Straightforward data generation pipeline (`npm run generate:all`)
+- Frontend mock enables development without backend dependency
+- Production-compatible data structures ease transition to real ACO
+- Triggered policies provide flexible, composable filtering
+
+### The Power of CCDM
+
+BuildRight proves that sophisticated B2B personalization doesn't require:
+- Duplicate catalogs per customer segment
+- Complex synchronization logic
+- Manual pricing negotiations
+- Static pre-built views
+
+Instead, CCDM delivers personalization through:
+- Single source of truth (one catalog)
+- Intelligent attribute tagging (12 persona-specific attributes)
+- Triggered policies (28 policies, AND logic composition)
+- Hierarchical pricing (customer tier + volume tier)
+
+The result: A demonstration environment showcasing enterprise B2B commerce capabilities while remaining comprehensible, reproducible, and maintainable.
 
 ---
 
 ## Appendix: Key Metrics
 
-**Catalog Scale:**
-- 184 total products (demo scale; production supports 100,000+)
-- 70 simple products
-- 20 configurable products with 92 variants
-- 15 bundle products
-- 10 service products
-- 34 metadata attributes
-- 19 categories (2-level hierarchy)
+### Catalog Scale
+- **70 total products** (demo scale; production supports 250M SKUs)
+- **12 persona-specific attributes** + 20+ standard attributes
+- **19 categories** (2-level hierarchy)
+- **Product types**: 70% simple, 15% configurable, 10% bundle, 5% service
 
-**Pricing Structure:**
-- 10 hierarchical price books (3 levels: base → segment → tier)
-- 1,770 price entries (simplified model, 94% reduction from complex model)
-- 3-5% tier discounts on high-volume products
-- Volume breakpoints at 100 and 294 units
+### Pricing Structure
+- **5 hierarchical price books** (1 base + 4 customer tiers)
+- **1,770 price entries** (volume tier pricing on high-volume products)
+- **Customer tier discounts**: 0% (retail), 5% (loyalty), 10% (trade), 15% (builder), 25% (wholesale)
+- **Volume tier discounts**: 0% (1-99), 3% (100-293), 8% (294+)
 
-**Geographic Distribution:**
-- 6 inventory locations across 3 US regions
-- Western: Sacramento RDC (CA), Phoenix Warehouse (AZ)
-- Central: Denver Warehouse (CO)
-- Eastern: Charlotte RDC (NC), Atlanta Warehouse (GA)
-- Virtual: Premium Windows drop shipper (specialty items)
+### Policy Framework
+- **28 triggered policies** across 10 categories
+- **Policy categories**: Construction Phase (3), Quality Tier (3), Package Tier (3), Deck Shape (3), Deck Material (3), Deck Compatible (1), Store Velocity (3), Restock Priority (3), Room Category (3), Project Type (3)
+- **Policy logic**: AND combination (all active policies must be satisfied)
+- **Catalog reduction**: 60-85% per persona (70 products → 12-28 visible products)
 
-**B2B Structure:**
-- 3 companies (Commercial, Residential, Pro divisions)
-- 6 teams/locations (2 per company)
-- 12 users (4 per company, 2 per location)
-- 4 user roles (Company Admin, Approver, Senior Buyer, Default User)
+### Business Outcomes
+- **79% average time savings** across all personas (product selection)
+- **87% time savings** for Sarah (template-based ordering)
+- **83% time savings** for David (progressive deck wizard)
+- **80% maintenance reduction** (single catalog vs. 5 separate catalogs)
+- **5-25% customer tier discounts** (automatic, transparent)
+- **3-8% volume tier discounts** (incentivizes bulk ordering)
 
-**Implementation Timeline:**
-- Total setup time: 12-16 hours
-- Can be completed over 2-3 days
-- Longest phase: B2B company configuration (6-8 hours due to manual UI work)
-- Data ingestion: 1-2 hours (automated API upload)
+### Implementation Timeline
+- **Data generation**: 8 minutes (automated)
+- **ACO ingestion**: 4-6 hours (manual API uploads)
+- **Policy configuration**: 45-60 minutes (manual ACO Admin UI)
+- **Total setup time**: 5-7 hours
 
-**Business Outcomes:**
-- 70% reduction in contractor search time
-- $10,000+ savings per large commercial order via tier pricing
-- 94% reduction in price entry count while maintaining full functionality
-- Single catalog serves all customer segments dynamically
-- Real-time catalog composition without static view management overhead
+### Personas
+- **Sarah Martinez**: Production Builder, 120 homes/year, $2.5M volume, 15% discount
+- **Marcus Johnson**: General Contractor, 3-5 homes/year, $400K volume, 10% discount
+- **Lisa Chen**: Remodeling Contractor, 30-40 projects/year, $900K volume, 10% discount
+- **David Thompson**: Pro Homeowner, DIY projects, <$10K/year, 5% discount (optional)
+- **Kevin Rodriguez**: Store Manager, weekly restock orders, $450K/year, 25% discount
 
 ---
 
-## Part 5: Project Builder Enhancement
+**Document Version:** 2.0  
+**Last Updated:** November 2024  
+**Project Status:** Active Development
 
-### Guided Project Workflow
-
-In addition to dynamic catalog filtering, BuildRight offers a **Project Builder** wizard that guides contractors through a step-by-step process to create customized material kits for their specific projects. This enhancement complements the existing catalog filtering capabilities by providing a more structured, guided experience for users who prefer a curated approach.
-
-### How Project Builder Works
-
-The Project Builder wizard collects four key pieces of information:
-
-**1. Project Type**
-Contractors select from the same four project types used in catalog filtering:
-- New Construction
-- Remodel
-- Repair
-- Restoration
-
-**2. Project Details**
-Based on the project type, contractors provide additional context:
-- **Remodel**: Bathroom, Kitchen, Basement, Whole House, Exterior, Other
-- **New Construction**: Residential Home, Commercial Building, Addition, Other
-- **Repair**: Plumbing, Electrical, Structural, Roofing, Other
-- **Restoration**: Historic Home, Commercial Building, Specific Room, Other
-
-**3. Project Complexity**
-Contractors indicate the complexity level, which affects product selection and quantities:
-- **Basic**: DIY-friendly projects with standard materials (fewer items, lower quantities)
-- **Moderate**: Projects requiring some professional help with mid-range materials (standard item count and quantities)
-- **Complex**: Professional-grade projects requiring premium materials (more items, higher quantities)
-
-**4. Budget Range**
-Contractors select their budget range, which influences product selection and total kit value:
-- Under $5,000
-- $5,000 - $15,000
-- $15,000 - $30,000
-- $30,000 - $50,000
-- $50,000+
-
-### Dynamic Bundle Generation
-
-Based on the wizard selections, the system generates a **dynamic bundle product** that includes:
-
-- **Curated Product Selection**: Products are selected based on:
-  - Project type (filters by `project_types` attribute)
-  - Project detail (maps to specific product categories)
-  - Complexity level (affects number of items and quality tier)
-  - Budget range (constrains total value and item count)
-
-- **Suggested Quantities**: Each product in the bundle includes a suggested quantity based on:
-  - Project complexity (basic = lower quantities, complex = higher quantities)
-  - Project scope (whole house = more, specific room = less)
-  - Budget constraints (ensures total stays within range)
-
-- **Inclusion Reasons**: Each product includes a brief explanation of why it's included in the bundle, helping contractors understand the recommendation.
-
-### Bundle as Dynamic Product
-
-The generated bundle is treated as a **dynamic bundle product** in the cart:
-
-- **Single Cart Entry**: The bundle appears as one item in the cart with a total price
-- **Expandable View**: Contractors can expand the bundle to see all component items
-- **Quantity Modification**: Contractors can adjust quantities of individual items within the bundle
-- **Bundle Customization**: Contractors can choose to customize the bundle by viewing a filtered catalog based on their wizard selections
-
-### Integration with Catalog Filtering
-
-The Project Builder complements (rather than replaces) the existing catalog filtering:
-
-- **Wizard Selections as Filters**: When contractors complete the wizard, they can choose to view a filtered catalog based on their selections
-- **Same Underlying System**: Both Project Builder and catalog filtering use the same ACO trigger policies (`AC-Policy-Project-Type`, etc.)
-- **Flexible Workflow**: Contractors can:
-  - Use Project Builder for guided kit creation
-  - Use catalog filtering for manual product selection
-  - Combine both approaches (start with builder, then customize in catalog)
-
-### Business Value
-
-**For Contractors:**
-- **Faster Material Selection**: Guided workflow reduces decision fatigue
-- **Comprehensive Kits**: Ensures no essential materials are missed
-- **Budget Alignment**: Kits are automatically constrained to selected budget range
-- **Educational**: Inclusion reasons help contractors learn about material requirements
-
-**For BuildRight:**
-- **Higher Order Values**: Bundles encourage complete material sets
-- **Reduced Support**: Guided workflow reduces questions about what materials are needed
-- **Upsell Opportunities**: Complexity and budget selections identify high-value customers
-- **Data Insights**: Wizard selections provide data on project types and budgets
-
-### Technical Implementation
-
-The Project Builder requires additional ACO trigger policies beyond the base catalog filtering:
-
-**Required ACO Policies:**
-- **Complexity Filter Policy**: `AC-Policy-Complexity` header filters products by quality/complexity tier (basic, moderate, complex)
-- **Budget Range Filter Policy**: `AC-Policy-Budget-Range` header filters products by price range
-- **Product Attributes**: Products must have `quality_tier` or `complexity_level` attribute assigned
-- **Price Tier Attribute** (optional): Products may have `price_tier` attribute for budget filtering
-
-**Frontend Implementation:**
-- **Wizard State**: Stored in `sessionStorage` for persistence across steps
-- **Bundle Generation**: JavaScript-based recommendation engine uses product metadata and ACO-filtered results
-- **HTTP Headers**: Wizard sends multiple policy headers (`AC-Policy-Project-Type`, `AC-Policy-Product-Category`, `AC-Policy-Complexity`, `AC-Policy-Budget-Range`) to ACO GraphQL API
-- **Cart Integration**: Bundles stored in `localStorage` cart with special `type: 'bundle'` identifier
-
-**Integration Flow:**
-1. User completes wizard (project type, detail, complexity, budget)
-2. Frontend sends GraphQL query with multiple policy headers
-3. ACO applies all policies (logical AND) to filter catalog
-4. Frontend receives filtered product set
-5. Recommendation engine selects products and generates bundle
-6. Bundle added to cart as dynamic product
-
-This demonstrates how frontend enhancements can leverage ACO's policy system to create sophisticated, personalized experiences while maintaining a single source of truth for catalog data.
-
----
-
-## Part 6: Persona-Based Experiences (Version 2.0)
-
-### Evolution to Persona-Driven Demo
-
-BuildRight Version 2.0 expands the original three-division model to demonstrate **five distinct user personas**, each with unique catalog needs, pricing tiers, and workflow requirements. This evolution showcases ACO's flexibility in serving diverse customer segments with personalized experiences.
-
-### The Five Personas
-
-#### 6.1 Sarah Martinez - Production Builder
-
-**Profile:**
-- **Company**: Sunset Valley Homes (Production Builder)
-- **Scale**: 120 homes/year across 3 active subdivisions
-- **Price Book**: Production-Builder (15% off retail)
-- **Annual Volume**: $2.5M+
-
-**Use Case**: Template-Based Repeat Ordering
-
-Sarah orders materials for multiple units of "The Sedona" floor plan. She has saved templates for this design and uses them to quickly generate material lists for 8 units, with 3 units including a bonus room variant.
-
-**Key Features:**
-- **Floor Plan Templates**: Pre-built BOMs for standardized home designs
-- **Variant Management**: Adjust templates for options like bonus rooms
-- **Phase-Based Ordering**: Separate orders by construction phase (foundation, framing, envelope)
-- **Volume Pricing**: Automatic 15% discount + volume tier discounts on bulk orders
-- **Phased Delivery**: Schedule materials to arrive at specific project milestones
-
-**CCDM Value**: Template reuse eliminates repetitive material selection. Bulk multipliers and tier pricing deliver $20K-$50K savings per project. Variant management handles custom options without rebuilding BOMs from scratch.
-
----
-
-#### 6.2 Marcus Johnson - General Contractor
-
-**Profile:**
-- **Company**: Johnson Custom Builders
-- **Scale**: 3-5 custom homes/year, $800K-$1.5M each
-- **Price Book**: Trade-Professional (10% off retail)
-- **Annual Volume**: $400K
-
-**Use Case**: Semi-Custom Project Builder with Phase Ordering
-
-Marcus uses a project wizard to generate a comprehensive materials list for the Patterson residence - a 2,400 sq ft custom home. The wizard guides him through project type, scope, quality level, and construction phase to create a tailored BOM.
-
-**Key Features:**
-- **Project Wizard**: Guided material selection based on project specs
-- **Quality Tier Selection**: Choose builder-grade, professional, or premium materials
-- **Construction Phase Filtering**: Order only Phase 1 (foundation & framing) materials today
-- **Progressive Catalog**: Catalog filters dynamically based on wizard selections
-- **Project Persistence**: Save project for future phase ordering
-
-**CCDM Value**: Wizard-driven generation reduces 45-minute material selection to 12-15 minutes. Quality tier filtering ensures appropriate material grades. Phase-based ordering aligns with cash flow and project timelines.
-
----
-
-#### 6.3 Lisa Chen - Remodeling Contractor
-
-**Profile:**
-- **Company**: Chen Kitchen & Bath Remodeling
-- **Scale**: 30-40 kitchen/bath remodels/year, $20K-$60K each
-- **Price Book**: Trade-Professional (10% off retail)
-- **Annual Volume**: $900K
-
-**Use Case**: Package Selection with Customization
-
-Lisa presents clients with Good/Better/Best bathroom packages, allowing them to see complete pricing before committing. Clients can customize within their selected tier, swapping fixtures and finishes while staying on budget.
-
-**Key Features:**
-- **Package Comparison**: Side-by-side view of Good ($8,500), Better ($14,200), Best ($23,800)
-- **Within-Tier Customization**: Swap fixtures without changing package price significantly
-- **Visual Package Builder**: See package contents, swap items, add options
-- **Client Sharing**: Email package details to clients for approval
-- **Room Category Filtering**: Bathroom, kitchen, or any-room materials
-
-**CCDM Value**: Pre-configured packages accelerate client consultations. Within-tier swapping provides customization without budget risk. Clear pricing builds client trust and reduces negotiation time.
-
----
-
-#### 6.4 David Thompson - Pro Homeowner (DIY)
-
-**Profile:**
-- **Type**: Software Engineer, DIY enthusiast
-- **Project**: Building a 16x20 deck in his Portland backyard
-- **Price Book**: Retail-Registered (5% loyalty discount, or retail)
-- **Budget**: $6,000-$8,000
-
-**Use Case**: Progressive Deck Builder with Triggered Policies
-
-David uses an interactive deck builder that guides him through selecting deck shape, size, material, and railing options. The catalog progressively filters at each step, showing only compatible products and preventing incompatible selections.
-
-**Key Features:**
-- **Step-by-Step Wizard**: Shape → Size → Material → Railing → Accessories
-- **Progressive Filtering**: Each selection triggers policies that filter subsequent choices
-- **Compatibility Validation**: System prevents mismatched components
-- **Educational Content**: Maintenance requirements, skill level, time estimates
-- **Complete Kits**: Everything needed for installation, with exception lists
-
-**CCDM Value**: Triggered policies reduce 184-product catalog to ~35 relevant items. Progressive disclosure prevents mistakes (can't select wood railing for composite deck). Educational guidance builds confidence for DIY customers.
-
----
-
-#### 6.5 Kevin Rodriguez - Store Manager
-
-**Profile:**
-- **Company**: Pacific Northwest Hardware (Regional chain)
-- **Role**: Store Manager, Store #7 - Tacoma, WA
-- **Price Book**: Wholesale-Reseller (25% off retail, cost-based)
-- **Order Frequency**: 2-3 times per week
-
-**Use Case**: Velocity-Based Inventory Restock
-
-Kevin uses a restock dashboard that shows high-priority items based on sales velocity and current stock levels. The system suggests reorder quantities based on historical data, with Kevin adjusting for promotions or seasonal changes.
-
-**Key Features:**
-- **Velocity-Based Filtering**: High/Medium/Low velocity categories
-- **Restock Priority**: Critical/High/Medium urgency indicators
-- **Smart Quantity Suggestions**: Based on avg daily sales and lead time
-- **Promotion Adjustments**: Manual overrides for upcoming sales events
-- **Days Supply Tracking**: "Out of stock in 1.2 days" warnings
-
-**CCDM Value**: Velocity filtering focuses attention on high-priority items. Smart suggestions reduce ordering errors. Wholesale pricing (25% off retail) enables competitive retail margins. Frequency-based catalog views streamline regular reorders.
-
----
-
-### Pricing Architecture (Version 2.0)
-
-BuildRight Version 2.0 simplifies the pricing structure from 10 price books to 5, creating a cleaner persona-driven model:
-
-| Price Book | Discount | Persona(s) | Use Case |
-|------------|----------|------------|----------|
-| **US-Retail** | 0% (base) | General public, walk-ins | Retail catalog pricing |
-| **Production-Builder** | 15% off retail | Sarah Martinez | High-volume production builders |
-| **Trade-Professional** | 10% off retail | Marcus Johnson, Lisa Chen | Licensed contractors and remodelers |
-| **Wholesale-Reseller** | 25% off retail | Kevin Rodriguez | Stores buying for resale |
-| **Retail-Registered** | 5% off retail | David Thompson (optional) | Loyalty discount for registered DIY customers |
-
-**Volume Tier Pricing** (applies within each price book):
-- **1-99 units**: Base tier price
-- **100-293 units**: Additional 3% discount (volume pricing)
-- **294+ units**: Additional 8% discount (pallet/bundle pricing)
-
-**Example: 2x4x8 Stud Pricing for 10,000 Units**
-
-| Persona | Customer Tier | Volume Tier | Unit Price | 10K Order | Savings vs Retail |
-|---------|---------------|-------------|------------|-----------|-------------------|
-| General | 0% | -8% (pallet) | $9.20 | $92,000 | Baseline |
-| David | -5% | -8% | $8.74 | $87,400 | $4,600 (5%) |
-| Marcus/Lisa | -10% | -8% | $8.28 | $82,800 | $9,200 (10%) |
-| Sarah | -15% | -8% | $7.82 | $78,200 | $13,800 (15%) |
-| Kevin | -25% | -8% | $6.90 | $69,000 | $23,000 (25%) |
-
-**Key Insight**: Sarah's 15% customer tier discount + 8% volume tier discount = 22% total savings on large orders. Kevin's wholesale pricing enables competitive retail margins.
-
----
-
-### Triggered Policy Framework
-
-Version 2.0 implements **28 triggered policies across 10 categories** to enable dynamic catalog filtering for each persona:
-
-#### Policy Categories
-
-**1. Construction Phase Policies** (Marcus, Sarah)
-- `foundation_framing`: Structural materials for early construction
-- `envelope`: Windows, doors, roofing for weather barrier
-- `interior_finish`: Drywall, trim, flooring for final phases
-
-**2. Quality Tier Policies** (Marcus)
-- `builder_grade`: Budget-friendly materials
-- `professional`: Mid-tier quality for standard projects
-- `premium`: High-end materials for luxury projects
-
-**3. Package Tier Policies** (Lisa)
-- `good`: $8,500 bathroom package (builder-grade)
-- `better`: $14,200 bathroom package (mid-range)
-- `best`: $23,800 bathroom package (premium)
-
-**4. Deck Builder Policies** (David)
-- **Shape**: `rectangular`, `l_shaped`, `multi_level`
-- **Material**: `wood`, `composite`, `pvc`
-- **Compatibility**: `deck_compatible=true` (filters to deck-only products)
-
-**5. Store Velocity Policies** (Kevin)
-- `high_velocity`: Fast-moving products (restock 2-3x per week)
-- `medium_velocity`: Standard products (weekly restock)
-- `low_velocity`: Specialty items (as-needed restock)
-
-**6. Restock Priority Policies** (Kevin)
-- `critical`: <20% stock (order today)
-- `high`: 20-40% stock (order within 2-3 days)
-- `medium`: 40-60% stock (order within 1 week)
-
-**7. Room Category Policies** (Lisa)
-- `bathroom`: Bathroom-specific fixtures and materials
-- `kitchen`: Kitchen-specific products
-- `any`: Universal materials (flooring, paint, trim)
-
-**8. Project Type Policies** (Universal)
-- `new_construction`: Structural focus
-- `remodel`: Finish materials focus
-- `repair`: Maintenance products
-
-#### Policy Application Example: David's Deck Builder
-
-**Step 1: Select Shape → Rectangular**
-```http
-AC-Policy-Deck-Shape: rectangular
-```
-Result: 184 products → ~80 products (rectangular-compatible)
-
-**Step 2: Select Material → Composite**
-```http
-AC-Policy-Deck-Shape: rectangular
-AC-Policy-Deck-Material: composite
-```
-Result: 80 products → ~35 products (composite decking, compatible railings, fasteners)
-
-**Step 3: Filter to Deck-Only**
-```http
-AC-Policy-Deck-Shape: rectangular
-AC-Policy-Deck-Material: composite
-AC-Policy-Deck-Compatible: true
-```
-Result: 35 products → ~25 products (excludes general construction materials)
-
-**Outcome**: David sees only the 25 products relevant to his composite rectangular deck. System prevented him from seeing:
-- Wood-specific products (incompatible)
-- L-shaped specific products (wrong shape)
-- General lumber (not deck-specific)
-
----
-
-### Technical Implementation
-
-**Persona-Specific Attributes** (added to all products):
-- `construction_phase`: foundation_framing, envelope, interior_finish
-- `quality_tier`: builder_grade, professional, premium
-- `package_tier`: good, better, best
-- `room_category`: bathroom, kitchen, any
-- `deck_shape`: rectangular, l_shaped, multi_level
-- `deck_material_type`: wood, composite, pvc
-- `deck_compatible`: true/false
-- `deck_railing_compatible`: true/false
-- `store_velocity_category`: high, medium, low
-- `recommended_restock_quantity`: integer
-- `typical_days_supply`: integer
-- `restock_priority`: critical, high, medium
-
-**Data Generation Pipeline**:
-1. Generate products with persona attributes
-2. Generate 5 price books with customer tier structure
-3. Generate prices with volume tier breakpoints
-4. Generate policy guide (28 policies, manual ACO setup)
-5. Transform ACO data → EDS format for frontend
-
-**Frontend Mock Service**:
-- Reads generated data files
-- Simulates ACO GraphQL queries
-- Applies policy filters client-side
-- Enables frontend development without ACO connection
-
-See `PRICING-STRATEGY.md` for detailed pricing documentation and `data/buildright/POLICY-SETUP-GUIDE.md` for ACO policy configuration instructions.
-
----
-
-**Document Version:** 2.0
-**Last Updated:** November 2024
 **Related Documentation:**
 - [Pricing Strategy](PRICING-STRATEGY.md) - Detailed pricing model and examples
-- [Policy Setup Guide](../data/buildright/POLICY-SETUP-GUIDE.md) - ACO policy configurations
-- [Setup Guide](SETUP-GUIDE.md) - Technical implementation procedures
-- [Project README](../README.md) - Build process and scripts
+- [Policy Setup Guide](../data/buildright/POLICY-SETUP-GUIDE.md) - ACO Admin UI configuration
+- [Project README](../README.md) - Build process and npm scripts
+- [Phase 1 Plan](../../buildright-eds/docs/PHASE-1-ACO-DATA-FOUNDATION.md) - Implementation roadmap
+
