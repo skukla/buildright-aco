@@ -1,903 +1,995 @@
-# BuildRight ACO Setup Guide
+# BuildRight Setup Guide - Persona-Driven Demo
 
-**Complete Implementation Procedures**
+**Version**: 2.0  
+**Last Updated**: November 2024  
+**Audience**: Developers, Demo Engineers, Solutions Architects
 
 ---
 
 ## Overview
 
-This guide provides step-by-step implementation procedures for setting up the BuildRight Adobe Commerce Optimizer demo environment from scratch.
+This guide provides complete step-by-step instructions for setting up the BuildRight persona-driven demo, including data generation, ACO ingestion, policy configuration, and frontend integration.
 
-**Total Time:** 12-16 hours (can be spread over 2-3 days)
+**What You'll Build:**
+- 70-product catalog with persona-specific attributes
+- 5 price books with customer tier + volume tier pricing
+- 28 triggered policies for dynamic catalog filtering
+- Frontend mock service for EDS development
+- 5 complete persona experiences
 
-**Target Audience:** Implementation engineers, sales engineers, solution architects
-
-**Related Documentation:**
-- [Case Study](BUILDRIGHT-CASE-STUDY.md) - Business context and outcomes
-- [MSI Configuration Guide](manual-setup/msi-configuration-guide.md) - Detailed inventory setup
-- [B2B Configuration Guide](manual-setup/b2b-configuration-guide.md) - Detailed company setup
-- [Trigger Policy Guide](manual-setup/trigger-policy-guide.md) - Detailed policy configuration
-- [B2B Architecture](architecture/buildright-b2b-structure.md) - Structure diagram
+**Time Estimate**: 6-8 hours (mostly ACO ingestion and policy setup)
 
 ---
 
-## Quick Reference
+## Table of Contents
 
-### Setup Phases
-
-| Phase | Time | Type |
-|-------|------|------|
-| 1. Environment Setup | 30 min | Configuration |
-| 2. Data Generation | 15 min | Automated |
-| 3. Data Ingestion | 1-2 hrs | API Upload |
-| 4. Multi-Source Inventory | 2.5-4 hrs | Manual UI |
-| 5. B2B Configuration | 6-8 hrs | Manual UI |
-| 6. Trigger Policies | 1-2 hrs | ACO Admin UI |
-| 6.5. Project Builder Policies | 30-45 min | ACO Admin UI (Optional) |
-| 7. Validation | 1 hr | Testing |
-
-### Key Data Counts
-
-- **Products:** 184 (70 simple + 92 variants + 15 bundles + 10 services)
-- **Price Books:** 10 (3-level hierarchy)
-- **Price Entries:** 1,770
-- **Inventory Sources:** 6 locations across 3 regions
-- **B2B Companies:** 3 companies, 6 locations, 12 users
+1. [Prerequisites](#prerequisites)
+2. [Phase 1: Environment Setup](#phase-1-environment-setup)
+3. [Phase 2: Data Generation](#phase-2-data-generation)
+4. [Phase 3: ACO Ingestion](#phase-3-aco-ingestion)
+5. [Phase 4: Price Book Configuration](#phase-4-price-book-configuration)
+6. [Phase 5: Policy Configuration](#phase-5-policy-configuration)
+7. [Phase 6: Frontend Integration](#phase-6-frontend-integration)
+8. [Phase 7: Testing & Validation](#phase-7-testing--validation)
+9. [Troubleshooting](#troubleshooting)
+10. [Maintenance](#maintenance)
 
 ---
 
 ## Prerequisites
 
-**Required Access:**
-- Adobe Commerce Optimizer instance (sandbox or production)
-- Adobe Developer Console (for OAuth credentials)
-- Adobe Commerce 2.4.x with B2B extension
-- Admin access to Adobe Commerce
+### Required Software
 
-**Required Tools:**
-- Node.js 20.14.0+ and npm 9.x+
-- Git for cloning repository
-- Terminal/command line access
-- Text editor for .env configuration
+- **Node.js**: v20.14.0 or higher
+- **npm**: v9.x or higher
+- **Git**: For repository management
+- **Text Editor**: VS Code, Sublime, or similar
+
+### Required Access
+
+- **Adobe Commerce Optimizer**: Sandbox or production instance
+- **Adobe Developer Console**: For API credentials
+  - CLIENT_ID
+  - CLIENT_SECRET
+  - TENANT_ID
+- **ACO Admin UI Access**: For policy configuration (cannot be done via API)
+
+### Knowledge Requirements
+
+- Basic Node.js/npm usage
+- Understanding of REST API concepts
+- Familiarity with JSON data structures
+- Basic GraphQL knowledge (for testing)
 
 ---
 
 ## Phase 1: Environment Setup
 
-> **Context:** Configure OAuth credentials and environment variables to connect to your ACO instance.
-
-### 1.1 Get Adobe Developer Console Credentials
-
-1. Go to [Adobe Developer Console](https://developer.adobe.com/console)
-2. Create new project or select existing project
-3. Click **Add API** → Search "Adobe Commerce Optimizer"
-4. Select **OAuth Server-to-Server** authentication
-5. Click **Save configured API**
-6. Navigate to **Credentials** tab
-7. Copy **Client ID** and **Client Secret**
-
-> **IMPORTANT:** Keep credentials secure. Never commit to version control.
-
-### 1.2 Get Your Tenant ID
-
-1. Go to [Commerce Cloud Manager](https://experience.adobe.com/)
-2. Navigate to **Commerce → Commerce Cloud Manager**
-3. Select your ACO instance
-4. Click **info icon** (ⓘ) to view instance details
-5. Copy `TENANT_ID` from endpoint URL:
-   ```
-   https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql
-   ```
-
-### 1.3 Clone Repository and Install
+### 1.1 Clone Repository
 
 ```bash
-# Clone repository
+# Clone the buildright-aco repository
 git clone <repository-url>
 cd buildright-aco
+
+# Checkout persona branch
+git checkout persona-enhancements
 
 # Install dependencies
 npm install
 ```
 
-**Verify installation:**
-```bash
-node --version  # Should show v20.14.0+
-npm --version   # Should show 9.x+
-```
-
-### 1.4 Configure Environment Variables
+### 1.2 Configure Environment
 
 ```bash
-# Create .env from template
+# Copy environment template
 cp .env.dist .env
+
+# Edit .env with your credentials
+nano .env  # or your preferred editor
 ```
 
-Edit `.env` with your credentials:
+**Required Environment Variables:**
 
-```env
-##################################################
-# Adobe Commerce Optimizer Configuration
-##################################################
-
-# Required: OAuth Credentials
+```bash
+# Adobe Commerce Optimizer Authentication
 CLIENT_ID=your-client-id-here
 CLIENT_SECRET=your-client-secret-here
 
-# Required: Instance Configuration
+# ACO Instance Configuration
 TENANT_ID=your-tenant-id-here
-REGION=na1
-ENVIRONMENT=sandbox
+REGION=na1                    # or your region (na1, emea1, apac1)
+ENVIRONMENT=sandbox           # or production
 
-# Optional: Configuration
-VIEW_ID=default
-SOURCE_LOCALE=en-US
-SEED=12345
-LOG_LEVEL=info
+# Optional: Query Configuration
+PAGE_SIZE=100                 # Number of items per page in GraphQL queries
+MAX_RETRIES=3                 # Number of retry attempts for failed requests
+INITIAL_RETRY_DELAY_MS=1000   # Initial delay between retries
+RETRY_BACKOFF_MULTIPLIER=2    # Exponential backoff multiplier
+
+# Optional: Data Generation
+SEED=12345                    # Seed for deterministic random generation
 ```
 
-### 1.5 Test Configuration
+### 1.3 Verify Configuration
 
 ```bash
-node -e "
-import { getACOClient } from './utils/aco-client.js';
-const client = getACOClient();
-console.log('✅ ACO Client initialized successfully');
-console.log('Configuration:', {
-  region: process.env.REGION,
-  environment: process.env.ENVIRONMENT,
-  tenantId: process.env.TENANT_ID ? '***' + process.env.TENANT_ID.slice(-4) : 'MISSING'
-});
-"
+# Test ACO connection
+npm run validate
+
+# Expected output:
+# ✓ Environment variables loaded
+# ✓ ACO connection successful
+# ✓ Tenant ID: <your-tenant-id>
 ```
 
-**Expected output:**
-```
-✅ ACO Client initialized successfully
-Configuration: { region: 'na1', environment: 'sandbox', tenantId: '***xxxx' }
-```
-
-✅ **Checkpoint:** Test script runs without errors
+**If connection fails:**
+- Verify credentials in Adobe Developer Console
+- Check TENANT_ID and REGION settings
+- Ensure ACO instance is active
 
 ---
 
 ## Phase 2: Data Generation
 
-> **Context:** Generate 184 products, 10 price books, 1,770 prices, and 6 inventory sources using deterministic scripts. All generation uses SEED=12345 for reproducibility.
-
 ### 2.1 Generate All Data
 
-```bash
-SEED=12345 npm run generate:all
-```
-
-**Expected output:**
-```
-✓ Generated metadata: 34 attributes
-✓ Generated categories: 19 categories
-✓ Generated products: 70 simple products
-✓ Generated variants: 92 variants (20 parents)
-✓ Generated bundles: 15 bundles
-✓ Generated price books: 10 price books
-✓ Generated prices: 1,770 price entries
-✓ Generated inventory: 4,446 inventory records
-
-✅ All data generated successfully to data/buildright/
-```
-
-**Time:** ~15 seconds
-
-### 2.2 Verify Generated Files
+Run the complete data generation pipeline:
 
 ```bash
-ls -lh data/buildright/
+npm run generate:all
 ```
 
-**Expected output:**
-```
-metadata.json        1.1 KB    34 records
-categories.json      177 B     19 records
-products.json        3.5 KB    70 records
-variants.json        8.9 KB    92 records
-bundles.json         2.0 KB    15 records
-price-books.json     51 B      10 records
-prices.json          360 KB    1,770 records
-inventory.json       200 KB    4,446 records
-sources.json         97 B      6 records
-```
+This executes 8 steps in sequence:
+1. Metadata generation
+2. Category generation
+3. Product generation
+4. Variant generation
+5. Bundle generation
+6. Price book generation
+7. Price generation
+8. Policy guide generation
+9. EDS data generation
 
-✅ **Checkpoint:** All 9 JSON files exist with non-zero sizes
+**Expected Duration**: ~8 minutes
 
-### 2.3 Individual Generation (Optional)
+**Output Files** (in `data/buildright/`):
+- `metadata.json` - Product schema and attribute definitions
+- `categories.json` - Category tree (19 categories)
+- `products.json` - 70 products with persona attributes
+- `variants.json` - Configurable product variants
+- `bundles.json` - Bundle products
+- `price-books.json` - 5 price books
+- `prices.json` - Retail pricing + volume tiers (1,770 entries)
+- `inventory.json` - Multi-source inventory
+- `sources.json` - Inventory source definitions
+- `POLICY-SETUP-GUIDE.md` - Policy configuration instructions
 
-If you need to regenerate specific data types:
+**Output Files** (in `../buildright-eds/data/`):
+- `mock-products.json` - EDS-compatible products
+- `project-recommendations.json` - Templates, packages, kits
+
+### 2.2 Verify Generated Data
 
 ```bash
-# Product Catalog
-npm run generate:metadata      # 34 attributes
-npm run generate:categories    # 19 categories
-npm run generate:products      # 70 simple products
-npm run generate:variants      # 92 variants
-npm run generate:bundles       # 15 bundles
+# Check product count
+node -e "console.log(JSON.parse(require('fs').readFileSync('data/buildright/products.json')).length)"
+# Expected: 70
 
-# Pricing
-npm run generate:price-books   # 10 price books
-npm run generate:prices        # 1,770 price entries
+# Check price book count
+node -e "console.log(JSON.parse(require('fs').readFileSync('data/buildright/price-books.json')).length)"
+# Expected: 5
 
-# Inventory
-npm run generate:inventory     # 4,446 inventory records
+# Check price entry count
+node -e "console.log(JSON.parse(require('fs').readFileSync('data/buildright/prices.json')).length)"
+# Expected: ~1770
+```
+
+### 2.3 Review Policy Guide
+
+```bash
+# View generated policy guide
+cat data/buildright/POLICY-SETUP-GUIDE.md | head -50
+```
+
+This guide contains configuration instructions for all 28 policies you'll create in Phase 5.
+
+---
+
+## Phase 3: ACO Ingestion
+
+### 3.1 Ingest Products
+
+**Duration**: 2-3 hours (ACO API processing time)
+
+```bash
+# Ingest all products
+npm run ingest:products
+```
+
+**Expected Output:**
+```
+✓ Validating products...
+✓ 70 products validated
+✓ Ingesting to ACO...
+  Progress: [========================================] 70/70
+✓ Products ingested successfully
+  Success: 70, Failed: 0
+```
+
+**If ingestion fails:**
+- Check ACO API rate limits
+- Verify product schema matches ACO requirements
+- Review error logs in console output
+- Use `--dry-run` flag to test without ingesting
+
+### 3.2 Ingest Variants (Optional)
+
+If your catalog includes configurable products:
+
+```bash
+npm run ingest:variants
+```
+
+### 3.3 Ingest Bundles (Optional)
+
+If your catalog includes bundle products:
+
+```bash
+npm run ingest:bundles
+```
+
+### 3.4 Verify Product Ingestion
+
+**Using ACO Admin UI:**
+1. Navigate to **ACO Admin** > **Catalog** > **Products**
+2. Filter by date: "Created today"
+3. Verify count: Should see 70 products
+4. Spot-check a few products:
+   - Check attributes exist (construction_phase, quality_tier, etc.)
+   - Verify product names and descriptions
+   - Confirm images are set
+
+**Using GraphQL API:**
+```graphql
+query {
+  products(filter: {}, pageSize: 100) {
+    total_count
+    items {
+      sku
+      name
+      attributes {
+        code
+        value
+      }
+    }
+  }
+}
+```
+
+Expected: `total_count: 70`
+
+---
+
+## Phase 4: Price Book Configuration
+
+### 4.1 Ingest Price Books
+
+**Duration**: 30 minutes
+
+```bash
+# Ingest price book hierarchy
+npm run ingest:price-books
+```
+
+**Expected Output:**
+```
+✓ Sorting price books by hierarchy...
+✓ Ingesting: US-Retail (base)
+✓ Ingesting: Production-Builder (child of US-Retail)
+✓ Ingesting: Trade-Professional (child of US-Retail)
+✓ Ingesting: Wholesale-Reseller (child of US-Retail)
+✓ Ingesting: Retail-Registered (child of US-Retail)
+✓ 5 price books ingested successfully
+```
+
+**Price Book Structure:**
+```
+US-Retail (base, currency: USD)
+├── Production-Builder (15% off retail)
+├── Trade-Professional (10% off retail)
+├── Wholesale-Reseller (25% off retail)
+└── Retail-Registered (5% off retail)
+```
+
+### 4.2 Ingest Prices
+
+**Duration**: 1-2 hours (1,770 price entries)
+
+```bash
+# Ingest all prices with volume tiers
+npm run ingest:prices
+```
+
+**Expected Output:**
+```
+✓ Validating prices...
+✓ 1,770 price entries validated
+✓ Ingesting to ACO...
+  Progress: [========================================] 1770/1770
+✓ Prices ingested successfully
+  Success: 1770, Failed: 0
+```
+
+**Volume Tier Pricing:**
+
+Each high-volume product has 3 price points per price book:
+- Quantity 1 (1-99 units): Base tier price
+- Quantity 100 (100-293 units): Base - 3%
+- Quantity 294 (294+ units): Base - 8%
+
+**Example: 2x4x8 Stud in Production-Builder price book**
+```json
+{
+  "sku": "LBR-D0414F1E",
+  "priceBookId": "Production-Builder",
+  "prices": [
+    { "quantity": 1, "value": 8.50 },
+    { "quantity": 100, "value": 8.25 },
+    { "quantity": 294, "value": 7.82 }
+  ]
+}
+```
+
+### 4.3 Verify Price Ingestion
+
+**Using ACO Admin UI:**
+1. Navigate to **ACO Admin** > **Pricing** > **Price Books**
+2. Verify 5 price books exist:
+   - US-Retail (base)
+   - Production-Builder (child)
+   - Trade-Professional (child)
+   - Wholesale-Reseller (child)
+   - Retail-Registered (child)
+3. Open "Production-Builder" price book
+4. Search for SKU: "LBR-D0414F1E"
+5. Verify 3 price points:
+   - Qty 1: $8.50
+   - Qty 100: $8.25
+   - Qty 294: $7.82
+
+**Using GraphQL API:**
+```graphql
+query {
+  priceBooks {
+    id
+    name
+    parentId
+    currency
+  }
+}
 ```
 
 ---
 
-## Phase 3: Data Ingestion
+## Phase 5: Policy Configuration
 
-> **Context:** Upload generated data to ACO via Data Ingestion API. Must follow order: metadata → categories → products → variants → bundles → price books → prices. Total ingestion time: 1-2 hours.
+**⚠️ IMPORTANT**: Triggered policies **cannot** be created via API. All 28 policies must be created manually in the ACO Admin UI.
 
-### 3.1 Ingest Metadata (2-3 min)
+**Duration**: 45-60 minutes
 
-```bash
-node scripts/ingest-metadata.js
-```
-
-**Expected output:**
-```
-📤 Ingesting metadata attributes to ACO...
-✓ Batch 1/1: 34 attributes
-✅ Successfully ingested 34 attributes
-```
-
-**Validation:** ACO Admin UI → Catalog → Attributes (verify 34 attributes appear)
-
-### 3.2 Ingest Categories (1-2 min)
+### 5.1 Access Policy Setup Guide
 
 ```bash
-node scripts/ingest-categories.js
+# Open the generated policy guide
+cat data/buildright/POLICY-SETUP-GUIDE.md
+
+# Or open in your browser/editor
+code data/buildright/POLICY-SETUP-GUIDE.md
 ```
 
-**Expected output:**
-```
-📤 Ingesting categories to ACO...
-✓ Batch 1/1: 19 categories
-✅ Successfully ingested 19 categories
-```
+This guide contains detailed instructions for all 28 policies.
 
-**Validation:** ACO Admin UI → Catalog → Categories (verify 5 parent + 14 child categories)
+### 5.2 Policy Creation Workflow
 
-### 3.3 Ingest Products (10-15 min)
+For **each of the 28 policies** in the guide:
 
-```bash
-node scripts/ingest-products.js
-```
+1. **Navigate to ACO Admin** > **CCDM** > **Policies** > **Create New**
 
-**Expected output:**
-```
-📤 Ingesting 70 products to ACO...
-✓ Batch 1/1: 70 products
-✅ Successfully ingested 70 products
-⏱️  Time: 12 minutes
-```
+2. **Enter Policy Details:**
+   - **Name**: Copy from policy guide (e.g., "Foundation & Framing Phase")
+   - **Trigger Type**: Select based on guide (e.g., "HTTP Header")
+   - **Trigger Value**: Enter header name (e.g., "AC-Policy-Phase")
 
-**Validation:** ACO Admin UI → Catalog → Products (verify 70 products, check SKU: LBR-D0414F1E exists)
+3. **Configure Filter:**
+   - **Filter Type**: Select based on guide (e.g., "attribute_match")
+   - **Attribute**: Enter attribute code (e.g., "construction_phase")
+   - **Value**: Enter attribute value (e.g., "foundation_framing")
 
-### 3.4 Ingest Variants (15-20 min)
+4. **Save and Activate:**
+   - Click "Save"
+   - Toggle "Active" to enable policy
 
-```bash
-node scripts/ingest-variants.js
-```
+5. **Test Policy:**
+   - Use GraphQL playground
+   - Send query with appropriate HTTP header
+   - Verify products are filtered correctly
 
-**Expected output:**
-```
-📤 Ingesting 92 variants (20 configurables) to ACO...
-✓ Batch 1/1: 92 variants
-✅ Successfully ingested 92 variants
-⏱️  Time: 18 minutes
-```
+### 5.3 Policy Categories to Create
 
-**Validation:** ACO Admin UI → Products (find configurable product LBR-LVL-BEAM-CONFIG, verify variants)
+**Construction Phase** (3 policies):
+- `foundation_framing` - Marcus, Sarah
+- `envelope` - Marcus, Sarah
+- `interior_finish` - Marcus, Sarah
 
-### 3.5 Ingest Bundles (8-10 min)
+**Quality Tier** (3 policies):
+- `builder_grade` - Marcus
+- `professional` - Marcus
+- `premium` - Marcus
 
-```bash
-node scripts/ingest-bundles.js
-```
+**Package Tier** (3 policies):
+- `good` - Lisa
+- `better` - Lisa
+- `best` - Lisa
 
-**Expected output:**
-```
-📤 Ingesting 15 bundles to ACO...
-✓ Batch 1/1: 15 bundles
-✅ Successfully ingested 15 bundles
-⏱️  Time: 9 minutes
-```
+**Room Category** (3 policies):
+- `bathroom` - Lisa
+- `kitchen` - Lisa
+- `any` - Lisa
 
-**Validation:** ACO Admin UI → Products (find bundle BUNDLE-FRAME-2X4-STD, verify components)
+**Deck Shape** (3 policies):
+- `rectangular` - David
+- `l_shaped` - David
+- `multi_level` - David
 
-### 3.6 Ingest Price Books (1-2 min)
+**Deck Material** (3 policies):
+- `wood` - David
+- `composite` - David
+- `pvc` - David
 
-```bash
-node scripts/ingest-price-books.js
-```
+**Deck Compatible** (1 policy):
+- `true` - David
 
-**Expected output:**
-```
-📤 Ingesting 10 price books to ACO...
-✓ Created price book: US-Retail (base)
-✓ Created price book: US-Contract (base)
-✓ Created price book: Retail-Consumer (parent: US-Retail)
-✓ Created price book: Contract-Commercial (parent: US-Contract)
-...
-✅ Successfully ingested 10 price books
-```
+**Store Velocity** (3 policies):
+- `high` - Kevin
+- `medium` - Kevin
+- `low` - Kevin
 
-**Validation:** ACO Admin UI → Pricing → Price Books (verify 10 books with hierarchical relationships)
+**Restock Priority** (3 policies):
+- `critical` - Kevin
+- `high` - Kevin
+- `medium` - Kevin
 
-### 3.7 Ingest Prices (30-45 min)
+**Project Type** (3 policies):
+- `new_construction` - All
+- `remodel` - All
+- `repair` - All
 
-```bash
-node scripts/ingest-prices.js
-```
+### 5.4 Policy Testing
 
-**Expected output:**
-```
-📤 Ingesting 1,770 prices to ACO...
-✓ Batch 1/18: 100 prices
-✓ Batch 2/18: 100 prices
-...
-✓ Batch 18/18: 70 prices
-✅ Successfully ingested 1,770 prices
-⏱️  Time: 42 minutes
-```
+After creating each category of policies, test them:
 
-> **NOTE:** This is the longest ingestion step. Be patient!
+**Example: Test Construction Phase Policy**
 
-**Validation:** ACO Admin UI → Pricing → Prices (search SKU: LBR-D0414F1E, verify pricing across price books)
-
-### 3.8 Verify Complete Ingestion
-
-```bash
-node scripts/validate-ingestion.js
+```graphql
+query GetFoundationProducts {
+  products(filter: {}, pageSize: 100) {
+    items {
+      sku
+      name
+      attributes {
+        code
+        value
+      }
+    }
+  }
+}
 ```
 
-**Expected output:**
+**HTTP Headers:**
 ```
-🔍 Validating ACO data ingestion...
-
-Products: 184 ✓
-├─ Simple: 70 ✓
-├─ Configurable: 20 ✓
-├─ Variants: 92 ✓
-└─ Bundles: 15 ✓
-
-Categories: 19 ✓
-Attributes: 34 ✓
-Price Books: 10 ✓
-Price Entries: 1,770 ✓
-
-✅ All data successfully ingested!
+AC-Policy-Phase: foundation_framing
 ```
 
-✅ **Checkpoint:** All data types show correct counts
+**Expected Result:**
+- Products with `construction_phase = foundation_framing` attribute
+- Other products filtered out
+
+**Validation Checklist:**
+- [ ] Policy appears in ACO Admin UI policy list
+- [ ] Policy status = "Active"
+- [ ] GraphQL query with header returns filtered results
+- [ ] GraphQL query without header returns all products
+- [ ] Multiple policies combine with AND logic
 
 ---
 
-## Phase 4: Multi-Source Inventory (MSI)
+## Phase 6: Frontend Integration
 
-> **Context:** Configure 6 inventory sources across 3 US regions (Western, Central, Eastern) and assign 184 products to sources with quantities. ACO does not support inventory operations - must be configured manually in Adobe Commerce Admin UI.
+### 6.1 Verify EDS Data Generation
 
-### Quick Summary
+EDS data should already be generated from Phase 2. Verify:
 
-**Time:** 2.5-4 hours total
-- Create 6 inventory sources: 30-45 min
-- Create 1 stock linking sources: 10-15 min
-- Assign 184 products to sources: 1.5-2.5 hrs
-- Configure source selection: 5 min
+```bash
+# Check EDS products exist
+ls -lh ../buildright-eds/data/mock-products.json
 
-**For complete step-by-step instructions with all fields:**
-→ **[MSI Configuration Guide](manual-setup/msi-configuration-guide.md)**
+# Check project recommendations exist
+ls -lh ../buildright-eds/data/project-recommendations.json
 
-### Inventory Sources to Create
+# View product count
+node -e "console.log(JSON.parse(require('fs').readFileSync('../buildright-eds/data/mock-products.json')).length)"
+# Expected: 70
+```
 
-**Regional Distribution Centers (Primary):**
-1. **warehouse_west** - Sacramento, CA - Priority 1
-2. **warehouse_east** - Charlotte, NC - Priority 2
+### 6.2 Update Frontend Mock Service (if needed)
 
-**Regional Warehouses (Secondary):**
-3. **warehouse_phoenix** - Phoenix, AZ - Priority 3
-4. **warehouse_denver** - Denver, CO - Priority 4
-5. **warehouse_atlanta** - Atlanta, GA - Priority 5
+The mock ACO service in `buildright-eds` should read the generated data files automatically. Verify paths are correct:
 
-**Virtual Drop Shipper (Specialty):**
-6. **dropship_premium_windows** - Virtual - Priority 6
+**File**: `buildright-eds/scripts/aco-service.js`
 
-### Stock Configuration
+```javascript
+const PRODUCTS_PATH = '../data/mock-products.json';
+const RECOMMENDATIONS_PATH = '../data/project-recommendations.json';
+```
 
-**Navigation:** Admin → Stores → Inventory → Stocks
+### 6.3 Test Frontend Mock Service
 
-- **Name:** BuildRight-Main-Stock
-- **Sales Channel:** Main Website
-- **Assigned Sources:** All 6 sources with priorities above
+```bash
+# Navigate to buildright-eds
+cd ../buildright-eds
 
-### Product Assignment
+# Start development server (if applicable)
+npm run dev
 
-**Navigation:** Admin → Catalog → Products → Edit Product → Sources Tab
+# Or test mock service directly
+node scripts/test-mock-service.js
+```
 
-For each of 184 products, assign quantities:
-- **RDCs** (warehouse_west, warehouse_east): 500-750 units
-- **Regional Warehouses** (phoenix, denver, atlanta): 200-400 units
-- **Drop Shipper** (dropship_premium_windows): 20-50 units
-- **Status:** In Stock (all sources)
-
-> **TIP:** This is the most time-consuming step. Take breaks! Can split across multiple sessions.
-
-### Quick Validation
-
-Admin → Catalog → Products → Edit product LBR-D0414F1E → Sources tab
-- ✅ All 6 sources assigned
-- ✅ Quantities configured
-- ✅ Status: In Stock
-
-✅ **Checkpoint:** Sample products show inventory at all 6 sources
+**Expected Behavior:**
+- Mock service loads products from `mock-products.json`
+- Policy filters work client-side
+- Pricing displays correctly
 
 ---
 
-## Phase 5: B2B Company Configuration
+## Phase 7: Testing & Validation
 
-> **Context:** Create 3 companies representing BuildRight's divisions (Commercial, Residential, Pro), each with 2 locations and 4 users. Assign shared catalogs (price books) to enable tier-based pricing.
+### 7.1 End-to-End Product Flow
 
-### Quick Summary
+**Test: Complete product lifecycle**
 
-**Time:** 6-8 hours total
-- Enable B2B features: 30 min
-- Create 3 companies: 1.5 hrs
-- Create 6 teams/locations: 1.5-2 hrs
-- Create 12 users: 2-2.5 hrs
-- Validate configuration: 1 hr
-
-**For complete step-by-step instructions with all fields:**
-→ **[B2B Configuration Guide](manual-setup/b2b-configuration-guide.md)**
-
-### Enable B2B Features
-
-**Navigation:** Admin → Stores → Configuration → General → B2B Features
-
-1. Set Store View: Default Config
-2. Enable Core Features:
-   - Enable Company: **Yes**
-   - Enable Shared Catalog: **Yes**
-   - Enable B2B Quote: **Yes**
-   - Enable Requisition List: **Yes**
-   - Enable Quick Order: **Yes**
-3. Configure Payment Methods: All Enabled + Purchase Order
-4. **Save Configuration**
-5. **Clear Cache:** System → Cache Management → Flush Magento Cache
-
-**Validation:** Navigate to Customers → Companies menu appears
-
-### Companies to Create
-
-**1. Premium Commercial Builders Inc.**
-- **Shared Catalog:** Commercial-Tier2
-- **Admin:** John Smith (jsmith@premiumcommercial.example.com)
-- **Address:** 1500 Commerce Drive, Los Angeles, CA 90001
-- **Locations:** Los Angeles HQ (CA), Phoenix Metro Division (AZ)
-- **Users:** John Smith (Admin), Emily Johnson (Senior Buyer), Michael Chen (Default User), Amanda Garcia (Senior Buyer)
-
-**2. Coastal Residential Builders**
-- **Shared Catalog:** Residential-Builder
-- **Admin:** Maria Garcia (mgarcia@coastalresidential.example.com)
-- **Address:** 5000 Builder Parkway, Dallas, TX 75201
-- **Locations:** Dallas HQ (TX), Denver Division (CO)
-- **Users:** Maria Garcia (Admin), Robert Taylor (Senior Buyer), Sarah Martinez (Default User), James Wilson (Senior Buyer)
-
-**3. Elite Trade Contractors**
-- **Shared Catalog:** Pro-Specialty
-- **Admin:** David Chen (dchen@elitetrade.example.com)
-- **Address:** 2500 Trade Center Blvd, Charlotte, NC 28202
-- **Locations:** Charlotte HQ (NC), Atlanta Division (GA)
-- **Users:** David Chen (Admin), Lisa Anderson (Senior Buyer), Kevin Brown (Default User), Jennifer Davis (Senior Buyer)
-
-### Quick Validation
-
-**Check Companies:**
-- Admin → Customers → Companies: 3 companies exist
-- Each company shows correct shared catalog assignment
-
-**Check Users:**
-- Log out of admin
-- Log in as John Smith (jsmith@premiumcommercial.example.com)
-- Verify catalog products visible
-- Verify pricing matches Commercial-Tier2 tier
-
-✅ **Checkpoint:** 3 companies, 6 teams, 12 users created; can log in as company user
-
----
-
-## Phase 6: Trigger-Based Policies
-
-> **Context:** Configure policies in ACO Admin UI to enable dynamic catalog filtering via HTTP headers (project type, product category, brand). Policies apply in real-time without pre-built static views.
-
-### Quick Summary
-
-**Time:** 1-2 hours total
-- Create 3 trigger policies: 30-40 min each
-- Associate with catalog view
-- Test with GraphQL queries
-
-**For complete step-by-step instructions with policy configuration:**
-→ **[Trigger Policy Guide](manual-setup/trigger-policy-guide.md)**
-
-### Access ACO Policy Management
-
-1. Log into ACO Admin Console at:
+1. **Generate product data**
+   ```bash
+   cd buildright-aco
+   npm run generate:products
    ```
-   https://experience.adobe.com/#/@demosystem/in:{TENANT_ID}/commerce-optimizer-studio
+   ✓ Verify: `data/buildright/products.json` contains 70 products
+
+2. **Ingest to ACO**
+   ```bash
+   npm run ingest:products
    ```
-2. Navigate to **Catalog Management → Policies**
-3. Click **Create New Policy**
+   ✓ Verify: ACO Admin shows 70 products
 
-### Policies to Create
+3. **Query via GraphQL**
+   ```graphql
+   query { products { total_count } }
+   ```
+   ✓ Verify: Returns `total_count: 70`
 
-**1. Project Type Filter**
-- **Policy ID:** `project-type-filter`
-- **Policy Name:** Project Type Filter
-- **Policy Type:** EXCLUSIVE (trigger-based)
-- **Trigger Name:** `AC-Policy-Project-Type`
-- **Transport:** HTTP_HEADER
-- **Attribute:** `project_types` (multiselect)
-- **Operator:** CONTAINS
-- **Value Source:** TRIGGER
-- **Priority:** 1
+4. **Transform to EDS**
+   ```bash
+   npm run generate:eds-data
+   ```
+   ✓ Verify: `../buildright-eds/data/mock-products.json` contains 70 products
 
-**2. Product Category Filter**
-- **Policy ID:** `category-filter`
-- **Policy Name:** Product Category Filter
-- **Policy Type:** EXCLUSIVE
-- **Trigger Name:** `AC-Policy-Product-Category`
-- **Transport:** HTTP_HEADER
-- **Attribute:** `product_category`
-- **Operator:** EQUALS
-- **Value Source:** TRIGGER
-- **Priority:** 2
+### 7.2 Pricing Validation
 
-**3. Brand Filter**
-- **Policy ID:** `brand-filter`
-- **Policy Name:** Brand Filter
-- **Policy Type:** EXCLUSIVE
-- **Trigger Name:** `AC-Policy-Brand`
-- **Transport:** HTTP_HEADER
-- **Attribute:** `brand`
-- **Operator:** EQUALS
-- **Value Source:** TRIGGER
-- **Priority:** 3
+**Test: Volume tier pricing works correctly**
 
-### Test Policies
+1. **Query product price** (Production-Builder tier):
+   ```graphql
+   query {
+     productPrice(sku: "LBR-D0414F1E", priceBookId: "Production-Builder", quantity: 1) {
+       value
+     }
+   }
+   ```
+   ✓ Expected: `value: 8.50`
 
-```bash
-curl -X POST "https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql" \
-  -H "Authorization: Bearer {TOKEN}" \
-  -H "AC-Policy-Project-Type: new_construction" \
-  -H "AC-Policy-Product-Category: structural_materials" \
-  -d '{"query": "{ products { items { sku name } } }"}'
-```
+2. **Query with volume tier** (100 units):
+   ```graphql
+   query {
+     productPrice(sku: "LBR-D0414F1E", priceBookId: "Production-Builder", quantity: 100) {
+       value
+     }
+   }
+   ```
+   ✓ Expected: `value: 8.25` (3% volume discount)
 
-**Expected:** Only products matching ALL conditions (logical AND)
+3. **Query with pallet tier** (294 units):
+   ```graphql
+   query {
+     productPrice(sku: "LBR-D0414F1E", priceBookId: "Production-Builder", quantity: 294) {
+       value
+     }
+   }
+   ```
+   ✓ Expected: `value: 7.82` (8% pallet discount)
 
-✅ **Checkpoint:** 3 policies created; HTTP headers filter products correctly
+### 7.3 Policy Filtering Validation
 
----
+**Test: Policies filter correctly**
 
-## Phase 6.5: Project Builder Policies (Optional Enhancement)
+1. **No policy (baseline)**:
+   ```graphql
+   query { products { total_count } }
+   ```
+   ✓ Expected: `total_count: 70`
 
-> **Context:** The Project Builder wizard requires additional trigger policies to support complexity-based and budget-based filtering. These policies enable the wizard to generate customized material kits based on project requirements.
+2. **Single policy** (Construction Phase):
+   ```graphql
+   query { products { total_count } }
+   # Headers: AC-Policy-Phase: foundation_framing
+   ```
+   ✓ Expected: `total_count: ~20-25` (foundation products only)
 
-### Overview
+3. **Multiple policies** (Phase + Quality):
+   ```graphql
+   query { products { total_count } }
+   # Headers: 
+   #   AC-Policy-Phase: foundation_framing
+   #   AC-Policy-Quality: professional
+   ```
+   ✓ Expected: `total_count: ~12-15` (foundation + professional only)
 
-The Project Builder wizard collects four pieces of information:
-1. **Project Type** - Uses existing `AC-Policy-Project-Type` policy
-2. **Project Detail** - Uses existing `AC-Policy-Product-Category` policy (maps room/area to categories)
-3. **Complexity** - Requires new policy for complexity/quality tier filtering
-4. **Budget** - Requires new policy for price range filtering
+4. **David's deck wizard** (progressive filtering):
+   - Step 1: `AC-Policy-Deck-Compatible: true` → ~35 products
+   - Step 2: `AC-Policy-Deck-Shape: rectangular` → ~25 products
+   - Step 3: `AC-Policy-Deck-Material: composite` → ~18 products
+   
+   ✓ Expected: Progressive reduction from 70 → 18 products
 
-### Required Product Attributes
+### 7.4 Persona Experience Validation
 
-Before creating policies, ensure products have these attributes:
+**Test each persona's workflow:**
 
-**1. Complexity/Quality Tier Attribute**
-- **Attribute Code:** `quality_tier` or `complexity_level`
-- **Type:** Select
-- **Values:** `basic`, `moderate`, `complex` (or `standard`, `premium`, `professional`)
-- **Purpose:** Filter products by quality/complexity level
+**✓ Sarah (Production Builder)**
+- Can load template for "The Sedona"
+- Can multiply quantities by 8 units
+- Can add bonus room variant
+- Sees Production-Builder pricing (15% off)
+- Sees volume tier discounts on bulk orders
 
-**2. Price Range Attribute (Optional)**
-- Products can be filtered by price using existing price data
-- Alternative: Use price range policies that filter by `price` attribute value
+**✓ Marcus (General Contractor)**
+- Can start project wizard
+- Selecting "foundation_framing" phase filters products
+- Selecting "professional" quality filters further
+- Sees Trade-Professional pricing (10% off)
 
-### Policies to Create
+**✓ Lisa (Remodeling Contractor)**
+- Can view Good/Better/Best package comparison
+- Selecting "Better" filters to better-tier products
+- Selecting "bathroom" filters to bathroom products
+- Sees Trade-Professional pricing (10% off)
 
-**4. Complexity/Quality Tier Filter**
-- **Policy ID:** `complexity-filter`
-- **Policy Name:** Complexity/Quality Tier Filter
-- **Policy Type:** EXCLUSIVE (trigger-based)
-- **Trigger Name:** `AC-Policy-Complexity`
-- **Transport:** HTTP_HEADER
-- **Attribute:** `quality_tier` (or `complexity_level`)
-- **Operator:** EQUALS
-- **Value Source:** TRIGGER
-- **Priority:** 4
+**✓ David (DIY Homeowner)**
+- Can start deck wizard
+- Each step progressively filters products
+- Sees only compatible products at each step
+- Sees Retail-Registered pricing (5% off) or retail
 
-**5. Budget Range Filter (Price-Based)**
-- **Policy ID:** `budget-range-filter`
-- **Policy Name:** Budget Range Filter
-- **Policy Type:** EXCLUSIVE (trigger-based)
-- **Trigger Name:** `AC-Policy-Budget-Range`
-- **Transport:** HTTP_HEADER
-- **Attribute:** `price` (or create `price_tier` attribute)
-- **Operator:** BETWEEN or LESS_THAN_OR_EQUAL
-- **Value Source:** TRIGGER (may require range parsing)
-- **Priority:** 5
-
-> **Note:** Budget filtering may require custom logic if ACO doesn't support range operators directly. Alternative approach: Create price tier attributes (e.g., `price_tier: under_5k`, `5k_15k`, etc.) and filter by that attribute.
-
-### Testing Project Builder Policies
-
-```bash
-# Test with complexity
-curl -X POST "https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql" \
-  -H "Authorization: Bearer {TOKEN}" \
-  -H "AC-Policy-Project-Type: remodel" \
-  -H "AC-Policy-Product-Category: fasteners_hardware" \
-  -H "AC-Policy-Complexity: moderate" \
-  -H "AC-Policy-Budget-Range: 5k_15k" \
-  -d '{"query": "{ products { items { sku name } } }"}'
-```
-
-**Expected:** Products filtered by project type, category, complexity level, and within budget range
-
-✅ **Checkpoint:** Project Builder policies created and tested; wizard can generate filtered product sets
-
----
-
-## Phase 7: Complete Validation
-
-### Validation Checklist
-
-**ACO Data:**
-```bash
-node scripts/validate-ingestion.js
-```
-- ✅ 184 products (70 simple + 92 variants + 15 bundles + 10 services)
-- ✅ 34 attributes, 19 categories
-- ✅ 10 price books, 1,770 prices
-- ✅ Products have project_types attribute assigned
-
-**Inventory (MSI):**
-- ✅ 6 inventory sources created and enabled
-- ✅ BuildRight-Main-Stock has all 6 sources assigned with priorities
-- ✅ Sample products show inventory at multiple sources
-- ✅ Products display "In Stock" status
-
-**B2B:**
-- ✅ 3 companies created
-- ✅ 6 teams/locations configured
-- ✅ 12 users created and active
-- ✅ Shared catalogs assigned correctly
-- ✅ Can log in as company user and see products
-
-**Policies:**
-- ✅ 3 base trigger policies created (project type, category, brand)
-- ✅ Policies associated with catalog view
-- ✅ HTTP headers filter products correctly
-- ⚠️ Project Builder policies (optional): 2 additional policies for complexity and budget filtering (see Phase 6.5)
-
-### Functional Tests
-
-**Test 1: Hierarchical Pricing**
-
-1. Query product LBR-D0414F1E in ACO
-2. Verify pricing across price books:
-   - US-Contract: $8.50
-   - Commercial-Tier2: $8.08
-3. Log in as John Smith (Premium Commercial)
-4. View product on storefront
-5. Verify price shows $8.08 (Tier2 pricing)
-
-**Test 2: Project Type Filtering**
-
-```bash
-# Test new_construction filter
-curl -X POST "{ENDPOINT}/graphql" \
-  -H "Authorization: Bearer {TOKEN}" \
-  -H "AC-Policy-Project-Type: new_construction" \
-  -d '{"query": "{ products { totalCount } }"}'
-# Expected: ~45 products
-
-# Test remodel filter
-curl -X POST "{ENDPOINT}/graphql" \
-  -H "Authorization: Bearer {TOKEN}" \
-  -H "AC-Policy-Project-Type: remodel" \
-  -d '{"query": "{ products { totalCount } }"}'
-# Expected: ~55 products
-```
-
-**Test 3: Multi-Location B2B**
-
-1. Log in as Emily Johnson (LA HQ, Company 1)
-2. View products and pricing
-3. Log out
-4. Log in as Michael Chen (Phoenix, Company 1)
-5. Verify same pricing (both users in same company)
-
-**Test 4: Inventory Visibility**
-
-1. Check product on storefront
-2. Verify "In Stock" displays
-3. Check quantity available
-4. Verify sourcing shows nearest warehouse
-
-✅ **Final Checkpoint:** All test scenarios pass successfully
+**✓ Kevin (Store Manager)**
+- Can filter by velocity category (high/medium/low)
+- Can filter by restock priority (critical/high/medium)
+- Sees smart restock quantity suggestions
+- Sees Wholesale-Reseller pricing (25% off)
 
 ---
 
 ## Troubleshooting
 
-### OAuth Authentication Fails
+### Common Issues
 
-**Error:** `Invalid credentials (401 Unauthorized)`
+#### Issue: "ACO Connection Failed"
+
+**Symptoms:**
+```
+Error: Unable to connect to ACO
+Status: 401 Unauthorized
+```
 
 **Solutions:**
-1. Verify CLIENT_ID and CLIENT_SECRET in `.env`
-2. Check credentials in Adobe Developer Console
-3. Ensure ACO API added to your project
-4. Verify TENANT_ID is correct
-5. Try regenerating OAuth credentials
+1. Verify credentials in `.env` file
+2. Check CLIENT_ID and CLIENT_SECRET are correct
+3. Ensure TENANT_ID matches your ACO instance
+4. Verify API credentials are active in Adobe Developer Console
+5. Check for expired access tokens (regenerate if needed)
+
+#### Issue: "Product Ingestion Failed"
+
+**Symptoms:**
+```
+Error: Product validation failed
+Field 'attributes' is required
+```
+
+**Solutions:**
+1. Regenerate products: `npm run generate:products`
+2. Verify products.json schema matches ACO requirements
+3. Check for missing required fields (sku, name, attributes)
+4. Use `--dry-run` to validate without ingesting
+
+#### Issue: "Policies Not Filtering"
+
+**Symptoms:**
+- GraphQL query with header returns all products
+- No filtering occurs
+
+**Solutions:**
+1. Verify policy is "Active" in ACO Admin UI
+2. Check HTTP header name matches policy trigger exactly
+3. Verify attribute code exists on products
+4. Check attribute value matches (case-sensitive)
+5. Use GraphQL playground to test headers directly
+
+#### Issue: "Pricing Not Appearing"
+
+**Symptoms:**
+- Products show null or 0 price
+- Volume tiers not applying
+
+**Solutions:**
+1. Verify price books are ingested: Check ACO Admin > Pricing > Price Books
+2. Verify prices are ingested: Check ACO Admin > Pricing > Prices
+3. Check price book hierarchy: Child books must reference parent correctly
+4. Query with correct priceBookId parameter
+5. Ensure quantity parameter triggers correct tier
+
+#### Issue: "EDS Data Not Generated"
+
+**Symptoms:**
+```
+Error: Cannot find module '../buildright-eds/data/mock-products.json'
+```
+
+**Solutions:**
+1. Verify buildright-eds repository exists at `../buildright-eds`
+2. Create data directory: `mkdir -p ../buildright-eds/data`
+3. Regenerate EDS data: `npm run generate:eds-data`
+4. Check file permissions (write access to buildright-eds/data/)
+
+### Debug Mode
+
+Enable verbose logging:
+
+```bash
+# Set log level to debug
+export LOG_LEVEL=debug
+
+# Run with debug output
+npm run generate:all
+```
+
+### Validation Scripts
+
+Run validation checks:
+
+```bash
+# Validate all generated data
+npm run validate:all
+
+# Validate specific data type
+npm run validate:products
+npm run validate:prices
+npm run validate:policy-guide
+```
 
 ---
 
-### Products Not Appearing After Ingestion
+## Maintenance
 
-**Error:** Validation script shows 0 products
+### Regenerating Data
 
-**Solutions:**
-1. Check ingestion logs for errors
-2. Verify `.env` TENANT_ID matches your instance
-3. Query GraphQL directly:
-   ```bash
-   curl -X POST "{ENDPOINT}/graphql" \
-     -H "Authorization: Bearer {TOKEN}" \
-     -d '{"query": "{ products { totalCount } }"}'
+**When to regenerate:**
+- Adding new products
+- Updating persona attributes
+- Changing pricing structure
+- Adding new policies
+
+**How to regenerate:**
+
+```bash
+# Regenerate all data
+npm run generate:all
+
+# Regenerate specific data type
+npm run generate:products
+npm run generate:price-books
+npm run generate:prices
+npm run generate:policy-guide
+npm run generate:eds-data
+```
+
+### Updating ACO Data
+
+**Updating products:**
+
+```bash
+# Regenerate products
+npm run generate:products
+
+# Re-ingest to ACO (will update existing)
+npm run ingest:products
+```
+
+**Updating prices:**
+
+```bash
+# Regenerate prices
+npm run generate:prices
+
+# Re-ingest to ACO
+npm run ingest:prices
+```
+
+**Note**: ACO ingestion uses upsert logic - existing items are updated, new items are created.
+
+### Adding a New Persona
+
+**Steps to add a 6th persona:**
+
+1. **Define persona attributes** (in `scripts/config/product-definitions.js`):
+   ```javascript
+   // Example: Property Manager persona
+   property_type: ['residential', 'commercial', 'mixed_use']
+   unit_count: ['small', 'medium', 'large']
    ```
-4. Verify metadata ingested before products
-5. Check for schema validation errors in logs
 
----
+2. **Tag products** with new attributes:
+   ```javascript
+   // Update product definitions to include new attributes
+   ```
 
-### Shared Catalogs Not Appearing
+3. **Generate new data**:
+   ```bash
+   npm run generate:all
+   ```
 
-**Error:** Customers → Shared Catalogs menu missing
+4. **Create new price book** (if pricing differs):
+   - Edit `scripts/generate-price-books.js`
+   - Add new tier to `PRICE_BOOK_STRUCTURE`
 
-**Solutions:**
-1. Verify B2B extension installed
-2. Check Stores → Configuration → B2B Features → Enabled
-3. Clear cache: System → Cache Management → Flush Magento Cache
-4. Reindex: System → Index Management → Reindex All
-5. Check price books ingested to ACO successfully
+5. **Re-ingest to ACO**:
+   ```bash
+   npm run ingest:all
+   ```
 
----
+6. **Create new policies** in ACO Admin UI:
+   - 3-5 new policies for persona-specific filtering
+   - Follow policy creation workflow in Phase 5
 
-### Trigger Policies Not Filtering
+7. **Update frontend** (`buildright-eds`):
+   - Add persona to auth.js
+   - Create persona-specific pages/components
+   - Test end-to-end workflow
 
-**Error:** All products appear regardless of HTTP headers
+**Time estimate**: 3-5 hours
 
-**Solutions:**
-1. Verify policy created in ACO Admin UI
-2. Check policy associated with catalog view
-3. Verify trigger name matches HTTP header exactly (case-sensitive)
-4. Check attribute exists and products have values assigned
-5. Test with curl to isolate frontend vs backend issue
-6. Review operator (use CONTAINS for multiselect, EQUALS for select)
+### Backup and Restore
 
----
+**Backup generated data:**
 
-### Company Users Can't See Products
-
-**Error:** User logs in but catalog is empty
-
-**Solutions:**
-1. Verify company assigned to shared catalog
-2. Check shared catalog has products assigned
-3. Navigate to Admin → Catalog → Shared Catalogs → [Catalog] → Set Pricing and Structure
-4. Verify products selected (use "Select All" or by category)
-5. Clear cache and reindex
-6. Check user's company membership is active
-
----
-
-## Quick Command Reference
-
-### Data Generation
 ```bash
-SEED=12345 npm run generate:all              # Generate everything
-npm run generate:metadata                     # Attributes only
-npm run generate:categories                   # Categories only
-npm run generate:products                     # Simple products only
-npm run generate:variants                     # Configurable products
-npm run generate:bundles                      # Bundles only
-npm run generate:prices                       # Prices only
-npm run generate:inventory                    # Inventory only
+# Create backup directory
+mkdir -p backups/$(date +%Y-%m-%d)
+
+# Copy all generated data
+cp -r data/buildright/* backups/$(date +%Y-%m-%d)/
 ```
 
-### Data Ingestion (in order)
+**Restore from backup:**
+
 ```bash
-node scripts/ingest-metadata.js              # 1. Metadata (2-3 min)
-node scripts/ingest-categories.js            # 2. Categories (1-2 min)
-node scripts/ingest-products.js              # 3. Products (10-15 min)
-node scripts/ingest-variants.js              # 4. Variants (15-20 min)
-node scripts/ingest-bundles.js               # 5. Bundles (8-10 min)
-node scripts/ingest-price-books.js           # 6. Price books (1-2 min)
-node scripts/ingest-prices.js                # 7. Prices (30-45 min)
+# Restore specific date
+cp -r backups/2024-11-16/* data/buildright/
 ```
 
-### Validation
+**Export ACO data** (via ACO Admin UI):
+1. Navigate to **ACO Admin** > **Data Management** > **Export**
+2. Select: Products, Price Books, Prices
+3. Click "Export"
+4. Save exported files for backup
+
+---
+
+## Quick Reference
+
+### Common Commands
+
 ```bash
-node scripts/validate-ingestion.js           # Verify all data ingested
+# Generate all data
+npm run generate:all
+
+# Ingest all data to ACO
+npm run ingest:all
+
+# Generate EDS data only
+npm run generate:eds-data
+
+# Validate configuration
+npm run validate
+
+# Reset ACO catalog (destructive!)
+npm run reset:catalog --dry-run
+```
+
+### File Locations
+
+**Generated Data:**
+- `data/buildright/products.json` - ACO products
+- `data/buildright/price-books.json` - Price book hierarchy
+- `data/buildright/prices.json` - Price entries
+- `data/buildright/POLICY-SETUP-GUIDE.md` - Policy instructions
+- `../buildright-eds/data/mock-products.json` - EDS products
+- `../buildright-eds/data/project-recommendations.json` - Templates/packages
+
+**Configuration:**
+- `scripts/config/product-definitions.js` - Product templates
+- `scripts/config/policy-definitions.js` - Policy definitions
+- `scripts/generate-price-books.js` - Price book structure
+- `.env` - ACO credentials
+
+**Documentation:**
+- `docs/BUILDRIGHT-CASE-STUDY.md` - Complete case study
+- `docs/PRICING-STRATEGY.md` - Pricing details
+- `README.md` - Build process overview
+
+### GraphQL Playground
+
+**URL**: `https://aco.{REGION}.adobecommerce.com/graphql` (provided by Adobe)
+
+**Authentication**: OAuth Bearer token (handled by SDK)
+
+**Example Queries:**
+
+```graphql
+# Get all products
+query { products { total_count items { sku name } } }
+
+# Get products with policy filter
+query { products { items { sku name } } }
+# Headers: AC-Policy-Phase: foundation_framing
+
+# Get product price
+query {
+  productPrice(sku: "LBR-D0414F1E", priceBookId: "Production-Builder", quantity: 100) {
+    value
+    currency
+  }
+}
 ```
 
 ---
 
-## Key Constants
+## Support
 
-**Inventory Sources (6):**
-- warehouse_west (Sacramento, CA) - Priority 1
-- warehouse_east (Charlotte, NC) - Priority 2
-- warehouse_phoenix (Phoenix, AZ) - Priority 3
-- warehouse_denver (Denver, CO) - Priority 4
-- warehouse_atlanta (Atlanta, GA) - Priority 5
-- dropship_premium_windows (Virtual) - Priority 6
+### Resources
 
-**Price Books (10):**
-- **Level 1 (Base):** US-Retail, US-Contract
-- **Level 2 (Segment):** Retail-Consumer, Contract-Commercial, Contract-Residential, Contract-Pro
-- **Level 3 (Tier):** Commercial-Tier1, Commercial-Tier2, Residential-Builder, Pro-Specialty
+- **Case Study**: `docs/BUILDRIGHT-CASE-STUDY.md`
+- **Pricing Strategy**: `docs/PRICING-STRATEGY.md`
+- **Policy Guide**: `data/buildright/POLICY-SETUP-GUIDE.md`
+- **Phase Plans**: `../buildright-eds/docs/PHASE-*.md`
 
-**Product Counts:**
-- Simple: 70 (includes 10 services)
-- Configurable Parents: 20
-- Variants: 92
-- Bundles: 15
-- **Total:** 184 products
+### Contacts
 
-**B2B Structure:**
-- Companies: 3 (Premium Commercial, Coastal Residential, Elite Trade)
-- Locations: 6 (2 per company)
-- Users: 12 (4 per company)
+- **Technical Issues**: Adobe Commerce Support
+- **Demo Questions**: Solutions Engineering team
+- **ACO API Documentation**: Adobe Developer Portal
 
 ---
 
-## Related Documentation
-
-### Business Context
-- [BuildRight Case Study](BUILDRIGHT-CASE-STUDY.md) - Business narrative, challenge, solution, outcomes
-
-### Detailed Implementation Guides
-- [MSI Configuration Guide](manual-setup/msi-configuration-guide.md) - Complete inventory setup procedures
-- [B2B Configuration Guide](manual-setup/b2b-configuration-guide.md) - Complete company setup procedures
-- [Trigger Policy Guide](manual-setup/trigger-policy-guide.md) - Complete policy configuration procedures
-
-### Architecture
-- [B2B Structure Diagram](architecture/buildright-b2b-structure.md) - Company and location hierarchy
-
-### Frontend Implementation
-- [BuildRight Website README](../buildright-website/README.md) - Frontend prototype documentation
-- Project Builder wizard and dynamic bundle functionality (frontend-only, no ACO changes required)
-
-### Project Information
-- [Project README](README.md) - Repository overview and quick start
-
----
-
-**Document Version:** 1.1
-**Last Updated:** December 2024
-**Total Setup Time:** 12-16 hours (can be spread over 2-3 days)
-**Status:** Production Ready
-
-**Note on Project Builder:** The Project Builder wizard requires additional ACO policies (Phase 6.5) beyond the base 3 policies. These policies enable complexity-based and budget-based filtering. The frontend wizard sends HTTP headers that trigger these policies to generate customized product bundles. See [BuildRight Website README](../buildright-website/README.md) for frontend implementation details.
+**Document Version**: 2.0  
+**Last Updated**: November 2024  
+**Status**: Production Ready
