@@ -682,9 +682,273 @@ This demonstrates how frontend enhancements can leverage ACO's policy system to 
 
 ---
 
-**Document Version:** 1.1
-**Last Updated:** December 2024
+## Part 6: Persona-Based Experiences (Version 2.0)
+
+### Evolution to Persona-Driven Demo
+
+BuildRight Version 2.0 expands the original three-division model to demonstrate **five distinct user personas**, each with unique catalog needs, pricing tiers, and workflow requirements. This evolution showcases ACO's flexibility in serving diverse customer segments with personalized experiences.
+
+### The Five Personas
+
+#### 6.1 Sarah Martinez - Production Builder
+
+**Profile:**
+- **Company**: Sunset Valley Homes (Production Builder)
+- **Scale**: 120 homes/year across 3 active subdivisions
+- **Price Book**: Production-Builder (15% off retail)
+- **Annual Volume**: $2.5M+
+
+**Use Case**: Template-Based Repeat Ordering
+
+Sarah orders materials for multiple units of "The Sedona" floor plan. She has saved templates for this design and uses them to quickly generate material lists for 8 units, with 3 units including a bonus room variant.
+
+**Key Features:**
+- **Floor Plan Templates**: Pre-built BOMs for standardized home designs
+- **Variant Management**: Adjust templates for options like bonus rooms
+- **Phase-Based Ordering**: Separate orders by construction phase (foundation, framing, envelope)
+- **Volume Pricing**: Automatic 15% discount + volume tier discounts on bulk orders
+- **Phased Delivery**: Schedule materials to arrive at specific project milestones
+
+**CCDM Value**: Template reuse eliminates repetitive material selection. Bulk multipliers and tier pricing deliver $20K-$50K savings per project. Variant management handles custom options without rebuilding BOMs from scratch.
+
+---
+
+#### 6.2 Marcus Johnson - General Contractor
+
+**Profile:**
+- **Company**: Johnson Custom Builders
+- **Scale**: 3-5 custom homes/year, $800K-$1.5M each
+- **Price Book**: Trade-Professional (10% off retail)
+- **Annual Volume**: $400K
+
+**Use Case**: Semi-Custom Project Builder with Phase Ordering
+
+Marcus uses a project wizard to generate a comprehensive materials list for the Patterson residence - a 2,400 sq ft custom home. The wizard guides him through project type, scope, quality level, and construction phase to create a tailored BOM.
+
+**Key Features:**
+- **Project Wizard**: Guided material selection based on project specs
+- **Quality Tier Selection**: Choose builder-grade, professional, or premium materials
+- **Construction Phase Filtering**: Order only Phase 1 (foundation & framing) materials today
+- **Progressive Catalog**: Catalog filters dynamically based on wizard selections
+- **Project Persistence**: Save project for future phase ordering
+
+**CCDM Value**: Wizard-driven generation reduces 45-minute material selection to 12-15 minutes. Quality tier filtering ensures appropriate material grades. Phase-based ordering aligns with cash flow and project timelines.
+
+---
+
+#### 6.3 Lisa Chen - Remodeling Contractor
+
+**Profile:**
+- **Company**: Chen Kitchen & Bath Remodeling
+- **Scale**: 30-40 kitchen/bath remodels/year, $20K-$60K each
+- **Price Book**: Trade-Professional (10% off retail)
+- **Annual Volume**: $900K
+
+**Use Case**: Package Selection with Customization
+
+Lisa presents clients with Good/Better/Best bathroom packages, allowing them to see complete pricing before committing. Clients can customize within their selected tier, swapping fixtures and finishes while staying on budget.
+
+**Key Features:**
+- **Package Comparison**: Side-by-side view of Good ($8,500), Better ($14,200), Best ($23,800)
+- **Within-Tier Customization**: Swap fixtures without changing package price significantly
+- **Visual Package Builder**: See package contents, swap items, add options
+- **Client Sharing**: Email package details to clients for approval
+- **Room Category Filtering**: Bathroom, kitchen, or any-room materials
+
+**CCDM Value**: Pre-configured packages accelerate client consultations. Within-tier swapping provides customization without budget risk. Clear pricing builds client trust and reduces negotiation time.
+
+---
+
+#### 6.4 David Thompson - Pro Homeowner (DIY)
+
+**Profile:**
+- **Type**: Software Engineer, DIY enthusiast
+- **Project**: Building a 16x20 deck in his Portland backyard
+- **Price Book**: Retail-Registered (5% loyalty discount, or retail)
+- **Budget**: $6,000-$8,000
+
+**Use Case**: Progressive Deck Builder with Triggered Policies
+
+David uses an interactive deck builder that guides him through selecting deck shape, size, material, and railing options. The catalog progressively filters at each step, showing only compatible products and preventing incompatible selections.
+
+**Key Features:**
+- **Step-by-Step Wizard**: Shape → Size → Material → Railing → Accessories
+- **Progressive Filtering**: Each selection triggers policies that filter subsequent choices
+- **Compatibility Validation**: System prevents mismatched components
+- **Educational Content**: Maintenance requirements, skill level, time estimates
+- **Complete Kits**: Everything needed for installation, with exception lists
+
+**CCDM Value**: Triggered policies reduce 184-product catalog to ~35 relevant items. Progressive disclosure prevents mistakes (can't select wood railing for composite deck). Educational guidance builds confidence for DIY customers.
+
+---
+
+#### 6.5 Kevin Rodriguez - Store Manager
+
+**Profile:**
+- **Company**: Pacific Northwest Hardware (Regional chain)
+- **Role**: Store Manager, Store #7 - Tacoma, WA
+- **Price Book**: Wholesale-Reseller (25% off retail, cost-based)
+- **Order Frequency**: 2-3 times per week
+
+**Use Case**: Velocity-Based Inventory Restock
+
+Kevin uses a restock dashboard that shows high-priority items based on sales velocity and current stock levels. The system suggests reorder quantities based on historical data, with Kevin adjusting for promotions or seasonal changes.
+
+**Key Features:**
+- **Velocity-Based Filtering**: High/Medium/Low velocity categories
+- **Restock Priority**: Critical/High/Medium urgency indicators
+- **Smart Quantity Suggestions**: Based on avg daily sales and lead time
+- **Promotion Adjustments**: Manual overrides for upcoming sales events
+- **Days Supply Tracking**: "Out of stock in 1.2 days" warnings
+
+**CCDM Value**: Velocity filtering focuses attention on high-priority items. Smart suggestions reduce ordering errors. Wholesale pricing (25% off retail) enables competitive retail margins. Frequency-based catalog views streamline regular reorders.
+
+---
+
+### Pricing Architecture (Version 2.0)
+
+BuildRight Version 2.0 simplifies the pricing structure from 10 price books to 5, creating a cleaner persona-driven model:
+
+| Price Book | Discount | Persona(s) | Use Case |
+|------------|----------|------------|----------|
+| **US-Retail** | 0% (base) | General public, walk-ins | Retail catalog pricing |
+| **Production-Builder** | 15% off retail | Sarah Martinez | High-volume production builders |
+| **Trade-Professional** | 10% off retail | Marcus Johnson, Lisa Chen | Licensed contractors and remodelers |
+| **Wholesale-Reseller** | 25% off retail | Kevin Rodriguez | Stores buying for resale |
+| **Retail-Registered** | 5% off retail | David Thompson (optional) | Loyalty discount for registered DIY customers |
+
+**Volume Tier Pricing** (applies within each price book):
+- **1-99 units**: Base tier price
+- **100-293 units**: Additional 3% discount (volume pricing)
+- **294+ units**: Additional 8% discount (pallet/bundle pricing)
+
+**Example: 2x4x8 Stud Pricing for 10,000 Units**
+
+| Persona | Customer Tier | Volume Tier | Unit Price | 10K Order | Savings vs Retail |
+|---------|---------------|-------------|------------|-----------|-------------------|
+| General | 0% | -8% (pallet) | $9.20 | $92,000 | Baseline |
+| David | -5% | -8% | $8.74 | $87,400 | $4,600 (5%) |
+| Marcus/Lisa | -10% | -8% | $8.28 | $82,800 | $9,200 (10%) |
+| Sarah | -15% | -8% | $7.82 | $78,200 | $13,800 (15%) |
+| Kevin | -25% | -8% | $6.90 | $69,000 | $23,000 (25%) |
+
+**Key Insight**: Sarah's 15% customer tier discount + 8% volume tier discount = 22% total savings on large orders. Kevin's wholesale pricing enables competitive retail margins.
+
+---
+
+### Triggered Policy Framework
+
+Version 2.0 implements **28 triggered policies across 10 categories** to enable dynamic catalog filtering for each persona:
+
+#### Policy Categories
+
+**1. Construction Phase Policies** (Marcus, Sarah)
+- `foundation_framing`: Structural materials for early construction
+- `envelope`: Windows, doors, roofing for weather barrier
+- `interior_finish`: Drywall, trim, flooring for final phases
+
+**2. Quality Tier Policies** (Marcus)
+- `builder_grade`: Budget-friendly materials
+- `professional`: Mid-tier quality for standard projects
+- `premium`: High-end materials for luxury projects
+
+**3. Package Tier Policies** (Lisa)
+- `good`: $8,500 bathroom package (builder-grade)
+- `better`: $14,200 bathroom package (mid-range)
+- `best`: $23,800 bathroom package (premium)
+
+**4. Deck Builder Policies** (David)
+- **Shape**: `rectangular`, `l_shaped`, `multi_level`
+- **Material**: `wood`, `composite`, `pvc`
+- **Compatibility**: `deck_compatible=true` (filters to deck-only products)
+
+**5. Store Velocity Policies** (Kevin)
+- `high_velocity`: Fast-moving products (restock 2-3x per week)
+- `medium_velocity`: Standard products (weekly restock)
+- `low_velocity`: Specialty items (as-needed restock)
+
+**6. Restock Priority Policies** (Kevin)
+- `critical`: <20% stock (order today)
+- `high`: 20-40% stock (order within 2-3 days)
+- `medium`: 40-60% stock (order within 1 week)
+
+**7. Room Category Policies** (Lisa)
+- `bathroom`: Bathroom-specific fixtures and materials
+- `kitchen`: Kitchen-specific products
+- `any`: Universal materials (flooring, paint, trim)
+
+**8. Project Type Policies** (Universal)
+- `new_construction`: Structural focus
+- `remodel`: Finish materials focus
+- `repair`: Maintenance products
+
+#### Policy Application Example: David's Deck Builder
+
+**Step 1: Select Shape → Rectangular**
+```http
+AC-Policy-Deck-Shape: rectangular
+```
+Result: 184 products → ~80 products (rectangular-compatible)
+
+**Step 2: Select Material → Composite**
+```http
+AC-Policy-Deck-Shape: rectangular
+AC-Policy-Deck-Material: composite
+```
+Result: 80 products → ~35 products (composite decking, compatible railings, fasteners)
+
+**Step 3: Filter to Deck-Only**
+```http
+AC-Policy-Deck-Shape: rectangular
+AC-Policy-Deck-Material: composite
+AC-Policy-Deck-Compatible: true
+```
+Result: 35 products → ~25 products (excludes general construction materials)
+
+**Outcome**: David sees only the 25 products relevant to his composite rectangular deck. System prevented him from seeing:
+- Wood-specific products (incompatible)
+- L-shaped specific products (wrong shape)
+- General lumber (not deck-specific)
+
+---
+
+### Technical Implementation
+
+**Persona-Specific Attributes** (added to all products):
+- `construction_phase`: foundation_framing, envelope, interior_finish
+- `quality_tier`: builder_grade, professional, premium
+- `package_tier`: good, better, best
+- `room_category`: bathroom, kitchen, any
+- `deck_shape`: rectangular, l_shaped, multi_level
+- `deck_material_type`: wood, composite, pvc
+- `deck_compatible`: true/false
+- `deck_railing_compatible`: true/false
+- `store_velocity_category`: high, medium, low
+- `recommended_restock_quantity`: integer
+- `typical_days_supply`: integer
+- `restock_priority`: critical, high, medium
+
+**Data Generation Pipeline**:
+1. Generate products with persona attributes
+2. Generate 5 price books with customer tier structure
+3. Generate prices with volume tier breakpoints
+4. Generate policy guide (28 policies, manual ACO setup)
+5. Transform ACO data → EDS format for frontend
+
+**Frontend Mock Service**:
+- Reads generated data files
+- Simulates ACO GraphQL queries
+- Applies policy filters client-side
+- Enables frontend development without ACO connection
+
+See `PRICING-STRATEGY.md` for detailed pricing documentation and `data/buildright/POLICY-SETUP-GUIDE.md` for ACO policy configuration instructions.
+
+---
+
+**Document Version:** 2.0
+**Last Updated:** November 2024
 **Related Documentation:**
+- [Pricing Strategy](PRICING-STRATEGY.md) - Detailed pricing model and examples
+- [Policy Setup Guide](../data/buildright/POLICY-SETUP-GUIDE.md) - ACO policy configurations
 - [Setup Guide](SETUP-GUIDE.md) - Technical implementation procedures
-- [B2B Architecture Diagram](architecture/buildright-b2b-structure.md)
-- [Project README](../README.md)
+- [Project README](../README.md) - Build process and scripts
