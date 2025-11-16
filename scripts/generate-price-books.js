@@ -2,8 +2,14 @@
 
 /**
  * Generate Price Books Script
- * Creates 4 flat business-type price books for BuildRight ACO
- * Replaces the previous 12-book hierarchical structure with a simplified model
+ * Creates persona-driven price books for BuildRight ACO
+ * 
+ * Structure:
+ * - 1 base price book (US-Retail)
+ * - 4 customer tier price books (Production-Builder, Trade-Professional, Wholesale-Reseller, Retail-Registered)
+ * 
+ * Each customer tier provides different discount levels off retail pricing.
+ * Volume tier pricing (quantity-based discounts) is handled in the price generation phase.
  */
 
 import fs from 'fs';
@@ -16,117 +22,88 @@ const __dirname = path.dirname(__filename);
 const logger = createLogger('generate-price-books');
 
 /**
- * Hierarchical price book structure configuration (3 levels)
+ * Price book structure configuration
  * @constant {Object}
  */
-const PRICE_BOOK_HIERARCHY = {
-  // Level 1: Base price books (PriceBookBase - have currency)
-  base: [
-    {
-      priceBookId: 'US-Retail',
-      name: 'US Retail Price Book',
-      currency: 'USD'
-    },
-    {
-      priceBookId: 'US-Contract',
-      name: 'US Contract Price Book',
-      currency: 'USD'
-    }
-  ],
+const PRICE_BOOK_STRUCTURE = {
+  // Base price book (has currency)
+  base: {
+    priceBookId: 'US-Retail',
+    name: 'US Retail Catalog Pricing',
+    currency: 'USD',
+    description: 'Base retail pricing for all products'
+  },
 
-  // Level 2: Customer segment price books (PriceBookChild - have parentId)
-  segments: [
-    {
-      priceBookId: 'Retail-Consumer',
-      name: 'Retail Consumer Price Book',
-      parentId: 'US-Retail'
-    },
-    {
-      priceBookId: 'Contract-Commercial',
-      name: 'Commercial Contract Price Book',
-      parentId: 'US-Contract'
-    },
-    {
-      priceBookId: 'Contract-Residential',
-      name: 'Residential Contract Price Book',
-      parentId: 'US-Contract'
-    },
-    {
-      priceBookId: 'Contract-Pro',
-      name: 'Pro Contractor Price Book',
-      parentId: 'US-Contract'
-    }
-  ],
-
-  // Level 3: Volume tier price books (PriceBookChild - have parentId to level-2)
+  // Customer tier price books (have parentId)
   tiers: [
     {
-      priceBookId: 'Commercial-Tier1',
-      name: 'Commercial Volume Tier 1',
-      parentId: 'Contract-Commercial'
+      priceBookId: 'Production-Builder',
+      name: 'Production Builder Pricing',
+      parentId: 'US-Retail',
+      description: 'Volume pricing for production home builders (120+ homes/year)',
+      discount: 0.15, // 15% off retail
+      persona: 'Sarah Martinez - Production Builder'
     },
     {
-      priceBookId: 'Commercial-Tier2',
-      name: 'Commercial Volume Tier 2',
-      parentId: 'Contract-Commercial'
+      priceBookId: 'Trade-Professional',
+      name: 'Trade Professional Pricing',
+      parentId: 'US-Retail',
+      description: 'Professional pricing for licensed contractors and remodelers',
+      discount: 0.10, // 10% off retail
+      persona: 'Marcus Johnson (GC), Lisa Chen (Remodeler)'
     },
     {
-      priceBookId: 'Residential-Builder',
-      name: 'Production Builder Price Book',
-      parentId: 'Contract-Residential'
+      priceBookId: 'Wholesale-Reseller',
+      name: 'Wholesale Reseller Pricing',
+      parentId: 'US-Retail',
+      description: 'Wholesale pricing for retail stores buying for resale',
+      discount: 0.25, // 25% off retail (cost-based)
+      persona: 'Kevin Rodriguez - Store Manager'
     },
     {
-      priceBookId: 'Pro-Specialty',
-      name: 'Specialty Trade Price Book',
-      parentId: 'Contract-Pro'
+      priceBookId: 'Retail-Registered',
+      name: 'Registered Customer Pricing',
+      parentId: 'US-Retail',
+      description: 'Loyalty pricing for registered DIY customers',
+      discount: 0.05, // 5% loyalty discount
+      persona: 'David Thompson - Pro Homeowner (optional - can use base retail)'
     }
   ]
 };
 
 /**
- * Generates 10 hierarchical price books with 3-level structure.
+ * Generates price books for BuildRight persona-driven pricing.
  *
  * ACO Price Book Schema:
- *   PriceBookBase (Level 1):
+ *   PriceBookBase:
  *     - priceBookId {string} - Unique identifier (required)
  *     - name {string} - Human-readable name (required)
  *     - currency {string} - ISO currency code (required)
  *
- *   PriceBookChild (Levels 2-3):
+ *   PriceBookChild:
  *     - priceBookId {string} - Unique identifier (required)
  *     - name {string} - Human-readable name (required)
  *     - parentId {string} - References parent price book (required)
- *     - NO currency field (inherited from root)
+ *     - NO currency field (inherited from parent)
  *
  * @returns {Array<Object>} Array of price book objects matching ACO FeedPricebook schema
  */
 export function generatePriceBooks() {
   const priceBooks = [];
 
-  // Level 1: Base price books (PriceBookBase)
-  PRICE_BOOK_HIERARCHY.base.forEach(baseBook => {
-    priceBooks.push({
-      priceBookId: baseBook.priceBookId,
-      name: baseBook.name,
-      currency: baseBook.currency
-    });
+  // Add base price book
+  priceBooks.push({
+    priceBookId: PRICE_BOOK_STRUCTURE.base.priceBookId,
+    name: PRICE_BOOK_STRUCTURE.base.name,
+    currency: PRICE_BOOK_STRUCTURE.base.currency
   });
 
-  // Level 2: Customer segment price books (PriceBookChild)
-  PRICE_BOOK_HIERARCHY.segments.forEach(segmentBook => {
+  // Add customer tier price books
+  PRICE_BOOK_STRUCTURE.tiers.forEach(tier => {
     priceBooks.push({
-      priceBookId: segmentBook.priceBookId,
-      name: segmentBook.name,
-      parentId: segmentBook.parentId
-    });
-  });
-
-  // Level 3: Volume tier price books (PriceBookChild)
-  PRICE_BOOK_HIERARCHY.tiers.forEach(tierBook => {
-    priceBooks.push({
-      priceBookId: tierBook.priceBookId,
-      name: tierBook.name,
-      parentId: tierBook.parentId
+      priceBookId: tier.priceBookId,
+      name: tier.name,
+      parentId: tier.parentId
     });
   });
 
@@ -134,15 +111,14 @@ export function generatePriceBooks() {
 }
 
 /**
- * Validates hierarchical price book structure for ACO compliance.
- * Ensures 10 total books with proper hierarchy (2 base + 4 level-2 + 4 level-3).
+ * Validates price book structure for ACO compliance.
  *
  * @param {Array<Object>} priceBooks - Array of price books to validate
  * @returns {Object} Validation result containing:
  *   - valid {boolean} - True if validation passes, false otherwise
  *   - errors {Array<string>} - Array of validation error messages
  */
-export function validatePriceBookHierarchy(priceBooks) {
+export function validatePriceBooks(priceBooks) {
   const errors = [];
   const priceBookIds = new Set(priceBooks.map(pb => pb.priceBookId));
 
@@ -185,78 +161,30 @@ export function validatePriceBookHierarchy(priceBooks) {
 }
 
 /**
- * Calculates the maximum depth of the price book hierarchy.
- * Recursively traverses parent references to find deepest level.
- *
- * @param {Array<Object>} priceBooks - Array of price books
- * @returns {number} Maximum hierarchy depth (1 for flat, 3 for full hierarchy)
+ * Get pricing strategy metadata for documentation
+ * @returns {Object} Pricing strategy details
  */
-export function calculateHierarchyDepth(priceBooks) {
-  if (priceBooks.length === 0) return 0;
-
-  /**
-   * Recursively calculates depth of a single price book
-   * @param {string} priceBookId - Price book ID to calculate depth for
-   * @param {Set<string>} visited - Set of visited IDs (circular reference protection)
-   * @returns {number} Depth of this price book (1 = base, 2 = child, 3 = grandchild)
-   */
-  function getDepth(priceBookId, visited = new Set()) {
-    if (visited.has(priceBookId)) return 0; // Circular reference detected
-    visited.add(priceBookId);
-
-    const book = priceBooks.find(pb => pb.priceBookId === priceBookId);
-    if (!book) return 0; // Book not found
-    if (!book.parentId) return 1; // Base book (level 1)
-
-    return 1 + getDepth(book.parentId, visited);
-  }
-
-  // Find maximum depth across all books
-  let maxDepth = 0;
-  for (const book of priceBooks) {
-    const depth = getDepth(book.priceBookId);
-    maxDepth = Math.max(maxDepth, depth);
-  }
-
-  return maxDepth;
-}
-
-/**
- * Generates visual hierarchy tree string for logging
- * @param {Array<Object>} priceBooks - Array of price books
- * @returns {Array<string>} Array of formatted hierarchy lines
- */
-function generateHierarchyTree(priceBooks) {
-  const lines = [];
-  const baseBooks = priceBooks.filter(pb => !pb.parentId);
-
-  baseBooks.forEach((base, baseIdx) => {
-    const isLastBase = baseIdx === baseBooks.length - 1;
-    lines.push(`${base.priceBookId} (${base.currency})`);
-
-    const level2Children = priceBooks.filter(pb => pb.parentId === base.priceBookId);
-
-    level2Children.forEach((child2, child2Idx) => {
-      const isLastChild2 = child2Idx === level2Children.length - 1;
-      const child2Prefix = isLastChild2 ? '  └─' : '  ├─';
-      lines.push(`${child2Prefix} ${child2.priceBookId}`);
-
-      const level3Children = priceBooks.filter(pb => pb.parentId === child2.priceBookId);
-
-      level3Children.forEach((child3, child3Idx) => {
-        const isLastChild3 = child3Idx === level3Children.length - 1;
-        const child3Prefix = isLastChild2 ? '     ' : '  │  ';
-        const child3Connector = isLastChild3 ? '└─' : '├─';
-        lines.push(`${child3Prefix}${child3Connector} ${child3.priceBookId}`);
-      });
-    });
-
-    if (!isLastBase) {
-      lines.push(''); // Empty line between base book trees
+export function getPricingStrategy() {
+  return {
+    structure: '2-level hierarchy (base → customer tier)',
+    totalPriceBooks: 1 + PRICE_BOOK_STRUCTURE.tiers.length,
+    customerTiers: PRICE_BOOK_STRUCTURE.tiers.map(tier => ({
+      id: tier.priceBookId,
+      name: tier.name,
+      discount: `${(tier.discount * 100).toFixed(0)}%`,
+      persona: tier.persona,
+      description: tier.description
+    })),
+    volumeTiers: {
+      note: 'Volume tier pricing (quantity-based discounts) is defined in price generation phase',
+      tiers: [
+        { range: '1-99 units', discount: '0% (base tier price)' },
+        { range: '100-293 units', discount: '3% volume discount' },
+        { range: '294+ units', discount: '8% pallet discount' }
+      ],
+      applicableProducts: 'High-volume products (lumber, fasteners, common materials)'
     }
-  });
-
-  return lines;
+  };
 }
 
 /**
@@ -265,6 +193,7 @@ function generateHierarchyTree(priceBooks) {
  */
 async function main() {
   logger.info('Starting price book generation...');
+  logger.info('Strategy: Persona-driven customer tier pricing with volume discounts');
 
   try {
     // Generate price books
@@ -274,7 +203,7 @@ async function main() {
 
     // Validate structure
     logger.info('Validating price book structure...');
-    const validation = validatePriceBookHierarchy(priceBooks);
+    const validation = validatePriceBooks(priceBooks);
 
     if (!validation.valid) {
       logger.error('Price book validation failed:', validation.errors);
@@ -283,17 +212,23 @@ async function main() {
 
     logger.info('Price book validation passed');
 
-    // Calculate and log hierarchy stats
-    const depth = calculateHierarchyDepth(priceBooks);
-    const baseBooks = priceBooks.filter(pb => !pb.parentId);
-    const level2Books = priceBooks.filter(pb => pb.parentId && ['US-Retail', 'US-Contract'].includes(pb.parentId));
-    const level3Books = priceBooks.filter(pb => pb.parentId && !['US-Retail', 'US-Contract'].includes(pb.parentId));
+    // Log pricing strategy
+    const strategy = getPricingStrategy();
+    logger.info('Pricing Strategy:', {
+      structure: strategy.structure,
+      totalPriceBooks: strategy.totalPriceBooks
+    });
 
-    logger.info(`Hierarchy depth: ${depth} levels`);
-    logger.info('Price book distribution:');
-    logger.info(`  Level 1 (Base): ${baseBooks.length} books`);
-    logger.info(`  Level 2 (Segments): ${level2Books.length} books`);
-    logger.info(`  Level 3 (Tiers): ${level3Books.length} books`);
+    logger.info('Customer Tiers:');
+    strategy.customerTiers.forEach((tier, idx) => {
+      logger.info(`  ${idx + 1}. ${tier.name} (${tier.discount} off retail)`);
+      logger.info(`     Persona: ${tier.persona}`);
+    });
+
+    logger.info('Volume Tier Pricing:');
+    strategy.volumeTiers.tiers.forEach(tier => {
+      logger.info(`  - ${tier.range}: ${tier.discount}`);
+    });
 
     // Ensure output directory exists
     const outputDir = path.join(process.cwd(), 'data/buildright');
@@ -307,16 +242,18 @@ async function main() {
     fs.writeFileSync(outputPath, JSON.stringify(priceBooks, null, 2));
     logger.info(`Price books written to ${outputPath}`);
 
-    // Log hierarchy structure visually
-    logger.info('Price book hierarchy:');
-    const hierarchyLines = generateHierarchyTree(priceBooks);
-    hierarchyLines.forEach(line => logger.info(`  ${line}`));
-
+    // Log summary
     logger.info('');
     logger.info('Price book generation complete:');
     logger.info(`  Total price books: ${priceBooks.length}`);
-    logger.info(`  Structure: Hierarchical (${depth} levels)`);
-    logger.info(`  Base books: ${baseBooks.length}, Child books: ${level2Books.length + level3Books.length}`);
+    logger.info(`  Structure: ${strategy.structure}`);
+    logger.info(`  Base book: 1 (US-Retail)`);
+    logger.info(`  Customer tiers: ${PRICE_BOOK_STRUCTURE.tiers.length}`);
+    logger.info('');
+    logger.info('Next steps:');
+    logger.info('  1. Run generate-prices-simple.js to create volume-tiered pricing');
+    logger.info('  2. Run ingest-price-books.js to ingest to ACO');
+    logger.info('  3. Run ingest-prices.js to ingest prices to ACO');
 
   } catch (error) {
     logger.error('Error generating price books:', error);

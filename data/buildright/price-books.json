@@ -1,52 +1,27 @@
 [
   {
     "priceBookId": "US-Retail",
-    "name": "US Retail Price Book",
+    "name": "US Retail Catalog Pricing",
     "currency": "USD"
   },
   {
-    "priceBookId": "US-Contract",
-    "name": "US Contract Price Book",
-    "currency": "USD"
-  },
-  {
-    "priceBookId": "Retail-Consumer",
-    "name": "Retail Consumer Price Book",
+    "priceBookId": "Production-Builder",
+    "name": "Production Builder Pricing",
     "parentId": "US-Retail"
   },
   {
-    "priceBookId": "Contract-Commercial",
-    "name": "Commercial Contract Price Book",
-    "parentId": "US-Contract"
+    "priceBookId": "Trade-Professional",
+    "name": "Trade Professional Pricing",
+    "parentId": "US-Retail"
   },
   {
-    "priceBookId": "Contract-Residential",
-    "name": "Residential Contract Price Book",
-    "parentId": "US-Contract"
+    "priceBookId": "Wholesale-Reseller",
+    "name": "Wholesale Reseller Pricing",
+    "parentId": "US-Retail"
   },
   {
-    "priceBookId": "Contract-Pro",
-    "name": "Pro Contractor Price Book",
-    "parentId": "US-Contract"
-  },
-  {
-    "priceBookId": "Commercial-Tier1",
-    "name": "Commercial Volume Tier 1",
-    "parentId": "Contract-Commercial"
-  },
-  {
-    "priceBookId": "Commercial-Tier2",
-    "name": "Commercial Volume Tier 2",
-    "parentId": "Contract-Commercial"
-  },
-  {
-    "priceBookId": "Residential-Builder",
-    "name": "Production Builder Price Book",
-    "parentId": "Contract-Residential"
-  },
-  {
-    "priceBookId": "Pro-Specialty",
-    "name": "Specialty Trade Price Book",
-    "parentId": "Contract-Pro"
+    "priceBookId": "Retail-Registered",
+    "name": "Registered Customer Pricing",
+    "parentId": "US-Retail"
   }
 ]
