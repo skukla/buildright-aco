@@ -293,6 +293,63 @@ function generateProjectRecommendations(edsProducts) {
   });
   
   return {
+    personas: {
+      sarah: {
+        id: 'sarah',
+        name: 'Sarah Martinez',
+        title: 'Production Builder',
+        description: 'Managing 12 spec homes per year',
+        attributes: {
+          construction_phase: 'foundation_framing',
+          customer_tier: 'Production-Builder'
+        }
+      },
+      marcus: {
+        id: 'marcus',
+        name: 'Marcus Johnson',
+        title: 'General Contractor',
+        description: 'Custom homes and major renovations',
+        attributes: {
+          construction_phase: 'foundation_framing',
+          quality_tier: 'professional',
+          customer_tier: 'Trade-Professional'
+        }
+      },
+      lisa: {
+        id: 'lisa',
+        name: 'Lisa Chen',
+        title: 'Remodeling Contractor',
+        description: 'High-end residential remodels',
+        attributes: {
+          package_tier: 'better',
+          room_category: 'bathroom',
+          customer_tier: 'Trade-Professional'
+        }
+      },
+      david: {
+        id: 'david',
+        name: 'David Thompson',
+        title: 'Pro Homeowner',
+        description: 'DIY enthusiast building a deck',
+        attributes: {
+          deck_compatible: true,
+          deck_shape: 'rectangular',
+          deck_material_type: 'composite',
+          customer_tier: 'Retail-Registered'
+        }
+      },
+      kevin: {
+        id: 'kevin',
+        name: 'Kevin Rodriguez',
+        title: 'Store Manager',
+        description: 'Managing inventory for pro contractor store',
+        attributes: {
+          store_velocity_category: 'high_volume',
+          restock_priority: 'high',
+          customer_tier: 'Wholesale-Reseller'
+        }
+      }
+    },
     templates,
     packages: {
       bathroom: bathroomPackages

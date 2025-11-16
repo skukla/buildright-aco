@@ -33,6 +33,47 @@
       {
         "code": "ppe_hard_hat_class",
         "value": "class_c"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_shape",
+        "value": [
+          "rectangular",
+          "l_shaped"
+        ]
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 100
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -93,6 +134,47 @@
       {
         "code": "ppe_niosh_rating",
         "value": "p100"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_shape",
+        "value": [
+          "rectangular",
+          "l_shaped"
+        ]
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 75
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -145,6 +227,47 @@
       {
         "code": "drywall_product_type",
         "value": "mold_resistant"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_shape",
+        "value": [
+          "rectangular",
+          "l_shaped"
+        ]
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 50
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -192,6 +315,47 @@
       {
         "code": "fastener_drive_type",
         "value": "torx"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_shape",
+        "value": [
+          "rectangular",
+          "l_shaped"
+        ]
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 40
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -239,6 +403,36 @@
       {
         "code": "fastener_head_type",
         "value": "flat"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "deck_compatible",
+        "value": false
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 20
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -294,6 +488,53 @@
       {
         "code": "door_core_type",
         "value": "hollow_core"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_shape",
+        "value": [
+          "rectangular",
+          "l_shaped"
+        ]
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "deck_railing_compatible",
+        "value": [
+          "wood"
+        ]
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 30
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -353,6 +594,36 @@
       {
         "code": "ppe_hard_hat_type",
         "value": "type_2"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "deck_compatible",
+        "value": false
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 50
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -404,6 +675,36 @@
       {
         "code": "ppe_hard_hat_type",
         "value": "type_1"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": false
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 40
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -447,6 +748,36 @@
       {
         "code": "ppe_hard_hat_class",
         "value": "class_c"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": false
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 30
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -495,6 +826,40 @@
       {
         "code": "door_core_type",
         "value": "hollow_core"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 10
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -547,6 +912,42 @@
       {
         "code": "window_operation_type",
         "value": "single_hung"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "surfaces"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 15
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -598,6 +999,36 @@
       {
         "code": "fastener_material",
         "value": "stainless_steel_304"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": false
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -653,6 +1084,32 @@
       {
         "code": "ppe_cut_resistance",
         "value": "a4"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 50
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -708,6 +1165,32 @@
       {
         "code": "fastener_drive_type",
         "value": "slotted"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 40
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -751,6 +1234,32 @@
       {
         "code": "window_glazing_type",
         "value": "triple_pane"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 45
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -798,6 +1307,32 @@
       {
         "code": "fastener_coating",
         "value": "galvanized"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 35
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -841,6 +1376,32 @@
       {
         "code": "window_energy_star",
         "value": false
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 20
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -892,6 +1453,32 @@
       {
         "code": "ppe_hard_hat_type",
         "value": "type_2"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -939,6 +1526,43 @@
       {
         "code": "ppe_hi_vis_class",
         "value": "class_2"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "good",
+          "better"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "surfaces"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 60
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -990,6 +1614,43 @@
       {
         "code": "drywall_product_type",
         "value": "sound_dampening"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better",
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "surfaces"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 50
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -1033,6 +1694,43 @@
       {
         "code": "door_material",
         "value": "fiberglass"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better",
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "surfaces"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 30
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -1076,6 +1774,42 @@
       {
         "code": "ppe_hard_hat_type",
         "value": "type_1"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "surfaces"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 20
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1123,6 +1857,43 @@
       {
         "code": "fastener_material",
         "value": "stainless_steel_316"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better",
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "surfaces"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -1178,6 +1949,42 @@
       {
         "code": "fastener_head_type",
         "value": "round"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "surfaces"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 15
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1230,6 +2037,42 @@
       {
         "code": "window_operation_type",
         "value": "single_hung"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "good"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 15
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -1290,6 +2133,42 @@
       {
         "code": "ppe_niosh_rating",
         "value": "n100"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 12
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -1346,6 +2225,42 @@
       {
         "code": "ppe_hard_hat_type",
         "value": "type_1"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 10
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -1404,6 +2319,42 @@
       {
         "code": "lumber_grade",
         "value": "no_2"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 8
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1452,6 +2403,42 @@
       {
         "code": "lumber_species",
         "value": "western_red_cedar"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 5
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1496,6 +2483,42 @@
       {
         "code": "fastener_head_type",
         "value": "pan"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 10
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1544,6 +2567,42 @@
       {
         "code": "lumber_grade",
         "value": "select_structural"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 10
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -1600,6 +2659,42 @@
       {
         "code": "lumber_grade",
         "value": "no_2"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "good"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -1652,6 +2747,42 @@
           "isea_105",
           "z89_1"
         ]
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 5
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1700,6 +2831,53 @@
       {
         "code": "door_type",
         "value": "storm"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_shape",
+        "value": [
+          "rectangular",
+          "l_shaped"
+        ]
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 5
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1744,6 +2922,42 @@
       {
         "code": "window_material",
         "value": "aluminum"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 15
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -1784,6 +2998,42 @@
       {
         "code": "ppe_hard_hat_class",
         "value": "class_e"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 8
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -1841,6 +3091,32 @@
       {
         "code": "fastener_head_type",
         "value": "bugle"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 30
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -1886,6 +3162,32 @@
       {
         "code": "door_type",
         "value": "entry"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 40
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -1937,6 +3239,32 @@
         "value": [
           "fsc_mix"
         ]
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -1986,6 +3314,32 @@
       {
         "code": "fastener_material",
         "value": "steel"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 35
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2031,6 +3385,32 @@
       {
         "code": "ppe_cut_resistance",
         "value": "a4"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 20
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2080,6 +3460,40 @@
       {
         "code": "drywall_thickness",
         "value": "0.625"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 20
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2129,6 +3543,47 @@
       {
         "code": "ppe_hard_hat_type",
         "value": "type_2"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_shape",
+        "value": [
+          "rectangular",
+          "l_shaped"
+        ]
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 35
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -2177,6 +3632,32 @@
           "sfi_certified",
           "none"
         ]
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 50
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -2238,6 +3719,32 @@
         "value": [
           "fsc_mix"
         ]
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 40
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -2283,6 +3790,32 @@
       {
         "code": "window_energy_star",
         "value": false
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 30
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2332,6 +3865,40 @@
       {
         "code": "ppe_category",
         "value": "head_protection"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "foundation_framing"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "deck_compatible",
+        "value": true
+      },
+      {
+        "code": "deck_material_type",
+        "value": "wood"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 15
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -2389,6 +3956,43 @@
       {
         "code": "ppe_hi_vis_class",
         "value": "class_1"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better",
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "fixtures"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2436,6 +4040,32 @@
       {
         "code": "drywall_product_type",
         "value": "mold_resistant"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 40
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -2499,6 +4129,32 @@
           "pefc_certified",
           "fsc_certified"
         ]
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 35
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -2550,6 +4206,42 @@
       {
         "code": "window_glazing_type",
         "value": "single_pane"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "finishes"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 20
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2605,6 +4297,42 @@
       {
         "code": "window_glazing_type",
         "value": "double_pane"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "finishes"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2656,6 +4384,32 @@
       {
         "code": "window_glazing_type",
         "value": "single_pane"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 30
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2711,6 +4465,32 @@
       {
         "code": "drywall_product_type",
         "value": "fire_rated"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2774,6 +4554,32 @@
           "z87_1",
           "z359"
         ]
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "builder_grade"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "high"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 30
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 7
+      },
+      {
+        "code": "restock_priority",
+        "value": "high"
       }
     ],
     "routes": [
@@ -2829,6 +4635,32 @@
       {
         "code": "ppe_category",
         "value": "head_protection"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "professional"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 25
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2884,6 +4716,42 @@
       {
         "code": "drywall_edge_type",
         "value": "square"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "finishes"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 15
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2939,6 +4807,43 @@
       {
         "code": "drywall_edge_type",
         "value": "tapered"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "better",
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "finishes"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "medium"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 20
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 14
+      },
+      {
+        "code": "restock_priority",
+        "value": "medium"
       }
     ],
     "routes": [
@@ -2994,6 +4899,42 @@
       {
         "code": "fastener_material",
         "value": "steel"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "finishes"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 10
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [
@@ -3041,6 +4982,42 @@
       {
         "code": "drywall_thickness",
         "value": "0.5"
+      },
+      {
+        "code": "construction_phase",
+        "value": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "value": "premium"
+      },
+      {
+        "code": "package_tier",
+        "value": [
+          "best"
+        ]
+      },
+      {
+        "code": "room_category",
+        "value": "finishes"
+      },
+      {
+        "code": "store_velocity_category",
+        "value": "low"
+      },
+      {
+        "code": "recommended_restock_quantity",
+        "value": 10
+      },
+      {
+        "code": "typical_days_supply",
+        "value": 30
+      },
+      {
+        "code": "restock_priority",
+        "value": "low"
       }
     ],
     "routes": [

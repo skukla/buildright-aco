@@ -239,7 +239,7 @@ function generateBundle(bundleDef, category, products, categories, metadata, ind
   const categoryObj = findCategoryByName(categories, category) || categories[0];
   const routes = getCategoryRoutes(categories, categoryObj.categoryId);
 
-  const categoryDef = PRODUCT_CATEGORIES[category];
+  const categoryDef = PRODUCT_CATEGORIES[category] || {};
   const categoryValue = categoryDef.attributeValue || category;
 
   const attributes = generateAttributes(metadata, categoryValue, brand);
@@ -426,8 +426,9 @@ async function generateBundles() {
     logger.info('Bundle Generation Complete');
 
   } catch (error) {
-    logger.error('Bundle generation failed:', error.message);
-    logger.error('Stack trace:', error.stack);
+    logger.error('Bundle generation failed:', error?.message || 'Unknown error');
+    logger.error('Error object:', error);
+    logger.error('Stack trace:', error?.stack || 'No stack trace');
     process.exit(1);
   }
 }

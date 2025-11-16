@@ -1769,7 +1769,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -1890,7 +1890,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -1973,7 +1973,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2056,7 +2056,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2151,7 +2151,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2249,7 +2249,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2356,7 +2356,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2451,7 +2451,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2540,7 +2540,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2638,7 +2638,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2757,7 +2757,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2840,7 +2840,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -2923,7 +2923,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -3012,7 +3012,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -3110,7 +3110,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -3227,7 +3227,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -3316,7 +3316,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -3405,7 +3405,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -3488,7 +3488,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -7079,24 +7079,24 @@
     }
   },
   {
-    "sku": "SAFE-23B6BDCE-CONFIG",
+    "sku": "ROOF-5528DC0A-CONFIG",
     "source": {
       "locale": "en-US"
     },
-    "name": "SafeGuard PPE Kit - Configurable",
-    "slug": "safeguard-ppe-kit-configurable",
+    "name": "SafeGuard Architectural Shingle System - Configurable",
+    "slug": "safeguard-architectural-shingle-system-configurable",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
       "SEARCH"
     ],
-    "description": "Customizable PPE Kit from SafeGuard. Available in multiple sizes and configurations.",
-    "shortDescription": "PPE Kit - Multiple Options Available",
+    "description": "Customizable Architectural Shingle System from SafeGuard. Available in multiple sizes and configurations.",
+    "shortDescription": "Architectural Shingle System - Multiple Options Available",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7120,54 +7120,27 @@
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 40
       }
     ],
     "configurations": [
       {
-        "attributeCode": "size",
-        "label": "Size",
+        "attributeCode": "style",
+        "label": "Style",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "size-S-ref",
-            "label": "S"
+            "variantReferenceId": "style-dimensional-ref",
+            "label": "dimensional"
           },
           {
-            "variantReferenceId": "size-M-ref",
-            "label": "M"
+            "variantReferenceId": "style-laminated-ref",
+            "label": "laminated"
           },
           {
-            "variantReferenceId": "size-L-ref",
-            "label": "L"
-          },
-          {
-            "variantReferenceId": "size-XL-ref",
-            "label": "XL"
-          },
-          {
-            "variantReferenceId": "size-XXL-ref",
-            "label": "XXL"
-          }
-        ]
-      },
-      {
-        "attributeCode": "type",
-        "label": "Type",
-        "type": "CONFIGURABLE",
-        "values": [
-          {
-            "variantReferenceId": "type-basic-ref",
-            "label": "basic"
-          },
-          {
-            "variantReferenceId": "type-standard-ref",
-            "label": "standard"
-          },
-          {
-            "variantReferenceId": "type-premium-ref",
-            "label": "premium"
+            "variantReferenceId": "style-designer-ref",
+            "label": "designer"
           }
         ]
       },
@@ -7177,27 +7150,50 @@
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "color-orange-ref",
-            "label": "orange"
+            "variantReferenceId": "color-charcoal-ref",
+            "label": "charcoal"
           },
           {
-            "variantReferenceId": "color-yellow-ref",
-            "label": "yellow"
+            "variantReferenceId": "color-weathered-wood-ref",
+            "label": "weathered-wood"
           },
           {
-            "variantReferenceId": "color-green-ref",
-            "label": "green"
+            "variantReferenceId": "color-slate-ref",
+            "label": "slate"
+          },
+          {
+            "variantReferenceId": "color-brown-ref",
+            "label": "brown"
+          }
+        ]
+      },
+      {
+        "attributeCode": "warranty",
+        "label": "Warranty",
+        "type": "CONFIGURABLE",
+        "values": [
+          {
+            "variantReferenceId": "warranty-25yr-ref",
+            "label": "25yr"
+          },
+          {
+            "variantReferenceId": "warranty-30yr-ref",
+            "label": "30yr"
+          },
+          {
+            "variantReferenceId": "warranty-lifetime-ref",
+            "label": "lifetime"
           }
         ]
       }
     ],
     "metaTags": {
-      "title": "PPE Kit - Configurable | SafeGuard",
-      "description": "Shop customizable PPE Kit from SafeGuard. Multiple sizes and options available.",
+      "title": "Architectural Shingle System - Configurable | SafeGuard",
+      "description": "Shop customizable Architectural Shingle System from SafeGuard. Multiple sizes and options available.",
       "keywords": [
         "configurable",
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "SafeGuard",
         "custom",
         "options"
@@ -7205,21 +7201,21 @@
     }
   },
   {
-    "sku": "SAFE-23B6BDCE-VAR-C7EFD7",
+    "sku": "ROOF-5528DC0A-VAR-F3BC92",
     "source": {
       "locale": "en-US"
     },
-    "name": "SafeGuard PPE Kit - ",
-    "slug": "safeguard-ppe-kit",
+    "name": "SafeGuard Architectural Shingle System - ",
+    "slug": "safeguard-architectural-shingle-system",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "SafeGuard PPE Kit - . Part of the SafeGuard PPE Kit - Configurable series.",
-    "shortDescription": "SafeGuard PPE Kit - ",
+    "description": "SafeGuard Architectural Shingle System - . Part of the SafeGuard Architectural Shingle System - Configurable series.",
+    "shortDescription": "SafeGuard Architectural Shingle System - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7241,68 +7237,68 @@
         ]
       },
       {
-        "code": "size",
+        "code": "style",
         "values": [
-          "M"
+          "laminated"
         ],
-        "variantReferenceId": "size-M-ref"
-      },
-      {
-        "code": "type",
-        "values": [
-          "standard"
-        ],
-        "variantReferenceId": "type-standard-ref"
+        "variantReferenceId": "style-laminated-ref"
       },
       {
         "code": "color",
         "values": [
-          "yellow"
+          "weathered-wood"
         ],
-        "variantReferenceId": "color-yellow-ref"
+        "variantReferenceId": "color-weathered-wood-ref"
+      },
+      {
+        "code": "warranty",
+        "values": [
+          "30yr"
+        ],
+        "variantReferenceId": "warranty-30yr-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 40
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-23B6BDCE-CONFIG"
+        "sku": "ROOF-5528DC0A-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "SafeGuard PPE Kit -  | BuildRight",
-      "description": "Shop SafeGuard PPE Kit - . Quality construction materials from BuildRight.",
+      "title": "SafeGuard Architectural Shingle System -  | BuildRight",
+      "description": "Shop SafeGuard Architectural Shingle System - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "M",
-        "standard",
-        "yellow"
+        "laminated",
+        "weathered-wood",
+        "30yr"
       ]
     }
   },
   {
-    "sku": "SAFE-23B6BDCE-VAR-925D98",
+    "sku": "ROOF-5528DC0A-VAR-278FD0",
     "source": {
       "locale": "en-US"
     },
-    "name": "SafeGuard PPE Kit - ",
-    "slug": "safeguard-ppe-kit",
+    "name": "SafeGuard Architectural Shingle System - ",
+    "slug": "safeguard-architectural-shingle-system",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "SafeGuard PPE Kit - . Part of the SafeGuard PPE Kit - Configurable series.",
-    "shortDescription": "SafeGuard PPE Kit - ",
+    "description": "SafeGuard Architectural Shingle System - . Part of the SafeGuard Architectural Shingle System - Configurable series.",
+    "shortDescription": "SafeGuard Architectural Shingle System - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7324,68 +7320,68 @@
         ]
       },
       {
-        "code": "size",
+        "code": "style",
         "values": [
-          "XL"
+          "designer"
         ],
-        "variantReferenceId": "size-XL-ref"
-      },
-      {
-        "code": "type",
-        "values": [
-          "basic"
-        ],
-        "variantReferenceId": "type-basic-ref"
+        "variantReferenceId": "style-designer-ref"
       },
       {
         "code": "color",
         "values": [
-          "yellow"
+          "charcoal"
         ],
-        "variantReferenceId": "color-yellow-ref"
+        "variantReferenceId": "color-charcoal-ref"
+      },
+      {
+        "code": "warranty",
+        "values": [
+          "30yr"
+        ],
+        "variantReferenceId": "warranty-30yr-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 40
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-23B6BDCE-CONFIG"
+        "sku": "ROOF-5528DC0A-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "SafeGuard PPE Kit -  | BuildRight",
-      "description": "Shop SafeGuard PPE Kit - . Quality construction materials from BuildRight.",
+      "title": "SafeGuard Architectural Shingle System -  | BuildRight",
+      "description": "Shop SafeGuard Architectural Shingle System - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "XL",
-        "basic",
-        "yellow"
+        "designer",
+        "charcoal",
+        "30yr"
       ]
     }
   },
   {
-    "sku": "SAFE-23B6BDCE-VAR-FD0D6A",
+    "sku": "ROOF-5528DC0A-VAR-6D3E43",
     "source": {
       "locale": "en-US"
     },
-    "name": "SafeGuard PPE Kit - ",
-    "slug": "safeguard-ppe-kit",
+    "name": "SafeGuard Architectural Shingle System - ",
+    "slug": "safeguard-architectural-shingle-system",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "SafeGuard PPE Kit - . Part of the SafeGuard PPE Kit - Configurable series.",
-    "shortDescription": "SafeGuard PPE Kit - ",
+    "description": "SafeGuard Architectural Shingle System - . Part of the SafeGuard Architectural Shingle System - Configurable series.",
+    "shortDescription": "SafeGuard Architectural Shingle System - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7407,68 +7403,68 @@
         ]
       },
       {
-        "code": "size",
+        "code": "style",
         "values": [
-          "S"
+          "designer"
         ],
-        "variantReferenceId": "size-S-ref"
-      },
-      {
-        "code": "type",
-        "values": [
-          "premium"
-        ],
-        "variantReferenceId": "type-premium-ref"
+        "variantReferenceId": "style-designer-ref"
       },
       {
         "code": "color",
         "values": [
-          "orange"
+          "slate"
         ],
-        "variantReferenceId": "color-orange-ref"
+        "variantReferenceId": "color-slate-ref"
+      },
+      {
+        "code": "warranty",
+        "values": [
+          "25yr"
+        ],
+        "variantReferenceId": "warranty-25yr-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 40
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-23B6BDCE-CONFIG"
+        "sku": "ROOF-5528DC0A-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "SafeGuard PPE Kit -  | BuildRight",
-      "description": "Shop SafeGuard PPE Kit - . Quality construction materials from BuildRight.",
+      "title": "SafeGuard Architectural Shingle System -  | BuildRight",
+      "description": "Shop SafeGuard Architectural Shingle System - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "S",
-        "premium",
-        "orange"
+        "designer",
+        "slate",
+        "25yr"
       ]
     }
   },
   {
-    "sku": "SAFE-23B6BDCE-VAR-1E489F",
+    "sku": "ROOF-5528DC0A-VAR-A713B1",
     "source": {
       "locale": "en-US"
     },
-    "name": "SafeGuard PPE Kit - ",
-    "slug": "safeguard-ppe-kit",
+    "name": "SafeGuard Architectural Shingle System - ",
+    "slug": "safeguard-architectural-shingle-system",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "SafeGuard PPE Kit - . Part of the SafeGuard PPE Kit - Configurable series.",
-    "shortDescription": "SafeGuard PPE Kit - ",
+    "description": "SafeGuard Architectural Shingle System - . Part of the SafeGuard Architectural Shingle System - Configurable series.",
+    "shortDescription": "SafeGuard Architectural Shingle System - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7496,71 +7492,71 @@
         ]
       },
       {
-        "code": "size",
+        "code": "style",
         "values": [
-          "M"
+          "dimensional"
         ],
-        "variantReferenceId": "size-M-ref"
-      },
-      {
-        "code": "type",
-        "values": [
-          "premium"
-        ],
-        "variantReferenceId": "type-premium-ref"
+        "variantReferenceId": "style-dimensional-ref"
       },
       {
         "code": "color",
         "values": [
-          "orange"
+          "brown"
         ],
-        "variantReferenceId": "color-orange-ref"
+        "variantReferenceId": "color-brown-ref"
+      },
+      {
+        "code": "warranty",
+        "values": [
+          "25yr"
+        ],
+        "variantReferenceId": "warranty-25yr-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 40
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-23B6BDCE-CONFIG"
+        "sku": "ROOF-5528DC0A-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "SafeGuard PPE Kit -  | BuildRight",
-      "description": "Shop SafeGuard PPE Kit - . Quality construction materials from BuildRight.",
+      "title": "SafeGuard Architectural Shingle System -  | BuildRight",
+      "description": "Shop SafeGuard Architectural Shingle System - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "M",
-        "premium",
-        "orange"
+        "dimensional",
+        "brown",
+        "25yr"
       ]
     }
   },
   {
-    "sku": "SAFE-7ABE4E37-CONFIG",
+    "sku": "ROOF-CE6C34F0-CONFIG",
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Safety Harness System - Configurable",
-    "slug": "reliabuild-safety-harness-system-configurable",
+    "name": "ReliaBuild Specialty Roofing Shingles - Configurable",
+    "slug": "reliabuild-specialty-roofing-shingles-configurable",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
       "SEARCH"
     ],
-    "description": "Customizable Safety Harness System from ReliaBuild. Available in multiple sizes and configurations.",
-    "shortDescription": "Safety Harness System - Multiple Options Available",
+    "description": "Customizable Specialty Roofing Shingles from ReliaBuild. Available in multiple sizes and configurations.",
+    "shortDescription": "Specialty Roofing Shingles - Multiple Options Available",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7596,76 +7592,72 @@
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 96
       }
     ],
     "configurations": [
-      {
-        "attributeCode": "size",
-        "label": "Size",
-        "type": "CONFIGURABLE",
-        "values": [
-          {
-            "variantReferenceId": "size-universal-ref",
-            "label": "universal"
-          },
-          {
-            "variantReferenceId": "size-XL-ref",
-            "label": "XL"
-          },
-          {
-            "variantReferenceId": "size-XXL-ref",
-            "label": "XXL"
-          }
-        ]
-      },
       {
         "attributeCode": "type",
         "label": "Type",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "type-basic-ref",
-            "label": "basic"
+            "variantReferenceId": "type-impact-resistant-ref",
+            "label": "impact-resistant"
           },
           {
-            "variantReferenceId": "type-positioning-ref",
-            "label": "positioning"
+            "variantReferenceId": "type-cool-roof-ref",
+            "label": "cool-roof"
           },
           {
-            "variantReferenceId": "type-retrieval-ref",
-            "label": "retrieval"
+            "variantReferenceId": "type-solar-reflective-ref",
+            "label": "solar-reflective"
           }
         ]
       },
       {
-        "attributeCode": "weight_capacity",
-        "label": "Weight_capacity",
+        "attributeCode": "profile",
+        "label": "Profile",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "weight_capacity-310-ref",
-            "label": "310"
+            "variantReferenceId": "profile-standard-ref",
+            "label": "standard"
           },
           {
-            "variantReferenceId": "weight_capacity-400-ref",
-            "label": "400"
+            "variantReferenceId": "profile-high-profile-ref",
+            "label": "high-profile"
           },
           {
-            "variantReferenceId": "weight_capacity-420-ref",
-            "label": "420"
+            "variantReferenceId": "profile-ultra-profile-ref",
+            "label": "ultra-profile"
+          }
+        ]
+      },
+      {
+        "attributeCode": "coverage",
+        "label": "Coverage",
+        "type": "CONFIGURABLE",
+        "values": [
+          {
+            "variantReferenceId": "coverage-100sf-ref",
+            "label": "100sf"
+          },
+          {
+            "variantReferenceId": "coverage-133sf-ref",
+            "label": "133sf"
           }
         ]
       }
     ],
     "metaTags": {
-      "title": "Safety Harness System - Configurable | ReliaBuild",
-      "description": "Shop customizable Safety Harness System from ReliaBuild. Multiple sizes and options available.",
+      "title": "Specialty Roofing Shingles - Configurable | ReliaBuild",
+      "description": "Shop customizable Specialty Roofing Shingles from ReliaBuild. Multiple sizes and options available.",
       "keywords": [
         "configurable",
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "ReliaBuild",
         "custom",
         "options"
@@ -7673,21 +7665,21 @@
     }
   },
   {
-    "sku": "SAFE-7ABE4E37-VAR-63E5B0",
+    "sku": "ROOF-CE6C34F0-VAR-538ED6",
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Safety Harness System - ",
-    "slug": "reliabuild-safety-harness-system",
+    "name": "ReliaBuild Specialty Roofing Shingles - ",
+    "slug": "reliabuild-specialty-roofing-shingles",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
-    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "description": "ReliaBuild Specialty Roofing Shingles - . Part of the ReliaBuild Specialty Roofing Shingles - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Roofing Shingles - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7715,68 +7707,68 @@
         ]
       },
       {
-        "code": "size",
-        "values": [
-          "XL"
-        ],
-        "variantReferenceId": "size-XL-ref"
-      },
-      {
         "code": "type",
         "values": [
-          "retrieval"
+          "solar-reflective"
         ],
-        "variantReferenceId": "type-retrieval-ref"
+        "variantReferenceId": "type-solar-reflective-ref"
       },
       {
-        "code": "weight_capacity",
+        "code": "profile",
         "values": [
-          "400"
+          "standard"
         ],
-        "variantReferenceId": "weight_capacity-400-ref"
+        "variantReferenceId": "profile-standard-ref"
+      },
+      {
+        "code": "coverage",
+        "values": [
+          "133sf"
+        ],
+        "variantReferenceId": "coverage-133sf-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 96
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-7ABE4E37-CONFIG"
+        "sku": "ROOF-CE6C34F0-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "ReliaBuild Safety Harness System -  | BuildRight",
-      "description": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+      "title": "ReliaBuild Specialty Roofing Shingles -  | BuildRight",
+      "description": "Shop ReliaBuild Specialty Roofing Shingles - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "XL",
-        "retrieval",
-        "400"
+        "solar-reflective",
+        "standard",
+        "133sf"
       ]
     }
   },
   {
-    "sku": "SAFE-7ABE4E37-VAR-D44224",
+    "sku": "ROOF-CE6C34F0-VAR-2F3800",
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Safety Harness System - ",
-    "slug": "reliabuild-safety-harness-system",
+    "name": "ReliaBuild Specialty Roofing Shingles - ",
+    "slug": "reliabuild-specialty-roofing-shingles",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
-    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "description": "ReliaBuild Specialty Roofing Shingles - . Part of the ReliaBuild Specialty Roofing Shingles - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Roofing Shingles - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7804,68 +7796,68 @@
         ]
       },
       {
-        "code": "size",
-        "values": [
-          "XL"
-        ],
-        "variantReferenceId": "size-XL-ref"
-      },
-      {
         "code": "type",
         "values": [
-          "positioning"
+          "solar-reflective"
         ],
-        "variantReferenceId": "type-positioning-ref"
+        "variantReferenceId": "type-solar-reflective-ref"
       },
       {
-        "code": "weight_capacity",
+        "code": "profile",
         "values": [
-          "400"
+          "ultra-profile"
         ],
-        "variantReferenceId": "weight_capacity-400-ref"
+        "variantReferenceId": "profile-ultra-profile-ref"
+      },
+      {
+        "code": "coverage",
+        "values": [
+          "100sf"
+        ],
+        "variantReferenceId": "coverage-100sf-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 96
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-7ABE4E37-CONFIG"
+        "sku": "ROOF-CE6C34F0-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "ReliaBuild Safety Harness System -  | BuildRight",
-      "description": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+      "title": "ReliaBuild Specialty Roofing Shingles -  | BuildRight",
+      "description": "Shop ReliaBuild Specialty Roofing Shingles - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "XL",
-        "positioning",
-        "400"
+        "solar-reflective",
+        "ultra-profile",
+        "100sf"
       ]
     }
   },
   {
-    "sku": "SAFE-7ABE4E37-VAR-D30BC2",
+    "sku": "ROOF-CE6C34F0-VAR-D86EC2",
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Safety Harness System - ",
-    "slug": "reliabuild-safety-harness-system",
+    "name": "ReliaBuild Specialty Roofing Shingles - ",
+    "slug": "reliabuild-specialty-roofing-shingles",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
-    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "description": "ReliaBuild Specialty Roofing Shingles - . Part of the ReliaBuild Specialty Roofing Shingles - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Roofing Shingles - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7887,68 +7879,68 @@
         ]
       },
       {
-        "code": "size",
-        "values": [
-          "XXL"
-        ],
-        "variantReferenceId": "size-XXL-ref"
-      },
-      {
         "code": "type",
         "values": [
-          "basic"
+          "cool-roof"
         ],
-        "variantReferenceId": "type-basic-ref"
+        "variantReferenceId": "type-cool-roof-ref"
       },
       {
-        "code": "weight_capacity",
+        "code": "profile",
         "values": [
-          "310"
+          "standard"
         ],
-        "variantReferenceId": "weight_capacity-310-ref"
+        "variantReferenceId": "profile-standard-ref"
+      },
+      {
+        "code": "coverage",
+        "values": [
+          "100sf"
+        ],
+        "variantReferenceId": "coverage-100sf-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 96
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-7ABE4E37-CONFIG"
+        "sku": "ROOF-CE6C34F0-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "ReliaBuild Safety Harness System -  | BuildRight",
-      "description": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+      "title": "ReliaBuild Specialty Roofing Shingles -  | BuildRight",
+      "description": "Shop ReliaBuild Specialty Roofing Shingles - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "XXL",
-        "basic",
-        "310"
+        "cool-roof",
+        "standard",
+        "100sf"
       ]
     }
   },
   {
-    "sku": "SAFE-7ABE4E37-VAR-837420",
+    "sku": "ROOF-CE6C34F0-VAR-AC929A",
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Safety Harness System - ",
-    "slug": "reliabuild-safety-harness-system",
+    "name": "ReliaBuild Specialty Roofing Shingles - ",
+    "slug": "reliabuild-specialty-roofing-shingles",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "ReliaBuild Safety Harness System - . Part of the ReliaBuild Safety Harness System - Configurable series.",
-    "shortDescription": "ReliaBuild Safety Harness System - ",
+    "description": "ReliaBuild Specialty Roofing Shingles - . Part of the ReliaBuild Specialty Roofing Shingles - Configurable series.",
+    "shortDescription": "ReliaBuild Specialty Roofing Shingles - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -7970,71 +7962,71 @@
         ]
       },
       {
-        "code": "size",
-        "values": [
-          "XL"
-        ],
-        "variantReferenceId": "size-XL-ref"
-      },
-      {
         "code": "type",
         "values": [
-          "positioning"
+          "impact-resistant"
         ],
-        "variantReferenceId": "type-positioning-ref"
+        "variantReferenceId": "type-impact-resistant-ref"
       },
       {
-        "code": "weight_capacity",
+        "code": "profile",
         "values": [
-          "310"
+          "high-profile"
         ],
-        "variantReferenceId": "weight_capacity-310-ref"
+        "variantReferenceId": "profile-high-profile-ref"
+      },
+      {
+        "code": "coverage",
+        "values": [
+          "100sf"
+        ],
+        "variantReferenceId": "coverage-100sf-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 96
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-7ABE4E37-CONFIG"
+        "sku": "ROOF-CE6C34F0-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "ReliaBuild Safety Harness System -  | BuildRight",
-      "description": "Shop ReliaBuild Safety Harness System - . Quality construction materials from BuildRight.",
+      "title": "ReliaBuild Specialty Roofing Shingles -  | BuildRight",
+      "description": "Shop ReliaBuild Specialty Roofing Shingles - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "shingles",
         "variant",
-        "XL",
-        "positioning",
-        "310"
+        "impact-resistant",
+        "high-profile",
+        "100sf"
       ]
     }
   },
   {
-    "sku": "SAFE-4C04F304-CONFIG",
+    "sku": "ROOF-1FAF5458-CONFIG",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Protective Eyewear - Configurable",
-    "slug": "fastenpro-protective-eyewear-configurable",
+    "name": "FastenPro Premium Underlayment System - Configurable",
+    "slug": "fastenpro-premium-underlayment-system-configurable",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
       "SEARCH"
     ],
-    "description": "Customizable Protective Eyewear from FastenPro. Available in multiple sizes and configurations.",
-    "shortDescription": "Protective Eyewear - Multiple Options Available",
+    "description": "Customizable Premium Underlayment System from FastenPro. Available in multiple sizes and configurations.",
+    "shortDescription": "Premium Underlayment System - Multiple Options Available",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8058,7 +8050,7 @@
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 89
       }
     ],
@@ -8069,61 +8061,61 @@
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "type-safety-glasses-ref",
-            "label": "safety-glasses"
+            "variantReferenceId": "type-felt-ref",
+            "label": "felt"
           },
           {
-            "variantReferenceId": "type-goggles-ref",
-            "label": "goggles"
+            "variantReferenceId": "type-synthetic-ref",
+            "label": "synthetic"
           },
           {
-            "variantReferenceId": "type-face-shield-ref",
-            "label": "face-shield"
+            "variantReferenceId": "type-self-adhering-ref",
+            "label": "self-adhering"
           }
         ]
       },
       {
-        "attributeCode": "lens",
-        "label": "Lens",
+        "attributeCode": "weight",
+        "label": "Weight",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "lens-clear-ref",
-            "label": "clear"
+            "variantReferenceId": "weight-15lb-ref",
+            "label": "15lb"
           },
           {
-            "variantReferenceId": "lens-tinted-ref",
-            "label": "tinted"
+            "variantReferenceId": "weight-30lb-ref",
+            "label": "30lb"
           },
           {
-            "variantReferenceId": "lens-anti-fog-ref",
-            "label": "anti-fog"
+            "variantReferenceId": "weight-50lb-ref",
+            "label": "50lb"
           }
         ]
       },
       {
-        "attributeCode": "standard",
-        "label": "Standard",
+        "attributeCode": "coverage",
+        "label": "Coverage",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "standard-Z87.1-ref",
-            "label": "Z87.1"
+            "variantReferenceId": "coverage-500sf-ref",
+            "label": "500sf"
           },
           {
-            "variantReferenceId": "standard-Z87.1+-ref",
-            "label": "Z87.1+"
+            "variantReferenceId": "coverage-1000sf-ref",
+            "label": "1000sf"
           }
         ]
       }
     ],
     "metaTags": {
-      "title": "Protective Eyewear - Configurable | FastenPro",
-      "description": "Shop customizable Protective Eyewear from FastenPro. Multiple sizes and options available.",
+      "title": "Premium Underlayment System - Configurable | FastenPro",
+      "description": "Shop customizable Premium Underlayment System from FastenPro. Multiple sizes and options available.",
       "keywords": [
         "configurable",
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "FastenPro",
         "custom",
         "options"
@@ -8131,21 +8123,21 @@
     }
   },
   {
-    "sku": "SAFE-4C04F304-VAR-F74CC8",
+    "sku": "ROOF-1FAF5458-VAR-53BE5C",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Protective Eyewear - ",
-    "slug": "fastenpro-protective-eyewear",
+    "name": "FastenPro Premium Underlayment System - ",
+    "slug": "fastenpro-premium-underlayment-system",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "FastenPro Protective Eyewear - . Part of the FastenPro Protective Eyewear - Configurable series.",
-    "shortDescription": "FastenPro Protective Eyewear - ",
+    "description": "FastenPro Premium Underlayment System - . Part of the FastenPro Premium Underlayment System - Configurable series.",
+    "shortDescription": "FastenPro Premium Underlayment System - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8175,66 +8167,66 @@
       {
         "code": "type",
         "values": [
-          "goggles"
+          "synthetic"
         ],
-        "variantReferenceId": "type-goggles-ref"
+        "variantReferenceId": "type-synthetic-ref"
       },
       {
-        "code": "lens",
+        "code": "weight",
         "values": [
-          "tinted"
+          "30lb"
         ],
-        "variantReferenceId": "lens-tinted-ref"
+        "variantReferenceId": "weight-30lb-ref"
       },
       {
-        "code": "standard",
+        "code": "coverage",
         "values": [
-          "Z87.1"
+          "500sf"
         ],
-        "variantReferenceId": "standard-Z87.1-ref"
+        "variantReferenceId": "coverage-500sf-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 89
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-4C04F304-CONFIG"
+        "sku": "ROOF-1FAF5458-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "FastenPro Protective Eyewear -  | BuildRight",
-      "description": "Shop FastenPro Protective Eyewear - . Quality construction materials from BuildRight.",
+      "title": "FastenPro Premium Underlayment System -  | BuildRight",
+      "description": "Shop FastenPro Premium Underlayment System - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "variant",
-        "goggles",
-        "tinted",
-        "Z87.1"
+        "synthetic",
+        "30lb",
+        "500sf"
       ]
     }
   },
   {
-    "sku": "SAFE-4C04F304-VAR-1321E8",
+    "sku": "ROOF-1FAF5458-VAR-DDD3FE",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Protective Eyewear - ",
-    "slug": "fastenpro-protective-eyewear",
+    "name": "FastenPro Premium Underlayment System - ",
+    "slug": "fastenpro-premium-underlayment-system",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "FastenPro Protective Eyewear - . Part of the FastenPro Protective Eyewear - Configurable series.",
-    "shortDescription": "FastenPro Protective Eyewear - ",
+    "description": "FastenPro Premium Underlayment System - . Part of the FastenPro Premium Underlayment System - Configurable series.",
+    "shortDescription": "FastenPro Premium Underlayment System - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8258,66 +8250,66 @@
       {
         "code": "type",
         "values": [
-          "safety-glasses"
+          "felt"
         ],
-        "variantReferenceId": "type-safety-glasses-ref"
+        "variantReferenceId": "type-felt-ref"
       },
       {
-        "code": "lens",
+        "code": "weight",
         "values": [
-          "clear"
+          "15lb"
         ],
-        "variantReferenceId": "lens-clear-ref"
+        "variantReferenceId": "weight-15lb-ref"
       },
       {
-        "code": "standard",
+        "code": "coverage",
         "values": [
-          "Z87.1"
+          "500sf"
         ],
-        "variantReferenceId": "standard-Z87.1-ref"
+        "variantReferenceId": "coverage-500sf-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 89
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-4C04F304-CONFIG"
+        "sku": "ROOF-1FAF5458-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "FastenPro Protective Eyewear -  | BuildRight",
-      "description": "Shop FastenPro Protective Eyewear - . Quality construction materials from BuildRight.",
+      "title": "FastenPro Premium Underlayment System -  | BuildRight",
+      "description": "Shop FastenPro Premium Underlayment System - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "variant",
-        "safety-glasses",
-        "clear",
-        "Z87.1"
+        "felt",
+        "15lb",
+        "500sf"
       ]
     }
   },
   {
-    "sku": "SAFE-4C04F304-VAR-D15F7F",
+    "sku": "ROOF-1FAF5458-VAR-9D819F",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Protective Eyewear - ",
-    "slug": "fastenpro-protective-eyewear",
+    "name": "FastenPro Premium Underlayment System - ",
+    "slug": "fastenpro-premium-underlayment-system",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "FastenPro Protective Eyewear - . Part of the FastenPro Protective Eyewear - Configurable series.",
-    "shortDescription": "FastenPro Protective Eyewear - ",
+    "description": "FastenPro Premium Underlayment System - . Part of the FastenPro Premium Underlayment System - Configurable series.",
+    "shortDescription": "FastenPro Premium Underlayment System - ",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8353,69 +8345,69 @@
       {
         "code": "type",
         "values": [
-          "safety-glasses"
+          "felt"
         ],
-        "variantReferenceId": "type-safety-glasses-ref"
+        "variantReferenceId": "type-felt-ref"
       },
       {
-        "code": "lens",
+        "code": "weight",
         "values": [
-          "clear"
+          "15lb"
         ],
-        "variantReferenceId": "lens-clear-ref"
+        "variantReferenceId": "weight-15lb-ref"
       },
       {
-        "code": "standard",
+        "code": "coverage",
         "values": [
-          "Z87.1+"
+          "1000sf"
         ],
-        "variantReferenceId": "standard-Z87.1+-ref"
+        "variantReferenceId": "coverage-1000sf-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 89
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-4C04F304-CONFIG"
+        "sku": "ROOF-1FAF5458-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "FastenPro Protective Eyewear -  | BuildRight",
-      "description": "Shop FastenPro Protective Eyewear - . Quality construction materials from BuildRight.",
+      "title": "FastenPro Premium Underlayment System -  | BuildRight",
+      "description": "Shop FastenPro Premium Underlayment System - . Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "variant",
-        "safety-glasses",
-        "clear",
-        "Z87.1+"
+        "felt",
+        "15lb",
+        "1000sf"
       ]
     }
   },
   {
-    "sku": "SAFE-EC4751EE-CONFIG",
+    "sku": "ROOF-C5FA7DF4-CONFIG",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Hand Protection - Configurable",
-    "slug": "fastenpro-hand-protection-configurable",
+    "name": "FastenPro Waterproofing Membrane - Configurable",
+    "slug": "fastenpro-waterproofing-membrane-configurable",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
       "SEARCH"
     ],
-    "description": "Customizable Hand Protection from FastenPro. Available in multiple sizes and configurations.",
-    "shortDescription": "Hand Protection - Multiple Options Available",
+    "description": "Customizable Waterproofing Membrane from FastenPro. Available in multiple sizes and configurations.",
+    "shortDescription": "Waterproofing Membrane - Multiple Options Available",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8451,80 +8443,68 @@
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 9
       }
     ],
     "configurations": [
       {
-        "attributeCode": "size",
-        "label": "Size",
+        "attributeCode": "application",
+        "label": "Application",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "size-S-ref",
-            "label": "S"
+            "variantReferenceId": "application-eaves-ref",
+            "label": "eaves"
           },
           {
-            "variantReferenceId": "size-M-ref",
-            "label": "M"
+            "variantReferenceId": "application-valleys-ref",
+            "label": "valleys"
           },
           {
-            "variantReferenceId": "size-L-ref",
-            "label": "L"
-          },
-          {
-            "variantReferenceId": "size-XL-ref",
-            "label": "XL"
+            "variantReferenceId": "application-full-deck-ref",
+            "label": "full-deck"
           }
         ]
       },
       {
-        "attributeCode": "material",
-        "label": "Material",
+        "attributeCode": "width",
+        "label": "Width",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "material-leather-ref",
-            "label": "leather"
+            "variantReferenceId": "width-36in-ref",
+            "label": "36in"
           },
           {
-            "variantReferenceId": "material-nitrile-ref",
-            "label": "nitrile"
-          },
-          {
-            "variantReferenceId": "material-kevlar-ref",
-            "label": "kevlar"
+            "variantReferenceId": "width-48in-ref",
+            "label": "48in"
           }
         ]
       },
       {
-        "attributeCode": "type",
-        "label": "Type",
+        "attributeCode": "length",
+        "label": "Length",
         "type": "CONFIGURABLE",
         "values": [
           {
-            "variantReferenceId": "type-general-ref",
-            "label": "general"
+            "variantReferenceId": "length-66ft-ref",
+            "label": "66ft"
           },
           {
-            "variantReferenceId": "type-chemical-ref",
-            "label": "chemical"
-          },
-          {
-            "variantReferenceId": "type-cut-resistant-ref",
-            "label": "cut-resistant"
+            "variantReferenceId": "length-75ft-ref",
+            "label": "75ft"
           }
         ]
       }
     ],
     "metaTags": {
-      "title": "Hand Protection - Configurable | FastenPro",
-      "description": "Shop customizable Hand Protection from FastenPro. Multiple sizes and options available.",
+      "title": "Waterproofing Membrane - Configurable | FastenPro",
+      "description": "Shop customizable Waterproofing Membrane from FastenPro. Multiple sizes and options available.",
       "keywords": [
         "configurable",
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "FastenPro",
         "custom",
         "options"
@@ -8532,21 +8512,21 @@
     }
   },
   {
-    "sku": "SAFE-EC4751EE-VAR-EDA189",
+    "sku": "ROOF-C5FA7DF4-75ft",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Hand Protection - ",
-    "slug": "fastenpro-hand-protection",
+    "name": "FastenPro Waterproofing Membrane - 75ftft",
+    "slug": "fastenpro-waterproofing-membrane-75ftft",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "FastenPro Hand Protection - . Part of the FastenPro Hand Protection - Configurable series.",
-    "shortDescription": "FastenPro Hand Protection - ",
+    "description": "FastenPro Waterproofing Membrane - 75ftft. Part of the FastenPro Waterproofing Membrane - Configurable series.",
+    "shortDescription": "FastenPro Waterproofing Membrane - 75ftft",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8568,68 +8548,68 @@
         ]
       },
       {
-        "code": "size",
+        "code": "application",
         "values": [
-          "L"
+          "eaves"
         ],
-        "variantReferenceId": "size-L-ref"
+        "variantReferenceId": "application-eaves-ref"
       },
       {
-        "code": "material",
+        "code": "width",
         "values": [
-          "nitrile"
+          "36in"
         ],
-        "variantReferenceId": "material-nitrile-ref"
+        "variantReferenceId": "width-36in-ref"
       },
       {
-        "code": "type",
+        "code": "length",
         "values": [
-          "chemical"
+          "75ft"
         ],
-        "variantReferenceId": "type-chemical-ref"
+        "variantReferenceId": "length-75ft-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 9
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-EC4751EE-CONFIG"
+        "sku": "ROOF-C5FA7DF4-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "FastenPro Hand Protection -  | BuildRight",
-      "description": "Shop FastenPro Hand Protection - . Quality construction materials from BuildRight.",
+      "title": "FastenPro Waterproofing Membrane - 75ftft | BuildRight",
+      "description": "Shop FastenPro Waterproofing Membrane - 75ftft. Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "variant",
-        "L",
-        "nitrile",
-        "chemical"
+        "eaves",
+        "36in",
+        "75ft"
       ]
     }
   },
   {
-    "sku": "SAFE-EC4751EE-VAR-483DB4",
+    "sku": "ROOF-C5FA7DF4-66ft",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Hand Protection - ",
-    "slug": "fastenpro-hand-protection",
+    "name": "FastenPro Waterproofing Membrane - 66ftft",
+    "slug": "fastenpro-waterproofing-membrane-66ftft",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "FastenPro Hand Protection - . Part of the FastenPro Hand Protection - Configurable series.",
-    "shortDescription": "FastenPro Hand Protection - ",
+    "description": "FastenPro Waterproofing Membrane - 66ftft. Part of the FastenPro Waterproofing Membrane - Configurable series.",
+    "shortDescription": "FastenPro Waterproofing Membrane - 66ftft",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8651,68 +8631,68 @@
         ]
       },
       {
-        "code": "size",
+        "code": "application",
         "values": [
-          "XL"
+          "valleys"
         ],
-        "variantReferenceId": "size-XL-ref"
+        "variantReferenceId": "application-valleys-ref"
       },
       {
-        "code": "material",
+        "code": "width",
         "values": [
-          "leather"
+          "36in"
         ],
-        "variantReferenceId": "material-leather-ref"
+        "variantReferenceId": "width-36in-ref"
       },
       {
-        "code": "type",
+        "code": "length",
         "values": [
-          "general"
+          "66ft"
         ],
-        "variantReferenceId": "type-general-ref"
+        "variantReferenceId": "length-66ft-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 9
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-EC4751EE-CONFIG"
+        "sku": "ROOF-C5FA7DF4-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "FastenPro Hand Protection -  | BuildRight",
-      "description": "Shop FastenPro Hand Protection - . Quality construction materials from BuildRight.",
+      "title": "FastenPro Waterproofing Membrane - 66ftft | BuildRight",
+      "description": "Shop FastenPro Waterproofing Membrane - 66ftft. Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "variant",
-        "XL",
-        "leather",
-        "general"
+        "valleys",
+        "36in",
+        "66ft"
       ]
     }
   },
   {
-    "sku": "SAFE-EC4751EE-VAR-FFAF8B",
+    "sku": "ROOF-C5FA7DF4-66ft-1",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Hand Protection - ",
-    "slug": "fastenpro-hand-protection",
+    "name": "FastenPro Waterproofing Membrane - 66ftft",
+    "slug": "fastenpro-waterproofing-membrane-66ftft",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "FastenPro Hand Protection - . Part of the FastenPro Hand Protection - Configurable series.",
-    "shortDescription": "FastenPro Hand Protection - ",
+    "description": "FastenPro Waterproofing Membrane - 66ftft. Part of the FastenPro Waterproofing Membrane - Configurable series.",
+    "shortDescription": "FastenPro Waterproofing Membrane - 66ftft",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8734,68 +8714,68 @@
         ]
       },
       {
-        "code": "size",
+        "code": "application",
         "values": [
-          "M"
+          "full-deck"
         ],
-        "variantReferenceId": "size-M-ref"
+        "variantReferenceId": "application-full-deck-ref"
       },
       {
-        "code": "material",
+        "code": "width",
         "values": [
-          "nitrile"
+          "48in"
         ],
-        "variantReferenceId": "material-nitrile-ref"
+        "variantReferenceId": "width-48in-ref"
       },
       {
-        "code": "type",
+        "code": "length",
         "values": [
-          "chemical"
+          "66ft"
         ],
-        "variantReferenceId": "type-chemical-ref"
+        "variantReferenceId": "length-66ft-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 9
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-EC4751EE-CONFIG"
+        "sku": "ROOF-C5FA7DF4-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "FastenPro Hand Protection -  | BuildRight",
-      "description": "Shop FastenPro Hand Protection - . Quality construction materials from BuildRight.",
+      "title": "FastenPro Waterproofing Membrane - 66ftft | BuildRight",
+      "description": "Shop FastenPro Waterproofing Membrane - 66ftft. Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "variant",
-        "M",
-        "nitrile",
-        "chemical"
+        "full-deck",
+        "48in",
+        "66ft"
       ]
     }
   },
   {
-    "sku": "SAFE-EC4751EE-VAR-79E04B",
+    "sku": "ROOF-C5FA7DF4-75ft-1",
     "source": {
       "locale": "en-US"
     },
-    "name": "FastenPro Hand Protection - ",
-    "slug": "fastenpro-hand-protection",
+    "name": "FastenPro Waterproofing Membrane - 75ftft",
+    "slug": "fastenpro-waterproofing-membrane-75ftft",
     "status": "ENABLED",
     "visibleIn": [],
-    "description": "FastenPro Hand Protection - . Part of the FastenPro Hand Protection - Configurable series.",
-    "shortDescription": "FastenPro Hand Protection - ",
+    "description": "FastenPro Waterproofing Membrane - 75ftft. Part of the FastenPro Waterproofing Membrane - Configurable series.",
+    "shortDescription": "FastenPro Waterproofing Membrane - 75ftft",
     "attributes": [
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "roofing"
         ]
       },
       {
@@ -8817,49 +8797,49 @@
         ]
       },
       {
-        "code": "size",
+        "code": "application",
         "values": [
-          "XL"
+          "valleys"
         ],
-        "variantReferenceId": "size-XL-ref"
+        "variantReferenceId": "application-valleys-ref"
       },
       {
-        "code": "material",
+        "code": "width",
         "values": [
-          "nitrile"
+          "48in"
         ],
-        "variantReferenceId": "material-nitrile-ref"
+        "variantReferenceId": "width-48in-ref"
       },
       {
-        "code": "type",
+        "code": "length",
         "values": [
-          "cut-resistant"
+          "75ft"
         ],
-        "variantReferenceId": "type-cut-resistant-ref"
+        "variantReferenceId": "length-75ft-ref"
       }
     ],
     "routes": [
       {
-        "path": "/tools-equipment",
+        "path": "/building-materials/roofing",
         "position": 9
       }
     ],
     "links": [
       {
         "type": "PARENT",
-        "sku": "SAFE-EC4751EE-CONFIG"
+        "sku": "ROOF-C5FA7DF4-CONFIG"
       }
     ],
     "metaTags": {
-      "title": "FastenPro Hand Protection -  | BuildRight",
-      "description": "Shop FastenPro Hand Protection - . Quality construction materials from BuildRight.",
+      "title": "FastenPro Waterproofing Membrane - 75ftft | BuildRight",
+      "description": "Shop FastenPro Waterproofing Membrane - 75ftft. Quality construction materials from BuildRight.",
       "keywords": [
-        "safety",
-        "equipment",
+        "roofing",
+        "underlayment",
         "variant",
-        "XL",
-        "nitrile",
-        "cut-resistant"
+        "valleys",
+        "48in",
+        "75ft"
       ]
     }
   }

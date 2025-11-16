@@ -123,11 +123,17 @@ export async function ingestProducts(products, options = {}) {
 
 // CLI execution
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const productsPath = process.argv[2] || './data/buildright/products.json';
+  const isDryRun = process.env.DRY_RUN === 'true' || process.argv.includes('--dry-run');
+  
+  // Get file path from args, excluding flags
+  const fileArg = process.argv.slice(2).find(arg => !arg.startsWith('--'));
+  const productsPath = fileArg || './data/buildright/products.json';
 
   try {
-    // Validate configuration
-    validateIngestConfig();
+    // Validate configuration (skip for dry-run)
+    if (!isDryRun) {
+      validateIngestConfig();
+    }
 
     // Read products file
     logger.info('Reading products from file', { path: productsPath });
@@ -137,7 +143,25 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     logger.info(`Loaded ${products.length} products from ${productsPath}`);
 
     // Ingest products
-    const result = await ingestProducts(products);
+    const result = await ingestProducts(products, { dryRun: isDryRun });
+
+    if (result.dryRun) {
+      if (result.validationPassed) {
+        logger.info('✓ Dry-run validation passed', {
+          wouldIngest: result.wouldIngest,
+          personaAttributes: result.personaAttributeCoverage
+        });
+        console.log('\n✓ Validation successful. Products are ready for ingestion.');
+        console.log(`  Would ingest: ${result.wouldIngest} products`);
+        console.log('  Run without --dry-run to perform actual ingestion.\n');
+        process.exit(0);
+      } else {
+        logger.error('✗ Dry-run validation failed', {
+          errors: result.errors
+        });
+        process.exit(1);
+      }
+    }
 
     if (!result.success && result.failed > 0) {
       logger.error('Ingest completed with errors', {

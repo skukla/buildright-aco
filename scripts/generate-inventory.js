@@ -81,7 +81,7 @@ function generateInventoryItem(product) {
 
   // Get product category
   const categoryAttr = (product.attributes || []).find(a => a.code === 'product_category');
-  const category = categoryAttr ? categoryAttr.values[0] : '';
+  const category = categoryAttr?.values?.[0] || categoryAttr?.value || '';
 
   // Get sources for this product
   const sourceCodes = getSourcesByCategory(category, product.sku);

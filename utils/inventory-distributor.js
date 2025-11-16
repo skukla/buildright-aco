@@ -113,7 +113,7 @@ export function distributeQuantity(totalQuantity, sourceCodes, getQuantityMultip
 export function generateBaseQuantity(product, random) {
   // Find product category from attributes
   const categoryAttr = (product.attributes || []).find(a => a.code === 'product_category');
-  const category = categoryAttr ? categoryAttr.values[0] : '';
+  const category = categoryAttr?.values?.[0] || categoryAttr?.value || '';
   const categoryLower = (category || '').toLowerCase();
   const skuUpper = (product.sku || '').toUpperCase();
 

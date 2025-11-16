@@ -76,7 +76,7 @@ async function validatePriceSKUs(prices) {
 }
 
 /**
- * Validate price data
+ * Validate price data (supports both regular and amount formats)
  *
  * @param {Array<Object>} prices - Price data
  * @returns {Object} Validation result
@@ -91,14 +91,17 @@ function validatePrices(prices) {
       continue;
     }
 
-    if (!price.priceBookId) {
-      errors.push({ sku: price.sku, error: 'priceBookId is required' });
-    }
+    // Optional priceBookId (not used in simplified format)
+    // if (!price.priceBookId) {
+    //   errors.push({ sku: price.sku, error: 'priceBookId is required' });
+    // }
 
-    if (typeof price.regular !== 'number' || price.regular < 0) {
+    // Validate price amount (regular OR amount format)
+    const priceValue = price.regular !== undefined ? price.regular : price.amount;
+    if (priceValue === undefined || typeof priceValue !== 'number' || priceValue < 0) {
       errors.push({
         sku: price.sku,
-        error: `Invalid regular: ${price.regular} (must be non-negative number)`
+        error: `Invalid price value: ${priceValue} (must be non-negative number)`
       });
     }
 
@@ -148,11 +151,20 @@ export async function ingestPrices(prices, options = {}) {
   const priceValidation = validatePrices(prices);
   if (!priceValidation.valid) {
     logger.error('Price validation failed', { errors: priceValidation.errors });
+    
+    if (config.dryRun) {
+      return {
+        dryRun: true,
+        validationPassed: false,
+        errors: priceValidation.errors
+      };
+    }
+    
     throw new Error(`Price validation failed: ${priceValidation.errors.length} errors`);
   }
 
-  // Validate SKUs exist in ACO (unless skipped)
-  if (!options.skipSKUValidation) {
+  // Validate SKUs exist in ACO (unless skipped or dry-run)
+  if (!options.skipSKUValidation && !config.dryRun) {
     const skuValidation = await validatePriceSKUs(prices);
     if (!skuValidation.valid) {
       throw new Error(
@@ -200,6 +212,7 @@ export async function ingestPrices(prices, options = {}) {
 
 // CLI execution
 if (import.meta.url === `file://${process.argv[1]}`) {
+  const isDryRun = process.env.DRY_RUN === 'true' || process.argv.includes('--dry-run');
   const skipSKUValidation = process.argv.includes('--skip-validation');
 
   // Get file path from args, excluding flags
@@ -207,8 +220,10 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const pricesPath = fileArg || './data/buildright/prices.json';
 
   try {
-    // Validate configuration
-    validateIngestConfig();
+    // Validate configuration (skip for dry-run)
+    if (!isDryRun) {
+      validateIngestConfig();
+    }
 
     // Read prices file
     logger.info('Reading prices from file', { path: pricesPath });
@@ -232,7 +247,27 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     logger.info(`Loaded ${prices.length} prices from ${pricesPath}`);
 
     // Ingest prices
-    const result = await ingestPrices(prices, { skipSKUValidation });
+    const result = await ingestPrices(prices, { 
+      skipSKUValidation,
+      dryRun: isDryRun 
+    });
+
+    if (result.dryRun) {
+      if (result.validationPassed) {
+        logger.info('✓ Dry-run validation passed', {
+          wouldIngest: result.wouldIngest
+        });
+        console.log('\n✓ Validation successful. Prices are ready for ingestion.');
+        console.log(`  Would ingest: ${result.wouldIngest} prices`);
+        console.log('  Run without --dry-run to perform actual ingestion.\n');
+        process.exit(0);
+      } else {
+        logger.error('✗ Dry-run validation failed', {
+          errors: result.errors
+        });
+        process.exit(1);
+      }
+    }
 
     if (!result.success && result.failed > 0) {
       logger.error('Ingest completed with errors', {

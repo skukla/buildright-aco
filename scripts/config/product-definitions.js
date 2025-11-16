@@ -39,12 +39,89 @@ export const PRODUCT_CATEGORIES = {
     subcategories: {
       lumber: {
         simple: [
-          { name: '2x4 Stud - 8ft', uom: 'EA', priceRange: [8, 12] },
-          { name: '2x6 Stud - 8ft', uom: 'EA', priceRange: [12, 16] },
-          { name: '2x8 Joist - 10ft', uom: 'EA', priceRange: [18, 24] },
-          { name: '2x10 Joist - 12ft', uom: 'EA', priceRange: [24, 32] },
-          { name: '2x12 Beam - 16ft', uom: 'EA', priceRange: [36, 48] },
-          { name: '4x4 Post - 8ft', uom: 'EA', priceRange: [28, 36] }
+          { 
+            name: '2x4 Stud - 8ft', 
+            uom: 'EA', 
+            priceRange: [8, 12],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'builder_grade',
+            deck_compatible: true,
+            deck_shape: ['rectangular', 'l_shaped'],
+            deck_material_type: 'wood',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: '2x6 Stud - 8ft', 
+            uom: 'EA', 
+            priceRange: [12, 16],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            deck_compatible: true,
+            deck_shape: ['rectangular', 'l_shaped'],
+            deck_material_type: 'wood',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 75,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: '2x8 Joist - 10ft', 
+            uom: 'EA', 
+            priceRange: [18, 24],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            deck_compatible: true,
+            deck_shape: ['rectangular', 'l_shaped'],
+            deck_material_type: 'wood',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 50,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: '2x10 Joist - 12ft', 
+            uom: 'EA', 
+            priceRange: [24, 32],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            deck_compatible: true,
+            deck_shape: ['rectangular', 'l_shaped'],
+            deck_material_type: 'wood',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 40,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: '2x12 Beam - 16ft', 
+            uom: 'EA', 
+            priceRange: [36, 48],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'premium',
+            deck_compatible: false,
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: '4x4 Post - 8ft', 
+            uom: 'EA', 
+            priceRange: [28, 36],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            deck_compatible: true,
+            deck_shape: ['rectangular', 'l_shaped'],
+            deck_material_type: 'wood',
+            deck_railing_compatible: ['wood'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
         ],
         configurable: [
           {
@@ -67,12 +144,80 @@ export const PRODUCT_CATEGORIES = {
       },
       plywood: {
         simple: [
-          { name: 'OSB Sheathing 7/16" - 4x8', uom: 'SHEET', priceRange: [18, 24] },
-          { name: 'CDX Plywood 1/2" - 4x8', uom: 'SHEET', priceRange: [28, 36] },
-          { name: 'T&G Subfloor 3/4" - 4x8', uom: 'SHEET', priceRange: [38, 48] },
-          { name: 'Marine Plywood 3/4" - 4x8', uom: 'SHEET', priceRange: [68, 88] },
-          { name: 'Hardwood Plywood 1/4" - 4x8', uom: 'SHEET', priceRange: [48, 62] },
-          { name: 'Siding Panel 3/8" - 4x8', uom: 'SHEET', priceRange: [32, 42] }
+          { 
+            name: 'OSB Sheathing 7/16" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [18, 24],
+            construction_phase: ['envelope'],
+            quality_tier: 'builder_grade',
+            deck_compatible: false,
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 50,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'CDX Plywood 1/2" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [28, 36],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            deck_compatible: false,
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 40,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'T&G Subfloor 3/4" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [38, 48],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            deck_compatible: false,
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Marine Plywood 3/4" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [68, 88],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            deck_compatible: true,
+            deck_material_type: 'wood',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Hardwood Plywood 1/4" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [48, 62],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'surfaces',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Siding Panel 3/8" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [32, 42],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            deck_compatible: false,
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
         ],
         configurable: [
           {
@@ -105,12 +250,72 @@ export const PRODUCT_CATEGORIES = {
     subcategories: {
       studs: {
         simple: [
-          { name: 'Metal Stud 20ga - 3.5" x 10ft', uom: 'EA', priceRange: [8, 12] },
-          { name: 'Metal Stud 20ga - 6" x 10ft', uom: 'EA', priceRange: [12, 16] },
-          { name: 'Metal Track 20ga - 3.5" x 10ft', uom: 'EA', priceRange: [9, 13] },
-          { name: 'Metal Track 20ga - 6" x 10ft', uom: 'EA', priceRange: [13, 17] },
-          { name: 'Steel C-Channel - 8ft', uom: 'EA', priceRange: [18, 24] },
-          { name: 'Hat Channel - 12ft', uom: 'EA', priceRange: [14, 18] }
+          { 
+            name: 'Metal Stud 20ga - 3.5" x 10ft', 
+            uom: 'EA', 
+            priceRange: [8, 12],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 50,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Metal Stud 20ga - 6" x 10ft', 
+            uom: 'EA', 
+            priceRange: [12, 16],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 40,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Metal Track 20ga - 3.5" x 10ft', 
+            uom: 'EA', 
+            priceRange: [9, 13],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 45,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Metal Track 20ga - 6" x 10ft', 
+            uom: 'EA', 
+            priceRange: [13, 17],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 35,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Steel C-Channel - 8ft', 
+            uom: 'EA', 
+            priceRange: [18, 24],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'premium',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Hat Channel - 12ft', 
+            uom: 'EA', 
+            priceRange: [14, 18],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          }
         ],
         configurable: [
           {
@@ -133,12 +338,84 @@ export const PRODUCT_CATEGORIES = {
       },
       drywall: {
         simple: [
-          { name: 'Drywall 1/2" - 4x8', uom: 'SHEET', priceRange: [12, 16] },
-          { name: 'Drywall 5/8" - 4x8', uom: 'SHEET', priceRange: [14, 18] },
-          { name: 'Moisture Resistant Drywall - 4x8', uom: 'SHEET', priceRange: [18, 24] },
-          { name: 'Fire Rated Drywall - 4x8', uom: 'SHEET', priceRange: [22, 28] },
-          { name: 'Cement Board 1/2" - 3x5', uom: 'SHEET', priceRange: [16, 20] },
-          { name: 'Sound Dampening Drywall - 4x8', uom: 'SHEET', priceRange: [28, 36] }
+          { 
+            name: 'Drywall 1/2" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [12, 16],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good', 'better'],
+            room_category: 'surfaces',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 60,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Drywall 5/8" - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [14, 18],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better', 'best'],
+            room_category: 'surfaces',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 50,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Moisture Resistant Drywall - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [18, 24],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better', 'best'],
+            room_category: 'surfaces',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Fire Rated Drywall - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [22, 28],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'surfaces',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Cement Board 1/2" - 3x5', 
+            uom: 'SHEET', 
+            priceRange: [16, 20],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better', 'best'],
+            room_category: 'surfaces',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Sound Dampening Drywall - 4x8', 
+            uom: 'SHEET', 
+            priceRange: [28, 36],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'surfaces',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          }
         ],
         configurable: [
           {
@@ -171,12 +448,84 @@ export const PRODUCT_CATEGORIES = {
     subcategories: {
       windows: {
         simple: [
-          { name: 'Single Hung Window - 36"x48"', uom: 'EA', priceRange: [180, 240] },
-          { name: 'Double Hung Window - 36"x60"', uom: 'EA', priceRange: [280, 360] },
-          { name: 'Sliding Window - 48"x36"', uom: 'EA', priceRange: [220, 280] },
-          { name: 'Casement Window - 30"x48"', uom: 'EA', priceRange: [320, 420] },
-          { name: 'Bay Window - 72"x48"', uom: 'EA', priceRange: [880, 1200] },
-          { name: 'Awning Window - 36"x24"', uom: 'EA', priceRange: [180, 240] }
+          { 
+            name: 'Single Hung Window - 36"x48"', 
+            uom: 'EA', 
+            priceRange: [180, 240],
+            construction_phase: ['envelope'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'fixtures',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Double Hung Window - 36"x60"', 
+            uom: 'EA', 
+            priceRange: [280, 360],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 12,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Sliding Window - 48"x36"', 
+            uom: 'EA', 
+            priceRange: [220, 280],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Casement Window - 30"x48"', 
+            uom: 'EA', 
+            priceRange: [320, 420],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 8,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Bay Window - 72"x48"', 
+            uom: 'EA', 
+            priceRange: [880, 1200],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 5,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Awning Window - 36"x24"', 
+            uom: 'EA', 
+            priceRange: [180, 240],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          }
         ],
         configurable: [
           {
@@ -199,12 +548,86 @@ export const PRODUCT_CATEGORIES = {
       },
       doors: {
         simple: [
-          { name: 'Entry Door - Steel 36"x80"', uom: 'EA', priceRange: [280, 380] },
-          { name: 'Interior Door - Hollow Core 32"x80"', uom: 'EA', priceRange: [80, 120] },
-          { name: 'French Door - 60"x80"', uom: 'PAIR', priceRange: [680, 880] },
-          { name: 'Sliding Patio Door - 72"x80"', uom: 'EA', priceRange: [880, 1200] },
-          { name: 'Bi-fold Closet Door - 36"x80"', uom: 'EA', priceRange: [120, 180] },
-          { name: 'Storm Door - 36"x80"', uom: 'EA', priceRange: [180, 280] }
+          { 
+            name: 'Entry Door - Steel 36"x80"', 
+            uom: 'EA', 
+            priceRange: [280, 380],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Interior Door - Hollow Core 32"x80"', 
+            uom: 'EA', 
+            priceRange: [80, 120],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'fixtures',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'French Door - 60"x80"', 
+            uom: 'PAIR', 
+            priceRange: [680, 880],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 5,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Sliding Patio Door - 72"x80"', 
+            uom: 'EA', 
+            priceRange: [880, 1200],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures',
+            deck_compatible: true,
+            deck_shape: ['rectangular', 'l_shaped'],
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 5,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Bi-fold Closet Door - 36"x80"', 
+            uom: 'EA', 
+            priceRange: [120, 180],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Storm Door - 36"x80"', 
+            uom: 'EA', 
+            priceRange: [180, 280],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 8,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          }
         ],
         configurable: [
           {
@@ -237,12 +660,74 @@ export const PRODUCT_CATEGORIES = {
     subcategories: {
       nails: {
         simple: [
-          { name: 'Framing Nails 16d - 50lb Box', uom: 'BOX', priceRange: [48, 62] },
-          { name: 'Finish Nails 8d - 5lb Box', uom: 'BOX', priceRange: [18, 24] },
-          { name: 'Roofing Nails - 50lb Box', uom: 'BOX', priceRange: [42, 56] },
-          { name: 'Brad Nails 18ga - 5000ct', uom: 'BOX', priceRange: [24, 32] },
-          { name: 'Concrete Nails - 5lb Box', uom: 'BOX', priceRange: [22, 28] },
-          { name: 'Ring Shank Nails - 25lb Box', uom: 'BOX', priceRange: [38, 48] }
+          { 
+            name: 'Framing Nails 16d - 50lb Box', 
+            uom: 'BOX', 
+            priceRange: [48, 62],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'builder_grade',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Finish Nails 8d - 5lb Box', 
+            uom: 'BOX', 
+            priceRange: [18, 24],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 40,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Roofing Nails - 50lb Box', 
+            uom: 'BOX', 
+            priceRange: [42, 56],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Brad Nails 18ga - 5000ct', 
+            uom: 'BOX', 
+            priceRange: [24, 32],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 35,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Concrete Nails - 5lb Box', 
+            uom: 'BOX', 
+            priceRange: [22, 28],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Ring Shank Nails - 25lb Box', 
+            uom: 'BOX', 
+            priceRange: [38, 48],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            deck_compatible: true,
+            deck_material_type: 'wood',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
         ],
         configurable: [
           {
@@ -265,12 +750,79 @@ export const PRODUCT_CATEGORIES = {
       },
       screws: {
         simple: [
-          { name: 'Deck Screws #8 - 5lb Box', uom: 'BOX', priceRange: [28, 36] },
-          { name: 'Drywall Screws - 5lb Box', uom: 'BOX', priceRange: [18, 24] },
-          { name: 'Wood Screws #10 - 1lb Box', uom: 'BOX', priceRange: [12, 16] },
-          { name: 'Self-Drilling Screws - 1lb', uom: 'BOX', priceRange: [16, 22] },
-          { name: 'Lag Screws 1/2" - 50ct', uom: 'BOX', priceRange: [38, 48] },
-          { name: 'Cabinet Screws - 100ct', uom: 'BOX', priceRange: [14, 18] }
+          { 
+            name: 'Deck Screws #8 - 5lb Box', 
+            uom: 'BOX', 
+            priceRange: [28, 36],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            deck_compatible: true,
+            deck_material_type: 'wood',
+            deck_shape: ['rectangular', 'l_shaped'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 35,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Drywall Screws - 5lb Box', 
+            uom: 'BOX', 
+            priceRange: [18, 24],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 50,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Wood Screws #10 - 1lb Box', 
+            uom: 'BOX', 
+            priceRange: [12, 16],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 40,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Self-Drilling Screws - 1lb', 
+            uom: 'BOX', 
+            priceRange: [16, 22],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Lag Screws 1/2" - 50ct', 
+            uom: 'BOX', 
+            priceRange: [38, 48],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'premium',
+            deck_compatible: true,
+            deck_material_type: 'wood',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Cabinet Screws - 100ct', 
+            uom: 'BOX', 
+            priceRange: [14, 18],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better', 'best'],
+            room_category: 'fixtures',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
         ],
         configurable: [
           {
@@ -303,12 +855,76 @@ export const PRODUCT_CATEGORIES = {
     subcategories: {
       shingles: {
         simple: [
-          { name: 'Asphalt Shingles 3-Tab - Bundle', uom: 'BUNDLE', priceRange: [28, 38] },
-          { name: 'Architectural Shingles - Bundle', uom: 'BUNDLE', priceRange: [38, 52] },
-          { name: 'Premium Designer Shingles - Bundle', uom: 'BUNDLE', priceRange: [58, 78] },
-          { name: 'Impact Resistant Shingles - Bundle', uom: 'BUNDLE', priceRange: [48, 68] },
-          { name: 'Starter Strip Shingles - Roll', uom: 'ROLL', priceRange: [32, 44] },
-          { name: 'Ridge Cap Shingles - Bundle', uom: 'BUNDLE', priceRange: [42, 56] }
+          { 
+            name: 'Asphalt Shingles 3-Tab - Bundle', 
+            uom: 'BUNDLE', 
+            priceRange: [28, 38],
+            construction_phase: ['envelope'],
+            quality_tier: 'builder_grade',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 40,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Architectural Shingles - Bundle', 
+            uom: 'BUNDLE', 
+            priceRange: [38, 52],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 35,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Premium Designer Shingles - Bundle', 
+            uom: 'BUNDLE', 
+            priceRange: [58, 78],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'finishes',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Impact Resistant Shingles - Bundle', 
+            uom: 'BUNDLE', 
+            priceRange: [48, 68],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'finishes',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Starter Strip Shingles - Roll', 
+            uom: 'ROLL', 
+            priceRange: [32, 44],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Ridge Cap Shingles - Bundle', 
+            uom: 'BUNDLE', 
+            priceRange: [42, 56],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
         ],
         configurable: [
           {
@@ -331,12 +947,80 @@ export const PRODUCT_CATEGORIES = {
       },
       underlayment: {
         simple: [
-          { name: 'Roofing Felt 15lb - Roll', uom: 'ROLL', priceRange: [18, 26] },
-          { name: 'Roofing Felt 30lb - Roll', uom: 'ROLL', priceRange: [28, 38] },
-          { name: 'Synthetic Underlayment - Roll', uom: 'ROLL', priceRange: [68, 92] },
-          { name: 'Ice & Water Shield - Roll', uom: 'ROLL', priceRange: [78, 108] },
-          { name: 'Self-Adhering Underlayment - Roll', uom: 'ROLL', priceRange: [88, 118] },
-          { name: 'Ventilated Underlayment - Roll', uom: 'ROLL', priceRange: [98, 132] }
+          { 
+            name: 'Roofing Felt 15lb - Roll', 
+            uom: 'ROLL', 
+            priceRange: [18, 26],
+            construction_phase: ['envelope'],
+            quality_tier: 'builder_grade',
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          { 
+            name: 'Roofing Felt 30lb - Roll', 
+            uom: 'ROLL', 
+            priceRange: [28, 38],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 25,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Synthetic Underlayment - Roll', 
+            uom: 'ROLL', 
+            priceRange: [68, 92],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'finishes',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Ice & Water Shield - Roll', 
+            uom: 'ROLL', 
+            priceRange: [78, 108],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['better', 'best'],
+            room_category: 'finishes',
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          { 
+            name: 'Self-Adhering Underlayment - Roll', 
+            uom: 'ROLL', 
+            priceRange: [88, 118],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'finishes',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          { 
+            name: 'Ventilated Underlayment - Roll', 
+            uom: 'ROLL', 
+            priceRange: [98, 132],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'finishes',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          }
         ],
         configurable: [
           {

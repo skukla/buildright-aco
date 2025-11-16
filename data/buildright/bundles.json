@@ -106,7 +106,7 @@
             "userDefinedQty": false
           },
           {
-            "sku": "LBR-0C7A6DBC",
+            "sku": "LBR-D0414F1E",
             "qty": 8,
             "userDefinedQty": false
           }
@@ -420,7 +420,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -577,7 +577,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -714,7 +714,7 @@
       {
         "code": "product_category",
         "values": [
-          "framing_insulation"
+          "framing_drywall"
         ]
       },
       {
@@ -1197,7 +1197,7 @@
         "defaultItemSkus": [],
         "items": [
           {
-            "sku": "SAFE-AC3312B9",
+            "sku": "LBR-D0414F1E",
             "qty": 2,
             "userDefinedQty": false
           },
@@ -1227,8 +1227,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "StructureMaster Professional Framer Kit",
-    "slug": "structuremaster-professional-framer-kit",
+    "name": "MaxStrength Professional Framer Kit",
+    "slug": "maxstrength-professional-framer-kit",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1256,34 +1256,22 @@
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "ppe_size",
         "values": [
-          "pressure_treated_aca"
+          "xs"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "door_material",
         "values": [
-          "screw"
-        ]
-      },
-      {
-        "code": "window_glazing_type",
-        "values": [
-          "triple_pane"
-        ]
-      },
-      {
-        "code": "ppe_ansi_standard",
-        "values": [
-          "astm_f2413"
+          "aluminum"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 20
+        "position": 92
       }
     ],
     "bundles": [
@@ -1347,13 +1335,13 @@
       }
     ],
     "metaTags": {
-      "title": "Professional Framer Kit Bundle | StructureMaster",
-      "description": "Shop the Professional Framer Kit bundle from StructureMaster. Complete package for your construction needs.",
+      "title": "Professional Framer Kit Bundle | MaxStrength",
+      "description": "Shop the Professional Framer Kit bundle from MaxStrength. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "fasteners",
-        "StructureMaster",
+        "MaxStrength",
         "construction",
         "bulk"
       ]
@@ -1364,8 +1352,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "BuildRight Pro Roofing Fastener Bundle",
-    "slug": "buildright-pro-roofing-fastener-bundle",
+    "name": "DuraBuilt Roofing Fastener Bundle",
+    "slug": "durabuilt-roofing-fastener-bundle",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1383,7 +1371,7 @@
       {
         "code": "brand",
         "values": [
-          "buildright_pro"
+          "toughgrip"
         ]
       },
       {
@@ -1393,28 +1381,22 @@
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "lumber_species",
         "values": [
-          "brass"
+          "douglas_fir_larch"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "window_energy_star",
         "values": [
-          "bolt"
-        ]
-      },
-      {
-        "code": "ppe_hard_hat_type",
-        "values": [
-          "type_1"
+          "false"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 42
+        "position": 72
       }
     ],
     "bundles": [
@@ -1465,12 +1447,12 @@
         "defaultItemSkus": [],
         "items": [
           {
-            "sku": "SAFE-325D0586",
+            "sku": "LBR-D0414F1E",
             "qty": 2,
             "userDefinedQty": false
           },
           {
-            "sku": "SAFE-AC3312B9",
+            "sku": "LBR-2EBB314A",
             "qty": 2,
             "userDefinedQty": false
           }
@@ -1478,13 +1460,13 @@
       }
     ],
     "metaTags": {
-      "title": "Roofing Fastener Bundle Bundle | BuildRight Pro",
-      "description": "Shop the Roofing Fastener Bundle bundle from BuildRight Pro. Complete package for your construction needs.",
+      "title": "Roofing Fastener Bundle Bundle | DuraBuilt",
+      "description": "Shop the Roofing Fastener Bundle bundle from DuraBuilt. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "fasteners",
-        "BuildRight Pro",
+        "DuraBuilt",
         "construction",
         "bulk"
       ]
@@ -1495,8 +1477,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "StructureMaster Cabinet Installation Kit",
-    "slug": "structuremaster-cabinet-installation-kit",
+    "name": "MaxStrength Cabinet Installation Kit",
+    "slug": "maxstrength-cabinet-installation-kit",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1514,7 +1496,7 @@
       {
         "code": "brand",
         "values": [
-          "structuremaster"
+          "buildright_pro"
         ]
       },
       {
@@ -1524,22 +1506,28 @@
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "ppe_ansi_standard",
         "values": [
-          "pefc_certified"
+          "z87_1"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "lumber_grade",
         "values": [
-          "brass"
+          "no_1"
+        ]
+      },
+      {
+        "code": "ppe_hard_hat_class",
+        "values": [
+          "class_g"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 56
+        "position": 15
       }
     ],
     "bundles": [
@@ -1603,13 +1591,13 @@
       }
     ],
     "metaTags": {
-      "title": "Cabinet Installation Kit Bundle | StructureMaster",
-      "description": "Shop the Cabinet Installation Kit bundle from StructureMaster. Complete package for your construction needs.",
+      "title": "Cabinet Installation Kit Bundle | MaxStrength",
+      "description": "Shop the Cabinet Installation Kit bundle from MaxStrength. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "fasteners",
-        "StructureMaster",
+        "MaxStrength",
         "construction",
         "bulk"
       ]
@@ -1620,8 +1608,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Complete PPE Package",
-    "slug": "reliabuild-complete-ppe-package",
+    "name": "StructureMaster Complete PPE Package",
+    "slug": "structuremaster-complete-ppe-package",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1633,7 +1621,158 @@
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "safety"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "proframe"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "BUNDLE"
+        ]
+      },
+      {
+        "code": "ppe_category",
+        "values": [
+          "foot_protection"
+        ]
+      },
+      {
+        "code": "door_type",
+        "values": [
+          "entry"
+        ]
+      },
+      {
+        "code": "ppe_nrr_rating",
+        "values": [
+          "33"
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "path": "/safety-protection",
+        "position": 94
+      }
+    ],
+    "bundles": [
+      {
+        "group": "Head Protection",
+        "required": true,
+        "multiSelect": false,
+        "defaultItemSkus": [
+          "LBR-D0414F1E"
+        ],
+        "items": [
+          {
+            "sku": "LBR-D0414F1E",
+            "qty": 4,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-2EBB314A",
+            "qty": 2,
+            "userDefinedQty": false
+          }
+        ]
+      },
+      {
+        "group": "Eye & Ear Protection",
+        "required": true,
+        "multiSelect": true,
+        "defaultItemSkus": [
+          "LBR-26852468"
+        ],
+        "items": [
+          {
+            "sku": "LBR-26852468",
+            "qty": 6,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-2D637246",
+            "qty": 4,
+            "userDefinedQty": false
+          }
+        ]
+      },
+      {
+        "group": "Hand & Body Protection",
+        "required": true,
+        "multiSelect": true,
+        "defaultItemSkus": [
+          "LBR-96F409FB"
+        ],
+        "items": [
+          {
+            "sku": "LBR-96F409FB",
+            "qty": 6,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "LBR-9D32768F",
+            "qty": 4,
+            "userDefinedQty": false
+          }
+        ]
+      },
+      {
+        "group": "Respiratory Protection",
+        "required": false,
+        "multiSelect": false,
+        "defaultItemSkus": [],
+        "items": [
+          {
+            "sku": "PLY-7D58FF99",
+            "qty": 2,
+            "userDefinedQty": false
+          },
+          {
+            "sku": "PLY-AF7C8BA7",
+            "qty": 2,
+            "userDefinedQty": false
+          }
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Complete PPE Package Bundle | StructureMaster",
+      "description": "Shop the Complete PPE Package bundle from StructureMaster. Complete package for your construction needs.",
+      "keywords": [
+        "bundle",
+        "package",
+        "safety",
+        "StructureMaster",
+        "construction",
+        "bulk"
+      ]
+    }
+  },
+  {
+    "sku": "BUNDLE-E7EC0D01",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "ToughGrip Fall Protection System",
+    "slug": "toughgrip-fall-protection-system",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "description": "Complete fall arrest equipment set",
+    "shortDescription": "Fall Protection System - Bundle Package",
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "safety"
         ]
       },
       {
@@ -1649,179 +1788,28 @@
         ]
       },
       {
-        "code": "fastener_drive_type",
-        "values": [
-          "torx"
-        ]
-      },
-      {
-        "code": "door_type",
-        "values": [
-          "bifold"
-        ]
-      },
-      {
-        "code": "window_energy_star",
-        "values": [
-          "false"
-        ]
-      }
-    ],
-    "routes": [
-      {
-        "path": "/safety-protection",
-        "position": 7
-      }
-    ],
-    "bundles": [
-      {
-        "group": "Head Protection",
-        "required": true,
-        "multiSelect": false,
-        "defaultItemSkus": [
-          "SAFE-54709A01"
-        ],
-        "items": [
-          {
-            "sku": "SAFE-54709A01",
-            "qty": 4,
-            "userDefinedQty": false
-          },
-          {
-            "sku": "LBR-D0414F1E",
-            "qty": 2,
-            "userDefinedQty": false
-          }
-        ]
-      },
-      {
-        "group": "Eye & Ear Protection",
-        "required": true,
-        "multiSelect": true,
-        "defaultItemSkus": [
-          "SAFE-325D0586"
-        ],
-        "items": [
-          {
-            "sku": "SAFE-325D0586",
-            "qty": 6,
-            "userDefinedQty": false
-          },
-          {
-            "sku": "SAFE-2B236287",
-            "qty": 4,
-            "userDefinedQty": false
-          }
-        ]
-      },
-      {
-        "group": "Hand & Body Protection",
-        "required": true,
-        "multiSelect": true,
-        "defaultItemSkus": [
-          "SAFE-AC3312B9"
-        ],
-        "items": [
-          {
-            "sku": "SAFE-AC3312B9",
-            "qty": 6,
-            "userDefinedQty": false
-          },
-          {
-            "sku": "SAFE-7F19B12C",
-            "qty": 4,
-            "userDefinedQty": false
-          }
-        ]
-      },
-      {
-        "group": "Respiratory Protection",
-        "required": false,
-        "multiSelect": false,
-        "defaultItemSkus": [],
-        "items": [
-          {
-            "sku": "LBR-2EBB314A",
-            "qty": 2,
-            "userDefinedQty": false
-          },
-          {
-            "sku": "LBR-26852468",
-            "qty": 2,
-            "userDefinedQty": false
-          }
-        ]
-      }
-    ],
-    "metaTags": {
-      "title": "Complete PPE Package Bundle | ReliaBuild",
-      "description": "Shop the Complete PPE Package bundle from ReliaBuild. Complete package for your construction needs.",
-      "keywords": [
-        "bundle",
-        "package",
-        "safety",
-        "ReliaBuild",
-        "construction",
-        "bulk"
-      ]
-    }
-  },
-  {
-    "sku": "BUNDLE-E7EC0D01",
-    "source": {
-      "locale": "en-US"
-    },
-    "name": "ProFrame Fall Protection System",
-    "slug": "proframe-fall-protection-system",
-    "status": "ENABLED",
-    "visibleIn": [
-      "CATALOG",
-      "SEARCH"
-    ],
-    "description": "Complete fall arrest equipment set",
-    "shortDescription": "Fall Protection System - Bundle Package",
-    "attributes": [
-      {
-        "code": "product_category",
-        "values": [
-          "safety_equipment"
-        ]
-      },
-      {
-        "code": "brand",
-        "values": [
-          "safeguard"
-        ]
-      },
-      {
-        "code": "unit_of_measure",
-        "values": [
-          "BUNDLE"
-        ]
-      },
-      {
         "code": "door_core_type",
         "values": [
-          "foam_core"
+          "solid_core"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "fastener_type",
         "values": [
-          "0.25"
+          "staple"
         ]
       },
       {
-        "code": "project_types",
+        "code": "window_glazing_type",
         "values": [
-          "remodel"
+          "triple_pane"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 80
+        "position": 45
       }
     ],
     "bundles": [
@@ -1830,16 +1818,16 @@
         "required": true,
         "multiSelect": false,
         "defaultItemSkus": [
-          "SAFE-6D8805D3"
+          "LBR-D0414F1E"
         ],
         "items": [
           {
-            "sku": "SAFE-6D8805D3",
+            "sku": "LBR-D0414F1E",
             "qty": 2,
             "userDefinedQty": false
           },
           {
-            "sku": "SAFE-7F19B12C",
+            "sku": "LBR-2EBB314A",
             "qty": 2,
             "userDefinedQty": false
           }
@@ -1850,16 +1838,16 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "SAFE-54709A01"
+          "LBR-26852468"
         ],
         "items": [
           {
-            "sku": "SAFE-54709A01",
+            "sku": "LBR-26852468",
             "qty": 2,
             "userDefinedQty": false
           },
           {
-            "sku": "SAFE-AC3312B9",
+            "sku": "LBR-2D637246",
             "qty": 3,
             "userDefinedQty": false
           }
@@ -1872,12 +1860,12 @@
         "defaultItemSkus": [],
         "items": [
           {
-            "sku": "LBR-D0414F1E",
+            "sku": "LBR-96F409FB",
             "qty": 1,
             "userDefinedQty": false
           },
           {
-            "sku": "LBR-2EBB314A",
+            "sku": "LBR-9D32768F",
             "qty": 1,
             "userDefinedQty": false
           }
@@ -1885,13 +1873,13 @@
       }
     ],
     "metaTags": {
-      "title": "Fall Protection System Bundle | ProFrame",
-      "description": "Shop the Fall Protection System bundle from ProFrame. Complete package for your construction needs.",
+      "title": "Fall Protection System Bundle | ToughGrip",
+      "description": "Shop the Fall Protection System bundle from ToughGrip. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "ProFrame",
+        "ToughGrip",
         "construction",
         "bulk"
       ]
@@ -1902,8 +1890,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "BuildRight Pro Site Safety Station",
-    "slug": "buildright-pro-site-safety-station",
+    "name": "ReliaBuild Site Safety Station",
+    "slug": "reliabuild-site-safety-station",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1915,13 +1903,13 @@
       {
         "code": "product_category",
         "values": [
-          "safety_equipment"
+          "safety"
         ]
       },
       {
         "code": "brand",
         "values": [
-          "safeguard"
+          "maxstrength"
         ]
       },
       {
@@ -1931,22 +1919,28 @@
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "fastener_material",
         "values": [
-          "kiln_dried"
+          "stainless_steel_316"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "ppe_ansi_standard",
         "values": [
-          "n99"
+          "z87_1"
+        ]
+      },
+      {
+        "code": "lumber_species",
+        "values": [
+          "southern_yellow_pine"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 69
+        "position": 43
       }
     ],
     "bundles": [
@@ -1975,16 +1969,16 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "SAFE-325D0586"
+          "LBR-26852468"
         ],
         "items": [
           {
-            "sku": "SAFE-325D0586",
+            "sku": "LBR-26852468",
             "qty": 10,
             "userDefinedQty": false
           },
           {
-            "sku": "SAFE-F5871D82",
+            "sku": "LBR-2D637246",
             "qty": 10,
             "userDefinedQty": false
           }
@@ -1997,12 +1991,12 @@
         "defaultItemSkus": [],
         "items": [
           {
-            "sku": "SAFE-54709A01",
+            "sku": "LBR-96F409FB",
             "qty": 5,
             "userDefinedQty": false
           },
           {
-            "sku": "SAFE-7F19B12C",
+            "sku": "LBR-9D32768F",
             "qty": 5,
             "userDefinedQty": false
           }
@@ -2010,13 +2004,13 @@
       }
     ],
     "metaTags": {
-      "title": "Site Safety Station Bundle | BuildRight Pro",
-      "description": "Shop the Site Safety Station bundle from BuildRight Pro. Complete package for your construction needs.",
+      "title": "Site Safety Station Bundle | ReliaBuild",
+      "description": "Shop the Site Safety Station bundle from ReliaBuild. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "BuildRight Pro",
+        "ReliaBuild",
         "construction",
         "bulk"
       ]
