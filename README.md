@@ -60,6 +60,68 @@ This project provides comprehensive data generation scripts and ingestion utilit
 
 ## Quick Start
 
+### Build Process (New Persona-Driven Demo)
+
+#### Complete Data Generation Pipeline
+
+Generate all data files for both ACO ingestion and EDS frontend:
+
+```bash
+# Generate all ACO data + policy guide + EDS data
+npm run generate:all
+```
+
+This runs the complete pipeline:
+1. **Metadata & Categories** - Product schema and category tree
+2. **Products** - 70 products with persona-specific attributes
+3. **Variants & Bundles** - Configurable products and packages
+4. **Price Books** - 5 price books (1 base + 4 customer tiers)
+5. **Prices** - Retail pricing + volume tier discounts
+6. **Inventory** - Multi-source inventory definitions
+7. **Policy Guide** - 28 policies for persona filtering (manual ACO setup)
+8. **EDS Data** - Frontend-compatible data files for buildright-eds
+
+#### Individual Scripts
+
+Generate specific data types:
+
+```bash
+# Core product data
+npm run generate:products          # Simple products
+npm run generate:variants          # Configurable products
+npm run generate:bundles           # Bundle products
+npm run generate:all-products      # All of the above
+
+# Pricing data
+npm run generate:price-books       # 5 price books (persona tiers)
+npm run generate:prices            # Prices with volume tiers
+npm run generate:all-pricing       # All of the above
+
+# Inventory data
+npm run generate:sources           # Inventory sources
+npm run generate:inventory         # Stock quantities
+npm run generate:all-inventory     # All of the above
+
+# Documentation
+npm run generate:policy-guide      # Policy setup guide (28 policies)
+
+# EDS frontend data
+npm run generate:eds-data          # Transform ACO → EDS format
+```
+
+#### Output Files
+
+Generated in `data/buildright/`:
+- `products.json` - 70 products (ACO format)
+- `price-books.json` - 5 price books
+- `prices.json` - Retail + volume tier pricing
+- `inventory.json` - Multi-source stock
+- `POLICY-SETUP-GUIDE.md` - ACO policy configurations
+
+Generated in `../buildright-eds/data/`:
+- `mock-products.json` - EDS-compatible products
+- `project-recommendations.json` - Templates, packages, kits
+
 ### Prerequisites
 
 - **Node.js** 20.14.0 or higher
