@@ -384,10 +384,9 @@ async function main() {
     const edsProducts = generateEDSProducts();
     
     if (edsProducts) {
-      // Write products (wrap in object for data-mock.js compatibility)
+      // Write products as array (data-mock.js will handle the format)
       const productsOutputPath = path.join(EDS_OUTPUT_DIR, 'mock-products.json');
-      const productsData = { products: edsProducts };
-      fs.writeFileSync(productsOutputPath, JSON.stringify(productsData, null, 2));
+      fs.writeFileSync(productsOutputPath, JSON.stringify(edsProducts, null, 2));
       logger.info(`✓ Generated mock-products.json (${edsProducts.length} products)`);
       
       // Generate project recommendations
