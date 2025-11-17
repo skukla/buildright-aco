@@ -146,9 +146,9 @@ export function generatePricesSimple(products, priceBooks, randomSeed = 12345) {
 
       // Standard price entry (quantity 1+)
       prices.push({
-        id: `PRICE_${priceBook.id}_${product.sku}`,
+        id: `PRICE_${priceBook.priceBookId}_${product.sku}`,
         sku: product.sku,
-        priceBookId: priceBook.id,
+        priceBookId: priceBook.priceBookId,
         amount: formatPrice(finalPrice),
         currency: 'USD',
         uom: product.uom || 'EA',
@@ -158,12 +158,12 @@ export function generatePricesSimple(products, priceBooks, randomSeed = 12345) {
 
       // Add volume tiers ONLY for eligible products
       // AND only in base price book (to avoid duplication)
-      if (priceBook.id === 'US-Contract' && shouldHaveVolumeTiers(product)) {
+      if (priceBook.priceBookId === 'US-Contract' && shouldHaveVolumeTiers(product)) {
         // Volume Tier 1: 100+ units (additional 3% discount)
         prices.push({
-          id: `PRICE_${priceBook.id}_${product.sku}_VOL100`,
+          id: `PRICE_${priceBook.priceBookId}_${product.sku}_VOL100`,
           sku: product.sku,
-          priceBookId: priceBook.id,
+          priceBookId: priceBook.priceBookId,
           amount: formatPrice(finalPrice * 0.97), // 3% additional discount
           currency: 'USD',
           uom: product.uom || 'EA',
@@ -178,9 +178,9 @@ export function generatePricesSimple(products, priceBooks, randomSeed = 12345) {
 
         // Volume Tier 2: 500+ units (additional 8% discount)
         prices.push({
-          id: `PRICE_${priceBook.id}_${product.sku}_VOL500`,
+          id: `PRICE_${priceBook.priceBookId}_${product.sku}_VOL500`,
           sku: product.sku,
-          priceBookId: priceBook.id,
+          priceBookId: priceBook.priceBookId,
           amount: formatPrice(finalPrice * 0.92), // 8% additional discount
           currency: 'USD',
           uom: product.uom || 'EA',

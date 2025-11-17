@@ -59,7 +59,10 @@ function generateEDSProducts() {
     if (!priceMap[priceEntry.sku]) {
       priceMap[priceEntry.sku] = {};
     }
-    priceMap[priceEntry.sku][priceEntry.priceBookId] = priceEntry.prices;
+    if (!priceMap[priceEntry.sku][priceEntry.priceBookId]) {
+      priceMap[priceEntry.sku][priceEntry.priceBookId] = [];
+    }
+    priceMap[priceEntry.sku][priceEntry.priceBookId].push(priceEntry);
   });
   
   const edsProducts = acoProducts.map(product => {
@@ -73,7 +76,7 @@ function generateEDSProducts() {
     
     // Get retail pricing (base price book)
     const retailPrices = priceMap[product.sku]?.['US-Retail'] || [];
-    const basePrice = retailPrices.length > 0 ? retailPrices[0].value : 0;
+    const basePrice = retailPrices.length > 0 ? (retailPrices[0].amount || retailPrices[0].value || 0) : 0;
     
     return {
       // Core product info
