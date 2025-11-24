@@ -70,7 +70,13 @@ function generateEDSProducts() {
     const attributes = {};
     if (product.attributes && Array.isArray(product.attributes)) {
       product.attributes.forEach(attr => {
-        attributes[attr.code] = attr.value;
+        // ACO attributes use 'values' array, not 'value'
+        // For single-value attributes, use first element; for multi-value, keep array
+        if (attr.values && attr.values.length === 1) {
+          attributes[attr.code] = attr.values[0];
+        } else if (attr.values && attr.values.length > 1) {
+          attributes[attr.code] = attr.values;
+        }
       });
     }
     
