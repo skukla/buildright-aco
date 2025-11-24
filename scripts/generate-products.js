@@ -266,85 +266,85 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
 
   const attributes = generateAttributes(metadata, categoryValue, brand, template.uom, random, category, subcategory, sku, productName);
 
-  // Add persona-specific attributes from template
-  if (template.construction_phase) {
+  // Add persona-specific attributes from template (with duplicate check)
+  if (template.construction_phase && !attributes.find(a => a.code === 'construction_phase')) {
     attributes.push({
       code: 'construction_phase',
       value: template.construction_phase
     });
   }
   
-  if (template.quality_tier) {
+  if (template.quality_tier && !attributes.find(a => a.code === 'quality_tier')) {
     attributes.push({
       code: 'quality_tier',
       value: template.quality_tier
     });
   }
   
-  if (template.package_tier) {
+  if (template.package_tier && !attributes.find(a => a.code === 'package_tier')) {
     attributes.push({
       code: 'package_tier',
       value: template.package_tier
     });
   }
   
-  if (template.room_category) {
+  if (template.room_category && !attributes.find(a => a.code === 'room_category')) {
     attributes.push({
       code: 'room_category',
       value: template.room_category
     });
   }
   
-  if (template.deck_compatible !== undefined) {
+  if (template.deck_compatible !== undefined && !attributes.find(a => a.code === 'deck_compatible')) {
     attributes.push({
       code: 'deck_compatible',
       value: template.deck_compatible
     });
   }
   
-  if (template.deck_shape) {
+  if (template.deck_shape && !attributes.find(a => a.code === 'deck_shape')) {
     attributes.push({
       code: 'deck_shape',
       value: template.deck_shape
     });
   }
   
-  if (template.deck_material_type) {
+  if (template.deck_material_type && !attributes.find(a => a.code === 'deck_material_type')) {
     attributes.push({
       code: 'deck_material_type',
       value: template.deck_material_type
     });
   }
   
-  if (template.deck_railing_compatible) {
+  if (template.deck_railing_compatible && !attributes.find(a => a.code === 'deck_railing_compatible')) {
     attributes.push({
       code: 'deck_railing_compatible',
       value: template.deck_railing_compatible
     });
   }
   
-  if (template.store_velocity_category) {
+  if (template.store_velocity_category && !attributes.find(a => a.code === 'store_velocity_category')) {
     attributes.push({
       code: 'store_velocity_category',
       value: template.store_velocity_category
     });
   }
   
-  if (template.recommended_restock_quantity) {
+  if (template.recommended_restock_quantity && !attributes.find(a => a.code === 'recommended_restock_quantity')) {
     attributes.push({
       code: 'recommended_restock_quantity',
       value: template.recommended_restock_quantity
     });
   }
   
-  if (template.typical_days_supply) {
+  if (template.typical_days_supply && !attributes.find(a => a.code === 'typical_days_supply')) {
     attributes.push({
       code: 'typical_days_supply',
       value: template.typical_days_supply
     });
   }
   
-  if (template.restock_priority) {
+  if (template.restock_priority && !attributes.find(a => a.code === 'restock_priority')) {
     attributes.push({
       code: 'restock_priority',
       value: template.restock_priority

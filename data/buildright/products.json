@@ -62,21 +62,9 @@
         ]
       },
       {
-        "code": "deck_compatible",
-        "values": [
-          "true"
-        ]
-      },
-      {
         "code": "deck_shape",
         "values": [
           "rectangular, l_shaped"
-        ]
-      },
-      {
-        "code": "deck_material_type",
-        "values": [
-          "wood"
         ]
       },
       {
@@ -186,21 +174,9 @@
         ]
       },
       {
-        "code": "deck_shape",
-        "values": [
-          "rectangular, l_shaped"
-        ]
-      },
-      {
         "code": "deck_material_type",
         "values": [
           "wood"
-        ]
-      },
-      {
-        "code": "store_velocity_category",
-        "values": [
-          "high"
         ]
       },
       {
@@ -307,12 +283,6 @@
         "code": "deck_compatible",
         "values": [
           "true"
-        ]
-      },
-      {
-        "code": "deck_shape",
-        "values": [
-          "rectangular, l_shaped"
         ]
       },
       {
@@ -752,12 +722,6 @@
         ]
       },
       {
-        "code": "quality_tier",
-        "values": [
-          "builder_grade"
-        ]
-      },
-      {
         "code": "deck_compatible",
         "values": [
           "false"
@@ -767,12 +731,6 @@
         "code": "store_velocity_category",
         "values": [
           "high"
-        ]
-      },
-      {
-        "code": "recommended_restock_quantity",
-        "values": [
-          "50"
         ]
       },
       {
@@ -849,12 +807,6 @@
         "code": "quality_tier",
         "values": [
           "professional"
-        ]
-      },
-      {
-        "code": "deck_compatible",
-        "values": [
-          "false"
         ]
       },
       {
@@ -1288,12 +1240,6 @@
         ]
       },
       {
-        "code": "store_velocity_category",
-        "values": [
-          "medium"
-        ]
-      },
-      {
         "code": "recommended_restock_quantity",
         "values": [
           "25"
@@ -1382,12 +1328,6 @@
         ]
       },
       {
-        "code": "quality_tier",
-        "values": [
-          "professional"
-        ]
-      },
-      {
         "code": "store_velocity_category",
         "values": [
           "medium"
@@ -1397,12 +1337,6 @@
         "code": "recommended_restock_quantity",
         "values": [
           "50"
-        ]
-      },
-      {
-        "code": "typical_days_supply",
-        "values": [
-          "14"
         ]
       },
       {
@@ -1582,12 +1516,6 @@
         ]
       },
       {
-        "code": "recommended_restock_quantity",
-        "values": [
-          "45"
-        ]
-      },
-      {
         "code": "typical_days_supply",
         "values": [
           "14"
@@ -1686,12 +1614,6 @@
         "values": [
           "14"
         ]
-      },
-      {
-        "code": "restock_priority",
-        "values": [
-          "medium"
-        ]
       }
     ]
   },
@@ -1758,12 +1680,6 @@
         ]
       },
       {
-        "code": "construction_phase",
-        "values": [
-          "foundation_framing"
-        ]
-      },
-      {
         "code": "quality_tier",
         "values": [
           "premium"
@@ -1785,12 +1701,6 @@
         "code": "typical_days_supply",
         "values": [
           "30"
-        ]
-      },
-      {
-        "code": "restock_priority",
-        "values": [
-          "low"
         ]
       }
     ]
@@ -2088,12 +1998,6 @@
         ]
       },
       {
-        "code": "store_velocity_category",
-        "values": [
-          "high"
-        ]
-      },
-      {
         "code": "recommended_restock_quantity",
         "values": [
           "50"
@@ -2179,12 +2083,6 @@
         "code": "construction_phase",
         "values": [
           "interior_finish"
-        ]
-      },
-      {
-        "code": "quality_tier",
-        "values": [
-          "professional"
         ]
       },
       {
@@ -2276,12 +2174,6 @@
         ]
       },
       {
-        "code": "construction_phase",
-        "values": [
-          "interior_finish"
-        ]
-      },
-      {
         "code": "quality_tier",
         "values": [
           "premium"
@@ -2315,12 +2207,6 @@
         "code": "typical_days_supply",
         "values": [
           "30"
-        ]
-      },
-      {
-        "code": "restock_priority",
-        "values": [
-          "low"
         ]
       }
     ]
@@ -2415,12 +2301,6 @@
         "code": "recommended_restock_quantity",
         "values": [
           "25"
-        ]
-      },
-      {
-        "code": "typical_days_supply",
-        "values": [
-          "14"
         ]
       },
       {
@@ -2628,12 +2508,6 @@
         "values": [
           "14"
         ]
-      },
-      {
-        "code": "restock_priority",
-        "values": [
-          "medium"
-        ]
       }
     ]
   },
@@ -2718,12 +2592,6 @@
         ]
       },
       {
-        "code": "store_velocity_category",
-        "values": [
-          "medium"
-        ]
-      },
-      {
         "code": "recommended_restock_quantity",
         "values": [
           "12"
@@ -2797,12 +2665,6 @@
         "code": "door_core_type",
         "values": [
           "solid_wood"
-        ]
-      },
-      {
-        "code": "construction_phase",
-        "values": [
-          "envelope"
         ]
       },
       {
@@ -3336,12 +3198,6 @@
         ]
       },
       {
-        "code": "construction_phase",
-        "values": [
-          "interior_finish"
-        ]
-      },
-      {
         "code": "quality_tier",
         "values": [
           "builder_grade"
@@ -3369,12 +3225,6 @@
         "code": "recommended_restock_quantity",
         "values": [
           "25"
-        ]
-      },
-      {
-        "code": "typical_days_supply",
-        "values": [
-          "7"
         ]
       },
       {
@@ -3557,12 +3407,6 @@
         "code": "construction_phase",
         "values": [
           "envelope"
-        ]
-      },
-      {
-        "code": "quality_tier",
-        "values": [
-          "premium"
         ]
       },
       {
@@ -4266,12 +4110,6 @@
         ]
       },
       {
-        "code": "store_velocity_category",
-        "values": [
-          "medium"
-        ]
-      },
-      {
         "code": "recommended_restock_quantity",
         "values": [
           "20"
@@ -4496,12 +4334,6 @@
         ]
       },
       {
-        "code": "deck_material_type",
-        "values": [
-          "wood"
-        ]
-      },
-      {
         "code": "store_velocity_category",
         "values": [
           "high"
@@ -4624,12 +4456,6 @@
         "values": [
           "7"
         ]
-      },
-      {
-        "code": "restock_priority",
-        "values": [
-          "high"
-        ]
       }
     ]
   },
@@ -4705,12 +4531,6 @@
         "code": "store_velocity_category",
         "values": [
           "high"
-        ]
-      },
-      {
-        "code": "recommended_restock_quantity",
-        "values": [
-          "40"
         ]
       },
       {
@@ -4812,12 +4632,6 @@
         "values": [
           "14"
         ]
-      },
-      {
-        "code": "restock_priority",
-        "values": [
-          "medium"
-        ]
       }
     ]
   },
@@ -4902,27 +4716,9 @@
         ]
       },
       {
-        "code": "store_velocity_category",
-        "values": [
-          "low"
-        ]
-      },
-      {
         "code": "recommended_restock_quantity",
         "values": [
           "15"
-        ]
-      },
-      {
-        "code": "typical_days_supply",
-        "values": [
-          "30"
-        ]
-      },
-      {
-        "code": "restock_priority",
-        "values": [
-          "low"
         ]
       }
     ]
@@ -5196,21 +4992,9 @@
         ]
       },
       {
-        "code": "construction_phase",
-        "values": [
-          "envelope"
-        ]
-      },
-      {
         "code": "quality_tier",
         "values": [
           "professional"
-        ]
-      },
-      {
-        "code": "store_velocity_category",
-        "values": [
-          "high"
         ]
       },
       {
@@ -5447,12 +5231,6 @@
         "code": "recommended_restock_quantity",
         "values": [
           "25"
-        ]
-      },
-      {
-        "code": "typical_days_supply",
-        "values": [
-          "14"
         ]
       },
       {
