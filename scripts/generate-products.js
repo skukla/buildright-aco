@@ -7,6 +7,7 @@ import logger from '../utils/logger.js';
 import { SeededRandom } from '../utils/random-seed.js';
 import { generateSKU, resetSkuTracker } from '../utils/sku-generator.js';
 import { PRODUCT_CATEGORIES, BRANDS, UNITS_OF_MEASURE } from './config/product-definitions.js';
+import { generateProductDescription } from './utils/description-generator.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -354,13 +355,16 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
   // Generate slug from product name
   const slug = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
+  // Generate description
+  const description = template.description || generateProductDescription(categoryValue, brand, template.uom, productName);
+
   // ACO FeedProduct schema (v1.1.0+)
   return {
     sku: sku,
     source: { locale: 'en-US' },
     name: productName,
     slug: slug,
-    description: template.description || '',
+    description: description,
     status: 'ENABLED',
     visibleIn: ['CATALOG', 'SEARCH'],
     attributes: attributes.map(attr => ({
@@ -399,13 +403,16 @@ function generateServiceProduct(service, category, categories, metadata, index) 
   // Generate slug from service name
   const slug = service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   
+  // Generate description
+  const description = service.description || generateProductDescription(categoryValue, 'BuildRight Services', 'SERVICE', service.name);
+
   // ACO FeedProduct schema (v1.1.0+)
   return {
     sku: sku,
     source: { locale: 'en-US' },
     name: service.name,
     slug: slug,
-    description: service.description || '',
+    description: description,
     status: 'ENABLED',
     visibleIn: ['CATALOG', 'SEARCH'],
     attributes: attributes.map(attr => ({

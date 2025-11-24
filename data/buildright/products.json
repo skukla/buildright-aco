@@ -6,7 +6,7 @@
     },
     "name": "ToughGrip 2x4 Stud - 8ft",
     "slug": "toughgrip-2x4-stud-8ft",
-    "description": "",
+    "description": "Premium toughgrip treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -100,7 +100,7 @@
     },
     "name": "SafeGuard 2x6 Stud - 8ft",
     "slug": "safeguard-2x6-stud-8ft",
-    "description": "",
+    "description": "Premium safeguard treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -206,7 +206,7 @@
     },
     "name": "PremiumBuild 2x8 Joist - 10ft",
     "slug": "premiumbuild-2x8-joist-10ft",
-    "description": "",
+    "description": "Premium premiumbuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -324,7 +324,7 @@
     },
     "name": "SafeGuard 2x10 Joist - 12ft",
     "slug": "safeguard-2x10-joist-12ft",
-    "description": "",
+    "description": "Premium safeguard treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -448,7 +448,7 @@
     },
     "name": "PremiumBuild 2x12 Beam - 16ft",
     "slug": "premiumbuild-2x12-beam-16ft",
-    "description": "",
+    "description": "Premium premiumbuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -542,7 +542,7 @@
     },
     "name": "ProFrame 4x4 Post - 8ft",
     "slug": "proframe-4x4-post-8ft",
-    "description": "",
+    "description": "Premium proframe treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -660,7 +660,7 @@
     },
     "name": "MaxStrength OSB Sheathing 7/16\" - 4x8",
     "slug": "maxstrength-osb-sheathing-7-16-4x8",
-    "description": "",
+    "description": "Premium maxstrength treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -754,7 +754,7 @@
     },
     "name": "PremiumBuild CDX Plywood 1/2\" - 4x8",
     "slug": "premiumbuild-cdx-plywood-1-2-4x8",
-    "description": "",
+    "description": "Premium premiumbuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -842,7 +842,7 @@
     },
     "name": "ReliaBuild T&G Subfloor 3/4\" - 4x8",
     "slug": "reliabuild-t-g-subfloor-3-4-4x8",
-    "description": "",
+    "description": "Premium reliabuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -942,7 +942,7 @@
     },
     "name": "ReliaBuild Marine Plywood 3/4\" - 4x8",
     "slug": "reliabuild-marine-plywood-3-4-4x8",
-    "description": "",
+    "description": "Premium reliabuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1054,7 +1054,7 @@
     },
     "name": "DuraBuilt Hardwood Plywood 1/4\" - 4x8",
     "slug": "durabuilt-hardwood-plywood-1-4-4x8",
-    "description": "",
+    "description": "Premium durabuilt treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1166,7 +1166,7 @@
     },
     "name": "BuildRight Pro Siding Panel 3/8\" - 4x8",
     "slug": "buildright-pro-siding-panel-3-8-4x8",
-    "description": "",
+    "description": "Premium buildright pro treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1266,7 +1266,7 @@
     },
     "name": "SafeGuard Metal Stud 20ga - 3.5\" x 10ft",
     "slug": "safeguard-metal-stud-20ga-3-5-x-10ft",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1354,7 +1354,7 @@
     },
     "name": "DuraBuilt Metal Stud 20ga - 6\" x 10ft",
     "slug": "durabuilt-metal-stud-20ga-6-x-10ft",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1442,7 +1442,7 @@
     },
     "name": "FastenPro Metal Track 20ga - 3.5\" x 10ft",
     "slug": "fastenpro-metal-track-20ga-3-5-x-10ft",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1536,7 +1536,7 @@
     },
     "name": "FastenPro Metal Track 20ga - 6\" x 10ft",
     "slug": "fastenpro-metal-track-20ga-6-x-10ft",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1624,7 +1624,7 @@
     },
     "name": "StructureMaster Steel C-Channel - 8ft",
     "slug": "structuremaster-steel-c-channel-8ft",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1712,7 +1712,7 @@
     },
     "name": "ToughGrip Hat Channel - 12ft",
     "slug": "toughgrip-hat-channel-12ft",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1812,7 +1812,7 @@
     },
     "name": "ProFrame Drywall 1/2\" - 4x8",
     "slug": "proframe-drywall-1-2-4x8",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1930,7 +1930,7 @@
     },
     "name": "ProFrame Drywall 5/8\" - 4x8",
     "slug": "proframe-drywall-5-8-4x8",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2024,7 +2024,7 @@
     },
     "name": "BuildRight Pro Moisture Resistant Drywall - 4x8",
     "slug": "buildright-pro-moisture-resistant-drywall-4x8",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2130,7 +2130,7 @@
     },
     "name": "DuraBuilt Fire Rated Drywall - 4x8",
     "slug": "durabuilt-fire-rated-drywall-4x8",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2218,7 +2218,7 @@
     },
     "name": "StructureMaster Cement Board 1/2\" - 3x5",
     "slug": "structuremaster-cement-board-1-2-3x5",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2318,7 +2318,7 @@
     },
     "name": "MaxStrength Sound Dampening Drywall - 4x8",
     "slug": "maxstrength-sound-dampening-drywall-4x8",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2418,7 +2418,7 @@
     },
     "name": "BuildRight Pro Single Hung Window - 36\"x48\"",
     "slug": "buildright-pro-single-hung-window-36-x48",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2518,7 +2518,7 @@
     },
     "name": "StructureMaster Double Hung Window - 36\"x60\"",
     "slug": "structuremaster-double-hung-window-36-x60",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2618,7 +2618,7 @@
     },
     "name": "FastenPro Sliding Window - 48\"x36\"",
     "slug": "fastenpro-sliding-window-48-x36",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2718,7 +2718,7 @@
     },
     "name": "MaxStrength Casement Window - 30\"x48\"",
     "slug": "maxstrength-casement-window-30-x48",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2824,7 +2824,7 @@
     },
     "name": "BuildRight Pro Bay Window - 72\"x48\"",
     "slug": "buildright-pro-bay-window-72-x48",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -2918,7 +2918,7 @@
     },
     "name": "FastenPro Awning Window - 36\"x24\"",
     "slug": "fastenpro-awning-window-36-x24",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3030,7 +3030,7 @@
     },
     "name": "FastenPro Entry Door - Steel 36\"x80\"",
     "slug": "fastenpro-entry-door-steel-36-x80",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3136,7 +3136,7 @@
     },
     "name": "PremiumBuild Interior Door - Hollow Core 32\"x80\"",
     "slug": "premiumbuild-interior-door-hollow-core-32-x80",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3242,7 +3242,7 @@
     },
     "name": "ToughGrip French Door - 60\"x80\"",
     "slug": "toughgrip-french-door-60-x80",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3354,7 +3354,7 @@
     },
     "name": "StructureMaster Sliding Patio Door - 72\"x80\"",
     "slug": "structuremaster-sliding-patio-door-72-x80",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3466,7 +3466,7 @@
     },
     "name": "DuraBuilt Bi-fold Closet Door - 36\"x80\"",
     "slug": "durabuilt-bi-fold-closet-door-36-x80",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3566,7 +3566,7 @@
     },
     "name": "BuildRight Pro Storm Door - 36\"x80\"",
     "slug": "buildright-pro-storm-door-36-x80",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3666,7 +3666,7 @@
     },
     "name": "ReliaBuild Framing Nails 16d - 50lb Box",
     "slug": "reliabuild-framing-nails-16d-50lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3754,7 +3754,7 @@
     },
     "name": "ToughGrip Finish Nails 8d - 5lb Box",
     "slug": "toughgrip-finish-nails-8d-5lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3848,7 +3848,7 @@
     },
     "name": "DuraBuilt Roofing Nails - 50lb Box",
     "slug": "durabuilt-roofing-nails-50lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -3948,7 +3948,7 @@
     },
     "name": "MaxStrength Brad Nails 18ga - 5000ct",
     "slug": "maxstrength-brad-nails-18ga-5000ct",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4036,7 +4036,7 @@
     },
     "name": "StructureMaster Concrete Nails - 5lb Box",
     "slug": "structuremaster-concrete-nails-5lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4136,7 +4136,7 @@
     },
     "name": "ToughGrip Ring Shank Nails - 25lb Box",
     "slug": "toughgrip-ring-shank-nails-25lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4248,7 +4248,7 @@
     },
     "name": "PremiumBuild Deck Screws #8 - 5lb Box",
     "slug": "premiumbuild-deck-screws-8-5lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4366,7 +4366,7 @@
     },
     "name": "ToughGrip Drywall Screws - 5lb Box",
     "slug": "toughgrip-drywall-screws-5lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4466,7 +4466,7 @@
     },
     "name": "ProFrame Wood Screws #10 - 1lb Box",
     "slug": "proframe-wood-screws-10-1lb-box",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4554,7 +4554,7 @@
     },
     "name": "SafeGuard Self-Drilling Screws - 1lb",
     "slug": "safeguard-self-drilling-screws-1lb",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4642,7 +4642,7 @@
     },
     "name": "PremiumBuild Lag Screws 1/2\" - 50ct",
     "slug": "premiumbuild-lag-screws-1-2-50ct",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4730,7 +4730,7 @@
     },
     "name": "ToughGrip Cabinet Screws - 100ct",
     "slug": "toughgrip-cabinet-screws-100ct",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4836,7 +4836,7 @@
     },
     "name": "SafeGuard Asphalt Shingles 3-Tab - Bundle",
     "slug": "safeguard-asphalt-shingles-3-tab-bundle",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -4930,7 +4930,7 @@
     },
     "name": "ToughGrip Architectural Shingles - Bundle",
     "slug": "toughgrip-architectural-shingles-bundle",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5024,7 +5024,7 @@
     },
     "name": "SafeGuard Premium Designer Shingles - Bundle",
     "slug": "safeguard-premium-designer-shingles-bundle",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5136,7 +5136,7 @@
     },
     "name": "SafeGuard Impact Resistant Shingles - Bundle",
     "slug": "safeguard-impact-resistant-shingles-bundle",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5248,7 +5248,7 @@
     },
     "name": "BuildRight Pro Starter Strip Shingles - Roll",
     "slug": "buildright-pro-starter-strip-shingles-roll",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5348,7 +5348,7 @@
     },
     "name": "ReliaBuild Ridge Cap Shingles - Bundle",
     "slug": "reliabuild-ridge-cap-shingles-bundle",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5442,7 +5442,7 @@
     },
     "name": "BuildRight Pro Roofing Felt 15lb - Roll",
     "slug": "buildright-pro-roofing-felt-15lb-roll",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5530,7 +5530,7 @@
     },
     "name": "StructureMaster Roofing Felt 30lb - Roll",
     "slug": "structuremaster-roofing-felt-30lb-roll",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5624,7 +5624,7 @@
     },
     "name": "DuraBuilt Synthetic Underlayment - Roll",
     "slug": "durabuilt-synthetic-underlayment-roll",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5730,7 +5730,7 @@
     },
     "name": "BuildRight Pro Ice & Water Shield - Roll",
     "slug": "buildright-pro-ice-water-shield-roll",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5836,7 +5836,7 @@
     },
     "name": "DuraBuilt Self-Adhering Underlayment - Roll",
     "slug": "durabuilt-self-adhering-underlayment-roll",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -5936,7 +5936,7 @@
     },
     "name": "MaxStrength Ventilated Underlayment - Roll",
     "slug": "maxstrength-ventilated-underlayment-roll",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6048,7 +6048,7 @@
     },
     "name": "Structural Material Delivery",
     "slug": "structural-material-delivery",
-    "description": "",
+    "description": "Premium buildright services treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SERVICE.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6112,7 +6112,7 @@
     },
     "name": "Lumber Cutting Service",
     "slug": "lumber-cutting-service",
-    "description": "",
+    "description": "Premium buildright services treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SERVICE.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6170,7 +6170,7 @@
     },
     "name": "Drywall Installation Service",
     "slug": "drywall-installation-service",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6228,7 +6228,7 @@
     },
     "name": "Framing Consultation",
     "slug": "framing-consultation",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6298,7 +6298,7 @@
     },
     "name": "Door & Window Installation",
     "slug": "door-window-installation",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6350,7 +6350,7 @@
     },
     "name": "Window Measurement Service",
     "slug": "window-measurement-service",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6408,7 +6408,7 @@
     },
     "name": "Fastener Consultation",
     "slug": "fastener-consultation",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6472,7 +6472,7 @@
     },
     "name": "Bulk Order Processing",
     "slug": "bulk-order-processing",
-    "description": "",
+    "description": "Professional-grade fastener engineered for secure connections in construction applications. Corrosion-resistant coating ensures long-lasting performance. Compatible with standard installation tools. Bulk packaging for high-volume projects.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6530,7 +6530,7 @@
     },
     "name": "Roof Inspection Service",
     "slug": "roof-inspection-service",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6588,7 +6588,7 @@
     },
     "name": "Roofing Material Delivery",
     "slug": "roofing-material-delivery",
-    "description": "",
+    "description": "Professional-grade construction material built for demanding job site conditions. Engineered for reliability and long-term performance. Meets or exceeds industry standards for quality and safety.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
