@@ -150,7 +150,12 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
     if (metaAttr) {
       const attrObj = {
         code: metaAttr.attributeId,
-        values: Array.isArray(value) ? value : [value]
+        // ACO multiselect workaround: join array values into comma-separated string
+        // For multiselect attrs: ["val1", "val2"] → ["val1, val2"]
+        // For single values: ["val"] → ["val"] or "val" → ["val"]
+        values: Array.isArray(value) 
+          ? (value.length > 1 && typeof value[0] === 'string' ? [value.join(', ')] : value)
+          : [value]
       };
       // Add variantReferenceId if this is a configurable dimension
       if (variantReferenceId) {
@@ -172,7 +177,7 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
     if (!attributes.find(a => a.code === attr.attributeId)) {
       const value = attr.type === 'boolean' ? (random.nextFloat() > 0.5 ? 'true' : 'false') :
                    attr.type === 'number' ? random.nextInt(10, 100) :
-                   attr.options ? attr.options[random.nextInt(0, attr.options.length - 1)].value :
+                   (attr.options && attr.options.length > 0) ? attr.options[random.nextInt(0, attr.options.length - 1)].value :
                    'Standard';
 
       attributes.push({
@@ -485,6 +490,7 @@ async function generateVariantsAndConfigurables() {
     logger.info('Variant Generation Complete');
 
   } catch (error) {
+    console.error('Variant generation failed:', error);
     logger.error('Variant generation failed:', error.message);
     logger.error('Stack trace:', error.stack);
     process.exit(1);

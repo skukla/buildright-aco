@@ -354,16 +354,23 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
   // Generate slug from product name
   const slug = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
 
-  // ACO FeedProduct schema
+  // ACO FeedProduct schema (v1.1.0+)
   return {
     sku: sku,
-    type: 'simple',
+    source: { locale: 'en-US' },
     name: productName,
-    status: 'enabled',
-    visibility: 'both',
-    price: price,
-    attributes: attributes,
-    routes: routes
+    slug: slug,
+    description: template.description || '',
+    status: 'ENABLED',
+    visibleIn: ['CATALOG', 'SEARCH'],
+    attributes: attributes.map(attr => ({
+      code: attr.code,
+      // ACO multiselect workaround: convert arrays to comma-separated strings
+      // Instead of values: ["val1", "val2"], ACO expects values: ["val1, val2"]
+      values: Array.isArray(attr.value) 
+        ? [attr.value.join(', ')] 
+        : [String(attr.value)]
+    }))
   };
 }
 
@@ -391,17 +398,24 @@ function generateServiceProduct(service, category, categories, metadata, index) 
 
   // Generate slug from service name
   const slug = service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-
-  // ACO FeedProduct schema
+  
+  // ACO FeedProduct schema (v1.1.0+)
   return {
     sku: sku,
-    type: 'service',
+    source: { locale: 'en-US' },
     name: service.name,
-    status: 'enabled',
-    visibility: 'both',
-    price: price,
-    attributes: attributes,
-    routes: routes
+    slug: slug,
+    description: service.description || '',
+    status: 'ENABLED',
+    visibleIn: ['CATALOG', 'SEARCH'],
+    attributes: attributes.map(attr => ({
+      code: attr.code,
+      // ACO multiselect workaround: convert arrays to comma-separated strings
+      // Instead of values: ["val1", "val2"], ACO expects values: ["val1, val2"]
+      values: Array.isArray(attr.value) 
+        ? [attr.value.join(', ')] 
+        : [String(attr.value)]
+    }))
   };
 }
 

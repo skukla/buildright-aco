@@ -205,7 +205,7 @@ function generateAttributes(metadata, categoryValue, brand) {
         value = random.nextFloat() > 0.5 ? 'true' : 'false';
       } else if (attr.type === 'number') {
         value = random.nextInt(10, 100);
-      } else if (attr.options) {
+      } else if (attr.options && attr.options.length > 0) {
         value = attr.options[random.nextInt(0, attr.options.length - 1)].value;
       } else {
         value = 'Premium Bundle';

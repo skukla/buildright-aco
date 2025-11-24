@@ -33,15 +33,15 @@
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "window_operation_type",
         "values": [
-          "tapered"
+          "double_hung"
         ]
       },
       {
-        "code": "door_material",
+        "code": "fastener_material",
         "values": [
-          "vinyl"
+          "brass"
         ]
       }
     ],
@@ -178,15 +178,15 @@
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "door_type",
         "values": [
-          "fixed"
+          "storm"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "deck_compatible",
         "values": [
-          "20"
+          "false"
         ]
       }
     ],
@@ -305,21 +305,21 @@
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "ppe_ansi_standard",
         "values": [
-          "common_nail"
+          "z89_1"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "drywall_product_type",
         "values": [
-          "none"
+          "impact_resistant"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "fastener_type",
         "values": [
-          "false"
+          "screw"
         ]
       }
     ],
@@ -436,21 +436,21 @@
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "fastener_head_type",
         "values": [
-          "foam_core"
+          "bugle"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "construction_phase",
         "values": [
-          "type_1"
+          "rough_in"
         ]
       },
       {
-        "code": "project_types",
+        "code": "lumber_species",
         "values": [
-          "repair"
+          "hem_fir"
         ]
       },
       {
@@ -593,27 +593,27 @@
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "lumber_grade",
         "values": [
-          "redwood"
+          "construction"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "deck_compatible",
         "values": [
-          "30"
+          "true"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "quality_tier",
         "values": [
-          "type_2"
+          "premium"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "door_material",
         "values": [
-          "casement"
+          "steel"
         ]
       }
     ],
@@ -730,21 +730,21 @@
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "recommended_restock_quantity",
         "values": [
-          "p100"
+          "Premium Bundle"
+        ]
+      },
+      {
+        "code": "store_velocity_category",
+        "values": [
+          "medium"
         ]
       },
       {
         "code": "fastener_coating",
         "values": [
-          "galvanized"
-        ]
-      },
-      {
-        "code": "ppe_hard_hat_class",
-        "values": [
-          "class_c"
+          "polymer_coated"
         ]
       }
     ],
@@ -800,11 +800,11 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "STUD-95E9D258"
+          "STUD-984F2EC0"
         ],
         "items": [
           {
-            "sku": "STUD-95E9D258",
+            "sku": "STUD-984F2EC0",
             "qty": 8,
             "userDefinedQty": false
           },
@@ -834,8 +834,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "MaxStrength Whole House Window Package",
-    "slug": "maxstrength-whole-house-window-package",
+    "name": "ReliaBuild Whole House Window Package",
+    "slug": "reliabuild-whole-house-window-package",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -853,7 +853,7 @@
       {
         "code": "brand",
         "values": [
-          "maxstrength"
+          "buildright_pro"
         ]
       },
       {
@@ -863,22 +863,34 @@
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "window_operation_type",
         "values": [
-          "brass"
+          "sliding"
         ]
       },
       {
-        "code": "project_types",
+        "code": "ppe_nrr_rating",
         "values": [
-          "new_construction"
+          "20"
+        ]
+      },
+      {
+        "code": "window_material",
+        "values": [
+          "composite"
+        ]
+      },
+      {
+        "code": "window_energy_star",
+        "values": [
+          "false"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 5
+        "position": 31
       }
     ],
     "bundles": [
@@ -942,13 +954,13 @@
       }
     ],
     "metaTags": {
-      "title": "Whole House Window Package Bundle | MaxStrength",
-      "description": "Shop the Whole House Window Package bundle from MaxStrength. Complete package for your construction needs.",
+      "title": "Whole House Window Package Bundle | ReliaBuild",
+      "description": "Shop the Whole House Window Package bundle from ReliaBuild. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "windows-doors",
-        "MaxStrength",
+        "ReliaBuild",
         "construction",
         "bulk"
       ]
@@ -978,7 +990,7 @@
       {
         "code": "brand",
         "values": [
-          "structuremaster"
+          "toughgrip"
         ]
       },
       {
@@ -988,28 +1000,22 @@
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "ppe_nrr_rating",
         "values": [
-          "0.625"
+          "32"
         ]
       },
       {
-        "code": "door_material",
+        "code": "lumber_grade",
         "values": [
-          "aluminum"
-        ]
-      },
-      {
-        "code": "ppe_hard_hat_class",
-        "values": [
-          "class_e"
+          "construction"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 21
+        "position": 17
       }
     ],
     "bundles": [
@@ -1018,11 +1024,11 @@
         "required": true,
         "multiSelect": false,
         "defaultItemSkus": [
-          "DOOR-B9A85BDF-VAR-E77ABC"
+          "DOOR-B9A85BDF-VAR-70643B"
         ],
         "items": [
           {
-            "sku": "DOOR-B9A85BDF-VAR-E77ABC",
+            "sku": "DOOR-B9A85BDF-VAR-70643B",
             "qty": 1,
             "userDefinedQty": false
           },
@@ -1038,11 +1044,11 @@
         "required": true,
         "multiSelect": true,
         "defaultItemSkus": [
-          "DOOR-4DEEB6C4-VAR-0B6A7A"
+          "DOOR-4DEEB6C4-VAR-5303AB"
         ],
         "items": [
           {
-            "sku": "DOOR-4DEEB6C4-VAR-0B6A7A",
+            "sku": "DOOR-4DEEB6C4-VAR-5303AB",
             "qty": 8,
             "userDefinedQty": false
           },
@@ -1090,8 +1096,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ToughGrip Energy Efficiency Upgrade",
-    "slug": "toughgrip-energy-efficiency-upgrade",
+    "name": "PremiumBuild Energy Efficiency Upgrade",
+    "slug": "premiumbuild-energy-efficiency-upgrade",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1109,7 +1115,7 @@
       {
         "code": "brand",
         "values": [
-          "durabuilt"
+          "safeguard"
         ]
       },
       {
@@ -1119,34 +1125,28 @@
         ]
       },
       {
-        "code": "window_material",
+        "code": "ppe_hard_hat_class",
         "values": [
-          "aluminum"
+          "class_c"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "lumber_grade",
         "values": [
-          "bugle"
+          "stud"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "ppe_category",
         "values": [
-          "hem_fir"
-        ]
-      },
-      {
-        "code": "fastener_subtype",
-        "values": [
-          "framing_nail"
+          "hand_protection"
         ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 86
+        "position": 80
       }
     ],
     "bundles": [
@@ -1175,11 +1175,11 @@
         "required": true,
         "multiSelect": false,
         "defaultItemSkus": [
-          "DOOR-B9A85BDF-VAR-3C4239"
+          "DOOR-B9A85BDF-VAR-4D9D7B"
         ],
         "items": [
           {
-            "sku": "DOOR-B9A85BDF-VAR-3C4239",
+            "sku": "DOOR-B9A85BDF-VAR-4D9D7B",
             "qty": 1,
             "userDefinedQty": false
           },
@@ -1210,13 +1210,13 @@
       }
     ],
     "metaTags": {
-      "title": "Energy Efficiency Upgrade Bundle | ToughGrip",
-      "description": "Shop the Energy Efficiency Upgrade bundle from ToughGrip. Complete package for your construction needs.",
+      "title": "Energy Efficiency Upgrade Bundle | PremiumBuild",
+      "description": "Shop the Energy Efficiency Upgrade bundle from PremiumBuild. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "windows-doors",
-        "ToughGrip",
+        "PremiumBuild",
         "construction",
         "bulk"
       ]
@@ -1256,15 +1256,15 @@
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "restock_priority",
         "values": [
-          "xs"
+          "critical"
         ]
       },
       {
-        "code": "door_material",
+        "code": "fastener_material",
         "values": [
-          "aluminum"
+          "stainless_steel_316"
         ]
       }
     ],
@@ -1381,15 +1381,21 @@
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "lumber_grade",
         "values": [
-          "douglas_fir_larch"
+          "no_3"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "fastener_type",
         "values": [
-          "false"
+          "nail"
+        ]
+      },
+      {
+        "code": "door_core_type",
+        "values": [
+          "hollow_core"
         ]
       }
     ],
@@ -1477,8 +1483,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "MaxStrength Cabinet Installation Kit",
-    "slug": "maxstrength-cabinet-installation-kit",
+    "name": "ProFrame Cabinet Installation Kit",
+    "slug": "proframe-cabinet-installation-kit",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1496,7 +1502,7 @@
       {
         "code": "brand",
         "values": [
-          "buildright_pro"
+          "durabuilt"
         ]
       },
       {
@@ -1506,9 +1512,21 @@
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "drywall_fire_rating",
         "values": [
-          "z87_1"
+          "non_rated"
+        ]
+      },
+      {
+        "code": "drywall_thickness",
+        "values": [
+          "0.75"
+        ]
+      },
+      {
+        "code": "ppe_category",
+        "values": [
+          "eye_protection"
         ]
       },
       {
@@ -1516,18 +1534,12 @@
         "values": [
           "no_1"
         ]
-      },
-      {
-        "code": "ppe_hard_hat_class",
-        "values": [
-          "class_g"
-        ]
       }
     ],
     "routes": [
       {
         "path": "/tools-equipment",
-        "position": 15
+        "position": 2
       }
     ],
     "bundles": [
@@ -1591,13 +1603,13 @@
       }
     ],
     "metaTags": {
-      "title": "Cabinet Installation Kit Bundle | MaxStrength",
-      "description": "Shop the Cabinet Installation Kit bundle from MaxStrength. Complete package for your construction needs.",
+      "title": "Cabinet Installation Kit Bundle | ProFrame",
+      "description": "Shop the Cabinet Installation Kit bundle from ProFrame. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "fasteners",
-        "MaxStrength",
+        "ProFrame",
         "construction",
         "bulk"
       ]
@@ -1608,8 +1620,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "StructureMaster Complete PPE Package",
-    "slug": "structuremaster-complete-ppe-package",
+    "name": "ProFrame Complete PPE Package",
+    "slug": "proframe-complete-ppe-package",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1627,7 +1639,7 @@
       {
         "code": "brand",
         "values": [
-          "proframe"
+          "reliabuild"
         ]
       },
       {
@@ -1637,28 +1649,28 @@
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "lumber_grade",
         "values": [
-          "foot_protection"
+          "construction"
         ]
       },
       {
-        "code": "door_type",
+        "code": "deck_material_type",
         "values": [
-          "entry"
+          "pvc"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "fastener_type",
         "values": [
-          "33"
+          "bolt"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 94
+        "position": 73
       }
     ],
     "bundles": [
@@ -1742,13 +1754,13 @@
       }
     ],
     "metaTags": {
-      "title": "Complete PPE Package Bundle | StructureMaster",
-      "description": "Shop the Complete PPE Package bundle from StructureMaster. Complete package for your construction needs.",
+      "title": "Complete PPE Package Bundle | ProFrame",
+      "description": "Shop the Complete PPE Package bundle from ProFrame. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "StructureMaster",
+        "ProFrame",
         "construction",
         "bulk"
       ]
@@ -1759,8 +1771,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ToughGrip Fall Protection System",
-    "slug": "toughgrip-fall-protection-system",
+    "name": "PremiumBuild Fall Protection System",
+    "slug": "premiumbuild-fall-protection-system",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1778,7 +1790,7 @@
       {
         "code": "brand",
         "values": [
-          "premiumbuild"
+          "fastenpro"
         ]
       },
       {
@@ -1788,28 +1800,22 @@
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "typical_days_supply",
         "values": [
-          "solid_core"
+          "Premium Bundle"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "door_material",
         "values": [
-          "staple"
-        ]
-      },
-      {
-        "code": "window_glazing_type",
-        "values": [
-          "triple_pane"
+          "composite"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 45
+        "position": 49
       }
     ],
     "bundles": [
@@ -1873,13 +1879,13 @@
       }
     ],
     "metaTags": {
-      "title": "Fall Protection System Bundle | ToughGrip",
-      "description": "Shop the Fall Protection System bundle from ToughGrip. Complete package for your construction needs.",
+      "title": "Fall Protection System Bundle | PremiumBuild",
+      "description": "Shop the Fall Protection System bundle from PremiumBuild. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "ToughGrip",
+        "PremiumBuild",
         "construction",
         "bulk"
       ]
@@ -1890,8 +1896,8 @@
     "source": {
       "locale": "en-US"
     },
-    "name": "ReliaBuild Site Safety Station",
-    "slug": "reliabuild-site-safety-station",
+    "name": "ProFrame Site Safety Station",
+    "slug": "proframe-site-safety-station",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1909,7 +1915,7 @@
       {
         "code": "brand",
         "values": [
-          "maxstrength"
+          "safeguard"
         ]
       },
       {
@@ -1919,28 +1925,28 @@
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "fastener_head_type",
         "values": [
-          "stainless_steel_316"
+          "bugle"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "drywall_fire_rating",
         "values": [
-          "z87_1"
+          "non_rated"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "project_types",
         "values": [
-          "southern_yellow_pine"
+          "remodel"
         ]
       }
     ],
     "routes": [
       {
         "path": "/safety-protection",
-        "position": 43
+        "position": 80
       }
     ],
     "bundles": [
@@ -2004,13 +2010,13 @@
       }
     ],
     "metaTags": {
-      "title": "Site Safety Station Bundle | ReliaBuild",
-      "description": "Shop the Site Safety Station bundle from ReliaBuild. Complete package for your construction needs.",
+      "title": "Site Safety Station Bundle | ProFrame",
+      "description": "Shop the Site Safety Station bundle from ProFrame. Complete package for your construction needs.",
       "keywords": [
         "bundle",
         "package",
         "safety",
-        "ReliaBuild",
+        "ProFrame",
         "construction",
         "bulk"
       ]
