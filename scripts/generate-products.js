@@ -7,7 +7,9 @@ import logger from '../utils/logger.js';
 import { SeededRandom } from '../utils/random-seed.js';
 import { generateSKU, resetSkuTracker } from '../utils/sku-generator.js';
 import { PRODUCT_CATEGORIES, BRANDS, UNITS_OF_MEASURE } from './config/product-definitions.js';
-import { generateProductDescription } from './utils/description-generator.js';
+import { generateProductDescription, generateMetaTags } from './utils/description-generator.js';
+import { generateAttributes, getAttributeValue, getProjectTypes } from './utils/attribute-generator.js';
+import { generateSlug, transformAttributesToACO, createBaseACOProduct } from './utils/product-generator.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -53,12 +55,7 @@ function findCategoryByName(categories, pattern) {
 /**
  * Generate URL-friendly slug from product name
  */
-function generateSlug(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
+// Slug generation now imported from utils/product-generator.js
 
 /**
  * Get category route hierarchy (ACO format with categoryId)
@@ -89,154 +86,7 @@ function getCategoryRoutes(categories, categoryId) {
   return routes;
 }
 
-/**
- * Select random attribute value based on type
- */
-function getAttributeValue(attribute, random) {
-  if (attribute.type === 'multiselect' && attribute.options) {
-    // Select 1-3 random options and return as array
-    const numOptions = random.nextInt(1, Math.min(3, attribute.options.length));
-    const selected = [];
-    const optionsCopy = [...attribute.options];
-
-    for (let i = 0; i < numOptions; i++) {
-      const index = random.nextInt(0, optionsCopy.length - 1);
-      selected.push(optionsCopy[index].value);
-      optionsCopy.splice(index, 1);
-    }
-
-    return selected;
-  } else if (attribute.type === 'select' && attribute.options) {
-    const index = random.nextInt(0, attribute.options.length - 1);
-    return attribute.options[index].value;
-  } else if (attribute.type === 'boolean') {
-    return random.nextFloat() > 0.5;
-  } else if (attribute.type === 'number') {
-    return random.nextInt(10, 1000);
-  } else {
-    // Text type - generate some sample text
-    const texts = ['Premium quality', 'Professional grade', 'Heavy duty', 'Standard', 'Economy'];
-    return texts[random.nextInt(0, texts.length - 1)];
-  }
-}
-
-/**
- * Get project types for a product based on its category
- * Returns array of project type values
- * @param {string} categoryValue - Product category
- * @param {object} random - Random number generator
- * @param {boolean} isService - Whether this is a service product
- */
-function getProjectTypes(categoryValue, random, isService = false) {
-  const allTypes = ['new_construction', 'remodel', 'repair', 'restoration'];
-
-  // Services are always available for all project types
-  if (isService) {
-    return allTypes;
-  }
-
-  switch(categoryValue) {
-    case 'structural_materials':
-      // Structural materials primarily for new construction and remodels
-      const structuralTypes = ['new_construction', 'remodel'];
-      // 40% chance to also include repair
-      if (random.nextFloat() < 0.4) {
-        structuralTypes.push('repair');
-      }
-      return structuralTypes;
-
-    case 'framing_insulation':
-      // Framing used in construction, remodels, and restoration
-      return ['new_construction', 'remodel', 'restoration'];
-
-    case 'windows_doors':
-      // Windows/doors for construction, remodels, and restoration
-      return ['new_construction', 'remodel', 'restoration'];
-
-    case 'fasteners_hardware':
-      // Fasteners used in all project types
-      return allTypes;
-
-    case 'safety_equipment':
-      // PPE needed for all project types
-      return allTypes;
-
-    default:
-      // Default: new construction and remodel
-      return ['new_construction', 'remodel'];
-  }
-}
-
-/**
- * Generate product attributes (ACO format with value field)
- */
-function generateAttributes(metadata, categoryValue, brand, uom, random, category, subcategory, sku, productName, isService = false) {
-  const attributes = [];
-
-  // Add required attributes
-  const productCategoryAttr = metadata.find(m => m.attributeId === 'product_category');
-  if (productCategoryAttr) {
-    attributes.push({
-      code: 'product_category',
-      value: categoryValue
-    });
-  }
-
-  // Find brand and UOM attributes
-  const brandAttr = metadata.find(m => m.label === 'Brand' || m.attributeId === 'brand');
-  if (brandAttr && brandAttr.options) {
-    // Use valid brand option from metadata
-    const brandOption = brandAttr.options[random.nextInt(0, brandAttr.options.length - 1)];
-    attributes.push({
-      code: brandAttr.attributeId,
-      value: brandOption.value
-    });
-  } else if (brandAttr) {
-    attributes.push({
-      code: brandAttr.attributeId,
-      value: brand
-    });
-  }
-
-  const uomAttr = metadata.find(m => m.label === 'Unit of Measure');
-  if (uomAttr) {
-    attributes.push({
-      code: uomAttr.attributeId,
-      value: uom
-    });
-  }
-
-  // Add project_types attribute with intelligent assignment based on category
-  const projectTypesAttr = metadata.find(m => m.attributeId === 'project_types');
-  if (projectTypesAttr) {
-    const projectTypes = getProjectTypes(categoryValue, random, isService);
-    attributes.push({
-      code: 'project_types',
-      value: projectTypes
-    });
-  }
-
-  // Add some optional attributes (excluding already-added attributes)
-  const optionalAttrs = metadata.filter(m =>
-    !m.isRequired &&
-    m.attributeId !== 'product_category' &&
-    m.attributeId !== 'project_types'
-  );
-  const numOptional = random.nextInt(2, Math.min(5, optionalAttrs.length));
-
-  for (let i = 0; i < numOptional; i++) {
-    const attr = optionalAttrs[random.nextInt(0, optionalAttrs.length - 1)];
-    if (!attributes.find(a => a.code === attr.attributeId)) {
-      const attrValue = getAttributeValue(attr, random);
-      attributes.push({
-        code: attr.attributeId,
-        value: attrValue
-      });
-    }
-  }
-
-  return attributes;
-}
+// Attribute generation functions now imported from utils/attribute-generator.js
 
 /**
  * Generate a simple product
@@ -352,30 +202,18 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
     });
   }
 
-  // Generate slug from product name
-  const slug = productName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
-
-  // Generate description
+  // Generate description and meta tags
   const description = template.description || generateProductDescription(categoryValue, brand, template.uom, productName);
+  const metaTags = generateMetaTags(productName, brand, categoryValue, subcategory);
 
-  // ACO FeedProduct schema (v1.1.0+)
-  return {
-    sku: sku,
-    source: { locale: 'en-US' },
+  // Use utility to create ACO product with proper attribute transformation
+  return createBaseACOProduct({
+    sku,
     name: productName,
-    slug: slug,
-    description: description,
-    status: 'ENABLED',
-    visibleIn: ['CATALOG', 'SEARCH'],
-    attributes: attributes.map(attr => ({
-      code: attr.code,
-      // ACO multiselect workaround: convert arrays to comma-separated strings
-      // Instead of values: ["val1", "val2"], ACO expects values: ["val1, val2"]
-      values: Array.isArray(attr.value) 
-        ? [attr.value.join(', ')] 
-        : [String(attr.value)]
-    }))
-  };
+    description,
+    attributes,
+    metaTags
+  });
 }
 
 /**
@@ -399,31 +237,19 @@ function generateServiceProduct(service, category, categories, metadata, index) 
   const categoryValue = categoryDef.attributeValue || category;
 
   const attributes = generateAttributes(metadata, categoryValue, 'BuildRight Services', 'SERVICE', random, category, 'services', sku, service.name, true);
-
-  // Generate slug from service name
-  const slug = service.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
   
-  // Generate description
+  // Generate description and meta tags
   const description = service.description || generateProductDescription(categoryValue, 'BuildRight Services', 'SERVICE', service.name);
+  const metaTags = generateMetaTags(service.name, 'BuildRight Services', categoryValue, 'services');
 
-  // ACO FeedProduct schema (v1.1.0+)
-  return {
-    sku: sku,
-    source: { locale: 'en-US' },
+  // Use utility to create ACO product with proper attribute transformation
+  return createBaseACOProduct({
+    sku,
     name: service.name,
-    slug: slug,
-    description: description,
-    status: 'ENABLED',
-    visibleIn: ['CATALOG', 'SEARCH'],
-    attributes: attributes.map(attr => ({
-      code: attr.code,
-      // ACO multiselect workaround: convert arrays to comma-separated strings
-      // Instead of values: ["val1", "val2"], ACO expects values: ["val1, val2"]
-      values: Array.isArray(attr.value) 
-        ? [attr.value.join(', ')] 
-        : [String(attr.value)]
-    }))
-  };
+    description,
+    attributes,
+    metaTags
+  });
 }
 
 /**

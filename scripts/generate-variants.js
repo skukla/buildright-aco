@@ -7,6 +7,8 @@ import logger from '../utils/logger.js';
 import { SeededRandom } from '../utils/random-seed.js';
 import { generateSKU, generateVariantSKU, resetSkuTracker } from '../utils/sku-generator.js';
 import { PRODUCT_CATEGORIES, BRANDS, getVariantCombinations } from './config/product-definitions.js';
+import { getAttributeValue } from './utils/attribute-generator.js';
+import { generateSlug, transformAttributesToACO, createBaseACOProduct } from './utils/product-generator.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -66,12 +68,7 @@ function findCategoryByName(categories, pattern) {
 /**
  * Generate URL-friendly slug from product name
  */
-function generateSlug(name) {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
+// Slug generation now imported from utils/product-generator.js
 
 /**
  * Get category route hierarchy (URL paths)
@@ -175,14 +172,13 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
   for (let i = 0; i < numOptional; i++) {
     const attr = optionalAttrs[random.nextInt(0, optionalAttrs.length - 1)];
     if (!attributes.find(a => a.code === attr.attributeId)) {
-      const value = attr.type === 'boolean' ? (random.nextFloat() > 0.5 ? 'true' : 'false') :
-                   attr.type === 'number' ? random.nextInt(10, 100) :
-                   (attr.options && attr.options.length > 0) ? attr.options[random.nextInt(0, attr.options.length - 1)].value :
-                   'Standard';
-
+      // Use shared utility for consistent attribute value generation
+      const value = getAttributeValue(attr, random);
+      
       attributes.push({
         code: attr.attributeId,
-        values: [value]
+        // ACO multiselect workaround: join array values
+        values: Array.isArray(value) ? [value.join(', ')] : [String(value)]
       });
     }
   }

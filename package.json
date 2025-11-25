@@ -15,7 +15,7 @@
     "generate:products": "node scripts/generate-products.js",
     "generate:variants": "node scripts/generate-variants.js",
     "generate:bundles": "node scripts/generate-bundles.js",
-    "generate:all-products": "npm run generate:products && npm run generate:variants && npm run generate:bundles",
+    "generate:all-products": "npm run generate:products && npm run generate:variants && npm run generate:bundles && npm run generate:eds-data",
     "generate:price-books": "node scripts/generate-price-books.js",
     "generate:prices": "node scripts/generate-prices-simple.js",
     "generate:prices:complex": "node scripts/generate-prices-hierarchical.js",

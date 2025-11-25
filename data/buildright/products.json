@@ -6,7 +6,7 @@
     },
     "name": "ToughGrip 2x4 Stud - 8ft",
     "slug": "toughgrip-2x4-stud-8ft",
-    "description": "Premium toughgrip treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
+    "description": "Premium ToughGrip treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -91,7 +91,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip 2x4 Stud - 8ft | BuildRight",
+      "description": "Shop ToughGrip 2x4 Stud - 8ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Lumber",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "LBR-2EBB314A",
@@ -100,7 +109,7 @@
     },
     "name": "SafeGuard 2x6 Stud - 8ft",
     "slug": "safeguard-2x6-stud-8ft",
-    "description": "Premium safeguard treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
+    "description": "Premium SafeGuard treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -197,7 +206,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "SafeGuard 2x6 Stud - 8ft | BuildRight",
+      "description": "Shop SafeGuard 2x6 Stud - 8ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Lumber",
+        "SafeGuard"
+      ]
+    }
   },
   {
     "sku": "LBR-26852468",
@@ -206,7 +224,7 @@
     },
     "name": "PremiumBuild 2x8 Joist - 10ft",
     "slug": "premiumbuild-2x8-joist-10ft",
-    "description": "Premium premiumbuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
+    "description": "Premium PremiumBuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -315,7 +333,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "PremiumBuild 2x8 Joist - 10ft | BuildRight",
+      "description": "Shop PremiumBuild 2x8 Joist - 10ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Lumber",
+        "PremiumBuild"
+      ]
+    }
   },
   {
     "sku": "LBR-2D637246",
@@ -324,7 +351,7 @@
     },
     "name": "SafeGuard 2x10 Joist - 12ft",
     "slug": "safeguard-2x10-joist-12ft",
-    "description": "Premium safeguard treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
+    "description": "Premium SafeGuard treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -439,7 +466,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "SafeGuard 2x10 Joist - 12ft | BuildRight",
+      "description": "Shop SafeGuard 2x10 Joist - 12ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Lumber",
+        "SafeGuard"
+      ]
+    }
   },
   {
     "sku": "LBR-96F409FB",
@@ -448,7 +484,7 @@
     },
     "name": "PremiumBuild 2x12 Beam - 16ft",
     "slug": "premiumbuild-2x12-beam-16ft",
-    "description": "Premium premiumbuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
+    "description": "Premium PremiumBuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -533,7 +569,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "PremiumBuild 2x12 Beam - 16ft | BuildRight",
+      "description": "Shop PremiumBuild 2x12 Beam - 16ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Lumber",
+        "PremiumBuild"
+      ]
+    }
   },
   {
     "sku": "LBR-9D32768F",
@@ -542,7 +587,7 @@
     },
     "name": "ProFrame 4x4 Post - 8ft",
     "slug": "proframe-4x4-post-8ft",
-    "description": "Premium proframe treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
+    "description": "Premium ProFrame treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per EA.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -651,7 +696,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ProFrame 4x4 Post - 8ft | BuildRight",
+      "description": "Shop ProFrame 4x4 Post - 8ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Lumber",
+        "ProFrame"
+      ]
+    }
   },
   {
     "sku": "PLY-7D58FF99",
@@ -660,7 +714,7 @@
     },
     "name": "MaxStrength OSB Sheathing 7/16\" - 4x8",
     "slug": "maxstrength-osb-sheathing-7-16-4x8",
-    "description": "Premium maxstrength treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
+    "description": "Premium MaxStrength treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -745,7 +799,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "MaxStrength OSB Sheathing 7/16\" - 4x8 | BuildRight",
+      "description": "Shop MaxStrength OSB Sheathing 7/16\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Plywood",
+        "MaxStrength"
+      ]
+    }
   },
   {
     "sku": "PLY-AF7C8BA7",
@@ -754,7 +817,7 @@
     },
     "name": "PremiumBuild CDX Plywood 1/2\" - 4x8",
     "slug": "premiumbuild-cdx-plywood-1-2-4x8",
-    "description": "Premium premiumbuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
+    "description": "Premium PremiumBuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -833,7 +896,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "PremiumBuild CDX Plywood 1/2\" - 4x8 | BuildRight",
+      "description": "Shop PremiumBuild CDX Plywood 1/2\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Plywood",
+        "PremiumBuild"
+      ]
+    }
   },
   {
     "sku": "PLY-3C2EC476",
@@ -842,7 +914,7 @@
     },
     "name": "ReliaBuild T&G Subfloor 3/4\" - 4x8",
     "slug": "reliabuild-t-g-subfloor-3-4-4x8",
-    "description": "Premium reliabuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
+    "description": "Premium ReliaBuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -933,7 +1005,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ReliaBuild T&G Subfloor 3/4\" - 4x8 | BuildRight",
+      "description": "Shop ReliaBuild T&G Subfloor 3/4\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Plywood",
+        "ReliaBuild"
+      ]
+    }
   },
   {
     "sku": "PLY-2BA5387B",
@@ -942,7 +1023,7 @@
     },
     "name": "ReliaBuild Marine Plywood 3/4\" - 4x8",
     "slug": "reliabuild-marine-plywood-3-4-4x8",
-    "description": "Premium reliabuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
+    "description": "Premium ReliaBuild treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1045,7 +1126,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ReliaBuild Marine Plywood 3/4\" - 4x8 | BuildRight",
+      "description": "Shop ReliaBuild Marine Plywood 3/4\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Plywood",
+        "ReliaBuild"
+      ]
+    }
   },
   {
     "sku": "PLY-4C31A6A6",
@@ -1054,7 +1144,7 @@
     },
     "name": "DuraBuilt Hardwood Plywood 1/4\" - 4x8",
     "slug": "durabuilt-hardwood-plywood-1-4-4x8",
-    "description": "Premium durabuilt treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
+    "description": "Premium DuraBuilt treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1157,7 +1247,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "DuraBuilt Hardwood Plywood 1/4\" - 4x8 | BuildRight",
+      "description": "Shop DuraBuilt Hardwood Plywood 1/4\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Plywood",
+        "DuraBuilt"
+      ]
+    }
   },
   {
     "sku": "PLY-E0240635",
@@ -1166,7 +1265,7 @@
     },
     "name": "BuildRight Pro Siding Panel 3/8\" - 4x8",
     "slug": "buildright-pro-siding-panel-3-8-4x8",
-    "description": "Premium buildright pro treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
+    "description": "Premium BuildRight Pro treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SHEET.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -1257,7 +1356,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Siding Panel 3/8\" - 4x8 | BuildRight",
+      "description": "Shop BuildRight Pro Siding Panel 3/8\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Plywood",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "STUD-44C79532",
@@ -1345,7 +1453,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "SafeGuard Metal Stud 20ga - 3.5\" x 10ft | BuildRight",
+      "description": "Shop SafeGuard Metal Stud 20ga - 3.5\" x 10ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Studs",
+        "SafeGuard"
+      ]
+    }
   },
   {
     "sku": "STUD-B6E3E673",
@@ -1433,7 +1550,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "DuraBuilt Metal Stud 20ga - 6\" x 10ft | BuildRight",
+      "description": "Shop DuraBuilt Metal Stud 20ga - 6\" x 10ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Studs",
+        "DuraBuilt"
+      ]
+    }
   },
   {
     "sku": "STUD-95E9D258",
@@ -1527,7 +1653,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "FastenPro Metal Track 20ga - 3.5\" x 10ft | BuildRight",
+      "description": "Shop FastenPro Metal Track 20ga - 3.5\" x 10ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Studs",
+        "FastenPro"
+      ]
+    }
   },
   {
     "sku": "STUD-984F2EC0",
@@ -1615,7 +1750,16 @@
           "14"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "FastenPro Metal Track 20ga - 6\" x 10ft | BuildRight",
+      "description": "Shop FastenPro Metal Track 20ga - 6\" x 10ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Studs",
+        "FastenPro"
+      ]
+    }
   },
   {
     "sku": "STUD-8DEC7739",
@@ -1703,7 +1847,16 @@
           "30"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "StructureMaster Steel C-Channel - 8ft | BuildRight",
+      "description": "Shop StructureMaster Steel C-Channel - 8ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Studs",
+        "StructureMaster"
+      ]
+    }
   },
   {
     "sku": "STUD-07E7F7E4",
@@ -1803,7 +1956,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip Hat Channel - 12ft | BuildRight",
+      "description": "Shop ToughGrip Hat Channel - 12ft. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Studs",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "DRYWALL-8F034793",
@@ -1921,7 +2083,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ProFrame Drywall 1/2\" - 4x8 | BuildRight",
+      "description": "Shop ProFrame Drywall 1/2\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Drywall",
+        "ProFrame"
+      ]
+    }
   },
   {
     "sku": "DRYWALL-A8217B48",
@@ -2015,7 +2186,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ProFrame Drywall 5/8\" - 4x8 | BuildRight",
+      "description": "Shop ProFrame Drywall 5/8\" - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Drywall",
+        "ProFrame"
+      ]
+    }
   },
   {
     "sku": "DRYWALL-67027AF0",
@@ -2121,7 +2301,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Moisture Resistant Drywall - 4x8 | BuildRight",
+      "description": "Shop BuildRight Pro Moisture Resistant Drywall - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Drywall",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "DRYWALL-1E512505",
@@ -2209,7 +2398,16 @@
           "30"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "DuraBuilt Fire Rated Drywall - 4x8 | BuildRight",
+      "description": "Shop DuraBuilt Fire Rated Drywall - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Drywall",
+        "DuraBuilt"
+      ]
+    }
   },
   {
     "sku": "DRYWALL-038C3C6C",
@@ -2309,7 +2507,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "StructureMaster Cement Board 1/2\" - 3x5 | BuildRight",
+      "description": "Shop StructureMaster Cement Board 1/2\" - 3x5. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Drywall",
+        "StructureMaster"
+      ]
+    }
   },
   {
     "sku": "DRYWALL-439D9A62",
@@ -2409,7 +2616,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "MaxStrength Sound Dampening Drywall - 4x8 | BuildRight",
+      "description": "Shop MaxStrength Sound Dampening Drywall - 4x8. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Drywall",
+        "MaxStrength"
+      ]
+    }
   },
   {
     "sku": "WINDOW-8039584D",
@@ -2509,7 +2725,16 @@
           "14"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Single Hung Window - 36\"x48\" | BuildRight",
+      "description": "Shop BuildRight Pro Single Hung Window - 36\"x48\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Windows",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "WINDOW-6642736C",
@@ -2609,7 +2834,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "StructureMaster Double Hung Window - 36\"x60\" | BuildRight",
+      "description": "Shop StructureMaster Double Hung Window - 36\"x60\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Windows",
+        "StructureMaster"
+      ]
+    }
   },
   {
     "sku": "WINDOW-888AFAE6",
@@ -2709,7 +2943,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "FastenPro Sliding Window - 48\"x36\" | BuildRight",
+      "description": "Shop FastenPro Sliding Window - 48\"x36\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Windows",
+        "FastenPro"
+      ]
+    }
   },
   {
     "sku": "WINDOW-8F26E917",
@@ -2815,7 +3058,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "MaxStrength Casement Window - 30\"x48\" | BuildRight",
+      "description": "Shop MaxStrength Casement Window - 30\"x48\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Windows",
+        "MaxStrength"
+      ]
+    }
   },
   {
     "sku": "WINDOW-51CD3FC4",
@@ -2909,7 +3161,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Bay Window - 72\"x48\" | BuildRight",
+      "description": "Shop BuildRight Pro Bay Window - 72\"x48\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Windows",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "WINDOW-5946F85C",
@@ -3021,7 +3282,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "FastenPro Awning Window - 36\"x24\" | BuildRight",
+      "description": "Shop FastenPro Awning Window - 36\"x24\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Windows",
+        "FastenPro"
+      ]
+    }
   },
   {
     "sku": "DOOR-34C72FD2",
@@ -3127,7 +3397,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "FastenPro Entry Door - Steel 36\"x80\" | BuildRight",
+      "description": "Shop FastenPro Entry Door - Steel 36\"x80\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Doors",
+        "FastenPro"
+      ]
+    }
   },
   {
     "sku": "DOOR-89357B1F",
@@ -3233,7 +3512,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "PremiumBuild Interior Door - Hollow Core 32\"x80\" | BuildRight",
+      "description": "Shop PremiumBuild Interior Door - Hollow Core 32\"x80\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Doors",
+        "PremiumBuild"
+      ]
+    }
   },
   {
     "sku": "DOOR-070629C1",
@@ -3345,7 +3633,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip French Door - 60\"x80\" | BuildRight",
+      "description": "Shop ToughGrip French Door - 60\"x80\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Doors",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "DOOR-E93CC71C",
@@ -3457,7 +3754,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "StructureMaster Sliding Patio Door - 72\"x80\" | BuildRight",
+      "description": "Shop StructureMaster Sliding Patio Door - 72\"x80\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Doors",
+        "StructureMaster"
+      ]
+    }
   },
   {
     "sku": "DOOR-75F9C73D",
@@ -3557,7 +3863,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "DuraBuilt Bi-fold Closet Door - 36\"x80\" | BuildRight",
+      "description": "Shop DuraBuilt Bi-fold Closet Door - 36\"x80\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Doors",
+        "DuraBuilt"
+      ]
+    }
   },
   {
     "sku": "DOOR-81B579D4",
@@ -3657,7 +3972,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Storm Door - 36\"x80\" | BuildRight",
+      "description": "Shop BuildRight Pro Storm Door - 36\"x80\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Doors",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "NAIL-244FD20C",
@@ -3745,7 +4069,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ReliaBuild Framing Nails 16d - 50lb Box | BuildRight",
+      "description": "Shop ReliaBuild Framing Nails 16d - 50lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Nails",
+        "ReliaBuild"
+      ]
+    }
   },
   {
     "sku": "NAIL-9D448DAA",
@@ -3839,7 +4172,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip Finish Nails 8d - 5lb Box | BuildRight",
+      "description": "Shop ToughGrip Finish Nails 8d - 5lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Nails",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "NAIL-2DBD44A2",
@@ -3939,7 +4281,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "DuraBuilt Roofing Nails - 50lb Box | BuildRight",
+      "description": "Shop DuraBuilt Roofing Nails - 50lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Nails",
+        "DuraBuilt"
+      ]
+    }
   },
   {
     "sku": "NAIL-D27A9BC3",
@@ -4027,7 +4378,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "MaxStrength Brad Nails 18ga - 5000ct | BuildRight",
+      "description": "Shop MaxStrength Brad Nails 18ga - 5000ct. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Nails",
+        "MaxStrength"
+      ]
+    }
   },
   {
     "sku": "NAIL-65F44C61",
@@ -4127,7 +4487,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "StructureMaster Concrete Nails - 5lb Box | BuildRight",
+      "description": "Shop StructureMaster Concrete Nails - 5lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Nails",
+        "StructureMaster"
+      ]
+    }
   },
   {
     "sku": "NAIL-7AD0771D",
@@ -4239,7 +4608,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip Ring Shank Nails - 25lb Box | BuildRight",
+      "description": "Shop ToughGrip Ring Shank Nails - 25lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Nails",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "SCREW-48C3413B",
@@ -4357,7 +4735,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "PremiumBuild Deck Screws #8 - 5lb Box | BuildRight",
+      "description": "Shop PremiumBuild Deck Screws #8 - 5lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Screws",
+        "PremiumBuild"
+      ]
+    }
   },
   {
     "sku": "SCREW-704B6626",
@@ -4457,7 +4844,16 @@
           "7"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip Drywall Screws - 5lb Box | BuildRight",
+      "description": "Shop ToughGrip Drywall Screws - 5lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Screws",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "SCREW-AD274060",
@@ -4545,7 +4941,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ProFrame Wood Screws #10 - 1lb Box | BuildRight",
+      "description": "Shop ProFrame Wood Screws #10 - 1lb Box. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Screws",
+        "ProFrame"
+      ]
+    }
   },
   {
     "sku": "SCREW-4DC6B336",
@@ -4633,7 +5038,16 @@
           "14"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "SafeGuard Self-Drilling Screws - 1lb | BuildRight",
+      "description": "Shop SafeGuard Self-Drilling Screws - 1lb. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Screws",
+        "SafeGuard"
+      ]
+    }
   },
   {
     "sku": "SCREW-0DAA49A4",
@@ -4721,7 +5135,16 @@
           "15"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "PremiumBuild Lag Screws 1/2\" - 50ct | BuildRight",
+      "description": "Shop PremiumBuild Lag Screws 1/2\" - 50ct. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Screws",
+        "PremiumBuild"
+      ]
+    }
   },
   {
     "sku": "SCREW-A3256812",
@@ -4827,7 +5250,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip Cabinet Screws - 100ct | BuildRight",
+      "description": "Shop ToughGrip Cabinet Screws - 100ct. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Screws",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "ROOF-23151318",
@@ -4921,7 +5353,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "SafeGuard Asphalt Shingles 3-Tab - Bundle | BuildRight",
+      "description": "Shop SafeGuard Asphalt Shingles 3-Tab - Bundle. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Shingles",
+        "SafeGuard"
+      ]
+    }
   },
   {
     "sku": "ROOF-D793BF8B",
@@ -5015,7 +5456,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ToughGrip Architectural Shingles - Bundle | BuildRight",
+      "description": "Shop ToughGrip Architectural Shingles - Bundle. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Shingles",
+        "ToughGrip"
+      ]
+    }
   },
   {
     "sku": "ROOF-7B1F4022",
@@ -5127,7 +5577,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "SafeGuard Premium Designer Shingles - Bundle | BuildRight",
+      "description": "Shop SafeGuard Premium Designer Shingles - Bundle. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Shingles",
+        "SafeGuard"
+      ]
+    }
   },
   {
     "sku": "ROOF-F252FD03",
@@ -5239,7 +5698,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "SafeGuard Impact Resistant Shingles - Bundle | BuildRight",
+      "description": "Shop SafeGuard Impact Resistant Shingles - Bundle. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Shingles",
+        "SafeGuard"
+      ]
+    }
   },
   {
     "sku": "ROOF-9406AB24",
@@ -5339,7 +5807,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Starter Strip Shingles - Roll | BuildRight",
+      "description": "Shop BuildRight Pro Starter Strip Shingles - Roll. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Shingles",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "ROOF-7662E2BB",
@@ -5433,7 +5910,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "ReliaBuild Ridge Cap Shingles - Bundle | BuildRight",
+      "description": "Shop ReliaBuild Ridge Cap Shingles - Bundle. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Shingles",
+        "ReliaBuild"
+      ]
+    }
   },
   {
     "sku": "ROOF-905BF883",
@@ -5521,7 +6007,16 @@
           "high"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Roofing Felt 15lb - Roll | BuildRight",
+      "description": "Shop BuildRight Pro Roofing Felt 15lb - Roll. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Underlayment",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "ROOF-1B7CF825",
@@ -5615,7 +6110,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "StructureMaster Roofing Felt 30lb - Roll | BuildRight",
+      "description": "Shop StructureMaster Roofing Felt 30lb - Roll. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Underlayment",
+        "StructureMaster"
+      ]
+    }
   },
   {
     "sku": "ROOF-ED3E9B3B",
@@ -5721,7 +6225,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "DuraBuilt Synthetic Underlayment - Roll | BuildRight",
+      "description": "Shop DuraBuilt Synthetic Underlayment - Roll. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Underlayment",
+        "DuraBuilt"
+      ]
+    }
   },
   {
     "sku": "ROOF-5A1F5021",
@@ -5827,7 +6340,16 @@
           "medium"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "BuildRight Pro Ice & Water Shield - Roll | BuildRight",
+      "description": "Shop BuildRight Pro Ice & Water Shield - Roll. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Underlayment",
+        "BuildRight Pro"
+      ]
+    }
   },
   {
     "sku": "ROOF-A8DE0B49",
@@ -5927,7 +6449,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "DuraBuilt Self-Adhering Underlayment - Roll | BuildRight",
+      "description": "Shop DuraBuilt Self-Adhering Underlayment - Roll. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Underlayment",
+        "DuraBuilt"
+      ]
+    }
   },
   {
     "sku": "ROOF-05516930",
@@ -6039,7 +6570,16 @@
           "low"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "MaxStrength Ventilated Underlayment - Roll | BuildRight",
+      "description": "Shop MaxStrength Ventilated Underlayment - Roll. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Underlayment",
+        "MaxStrength"
+      ]
+    }
   },
   {
     "sku": "SVC-BE782144",
@@ -6048,7 +6588,7 @@
     },
     "name": "Structural Material Delivery",
     "slug": "structural-material-delivery",
-    "description": "Premium buildright services treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SERVICE.",
+    "description": "Premium BuildRight Services treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SERVICE.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6103,7 +6643,16 @@
           "moisture_resistant"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Structural Material Delivery | BuildRight",
+      "description": "Shop Structural Material Delivery. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-DA991F80",
@@ -6112,7 +6661,7 @@
     },
     "name": "Lumber Cutting Service",
     "slug": "lumber-cutting-service",
-    "description": "Premium buildright services treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SERVICE.",
+    "description": "Premium BuildRight Services treated lumber designed for structural applications. Meets building code requirements for load-bearing construction. Kiln-dried after treatment (KDAT) for dimensional stability. Ideal for framing, deck joists, and structural support. Sold per SERVICE.",
     "status": "ENABLED",
     "visibleIn": [
       "CATALOG",
@@ -6161,7 +6710,16 @@
           "steel"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Lumber Cutting Service | BuildRight",
+      "description": "Shop Lumber Cutting Service. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Structural Materials",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-8E4FBE5D",
@@ -6219,7 +6777,16 @@
           "0.5"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Drywall Installation Service | BuildRight",
+      "description": "Shop Drywall Installation Service. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-B2559E94",
@@ -6289,7 +6856,16 @@
           "hollow_core"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Framing Consultation | BuildRight",
+      "description": "Shop Framing Consultation. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Framing Drywall",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-74321042",
@@ -6341,7 +6917,16 @@
           "stainless_steel_304"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Door & Window Installation | BuildRight",
+      "description": "Shop Door & Window Installation. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-EEAD2FDF",
@@ -6399,7 +6984,16 @@
           "true"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Window Measurement Service | BuildRight",
+      "description": "Shop Window Measurement Service. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Windows Doors",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-3774CB8D",
@@ -6463,7 +7057,16 @@
           "regular"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Fastener Consultation | BuildRight",
+      "description": "Shop Fastener Consultation. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-72C95BE6",
@@ -6521,7 +7124,16 @@
           "fsc_certified"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Bulk Order Processing | BuildRight",
+      "description": "Shop Bulk Order Processing. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Fasteners Hardware",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-1F7FC9F7",
@@ -6579,7 +7191,16 @@
           "sliding"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Roof Inspection Service | BuildRight",
+      "description": "Shop Roof Inspection Service. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   },
   {
     "sku": "SVC-887043F3",
@@ -6631,6 +7252,15 @@
           "27"
         ]
       }
-    ]
+    ],
+    "metaTags": {
+      "title": "Roofing Material Delivery | BuildRight",
+      "description": "Shop Roofing Material Delivery. Quality construction materials from BuildRight.",
+      "keywords": [
+        "Roofing",
+        "Services",
+        "BuildRight Services"
+      ]
+    }
   }
 ]

@@ -104,6 +104,11 @@ function generateEDSProducts() {
       // Flattened attributes for easy filtering
       attributes,
       
+      // Meta tags (flattened from ACO metaTags object)
+      metaTitle: product.metaTags?.title || null,
+      metaDescription: product.metaTags?.description || null,
+      metaKeyword: product.metaTags?.keywords ? product.metaTags.keywords.join(', ') : null,
+      
       // Computed fields for EDS
       inStock: true, // Mock - real inventory would come from MSI
       rating: 4.5,   // Mock - real ratings would come from reviews
