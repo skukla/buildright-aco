@@ -28,7 +28,12 @@ export const UNITS_OF_MEASURE = [
   'PAIR',    // Pair
   'SHEET',   // Sheet
   'GALLON',  // Gallon
-  'CASE'     // Case
+  'CASE',    // Case
+  'CY',      // Cubic Yard
+  'SQ',      // Square (100 sqft)
+  'SY',      // Square Yard
+  'BUCKET',  // Bucket (5-gallon)
+  'TON'      // Ton (HVAC capacity)
 ];
 
 // Product categories with their products (12 simple + 4 configurable + 2 service per category)
@@ -435,6 +440,35 @@ export const PRODUCT_CATEGORIES = {
             }
           }
         ]
+      },
+      insulation: {
+        simple: [
+          { 
+            name: 'Fiberglass Insulation - R-15 15" x 93"', 
+            uom: 'ROLL', 
+            priceRange: [35, 45],
+            construction_phase: ['foundation_framing', 'envelope'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good']
+          },
+          { 
+            name: 'Fiberglass Insulation - R-30 24" x 48"', 
+            uom: 'ROLL', 
+            priceRange: [60, 75],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better']
+          },
+          { 
+            name: 'Spray Foam Insulation Kit - 600 Board Feet', 
+            uom: 'KIT', 
+            priceRange: [450, 550],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best']
+          }
+        ],
+        configurable: []
       },
       services: [
         { name: 'Drywall Installation Service', priceRange: [200, 400] },
@@ -1041,10 +1075,1056 @@ export const PRODUCT_CATEGORIES = {
           }
         ]
       },
+      siding: {
+        simple: [
+          { 
+            name: 'Vinyl Siding - Standard Profile', 
+            uom: 'SF', 
+            priceRange: [2.50, 3.50],
+            construction_phase: ['envelope'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good']
+          },
+          { 
+            name: 'Fiber Cement Siding - Smooth Lap', 
+            uom: 'SF', 
+            priceRange: [3.50, 4.50],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better']
+          },
+          { 
+            name: 'Fiber Cement Siding - Cedar Texture', 
+            uom: 'SF', 
+            priceRange: [4.00, 5.00],
+            construction_phase: ['envelope'],
+            quality_tier: 'professional',
+            package_tier: ['better']
+          },
+          { 
+            name: 'Stucco System - 3-Coat Traditional', 
+            uom: 'SF', 
+            priceRange: [6.00, 8.00],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best']
+          },
+          { 
+            name: 'Natural Stone Veneer - Stacked Ledge', 
+            uom: 'SF', 
+            priceRange: [12.00, 16.00],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best']
+          },
+          { 
+            name: 'Premium Stucco System - Acrylic Finish', 
+            uom: 'SF', 
+            priceRange: [8.00, 10.00],
+            construction_phase: ['envelope'],
+            quality_tier: 'premium',
+            package_tier: ['best']
+          }
+        ],
+        configurable: []
+      },
       services: [
         { name: 'Roof Inspection Service', priceRange: [150, 300] },
         { name: 'Roofing Material Delivery', priceRange: [100, 200] }
       ]
+    }
+  },
+  'interior-finishes': {
+    name: 'Interior Finishes',
+    attributeValue: 'interior_finishes',
+    subcategories: {
+      flooring: {
+        simple: [
+          { 
+            name: 'Luxury Vinyl Plank - Oak Finish', 
+            uom: 'SF', 
+            priceRange: [2.50, 3.50],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'surfaces'
+          },
+          { 
+            name: 'Standard Carpet - Beige Neutral', 
+            uom: 'SF', 
+            priceRange: [1.80, 2.40],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'surfaces'
+          },
+          { 
+            name: 'Engineered Hardwood - Red Oak', 
+            uom: 'SF', 
+            priceRange: [4.50, 6.00],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'surfaces'
+          },
+          { 
+            name: 'Ceramic Floor Tile - 12x12 Neutral', 
+            uom: 'SF', 
+            priceRange: [3.00, 4.00],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'surfaces'
+          },
+          { 
+            name: 'Premium Vinyl Plank - Gray Stone Look', 
+            uom: 'SF', 
+            priceRange: [3.50, 4.50],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'surfaces'
+          },
+          { 
+            name: 'Solid Hardwood - Black Walnut', 
+            uom: 'SF', 
+            priceRange: [8.00, 10.00],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'surfaces'
+          },
+          { 
+            name: 'Porcelain Tile - 24x24 Marble Look', 
+            uom: 'SF', 
+            priceRange: [5.50, 7.50],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'surfaces'
+          },
+          { 
+            name: 'Premium Carpet - Neutral Luxury', 
+            uom: 'SF', 
+            priceRange: [3.50, 4.50],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'surfaces'
+          }
+        ],
+        configurable: []
+      },
+      paint: {
+        simple: [
+          { 
+            name: 'Interior Paint - Flat White 5 Gallon', 
+            uom: 'GALLON', 
+            priceRange: [120, 160],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'finishes'
+          },
+          { 
+            name: 'Interior Paint - Eggshell Neutral Beige 5 Gallon', 
+            uom: 'GALLON', 
+            priceRange: [140, 180],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'finishes'
+          },
+          { 
+            name: 'Sherwin Williams Interior Satin - 5 Gallon', 
+            uom: 'GALLON', 
+            priceRange: [200, 250],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'finishes'
+          },
+          { 
+            name: 'Sherwin Williams Exterior Satin - 5 Gallon', 
+            uom: 'GALLON', 
+            priceRange: [220, 270],
+            construction_phase: ['exterior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'finishes'
+          },
+          { 
+            name: 'Benjamin Moore Aura Interior - 5 Gallon', 
+            uom: 'GALLON', 
+            priceRange: [280, 340],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'finishes'
+          },
+          { 
+            name: 'Benjamin Moore Aura Exterior - 5 Gallon', 
+            uom: 'GALLON', 
+            priceRange: [300, 360],
+            construction_phase: ['exterior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'finishes'
+          }
+        ],
+        configurable: []
+      },
+      lighting: {
+        simple: [
+          { 
+            name: 'Flush Mount Ceiling Light - Basic White', 
+            uom: 'EA', 
+            priceRange: [25, 35],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Recessed Can Light - 4" Standard', 
+            uom: 'EA', 
+            priceRange: [15, 25],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Semi-Flush Ceiling Light - Brushed Nickel', 
+            uom: 'EA', 
+            priceRange: [45, 65],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'LED Recessed Downlight - 6" Integrated', 
+            uom: 'EA', 
+            priceRange: [35, 50],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Dining Chandelier - Modern 5-Light', 
+            uom: 'EA', 
+            priceRange: [180, 250],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Kitchen Island Pendant Set - 3 Glass Globes', 
+            uom: 'EA', 
+            priceRange: [150, 200],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures'
+          }
+        ],
+        configurable: []
+      },
+      plumbing: {
+        simple: [
+          { 
+            name: 'Kitchen Faucet - Chrome Single Handle', 
+            uom: 'EA', 
+            priceRange: [80, 120],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Bathroom Faucet - Chrome 4" Centerset', 
+            uom: 'EA', 
+            priceRange: [60, 90],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Kitchen Faucet - Brushed Nickel Commercial Style', 
+            uom: 'EA', 
+            priceRange: [150, 200],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Bathroom Faucet - Brushed Nickel Widespread', 
+            uom: 'EA', 
+            priceRange: [120, 180],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Kitchen Faucet - Delta Touch2O Technology', 
+            uom: 'EA', 
+            priceRange: [280, 350],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures'
+          },
+          { 
+            name: 'Bathroom Faucet - Kohler Artifacts Collection', 
+            uom: 'EA', 
+            priceRange: [250, 320],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            room_category: 'fixtures'
+          }
+        ],
+        configurable: []
+      },
+      services: [
+        { name: 'Flooring Installation Service', priceRange: [300, 600] },
+        { name: 'Interior Painting Service', priceRange: [500, 1000] }
+      ]
+    }
+  },
+
+  // NEW CATEGORIES FOR HOUSE CONSTRUCTION BOMs
+
+  concrete: {
+    name: 'Concrete & Foundation',
+    attributeValue: 'concrete',
+    subcategories: {
+      'ready-mix': {
+        simple: [
+          {
+            name: 'Ready-Mix Concrete - 3000 PSI',
+            uom: 'CY',
+            priceRange: [140, 160],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Ready-Mix Concrete - 4000 PSI',
+            uom: 'CY',
+            priceRange: [165, 185],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 8,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Ready-Mix Concrete - 5000 PSI High-Strength',
+            uom: 'CY',
+            priceRange: [190, 210],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 5,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Concrete Mix - 60lb Bag',
+            uom: 'BAG',
+            priceRange: [4, 6],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 200,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Concrete Mix - 80lb Bag High-Strength',
+            uom: 'BAG',
+            priceRange: [6, 8],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 150,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      }
+    }
+  },
+
+  electrical: {
+    name: 'Electrical Systems',
+    attributeValue: 'electrical',
+    subcategories: {
+      wiring: {
+        simple: [
+          {
+            name: 'Romex 14/2 NM-B Wire - 250ft Roll',
+            uom: 'ROLL',
+            priceRange: [45, 60],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Romex 12/2 NM-B Wire - 250ft Roll',
+            uom: 'ROLL',
+            priceRange: [65, 85],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Romex 10/2 NM-B Wire - 250ft Roll',
+            uom: 'ROLL',
+            priceRange: [95, 120],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      },
+      devices: {
+        simple: [
+          {
+            name: 'Electrical Outlet - 15A Duplex White',
+            uom: 'EA',
+            priceRange: [1, 2],
+            construction_phase: ['rough_in'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 500,
+            typical_days_supply: 14,
+            restock_priority: 'high'
+          },
+          {
+            name: 'GFCI Outlet - 20A Weather-Resistant',
+            uom: 'EA',
+            priceRange: [15, 22],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 14,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Light Switch - Single Pole White',
+            uom: 'EA',
+            priceRange: [1, 2],
+            construction_phase: ['rough_in'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 500,
+            typical_days_supply: 14,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Dimmer Switch - LED Compatible',
+            uom: 'EA',
+            priceRange: [18, 28],
+            construction_phase: ['rough_in'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          },
+          {
+            name: '3-Way Light Switch - White',
+            uom: 'EA',
+            priceRange: [3, 5],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 200,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      },
+      panels: {
+        simple: [
+          {
+            name: 'Main Service Panel - 200 Amp',
+            uom: 'EA',
+            priceRange: [180, 250],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 5,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Circuit Breaker - 15 Amp Single Pole',
+            uom: 'EA',
+            priceRange: [5, 8],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Circuit Breaker - 20 Amp Single Pole',
+            uom: 'EA',
+            priceRange: [6, 10],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      }
+    }
+  },
+
+  'plumbing-pipes': {
+    name: 'Plumbing Pipes & Fittings',
+    attributeValue: 'plumbing_pipes',
+    subcategories: {
+      'water-supply': {
+        simple: [
+          {
+            name: 'PEX Pipe 1/2" - Red (Hot) 100ft Coil',
+            uom: 'ROLL',
+            priceRange: [35, 50],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'PEX Pipe 1/2" - Blue (Cold) 100ft Coil',
+            uom: 'ROLL',
+            priceRange: [35, 50],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'PEX Pipe 3/4" - Red (Hot) 100ft Coil',
+            uom: 'ROLL',
+            priceRange: [50, 70],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Copper Pipe Type L 1/2" - 10ft',
+            uom: 'EA',
+            priceRange: [18, 25],
+            construction_phase: ['rough_in'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      },
+      'drain-waste': {
+        simple: [
+          {
+            name: 'PVC Drain Pipe 2" Schedule 40 - 10ft',
+            uom: 'EA',
+            priceRange: [8, 12],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 50,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'PVC Drain Pipe 3" Schedule 40 - 10ft',
+            uom: 'EA',
+            priceRange: [12, 18],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 40,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'PVC Drain Pipe 4" Schedule 40 - 10ft',
+            uom: 'EA',
+            priceRange: [18, 25],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      },
+      fittings: {
+        simple: [
+          {
+            name: 'PEX Fittings Assortment Kit - 50pc',
+            uom: 'KIT',
+            priceRange: [45, 65],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'PVC Fittings Assortment Kit - 40pc',
+            uom: 'KIT',
+            priceRange: [35, 50],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Shut-Off Valve 1/2" Quarter Turn',
+            uom: 'EA',
+            priceRange: [8, 12],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      }
+    }
+  },
+
+  hvac: {
+    name: 'HVAC Systems',
+    attributeValue: 'hvac',
+    subcategories: {
+      units: {
+        simple: [
+          {
+            name: 'Central AC/Heat Pump - 3 Ton 14 SEER',
+            uom: 'EA',
+            priceRange: [2800, 3500],
+            construction_phase: ['rough_in'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 2,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Central AC/Heat Pump - 4 Ton 16 SEER',
+            uom: 'EA',
+            priceRange: [3500, 4200],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 2,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Central AC/Heat Pump - 5 Ton 18 SEER High-Efficiency',
+            uom: 'EA',
+            priceRange: [4500, 5500],
+            construction_phase: ['rough_in'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 1,
+            typical_days_supply: 45,
+            restock_priority: 'low'
+          }
+        ],
+        configurable: []
+      },
+      ductwork: {
+        simple: [
+          {
+            name: 'Flexible Duct 6" Insulated - 25ft',
+            uom: 'ROLL',
+            priceRange: [35, 50],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Flexible Duct 8" Insulated - 25ft',
+            uom: 'ROLL',
+            priceRange: [45, 65],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 15,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Round Duct 10" Galvanized - 10ft',
+            uom: 'EA',
+            priceRange: [25, 35],
+            construction_phase: ['rough_in'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      },
+      vents: {
+        simple: [
+          {
+            name: 'Supply Register 4"x10" White',
+            uom: 'EA',
+            priceRange: [8, 12],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Return Grille 20"x20" White',
+            uom: 'EA',
+            priceRange: [25, 35],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 30,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Programmable Thermostat - 7-Day',
+            uom: 'EA',
+            priceRange: [45, 65],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 20,
+            typical_days_supply: 21,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Smart Thermostat - WiFi Enabled',
+            uom: 'EA',
+            priceRange: [180, 250],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 10,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          }
+        ],
+        configurable: []
+      }
+    }
+  },
+
+  'drywall-supplies': {
+    name: 'Drywall & Supplies',
+    attributeValue: 'drywall_supplies',
+    subcategories: {
+      drywall: {
+        simple: [
+          {
+            name: 'Drywall 1/2" - 4x8 Sheet',
+            uom: 'SHEET',
+            priceRange: [12, 16],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 200,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Drywall 1/2" - 4x12 Sheet',
+            uom: 'SHEET',
+            priceRange: [18, 24],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 150,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Drywall 5/8" Moisture-Resistant - 4x8',
+            uom: 'SHEET',
+            priceRange: [22, 28],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'premium',
+            package_tier: ['best'],
+            store_velocity_category: 'medium',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          }
+        ],
+        configurable: []
+      },
+      supplies: {
+        simple: [
+          {
+            name: 'Joint Compound - 5 Gallon Bucket',
+            uom: 'BUCKET',
+            priceRange: [25, 32],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 50,
+            typical_days_supply: 7,
+            restock_priority: 'high'
+          },
+          {
+            name: 'Drywall Tape - Paper 250ft Roll',
+            uom: 'ROLL',
+            priceRange: [5, 8],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 100,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Corner Bead Metal - 8ft',
+            uom: 'EA',
+            priceRange: [2, 4],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 200,
+            typical_days_supply: 14,
+            restock_priority: 'medium'
+          },
+          {
+            name: 'Drywall Screws - 1lb Box',
+            uom: 'BOX',
+            priceRange: [7, 10],
+            construction_phase: ['foundation_framing'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            store_velocity_category: 'high',
+            recommended_restock_quantity: 200,
+            typical_days_supply: 14,
+            restock_priority: 'high'
+          }
+        ],
+        configurable: []
+      }
+    }
+  },
+
+  appliances: {
+    name: 'Kitchen Appliances',
+    attributeValue: 'appliances',
+    subcategories: {
+      kitchen: {
+        simple: [
+          {
+            name: 'Electric Range 30" - White',
+            uom: 'EA',
+            priceRange: [450, 600],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 3,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Gas Range 30" - Stainless Steel',
+            uom: 'EA',
+            priceRange: [750, 950],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 2,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Professional Range 36" - Dual Fuel',
+            uom: 'EA',
+            priceRange: [2200, 2800],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'luxury',
+            package_tier: ['best'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 1,
+            typical_days_supply: 60,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Dishwasher - White Standard',
+            uom: 'EA',
+            priceRange: [350, 450],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 3,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Dishwasher - Stainless Quiet',
+            uom: 'EA',
+            priceRange: [600, 750],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 2,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Dishwasher - Panel-Ready Ultra-Quiet',
+            uom: 'EA',
+            priceRange: [1200, 1500],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'luxury',
+            package_tier: ['best'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 1,
+            typical_days_supply: 60,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Microwave Over-Range - White',
+            uom: 'EA',
+            priceRange: [180, 250],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'builder_grade',
+            package_tier: ['good'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 3,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          },
+          {
+            name: 'Microwave Built-In - Stainless',
+            uom: 'EA',
+            priceRange: [400, 550],
+            construction_phase: ['interior_finish'],
+            quality_tier: 'professional',
+            package_tier: ['better'],
+            room_category: 'kitchen',
+            store_velocity_category: 'low',
+            recommended_restock_quantity: 2,
+            typical_days_supply: 30,
+            restock_priority: 'low'
+          }
+        ],
+        configurable: []
+      }
     }
   }
 };
