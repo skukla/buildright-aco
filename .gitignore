@@ -55,3 +55,6 @@ temp/
 skus-to-delete.txt
 skus.txt
 *.skus.txt
+
+# Temporary backups
+*.backup-*

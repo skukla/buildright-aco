@@ -1,668 +1,295 @@
-# BuildRight ACO Data Generation & Ingestion
+# BuildRight ACO - Modular Catalog Data Management
 
-Adobe Commerce Optimizer (ACO) sample catalog data generation and ingestion system for BuildRight Solutions - a construction materials supplier demo.
+Complete Adobe Commerce Optimizer (ACO) integration with modular utilities for managing catalog data. This project provides a clean, reusable approach to generating, ingesting, and deleting ACO entities.
 
-## Overview
+## ✨ Features
 
-This project provides comprehensive data generation scripts and ingestion utilities for Adobe Commerce Optimizer, demonstrating:
+- **Modular Utilities**: Reusable query and delete functions (`aco-query.js`, `aco-delete.js`)
+- **Unified Scripts**: Single commands for complete workflows (`ingest:all`, `reset:all`)
+- **ACO-Only**: Supports only what the ACO SDK supports (no inventory)
+- **Dry-Run Support**: Preview changes before executing
+- **Error Handling**: Comprehensive logging and retry logic
+- **Type-Safe**: Uses official Adobe Commerce Optimizer TypeScript SDK
 
-- **Hierarchical pricing structure** (10 price books across 3 levels - base, segment, tier - with parent relationships)
-- **Project-based attributes** (semantic attributes for project types: new_construction, remodel, repair, restoration)
-- **Complex product catalog** (184 products including simple, configurable, bundles, and services)
-- **Multi-source inventory management** (6 inventory sources in 1 stock - configured via Adobe Commerce MSI, not ACO; see [manual setup guide](docs/manual-setup/msi-configuration-guide.md))
-- **B2B company structure** (3 demo companies with 6 locations - see [manual setup guide](docs/manual-setup/b2b-configuration-guide.md))
-- **Trigger-based policies** (dynamic catalog filtering - see [manual setup guide](docs/manual-setup/trigger-policy-guide.md))
-- **Deterministic data generation** (reproducible with SEED environment variable)
-- **Test-driven development** (96%+ test pass rate with 85%+ coverage)
+## 🏗️ Architecture
 
-## Project Status
-
-✅ **Track 1 Complete:** Foundation & Analysis (Steps 1-4)
-✅ **Track 2 Complete:** Data Generation Scripts (Steps 5-8)
-✅ **Track 3 Complete:** Data Ingestion Scripts (Steps 9-12)
-✅ **Documentation Complete:** All guides and handoff documentation (Steps 1-6 refinement)
-
-**Current Status:** Production-ready demo system with comprehensive documentation
-
-### What's New in This Release
-
-**Step 1 (Project Attributes):**
-- 70 products tagged with project_types (new_construction, remodel, repair, restoration)
-- Semantic attributes for commercial/residential segmentation
-- Metadata schema for 20 product attributes
-
-**Step 2 (Hierarchical Pricing):**
-- 10 hierarchical price books across 3 levels (base, segment, tier)
-- Parent-child relationships enabling price inheritance
-- Flexible pricing strategy for B2B segmentation
-
-**Step 3 (B2B Configuration Guide):**
-- 3 demo companies across 3 divisions (Commercial, Residential, Pro)
-- 6 locations (teams) representing physical branches
-- Complete setup guide (6-8 hours manual configuration)
-
-**Step 4 (MSI Strategy):**
-- 6 inventory sources in 1 stock (single-website deployment)
-- MSI configuration guide (2.5-4 hours manual setup)
-- ACO limitations documented (inventory not supported via API)
-
-**Step 5 (Trigger Policies):**
-- 6 example trigger-based policies for dynamic filtering
-- Project type filtering (new_construction, remodel, etc.)
-- Complete policy guide (45-60 minutes configuration)
-
-**Step 6 (Documentation Integration):**
-- Comprehensive handoff document (1,200+ lines)
-- All cross-references validated
-- Fact consistency verified across all docs
-
----
-
-## Quick Start
-
-### Build Process (New Persona-Driven Demo)
-
-#### Complete Data Generation Pipeline
-
-Generate all data files for both ACO ingestion and EDS frontend:
-
-```bash
-# Generate all ACO data + policy guide + EDS data
-npm run generate:all
+```
+buildright-aco/
+├── utils/                      # Modular utilities (reusable)
+│   ├── aco-client.js          # ACO SDK client wrapper
+│   ├── aco-query.js           # Query functions (getAllProductSKUs, etc.)
+│   ├── aco-delete.js          # Delete functions (prices, products, etc.)
+│   ├── graphql-query.js       # GraphQL helpers
+│   ├── logger.js              # Winston logger
+│   ├── oauth-token-manager.js # OAuth authentication
+│   └── retry-handler.js       # Retry logic
+├── scripts/
+│   ├── config/                # Configuration
+│   ├── generate-*.js          # Generate local JSON data
+│   ├── ingest-*.js            # Ingest data to ACO
+│   ├── ingest-all.js          # Unified ingestion workflow
+│   ├── reset-*.js             # Delete data from ACO
+│   ├── reset-all.js           # Unified reset workflow
+│   └── validate-*.js          # Validation scripts
+└── data/buildright/           # Generated JSON data
 ```
 
-This runs the complete pipeline:
-1. **Metadata & Categories** - Product schema and category tree
-2. **Products** - 70 products with persona-specific attributes
-3. **Variants & Bundles** - Configurable products and packages
-4. **Price Books** - 5 price books (1 base + 4 customer tiers)
-5. **Prices** - Retail pricing + volume tier discounts
-6. **Inventory** - Multi-source inventory definitions
-7. **Policy Guide** - 28 policies for persona filtering (manual ACO setup)
-8. **EDS Data** - Frontend-compatible data files for buildright-eds
+## 🚀 Quick Start
 
-#### Individual Scripts
-
-Generate specific data types:
+### 1. Setup
 
 ```bash
-# Core product data
-npm run generate:products          # Simple products
-npm run generate:variants          # Configurable products
-npm run generate:bundles           # Bundle products
-npm run generate:all-products      # All of the above
-
-# Pricing data
-npm run generate:price-books       # 5 price books (persona tiers)
-npm run generate:prices            # Prices with volume tiers
-npm run generate:all-pricing       # All of the above
-
-# Inventory data
-npm run generate:sources           # Inventory sources
-npm run generate:inventory         # Stock quantities
-npm run generate:all-inventory     # All of the above
-
-# Documentation
-npm run generate:policy-guide      # Policy setup guide (28 policies)
-
-# EDS frontend data
-npm run generate:eds-data          # Transform ACO → EDS format
-```
-
-#### Output Files
-
-Generated in `data/buildright/`:
-- `products.json` - 70 products (ACO format)
-- `price-books.json` - 5 price books
-- `prices.json` - Retail + volume tier pricing
-- `inventory.json` - Multi-source stock
-- `POLICY-SETUP-GUIDE.md` - ACO policy configurations
-
-Generated in `../buildright-eds/data/`:
-- `mock-products.json` - EDS-compatible products
-- `project-recommendations.json` - Templates, packages, kits
-
-### Prerequisites
-
-- **Node.js** 20.14.0 or higher
-- **npm** 9.x or higher
-- **Adobe Commerce Optimizer** sandbox or production instance
-- **Adobe Developer Console** credentials (CLIENT_ID, CLIENT_SECRET)
-- **Commerce Cloud Manager** access (TENANT_ID)
-
-### Installation
-
-```bash
-# Clone repository
-git clone <repository-url>
-cd buildright-aco
-
 # Install dependencies
 npm install
 
 # Configure environment
-cp .env.dist .env
-# Edit .env and add your credentials
+cp .env.example .env
+# Edit .env with your ACO credentials
 ```
 
-### Configuration
-
-Edit `.env` with your Adobe Commerce Optimizer credentials:
+### 2. Generate Data
 
 ```bash
-# Required: Authentication
-CLIENT_ID=your-client-id-here
-CLIENT_SECRET=your-client-secret-here
+# Generate all local JSON data files
+npm run generate:all
 
-# Required: Instance Configuration
-TENANT_ID=your-tenant-id-here
-REGION=na1
-ENVIRONMENT=sandbox
-
-# Optional: Query Configuration
-VIEW_ID=default
-SOURCE_LOCALE=en-US
-
-# Optional: Data Generation
-SEED=12345
+# Or generate individual entities
+npm run generate:products
+npm run generate:price-books
+npm run generate:prices
 ```
 
-#### Getting Your Credentials
-
-**CLIENT_ID & CLIENT_SECRET:**
-1. Go to [Adobe Developer Console](https://developer.adobe.com/console)
-2. Create or select your project
-3. Add "Adobe Commerce Optimizer" API
-4. Generate OAuth credentials
-5. Copy Client ID and Client Secret
-
-**TENANT_ID:**
-1. Go to [Commerce Cloud Manager](https://experience.adobe.com/)
-2. Navigate to Commerce > Commerce Cloud Manager
-3. Select your ACO instance
-4. Click info icon to view instance details
-5. Copy Tenant ID from endpoint URLs
-
----
-
-## Data Generation
-
-### Generate All Data
+### 3. Ingest to ACO
 
 ```bash
-# Generate all data files with deterministic seed
-SEED=12345 npm run generate:all
+# Ingest all data (recommended)
+npm run ingest:all
 
-# Or run individual generators
-npm run generate:metadata     # Product attributes
-npm run generate:categories   # Category hierarchy
-npm run generate:products     # Simple and service products
-npm run generate:variants     # Configurable products and variants
-npm run generate:bundles      # Bundle products
-npm run generate:price-books  # Price book structure
-npm run generate:prices       # All pricing data
-npm run generate:inventory    # Multi-source inventory
+# Or ingest individual entities
+npm run ingest:products      # Simple products
+npm run ingest:variants      # Configurable products + variants
+npm run ingest:bundles       # Bundle products
+npm run ingest:price-books   # Price book hierarchy
+npm run ingest:prices        # All prices
+
+# Preview before ingesting
+npm run ingest:all:dry-run
 ```
 
-### Generated Data Files
+### 4. Reset ACO (Delete Data)
 
-All generated files are saved to `data/buildright/`:
+```bash
+# Delete everything
+npm run reset:all
 
-| File | Size | Records | Description |
-|------|------|---------|-------------|
-| `metadata.json` | 3.5K | 20 | Product attribute definitions |
-| `categories.json` | 3.8K | 19 | Category hierarchy |
-| `products.json` | 76K | 80 | Simple + service products |
-| `variants.json` | 114K | 94 | Configurable products + variants |
-| `bundles.json` | 41K | 15 | Bundle products |
-| `price-books.json` | 2.1K | 10 | Hierarchical price books (3 levels) |
-| `prices.json` | 398K | 1,418 | All pricing entries |
-| `sources.json` | 2.8K | 6 | Inventory sources |
-| `inventory.json` | 89K | 169 | Multi-source inventory |
+# Delete specific entities
+npm run reset:products       # Delete all products
+npm run reset:price-books    # Delete prices + price books
 
-**Total:** 184 products, 1,418 prices, 169 inventory items
+# Preview before deleting
+npm run reset:all:dry-run
 
----
-
-## API Configuration
-
-### Endpoint Structure
-
-The SDK automatically constructs endpoints from your configuration:
-
-**REST API (Data Ingestion):**
-```
-Sandbox:    https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/v1/catalog
-Production: https://na1.api.commerce.adobe.com/{TENANT_ID}/v1/catalog
+# Delete and re-ingest
+npm run reset:all:reingest
 ```
 
-**GraphQL API (Queries):**
-```
-Sandbox:    https://na1-sandbox.api.commerce.adobe.com/{TENANT_ID}/graphql
-Production: https://na1.api.commerce.adobe.com/{TENANT_ID}/graphql
+## 📊 Supported ACO Entities
+
+| Entity | Generate | Ingest | Delete | Notes |
+|--------|----------|--------|--------|-------|
+| **Products** | ✅ | ✅ | ✅ | Simple + configurable + bundle |
+| **Product Metadata** | ✅ | ✅ | ⏳ | Attributes (ingested with products) |
+| **Categories** | ✅ | ⏳ | ⏳ | Optional, not yet implemented |
+| **Price Books** | ✅ | ✅ | ✅ | Hierarchical structure |
+| **Prices** | ✅ | ✅ | ✅ | All products × all price books |
+| **Inventory** | ❌ | ❌ | ❌ | NOT supported (use Adobe Commerce MSI) |
+
+## 🛠️ Available Commands
+
+### Generate (Create Local JSON Data)
+
+```bash
+npm run generate:metadata         # Product attributes
+npm run generate:categories       # Category hierarchy
+npm run generate:products         # Simple products
+npm run generate:variants         # Configurable products + variants
+npm run generate:bundles          # Bundle products
+npm run generate:price-books      # Price book structure
+npm run generate:prices           # All pricing data
+npm run generate:eds-data         # EDS-compatible data files
+npm run generate:all              # All of the above
 ```
 
-**ACO UI:**
-```
-https://experience.adobe.com/#/@demosystem/in:{TENANT_ID}/commerce-optimizer-studio
+### Ingest (Push to ACO)
+
+```bash
+npm run ingest:products           # Simple products only
+npm run ingest:products:dry-run   # Preview products ingestion
+npm run ingest:variants           # Configurable products + variants
+npm run ingest:bundles            # Bundle products
+npm run ingest:price-books        # Price books (hierarchical)
+npm run ingest:prices             # All prices
+npm run ingest:prices:dry-run     # Preview prices ingestion
+npm run ingest:all                # Complete workflow (recommended)
+npm run ingest:all:dry-run        # Preview complete workflow
 ```
 
-### Using the ACO Client
+### Reset (Delete from ACO)
+
+```bash
+npm run reset:products            # Delete all products
+npm run reset:products:dry-run    # Preview product deletion
+npm run reset:price-books         # Delete prices + price books
+npm run reset:price-books:dry-run # Preview price book deletion
+npm run reset:price-books:reingest # Delete and re-ingest prices
+npm run reset:all                 # Delete everything
+npm run reset:all:dry-run         # Preview full reset
+npm run reset:all:reingest        # Delete and re-ingest everything
+```
+
+### Validate
+
+```bash
+npm run validate:schema           # Validate JSON against ACO schemas
+npm run validate:ingestion        # Validate ingestion results
+```
+
+## 📖 Usage Examples
+
+### Complete Workflow
+
+```bash
+# 1. Generate all data
+npm run generate:all
+
+# 2. Preview what will be ingested
+npm run ingest:all:dry-run
+
+# 3. Ingest to ACO
+npm run ingest:all
+
+# 4. Validate ingestion
+npm run validate:ingestion
+```
+
+### Update Prices Only
+
+```bash
+# 1. Regenerate prices
+npm run generate:prices
+
+# 2. Reset existing prices and re-ingest
+npm run reset:price-books:reingest
+```
+
+### Clean Slate
+
+```bash
+# Delete everything and start fresh
+npm run reset:all:reingest
+```
+
+## 🔧 Modular Utilities
+
+### Query Utilities (`utils/aco-query.js`)
 
 ```javascript
-import { getACOClient } from './utils/aco-client.js';
+import { getAllProductSKUs, validateSKUsExist } from './utils/aco-query.js';
 
-// Get singleton client (uses .env configuration)
-const client = getACOClient();
+// Get all SKUs from local data
+const skus = await getAllProductSKUs();
 
-// Create products
-await client.createProducts(products);
-
-// Create metadata
-await client.createProductMetadata(attributes);
-
-// Create price books
-await client.createPriceBooks(priceBooks);
-
-// Create prices
-await client.createPrices(prices);
+// Validate SKUs exist in ACO
+const result = await validateSKUsExist(['SKU-001', 'SKU-002']);
+console.log(`Found: ${result.found.length}, Missing: ${result.missing.length}`);
 ```
 
-### Using GraphQL Queries
+### Delete Utilities (`utils/aco-delete.js`)
 
 ```javascript
 import {
-  queryProductsBySKU,
-  queryProducts,
-  queryCategories,
-  verifyDataIngestion
-} from './utils/graphql-query.js';
+  deleteAllPricesForPriceBooks,
+  deletePriceBooks,
+  deleteProductsBySKUs
+} from './utils/aco-delete.js';
 
-// Query specific products
-const products = await queryProductsBySKU(['SKU-001', 'SKU-002']);
+// Delete all prices for specific price books
+await deleteAllPricesForPriceBooks(['US-Retail', 'Production-Builder']);
 
-// Search products
-const results = await queryProducts({
-  searchTerm: 'lumber',
-  pageSize: 10
-});
+// Delete price books
+await deletePriceBooks(['old-price-book-1', 'old-price-book-2']);
 
-// Verify ingestion
-const stats = await verifyDataIngestion();
-console.log(`Products: ${stats.productCount}`);
+// Delete products
+await deleteProductsBySKUs(['SKU-001', 'SKU-002']);
 ```
 
----
+## 📁 Data Files
 
-## Testing
+Generated JSON files are stored in `data/buildright/`:
 
-```bash
-# Run all tests
-npm test
+| File | Records | Description |
+|------|---------|-------------|
+| `metadata.json` | 20 | Product attribute definitions |
+| `categories.json` | 19 | Category hierarchy |
+| `products.json` | 108 | Simple products |
+| `variants.json` | 100 | Configurable products + variants |
+| `bundles.json` | 15 | Bundle products |
+| `price-books.json` | 5 | Price book hierarchy |
+| `prices.json` | 1,115 | All prices (223 SKUs × 5 price books) |
 
-# Run with coverage
-npm run test:coverage
+**Total:** 223 products, 5 price books, 1,115 prices
 
-# Run specific test suites
-npm test -- tests/unit/
-npm test -- tests/integration/
+## 🔐 Environment Variables
+
+Required variables in `.env`:
+
+```env
+# ACO Credentials (from Adobe Developer Console)
+CLIENT_ID=your-client-id
+CLIENT_SECRET=your-client-secret
+
+# ACO Instance (from Commerce Cloud Manager)
+TENANT_ID=your-tenant-id
+REGION=na1
+ENVIRONMENT=sandbox
+
+# Optional
+TIMEOUT_MS=10000
+WEBSITE_CODE=base
+STORE_CODE=default
+STORE_VIEW_CODE=default
 ```
 
-**Current Test Status:**
-- ✅ 422/499 tests passing (84.6%, 72 skipped)
-- ✅ 85%+ coverage on critical utilities
-- ✅ Deterministic test data with SEED
-- ✅ 43 security tests added for enhanced validation
+## 🐛 Troubleshooting
 
----
+### Price Ingestion Fails with "Bad Request"
 
-## Security Enhancements
+**Issue**: ACO SDK requires `regular` field for prices, not `amount`.
 
-The system includes comprehensive security measures to ensure safe operation:
+**Solution**: The `ingest-prices.js` script automatically transforms `amount` → `regular`. If you're using custom scripts, ensure you use the correct field name.
 
-**Input Validation:**
-- CLI argument validation to prevent injection attacks (`utils/cli-validator.js`)
-- Safe JSON parsing with error handling (`utils/safe-json.js`)
-- Path traversal protection for file operations
+### SKU Validation Fails
 
-**Secure Token Management:**
-- OAuth token management with secure storage (`utils/oauth-token-manager.js`)
-- No token logging in test scripts
-- Automatic token refresh handling
+**Issue**: GraphQL `productSearch` requires a search index which may not be configured.
 
-**Cryptographic Security:**
-- SKU generation uses `crypto.randomBytes()` instead of `Math.random()`
-- Deterministic hashing for reproducible builds
-- Secure random generation for unique identifiers
+**Solution**: Use `--skip-validation` flag or rely on local SKU data with `getAllProductSKUs()`.
 
-**Comprehensive Testing:**
-- 43 dedicated security tests covering all security utilities
-- Input validation edge cases tested
-- Path traversal attack prevention verified
+### Price Books Won't Delete
 
----
+**Issue**: Price books with associated prices cannot be deleted.
 
-## Architecture
+**Solution**: Delete prices first using `reset:price-books` which handles the correct order.
 
-### Pricing Structure
+## 📚 Resources
 
-**10 Hierarchical Price Books (3 Levels):**
-
-**Level 1 (Base with Currency):**
-- **US-Retail** - Standard retail pricing (currency: USD)
-- **US-Contract** - Contract base pricing (currency: USD)
-
-**Level 2 (Customer Segments):**
-- **Retail-Consumer** - Consumer segment pricing (parent: US-Retail)
-- **Contract-Commercial** - Commercial segment pricing (parent: US-Contract)
-- **Contract-Residential** - Residential segment pricing (parent: US-Contract)
-- **Contract-Pro** - Professional contractor pricing (parent: US-Contract)
-
-**Level 3 (Volume Tiers):**
-- **Commercial-Tier1** - High-volume commercial (parent: Contract-Commercial)
-- **Commercial-Tier2** - Standard commercial (parent: Contract-Commercial)
-- **Residential-Builder** - Production builder pricing (parent: Contract-Residential)
-- **Pro-Specialty** - Specialty trade pricing (parent: Contract-Pro)
-
-**Hierarchical Inheritance:**
-- Child price books inherit from parent when no specific price defined
-- Enables flexible pricing strategy with 3-level hierarchy
-
-### Inventory Sources
-
-**6 Sources in 1 Stock (BuildRight-Main-Stock):**
-
-- Western RDC (Sacramento, CA) - Priority 1
-- Eastern RDC (Charlotte, NC) - Priority 2
-- Phoenix Metro Warehouse (Phoenix, AZ) - Priority 3
-- Denver Warehouse (Denver, CO) - Priority 4
-- Atlanta Metro Warehouse (Atlanta, GA) - Priority 5
-- Drop Shipper - Premium Window Systems (Virtual) - Priority 6
-
-**Architecture Note:** Single stock configuration for single-website deployment (Adobe Commerce 1:1 stock-to-website relationship)
-
-### Product Catalog
-
-**184 Total Products:**
-- 70 simple products
-- 10 service products
-- 20 configurable products (with 74 variants)
-- 15 bundle products
-
-**19 Categories:**
-- Structural Materials (Lumber, Concrete, Masonry)
-- Framing & Drywall
-- Roofing Materials
-- Windows & Doors
-- Fasteners & Hardware
-
----
-
-## Project Structure
-
-```
-buildright-aco/
-├── .rptc/                          # RPTC workflow artifacts
-│   ├── plans/                      # Implementation plans
-│   └── research/                   # Research findings
-├── data/
-│   └── buildright/                 # Generated data files
-├── docs/                           # Documentation
-├── instructions/                   # Implementation guides
-├── scripts/                        # Data generation scripts
-│   ├── config/                     # Configuration data
-│   ├── generate-metadata.js
-│   ├── generate-categories.js
-│   ├── generate-products.js
-│   ├── generate-variants.js
-│   ├── generate-bundles.js
-│   ├── generate-price-books.js
-│   ├── generate-prices-hierarchical.js
-│   └── generate-inventory.js
-├── tests/                          # Test suites
-│   ├── unit/
-│   └── integration/
-├── utils/                          # Utility libraries (19 total)
-│   ├── aco-client.js              # ACO SDK wrapper
-│   ├── batch-processor.js         # Batch processing utilities
-│   ├── cli-validator.js           # CLI input validation (security)
-│   ├── config-loader.js           # Configuration loader
-│   ├── config-validator.js        # Configuration validation
-│   ├── error-handler.js           # Error handling utilities
-│   ├── graphql-query.js           # GraphQL utilities
-│   ├── inventory-distributor.js   # Inventory allocation
-│   ├── logger.js                  # Logging utilities
-│   ├── oauth-token-manager.js     # OAuth token management
-│   ├── price-calculator.js        # Pricing logic
-│   ├── random-seed.js             # Deterministic PRNG
-│   ├── retry-handler.js           # Retry logic utilities
-│   ├── safe-json.js               # Safe JSON parsing (security)
-│   ├── schema-validator.js        # Schema validation
-│   ├── sku-generator.js           # SKU generation (crypto-enhanced)
-│   └── ... (19 utilities total)
-├── .env.dist                       # Environment template
-├── package.json
-└── README.md
-```
-
----
-
-## Batch Processing
-
-ACO API batch limits:
-- **Products:** 100 per batch
-- **Prices:** 100 per batch
-- **Metadata:** 50 per batch (recommended)
-- **Categories:** 50 per batch (recommended)
-
-The `batchProcess()` utility handles automatic batching:
-
-```javascript
-import { getACOClient, batchProcess } from './utils/aco-client.js';
-
-const client = getACOClient();
-const products = [...]; // Array of products
-
-const results = await batchProcess(
-  products,
-  (batch) => client.createProducts(batch),
-  100,  // Batch size
-  'products'  // Entity type for logging
-);
-
-console.log(`Processed: ${results.processed}/${results.total}`);
-console.log(`Failed: ${results.failed}`);
-```
-
----
-
-## Deterministic Data Generation
-
-Use the `SEED` environment variable for reproducible data:
-
-```bash
-# Generate same data every time
-SEED=12345 npm run generate:all
-
-# Verify deterministic output
-SEED=12345 npm run generate:products
-md5sum data/buildright/products.json  # Hash 1
-
-SEED=12345 npm run generate:products
-md5sum data/buildright/products.json  # Hash 2 (should match Hash 1)
-```
-
-**Use Cases:**
-- Automated testing with consistent fixtures
-- Reproducible demo environments
-- Regression testing after code changes
-
----
-
-## Troubleshooting
-
-### Authentication Errors
-
-**Error:** `Missing required ACO configuration: CLIENT_ID, CLIENT_SECRET, TENANT_ID`
-
-**Solution:**
-1. Verify `.env` file exists and contains all required variables
-2. Check credentials in Adobe Developer Console
-3. Ensure TENANT_ID matches your ACO instance
-
-### GraphQL Query Errors
-
-**Error:** `TENANT_ID is required to construct GraphQL endpoint`
-
-**Solution:**
-1. Add `TENANT_ID` to your `.env` file
-2. Verify TENANT_ID from Commerce Cloud Manager
-
-### Batch Upload Failures
-
-**Error:** Rate limit or timeout errors during bulk uploads
-
-**Solution:**
-1. Reduce batch size (try 50 instead of 100)
-2. Increase `TIMEOUT_MS` in `.env`
-3. Check ACO instance status in Cloud Manager
-
----
-
-## npm Scripts Reference
-
-### Data Generation
-- `generate:metadata` - Generate product attributes
-- `generate:categories` - Generate category hierarchy
-- `generate:products` - Generate simple/service products
-- `generate:variants` - Generate configurable products
-- `generate:bundles` - Generate bundle products
-- `generate:all-products` - Generate all product types
-- `generate:price-books` - Generate price book structure
-- `generate:prices` - Generate pricing data
-- `generate:all-pricing` - Generate all pricing
-- `generate:inventory` - Generate inventory data
-- `generate:all` - Generate all data files
-
-### Testing
-- `test` - Run all tests
-- `test:coverage` - Run tests with coverage report
-
-### Validation
-- `validate:msi` - Validate MSI architecture
-- `validate:project` - Validate project context
-
----
-
-## Manual Configuration Guides
-
-After ACO data ingestion, the following manual configurations are required to complete the demo system:
-
-### B2B Company Setup (18-22 hours)
-
-**Guide:** [docs/manual-setup/b2b-configuration-guide.md](docs/manual-setup/b2b-configuration-guide.md)
-
-**What You'll Configure:**
-- 8 demo companies across 3 divisions (Commercial, Residential, Pro)
-- 21 locations (teams) representing physical branches
-- 40+ users with appropriate roles and permissions
-- Shared Catalog assignments (mapping price books to companies)
-
-**Time Estimate:** 18-22 hours
-
-### Multi-Source Inventory (MSI) Setup (2.5-4 hours)
-
-**Guide:** [docs/manual-setup/msi-configuration-guide.md](docs/manual-setup/msi-configuration-guide.md)
-
-**What You'll Configure:**
-- 6 inventory sources (Western RDC, Eastern RDC, Phoenix, Denver, Atlanta, Drop Shipper)
-- 1 stock (BuildRight-Main-Stock with all 6 sources)
-- Product-to-source assignments (184 products × 6 sources)
-- Source selection algorithms and priorities
-
-**Important:** ACO does not support inventory management via API. MSI must be configured manually in Adobe Commerce Admin UI or via Adobe Commerce REST API.
-
-**Architecture Note:** Single stock for single-website deployment (Adobe Commerce 1:1 stock-to-website relationship)
-
-**Time Estimate:** 2.5-4 hours
-
-### Trigger-Based Policy Configuration (45-60 minutes)
-
-**Guide:** [docs/manual-setup/trigger-policy-guide.md](docs/manual-setup/trigger-policy-guide.md)
-
-**What You'll Configure:**
-- 6 example policies for dynamic catalog filtering
-- Project type policies (new_construction, remodel, repair, restoration)
-- Customer segment policies (commercial, residential)
-- Brand preference policies
-- HTTP header-based triggers for runtime filtering
-
-**Time Estimate:** 45-60 minutes
-
-### Complete Handoff Guide
-
-**Guide:** [docs/HANDOFF-COMPLETE.md](docs/HANDOFF-COMPLETE.md)
-
-**Comprehensive documentation including:**
-- Prerequisites and environment setup
-- Step-by-step ACO data ingestion
-- All manual configuration procedures
-- Testing and verification steps
-- Known limitations and workarounds
-- Troubleshooting guide
-- Future enhancement roadmap
-
----
-
-## Resources
-
-### Official Documentation
-- [Adobe Commerce Optimizer](https://experienceleague.adobe.com/en/docs/commerce/optimizer/get-started)
+- [Adobe Commerce Optimizer Documentation](https://developer.adobe.com/commerce/services/optimizer/)
 - [ACO TypeScript SDK](https://github.com/adobe-commerce/aco-ts-sdk)
-- [Data Ingestion API](https://developer.adobe.com/commerce/services/optimizer/data-ingestion/)
-- [Adobe Developer Console](https://developer.adobe.com/console)
+- [ACO Sample Catalog Data](https://github.com/adobe-commerce/aco-sample-catalog-data-ingestion)
 
-### Project Documentation
+## 📝 License
 
-**Getting Started:**
-- **[BuildRight Case Study](docs/BUILDRIGHT-CASE-STUDY.md)** 📊 **READ FIRST** - Business context, challenge, solution, and outcomes
-  ([HTML version](docs/BUILDRIGHT-CASE-STUDY.html))
-- **[Setup Guide](docs/SETUP-GUIDE.md)** ⚙️ **IMPLEMENT HERE** - Complete implementation procedures from scratch
-  ([HTML version](docs/SETUP-GUIDE.html))
-
-**Detailed Reference:**
-- [MSI Configuration Guide](docs/manual-setup/msi-configuration-guide.md) - Multi-source inventory setup (detailed)
-- [B2B Configuration Guide](docs/manual-setup/b2b-configuration-guide.md) - Company and user setup (detailed)
-- [Trigger Policy Guide](docs/manual-setup/trigger-policy-guide.md) - Dynamic catalog filtering (detailed)
-- [B2B Company Structure](docs/architecture/buildright-b2b-structure.md) - National distribution architecture (6 states, 3 regions)
-- [Architecture Documentation](docs/architecture/) - Technical deep-dives
-- [Archived Documentation](instructions/archive/) - Previous versions and original planning documents
+MIT
 
 ---
 
-## Contributing
-
-This project uses the **RPTC (Research → Plan → TDD → Commit)** workflow methodology.
-
-See [`.rptc/CLAUDE.md`](./.rptc/CLAUDE.md) for workflow documentation.
-
----
-
-## License
-
-[Specify License]
-
----
-
-## Support
-
-For questions or issues:
-1. Check the troubleshooting section above
-2. Review official Adobe Commerce Optimizer documentation
-3. Contact your Adobe representative
-
----
-
-**Last Updated:** October 30, 2025
-**Version:** Implementation Complete with National Distribution
-**Status:** 100% Functional (92% alignment with original vision, exceeds reduced scope)
+**Version**: 2.0.0 (Modular & ACO-Only)

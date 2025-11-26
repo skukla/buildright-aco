@@ -124,22 +124,6 @@ export async function queryProductsBySKU(skus, accessToken = null) {
       products(skus: $skus) {
         sku
         name
-        slug
-        status
-        attributes {
-          code
-          value
-        }
-        price {
-          regular {
-            amount
-            currency
-          }
-          discount {
-            percentage
-            amount
-          }
-        }
       }
     }
   `;
@@ -184,19 +168,11 @@ export async function queryProducts(searchCriteria = {}, accessToken = null) {
   } = searchCriteria;
 
   const query = `
-    query SearchProducts(
-      $phrase: String!
-      $pageSize: Int
-      $currentPage: Int
-    ) {
-      productSearch(
-        phrase: $phrase
-        pageSize: $pageSize
-        currentPage: $currentPage
-      ) {
+    query SearchProducts($phrase: String!) {
+      productSearch(phrase: $phrase) {
         total_count
         items {
-          product {
+          productView {
             sku
             name
           }
@@ -205,17 +181,13 @@ export async function queryProducts(searchCriteria = {}, accessToken = null) {
     }
   `;
 
-  const variables = {
-    phrase,
-    pageSize,
-    currentPage
-  };
+  const variables = { phrase };
 
   const data = await executeGraphQLQuery(query, variables, accessToken);
 
   // Transform response to match expected format
   const items = data.productSearch?.items || [];
-  const products = items.map(item => item.product);
+  const products = items.map(item => item.productView);
 
   return {
     products,

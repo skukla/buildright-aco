@@ -186,9 +186,18 @@ export async function ingestPrices(prices, options = {}) {
   // Get ACO SDK client
   const client = getACOClient();
 
+  // Transform prices to ACO SDK format (regular field is required)
+  const transformedPrices = prices.map(price => ({
+    sku: price.sku,
+    priceBookId: price.priceBookId,
+    regular: price.regular !== undefined ? price.regular : price.amount,
+    discounts: price.discounts,
+    tierPrices: price.tierPrices
+  }));
+
   // Use batch processor
   const results = await batchProcess(
-    prices,
+    transformedPrices,
     async (batch) => {
       // Wrap in retry logic
       return await executeWithRetry(
