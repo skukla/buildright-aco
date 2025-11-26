@@ -7262,5 +7262,2323 @@
         "BuildRight Services"
       ]
     }
+  },
+  {
+    "sku": "FLOOR-VINYL-LUX-OAK",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Luxury Vinyl Plank - Oak Finish",
+    "slug": "luxury-vinyl-plank-oak-finish",
+    "description": "Durable luxury vinyl plank flooring with realistic oak wood grain. Water-resistant, scratch-resistant, and easy to install. Perfect for high-traffic areas. 36\" x 6\" planks, 20 sq ft per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "FloorMaster"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Luxury Vinyl Plank - Oak Finish | BuildRight",
+      "description": "Shop Luxury Vinyl Plank - Oak Finish. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "FloorMaster",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "FLOOR-CARPET-STAND",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Standard Carpet - Beige Neutral",
+    "slug": "standard-carpet-beige-neutral",
+    "description": "Soft, stain-resistant carpet ideal for bedrooms and living areas. Neutral beige color complements any decor. 12 ft wide, sold per linear foot.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "ComfortStep"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Standard Carpet - Beige Neutral | BuildRight",
+      "description": "Shop Standard Carpet - Beige Neutral. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "ComfortStep",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "FLOOR-HARDWOOD-OAK",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Engineered Hardwood - Red Oak",
+    "slug": "engineered-hardwood-red-oak",
+    "description": "Premium engineered hardwood flooring with 3mm wear layer. Pre-finished red oak with satin finish. 5\" wide planks, 20 sq ft per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "NatureWood"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Engineered Hardwood - Red Oak | BuildRight",
+      "description": "Shop Engineered Hardwood - Red Oak. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "NatureWood",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "FLOOR-TILE-CERAMIC-12",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Ceramic Floor Tile - 12x12 Neutral",
+    "slug": "ceramic-floor-tile-12x12-neutral",
+    "description": "Glazed ceramic tile perfect for kitchens, bathrooms, and entryways. Neutral color palette, easy to clean. 12\" x 12\", 15 sq ft per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "TilePro"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Ceramic Floor Tile - 12x12 Neutral | BuildRight",
+      "description": "Shop Ceramic Floor Tile - 12x12 Neutral. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "TilePro",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "FLOOR-VINYL-PREMIUM",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Premium Vinyl Plank - Gray Stone Look",
+    "slug": "premium-vinyl-plank-gray-stone-look",
+    "description": "High-end vinyl plank with stone appearance. Enhanced wear layer for commercial-grade durability. 48\" x 9\" planks, 22 sq ft per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "FloorMaster Elite"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Premium Vinyl Plank - Gray Stone Look | BuildRight",
+      "description": "Shop Premium Vinyl Plank - Gray Stone Look. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "FloorMaster Elite",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "FLOOR-HARDWOOD-WALNUT",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Solid Hardwood - Black Walnut",
+    "slug": "solid-hardwood-black-walnut",
+    "description": "Exotic solid hardwood flooring in rich black walnut. Site-finished for custom color options. 3/4\" thick, 5\" wide, 20 sq ft per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Exotic Woods Collection"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Solid Hardwood - Black Walnut | BuildRight",
+      "description": "Shop Solid Hardwood - Black Walnut. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "Exotic Woods Collection",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "FLOOR-TILE-PORCELAIN-24",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Porcelain Tile - 24x24 Marble Look",
+    "slug": "porcelain-tile-24x24-marble-look",
+    "description": "Large format porcelain tile with realistic marble veining. Rectified edges for minimal grout lines. 24\" x 24\", 16 sq ft per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "TilePro Prestige"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Porcelain Tile - 24x24 Marble Look | BuildRight",
+      "description": "Shop Porcelain Tile - 24x24 Marble Look. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "TilePro Prestige",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "FLOOR-CARPET-PREMIUM",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Premium Carpet - Neutral Luxury",
+    "slug": "premium-carpet-neutral-luxury",
+    "description": "Ultra-soft premium carpet with superior stain resistance. Neutral tone with subtle pattern. 12 ft wide, sold per linear foot.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "flooring"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "ComfortStep Prestige"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Premium Carpet - Neutral Luxury | BuildRight",
+      "description": "Shop Premium Carpet - Neutral Luxury. Quality construction materials from BuildRight.",
+      "keywords": [
+        "flooring",
+        "ComfortStep Prestige",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "PLUMB-FAUCET-KIT-CHROME",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Kitchen Faucet - Chrome Single Handle",
+    "slug": "kitchen-faucet-chrome-single-handle",
+    "description": "Standard kitchen faucet with pull-down spray. Chrome finish, ADA compliant. Includes deck plate and supply lines.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "plumbing_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "AquaFlow"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Kitchen Faucet - Chrome Single Handle | BuildRight",
+      "description": "Shop Kitchen Faucet - Chrome Single Handle. Quality construction materials from BuildRight.",
+      "keywords": [
+        "plumbing_fixtures",
+        "AquaFlow",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "PLUMB-FAUCET-BATH-CHROME",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Bathroom Faucet - Chrome 4\" Centerset",
+    "slug": "bathroom-faucet-chrome-4-centerset",
+    "description": "Basic bathroom faucet with pop-up drain assembly. Chrome finish, water-saving aerator. 4\" centerset installation.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "plumbing_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "AquaFlow"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Bathroom Faucet - Chrome 4\" Centerset | BuildRight",
+      "description": "Shop Bathroom Faucet - Chrome 4\" Centerset. Quality construction materials from BuildRight.",
+      "keywords": [
+        "plumbing_fixtures",
+        "AquaFlow",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "PLUMB-FAUCET-KIT-BRUSH",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Kitchen Faucet - Brushed Nickel Commercial Style",
+    "slug": "kitchen-faucet-brushed-nickel-commercial-style",
+    "description": "Premium commercial-style kitchen faucet with spring spout. Brushed nickel finish, magnetic docking. Lifetime warranty.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "plumbing_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Moen"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Kitchen Faucet - Brushed Nickel Commercial Style | BuildRight",
+      "description": "Shop Kitchen Faucet - Brushed Nickel Commercial Style. Quality construction materials from BuildRight.",
+      "keywords": [
+        "plumbing_fixtures",
+        "Moen",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "PLUMB-FAUCET-BATH-BRUSH",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Bathroom Faucet - Brushed Nickel Widespread",
+    "slug": "bathroom-faucet-brushed-nickel-widespread",
+    "description": "Elegant widespread bathroom faucet with lever handles. Brushed nickel finish, ceramic disc valves. 8\" widespread.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "plumbing_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Moen"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Bathroom Faucet - Brushed Nickel Widespread | BuildRight",
+      "description": "Shop Bathroom Faucet - Brushed Nickel Widespread. Quality construction materials from BuildRight.",
+      "keywords": [
+        "plumbing_fixtures",
+        "Moen",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "PLUMB-FAUCET-KIT-DELTA",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Kitchen Faucet - Delta Touch2O Technology",
+    "slug": "kitchen-faucet-delta-touch2o-technology",
+    "description": "Premium Delta kitchen faucet with Touch2O activation. Hands-free operation, MagnaTite docking. Available in multiple finishes.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "plumbing_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Delta"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Kitchen Faucet - Delta Touch2O Technology | BuildRight",
+      "description": "Shop Kitchen Faucet - Delta Touch2O Technology. Quality construction materials from BuildRight.",
+      "keywords": [
+        "plumbing_fixtures",
+        "Delta",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "PLUMB-FAUCET-BATH-KOHLER",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Bathroom Faucet - Kohler Artifacts Collection",
+    "slug": "bathroom-faucet-kohler-artifacts-collection",
+    "description": "Designer bathroom faucet from Kohler Artifacts line. Victorian-inspired design, premium finishes. Widespread installation.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "plumbing_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Kohler"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Bathroom Faucet - Kohler Artifacts Collection | BuildRight",
+      "description": "Shop Bathroom Faucet - Kohler Artifacts Collection. Quality construction materials from BuildRight.",
+      "keywords": [
+        "plumbing_fixtures",
+        "Kohler",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "LIGHT-CEILING-FLUSH",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Flush Mount Ceiling Light - Basic White",
+    "slug": "flush-mount-ceiling-light-basic-white",
+    "description": "Standard flush mount ceiling fixture with frosted glass. White finish, uses one 60W bulb or LED equivalent. 13\" diameter.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "lighting_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "BrightHome"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Flush Mount Ceiling Light - Basic White | BuildRight",
+      "description": "Shop Flush Mount Ceiling Light - Basic White. Quality construction materials from BuildRight.",
+      "keywords": [
+        "lighting_fixtures",
+        "BrightHome",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "LIGHT-RECESSED-4IN",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Recessed Can Light - 4\" Standard",
+    "slug": "recessed-can-light-4-standard",
+    "description": "New construction recessed housing for 4\" trim. IC-rated for insulation contact. Compatible with LED retrofit kits.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "lighting_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "BrightHome"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Recessed Can Light - 4\" Standard | BuildRight",
+      "description": "Shop Recessed Can Light - 4\" Standard. Quality construction materials from BuildRight.",
+      "keywords": [
+        "lighting_fixtures",
+        "BrightHome",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "LIGHT-CEILING-SEMI",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Semi-Flush Ceiling Light - Brushed Nickel",
+    "slug": "semi-flush-ceiling-light-brushed-nickel",
+    "description": "Semi-flush mount with fabric drum shade. Brushed nickel finish, uses two 100W bulbs. 15\" diameter, modern transitional style.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "lighting_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Progress Lighting"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Semi-Flush Ceiling Light - Brushed Nickel | BuildRight",
+      "description": "Shop Semi-Flush Ceiling Light - Brushed Nickel. Quality construction materials from BuildRight.",
+      "keywords": [
+        "lighting_fixtures",
+        "Progress Lighting",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "LIGHT-RECESSED-6IN-LED",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "LED Recessed Downlight - 6\" Integrated",
+    "slug": "led-recessed-downlight-6-integrated",
+    "description": "Integrated LED recessed downlight, 90 CRI, dimmable. Energy Star rated, 15W/1100 lumens. 50,000 hour lifespan.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "lighting_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Halo"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "LED Recessed Downlight - 6\" Integrated | BuildRight",
+      "description": "Shop LED Recessed Downlight - 6\" Integrated. Quality construction materials from BuildRight.",
+      "keywords": [
+        "lighting_fixtures",
+        "Halo",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "LIGHT-CHANDELIER-DINING",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Dining Chandelier - Modern 5-Light",
+    "slug": "dining-chandelier-modern-5-light",
+    "description": "Contemporary 5-light chandelier with geometric design. Black and brass finish, adjustable height. 24\" diameter.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "lighting_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Kichler"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Dining Chandelier - Modern 5-Light | BuildRight",
+      "description": "Shop Dining Chandelier - Modern 5-Light. Quality construction materials from BuildRight.",
+      "keywords": [
+        "lighting_fixtures",
+        "Kichler",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "LIGHT-PENDANT-ISLAND",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Kitchen Island Pendant Set - 3 Glass Globes",
+    "slug": "kitchen-island-pendant-set-3-glass-globes",
+    "description": "Set of 3 coordinating glass globe pendants for kitchen island. Adjustable cord length, hardwired installation. Modern farmhouse style.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "lighting_fixtures"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Kichler"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Kitchen Island Pendant Set - 3 Glass Globes | BuildRight",
+      "description": "Shop Kitchen Island Pendant Set - 3 Glass Globes. Quality construction materials from BuildRight.",
+      "keywords": [
+        "lighting_fixtures",
+        "Kichler",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "SIDING-VINYL-STANDARD",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Vinyl Siding - Standard Profile",
+    "slug": "vinyl-siding-standard-profile",
+    "description": "Standard vinyl siding with Dutch lap profile. 0.040\" thickness, fade-resistant color. 12 ft length, 10\" exposure, 1 square per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "siding"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "CertainTeed"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Vinyl Siding - Standard Profile | BuildRight",
+      "description": "Shop Vinyl Siding - Standard Profile. Quality construction materials from BuildRight.",
+      "keywords": [
+        "siding",
+        "CertainTeed",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "SIDING-FIBER-SMOOTH",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Fiber Cement Siding - Smooth Lap",
+    "slug": "fiber-cement-siding-smooth-lap",
+    "description": "Fiber cement lap siding with smooth finish. Primed for painting, non-combustible. 12 ft length, 8.25\" exposure, 16 pieces per bundle.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "siding"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "James Hardie"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Fiber Cement Siding - Smooth Lap | BuildRight",
+      "description": "Shop Fiber Cement Siding - Smooth Lap. Quality construction materials from BuildRight.",
+      "keywords": [
+        "siding",
+        "James Hardie",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "SIDING-FIBER-WOOD",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Fiber Cement Siding - Cedar Texture",
+    "slug": "fiber-cement-siding-cedar-texture",
+    "description": "Fiber cement with realistic cedar wood grain texture. ColorPlus pre-finished available. 12 ft length, 7.25\" exposure.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "siding"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "James Hardie"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Fiber Cement Siding - Cedar Texture | BuildRight",
+      "description": "Shop Fiber Cement Siding - Cedar Texture. Quality construction materials from BuildRight.",
+      "keywords": [
+        "siding",
+        "James Hardie",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "SIDING-STUCCO-STANDARD",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Stucco System - 3-Coat Traditional",
+    "slug": "stucco-system-3-coat-traditional",
+    "description": "Traditional 3-coat stucco system with metal lath. Includes scratch coat, brown coat, and finish coat materials. Covers 100 sq ft.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "siding"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "LaHabra"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Stucco System - 3-Coat Traditional | BuildRight",
+      "description": "Shop Stucco System - 3-Coat Traditional. Quality construction materials from BuildRight.",
+      "keywords": [
+        "siding",
+        "LaHabra",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "SIDING-STONE-VENEER",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Natural Stone Veneer - Stacked Ledge",
+    "slug": "natural-stone-veneer-stacked-ledge",
+    "description": "Natural stone veneer in stacked ledgestone pattern. Irregular earth tones, thin-cut for easy installation. 10 sq ft per carton.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "siding"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Eldorado Stone"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Natural Stone Veneer - Stacked Ledge | BuildRight",
+      "description": "Shop Natural Stone Veneer - Stacked Ledge. Quality construction materials from BuildRight.",
+      "keywords": [
+        "siding",
+        "Eldorado Stone",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "SIDING-STUCCO-PREMIUM",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Premium Stucco System - Acrylic Finish",
+    "slug": "premium-stucco-system-acrylic-finish",
+    "description": "Premium synthetic stucco with acrylic finish coat. Superior crack resistance, wider color palette. Self-cleaning properties. Covers 100 sq ft.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "siding"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Parex USA"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Premium Stucco System - Acrylic Finish | BuildRight",
+      "description": "Shop Premium Stucco System - Acrylic Finish. Quality construction materials from BuildRight.",
+      "keywords": [
+        "siding",
+        "Parex USA",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "PAINT-INT-FLAT-WHT",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Interior Paint - Flat White 5 Gallon",
+    "slug": "interior-paint-flat-white-5-gallon",
+    "description": "Interior flat white ceiling and wall paint. Low VOC, good hide formula. Washable finish. 5 gallon pail covers ~2000 sq ft.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "paint"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Behr"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Interior Paint - Flat White 5 Gallon | BuildRight",
+      "description": "Shop Interior Paint - Flat White 5 Gallon. Quality construction materials from BuildRight.",
+      "keywords": [
+        "paint",
+        "Behr",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "PAINT-INT-EGGSHELL-BG",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Interior Paint - Eggshell Neutral Beige 5 Gallon",
+    "slug": "interior-paint-eggshell-neutral-beige-5-gallon",
+    "description": "Interior eggshell paint in neutral beige. Scrubbable finish, low odor. 5 gallon pail covers ~2000 sq ft.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "paint"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Behr"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Interior Paint - Eggshell Neutral Beige 5 Gallon | BuildRight",
+      "description": "Shop Interior Paint - Eggshell Neutral Beige 5 Gallon. Quality construction materials from BuildRight.",
+      "keywords": [
+        "paint",
+        "Behr",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "PAINT-INT-SATIN-SW",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Sherwin Williams Interior Satin - 5 Gallon",
+    "slug": "sherwin-williams-interior-satin-5-gallon",
+    "description": "Premium interior paint with satin sheen. Excellent durability and stain resistance. Custom tint to any SW color. 5 gallon pail.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "paint"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Sherwin Williams"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Sherwin Williams Interior Satin - 5 Gallon | BuildRight",
+      "description": "Shop Sherwin Williams Interior Satin - 5 Gallon. Quality construction materials from BuildRight.",
+      "keywords": [
+        "paint",
+        "Sherwin Williams",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "PAINT-EXT-SATIN-SW",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Sherwin Williams Exterior Satin - 5 Gallon",
+    "slug": "sherwin-williams-exterior-satin-5-gallon",
+    "description": "Premium exterior paint with satin finish. Weather-resistant, mildew-resistant. Custom tint available. 5 gallon pail.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "paint"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Sherwin Williams"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Sherwin Williams Exterior Satin - 5 Gallon | BuildRight",
+      "description": "Shop Sherwin Williams Exterior Satin - 5 Gallon. Quality construction materials from BuildRight.",
+      "keywords": [
+        "paint",
+        "Sherwin Williams",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "PAINT-INT-BENJAMIN",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Benjamin Moore Aura Interior - 5 Gallon",
+    "slug": "benjamin-moore-aura-interior-5-gallon",
+    "description": "Luxury interior paint with Color Lock technology. Zero VOC, exceptional coverage and durability. Custom color matching. 5 gallon pail.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "paint"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Benjamin Moore"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Benjamin Moore Aura Interior - 5 Gallon | BuildRight",
+      "description": "Shop Benjamin Moore Aura Interior - 5 Gallon. Quality construction materials from BuildRight.",
+      "keywords": [
+        "paint",
+        "Benjamin Moore",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "PAINT-EXT-BENJAMIN",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Benjamin Moore Aura Exterior - 5 Gallon",
+    "slug": "benjamin-moore-aura-exterior-5-gallon",
+    "description": "Premium exterior paint with superior fade resistance. Self-priming, low temperature application. Custom colors available. 5 gallon pail.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "paint"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Benjamin Moore"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Benjamin Moore Aura Exterior - 5 Gallon | BuildRight",
+      "description": "Shop Benjamin Moore Aura Exterior - 5 Gallon. Quality construction materials from BuildRight.",
+      "keywords": [
+        "paint",
+        "Benjamin Moore",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "INSUL-FIBERGLASS-R15",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Fiberglass Insulation - R-15 15\" x 93\"",
+    "slug": "fiberglass-insulation-r-15-15-x-93-",
+    "description": "Unfaced fiberglass batt insulation R-15 value. For 2x4 walls, 15\" width, 93\" length. 10 batts per bag, covers 116 sq ft.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "insulation"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Owens Corning"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Fiberglass Insulation - R-15 15\" x 93\" | BuildRight",
+      "description": "Shop Fiberglass Insulation - R-15 15\" x 93\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "insulation",
+        "Owens Corning",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "DRYWALL-HALF-4X8",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Drywall Sheet - 1/2\" x 4' x 8'",
+    "slug": "drywall-sheet-1-2-x-4-x-8-",
+    "description": "Standard 1/2\" gypsum drywall panel. Tapered edges for seamless finishing. Fire-resistant, 4' x 8' sheet.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "framing_drywall"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "builder_grade"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "USG"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Drywall Sheet - 1/2\" x 4' x 8' | BuildRight",
+      "description": "Shop Drywall Sheet - 1/2\" x 4' x 8'. Quality construction materials from BuildRight.",
+      "keywords": [
+        "framing_drywall",
+        "USG",
+        "builder_grade"
+      ]
+    }
+  },
+  {
+    "sku": "INSUL-FIBERGLASS-R30",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Fiberglass Insulation - R-30 24\" x 48\"",
+    "slug": "fiberglass-insulation-r-30-24-x-48-",
+    "description": "Kraft-faced fiberglass batt insulation R-30 value. For attics and ceilings, 24\" width, 48\" length. 8 batts per bag, covers 64 sq ft.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "insulation"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "Owens Corning"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Fiberglass Insulation - R-30 24\" x 48\" | BuildRight",
+      "description": "Shop Fiberglass Insulation - R-30 24\" x 48\". Quality construction materials from BuildRight.",
+      "keywords": [
+        "insulation",
+        "Owens Corning",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "DRYWALL-HALF-4X12",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Drywall Sheet - 1/2\" x 4' x 12'",
+    "slug": "drywall-sheet-1-2-x-4-x-12-",
+    "description": "Standard 1/2\" gypsum drywall panel, 12 ft length. Reduces seams, tapered edges. Fire-resistant, 4' x 12' sheet.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "framing_drywall"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "premium"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "USG"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Drywall Sheet - 1/2\" x 4' x 12' | BuildRight",
+      "description": "Shop Drywall Sheet - 1/2\" x 4' x 12'. Quality construction materials from BuildRight.",
+      "keywords": [
+        "framing_drywall",
+        "USG",
+        "premium"
+      ]
+    }
+  },
+  {
+    "sku": "INSUL-SPRAY-FOAM",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Spray Foam Insulation Kit - 600 Board Feet",
+    "slug": "spray-foam-insulation-kit-600-board-feet",
+    "description": "Closed-cell spray foam insulation kit. R-6 per inch, air and moisture barrier. Professional-grade, 600 board feet coverage.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "insulation"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "envelope"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "BASF"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Spray Foam Insulation Kit - 600 Board Feet | BuildRight",
+      "description": "Shop Spray Foam Insulation Kit - 600 Board Feet. Quality construction materials from BuildRight.",
+      "keywords": [
+        "insulation",
+        "BASF",
+        "luxury"
+      ]
+    }
+  },
+  {
+    "sku": "DRYWALL-MOISTURE",
+    "source": {
+      "locale": "en-US"
+    },
+    "name": "Moisture-Resistant Drywall - 1/2\" x 4' x 8'",
+    "slug": "moisture-resistant-drywall-1-2-x-4-x-8-",
+    "description": "Green board moisture-resistant drywall for bathrooms and kitchens. Mold-resistant core, 1/2\" x 4' x 8' panel.",
+    "status": "ENABLED",
+    "visibleIn": [
+      "CATALOG",
+      "SEARCH"
+    ],
+    "attributes": [
+      {
+        "code": "product_category",
+        "values": [
+          "framing_drywall"
+        ]
+      },
+      {
+        "code": "construction_phase",
+        "values": [
+          "interior_finish"
+        ]
+      },
+      {
+        "code": "quality_tier",
+        "values": [
+          "luxury"
+        ]
+      },
+      {
+        "code": "brand",
+        "values": [
+          "USG Sheetrock"
+        ]
+      },
+      {
+        "code": "unit_of_measure",
+        "values": [
+          "EA"
+        ]
+      },
+      {
+        "code": "project_types",
+        "values": [
+          "new_construction"
+        ]
+      }
+    ],
+    "metaTags": {
+      "title": "Moisture-Resistant Drywall - 1/2\" x 4' x 8' | BuildRight",
+      "description": "Shop Moisture-Resistant Drywall - 1/2\" x 4' x 8'. Quality construction materials from BuildRight.",
+      "keywords": [
+        "framing_drywall",
+        "USG Sheetrock",
+        "luxury"
+      ]
+    }
   }
 ]
