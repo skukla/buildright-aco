@@ -103,7 +103,7 @@ export function getProjectTypes(categoryValue, random, isService = false) {
  * @param {string} sku - Product SKU (for logging)
  * @param {string} productName - Product name (for logging)
  * @param {boolean} isService - Whether this is a service product
- * @returns {Array} Array of attribute objects with {code, value}
+ * @returns {Array} Array of attribute objects with {code, label, value}
  */
 export function generateAttributes(metadata, categoryValue, brand, uom, random, category, subcategory, sku, productName, isService = false) {
   const attributes = [];
@@ -113,6 +113,7 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
   if (productCategoryAttr) {
     attributes.push({
       code: 'product_category',
+      label: productCategoryAttr.label,
       value: categoryValue
     });
   }
@@ -124,11 +125,13 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
     const brandOption = brandAttr.options[random.nextInt(0, brandAttr.options.length - 1)];
     attributes.push({
       code: brandAttr.attributeId,
+      label: brandAttr.label,
       value: brandOption.value
     });
   } else if (brandAttr) {
     attributes.push({
       code: brandAttr.attributeId,
+      label: brandAttr.label,
       value: brand
     });
   }
@@ -137,6 +140,7 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
   if (uomAttr) {
     attributes.push({
       code: uomAttr.attributeId,
+      label: uomAttr.label,
       value: uom
     });
   }
@@ -147,6 +151,7 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
     const projectTypes = getProjectTypes(categoryValue, random, isService);
     attributes.push({
       code: 'project_types',
+      label: projectTypesAttr.label,
       value: projectTypes
     });
   }
@@ -165,6 +170,7 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
       const attrValue = getAttributeValue(attr, random);
       attributes.push({
         code: attr.attributeId,
+        label: attr.label,
         value: attrValue
       });
     }

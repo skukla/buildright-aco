@@ -85,9 +85,12 @@ async function ingestAll() {
   
   // 1. Metadata (must be first - products reference attributes)
   if (!skipMetadata) {
-    // Note: metadata ingestion script doesn't exist yet, but products.js handles it
-    logger.info('ℹ️  Metadata is ingested with products');
-    results.metadata = { success: true, skipped: false };
+    results.metadata = runScript('scripts/ingest-metadata.js', 'Ingesting product attribute metadata');
+    if (!results.metadata.success) {
+      logger.error('❌ Metadata ingestion failed - aborting workflow');
+      logger.error('Products require metadata to be ingested first');
+      process.exit(1);
+    }
   }
   
   // 2. Categories (optional - products can reference categories)

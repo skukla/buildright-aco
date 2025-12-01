@@ -18,6 +18,8 @@
     "generate:eds-data": "node scripts/generate-eds-data.js",
     "generate:all": "npm run generate:metadata && npm run generate:categories && npm run generate:products && npm run generate:variants && npm run generate:bundles && npm run generate:price-books && npm run generate:prices && npm run generate:eds-data",
     
+    "ingest:metadata": "node scripts/ingest-metadata.js",
+    "ingest:metadata:dry-run": "node scripts/ingest-metadata.js --dry-run",
     "ingest:products": "node scripts/ingest-products.js",
     "ingest:products:dry-run": "node scripts/ingest-products.js --dry-run",
     "ingest:variants": "node scripts/ingest-variants.js",
