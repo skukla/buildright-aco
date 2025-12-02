@@ -126,7 +126,7 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
     attributes.push({
       code: brandAttr.attributeId,
       label: brandAttr.label,
-      value: brandOption.value
+      value: brandOption.label  // Use label (e.g., "DuraBuilt") instead of value (e.g., "durabuilt")
     });
   } else if (brandAttr) {
     attributes.push({
