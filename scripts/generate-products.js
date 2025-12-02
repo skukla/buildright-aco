@@ -174,6 +174,14 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
   addAttributeWithLabel('drywall_thickness', template.drywall_thickness);
   addAttributeWithLabel('fastener_type', template.fastener_type);
   addAttributeWithLabel('fastener_subtype', template.fastener_subtype);
+  addAttributeWithLabel('sheathing_location', template.sheathing_location);
+  addAttributeWithLabel('underlayment_type', template.underlayment_type);
+  addAttributeWithLabel('insulation_type', template.insulation_type);
+  addAttributeWithLabel('insulation_r_value', template.insulation_r_value);
+  addAttributeWithLabel('light_type', template.light_type);
+  addAttributeWithLabel('light_technology', template.light_technology);
+  addAttributeWithLabel('fixture_type', template.fixture_type);
+  addAttributeWithLabel('fixture_location', template.fixture_location);
 
   // Generate description and meta tags
   const description = template.description || generateProductDescription(categoryValue, brand, template.uom, productName);
