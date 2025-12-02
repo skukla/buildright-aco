@@ -166,14 +166,19 @@ export function categorizeBatchResults(batchResponse) {
  * @returns {string} Formatted summary
  */
 export function formatIngestSummary(results) {
+  const ingested = results.ingested || results.processed || 0;
+  const failed = results.failed || 0;
+  const total = ingested + failed;
+  const successRate = total > 0 ? Math.round((ingested / total) * 100) : 0;
+  
   const lines = [
     '========================================',
     'Ingest Summary',
     '========================================',
-    `Total Ingested: ${results.ingested}`,
-    `Total Failed: ${results.failed}`,
+    `Total Ingested: ${ingested}`,
+    `Total Failed: ${failed}`,
     `Total Retries: ${results.retries || 0}`,
-    `Success Rate: ${Math.round((results.ingested / (results.ingested + results.failed)) * 100)}%`
+    `Success Rate: ${successRate}%`
   ];
 
   if (results.errors && results.errors.length > 0) {
