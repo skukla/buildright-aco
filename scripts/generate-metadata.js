@@ -575,6 +575,116 @@ function getBuildRightMetadata() {
         { value: 'xxxl', label: '3XL' },
         { value: 'universal', label: 'Universal' }
       ]
+    },
+    {
+      attributeId: 'sheathing_location',
+      label: 'Sheathing Location',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 70,
+      options: [
+        { value: 'wall', label: 'Wall' },
+        { value: 'roof', label: 'Roof' },
+        { value: 'subfloor', label: 'Subfloor' }
+      ]
+    },
+    {
+      attributeId: 'underlayment_type',
+      label: 'Underlayment Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 71,
+      options: [
+        { value: 'felt_15lb', label: '15# Felt' },
+        { value: 'felt_30lb', label: '30# Felt' },
+        { value: 'synthetic', label: 'Synthetic Underlayment' },
+        { value: 'ice_water_shield', label: 'Ice & Water Shield' }
+      ]
+    },
+    {
+      attributeId: 'insulation_type',
+      label: 'Insulation Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 72,
+      options: [
+        { value: 'fiberglass_batt', label: 'Fiberglass Batt' },
+        { value: 'mineral_wool', label: 'Mineral Wool' },
+        { value: 'spray_foam', label: 'Spray Foam' },
+        { value: 'cellulose', label: 'Cellulose' }
+      ]
+    },
+    {
+      attributeId: 'insulation_r_value',
+      label: 'Insulation R-Value',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 73,
+      options: [
+        { value: 'r13', label: 'R-13' },
+        { value: 'r15', label: 'R-15' },
+        { value: 'r19', label: 'R-19' },
+        { value: 'r21', label: 'R-21' },
+        { value: 'r30', label: 'R-30' }
+      ]
+    },
+    {
+      attributeId: 'light_type',
+      label: 'Light Fixture Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 74,
+      options: [
+        { value: 'recessed', label: 'Recessed' },
+        { value: 'flush_mount', label: 'Flush Mount' },
+        { value: 'pendant', label: 'Pendant' },
+        { value: 'chandelier', label: 'Chandelier' }
+      ]
+    },
+    {
+      attributeId: 'light_technology',
+      label: 'Light Technology',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 75,
+      options: [
+        { value: 'led', label: 'LED' },
+        { value: 'cfl', label: 'CFL' },
+        { value: 'incandescent', label: 'Incandescent' }
+      ]
+    },
+    {
+      attributeId: 'fixture_type',
+      label: 'Plumbing Fixture Type',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 76,
+      options: [
+        { value: 'faucet', label: 'Faucet' },
+        { value: 'sink', label: 'Sink' },
+        { value: 'toilet', label: 'Toilet' },
+        { value: 'shower', label: 'Shower' }
+      ]
+    },
+    {
+      attributeId: 'fixture_location',
+      label: 'Fixture Location',
+      type: 'select',
+      isRequired: false,
+      defaultValue: null,
+      sortOrder: 77,
+      options: [
+        { value: 'kitchen', label: 'Kitchen' },
+        { value: 'bathroom', label: 'Bathroom' },
+        { value: 'utility', label: 'Utility' }
+      ]
     }
   ];
 }
