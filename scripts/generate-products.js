@@ -118,14 +118,25 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
   const attributes = generateAttributes(metadata, categoryValue, brand, template.uom, random, category, subcategory, sku, productName);
 
   // Helper function to add attribute with label from metadata
+  // This function overrides any randomly-generated attribute values with template-specific values
   const addAttributeWithLabel = (code, value) => {
-    if (value !== undefined && value !== null && !attributes.find(a => a.code === code)) {
+    if (value !== undefined && value !== null) {
+      const existingIndex = attributes.findIndex(a => a.code === code);
       const metadataAttr = metadata.find(m => m.attributeId === code);
-      attributes.push({
+      
+      const attributeObj = {
         code,
         label: metadataAttr?.label || null,
         value
-      });
+      };
+      
+      if (existingIndex !== -1) {
+        // Override existing randomly-generated value with template-specific value
+        attributes[existingIndex] = attributeObj;
+      } else {
+        // Add new attribute
+        attributes.push(attributeObj);
+      }
     }
   };
   
@@ -142,6 +153,27 @@ function generateSimpleProduct(template, category, subcategory, categories, meta
   addAttributeWithLabel('recommended_restock_quantity', template.recommended_restock_quantity);
   addAttributeWithLabel('typical_days_supply', template.typical_days_supply);
   addAttributeWithLabel('restock_priority', template.restock_priority);
+  
+  // Add material specification attributes (Phase 1: ACO Composable Attributes)
+  addAttributeWithLabel('lumber_dimension', template.lumber_dimension);
+  addAttributeWithLabel('lumber_length', template.lumber_length);
+  addAttributeWithLabel('concrete_type', template.concrete_type);
+  addAttributeWithLabel('concrete_psi', template.concrete_psi);
+  addAttributeWithLabel('roofing_material', template.roofing_material);
+  addAttributeWithLabel('roofing_style', template.roofing_style);
+  addAttributeWithLabel('siding_material', template.siding_material);
+  addAttributeWithLabel('flooring_material', template.flooring_material);
+  addAttributeWithLabel('paint_type', template.paint_type);
+  addAttributeWithLabel('paint_finish', template.paint_finish);
+  addAttributeWithLabel('window_operation_type', template.window_operation_type);
+  addAttributeWithLabel('window_material', template.window_material);
+  addAttributeWithLabel('window_glazing_type', template.window_glazing_type);
+  addAttributeWithLabel('door_type', template.door_type);
+  addAttributeWithLabel('door_material', template.door_material);
+  addAttributeWithLabel('door_core_type', template.door_core_type);
+  addAttributeWithLabel('drywall_thickness', template.drywall_thickness);
+  addAttributeWithLabel('fastener_type', template.fastener_type);
+  addAttributeWithLabel('fastener_subtype', template.fastener_subtype);
 
   // Generate description and meta tags
   const description = template.description || generateProductDescription(categoryValue, brand, template.uom, productName);
