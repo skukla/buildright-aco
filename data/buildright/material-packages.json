@@ -1,0 +1,27 @@
+[
+  {
+    "id": "builders-choice",
+    "name": "Builder's Choice",
+    "description": "Quality materials at competitive prices",
+    "tier": 1,
+    "categories": ["framing", "foundation", "roofing"],
+    "skuOverrides": [
+      { "productType": "windows", "sku": "WINDOW-STANDARD-DBL" },
+      { "productType": "doors", "sku": "DOOR-STEEL-STANDARD" }
+    ]
+  },
+  {
+    "id": "desert-ridge-premium",
+    "name": "Desert Ridge Premium",
+    "description": "Premium materials for discerning builders",
+    "tier": 2,
+    "categories": ["framing", "envelope", "interior"],
+    "skuOverrides": [
+      { "productType": "windows", "sku": "WIN-PELLA-350-DBL" },
+      { "productType": "doors", "sku": "DOOR-JELD-PREMIUM" },
+      { "productType": "roofing", "sku": "ROOF-SHINGLE-ARCH-DIM" },
+      { "productType": "siding", "sku": "SIDING-FIBER-CEMENT-PRO" }
+    ]
+  }
+]
+

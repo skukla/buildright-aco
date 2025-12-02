@@ -1,0 +1,101 @@
+{
+  "foundation_framing": {
+    "concrete_slab": {
+      "label": "Ready-Mix Concrete for Slab Foundation",
+      "construction_phase": "foundation_framing",
+      "product_category": "structural_materials",
+      "concrete_type": "ready_mix",
+      "concrete_psi": "3000"
+    },
+    "interior_wall_studs": {
+      "label": "2x4 Studs for Interior Walls",
+      "construction_phase": "foundation_framing",
+      "product_category": "structural_materials",
+      "lumber_dimension": "2x4",
+      "lumber_length": "8ft"
+    },
+    "exterior_wall_studs": {
+      "label": "2x6 Studs for Exterior Walls",
+      "construction_phase": "foundation_framing",
+      "product_category": "structural_materials",
+      "lumber_dimension": "2x6",
+      "lumber_length": "8ft"
+    },
+    "subfloor_plywood": {
+      "label": "Plywood for Subfloor",
+      "construction_phase": "foundation_framing",
+      "product_category": "structural_materials",
+      "lumber_dimension": "4x8"
+    },
+    "framing_nails": {
+      "label": "Framing Nails",
+      "construction_phase": "foundation_framing",
+      "product_category": "fasteners_hardware",
+      "fastener_type": "nail",
+      "fastener_subtype": "framing_nail"
+    },
+    "drywall": {
+      "label": "Drywall Sheets",
+      "construction_phase": "foundation_framing",
+      "product_category": "structural_materials",
+      "drywall_thickness": "0.5"
+    }
+  },
+  "envelope": {
+    "windows": {
+      "label": "Double-Hung Vinyl Windows",
+      "construction_phase": "envelope",
+      "product_category": "windows_doors",
+      "window_operation_type": "double_hung",
+      "window_material": "vinyl",
+      "window_glazing_type": "double_pane"
+    },
+    "entry_door": {
+      "label": "Steel Entry Door",
+      "construction_phase": "envelope",
+      "product_category": "windows_doors",
+      "door_type": "entry",
+      "door_material": "steel"
+    },
+    "roofing": {
+      "label": "Architectural Asphalt Shingles",
+      "construction_phase": "envelope",
+      "product_category": "structural_materials",
+      "roofing_material": "asphalt_shingle",
+      "roofing_style": "architectural"
+    },
+    "siding": {
+      "label": "Vinyl Siding",
+      "construction_phase": "envelope",
+      "product_category": "structural_materials",
+      "siding_material": "vinyl"
+    }
+  },
+  "interior_finish": {
+    "flooring": {
+      "label": "Hardwood Flooring",
+      "construction_phase": "interior_finish",
+      "product_category": "structural_materials",
+      "flooring_material": "hardwood"
+    },
+    "paint": {
+      "label": "Interior Latex Paint",
+      "construction_phase": "interior_finish",
+      "product_category": "structural_materials",
+      "paint_type": "interior_latex",
+      "paint_finish": "eggshell"
+    },
+    "interior_doors": {
+      "label": "Interior Hollow-Core Doors",
+      "construction_phase": "interior_finish",
+      "product_category": "windows_doors",
+      "door_type": "interior",
+      "door_core_type": "hollow_core"
+    },
+    "light_fixtures": {
+      "label": "Interior Light Fixtures",
+      "construction_phase": "interior_finish",
+      "product_category": "fasteners_hardware"
+    }
+  }
+}

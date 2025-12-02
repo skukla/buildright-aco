@@ -1,0 +1,46 @@
+[
+  {
+    "id": "sedona-2450",
+    "name": "Sedona 2450",
+    "description": "Classic ranch-style home perfect for growing families",
+    "baseSpecs": {
+      "sqft": 2450,
+      "stories": 1,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "dimensions": {
+        "width": 40,
+        "depth": 61.25,
+        "wallHeight": 8,
+        "stories": 1
+      }
+    },
+    "availableVariants": ["standard", "bonus-room", "3-car-garage"],
+    "availablePackages": ["builders-choice", "desert-ridge-premium"],
+    "metadata": {
+      "popularity": 95,
+      "avgCost": 58000,
+      "buildTime": "4-6 months"
+    }
+  },
+  {
+    "id": "ranch-1200",
+    "name": "Ranch 1200",
+    "description": "Compact starter home",
+    "baseSpecs": {
+      "sqft": 1200,
+      "stories": 1,
+      "bedrooms": 3,
+      "bathrooms": 2,
+      "dimensions": {
+        "width": 30,
+        "depth": 40,
+        "wallHeight": 8,
+        "stories": 1
+      }
+    },
+    "availableVariants": ["standard"],
+    "availablePackages": ["builders-choice", "essential"]
+  }
+]
+

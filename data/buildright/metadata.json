@@ -1136,5 +1136,329 @@
         "label": "Universal"
       }
     ]
+  },
+  {
+    "attributeId": "construction_phase",
+    "label": "Construction Phase",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 100,
+    "options": [
+      {
+        "value": "foundation_framing",
+        "label": "Foundation & Framing"
+      },
+      {
+        "value": "envelope",
+        "label": "Envelope (Windows, Doors, Roofing)"
+      },
+      {
+        "value": "interior_finish",
+        "label": "Interior Finish"
+      }
+    ]
+  },
+  {
+    "attributeId": "quality_tier",
+    "label": "Quality Tier",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 101,
+    "options": [
+      {
+        "value": "builder_grade",
+        "label": "Builder Grade"
+      },
+      {
+        "value": "professional",
+        "label": "Professional"
+      },
+      {
+        "value": "premium",
+        "label": "Premium"
+      }
+    ]
+  },
+  {
+    "attributeId": "lumber_dimension",
+    "label": "Lumber Dimension",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 110,
+    "options": [
+      {
+        "value": "2x4",
+        "label": "2x4"
+      },
+      {
+        "value": "2x6",
+        "label": "2x6"
+      },
+      {
+        "value": "2x8",
+        "label": "2x8"
+      },
+      {
+        "value": "2x10",
+        "label": "2x10"
+      },
+      {
+        "value": "4x4",
+        "label": "4x4"
+      },
+      {
+        "value": "4x6",
+        "label": "4x6"
+      },
+      {
+        "value": "4x8",
+        "label": "4x8 (Plywood)"
+      }
+    ]
+  },
+  {
+    "attributeId": "lumber_length",
+    "label": "Lumber Length",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 111,
+    "options": [
+      {
+        "value": "8ft",
+        "label": "8 ft"
+      },
+      {
+        "value": "10ft",
+        "label": "10 ft"
+      },
+      {
+        "value": "12ft",
+        "label": "12 ft"
+      },
+      {
+        "value": "16ft",
+        "label": "16 ft"
+      }
+    ]
+  },
+  {
+    "attributeId": "concrete_type",
+    "label": "Concrete Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 120,
+    "options": [
+      {
+        "value": "ready_mix",
+        "label": "Ready-Mix"
+      },
+      {
+        "value": "premix_bag",
+        "label": "Premix (Bag)"
+      },
+      {
+        "value": "fiber_reinforced",
+        "label": "Fiber-Reinforced"
+      }
+    ]
+  },
+  {
+    "attributeId": "concrete_psi",
+    "label": "Concrete PSI",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 121,
+    "options": [
+      {
+        "value": "2500",
+        "label": "2500 PSI"
+      },
+      {
+        "value": "3000",
+        "label": "3000 PSI"
+      },
+      {
+        "value": "4000",
+        "label": "4000 PSI"
+      },
+      {
+        "value": "5000",
+        "label": "5000 PSI"
+      }
+    ]
+  },
+  {
+    "attributeId": "roofing_material",
+    "label": "Roofing Material",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 130,
+    "options": [
+      {
+        "value": "asphalt_shingle",
+        "label": "Asphalt Shingle"
+      },
+      {
+        "value": "metal",
+        "label": "Metal"
+      },
+      {
+        "value": "tile",
+        "label": "Tile"
+      },
+      {
+        "value": "slate",
+        "label": "Slate"
+      }
+    ]
+  },
+  {
+    "attributeId": "roofing_style",
+    "label": "Roofing Style",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 131,
+    "options": [
+      {
+        "value": "architectural",
+        "label": "Architectural (Dimensional)"
+      },
+      {
+        "value": "3_tab",
+        "label": "3-Tab"
+      },
+      {
+        "value": "standing_seam",
+        "label": "Standing Seam (Metal)"
+      },
+      {
+        "value": "corrugated",
+        "label": "Corrugated (Metal)"
+      }
+    ]
+  },
+  {
+    "attributeId": "siding_material",
+    "label": "Siding Material",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 132,
+    "options": [
+      {
+        "value": "vinyl",
+        "label": "Vinyl"
+      },
+      {
+        "value": "fiber_cement",
+        "label": "Fiber Cement"
+      },
+      {
+        "value": "wood",
+        "label": "Wood"
+      },
+      {
+        "value": "stucco",
+        "label": "Stucco"
+      },
+      {
+        "value": "brick",
+        "label": "Brick Veneer"
+      }
+    ]
+  },
+  {
+    "attributeId": "flooring_material",
+    "label": "Flooring Material",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 140,
+    "options": [
+      {
+        "value": "hardwood",
+        "label": "Hardwood"
+      },
+      {
+        "value": "laminate",
+        "label": "Laminate"
+      },
+      {
+        "value": "vinyl_plank",
+        "label": "Vinyl Plank (LVP)"
+      },
+      {
+        "value": "tile",
+        "label": "Tile"
+      },
+      {
+        "value": "carpet",
+        "label": "Carpet"
+      }
+    ]
+  },
+  {
+    "attributeId": "paint_type",
+    "label": "Paint Type",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 141,
+    "options": [
+      {
+        "value": "interior_latex",
+        "label": "Interior Latex"
+      },
+      {
+        "value": "exterior_latex",
+        "label": "Exterior Latex"
+      },
+      {
+        "value": "primer",
+        "label": "Primer"
+      },
+      {
+        "value": "stain",
+        "label": "Stain/Sealer"
+      }
+    ]
+  },
+  {
+    "attributeId": "paint_finish",
+    "label": "Paint Finish",
+    "type": "select",
+    "isRequired": false,
+    "defaultValue": null,
+    "sortOrder": 142,
+    "options": [
+      {
+        "value": "flat",
+        "label": "Flat/Matte"
+      },
+      {
+        "value": "eggshell",
+        "label": "Eggshell"
+      },
+      {
+        "value": "satin",
+        "label": "Satin"
+      },
+      {
+        "value": "semi_gloss",
+        "label": "Semi-Gloss"
+      },
+      {
+        "value": "gloss",
+        "label": "Gloss"
+      }
+    ]
   }
 ]

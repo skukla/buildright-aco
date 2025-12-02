@@ -1,0 +1,39 @@
+[
+  {
+    "id": "standard",
+    "name": "Standard",
+    "description": "Base template with no modifications",
+    "modifications": {},
+    "skuOverrides": []
+  },
+  {
+    "id": "bonus-room",
+    "name": "With Bonus Room",
+    "description": "Adds 200 sqft bonus room above garage",
+    "modifications": {
+      "sqft": 200,
+      "bedrooms": 1,
+      "dimensions": {
+        "depth": 5
+      }
+    },
+    "skuOverrides": [
+      { "productType": "carpet", "sku": "CARPET-LUXURY-001" }
+    ]
+  },
+  {
+    "id": "3-car-garage",
+    "name": "3-Car Garage",
+    "description": "Extended garage for 3 vehicles",
+    "modifications": {
+      "sqft": 400,
+      "dimensions": {
+        "width": 12
+      }
+    },
+    "skuOverrides": [
+      { "productType": "garage_doors", "sku": "DOOR-GARAGE-TRIPLE" }
+    ]
+  }
+]
+
