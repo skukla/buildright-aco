@@ -16,7 +16,8 @@
     "generate:price-books": "node scripts/generate-price-books.js",
     "generate:prices": "node scripts/generate-prices.js",
     "generate:eds-data": "node scripts/generate-eds-data.js",
-    "generate:all": "npm run generate:metadata && npm run generate:categories && npm run generate:products && npm run generate:variants && npm run generate:bundles && npm run generate:price-books && npm run generate:prices && npm run generate:eds-data",
+    "generate:service-data": "node scripts/generate-service-data.js",
+    "generate:all": "npm run generate:metadata && npm run generate:categories && npm run generate:products && npm run generate:variants && npm run generate:bundles && npm run generate:price-books && npm run generate:prices && npm run generate:eds-data && npm run generate:service-data",
     
     "ingest:metadata": "node scripts/ingest-metadata.js",
     "ingest:metadata:dry-run": "node scripts/ingest-metadata.js --dry-run",
