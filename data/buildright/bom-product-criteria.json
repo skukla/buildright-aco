@@ -3,7 +3,7 @@
     "concrete_slab": {
       "label": "Ready-Mix Concrete for Slab Foundation",
       "construction_phase": "foundation_framing",
-      "product_category": "structural_materials",
+      "product_category": "concrete",
       "concrete_type": "ready_mix",
       "concrete_psi": "3000"
     },
@@ -36,19 +36,25 @@
     },
     "drywall": {
       "label": "Drywall Sheets",
+      "construction_phase": "interior_finish",
+      "product_category": "framing_drywall",
+      "drywall_thickness": "0.5"
+    },
+    "roof_sheathing": {
+      "label": "Plywood for Roof Sheathing",
       "construction_phase": "foundation_framing",
       "product_category": "structural_materials",
-      "drywall_thickness": "0.5"
+      "lumber_dimension": "4x8",
+      "sheathing_location": "roof"
     }
   },
   "envelope": {
     "windows": {
-      "label": "Double-Hung Vinyl Windows",
+      "label": "Single-Hung Vinyl Windows",
       "construction_phase": "envelope",
       "product_category": "windows_doors",
-      "window_operation_type": "double_hung",
-      "window_material": "vinyl",
-      "window_glazing_type": "double_pane"
+      "window_operation_type": "single_hung",
+      "window_glazing_type": "triple_pane"
     },
     "entry_door": {
       "label": "Steel Entry Door",
@@ -60,15 +66,28 @@
     "roofing": {
       "label": "Architectural Asphalt Shingles",
       "construction_phase": "envelope",
-      "product_category": "structural_materials",
-      "roofing_material": "asphalt_shingle",
+      "product_category": "roofing",
+      "roofing_material": "asphalt",
       "roofing_style": "architectural"
     },
     "siding": {
       "label": "Vinyl Siding",
       "construction_phase": "envelope",
-      "product_category": "structural_materials",
+      "product_category": "roofing",
       "siding_material": "vinyl"
+    },
+    "roofing_underlayment": {
+      "label": "Synthetic Roofing Underlayment",
+      "construction_phase": "envelope",
+      "product_category": "roofing",
+      "underlayment_type": "synthetic"
+    },
+    "wall_insulation": {
+      "label": "Fiberglass Batt Insulation R-19",
+      "construction_phase": "envelope",
+      "product_category": "framing_drywall",
+      "insulation_type": "fiberglass_batt",
+      "insulation_r_value": "r19"
     }
   },
   "interior_finish": {
@@ -81,7 +100,7 @@
     "paint": {
       "label": "Interior Latex Paint",
       "construction_phase": "interior_finish",
-      "product_category": "structural_materials",
+      "product_category": "interior_finishes",
       "paint_type": "interior_latex",
       "paint_finish": "eggshell"
     },
@@ -93,9 +112,18 @@
       "door_core_type": "hollow_core"
     },
     "light_fixtures": {
-      "label": "Interior Light Fixtures",
+      "label": "LED Recessed Light Fixture",
       "construction_phase": "interior_finish",
-      "product_category": "fasteners_hardware"
+      "product_category": "interior_finishes",
+      "light_type": "recessed",
+      "light_technology": "led"
+    },
+    "plumbing_fixtures": {
+      "label": "Kitchen Faucet",
+      "construction_phase": "interior_finish",
+      "product_category": "interior_finishes",
+      "fixture_type": "faucet",
+      "fixture_location": "kitchen"
     }
   }
 }
