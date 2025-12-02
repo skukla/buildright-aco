@@ -57,6 +57,10 @@ npm run generate:all
 npm run generate:products
 npm run generate:price-books
 npm run generate:prices
+
+# Generate data for dependent projects
+npm run generate:eds-data      # For buildright-eds frontend
+npm run generate:service-data  # For buildright-service backend
 ```
 
 ### 3. Ingest to ACO
@@ -93,7 +97,9 @@ npm run reset:all:dry-run
 npm run reset:all:reingest
 ```
 
-## 📊 Supported ACO Entities
+## 📊 Data Generation
+
+### ACO Entities (Ingest to Adobe Commerce Optimizer)
 
 | Entity | Generate | Ingest | Delete | Notes |
 |--------|----------|--------|--------|-------|
@@ -103,6 +109,21 @@ npm run reset:all:reingest
 | **Price Books** | ✅ | ✅ | ✅ | Hierarchical structure |
 | **Prices** | ✅ | ✅ | ✅ | All products × all price books |
 | **Inventory** | ❌ | ❌ | ❌ | NOT supported (use Adobe Commerce MSI) |
+
+### Dependent Projects (Export for downstream consumption)
+
+| Entity | Script | Output | Consumer |
+|--------|--------|--------|----------|
+| **EDS Data** | `generate:eds-data` | `buildright-eds/data/` | Frontend (Edge Delivery Services) |
+| **Service Data** | `generate:service-data` | `buildright-service/lib/data/` | Backend (BOM generation service) |
+
+**Data Flow:**
+```
+buildright-aco (source) 
+  → generate scripts 
+    → buildright-eds/data/ (frontend)
+    → buildright-service/lib/data/ (backend)
+```
 
 ## 🛠️ Available Commands
 
@@ -116,7 +137,8 @@ npm run generate:variants         # Configurable products + variants
 npm run generate:bundles          # Bundle products
 npm run generate:price-books      # Price book structure
 npm run generate:prices           # All pricing data
-npm run generate:eds-data         # EDS-compatible data files
+npm run generate:eds-data         # EDS-compatible data files (for buildright-eds)
+npm run generate:service-data     # Service data files (for buildright-service)
 npm run generate:all              # All of the above
 ```
 
