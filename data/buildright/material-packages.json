@@ -2,7 +2,7 @@
   {
     "id": "builders-choice",
     "name": "Builder's Choice",
-    "description": "Quality materials at competitive prices",
+    "description": "Standard quality materials for value-conscious builders",
     "tier": 1,
     "categories": ["framing", "foundation", "roofing"],
     "skuOverrides": [
@@ -11,9 +11,9 @@
     ]
   },
   {
-    "id": "desert-ridge-premium",
-    "name": "Desert Ridge Premium",
-    "description": "Premium materials for discerning builders",
+    "id": "premium-select",
+    "name": "Premium Select",
+    "description": "Upgraded finishes with Pella windows and architectural shingles",
     "tier": 2,
     "categories": ["framing", "envelope", "interior"],
     "skuOverrides": [
@@ -21,6 +21,21 @@
       { "productType": "doors", "sku": "DOOR-JELD-PREMIUM" },
       { "productType": "roofing", "sku": "ROOF-SHINGLE-ARCH-DIM" },
       { "productType": "siding", "sku": "SIDING-FIBER-CEMENT-PRO" }
+    ]
+  },
+  {
+    "id": "executive-collection",
+    "name": "Executive Collection",
+    "description": "Luxury materials with designer finishes and premium brands",
+    "tier": 3,
+    "categories": ["framing", "envelope", "interior"],
+    "skuOverrides": [
+      { "productType": "windows", "sku": "WINDOW-8F26E917" },
+      { "productType": "doors", "sku": "DOOR-E93CC71C" },
+      { "productType": "roofing", "sku": "ROOF-7B1F4022" },
+      { "productType": "siding", "sku": "SIDING-STONE-VENEER" },
+      { "productType": "flooring", "sku": "FLOOR-HARDWOOD-WALNUT" },
+      { "productType": "insulation", "sku": "INSUL-SPRAY-FOAM" }
     ]
   }
 ]
