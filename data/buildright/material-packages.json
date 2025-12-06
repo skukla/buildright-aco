@@ -4,6 +4,8 @@
     "name": "Builder's Choice",
     "description": "Standard quality materials for value-conscious builders",
     "tier": 1,
+    "tierClass": "builder_grade",
+    "image": "https://images.unsplash.com/photo-1723257129172-6315cde654da?w=400&h=300&fit=crop&q=80",
     "categories": ["framing", "foundation", "roofing"],
     "skuOverrides": [
       { "productType": "windows", "sku": "WINDOW-STANDARD-DBL" },
@@ -13,8 +15,10 @@
   {
     "id": "premium-select",
     "name": "Premium Select",
-    "description": "Upgraded finishes with Pella windows and architectural shingles",
+    "description": "Enhanced materials with upgraded fixtures",
     "tier": 2,
+    "tierClass": "premium",
+    "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=300&fit=crop&q=80",
     "categories": ["framing", "envelope", "interior"],
     "skuOverrides": [
       { "productType": "windows", "sku": "WIN-PELLA-350-DBL" },
@@ -24,10 +28,12 @@
     ]
   },
   {
-    "id": "executive-collection",
-    "name": "Executive Collection",
+    "id": "designer-series",
+    "name": "Designer Series",
     "description": "Luxury materials with designer finishes and premium brands",
     "tier": 3,
+    "tierClass": "luxury",
+    "image": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=400&h=300&fit=crop&q=80",
     "categories": ["framing", "envelope", "interior"],
     "skuOverrides": [
       { "productType": "windows", "sku": "WINDOW-8F26E917" },
@@ -39,4 +45,3 @@
     ]
   }
 ]
-
