@@ -147,12 +147,10 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
     if (metaAttr) {
       const attrObj = {
         code: metaAttr.attributeId,
-        // ACO multiselect workaround: join array values into comma-separated string
-        // For multiselect attrs: ["val1", "val2"] → ["val1, val2"]
-        // For single values: ["val"] → ["val"] or "val" → ["val"]
+        // Keep arrays as arrays - each value becomes a separate facet option
         values: Array.isArray(value) 
-          ? (value.length > 1 && typeof value[0] === 'string' ? [value.join(', ')] : value)
-          : [value]
+          ? value.map(String)
+          : [String(value)]
       };
       // Add variantReferenceId if this is a configurable dimension
       if (variantReferenceId) {
@@ -177,8 +175,8 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
       
       attributes.push({
         code: attr.attributeId,
-        // ACO multiselect workaround: join array values
-        values: Array.isArray(value) ? [value.join(', ')] : [String(value)]
+        // Keep arrays as arrays - each value becomes a separate facet option
+        values: Array.isArray(value) ? value.map(String) : [String(value)]
       });
     }
   }

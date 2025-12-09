@@ -17,11 +17,10 @@ export function generateSlug(name) {
  * Transform attributes from internal format to ACO API format
  * 
  * Internal format: {code: 'attr', label: 'Attr Label', value: 'val' or ['val1', 'val2']}
- * ACO format: {code: 'attr', label: 'Attr Label', values: ['val']} or {code: 'attr', label: 'Attr Label', values: ['val1, val2']}
+ * ACO format: {code: 'attr', values: ['val1', 'val2']}
  * 
- * ACO Multiselect Workaround:
- * Instead of values: ["val1", "val2"], ACO expects values: ["val1, val2"]
- * This is a known ACO API limitation as of v1.1.0
+ * Note: ACO supports proper array values for multiselect attributes.
+ * Each value becomes a separate facet option.
  * 
  * @param {Array} attributes - Attributes in internal format
  * @returns {Array} Attributes in ACO format
@@ -31,10 +30,9 @@ export function transformAttributesToACO(attributes) {
     code: attr.code,
     // NOTE: ACO Data Ingestion API does NOT accept 'label' field here
     // Labels are configured separately in ACO attribute metadata
-    // ACO multiselect workaround: convert arrays to comma-separated strings
-    // Instead of values: ["val1", "val2"], ACO expects values: ["val1, val2"]
+    // Keep arrays as arrays - each value becomes a separate facet option
     values: Array.isArray(attr.value) 
-      ? [attr.value.join(', ')] 
+      ? attr.value.map(String)
       : [String(attr.value)]
   }));
 }

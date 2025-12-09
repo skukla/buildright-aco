@@ -41,14 +41,14 @@ export function getAttributeValue(attribute, random) {
 
 /**
  * Get project types for a product based on its category
- * Returns array of project type values
+ * Returns array of project type values (human-readable)
  * @param {string} categoryValue - Product category
  * @param {object} random - Random number generator
  * @param {boolean} isService - Whether this is a service product
  * @returns {string[]} Array of project type values
  */
 export function getProjectTypes(categoryValue, random, isService = false) {
-  const allTypes = ['new_construction', 'remodel', 'repair', 'restoration'];
+  const allTypes = ['New Construction', 'Remodel', 'Repair', 'Restoration'];
   
   // Services are always available for all project types
   if (isService) {
@@ -56,34 +56,34 @@ export function getProjectTypes(categoryValue, random, isService = false) {
   }
   
   switch(categoryValue) {
-    case 'structural_materials':
+    case 'Structural Materials':
       // Structural materials primarily for new construction and remodels
-      const structuralTypes = ['new_construction', 'remodel'];
+      const structuralTypes = ['New Construction', 'Remodel'];
       // 40% chance to also include repair
       if (random.nextFloat() < 0.4) {
-        structuralTypes.push('repair');
+        structuralTypes.push('Repair');
       }
       return structuralTypes;
     
-    case 'framing_insulation':
+    case 'Framing & Drywall':
       // Framing used in construction, remodels, and restoration
-      return ['new_construction', 'remodel', 'restoration'];
+      return ['New Construction', 'Remodel', 'Restoration'];
     
-    case 'windows_doors':
+    case 'Windows & Doors':
       // Windows/doors for construction, remodels, and restoration
-      return ['new_construction', 'remodel', 'restoration'];
+      return ['New Construction', 'Remodel', 'Restoration'];
     
-    case 'fasteners_hardware':
+    case 'Fasteners & Hardware':
       // Fasteners used in all project types
       return allTypes;
     
-    case 'safety_equipment':
+    case 'Safety Equipment':
       // PPE needed for all project types
       return allTypes;
     
     default:
       // Default: new construction and remodel
-      return ['new_construction', 'remodel'];
+      return ['New Construction', 'Remodel'];
   }
 }
 

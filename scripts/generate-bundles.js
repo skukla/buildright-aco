@@ -202,8 +202,8 @@ function generateAttributes(metadata, categoryValue, brand) {
 
       attributes.push({
         code: attr.attributeId,
-        // ACO multiselect workaround: join array values
-        values: Array.isArray(value) ? [value.join(', ')] : [String(value)]
+        // Keep arrays as arrays - each value becomes a separate facet option
+        values: Array.isArray(value) ? value.map(String) : [String(value)]
       });
     }
   }
