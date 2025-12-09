@@ -1,6 +1,6 @@
 /**
  * Bundle definitions for BuildRight ACO bundle product generation
- * Defines 15 bundle products (3 per category) with item groups
+ * Defines 12 bundle products (3 per category) with item groups
  */
 
 export const BUNDLE_DEFINITIONS = {
@@ -433,119 +433,6 @@ export const BUNDLE_DEFINITIONS = {
           items: [
             { productType: 'nails', namePattern: 'Finish Nails', defaultQty: 1 },
             { productType: 'nails', namePattern: 'Brad Nails', defaultQty: 1 }
-          ]
-        }
-      ]
-    }
-  ],
-  safety: [
-    {
-      name: 'Complete PPE Package',
-      description: 'Full personal protective equipment for construction site',
-      priceRange: [380, 480],
-      groups: [
-        {
-          name: 'Head Protection',
-          required: true,
-          multiSelect: false,
-          items: [
-            { productType: 'equipment', namePattern: 'Hard Hat', defaultQty: 4 },
-            { productType: 'equipment', namePattern: 'Face Shield', defaultQty: 2 }
-          ]
-        },
-        {
-          name: 'Eye & Ear Protection',
-          required: true,
-          multiSelect: true,
-          items: [
-            { productType: 'equipment', namePattern: 'Safety Glasses', defaultQty: 6 },
-            { productType: 'equipment', namePattern: 'Ear Protection', defaultQty: 4 }
-          ]
-        },
-        {
-          name: 'Hand & Body Protection',
-          required: true,
-          multiSelect: true,
-          items: [
-            { productType: 'equipment', namePattern: 'Work Gloves', defaultQty: 6 },
-            { productType: 'equipment', namePattern: 'Safety Vest', defaultQty: 4 }
-          ]
-        },
-        {
-          name: 'Respiratory Protection',
-          required: false,
-          multiSelect: false,
-          items: [
-            { productType: 'equipment', namePattern: 'Respirator Mask', defaultQty: 2 },
-            { productType: 'equipment', namePattern: 'Safety Goggles', defaultQty: 2 }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'Fall Protection System',
-      description: 'Complete fall arrest equipment set',
-      priceRange: [680, 880],
-      groups: [
-        {
-          name: 'Harness System',
-          required: true,
-          multiSelect: false,
-          items: [
-            { productType: 'equipment', namePattern: 'Fall Protection', defaultQty: 2 },
-            { productType: 'equipment', namePattern: 'Safety Vest', defaultQty: 2 }
-          ]
-        },
-        {
-          name: 'Additional PPE',
-          required: true,
-          multiSelect: true,
-          items: [
-            { productType: 'equipment', namePattern: 'Hard Hat', defaultQty: 2 },
-            { productType: 'equipment', namePattern: 'Work Gloves', defaultQty: 3 }
-          ]
-        },
-        {
-          name: 'Emergency Equipment',
-          required: false,
-          multiSelect: true,
-          items: [
-            { productType: 'equipment', namePattern: 'First Aid', defaultQty: 1 },
-            { productType: 'equipment', namePattern: 'Fire Extinguisher', defaultQty: 1 }
-          ]
-        }
-      ]
-    },
-    {
-      name: 'Site Safety Station',
-      description: 'Emergency and safety equipment for job site',
-      priceRange: [480, 620],
-      groups: [
-        {
-          name: 'Emergency Equipment',
-          required: true,
-          multiSelect: true,
-          items: [
-            { productType: 'equipment', namePattern: 'First Aid', defaultQty: 2 },
-            { productType: 'equipment', namePattern: 'Fire Extinguisher', defaultQty: 2 }
-          ]
-        },
-        {
-          name: 'Basic PPE',
-          required: true,
-          multiSelect: true,
-          items: [
-            { productType: 'equipment', namePattern: 'Safety Glasses', defaultQty: 10 },
-            { productType: 'equipment', namePattern: 'Ear Protection', defaultQty: 10 }
-          ]
-        },
-        {
-          name: 'Visitor Safety',
-          required: false,
-          multiSelect: true,
-          items: [
-            { productType: 'equipment', namePattern: 'Hard Hat', defaultQty: 5 },
-            { productType: 'equipment', namePattern: 'Safety Vest', defaultQty: 5 }
           ]
         }
       ]
