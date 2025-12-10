@@ -2,48 +2,48 @@
   "foundation_framing": {
     "concrete_slab": {
       "label": "Ready-Mix Concrete for Slab Foundation",
-      "construction_phase": "foundation_framing",
-      "product_category": "concrete",
+      "construction_phase": "Foundation & Framing",
+      "product_category": "Concrete & Foundation",
       "concrete_type": "ready_mix",
       "concrete_psi": "3000"
     },
     "interior_wall_studs": {
       "label": "2x4 Studs for Interior Walls",
-      "construction_phase": "foundation_framing",
-      "product_category": "structural_materials",
+      "construction_phase": "Foundation & Framing",
+      "product_category": "Structural Materials",
       "lumber_dimension": "2x4",
       "lumber_length": "8ft"
     },
     "exterior_wall_studs": {
       "label": "2x6 Studs for Exterior Walls",
-      "construction_phase": "foundation_framing",
-      "product_category": "structural_materials",
+      "construction_phase": "Foundation & Framing",
+      "product_category": "Structural Materials",
       "lumber_dimension": "2x6",
       "lumber_length": "8ft"
     },
     "subfloor_plywood": {
       "label": "Plywood for Subfloor",
-      "construction_phase": "foundation_framing",
-      "product_category": "structural_materials",
+      "construction_phase": "Foundation & Framing",
+      "product_category": "Structural Materials",
       "lumber_dimension": "4x8"
     },
     "framing_nails": {
       "label": "Framing Nails",
-      "construction_phase": "foundation_framing",
-      "product_category": "fasteners_hardware",
+      "construction_phase": "Foundation & Framing",
+      "product_category": "Fasteners & Hardware",
       "fastener_type": "nail",
       "fastener_subtype": "framing_nail"
     },
     "drywall": {
       "label": "Drywall Sheets",
-      "construction_phase": "interior_finish",
-      "product_category": "framing_drywall",
+      "construction_phase": "Interior Finish",
+      "product_category": "Framing & Drywall",
       "drywall_thickness": "0.5"
     },
     "roof_sheathing": {
       "label": "Plywood for Roof Sheathing",
-      "construction_phase": "foundation_framing",
-      "product_category": "structural_materials",
+      "construction_phase": "Foundation & Framing",
+      "product_category": "Structural Materials",
       "lumber_dimension": "4x8",
       "sheathing_location": "roof"
     }
@@ -51,41 +51,41 @@
   "envelope": {
     "windows": {
       "label": "Single-Hung Vinyl Windows",
-      "construction_phase": "envelope",
-      "product_category": "windows_doors",
+      "construction_phase": "Envelope",
+      "product_category": "Windows & Doors",
       "window_operation_type": "single_hung",
       "window_glazing_type": "triple_pane"
     },
     "entry_door": {
       "label": "Steel Entry Door",
-      "construction_phase": "envelope",
-      "product_category": "windows_doors",
+      "construction_phase": "Envelope",
+      "product_category": "Windows & Doors",
       "door_type": "entry",
       "door_material": "steel"
     },
     "roofing": {
       "label": "Architectural Asphalt Shingles",
-      "construction_phase": "envelope",
-      "product_category": "roofing",
+      "construction_phase": "Envelope",
+      "product_category": "Roofing",
       "roofing_material": "asphalt",
       "roofing_style": "architectural"
     },
     "siding": {
       "label": "Vinyl Siding",
-      "construction_phase": "envelope",
-      "product_category": "roofing",
+      "construction_phase": "Envelope",
+      "product_category": "Roofing",
       "siding_material": "vinyl"
     },
     "roofing_underlayment": {
       "label": "Synthetic Roofing Underlayment",
-      "construction_phase": "envelope",
-      "product_category": "roofing",
+      "construction_phase": "Envelope",
+      "product_category": "Roofing",
       "underlayment_type": "synthetic"
     },
     "wall_insulation": {
       "label": "Fiberglass Batt Insulation R-19",
-      "construction_phase": "envelope",
-      "product_category": "framing_drywall",
+      "construction_phase": "Envelope",
+      "product_category": "Framing & Drywall",
       "insulation_type": "fiberglass_batt",
       "insulation_r_value": "r19"
     }
@@ -93,35 +93,35 @@
   "interior_finish": {
     "flooring": {
       "label": "Hardwood Flooring",
-      "construction_phase": "interior_finish",
-      "product_category": "structural_materials",
+      "construction_phase": "Interior Finish",
+      "product_category": "Interior Finishes",
       "flooring_material": "hardwood"
     },
     "paint": {
       "label": "Interior Latex Paint",
-      "construction_phase": "interior_finish",
-      "product_category": "interior_finishes",
+      "construction_phase": "Interior Finish",
+      "product_category": "Interior Finishes",
       "paint_type": "interior_latex",
       "paint_finish": "eggshell"
     },
     "interior_doors": {
       "label": "Interior Hollow-Core Doors",
-      "construction_phase": "interior_finish",
-      "product_category": "windows_doors",
+      "construction_phase": "Interior Finish",
+      "product_category": "Windows & Doors",
       "door_type": "interior",
       "door_core_type": "hollow_core"
     },
     "light_fixtures": {
       "label": "LED Recessed Light Fixture",
-      "construction_phase": "interior_finish",
-      "product_category": "interior_finishes",
+      "construction_phase": "Interior Finish",
+      "product_category": "Interior Finishes",
       "light_type": "recessed",
       "light_technology": "led"
     },
     "plumbing_fixtures": {
       "label": "Kitchen Faucet",
-      "construction_phase": "interior_finish",
-      "product_category": "interior_finishes",
+      "construction_phase": "Interior Finish",
+      "product_category": "Interior Finishes",
       "fixture_type": "faucet",
       "fixture_location": "kitchen"
     }

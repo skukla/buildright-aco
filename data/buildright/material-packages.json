@@ -4,7 +4,7 @@
     "name": "Builder's Choice",
     "description": "Standard quality materials for value-conscious builders",
     "tier": 1,
-    "tierClass": "builder_grade",
+    "qualityTier": "Builder Grade",
     "image": "https://images.unsplash.com/photo-1723257129172-6315cde654da?w=400&h=300&fit=crop&q=80",
     "categories": ["framing", "foundation", "roofing"],
     "skuOverrides": [
@@ -17,7 +17,7 @@
     "name": "Premium Select",
     "description": "Enhanced materials with upgraded fixtures",
     "tier": 2,
-    "tierClass": "premium",
+    "qualityTier": "Premium",
     "image": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=300&fit=crop&q=80",
     "categories": ["framing", "envelope", "interior"],
     "skuOverrides": [
@@ -32,7 +32,7 @@
     "name": "Designer Series",
     "description": "Luxury materials with designer finishes and premium brands",
     "tier": 3,
-    "tierClass": "luxury",
+    "qualityTier": "Luxury",
     "image": "https://images.unsplash.com/photo-1628745277862-bc0b2d68c50c?w=400&h=300&fit=crop&q=80",
     "categories": ["framing", "envelope", "interior"],
     "skuOverrides": [
