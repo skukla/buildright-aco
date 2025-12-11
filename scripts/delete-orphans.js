@@ -11,8 +11,8 @@ import { promises as fs } from 'fs';
 import { getACOClient } from '../utils/aco-client.js';
 import logger from '../utils/logger.js';
 
-const MESH_ENDPOINT = 'https://edge-sandbox-graph.adobe.io/api/f625cd2c-a812-459b-bdb9-dd7f9deeeb2e/graphql';
-const CATALOG_VIEW_ID = '22c02790-7c5e-474d-a3b6-c72b22203be5';
+const MESH_ENDPOINT = 'https://edge-sandbox-graph.adobe.io/api/2463edc1-5cf7-4393-af04-95a3d1b6973c/graphql';
+const CATALOG_VIEW_ID = '6792f1d5-9e79-4813-8d8e-df5ed76e5692'; // BuildRight-Default view
 
 const args = process.argv.slice(2);
 const shouldDelete = args.includes('--delete');
