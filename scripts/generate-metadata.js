@@ -27,7 +27,7 @@ function getBuildRightMetadata() {
   return [
     // Core Attributes (apply to all products)
     {
-      attributeId: 'product_category',
+      attributeId: 'br_product_category',
       label: 'Product Category',
       type: 'select',
       isRequired: true,
@@ -42,7 +42,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'brand',
+      attributeId: 'br_brand',
       label: 'Brand',
       type: 'select',
       isRequired: false,
@@ -62,7 +62,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'unit_of_measure',
+      attributeId: 'br_unit_of_measure',
       label: 'Unit of Measure',
       type: 'select',
       isRequired: true,
@@ -84,7 +84,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'project_types',
+      attributeId: 'br_project_types',
       label: 'Project Types',
       type: 'multiselect',
       isRequired: false,
@@ -100,7 +100,7 @@ function getBuildRightMetadata() {
 
     // Lumber Attributes (sortOrder 10-19)
     {
-      attributeId: 'lumber_species',
+      attributeId: 'br_lumber_species',
       label: 'Lumber Species',
       type: 'select',
       isRequired: false,
@@ -116,7 +116,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'lumber_grade',
+      attributeId: 'br_lumber_grade',
       label: 'Lumber Grade',
       type: 'select',
       isRequired: false,
@@ -134,7 +134,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'lumber_treatment',
+      attributeId: 'br_lumber_treatment',
       label: 'Lumber Treatment',
       type: 'select',
       isRequired: false,
@@ -150,7 +150,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'lumber_certification',
+      attributeId: 'br_lumber_certification',
       label: 'Lumber Certification',
       type: 'multiselect',
       isRequired: false,
@@ -167,7 +167,7 @@ function getBuildRightMetadata() {
 
     // Drywall Attributes (sortOrder 20-29)
     {
-      attributeId: 'drywall_thickness',
+      attributeId: 'br_drywall_thickness',
       label: 'Drywall Thickness',
       type: 'select',
       isRequired: false,
@@ -182,7 +182,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'drywall_product_type',
+      attributeId: 'br_drywall_product_type',
       label: 'Drywall Product Type',
       type: 'select',
       isRequired: false,
@@ -198,7 +198,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'drywall_fire_rating',
+      attributeId: 'br_drywall_fire_rating',
       label: 'Drywall Fire Rating',
       type: 'select',
       isRequired: false,
@@ -211,7 +211,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'drywall_edge_type',
+      attributeId: 'br_drywall_edge_type',
       label: 'Drywall Edge Type',
       type: 'select',
       isRequired: false,
@@ -227,7 +227,7 @@ function getBuildRightMetadata() {
 
     // Window Attributes (sortOrder 30-39)
     {
-      attributeId: 'window_material',
+      attributeId: 'br_window_material',
       label: 'Window Frame Material',
       type: 'select',
       isRequired: false,
@@ -243,7 +243,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'window_operation_type',
+      attributeId: 'br_window_operation_type',
       label: 'Window Operation Type',
       type: 'select',
       isRequired: false,
@@ -261,7 +261,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'window_glazing_type',
+      attributeId: 'br_window_glazing_type',
       label: 'Window Glazing',
       type: 'select',
       isRequired: false,
@@ -274,7 +274,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'window_energy_star',
+      attributeId: 'br_window_energy_star',
       label: 'Energy Star Certified',
       type: 'boolean',
       isRequired: false,
@@ -284,7 +284,7 @@ function getBuildRightMetadata() {
 
     // Door Attributes (sortOrder 40-49)
     {
-      attributeId: 'door_type',
+      attributeId: 'br_door_type',
       label: 'Door Type',
       type: 'select',
       isRequired: false,
@@ -300,7 +300,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'door_material',
+      attributeId: 'br_door_material',
       label: 'Door Material',
       type: 'select',
       isRequired: false,
@@ -316,7 +316,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'door_core_type',
+      attributeId: 'br_door_core_type',
       label: 'Door Core Type',
       type: 'select',
       isRequired: false,
@@ -332,7 +332,7 @@ function getBuildRightMetadata() {
 
     // Fastener Attributes (sortOrder 50-59)
     {
-      attributeId: 'fastener_type',
+      attributeId: 'br_fastener_type',
       label: 'Fastener Type',
       type: 'select',
       isRequired: false,
@@ -347,7 +347,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'fastener_subtype',
+      attributeId: 'br_fastener_subtype',
       label: 'Fastener Subtype',
       type: 'select',
       isRequired: false,
@@ -367,7 +367,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'fastener_material',
+      attributeId: 'br_fastener_material',
       label: 'Fastener Material',
       type: 'select',
       isRequired: false,
@@ -382,7 +382,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'fastener_coating',
+      attributeId: 'br_fastener_coating',
       label: 'Fastener Coating/Finish',
       type: 'select',
       isRequired: false,
@@ -398,7 +398,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'fastener_head_type',
+      attributeId: 'br_fastener_head_type',
       label: 'Fastener Head Type',
       type: 'select',
       isRequired: false,
@@ -414,7 +414,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'fastener_drive_type',
+      attributeId: 'br_fastener_drive_type',
       label: 'Fastener Drive Type',
       type: 'select',
       isRequired: false,
@@ -432,7 +432,7 @@ function getBuildRightMetadata() {
 
     // PPE / Safety Equipment Attributes (sortOrder 60-69)
     {
-      attributeId: 'ppe_category',
+      attributeId: 'br_ppe_category',
       label: 'PPE Category',
       type: 'select',
       isRequired: false,
@@ -450,7 +450,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_ansi_standard',
+      attributeId: 'br_ppe_ansi_standard',
       label: 'ANSI Standard',
       type: 'multiselect',
       isRequired: false,
@@ -467,7 +467,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_hard_hat_type',
+      attributeId: 'br_ppe_hard_hat_type',
       label: 'Hard Hat Type',
       type: 'select',
       isRequired: false,
@@ -479,7 +479,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_hard_hat_class',
+      attributeId: 'br_ppe_hard_hat_class',
       label: 'Hard Hat Electrical Class',
       type: 'select',
       isRequired: false,
@@ -492,7 +492,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_nrr_rating',
+      attributeId: 'br_ppe_nrr_rating',
       label: 'NRR Rating (dB)',
       type: 'select',
       isRequired: false,
@@ -511,7 +511,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_cut_resistance',
+      attributeId: 'br_ppe_cut_resistance',
       label: 'Cut Resistance Level',
       type: 'select',
       isRequired: false,
@@ -530,7 +530,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_niosh_rating',
+      attributeId: 'br_ppe_niosh_rating',
       label: 'NIOSH Filter Rating',
       type: 'select',
       isRequired: false,
@@ -546,7 +546,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_hi_vis_class',
+      attributeId: 'br_ppe_hi_vis_class',
       label: 'High-Visibility Class',
       type: 'select',
       isRequired: false,
@@ -559,7 +559,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'ppe_size',
+      attributeId: 'br_ppe_size',
       label: 'PPE Size',
       type: 'select',
       isRequired: false,
@@ -577,7 +577,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'sheathing_location',
+      attributeId: 'br_sheathing_location',
       label: 'Sheathing Location',
       type: 'select',
       isRequired: false,
@@ -590,7 +590,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'underlayment_type',
+      attributeId: 'br_underlayment_type',
       label: 'Underlayment Type',
       type: 'select',
       isRequired: false,
@@ -604,7 +604,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'insulation_type',
+      attributeId: 'br_insulation_type',
       label: 'Insulation Type',
       type: 'select',
       isRequired: false,
@@ -618,7 +618,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'insulation_r_value',
+      attributeId: 'br_insulation_r_value',
       label: 'Insulation R-Value',
       type: 'select',
       isRequired: false,
@@ -633,7 +633,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'light_type',
+      attributeId: 'br_light_type',
       label: 'Light Fixture Type',
       type: 'select',
       isRequired: false,
@@ -647,7 +647,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'light_technology',
+      attributeId: 'br_light_technology',
       label: 'Light Technology',
       type: 'select',
       isRequired: false,
@@ -660,7 +660,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'fixture_type',
+      attributeId: 'br_fixture_type',
       label: 'Plumbing Fixture Type',
       type: 'select',
       isRequired: false,
@@ -674,7 +674,7 @@ function getBuildRightMetadata() {
       ]
     },
     {
-      attributeId: 'fixture_location',
+      attributeId: 'br_fixture_location',
       label: 'Fixture Location',
       type: 'select',
       isRequired: false,

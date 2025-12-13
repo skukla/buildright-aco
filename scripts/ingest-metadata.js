@@ -47,7 +47,7 @@ function getVisibilitySettings(attr) {
   const visibility = ['PRODUCT_DETAIL', 'PRODUCT_LISTING'];
   
   // Core attributes also visible in search results
-  if (attr.sortOrder <= 5 || attr.attributeId.includes('category') || attr.attributeId.includes('brand')) {
+  if (attr.sortOrder <= 5 || attr.attributeId.includes('category') || attr.attributeId.includes('br_brand')) {
     visibility.push('SEARCH_RESULTS');
   }
   
@@ -59,12 +59,12 @@ function getVisibilitySettings(attr) {
  */
 function getSearchWeight(attr) {
   // Core identification attributes get highest weight
-  if (['sku', 'name', 'product_category'].includes(attr.attributeId)) {
+  if (['sku', 'name', 'br_product_category'].includes(attr.attributeId)) {
     return 5;
   }
   
   // Important discovery attributes get high weight
-  if (['brand', 'project_types'].includes(attr.attributeId)) {
+  if (['br_brand', 'br_project_types'].includes(attr.attributeId)) {
     return 3;
   }
   

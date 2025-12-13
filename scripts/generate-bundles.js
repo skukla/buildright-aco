@@ -158,7 +158,7 @@ function generateAttributes(metadata, categoryValue, brand) {
 
   // Add required attributes
   attributes.push({
-    code: 'product_category',
+    code: 'br_product_category',
     values: [categoryValue]
   });
 
@@ -404,7 +404,7 @@ async function generateBundles() {
     // Count by category
     const categoryCounts = {};
     bundles.forEach(bundle => {
-      const category = bundle.attributes.find(a => a.code === 'product_category')?.values?.[0];
+      const category = bundle.attributes.find(a => a.code === 'br_product_category')?.values?.[0];
       categoryCounts[category] = (categoryCounts[category] || 0) + 1;
     });
 

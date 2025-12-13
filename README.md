@@ -1,317 +1,371 @@
-# BuildRight ACO - Modular Catalog Data Management
+# BuildRight Catalog Definition Repository
 
-Complete Adobe Commerce Optimizer (ACO) integration with modular utilities for managing catalog data. This project provides a clean, reusable approach to generating, ingesting, and deleting ACO entities.
+> **Canonical Product Catalog Definitions for BuildRight Demo System**
 
-## ✨ Features
+This repository serves as the **data definition layer** for the BuildRight product catalog. It contains the authoritative definitions of products, bundles, variants, categories, and attributes that are imported into both Adobe Commerce and Adobe Commerce Operations (ACO).
 
-- **Modular Utilities**: Reusable query and delete functions (`aco-query.js`, `aco-delete.js`)
-- **Unified Scripts**: Single commands for complete workflows (`ingest:all`, `reset:all`)
-- **ACO-Only**: Supports only what the ACO SDK supports (no inventory)
-- **Dry-Run Support**: Preview changes before executing
-- **Error Handling**: Comprehensive logging and retry logic
-- **Type-Safe**: Uses official Adobe Commerce Optimizer TypeScript SDK
+---
+
+## 🎯 Purpose
+
+This is NOT just "ACO's repository" - it's the **BuildRight Catalog Definition Repository** that:
+
+- ✅ Defines **what products exist** in the BuildRight catalog
+- ✅ Specifies **business rules** (pricing, attributes, categories)
+- ✅ Generates **canonical data files** that both Commerce and ACO import from
+- ✅ Serves as the **single source of truth** for catalog definitions
+
+---
 
 ## 🏗️ Architecture
 
+### Two-Level Architecture
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  buildright-aco (THIS REPO)                             │
+│  Product Catalog Definition Layer                       │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+│  - Product definitions (what products exist)            │
+│  - Business rules (pricing, categorization)             │
+│  - Attribute definitions (metadata schema)              │
+│  - Generation scripts (create canonical data files)     │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+              Generated Data Files
+              (data/buildright/*.json)
+                          ↓
+          ┌───────────────┴───────────────┐
+          ↓                               ↓
+┌─────────────────────┐         ┌─────────────────────┐
+│  Commerce           │         │  ACO                │
+│  (Operational)      │         │  (Enhanced Catalog) │
+│  ━━━━━━━━━━━━━━━━━  │         │  ━━━━━━━━━━━━━━━━━  │
+│  - Imports catalog  │         │  - Imports catalog  │
+│  - Serves customers │         │  - Adds metadata    │
+│  - SaaS syncs from  │         │  - Serves Mesh API  │
+└─────────────────────┘         └─────────────────────┘
+```
+
+### Analogy: Database Schema
+
+Think of this repository like a **database schema in version control**:
+
+| Concept | Analogy | Repository |
+|---------|---------|------------|
+| **Schema Definition** | CREATE TABLE statements | **buildright-aco** (this repo) |
+| **Production Database** | Live customer data | **buildright-commerce** |
+| **Analytics Database** | Enhanced/aggregated views | **ACO instance** |
+
+You keep the schema definition centralized and version-controlled, even though the production database is the "operational source of truth."
+
+---
+
+## 📁 Repository Structure
+
 ```
 buildright-aco/
-├── utils/                      # Modular utilities (reusable)
-│   ├── aco-client.js          # ACO SDK client wrapper
-│   ├── aco-query.js           # Query functions (getAllProductSKUs, etc.)
-│   ├── aco-delete.js          # Delete functions (prices, products, etc.)
-│   ├── graphql-query.js       # GraphQL helpers
-│   ├── logger.js              # Winston logger
-│   ├── oauth-token-manager.js # OAuth authentication
-│   └── retry-handler.js       # Retry logic
 ├── scripts/
-│   ├── config/                # Configuration
-│   ├── generate-*.js          # Generate local JSON data
-│   ├── ingest-*.js            # Ingest data to ACO
-│   ├── ingest-all.js          # Unified ingestion workflow
-│   ├── reset-*.js             # Delete data from ACO
-│   ├── reset-all.js           # Unified reset workflow
-│   └── validate-*.js          # Validation scripts
-└── data/buildright/           # Generated JSON data
+│   ├── generate-products.js      # Generate product definitions
+│   ├── generate-bundles.js       # Generate bundle definitions
+│   ├── generate-variants.js      # Generate variant definitions
+│   ├── generate-categories.js    # Generate category hierarchy
+│   ├── generate-metadata.js      # Generate attribute definitions
+│   ├── generate-price-books.js   # Generate pricing rules
+│   ├── generate-prices.js        # Generate tier pricing
+│   ├── ingest-*.js               # Ingest to ACO API
+│   └── config/
+│       ├── product-definitions.js     # Product data definitions
+│       ├── bundle-definitions.js      # Bundle configurations
+│       └── ingest-config.js           # ACO ingest settings
+│
+├── data/buildright/               # CANONICAL DATA FILES
+│   ├── products.json              # ← Commerce & ACO read from here
+│   ├── bundles.json               # ← Commerce & ACO read from here
+│   ├── variants.json              # ← Commerce & ACO read from here
+│   ├── categories.json            # ← Commerce & ACO read from here
+│   ├── metadata.json              # ← Commerce & ACO read from here
+│   ├── price-books.json           # ← ACO pricing configuration
+│   └── prices.json                # ← ACO tier pricing
+│
+└── utils/
+    ├── aco-client.js              # ACO API client
+    └── ...                        # Helper utilities
 ```
+
+---
 
 ## 🚀 Quick Start
 
-### 1. Setup
+### Generate Catalog Definitions
 
 ```bash
-# Install dependencies
-npm install
-
-# Configure environment
-cp .env.example .env
-# Edit .env with your ACO credentials
-```
-
-### 2. Generate Data
-
-```bash
-# Generate all local JSON data files
+# Generate all catalog data files
 npm run generate:all
 
-# Or generate individual entities
+# Or generate individually:
+npm run generate:metadata      # Attributes (42 attributes)
+npm run generate:categories    # Category tree (12 categories)
+npm run generate:products      # Simple products (154 products)
+npm run generate:variants      # Configurable products (96 products)
+npm run generate:bundles       # Bundle products (12 bundles)
+npm run generate:price-books   # Pricing tiers (18 price books)
+npm run generate:prices        # Tier pricing (4716 prices)
+```
+
+**Output**: Generated files in `data/buildright/`
+
+### Ingest to ACO
+
+```bash
+# Ingest all data to ACO
+npm run ingest:all
+
+# Or ingest individually:
+npm run ingest:metadata
+npm run ingest:products
+npm run ingest:variants
+npm run ingest:bundles
+npm run ingest:price-books
+npm run ingest:prices
+```
+
+---
+
+## 🔄 Data Flow
+
+### 1. Generate Canonical Data (This Repo)
+
+```bash
+cd buildright-aco
+npm run generate:all
+```
+
+**Creates**:
+- `data/buildright/products.json` (262 products)
+- `data/buildright/metadata.json` (42 attributes)
+- `data/buildright/categories.json` (12 categories)
+- etc.
+
+### 2. Import to Both Systems (Parallel)
+
+**Commerce Import** (operational source):
+```bash
+cd ../buildright-commerce
+npm run transform:metadata    # Transform ACO metadata to Commerce
+npm run generate             # Generate Commerce datapack
+npm run import:all           # Import to Commerce (20s with optimizations!)
+```
+
+**ACO Import** (enhanced catalog):
+```bash
+cd ../buildright-aco
+npm run ingest:all           # Ingest to ACO (60s)
+```
+
+**Both can run in parallel!** Total time: ~60 seconds
+
+### 3. SaaS Data Export (Optional - Background Sync)
+
+After Commerce import, SaaS Data Export automatically syncs Commerce → Catalog Service → ACO.
+
+This validates that both imports produced consistent data.
+
+---
+
+## 📊 Generated Data Summary
+
+| Data Type | Count | File | Used By |
+|-----------|-------|------|---------|
+| Attributes | 42 | `metadata.json` | Commerce, ACO |
+| Categories | 12 | `categories.json` | Commerce, ACO |
+| Simple Products | 154 | `products.json` | Commerce, ACO |
+| Configurable Products | 96 | `variants.json` | Commerce, ACO |
+| Bundle Products | 12 | `bundles.json` | Commerce, ACO |
+| Price Books | 18 | `price-books.json` | ACO only |
+| Tier Prices | 4,716 | `prices.json` | ACO only |
+
+**Total Products**: 262 (154 simple + 96 configurable + 12 bundles)
+
+---
+
+## 🎯 Use Cases
+
+### Development: Fast Iteration
+
+```bash
+# 1. Generate catalog definitions
+npm run generate:all
+
+# 2. Import to both systems (parallel - use 2 terminals!)
+cd ../buildright-commerce && npm run import:all    # Terminal 1
+cd ../buildright-aco && npm run ingest:all          # Terminal 2
+
+# 3. Test immediately (no waiting!)
+cd ../buildright-eds && npm run dev
+
+# Total time: ~60 seconds 🚀
+```
+
+### Production: Architectural Sync
+
+```bash
+# 1. Generate catalog definitions
+npm run generate:all
+
+# 2. Import to Commerce (operational source)
+cd ../buildright-commerce && npm run import:all
+
+# 3. Wait for SaaS Data Export sync (5-30 min)
+bin/magento saas:resync --feed=products
+
+# 4. ACO receives data automatically via Catalog Service
+
+# Total time: ~30 minutes (validates architectural sync)
+```
+
+### Updating Product Data
+
+```bash
+# 1. Regenerate specific data
 npm run generate:products
-npm run generate:price-books
-npm run generate:prices
 
-# Generate data for dependent projects
-npm run generate:eds-data      # For buildright-eds frontend
-npm run generate:service-data  # For buildright-service backend
+# 2. Re-import to both systems
+cd ../buildright-commerce && npm run import:products
+cd ../buildright-aco && npm run ingest:products
+
+# 3. Changes appear immediately in frontend
 ```
 
-### 3. Ingest to ACO
+---
+
+## 🧪 Testing
+
+### Verify Generated Data
 
 ```bash
-# Ingest all data (recommended)
-npm run ingest:all
+# Validate JSON schemas
+npm run validate:schema
 
-# Or ingest individual entities
-npm run ingest:products      # Simple products
-npm run ingest:variants      # Configurable products + variants
-npm run ingest:bundles       # Bundle products
-npm run ingest:price-books   # Price book hierarchy
-npm run ingest:prices        # All prices
-
-# Preview before ingesting
-npm run ingest:all:dry-run
-```
-
-### 4. Reset ACO (Delete Data)
-
-```bash
-# Delete everything
-npm run reset:all
-
-# Delete specific entities
-npm run reset:products       # Delete all products
-npm run reset:price-books    # Delete prices + price books
-
-# Preview before deleting
-npm run reset:all:dry-run
-
-# Delete and re-ingest
-npm run reset:all:reingest
-```
-
-## 📊 Data Generation
-
-### ACO Entities (Ingest to Adobe Commerce Optimizer)
-
-| Entity | Generate | Ingest | Delete | Notes |
-|--------|----------|--------|--------|-------|
-| **Products** | ✅ | ✅ | ✅ | Simple + configurable + bundle |
-| **Product Metadata** | ✅ | ✅ | ⏳ | Attributes (ingested with products) |
-| **Categories** | ✅ | ⏳ | ⏳ | Optional, not yet implemented |
-| **Price Books** | ✅ | ✅ | ✅ | Hierarchical structure |
-| **Prices** | ✅ | ✅ | ✅ | All products × all price books |
-| **Inventory** | ❌ | ❌ | ❌ | NOT supported (use Adobe Commerce MSI) |
-
-### Dependent Projects (Export for downstream consumption)
-
-| Entity | Script | Output | Consumer |
-|--------|--------|--------|----------|
-| **EDS Data** | `generate:eds-data` | `buildright-eds/data/` | Frontend (Edge Delivery Services) |
-| **Service Data** | `generate:service-data` | `buildright-service/lib/data/` | Backend (BOM generation service) |
-
-**Data Flow:**
-```
-buildright-aco (source) 
-  → generate scripts 
-    → buildright-eds/data/ (frontend)
-    → buildright-service/lib/data/ (backend)
-```
-
-## 🛠️ Available Commands
-
-### Generate (Create Local JSON Data)
-
-```bash
-npm run generate:metadata         # Product attributes
-npm run generate:categories       # Category hierarchy
-npm run generate:products         # Simple products
-npm run generate:variants         # Configurable products + variants
-npm run generate:bundles          # Bundle products
-npm run generate:price-books      # Price book structure
-npm run generate:prices           # All pricing data
-npm run generate:eds-data         # EDS-compatible data files (for buildright-eds)
-npm run generate:service-data     # Service data files (for buildright-service)
-npm run generate:all              # All of the above
-```
-
-### Ingest (Push to ACO)
-
-```bash
-npm run ingest:products           # Simple products only
-npm run ingest:products:dry-run   # Preview products ingestion
-npm run ingest:variants           # Configurable products + variants
-npm run ingest:bundles            # Bundle products
-npm run ingest:price-books        # Price books (hierarchical)
-npm run ingest:prices             # All prices
-npm run ingest:prices:dry-run     # Preview prices ingestion
-npm run ingest:all                # Complete workflow (recommended)
-npm run ingest:all:dry-run        # Preview complete workflow
-```
-
-### Reset (Delete from ACO)
-
-```bash
-npm run reset:products            # Delete all products
-npm run reset:products:dry-run    # Preview product deletion
-npm run reset:price-books         # Delete prices + price books
-npm run reset:price-books:dry-run # Preview price book deletion
-npm run reset:price-books:reingest # Delete and re-ingest prices
-npm run reset:all                 # Delete everything
-npm run reset:all:dry-run         # Preview full reset
-npm run reset:all:reingest        # Delete and re-ingest everything
-```
-
-### Validate
-
-```bash
-npm run validate:schema           # Validate JSON against ACO schemas
-npm run validate:ingestion        # Validate ingestion results
-```
-
-## 📖 Usage Examples
-
-### Complete Workflow
-
-```bash
-# 1. Generate all data
-npm run generate:all
-
-# 2. Preview what will be ingested
-npm run ingest:all:dry-run
-
-# 3. Ingest to ACO
-npm run ingest:all
-
-# 4. Validate ingestion
+# Check ingestion status
 npm run validate:ingestion
 ```
 
-### Update Prices Only
+### Clean & Regenerate
 
 ```bash
-# 1. Regenerate prices
-npm run generate:prices
+# Delete all ACO data
+npm run reset:all
 
-# 2. Reset existing prices and re-ingest
-npm run reset:price-books:reingest
+# Regenerate and re-ingest
+npm run generate:all
+npm run ingest:all
 ```
 
-### Clean Slate
+---
+
+## 📚 Key Concepts
+
+### Catalog Definitions vs Operational Data
+
+| Layer | What | Where | Purpose |
+|-------|------|-------|---------|
+| **Definition Layer** | Product catalog schema | **buildright-aco** (this repo) | Defines what products exist |
+| **Operational Layer** | Live customer data | **buildright-commerce** | Serves customer transactions |
+| **Enhanced Layer** | Metadata & relationships | **ACO instance** | Advanced catalog features |
+
+### Why This Architecture?
+
+1. **DRY Principle**: Define products once, use everywhere
+2. **Single Source**: All product definitions in one place
+3. **Testability**: Can test ACO independently
+4. **Maintainability**: Change definitions once, both systems get updates
+5. **Clarity**: Clear separation of concerns
+
+### "Commerce as Source of Truth"
+
+This means Commerce is the **operational source** for:
+- Customer transactions
+- Inventory levels
+- Order data
+- SaaS Data Export origin
+
+It does NOT mean Commerce **defines** the products - that's this repository's job!
+
+---
+
+## 🛠️ Development
+
+### Prerequisites
+
+- Node.js 18+
+- ACO tenant credentials (in `.env`)
+
+### Environment Setup
 
 ```bash
-# Delete everything and start fresh
-npm run reset:all:reingest
+# Copy example env file
+cp .env.example .env
+
+# Edit with your ACO credentials
+vi .env
 ```
 
-## 🔧 Modular Utilities
+### Scripts Reference
 
-### Query Utilities (`utils/aco-query.js`)
+**Generation**:
+- `npm run generate:all` - Generate all data
+- `npm run generate:metadata` - Generate attributes
+- `npm run generate:categories` - Generate categories
+- `npm run generate:products` - Generate simple products
+- `npm run generate:variants` - Generate configurable products
+- `npm run generate:bundles` - Generate bundle products
 
-```javascript
-import { getAllProductSKUs, validateSKUsExist } from './utils/aco-query.js';
+**Ingestion**:
+- `npm run ingest:all` - Ingest all to ACO
+- `npm run ingest:metadata` - Ingest attributes
+- `npm run ingest:products` - Ingest simple products
+- `npm run ingest:variants` - Ingest configurable products
+- `npm run ingest:bundles` - Ingest bundle products
 
-// Get all SKUs from local data
-const skus = await getAllProductSKUs();
+**Cleanup**:
+- `npm run reset:all` - Delete all ACO data
+- `npm run reset:products` - Delete products only
+- `npm run reset:price-books` - Delete price books
 
-// Validate SKUs exist in ACO
-const result = await validateSKUsExist(['SKU-001', 'SKU-002']);
-console.log(`Found: ${result.found.length}, Missing: ${result.missing.length}`);
-```
+**Validation**:
+- `npm run validate:schema` - Validate against ACO schemas
+- `npm run validate:ingestion` - Check ingestion status
 
-### Delete Utilities (`utils/aco-delete.js`)
+---
 
-```javascript
-import {
-  deleteAllPricesForPriceBooks,
-  deletePriceBooks,
-  deleteProductsBySKUs
-} from './utils/aco-delete.js';
+## 📖 Related Documentation
 
-// Delete all prices for specific price books
-await deleteAllPricesForPriceBooks(['US-Retail', 'Production-Builder']);
+- [Full Architecture Guide](../buildright-commerce/docs/DATA-FLOW-ORCHESTRATION.md)
+- [Fast Import Workflow](../buildright-commerce/docs/DATA-FLOW-UPDATED.md)
+- [SaaS Data Export Analysis](../buildright-commerce/docs/SAAS-DATA-EXPORT-ANALYSIS.md)
 
-// Delete price books
-await deletePriceBooks(['old-price-book-1', 'old-price-book-2']);
+---
 
-// Delete products
-await deleteProductsBySKUs(['SKU-001', 'SKU-002']);
-```
+## 🎯 Summary
 
-## 📁 Data Files
+This repository is the **BuildRight Catalog Definition Repository**:
 
-Generated JSON files are stored in `data/buildright/`:
+✅ Defines **what products exist** (catalog schema)  
+✅ Generates **canonical data files** (single source)  
+✅ Both Commerce and ACO **import from it** (consumers)  
+✅ Enables **fast parallel imports** (~60s vs 30min wait)  
+✅ Maintains **architectural correctness** (SaaS sync validates)  
 
-| File | Records | Description |
-|------|---------|-------------|
-| `metadata.json` | 20 | Product attribute definitions |
-| `categories.json` | 19 | Category hierarchy |
-| `products.json` | 108 | Simple products |
-| `variants.json` | 100 | Configurable products + variants |
-| `bundles.json` | 15 | Bundle products |
-| `price-books.json` | 5 | Price book hierarchy |
-| `prices.json` | 1,115 | All prices (223 SKUs × 5 price books) |
+**Commerce** is the operational source for transactions.  
+**This repo** is the definitional source for the catalog.
 
-**Total:** 223 products, 5 price books, 1,115 prices
-
-## 🔐 Environment Variables
-
-Required variables in `.env`:
-
-```env
-# ACO Credentials (from Adobe Developer Console)
-CLIENT_ID=your-client-id
-CLIENT_SECRET=your-client-secret
-
-# ACO Instance (from Commerce Cloud Manager)
-TENANT_ID=your-tenant-id
-REGION=na1
-ENVIRONMENT=sandbox
-
-# Optional
-TIMEOUT_MS=10000
-WEBSITE_CODE=base
-STORE_CODE=default
-STORE_VIEW_CODE=default
-```
-
-## 🐛 Troubleshooting
-
-### Price Ingestion Fails with "Bad Request"
-
-**Issue**: ACO SDK requires `regular` field for prices, not `amount`.
-
-**Solution**: The `ingest-prices.js` script automatically transforms `amount` → `regular`. If you're using custom scripts, ensure you use the correct field name.
-
-### SKU Validation Fails
-
-**Issue**: GraphQL `productSearch` requires a search index which may not be configured.
-
-**Solution**: Use `--skip-validation` flag or rely on local SKU data with `getAllProductSKUs()`.
-
-### Price Books Won't Delete
-
-**Issue**: Price books with associated prices cannot be deleted.
-
-**Solution**: Delete prices first using `reset:price-books` which handles the correct order.
-
-## 📚 Resources
-
-- [Adobe Commerce Optimizer Documentation](https://developer.adobe.com/commerce/services/optimizer/)
-- [ACO TypeScript SDK](https://github.com/adobe-commerce/aco-ts-sdk)
-- [ACO Sample Catalog Data](https://github.com/adobe-commerce/aco-sample-catalog-data-ingestion)
+---
 
 ## 📝 License
 
 MIT
 
----
+## 🤝 Contributing
 
-**Version**: 2.0.0 (Modular & ACO-Only)
+This is a demo repository. For production use, adapt the product definitions and generation logic to your specific needs.

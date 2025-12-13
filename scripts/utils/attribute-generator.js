@@ -109,17 +109,17 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
   const attributes = [];
   
   // Add required attributes
-  const productCategoryAttr = metadata.find(m => m.attributeId === 'product_category');
+  const productCategoryAttr = metadata.find(m => m.attributeId === 'br_product_category');
   if (productCategoryAttr) {
     attributes.push({
-      code: 'product_category',
+      code: 'br_product_category',
       label: productCategoryAttr.label,
       value: categoryValue
     });
   }
   
   // Find brand and UOM attributes
-  const brandAttr = metadata.find(m => m.label === 'Brand' || m.attributeId === 'brand');
+  const brandAttr = metadata.find(m => m.label === 'Brand' || m.attributeId === 'br_brand');
   if (brandAttr && brandAttr.options) {
     // Use valid brand option from metadata
     const brandOption = brandAttr.options[random.nextInt(0, brandAttr.options.length - 1)];
@@ -146,11 +146,11 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
   }
   
   // Add project_types attribute with intelligent assignment based on category
-  const projectTypesAttr = metadata.find(m => m.attributeId === 'project_types');
+  const projectTypesAttr = metadata.find(m => m.attributeId === 'br_project_types');
   if (projectTypesAttr) {
     const projectTypes = getProjectTypes(categoryValue, random, isService);
     attributes.push({
-      code: 'project_types',
+      code: 'br_project_types',
       label: projectTypesAttr.label,
       value: projectTypes
     });
@@ -159,8 +159,8 @@ export function generateAttributes(metadata, categoryValue, brand, uom, random, 
   // Add some optional attributes (excluding already-added attributes)
   const optionalAttrs = metadata.filter(m =>
     !m.isRequired &&
-    m.attributeId !== 'product_category' &&
-    m.attributeId !== 'project_types'
+    m.attributeId !== 'br_product_category' &&
+    m.attributeId !== 'br_project_types'
   );
   const numOptional = random.nextInt(2, Math.min(5, optionalAttrs.length));
   

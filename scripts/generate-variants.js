@@ -107,7 +107,7 @@ function generateAttributes(metadata, categoryValue, brand, uom, additionalAttrs
 
   // Add required attributes
   attributes.push({
-    code: 'product_category',
+    code: 'br_product_category',
     values: [categoryValue]
   });
 
