@@ -14,38 +14,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r21"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
@@ -143,25 +143,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -169,32 +169,32 @@
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "cellulose"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "pefc_certified",
           "fsc_mix"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "casement"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "chandelier"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "bolt"
         ]
@@ -292,56 +292,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "brass"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "square"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r30"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "spray_foam"
         ]
@@ -439,38 +439,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "fiberglass"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "staple"
         ]
@@ -568,25 +568,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -594,19 +594,19 @@
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "screw"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "roof"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "truss"
         ]
@@ -679,50 +679,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "double_pane"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "faucet"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "truss"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z359"
         ]
@@ -814,25 +814,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -840,31 +840,31 @@
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "bathroom"
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "type_x"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "32"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "fall_protection"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "fire_retardant"
         ]
@@ -918,7 +918,7 @@
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "roof"
         ]
@@ -949,25 +949,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -975,25 +975,25 @@
         ]
       },
       {
-        "code": "window_material",
+        "code": "br_window_material",
         "values": [
           "composite"
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "solid_core"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "ice_water_shield"
         ]
@@ -1066,25 +1066,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -1092,19 +1092,19 @@
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "hex"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "31"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "hot_dip_galvanized"
         ]
@@ -1183,25 +1183,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -1209,25 +1209,25 @@
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "roofing_nail"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "27"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "steel"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "false"
         ]
@@ -1306,50 +1306,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "false"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "steel"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r15"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z89_1",
           "z87_1"
@@ -1435,44 +1435,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "square"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "fire_retardant"
         ]
@@ -1545,25 +1545,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -1571,25 +1571,25 @@
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "sink"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n99"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "wall"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "bugle"
         ]
@@ -1656,25 +1656,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -1682,13 +1682,13 @@
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xs"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.5"
         ]
@@ -1755,25 +1755,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -1781,25 +1781,25 @@
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "patio"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "bolt"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "cfl"
         ]
@@ -1866,25 +1866,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -1892,19 +1892,19 @@
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "foam_core"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "kitchen"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "screw"
         ]
@@ -1971,25 +1971,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -1997,25 +1997,25 @@
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "utility"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "brass"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r15"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xl"
         ]
@@ -2082,25 +2082,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2108,19 +2108,19 @@
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_e"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "toilet"
         ]
@@ -2187,25 +2187,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2213,31 +2213,31 @@
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "wall"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xxl"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a2"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "ice_water_shield"
         ]
@@ -2292,7 +2292,7 @@
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.5"
         ]
@@ -2323,25 +2323,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2349,13 +2349,13 @@
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "patio"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "bright"
         ]
@@ -2435,25 +2435,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2461,13 +2461,13 @@
         ]
       },
       {
-        "code": "window_material",
+        "code": "br_window_material",
         "values": [
           "composite"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "hot_dip_galvanized"
         ]
@@ -2547,25 +2547,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2573,26 +2573,26 @@
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_1"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "sfi_certified",
           "none"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "nail"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "utility"
         ]
@@ -2671,25 +2671,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2697,31 +2697,31 @@
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "solid_core"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "toilet"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "brass"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "hex"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a7"
         ]
@@ -2801,25 +2801,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2827,25 +2827,25 @@
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "zinc_plated"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "fire_retardant"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "roof"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "utility"
         ]
@@ -2924,25 +2924,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -2950,13 +2950,13 @@
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "m"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "29"
         ]
@@ -2980,13 +2980,13 @@
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "fiberglass_batt"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r19"
         ]
@@ -3017,25 +3017,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3043,13 +3043,13 @@
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "bathroom"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "common_nail"
         ]
@@ -3098,25 +3098,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "KIT"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3124,31 +3124,31 @@
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "steel"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n95"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "redwood"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "staple"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_e"
         ]
@@ -3197,25 +3197,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3223,25 +3223,25 @@
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "green"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "single_hung"
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "non_rated"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
@@ -3295,7 +3295,7 @@
         ]
       },
       {
-        "code": "window_material",
+        "code": "br_window_material",
         "values": [
           "vinyl"
         ]
@@ -3326,25 +3326,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3352,19 +3352,19 @@
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "27"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.25"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a8"
         ]
@@ -3418,19 +3418,19 @@
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "double_hung"
         ]
       },
       {
-        "code": "window_material",
+        "code": "br_window_material",
         "values": [
           "vinyl"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "double_pane"
         ]
@@ -3461,25 +3461,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3487,25 +3487,25 @@
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "casement"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "fiberglass"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "nail"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "redwood"
         ]
@@ -3584,25 +3584,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3610,13 +3610,13 @@
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "no_1"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "chandelier"
         ]
@@ -3695,25 +3695,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3721,13 +3721,13 @@
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_g"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "framing_nail"
         ]
@@ -3806,25 +3806,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3832,25 +3832,25 @@
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "mineral_wool"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "steel"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "square"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "roof"
         ]
@@ -3929,25 +3929,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -3955,19 +3955,19 @@
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "staple"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "combination"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "shower"
         ]
@@ -4021,13 +4021,13 @@
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "entry"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "steel"
         ]
@@ -4058,25 +4058,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4084,13 +4084,13 @@
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.75"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "single_hung"
         ]
@@ -4144,13 +4144,13 @@
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "interior"
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "hollow_core"
         ]
@@ -4181,25 +4181,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "PAIR"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4207,19 +4207,19 @@
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "recessed"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "sink"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "square"
         ]
@@ -4298,25 +4298,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4324,25 +4324,25 @@
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_c"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "incandescent"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "pressure_treated_acq"
         ]
@@ -4434,25 +4434,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4460,25 +4460,25 @@
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "subfloor"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "deck_screw"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "head_protection"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
@@ -4557,25 +4557,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4583,13 +4583,13 @@
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "stainless_steel_316"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xl"
         ]
@@ -4668,25 +4668,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4695,19 +4695,19 @@
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "entry"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.375"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "bathroom"
         ]
@@ -4749,13 +4749,13 @@
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "nail"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "framing_nail"
         ]
@@ -4786,25 +4786,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4813,31 +4813,31 @@
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "framing_nail"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "flush_mount"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z359"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "hot_dip_galvanized"
         ]
@@ -4904,25 +4904,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -4931,13 +4931,13 @@
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "type_x"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "subfloor"
         ]
@@ -5004,25 +5004,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5031,13 +5031,13 @@
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_c"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.5"
         ]
@@ -5104,25 +5104,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5131,31 +5131,31 @@
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_c"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n95"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r30"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_1"
         ]
@@ -5222,25 +5222,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5249,25 +5249,25 @@
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "storm"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "square"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_2"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "bolt"
         ]
@@ -5346,25 +5346,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5373,7 +5373,7 @@
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "none",
           "fsc_mix",
@@ -5381,7 +5381,7 @@
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "false"
         ]
@@ -5467,25 +5467,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5494,25 +5494,25 @@
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "stainless_steel_316"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "utility"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "faucet"
         ]
@@ -5579,25 +5579,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5606,19 +5606,19 @@
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_2"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n99"
         ]
@@ -5685,25 +5685,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5712,19 +5712,19 @@
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "staple"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "pendant"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "flat"
         ]
@@ -5791,25 +5791,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5818,13 +5818,13 @@
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "33"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "flush_mount"
         ]
@@ -5903,25 +5903,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -5930,26 +5930,26 @@
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z89_1",
           "z359"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "roofing_nail"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "beveled"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
@@ -6029,50 +6029,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BUNDLE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "m"
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "patio"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "staple"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "fsc_mix",
           "none",
@@ -6153,44 +6153,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BUNDLE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_material",
+        "code": "br_window_material",
         "values": [
           "vinyl"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "kiln_dried"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "m"
         ]
@@ -6269,50 +6269,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BUNDLE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_1"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "tapered"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "toilet"
         ]
@@ -6391,44 +6391,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BUNDLE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "truss"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "31"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r13"
         ]
@@ -6507,38 +6507,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "wall"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "felt_15lb"
         ]
@@ -6605,38 +6605,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BUNDLE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "square"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "sliding"
         ]
@@ -6703,44 +6703,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "stainless_steel_304"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "casement"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z87_1",
           "z359",
@@ -6748,7 +6748,7 @@
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "hex"
         ]
@@ -6815,38 +6815,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "standard"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
@@ -6913,57 +6913,57 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "sfi_certified",
           "fsc_certified"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "respiratory_protection"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.25"
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "bifold"
         ]
@@ -7042,50 +7042,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r19"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "hem_fir"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "fsc_certified"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "stainless_steel_304"
         ]
@@ -7165,50 +7165,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "anchor"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "mineral_wool"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "25"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "utility"
         ]
@@ -7287,44 +7287,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "select_structural"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "steel"
         ]
@@ -7403,44 +7403,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "square"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.5"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "steel"
         ]
@@ -7495,44 +7495,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "beveled"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "aluminum"
         ]
@@ -7581,38 +7581,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "roofing_nail"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "incandescent"
         ]
@@ -7661,56 +7661,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "beveled"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "deck_screw"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "20"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z359",
           "s3_19",
@@ -7761,38 +7761,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_2"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "pendant"
         ]
@@ -7841,38 +7841,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "round"
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "storm"
         ]
@@ -7921,38 +7921,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "sliding"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "standard"
         ]
@@ -8007,56 +8007,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_g"
         ]
       },
       {
-        "code": "window_material",
+        "code": "br_window_material",
         "values": [
           "clad_wood"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "universal"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "toilet"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "pendant"
         ]
@@ -8111,44 +8111,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "isea_105"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "bow"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.5"
         ]
@@ -8209,44 +8209,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "roofing_nail"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_2"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "shower"
         ]
@@ -8301,38 +8301,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_1"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "shower"
         ]
@@ -8387,38 +8387,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SF"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "hex"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "hearing_protection"
         ]
@@ -8473,38 +8473,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "GALLON"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "faucet"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_2"
         ]
@@ -8559,50 +8559,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "GALLON"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "utility"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "27"
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "foam_core"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_1"
         ]
@@ -8669,56 +8669,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "GALLON"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "steel"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "isea_105"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "chandelier"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "zinc_plated"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
@@ -8773,50 +8773,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "GALLON"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_2"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "torx"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "fire_retardant"
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "interior"
         ]
@@ -8871,56 +8871,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "GALLON"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "hex"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "true"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "l"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z87_1",
           "s3_19",
@@ -8977,38 +8977,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "GALLON"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "redwood"
         ]
@@ -9063,38 +9063,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "combination"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "fall_protection"
         ]
@@ -9149,50 +9149,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "25"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "fsc_mix"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "felt_30lb"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "fiberglass_batt"
         ]
@@ -9247,44 +9247,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "pressure_treated_aca"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "no_1"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "isea_107",
           "z87_1",
@@ -9341,44 +9341,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "no_3"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "tapered"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "aluminum"
         ]
@@ -9408,13 +9408,13 @@
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "recessed"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
@@ -9445,56 +9445,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "screw"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_2"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "truss"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "ceramic_coated"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "steel"
         ]
@@ -9549,51 +9549,51 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r13"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "isea_107",
           "astm_f2413"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "phillips"
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "solid_wood"
         ]
@@ -9648,44 +9648,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "double_pane"
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "foam_core"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "l"
         ]
@@ -9715,13 +9715,13 @@
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "faucet"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "kitchen"
         ]
@@ -9752,50 +9752,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "combination"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "flush_mount"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "subfloor"
         ]
@@ -9850,38 +9850,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "pressure_treated_acq"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.375"
         ]
@@ -9936,38 +9936,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "pan"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "shower"
         ]
@@ -10022,38 +10022,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "kiln_dried"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "anchor"
         ]
@@ -10108,50 +10108,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "roof"
         ]
       },
       {
-        "code": "window_material",
+        "code": "br_window_material",
         "values": [
           "aluminum"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "incandescent"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_1"
         ]
@@ -10206,56 +10206,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Concrete & Foundation"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "CY"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "non_rated"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "galvanized"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "20"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.5"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "hex"
         ]
@@ -10340,38 +10340,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Concrete & Foundation"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "CY"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "pan"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r13"
         ]
@@ -10444,38 +10444,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Concrete & Foundation"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "CY"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "p95"
         ]
@@ -10548,50 +10548,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Concrete & Foundation"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BAG"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_2"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "zinc_plated"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "common_nail"
         ]
@@ -10664,38 +10664,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Concrete & Foundation"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BAG"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "type_x"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "chandelier"
         ]
@@ -10768,38 +10768,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "select_structural"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "s"
         ]
@@ -10872,50 +10872,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "felt_15lb"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r21"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "western_red_cedar"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.25"
         ]
@@ -10988,38 +10988,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "steel"
         ]
@@ -11092,44 +11092,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "bolt"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "head_protection"
         ]
       },
       {
-        "code": "drywall_product_type",
+        "code": "br_drywall_product_type",
         "values": [
           "mold_resistant"
         ]
@@ -11202,44 +11202,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "type_x"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_1"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "fiberglass_batt"
         ]
@@ -11312,44 +11312,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "s"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "western_red_cedar"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "cfl"
         ]
@@ -11422,38 +11422,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "incandescent"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n95"
         ]
@@ -11526,56 +11526,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "p100"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_3"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "false"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "phillips"
         ]
@@ -11648,38 +11648,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "25"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z89_1",
           "z359"
@@ -11753,44 +11753,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "double_pane"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "faucet"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.625"
         ]
@@ -11863,56 +11863,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Electrical Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "green"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "led"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "staple"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n95"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "felt_15lb"
         ]
@@ -11985,44 +11985,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "type_c"
         ]
       },
       {
-        "code": "drywall_product_type",
+        "code": "br_drywall_product_type",
         "values": [
           "sound_dampening"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "32"
         ]
@@ -12095,38 +12095,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xs"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a6"
         ]
@@ -12199,50 +12199,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r21"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_2"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "brass"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.625"
         ]
@@ -12315,50 +12315,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "roofing_nail"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "chandelier"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xxxl"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
@@ -12431,38 +12431,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "recessed"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "bathroom"
         ]
@@ -12535,44 +12535,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "fiberglass_batt"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n100"
         ]
@@ -12645,44 +12645,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "pressure_treated_aca"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "casement"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "p99"
         ]
@@ -12755,56 +12755,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "KIT"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "window_energy_star",
+        "code": "br_window_energy_star",
         "values": [
           "false"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "utility"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_g"
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "storm"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "chandelier"
         ]
@@ -12877,38 +12877,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "KIT"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "torx"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_1"
         ]
@@ -12981,44 +12981,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Plumbing Pipes & Fittings"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "composite"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "subfloor"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a4"
         ]
@@ -13091,45 +13091,45 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.625"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "z87_1",
           "isea_105"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "flush_mount"
         ]
@@ -13202,44 +13202,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "kitchen"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_2"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_e"
         ]
@@ -13312,38 +13312,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_1"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "combination"
         ]
@@ -13416,50 +13416,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "tongue_and_groove"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "nail"
         ]
       },
       {
-        "code": "drywall_product_type",
+        "code": "br_drywall_product_type",
         "values": [
           "regular"
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "foam_core"
         ]
@@ -13532,32 +13532,32 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "flush_mount"
         ]
@@ -13630,38 +13630,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n100"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "steel"
         ]
@@ -13734,38 +13734,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.75"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_2"
         ]
@@ -13838,38 +13838,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "22"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r15"
         ]
@@ -13942,50 +13942,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r13"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "hearing_protection"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "torx"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "flush_mount"
         ]
@@ -14058,50 +14058,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "HVAC Systems"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "no_1"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.25"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "bow"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a1"
         ]
@@ -14174,50 +14174,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Drywall & Supplies"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "ice_water_shield"
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "anchor"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a9"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_e"
         ]
@@ -14290,38 +14290,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Drywall & Supplies"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fixture_location",
+        "code": "br_fixture_location",
         "values": [
           "bathroom"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "stainless_steel_304"
         ]
@@ -14394,50 +14394,50 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Drywall & Supplies"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ToughGrip"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SHEET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "20"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "single_hung"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "ice_water_shield"
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_3"
         ]
@@ -14510,44 +14510,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Drywall & Supplies"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BUCKET"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xs"
         ]
       },
       {
-        "code": "ppe_cut_resistance",
+        "code": "br_ppe_cut_resistance",
         "values": [
           "a2"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "astm_f2413",
           "s3_19",
@@ -14555,13 +14555,13 @@
         ]
       },
       {
-        "code": "fastener_subtype",
+        "code": "br_fastener_subtype",
         "values": [
           "brad_nail"
         ]
       },
       {
-        "code": "lumber_grade",
+        "code": "br_lumber_grade",
         "values": [
           "construction"
         ]
@@ -14634,57 +14634,57 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Drywall & Supplies"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "ROLL"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "fsc_certified",
           "none"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "fiberglass"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "shower"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.625"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "stainless_steel_316"
         ]
@@ -14757,56 +14757,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Drywall & Supplies"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "entry"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.625"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "n100"
         ]
       },
       {
-        "code": "lumber_certification",
+        "code": "br_lumber_certification",
         "values": [
           "none"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
@@ -14879,56 +14879,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Drywall & Supplies"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "BuildRight Pro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "BOX"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "hem_fir"
         ]
       },
       {
-        "code": "door_core_type",
+        "code": "br_door_core_type",
         "values": [
           "solid_core"
         ]
       },
       {
-        "code": "drywall_product_type",
+        "code": "br_drywall_product_type",
         "values": [
           "mold_resistant"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "p99"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_c"
         ]
@@ -15001,56 +15001,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Kitchen Appliances"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "truss"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "ice_water_shield"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "green"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "galvanized"
         ]
@@ -15129,38 +15129,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Kitchen Appliances"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "sheathing_location",
+        "code": "br_sheathing_location",
         "values": [
           "wall"
         ]
       },
       {
-        "code": "fixture_type",
+        "code": "br_fixture_type",
         "values": [
           "toilet"
         ]
@@ -15239,56 +15239,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Kitchen Appliances"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "square"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "cfl"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "western_red_cedar"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "xl"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.25"
         ]
@@ -15367,56 +15367,56 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Kitchen Appliances"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.75"
         ]
       },
       {
-        "code": "ppe_hard_hat_type",
+        "code": "br_ppe_hard_hat_type",
         "values": [
           "type_1"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "p100"
         ]
       },
       {
-        "code": "fastener_drive_type",
+        "code": "br_fastener_drive_type",
         "values": [
           "slotted"
         ]
       },
       {
-        "code": "door_material",
+        "code": "br_door_material",
         "values": [
           "wood"
         ]
@@ -15495,44 +15495,44 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Kitchen Appliances"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "ppe_nrr_rating",
+        "code": "br_ppe_nrr_rating",
         "values": [
           "29"
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "foot_protection"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "fiberglass_batt"
         ]
@@ -15611,38 +15611,38 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Kitchen Appliances"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "EA"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "ceramic_coated"
         ]
       },
       {
-        "code": "ppe_ansi_standard",
+        "code": "br_ppe_ansi_standard",
         "values": [
           "isea_105"
         ]
@@ -15721,25 +15721,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "StructureMaster"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -15748,19 +15748,19 @@
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r15"
         ]
       },
       {
-        "code": "ppe_hard_hat_class",
+        "code": "br_ppe_hard_hat_class",
         "values": [
           "class_e"
         ]
       },
       {
-        "code": "ppe_niosh_rating",
+        "code": "br_ppe_niosh_rating",
         "values": [
           "p100"
         ]
@@ -15791,25 +15791,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Structural Materials"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -15818,19 +15818,19 @@
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "non_rated"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "pan"
         ]
       },
       {
-        "code": "door_type",
+        "code": "br_door_type",
         "values": [
           "entry"
         ]
@@ -15861,25 +15861,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -15888,13 +15888,13 @@
         ]
       },
       {
-        "code": "fastener_type",
+        "code": "br_fastener_type",
         "values": [
           "nail"
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "double_pane"
         ]
@@ -15925,25 +15925,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Framing & Drywall"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ReliaBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -15952,13 +15952,13 @@
         ]
       },
       {
-        "code": "window_glazing_type",
+        "code": "br_window_glazing_type",
         "values": [
           "triple_pane"
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "square"
         ]
@@ -15989,25 +15989,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "MaxStrength"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16016,25 +16016,25 @@
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_2"
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "bow"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "fiberglass_batt"
         ]
       },
       {
-        "code": "lumber_treatment",
+        "code": "br_lumber_treatment",
         "values": [
           "pressure_treated_acq"
         ]
@@ -16065,25 +16065,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Windows & Doors"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16092,19 +16092,19 @@
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "foot_protection"
         ]
       },
       {
-        "code": "light_type",
+        "code": "br_light_type",
         "values": [
           "chandelier"
         ]
       },
       {
-        "code": "drywall_fire_rating",
+        "code": "br_drywall_fire_rating",
         "values": [
           "type_c"
         ]
@@ -16135,25 +16135,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "ProFrame"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16162,19 +16162,19 @@
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "hex"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "ceramic_coated"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "felt_15lb"
         ]
@@ -16205,25 +16205,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Fasteners & Hardware"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16232,25 +16232,25 @@
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "hex"
         ]
       },
       {
-        "code": "drywall_product_type",
+        "code": "br_drywall_product_type",
         "values": [
           "moisture_resistant"
         ]
       },
       {
-        "code": "drywall_thickness",
+        "code": "br_drywall_thickness",
         "values": [
           "0.375"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
@@ -16281,25 +16281,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "FastenPro"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16308,19 +16308,19 @@
         ]
       },
       {
-        "code": "ppe_category",
+        "code": "br_ppe_category",
         "values": [
           "eye_protection"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "aluminum"
         ]
       },
       {
-        "code": "ppe_size",
+        "code": "br_ppe_size",
         "values": [
           "l"
         ]
@@ -16351,25 +16351,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Roofing"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "PremiumBuild"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16378,25 +16378,25 @@
         ]
       },
       {
-        "code": "window_operation_type",
+        "code": "br_window_operation_type",
         "values": [
           "bow"
         ]
       },
       {
-        "code": "light_technology",
+        "code": "br_light_technology",
         "values": [
           "incandescent"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "zinc_plated"
         ]
       },
       {
-        "code": "insulation_type",
+        "code": "br_insulation_type",
         "values": [
           "fiberglass_batt"
         ]
@@ -16427,25 +16427,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "DuraBuilt"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16454,31 +16454,31 @@
         ]
       },
       {
-        "code": "ppe_hi_vis_class",
+        "code": "br_ppe_hi_vis_class",
         "values": [
           "class_3"
         ]
       },
       {
-        "code": "underlayment_type",
+        "code": "br_underlayment_type",
         "values": [
           "synthetic"
         ]
       },
       {
-        "code": "lumber_species",
+        "code": "br_lumber_species",
         "values": [
           "southern_yellow_pine"
         ]
       },
       {
-        "code": "insulation_r_value",
+        "code": "br_insulation_r_value",
         "values": [
           "r15"
         ]
       },
       {
-        "code": "fastener_material",
+        "code": "br_fastener_material",
         "values": [
           "stainless_steel_316"
         ]
@@ -16509,25 +16509,25 @@
     ],
     "attributes": [
       {
-        "code": "product_category",
+        "code": "br_product_category",
         "values": [
           "Interior Finishes"
         ]
       },
       {
-        "code": "brand",
+        "code": "br_brand",
         "values": [
           "SafeGuard"
         ]
       },
       {
-        "code": "unit_of_measure",
+        "code": "br_unit_of_measure",
         "values": [
           "SERVICE"
         ]
       },
       {
-        "code": "project_types",
+        "code": "br_project_types",
         "values": [
           "New Construction",
           "Remodel",
@@ -16536,19 +16536,19 @@
         ]
       },
       {
-        "code": "drywall_edge_type",
+        "code": "br_drywall_edge_type",
         "values": [
           "beveled"
         ]
       },
       {
-        "code": "fastener_head_type",
+        "code": "br_fastener_head_type",
         "values": [
           "round"
         ]
       },
       {
-        "code": "fastener_coating",
+        "code": "br_fastener_coating",
         "values": [
           "bright"
         ]

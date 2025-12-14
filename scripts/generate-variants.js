@@ -16,6 +16,132 @@ const __dirname = dirname(__filename);
 const SEED = 54321; // Different seed from products for variety
 const random = new SeededRandom(SEED);
 
+/**
+ * Intelligent dimension formatter
+ * Formats variant dimensions based on their types and common construction industry conventions
+ * @param {Object} combination - Dimension combination object (e.g., {depth: '3.5', width: '5.5', length: '8'})
+ * @returns {string} Formatted dimension string
+ */
+function formatDimensions(combination) {
+  const parts = [];
+  
+  // Lumber/Beams: depth × width × length (e.g., "3.5" × 5.5" × 8ft")
+  if (combination.depth && combination.width && combination.length) {
+    parts.push(`${combination.depth}" × ${combination.width}" × ${combination.length}ft`);
+    return parts.join(' ');
+  }
+  
+  // Sheets/Panels: thickness, width × length (e.g., "1/2" thick 4×8")
+  if (combination.thickness && combination.width && combination.length) {
+    parts.push(`${combination.thickness}" thick ${combination.width}×${combination.length}`);
+    return parts.join(' ');
+  }
+  
+  // Metal Framing: gauge, width, length (e.g., "18 gauge 3.5" × 10ft")
+  if (combination.gauge && combination.width && combination.length) {
+    parts.push(`${combination.gauge} gauge ${combination.width}" × ${combination.length}ft`);
+    return parts.join(' ');
+  }
+  
+  // Windows/Doors: size (already formatted like "30x48"), then other attributes
+  if (combination.size) {
+    // Convert size format from "30x48" to "30"×48""
+    const [w, h] = combination.size.split('x');
+    parts.push(`${w}"×${h}"`);
+  } else if (combination.width && combination.height) {
+    parts.push(`${combination.width}"×${combination.height}"`);
+  }
+  
+  // Window-specific attributes
+  if (combination.glazing) {
+    parts.push(`${combination.glazing}-pane`);
+  }
+  if (combination.frame) {
+    parts.push(`${combination.frame} frame`);
+  }
+  if (combination.style) {
+    parts.push(combination.style.replace(/-/g, ' '));
+  }
+  
+  // Material/finish attributes (common across categories)
+  if (combination.material) {
+    parts.push(combination.material);
+  }
+  if (combination.coating) {
+    parts.push(`${combination.coating} coating`);
+  }
+  if (combination.finish) {
+    parts.push(`${combination.finish} finish`);
+  }
+  
+  // Type/profile attributes
+  if (combination.type) {
+    parts.push(combination.type.replace(/-/g, ' '));
+  }
+  if (combination.profile) {
+    parts.push(combination.profile.replace(/-/g, ' '));
+  }
+  
+  // Roofing attributes
+  if (combination.color) {
+    parts.push(combination.color.replace(/-/g, ' '));
+  }
+  if (combination.warranty) {
+    parts.push(`${combination.warranty} warranty`);
+  }
+  
+  // Fastener attributes
+  if (combination.gauge && !combination.width) { // gauge-only (not already handled above)
+    parts.push(`${combination.gauge} gauge`);
+  }
+  if (combination.diameter) {
+    parts.push(`${combination.diameter}" diameter`);
+  }
+  
+  // Dimensional fallbacks (if not already handled)
+  if (parts.length === 0) {
+    if (combination.depth && combination.width) {
+      parts.push(`${combination.depth}" × ${combination.width}"`);
+    }
+    if (combination.length && !combination.depth && !combination.width) {
+      parts.push(`${combination.length}ft`);
+    }
+    if (combination.thickness && !combination.width) {
+      parts.push(`${combination.thickness}" thick`);
+    }
+  }
+  
+  // Weight/coverage/quantity attributes (typically last)
+  if (combination.weight) {
+    parts.push(combination.weight);
+  }
+  if (combination.coverage) {
+    parts.push(combination.coverage);
+  }
+  if (combination.quantity) {
+    parts.push(combination.quantity);
+  }
+  if (combination.application) {
+    parts.push(combination.application);
+  }
+  
+  // Final fallback: if still nothing, use all values with intelligent separators
+  if (parts.length === 0) {
+    const values = Object.entries(combination)
+      .filter(([key, value]) => value)
+      .map(([key, value]) => {
+        // Add context to raw values when possible
+        if (key.includes('size') || key.includes('gauge') || key.includes('length')) {
+          return value;
+        }
+        return value;
+      });
+    return values.join(' ');
+  }
+  
+  return parts.join(', ');
+}
+
 // Paths
 const OUTPUT_FILE = path.join(__dirname, '../data/buildright/variants.json');
 const PRODUCTS_FILE = path.join(__dirname, '../data/buildright/products.json');
@@ -288,22 +414,9 @@ function generateVariants(parentProduct, template, category, subcategory, catego
 
     const variantPrice = parentProduct.price + priceAdjustment;
 
-    // Build variant name
-    const dimensionStrings = [];
-    if (combination.depth && combination.width) {
-      dimensionStrings.push(`${combination.depth}" × ${combination.width}"`);
-    }
-    if (combination.length) {
-      dimensionStrings.push(`${combination.length}ft`);
-    }
-    if (combination.thickness) {
-      dimensionStrings.push(`${combination.thickness}" thick`);
-    }
-    if (combination.gauge) {
-      dimensionStrings.push(`${combination.gauge} gauge`);
-    }
-
-    const variantName = `${parentProduct.name.replace(' - Configurable', '')} - ${dimensionStrings.join(' ')}`;
+    // Build variant name using intelligent dimension formatting
+    const variantSuffix = formatDimensions(combination);
+    const variantName = `${parentProduct.name.replace(' - Configurable', '')} - ${variantSuffix}`;
 
     const categoryDef = PRODUCT_CATEGORIES[category];
     const categoryValue = categoryDef.attributeValue || category;
