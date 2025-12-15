@@ -18,8 +18,8 @@
 import { promises as fs } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { deleteProductsBySKUs } from '../utils/aco-delete.js';
-import logger from '../utils/logger.js';
+import { deleteProductsBySKUs } from '../shared/aco-delete.js';
+import logger from '../shared/logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

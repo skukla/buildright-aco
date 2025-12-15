@@ -17,8 +17,8 @@
 import { promises as fs } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { BaseIngester } from '../utils/base-ingester.js';
-import { withRetry } from '../utils/retry-util.js';
+import { BaseIngester } from '../shared/base-ingester.js';
+import { withRetry } from '../shared/retry-util.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

@@ -10,8 +10,8 @@
  *   node scripts/force-delete-all-aco.js --dry-run
  */
 
-import { getACOClient } from '../utils/aco-client.js';
-import logger from '../utils/logger.js';
+import { getACOClient } from '../shared/aco-client.js';
+import logger from '../shared/logger.js';
 import { promises as fs } from 'fs';
 
 const dryRun = process.argv.includes('--dry-run');

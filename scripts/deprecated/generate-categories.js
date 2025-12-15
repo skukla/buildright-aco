@@ -6,9 +6,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { seedRandom, seedRandomInt, seedRandomBoolean } from '../utils/random-seed.js';
-import { validateSchema } from '../utils/schema-validator.js';
-import logger from '../utils/logger.js';
+import { seedRandom, seedRandomInt, seedRandomBoolean } from '../shared/random-seed.js';
+import { validateSchema } from '../shared/schema-validator.js';
+import logger from '../shared/logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

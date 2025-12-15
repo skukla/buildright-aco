@@ -13,9 +13,9 @@
  * @module scripts/reset-price-books
  */
 
-import { getAllProductSKUs } from '../utils/aco-query.js';
-import { deleteAllPricesForPriceBooks, deletePriceBooks } from '../utils/aco-delete.js';
-import logger from '../utils/logger.js';
+import { getAllProductSKUs } from '../shared/aco-query.js';
+import { deleteAllPricesForPriceBooks, deletePriceBooks } from '../shared/aco-delete.js';
+import logger from '../shared/logger.js';
 import { promises as fs } from 'fs';
 
 // Parse command line arguments

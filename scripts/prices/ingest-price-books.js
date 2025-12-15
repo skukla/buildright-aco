@@ -17,10 +17,10 @@
 import { promises as fs } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { BaseIngester } from '../utils/base-ingester.js';
-import { withRetry } from '../utils/retry-util.js';
-import { getStateTracker } from '../utils/aco-state-tracker.js';
-import logger from '../utils/logger.js';
+import { BaseIngester } from '../shared/base-ingester.js';
+import { withRetry } from '../shared/retry-util.js';
+import { getStateTracker } from '../shared/aco-state-tracker.js';
+import logger from '../shared/logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

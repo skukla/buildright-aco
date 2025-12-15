@@ -15,7 +15,7 @@
 import { promises as fs } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import { getStateTracker } from '../utils/aco-state-tracker.js';
+import { getStateTracker } from '../shared/aco-state-tracker.js';
 import chalk from 'chalk';
 
 const __filename = fileURLToPath(import.meta.url);

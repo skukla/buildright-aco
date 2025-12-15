@@ -22,15 +22,15 @@
  * @module scripts/reset-all
  */
 
-import { BuildRightDetector } from '../utils/smart-detector.js';
+import { BuildRightDetector } from '../shared/smart-detector.js';
 import {
   deleteAllPricesForPriceBooks,
   deletePriceBooks,
   deleteProductsBySKUs
-} from '../utils/aco-delete.js';
-import logger from '../utils/logger.js';
-import { format, withProgress } from '../utils/format.js';
-import { updateLine, finishLine } from '../utils/progress.js';
+} from '../shared/aco-delete.js';
+import logger from '../shared/logger.js';
+import { format, withProgress } from '../shared/format.js';
+import { updateLine, finishLine } from '../shared/progress.js';
 import chalk from 'chalk';
 
 // Parse command line arguments

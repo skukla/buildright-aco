@@ -4,9 +4,9 @@
  * Ultra-clean, single-line updates matching Commerce and kukla-integration-service style
  */
 
-import { updateLine, finishLine } from '../utils/progress.js';
-import { format } from '../utils/format.js';
-import { formatDuration } from '../utils/aco-ingest-helpers.js';
+import { updateLine, finishLine } from '../shared/progress.js';
+import { format } from '../shared/format.js';
+import { formatDuration } from '../shared/aco-ingest-helpers.js';
 
 // Import ingestion functions
 import { ingestMetadata } from './ingest-metadata.js';
@@ -14,7 +14,7 @@ import { ingestProducts } from './ingest-products.js';
 import { ingestVariants } from './ingest-variants.js';
 import { ingestPriceBooks } from './ingest-price-books.js';
 import { ingestPrices } from './ingest-prices.js';
-import { getStateTracker } from '../utils/aco-state-tracker.js';
+import { getStateTracker } from '../shared/aco-state-tracker.js';
 
 // Parse command line arguments
 const args = process.argv.slice(2);

@@ -22,8 +22,8 @@
  */
 
 import fs from 'fs/promises';
-import { queryProductsBySKU, verifyDataIngestion } from '../utils/graphql-query.js';
-import logger from '../utils/logger.js';
+import { queryProductsBySKU, verifyDataIngestion } from '../shared/graphql-query.js';
+import logger from '../shared/logger.js';
 import { validateIngestConfig } from './config/ingest-config.js';
 
 /**

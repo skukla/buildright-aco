@@ -12,8 +12,8 @@
  *   node scripts/delete-skus.js BUNDLE-123 BUNDLE-456 --dry-run
  */
 
-import { getACOClient } from '../utils/aco-client.js';
-import logger from '../utils/logger.js';
+import { getACOClient } from '../shared/aco-client.js';
+import logger from '../shared/logger.js';
 import { createInterface } from 'readline';
 
 const args = process.argv.slice(2);

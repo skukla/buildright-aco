@@ -6,8 +6,8 @@
  * Note: Products/variants/categories/metadata come from Commerce transform.
  */
 
-import { updateLine, finishLine } from '../utils/progress.js';
-import { format } from '../utils/format.js';
+import { updateLine, finishLine } from '../shared/progress.js';
+import { format } from '../shared/format.js';
 import { execSync } from 'child_process';
 
 // Parse command line arguments

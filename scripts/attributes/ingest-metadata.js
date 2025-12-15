@@ -19,9 +19,9 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { BaseIngester } from '../utils/base-ingester.js';
-import { withRetry } from '../utils/retry-util.js';
-import { getStateTracker } from '../utils/aco-state-tracker.js';
+import { BaseIngester } from '../shared/base-ingester.js';
+import { withRetry } from '../shared/retry-util.js';
+import { getStateTracker } from '../shared/aco-state-tracker.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

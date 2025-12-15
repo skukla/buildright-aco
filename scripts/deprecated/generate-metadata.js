@@ -12,8 +12,8 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { validateSchema } from '../utils/schema-validator.js';
-import logger from '../utils/logger.js';
+import { validateSchema } from '../shared/schema-validator.js';
+import logger from '../shared/logger.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

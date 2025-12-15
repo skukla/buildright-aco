@@ -23,8 +23,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { createLogger } from '../utils/logger.js';
-import { SeededRandom } from '../utils/random-seed.js';
+import { createLogger } from '../shared/logger.js';
+import { SeededRandom } from '../shared/random-seed.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
