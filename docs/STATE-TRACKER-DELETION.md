@@ -75,18 +75,62 @@ When orphans are detected:
 3. Combine and delete all found orphans
 4. Poll until cleanup completes
 
+## Handling Orphaned Invisible Variants
+
+### The Problem
+
+If you have orphaned invisible variants (e.g., from old pre-state-tracker workflow):
+- ❌ Cannot query them (not searchable)
+- ❌ Normal validation won't find them
+- ❌ They remain as ghosts in ACO
+
+### The Solution: Seed State Tracker
+
+**Populate the state tracker from local JSON files:**
+
+```bash
+npm run seed-state  # Loads SKUs from data/buildright/*.json into state tracker
+npm run delete      # Deletes all tracked SKUs (including invisible variants)
+```
+
+**What it does:**
+1. Reads `products.json` and `variants.json`
+2. Adds all SKUs to state tracker (both visible + invisible)
+3. Deletion script reads state tracker and deletes ALL SKUs
+
+**When to use:**
+- State tracker is empty but products exist in ACO
+- You have orphaned invisible variants
+- Migrating from old non-state-tracker workflow (one-time operation)
+
+### Implementation
+
+See `scripts/seed-state-from-files.js`:
+
+```javascript
+// Load local files
+const products = JSON.parse(await fs.readFile('products.json'));
+const variants = JSON.parse(await fs.readFile('variants.json'));
+const allSkus = [...products.map(p => p.sku), ...variants.map(v => v.sku)];
+
+// Seed state tracker
+const stateTracker = getStateTracker();
+allSkus.forEach(sku => stateTracker.markProductIngested(sku));
+await stateTracker.save();
+```
+
 ## Limitations
 
 ### Cannot Detect
 
-❌ **Invisible variants we didn't ingest** - not queryable at all
+❌ **Invisible variants we didn't ingest AND aren't in local files** - not queryable at all
 
 **Why this is acceptable:**
 - State tracker ensures we always know what we ingested
+- `seed-state` script handles orphans from old workflows
 - Orphaned invisible variants can only occur if:
-  1. Ingestion succeeded but state tracker failed to save (rare)
-  2. Someone manually created invisible variants (shouldn't happen)
-  3. Previous deletion used old non-state-tracker logic (one-time issue)
+  1. Someone manually created invisible variants outside our scripts (shouldn't happen)
+  2. State tracker file corrupted AND local files deleted (extremely rare)
 
 ### Can Detect and Clean
 
