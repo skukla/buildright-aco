@@ -49,6 +49,34 @@ This is NOT just "ACO's repository" - it's the **BuildRight Catalog Definition R
 
 ### Analogy: Database Schema
 
+## 🚀 Quick Start
+
+### Simple Two-Step Workflow
+
+```bash
+# 1. Clean slate
+npm run delete
+
+# 2. Fresh import
+npm run import
+```
+
+**Result:** 255 products in ACO (154 simple + 101 variants) with verified state tracking
+
+### From Commerce Orchestrator
+
+```bash
+# Run from buildright-commerce to orchestrate both systems
+npm run delete    # Delete Commerce + ACO
+npm run import    # Import to Commerce + ACO
+```
+
+📖 **[Full Commands Reference](./docs/COMMANDS.md)**
+
+---
+
+### Analogy: Database Schema
+
 Think of this repository like a **database schema in version control**:
 
 | Concept | Analogy | Repository |

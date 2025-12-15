@@ -14,6 +14,7 @@
 import { promisify } from 'util';
 import { exec } from 'child_process';
 import logger from '../utils/logger.js';
+import { validateGeneratedData } from '../utils/generation-validation.js';
 
 const execAsync = promisify(exec);
 
@@ -158,6 +159,12 @@ async function generateAllParallel() {
       logger.warn(`\n⚠️  ${totalCount - successCount} task(s) failed`);
       process.exit(1);
     }
+    
+    // Validate generated data
+    logger.info('');
+    await validateGeneratedData();
+    
+    logger.info('✅ All data generated and validated successfully!\n');
     
   } catch (error) {
     logger.error(`\n❌ Generation failed: ${error.message}`);

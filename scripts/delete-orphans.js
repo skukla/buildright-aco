@@ -21,12 +21,10 @@ async function getLocalSkus() {
   const dataDir = new URL('../data/buildright/', import.meta.url);
   
   const products = JSON.parse(await fs.readFile(new URL('products.json', dataDir), 'utf-8'));
-  const bundles = JSON.parse(await fs.readFile(new URL('bundles.json', dataDir), 'utf-8'));
   const variants = JSON.parse(await fs.readFile(new URL('variants.json', dataDir), 'utf-8'));
   
   return new Set([
     ...products.map(p => p.sku),
-    ...bundles.map(b => b.sku),
     ...variants.map(v => v.sku)
   ]);
 }

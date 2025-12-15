@@ -144,67 +144,42 @@ export function generatePricesSimple(products, priceBooks, randomSeed = 12345) {
       // Apply tier discount
       const finalPrice = basePrice * (1 - tierDiscount);
 
-      // Standard price entry (quantity 1+)
-      prices.push({
-        id: `PRICE_${priceBook.priceBookId}_${product.sku}`,
+      // Build price entry
+      const priceEntry = {
         sku: product.sku,
         priceBookId: priceBook.priceBookId,
-        amount: formatPrice(finalPrice),
-        currency: 'USD',
-        uom: product.uom || 'EA',
-        effectiveDate: priceBook.effectiveDate || '2024-01-01',
-        explicit: true
-      });
+        regular: formatPrice(finalPrice)
+      };
 
       // Add volume tiers ONLY for eligible products
       // AND only in base price book (to avoid duplication)
       if (priceBook.priceBookId === 'US-Contract' && shouldHaveVolumeTiers(product)) {
-        // Volume Tier 1: 100+ units (additional 3% discount)
-        prices.push({
-          id: `PRICE_${priceBook.priceBookId}_${product.sku}_VOL100`,
-          sku: product.sku,
-          priceBookId: priceBook.priceBookId,
-          amount: formatPrice(finalPrice * 0.97), // 3% additional discount
-          currency: 'USD',
-          uom: product.uom || 'EA',
-          tier: {
-            minQty: 100,
-            maxQty: 499,
-            discount: 0.03
+        priceEntry.tierPrices = [
+          {
+            qty: 100,
+            price: formatPrice(finalPrice * 0.97) // 3% additional discount
           },
-          effectiveDate: priceBook.effectiveDate || '2024-01-01',
-          explicit: true
-        });
-
-        // Volume Tier 2: 500+ units (additional 8% discount)
-        prices.push({
-          id: `PRICE_${priceBook.priceBookId}_${product.sku}_VOL500`,
-          sku: product.sku,
-          priceBookId: priceBook.priceBookId,
-          amount: formatPrice(finalPrice * 0.92), // 8% additional discount
-          currency: 'USD',
-          uom: product.uom || 'EA',
-          tier: {
-            minQty: 500,
-            maxQty: null,
-            discount: 0.08
-          },
-          effectiveDate: priceBook.effectiveDate || '2024-01-01',
-          explicit: true
-        });
+          {
+            qty: 500,
+            price: formatPrice(finalPrice * 0.92) // 8% additional discount
+          }
+        ];
       }
+
+      prices.push(priceEntry);
     });
   });
 
   logger.info(`Generated ${prices.length} price entries`);
 
   // Calculate breakdown
-  const basePrices = prices.filter(p => !p.tier).length;
-  const tierPrices = prices.filter(p => p.tier).length;
+  const basePrices = prices.filter(p => !p.tierPrices).length;
+  const tierPrices = prices.filter(p => p.tierPrices).length;
+  const totalTiers = prices.reduce((sum, p) => sum + (p.tierPrices?.length || 0), 0);
 
-  logger.info(`  - Base prices: ${basePrices}`);
-  logger.info(`  - Volume tier prices: ${tierPrices}`);
-  logger.info(`  - Reduction from complex model: ${Math.round((1 - prices.length / 29953) * 100)}%`);
+  logger.info(`  - Base prices (no tiers): ${basePrices}`);
+  logger.info(`  - Prices with volume tiers: ${tierPrices}`);
+  logger.info(`  - Total tier definitions: ${totalTiers}`);
 
   return prices;
 }
