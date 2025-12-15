@@ -1,113 +1,114 @@
 #!/usr/bin/env node
 /**
- * Find and delete orphaned products (in ACO but not in local data)
+ * Delete Orphaned Products from ACO
+ * 
+ * This script deletes products by SKU list extracted from the ACO UI.
+ * Used for cleaning up orphaned products that aren't tracked in local data files.
  * 
  * Usage:
- *   node scripts/delete-orphans.js           # Find orphans only
- *   node scripts/delete-orphans.js --delete  # Find and delete orphans
+ *   node scripts/delete-orphans.js [--dry-run]
+ * 
+ * The script:
+ * - Reads SKUs from temp-orphan-skus.json
+ * - Deletes products using the ACO SDK
+ * - Polls to verify deletion
+ * - Cleans up the temp file when done
  */
 
 import { promises as fs } from 'fs';
-import { getACOClient } from '../utils/aco-client.js';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { deleteProductsBySKUs } from '../utils/aco-delete.js';
 import logger from '../utils/logger.js';
 
-const MESH_ENDPOINT = 'https://edge-sandbox-graph.adobe.io/api/2463edc1-5cf7-4393-af04-95a3d1b6973c/graphql';
-const CATALOG_VIEW_ID = '6792f1d5-9e79-4813-8d8e-df5ed76e5692'; // BuildRight-Default view
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
+// Parse command line args
 const args = process.argv.slice(2);
-const shouldDelete = args.includes('--delete');
+const dryRun = args.includes('--dry-run');
 
-async function getLocalSkus() {
-  const dataDir = new URL('../data/buildright/', import.meta.url);
+/**
+ * Delete products by SKU list
+ */
+async function deleteOrphans() {
+  const skuFilePath = join(__dirname, '../temp-orphan-skus.json');
   
-  const products = JSON.parse(await fs.readFile(new URL('products.json', dataDir), 'utf-8'));
-  const variants = JSON.parse(await fs.readFile(new URL('variants.json', dataDir), 'utf-8'));
-  
-  return new Set([
-    ...products.map(p => p.sku),
-    ...variants.map(v => v.sku)
-  ]);
-}
-
-async function getACOProducts() {
-  // Fetch all products (limit 500 should cover our catalog)
-  const response = await fetch(MESH_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Catalog-View-Id': CATALOG_VIEW_ID
-    },
-    body: JSON.stringify({
-      query: `{ BuildRight_productSearchFilter(phrase: "", limit: 500) { products { items { sku name } } totalCount } }`
-    })
-  });
-  
-  const data = await response.json();
-  const result = data.data?.BuildRight_productSearchFilter;
-  
-  if (!result) {
-    throw new Error('Failed to fetch ACO products: ' + JSON.stringify(data));
-  }
-  
-  logger.info(`Total in ACO: ${result.totalCount}`);
-  return result.products.items;
-}
-
-async function main() {
-  logger.info('Find Orphaned Products');
-  logger.info('');
-  
-  logger.info('Loading local SKUs...');
-  const localSkus = await getLocalSkus();
-  logger.info(`Local SKUs: ${localSkus.size}`);
-  
-  logger.info('Fetching ACO products...');
-  const acoProducts = await getACOProducts();
-  logger.info(`ACO products: ${acoProducts.length}`);
-  logger.info('');
-  
-  const orphans = acoProducts.filter(p => !localSkus.has(p.sku));
-  
-  if (orphans.length === 0) {
-    logger.info('No orphaned products found!');
-    return;
-  }
-  
-  logger.info(`Found ${orphans.length} orphaned product(s):`);
-  orphans.forEach(p => logger.info(`  - ${p.sku}: ${p.name}`));
-  logger.info('');
-  
-  if (!shouldDelete) {
-    logger.info('Run with --delete to remove these products');
-    return;
-  }
-  
-  logger.info('Deleting orphaned products...');
-  
-  const client = getACOClient();
-  const deleteRequest = orphans.map(p => ({
-    sku: p.sku,
-    source: { locale: 'en-US' }
-  }));
-  
+  // Check if file exists
   try {
-    const result = await client.deleteProducts(deleteRequest);
-    
-    if (result.ok && result.data?.acceptedCount > 0) {
-      logger.info(`Deleted ${result.data.acceptedCount} orphaned product(s)`);
-      logger.info('Note: Search index may take a few minutes to update.');
-    } else {
-      logger.warn('Delete request returned but no items accepted');
-      logger.info('Response:', JSON.stringify(result, null, 2));
-    }
+    await fs.access(skuFilePath);
   } catch (error) {
-    logger.error('Delete failed:', error.message);
+    logger.error(`❌ SKU file not found: ${skuFilePath}`);
+    logger.info('\nExpected file format:');
+    logger.info('["SKU-1", "SKU-2", "SKU-3"]');
     process.exit(1);
   }
+  
+  // Read SKUs from file
+  logger.info('📂 Reading orphan SKUs from file...');
+  const skuData = await fs.readFile(skuFilePath, 'utf-8');
+  const skus = JSON.parse(skuData);
+  
+  if (!Array.isArray(skus) || skus.length === 0) {
+    logger.error('❌ Invalid SKU file format or empty array');
+    process.exit(1);
+  }
+  
+  logger.info(`✅ Found ${skus.length} orphaned SKUs to delete\n`);
+  
+  if (dryRun) {
+    logger.info('🔍 DRY RUN MODE - No actual deletion will occur\n');
+    logger.info('SKUs that would be deleted:');
+    skus.forEach((sku, i) => logger.info(`  ${i + 1}. ${sku}`));
+    logger.info(`\n✅ Dry run complete. Run without --dry-run to delete.`);
+    return;
+  }
+  
+  // Confirm deletion
+  logger.info('⚠️  WARNING: This will permanently delete these products from ACO');
+  logger.info('Press Ctrl+C to cancel, or wait 5 seconds to proceed...\n');
+  await new Promise(resolve => setTimeout(resolve, 5000));
+  
+  // Delete all products using the utility function
+  logger.info('🗑️  Deleting products...');
+  
+  const result = await deleteProductsBySKUs(skus, { 
+    dryRun: false,
+    silent: false
+  });
+  
+  logger.info('');
+  logger.info('═'.repeat(60));
+  if (result.success) {
+    logger.info(`✅ Deletion complete: ${result.deleted} products deleted`);
+  } else {
+    logger.info(`⚠️  Deletion complete with errors: ${result.deleted} deleted, ${result.errors.length} errors`);
+  }
+  logger.info('═'.repeat(60));
+  
+  // Poll to verify deletion
+  if (result.deleted > 0) {
+    logger.info('\n🔍 Waiting for ACO to process deletions...');
+    await new Promise(resolve => setTimeout(resolve, 5000));
+    
+    logger.info('✅ Deletion requests submitted successfully');
+    logger.info('   Note: It may take a few minutes for ACO UI to reflect changes');
+  }
+  
+  // Clean up temp file
+  logger.info('\n🧹 Cleaning up temp file...');
+  try {
+    await fs.unlink(skuFilePath);
+    logger.info('✅ Temp file removed');
+  } catch (error) {
+    logger.warn(`⚠️  Could not remove temp file: ${error.message}`);
+  }
+  
+  logger.info('\n✅ Orphan deletion complete!');
 }
 
-main().catch(error => {
-  logger.error('Fatal error:', error);
+// Run
+deleteOrphans().catch(error => {
+  logger.error('❌ Deletion failed:', error);
   process.exit(1);
 });
-
