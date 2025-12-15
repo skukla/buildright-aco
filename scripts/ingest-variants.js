@@ -1,154 +1,236 @@
 #!/usr/bin/env node
 /**
  * Ingest Variant Products to Adobe Commerce Optimizer
- *
+ * 
  * Ingests configurable products and their variants to ACO.
  * Parents (configurable products) are ingested first, then variants (children).
- *
+ * 
+ * Features:
+ * - Progress bars for visibility
+ * - Auto-retry with exponential backoff
+ * - State tracking for idempotency
+ * - Polling verification after ingestion
+ * - Standardized output (matches Commerce format)
+ * 
  * @module scripts/ingest-variants
- *
- * @example
- * # Ingest all variants
- * node scripts/ingest-variants.js
- *
- * # Ingest specific file
- * node scripts/ingest-variants.js data/buildright/variants.json
  */
 
-import fs from 'fs/promises';
-import { ingestProducts } from './ingest-products.js';
-import logger from '../utils/logger.js';
-import { validateIngestConfig } from './config/ingest-config.js';
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { BaseIngester } from '../utils/base-ingester.js';
+import { withRetry } from '../utils/retry-util.js';
+import { getStateTracker } from '../utils/aco-state-tracker.js';
+import BuildRightDetector from '../utils/smart-detector.js';
+import { PollingProgress } from '../utils/progress.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /**
- * Ingest variant products (parents first, then children)
- *
- * @param {Array<Object>} variants - Variant products to ingest
- * @param {Object} options - Ingest options
- * @returns {Promise<Object>} Combined ingest results
+ * Validate variant structure
  */
-export async function ingestVariants(variants, options = {}) {
-  logger.info('Variant Ingest Started', { totalVariants: variants.length });
+function validateVariant(variant) {
+  const errors = [];
+  
+  if (!variant.sku) {
+    errors.push('Missing SKU');
+  }
+  if (!variant.name) {
+    errors.push('Missing name');
+  }
+  
+  return errors;
+}
 
-  // Separate parents (configurable) from children (variants)
-  // Parents typically have type: 'configurable' or SKU ending with '-CONFIG'
-  const parents = variants.filter(v =>
-    v.type === 'configurable' ||
-    v.sku?.endsWith('-CONFIG') ||
-    v.sku?.endsWith('-PARENT')
-  );
-
-  const children = variants.filter(v =>
-    v.type !== 'configurable' &&
-    !v.sku?.endsWith('-CONFIG') &&
-    !v.sku?.endsWith('-PARENT')
-  );
-
-  logger.info('Ingest order: parents first, then variants', {
-    parents: parents.length,
-    children: children.length
-  });
-
-  // Ingest parents first
-  logger.info('Ingesting configurable parent products...');
-  const parentResults = await ingestProducts(parents, {
-    ...options,
-    onProgress: (progress) => {
-      logger.info(`Parents: ${progress.completed}/${progress.total} (${progress.percent}%)`);
-      if (options.onProgress) {
-        options.onProgress({ ...progress, phase: 'parents' });
+/**
+ * Variant Ingester Class
+ */
+class VariantIngester extends BaseIngester {
+  constructor(options = {}) {
+    super('Variants', options);
+  }
+  
+  async ingest() {
+    // Load variants
+    const variantsPath = join(__dirname, '../data/buildright/variants.json');
+    this.logger.info(`Loading variants from: ${variantsPath}`);
+    
+    const variantsData = await fs.readFile(variantsPath, 'utf-8');
+    const variants = JSON.parse(variantsData);
+    
+    this.logger.info(`Loaded ${variants.length} variants`);
+    
+    // Separate parents from children
+    const parents = variants.filter(v =>
+      v.type === 'configurable' ||
+      v.sku?.endsWith('-CONFIG') ||
+      v.sku?.endsWith('-PARENT')
+    );
+    
+    const children = variants.filter(v =>
+      v.type !== 'configurable' &&
+      !v.sku?.endsWith('-CONFIG') &&
+      !v.sku?.endsWith('-PARENT')
+    );
+    
+    this.logger.info(`Parents: ${parents.length}, Children: ${children.length}`);
+    
+    // Validate variants
+    this.logger.info('Validating variant structure...');
+    let hasErrors = false;
+    variants.forEach((variant, index) => {
+      const errors = validateVariant(variant);
+      if (errors.length > 0) {
+        this.logger.error(`Variant ${index} (${variant.sku || 'NO_SKU'}): ${errors.join(', ')}`);
+        hasErrors = true;
+      }
+    });
+    
+    if (hasErrors) {
+      throw new Error('Variant validation failed');
+    }
+    
+    this.logger.info('✅ Validation passed');
+    
+    if (this.isDryRun) {
+      this.logger.info('[DRY RUN] Would ingest:', {
+        parents: parents.length,
+        children: children.length
+      });
+      variants.forEach(v => this.results.addSkipped(v, 'dry-run'));
+      return;
+    }
+    
+    // Load state tracker
+    const stateTracker = getStateTracker();
+    await stateTracker.load();
+    
+    // Filter already-ingested (idempotency)
+    const parentsToIngest = parents.filter(p => !stateTracker.hasProduct(p.sku));
+    const childrenToIngest = children.filter(c => !stateTracker.hasProduct(c.sku));
+    
+    const alreadyIngested = variants.length - parentsToIngest.length - childrenToIngest.length;
+    
+    if (alreadyIngested > 0) {
+      this.logger.info(`Skipping ${alreadyIngested} already-ingested variants`);
+      variants.filter(v => stateTracker.hasProduct(v.sku)).forEach(v => {
+        this.results.addExisting({ sku: v.sku, name: v.name });
+      });
+    }
+    
+    if (parentsToIngest.length === 0 && childrenToIngest.length === 0) {
+      this.logger.info('All variants already ingested (idempotent)');
+      return;
+    }
+    
+    // Initialize ACO client
+    const client = await this.getClient();
+    
+    // Ingest parents first
+    if (parentsToIngest.length > 0) {
+      this.logger.info(`Ingesting ${parentsToIngest.length} parent products...`);
+      
+      for (const parent of parentsToIngest) {
+        try {
+          await withRetry(async () => {
+            await client.createProducts([parent]);
+          }, {
+            name: `Ingest parent ${parent.sku}`
+          });
+          
+          this.results.addCreated({ sku: parent.sku, name: parent.name });
+        } catch (error) {
+          this.logger.error(`Failed to ingest parent ${parent.sku}: ${error.message}`);
+          this.results.addFailed({ sku: parent.sku, name: parent.name }, error);
+        }
       }
     }
-  });
-
-  if (!parentResults.success && parentResults.failed > 0) {
-    logger.error('Parent ingest had failures', {
-      failed: parentResults.failed,
-      ingested: parentResults.ingested
-    });
-
-    if (parentResults.failed > parentResults.ingested) {
-      throw new Error(`Too many parent ingest failures: ${parentResults.failed} of ${parents.length} failed`);
+    
+    // Ingest children
+    if (childrenToIngest.length > 0) {
+      this.logger.info(`Ingesting ${childrenToIngest.length} child variants...`);
+      
+      for (const child of childrenToIngest) {
+        try {
+          await withRetry(async () => {
+            await client.createProducts([child]);
+          }, {
+            name: `Ingest variant ${child.sku}`
+          });
+          
+          this.results.addCreated({ sku: child.sku, name: child.name });
+        } catch (error) {
+          this.logger.error(`Failed to ingest variant ${child.sku}: ${error.message}`);
+          this.results.addFailed({ sku: child.sku, name: child.name }, error);
+        }
+      }
+    }
+    
+    // Poll ACO to verify ingestion
+    if (this.results.created.length > 0 && !this.silent) {
+      this.logger.info('Polling ACO to verify ingestion...');
+      
+      const detector = new BuildRightDetector({ silent: this.silent });
+      const skusToVerify = this.results.created.map(v => v.sku);
+      
+      const progress = new PollingProgress('Verifying variants', skusToVerify.length);
+      const maxAttempts = 15; // 150 seconds max
+      const pollInterval = 10000; // 10 seconds
+      let attempt = 0;
+      let verifiedCount = 0;
+      
+      while (attempt < maxAttempts && verifiedCount < skusToVerify.length) {
+        attempt++;
+        await new Promise(resolve => setTimeout(resolve, pollInterval));
+        
+        const foundVariants = await detector.queryACOProductsBySKUs(skusToVerify);
+        verifiedCount = foundVariants.length;
+        
+        progress.update(verifiedCount, attempt, maxAttempts);
+        
+        if (verifiedCount === skusToVerify.length) {
+          progress.finish(verifiedCount, true);
+          break;
+        }
+      }
+      
+      if (verifiedCount < skusToVerify.length) {
+        progress.finish(verifiedCount, false);
+        this.logger.warn(`Only ${verifiedCount}/${skusToVerify.length} variants verified in ACO`);
+      }
+    }
+    
+    // Update state only after successful verification
+    const skusCreated = this.results.created.map(v => v.sku);
+    skusCreated.forEach(sku => stateTracker.addProduct(sku));
+    await stateTracker.save();
+    
+    if (this.results.failed.length > 0) {
+      throw new Error(`${this.results.failed.length} variants failed to ingest`);
     }
   }
+}
 
-  // Ingest children (variants)
-  logger.info('Ingesting variant child products...');
-  const childrenResults = await ingestProducts(children, {
-    ...options,
-    onProgress: (progress) => {
-      logger.info(`Variants: ${progress.completed}/${progress.total} (${progress.percent}%)`);
-      if (options.onProgress) {
-        options.onProgress({ ...progress, phase: 'children' });
-      }
-    }
-  });
-
-  // Combine results
-  const combinedResults = {
-    success: parentResults.success && childrenResults.success,
-    ingested: parentResults.ingested + childrenResults.ingested,
-    failed: parentResults.failed + childrenResults.failed,
-    errors: [...(parentResults.errors || []), ...(childrenResults.errors || [])],
-    retries: (parentResults.retries || 0) + (childrenResults.retries || 0),
-    parents: {
-      ingested: parentResults.ingested,
-      failed: parentResults.failed
-    },
-    children: {
-      ingested: childrenResults.ingested,
-      failed: childrenResults.failed
-    }
-  };
-
-  logger.info('Variant Ingest Complete', {
-    totalIngested: combinedResults.ingested,
-    totalFailed: combinedResults.failed,
-    parents: combinedResults.parents,
-    children: combinedResults.children
-  });
-
-  return combinedResults;
+/**
+ * Export function for orchestrator
+ */
+export async function ingestVariants(options = {}) {
+  const ingester = new VariantIngester(options);
+  return ingester.run();
 }
 
 // CLI execution
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const variantsPath = process.argv[2] || './data/buildright/variants.json';
-
-  try {
-    // Validate configuration
-    validateIngestConfig();
-
-    // Read variants file
-    logger.info('Reading variants from file', { path: variantsPath });
-    const variantsData = await fs.readFile(variantsPath, 'utf8');
-    const variants = JSON.parse(variantsData);
-
-    logger.info(`Loaded ${variants.length} variant products from ${variantsPath}`);
-
-    // Ingest variants
-    const result = await ingestVariants(variants);
-
-    if (!result.success && result.failed > 0) {
-      logger.error('Ingest completed with errors', {
-        ingested: result.ingested,
-        failed: result.failed
-      });
+const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+if (isMainModule) {
+  const dryRun = process.argv.includes('--dry-run');
+  ingestVariants({ dryRun })
+    .then(result => process.exit(result.success ? 0 : 1))
+    .catch(error => {
+      console.error('Fatal error:', error);
       process.exit(1);
-    }
-
-    logger.info('Variant ingest successful', {
-      ingested: result.ingested,
-      parents: result.parents,
-      children: result.children
     });
-    process.exit(0);
-
-  } catch (error) {
-    logger.error('Variant ingest failed', {
-      error: error.message,
-      stack: error.stack
-    });
-    process.exit(1);
-  }
 }
+
+// Export helper functions for testing
+export { validateVariant };

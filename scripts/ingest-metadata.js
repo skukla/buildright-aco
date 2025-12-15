@@ -19,14 +19,14 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { getACOClient } from '../utils/aco-client.js';
-import { executeWithRetry } from '../utils/retry-handler.js';
-import logger from '../utils/logger.js';
+import { BaseIngester } from '../utils/base-ingester.js';
+import { withRetry } from '../utils/retry-util.js';
+import { getStateTracker } from '../utils/aco-state-tracker.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DRY_RUN = process.argv.includes('--dry-run') || process.env.DRY_RUN === 'true';
+const BATCH_SIZE = 10; // ACO recommendation
 
 /**
  * Maps BuildRight metadata types to ACO metadata dataTypes
@@ -128,146 +128,152 @@ function validateMetadata(metadata) {
 }
 
 /**
- * Main ingestion function
+ * Metadata Ingester Class
  */
-async function ingestMetadata() {
-  const startTime = Date.now();
+class MetadataIngester extends BaseIngester {
+  constructor(options = {}) {
+    super('Metadata', options);
+    this.batchSize = BATCH_SIZE;
+  }
   
-  try {
-    logger.info('========================================');
-    logger.info('Product Attribute Metadata Ingestion');
-    logger.info('========================================');
-    
-    if (DRY_RUN) {
-      logger.info('DRY RUN MODE: No data will be ingested to ACO');
-    }
-    
+  async ingest() {
     // Load metadata JSON
     const metadataPath = path.join(__dirname, '../data/buildright/metadata.json');
-    logger.info(`Loading metadata from: ${metadataPath}`);
+    this.logger.info(`Loading metadata from: ${metadataPath}`);
     
     const metadataRaw = await fs.readFile(metadataPath, 'utf-8');
     const metadata = JSON.parse(metadataRaw);
     
-    logger.info(`Loaded ${metadata.length} attribute definitions`);
+    this.logger.info(`Loaded ${metadata.length} attribute definitions`);
     
     // Validate metadata
-    logger.info('Validating metadata structure...');
+    this.logger.info('Validating metadata structure...');
     const validation = validateMetadata(metadata);
     
     if (!validation.valid) {
-      logger.error('Metadata validation failed:', validation.errors);
+      this.logger.error('Metadata validation failed:', validation.errors);
       throw new Error(`Validation failed: ${validation.errors.length} errors`);
     }
     
-    logger.info('✅ Validation passed');
+    this.logger.info('✅ Validation passed');
     
     // Transform to ACO format
-    logger.info('Transforming to ACO Metadata API format...');
+    this.logger.info('Transforming to ACO Metadata API format...');
     const acoMetadata = transformToACOMetadata(metadata);
     
     // Log sample for verification
-    logger.info('Sample transformed metadata (first 3):');
-    acoMetadata.slice(0, 3).forEach(meta => {
-      logger.info(`  - ${meta.code} (${meta.label}): ${meta.dataType}, searchWeight: ${meta.searchWeight}, filterable: ${meta.filterable}`);
-    });
+    if (!this.silent) {
+      this.logger.info('Sample transformed metadata (first 3):');
+      acoMetadata.slice(0, 3).forEach(meta => {
+        this.logger.info(`  - ${meta.code} (${meta.label}): ${meta.dataType}, searchWeight: ${meta.searchWeight}, filterable: ${meta.filterable}`);
+      });
+    }
     
-    if (DRY_RUN) {
-      logger.info('========================================');
-      logger.info('Dry-run Summary');
-      logger.info('========================================');
-      logger.info(`Would ingest: ${acoMetadata.length} metadata definitions`);
-      logger.info('Validation: PASSED ✅');
-      logger.info('No data was sent to ACO (dry-run mode)');
+    if (this.isDryRun) {
+      this.logger.info('[DRY RUN] Would ingest:', {
+        metadata: acoMetadata.length,
+        batches: Math.ceil(acoMetadata.length / this.batchSize)
+      });
+      // Add as skipped for dry run
+      acoMetadata.forEach(meta => this.results.addSkipped(meta, 'dry-run'));
+      return;
+    }
+    
+    // Load state tracker
+    const stateTracker = getStateTracker();
+    await stateTracker.load();
+    
+    // Check if metadata already ingested (idempotency)
+    const toIngest = acoMetadata.filter(m => !stateTracker.hasMetadata(m.code));
+    const alreadyIngested = acoMetadata.length - toIngest.length;
+    
+    if (alreadyIngested > 0) {
+      this.logger.info(`Skipping ${alreadyIngested} already-ingested metadata attributes`);
+      // Track existing
+      acoMetadata.filter(m => stateTracker.hasMetadata(m.code)).forEach(meta => {
+        this.results.addExisting({ code: meta.code, label: meta.label });
+      });
+    }
+    
+    if (toIngest.length === 0) {
+      this.logger.info('All metadata already ingested (idempotent)');
       return;
     }
     
     // Get ACO client
-    logger.info('Initializing ACO client...');
-    const client = getACOClient();
+    this.logger.info('Initializing ACO client...');
+    const client = await this.getClient();
     
-    // Ingest in batches of 10 (ACO recommendation)
-    const batchSize = 10;
+    // Ingest in batches
     const batches = [];
-    for (let i = 0; i < acoMetadata.length; i += batchSize) {
-      batches.push(acoMetadata.slice(i, i + batchSize));
+    for (let i = 0; i < toIngest.length; i += this.batchSize) {
+      batches.push(toIngest.slice(i, i + this.batchSize));
     }
     
-    logger.info(`Ingesting ${acoMetadata.length} metadata definitions in ${batches.length} batches...`);
-    
-    let totalIngested = 0;
-    let totalFailed = 0;
-    const failedBatches = [];
+    this.logger.info(`Ingesting ${toIngest.length} metadata definitions in ${batches.length} batches...`);
     
     for (let i = 0; i < batches.length; i++) {
       const batch = batches[i];
       const batchNum = i + 1;
       
-      logger.info(`Processing batch ${batchNum}/${batches.length} (${batch.length} attributes)`);
+      if (!this.silent) {
+        this.logger.info(`Batch ${batchNum}/${batches.length} (${batch.length} items)`);
+      }
       
       try {
-        const response = await executeWithRetry(
-          async () => await client.createProductMetadata(batch),
-          {
-            maxRetries: 3,
-            retryDelay: 2000,
-            operationName: `metadata-batch-${batchNum}`
+        await withRetry(async () => {
+          const response = await client.createProductMetadata(batch);
+          
+          if (response.data && response.data.status === 'ACCEPTED') {
+            const acceptedCount = response.data.acceptedCount || batch.length;
+            
+            // Track each metadata in state and results
+            batch.forEach(meta => {
+              stateTracker.addMetadata(meta.code);
+              this.results.addCreated({ code: meta.code, label: meta.label });
+            });
+          } else {
+            throw new Error(`Batch ${batchNum} not accepted: ${JSON.stringify(response.data)}`);
           }
-        );
-        
-        if (response.data && response.data.status === 'ACCEPTED') {
-          const acceptedCount = response.data.acceptedCount || batch.length;
-          totalIngested += acceptedCount;
-          logger.info(`✅ Batch ${batchNum} accepted: ${acceptedCount} attributes`);
-        } else {
-          logger.warn(`⚠️  Batch ${batchNum} response unexpected:`, response.data);
-          failedBatches.push({ batchNum, batch, response: response.data });
-          totalFailed += batch.length;
-        }
+        }, {
+          name: `Ingest metadata batch ${batchNum}`
+        });
       } catch (error) {
-        logger.error(`❌ Batch ${batchNum} failed:`, error.message);
-        failedBatches.push({ batchNum, batch, error: error.message });
-        totalFailed += batch.length;
+        this.logger.error(`Batch ${batchNum} failed: ${error.message}`);
+        batch.forEach(meta => {
+          this.results.addFailed({ code: meta.code, label: meta.label }, error);
+        });
       }
     }
     
-    // Summary
-    const duration = ((Date.now() - startTime) / 1000).toFixed(2);
+    // Save state
+    await stateTracker.save();
     
-    logger.info('========================================');
-    logger.info('Metadata Ingestion Summary');
-    logger.info('========================================');
-    logger.info(`Total Metadata Definitions: ${metadata.length}`);
-    logger.info(`Successfully Ingested: ${totalIngested}`);
-    logger.info(`Failed: ${totalFailed}`);
-    logger.info(`Success Rate: ${((totalIngested / metadata.length) * 100).toFixed(1)}%`);
-    logger.info(`Duration: ${duration}s`);
-    logger.info('========================================');
-    
-    if (failedBatches.length > 0) {
-      logger.error('Failed batches:');
-      failedBatches.forEach(fb => {
-        logger.error(`  Batch ${fb.batchNum}: ${fb.error || JSON.stringify(fb.response)}`);
-      });
-      throw new Error(`${failedBatches.length} batches failed`);
+    if (this.results.failed.length > 0) {
+      throw new Error(`${this.results.failed.length} metadata items failed to ingest`);
     }
-    
-    logger.info('✅ Metadata ingestion complete!');
-    logger.info('');
-    logger.info('Next steps:');
-    logger.info('  1. Ingest products: npm run ingest:products');
-    logger.info('  2. Query products via GraphQL to verify labels are no longer "null"');
-    
-  } catch (error) {
-    logger.error('Metadata ingestion failed:', error);
-    process.exit(1);
   }
 }
 
-// Run if executed directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  ingestMetadata();
+/**
+ * Export function for orchestrator
+ */
+export async function ingestMetadata(options = {}) {
+  const ingester = new MetadataIngester(options);
+  return ingester.run();
 }
 
-export { ingestMetadata, transformToACOMetadata, validateMetadata };
+// CLI execution
+const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+if (isMainModule) {
+  const dryRun = process.argv.includes('--dry-run');
+  ingestMetadata({ dryRun })
+    .then(result => process.exit(result.success ? 0 : 1))
+    .catch(error => {
+      console.error('Fatal error:', error);
+      process.exit(1);
+    });
+}
 
+// Export helper functions for testing
+export { transformToACOMetadata, validateMetadata };

@@ -33,7 +33,7 @@ import logger from './logger.js';
 export async function deletePricesBySKUs(skus, priceBookIds, options = {}) {
   const { batchSize = 100, dryRun = false } = options;
   
-  logger.info('Delete Prices Operation', {
+  logger.debug('Delete Prices Operation', {
     skuCount: skus.length,
     priceBookCount: priceBookIds.length,
     totalPrices: skus.length * priceBookIds.length,
@@ -48,17 +48,26 @@ export async function deletePricesBySKUs(skus, priceBookIds, options = {}) {
     }
   }
   
-  logger.info(`Generated ${priceDeletes.length} price delete requests`);
+  logger.debug(`Generated ${priceDeletes.length} price delete requests`);
   
   if (dryRun) {
-    logger.info('[DRY-RUN] Would delete prices in batches of', batchSize);
+    logger.debug('[DRY-RUN] Would delete prices in batches of', batchSize);
     return { deleted: 0, total: priceDeletes.length, dryRun: true };
   }
   
   // Process in batches
   const client = getACOClient();
+  
+  // Import progress utility for single-line updates
+  const { updateLine, finishLine, formatProgressBar } = await import('./progress.js');
+  
+  logger.debug(`Deleting ${priceDeletes.length} prices across ${Math.ceil(priceDeletes.length / batchSize)} batches...`);
+  
   let deletedCount = 0;
   const errors = [];
+  
+  // Don't show progress bar - too fast and causes flickering
+  // The withProgress spinner will handle the UI
   
   for (let i = 0; i < priceDeletes.length; i += batchSize) {
     const batch = priceDeletes.slice(i, i + batchSize);
@@ -66,12 +75,10 @@ export async function deletePricesBySKUs(skus, priceBookIds, options = {}) {
     const totalBatches = Math.ceil(priceDeletes.length / batchSize);
     
     try {
-      logger.info(`Deleting batch ${batchNum}/${totalBatches} (${batch.length} prices)...`);
       const response = await client.deletePrices(batch);
-      const accepted = response.data?.accepted || 0;
+      const accepted = response.data?.acceptedCount || 0;
       deletedCount += accepted;
       
-      logger.info(`Batch ${batchNum}: Deleted ${accepted} prices`);
     } catch (error) {
       logger.error(`Batch ${batchNum} failed:`, error.message);
       errors.push({
@@ -81,8 +88,7 @@ export async function deletePricesBySKUs(skus, priceBookIds, options = {}) {
       });
     }
   }
-  
-  logger.info(`Price deletion complete: ${deletedCount}/${priceDeletes.length} deleted`);
+  logger.debug(`Price deletion complete: ${deletedCount}/${priceDeletes.length} deleted`);
   
   return {
     deleted: deletedCount,
@@ -112,7 +118,7 @@ export async function deletePricesBySKUs(skus, priceBookIds, options = {}) {
 export async function deleteAllPricesForPriceBooks(priceBookIds, options = {}) {
   const { skus: providedSKUs, batchSize = 100, dryRun = false } = options;
   
-  logger.info('Deleting all prices for price books:', priceBookIds);
+  logger.debug('Deleting all prices for price books:', priceBookIds);
   
   // Get SKUs if not provided
   let skus = providedSKUs;
@@ -121,7 +127,7 @@ export async function deleteAllPricesForPriceBooks(priceBookIds, options = {}) {
     skus = await getAllProductSKUs();
   }
   
-  logger.info(`Will delete prices for ${skus.length} SKUs across ${priceBookIds.length} price books`);
+  logger.debug(`Will delete prices for ${skus.length} SKUs across ${priceBookIds.length} price books`);
   
   // Delete prices
   return await deletePricesBySKUs(skus, priceBookIds, { batchSize, dryRun });
@@ -145,20 +151,29 @@ export async function deleteAllPricesForPriceBooks(priceBookIds, options = {}) {
 export async function deletePriceBooks(priceBookIds, options = {}) {
   const { batchSize = 100, dryRun = false } = options;
   
-  logger.info('Delete Price Books Operation', {
+  logger.debug('Delete Price Books Operation', {
     count: priceBookIds.length,
     dryRun
   });
   
   if (dryRun) {
-    logger.info('[DRY-RUN] Would delete price books:', priceBookIds);
+    logger.debug('[DRY-RUN] Would delete price books:', priceBookIds);
     return { deleted: 0, total: priceBookIds.length, dryRun: true };
   }
   
   const client = getACOClient();
   const priceBookDeletes = priceBookIds.map(priceBookId => ({ priceBookId }));
+  
+  // Import progress utility for single-line updates
+  const { updateLine, finishLine, formatProgressBar } = await import('./progress.js');
+  
+  logger.debug(`Deleting ${priceBookDeletes.length} price books across ${Math.ceil(priceBookDeletes.length / batchSize)} batches...`);
+  
   let deletedCount = 0;
   const errors = [];
+  
+  // Don't show progress bar - too fast and causes flickering
+  // The withProgress spinner will handle the UI
   
   // Process in batches
   for (let i = 0; i < priceBookDeletes.length; i += batchSize) {
@@ -167,12 +182,10 @@ export async function deletePriceBooks(priceBookIds, options = {}) {
     const totalBatches = Math.ceil(priceBookDeletes.length / batchSize);
     
     try {
-      logger.info(`Deleting batch ${batchNum}/${totalBatches} (${batch.length} price books)...`);
       const response = await client.deletePriceBooks(batch);
-      const accepted = response.data?.accepted || 0;
+      const accepted = response.data?.acceptedCount || 0;
       deletedCount += accepted;
       
-      logger.info(`Batch ${batchNum}: Deleted ${accepted} price books`);
     } catch (error) {
       logger.error(`Batch ${batchNum} failed:`, error.message);
       errors.push({
@@ -183,7 +196,7 @@ export async function deletePriceBooks(priceBookIds, options = {}) {
     }
   }
   
-  logger.info(`Price book deletion complete: ${deletedCount}/${priceBookIds.length} deleted`);
+  logger.debug(`Price book deletion complete: ${deletedCount}/${priceBookIds.length} deleted`);
   
   return {
     deleted: deletedCount,
@@ -207,16 +220,16 @@ export async function deletePriceBooks(priceBookIds, options = {}) {
  * const result = await deleteProductsBySKUs(['SKU-001', 'SKU-002']);
  */
 export async function deleteProductsBySKUs(skus, options = {}) {
-  const { locale = 'en-US', batchSize = 100, dryRun = false } = options;
+  const { locale = 'en-US', batchSize = 100, dryRun = false, silent = false } = options;
   
-  logger.info('Delete Products Operation', {
+  logger.debug('Delete Products Operation', {
     count: skus.length,
     locale,
     dryRun
   });
   
   if (dryRun) {
-    logger.info('[DRY-RUN] Would delete products:', skus.slice(0, 10));
+    logger.debug('[DRY-RUN] Would delete products:', skus.slice(0, 10));
     return { deleted: 0, total: skus.length, dryRun: true };
   }
   
@@ -226,8 +239,15 @@ export async function deleteProductsBySKUs(skus, options = {}) {
     source: { locale }
   }));
   
+  // Import progress utility for single-line updates
+  const { updateLine, finishLine, formatProgressBar } = await import('./progress.js');
+  
+  logger.debug(`Deleting ${productDeletes.length} products across ${Math.ceil(productDeletes.length / batchSize)} batches...`);
+  
   let deletedCount = 0;
   const errors = [];
+  let lastUpdate = 0;
+  const updateThrottle = 100; // Only update display every 100ms
   
   // Process in batches
   for (let i = 0; i < productDeletes.length; i += batchSize) {
@@ -236,13 +256,26 @@ export async function deleteProductsBySKUs(skus, options = {}) {
     const totalBatches = Math.ceil(productDeletes.length / batchSize);
     
     try {
-      logger.info(`Deleting batch ${batchNum}/${totalBatches} (${batch.length} products)...`);
       const response = await client.deleteProducts(batch);
-      const accepted = response.data?.accepted || 0;
+      const accepted = response.data?.acceptedCount || 0;
       deletedCount += accepted;
       
-      logger.info(`Batch ${batchNum}: Deleted ${accepted} products`);
+      // Update progress bar in place (unless silent mode for polling)
+      if (!silent) {
+        // Throttle updates to prevent flickering
+        const now = Date.now();
+        const isLastBatch = batchNum === totalBatches;
+        if (isLastBatch || now - lastUpdate >= updateThrottle) {
+          const bar = formatProgressBar(deletedCount, productDeletes.length, { width: 20 });
+          updateLine(`  Deleting products: ${bar} | batch ${batchNum}/${totalBatches}`);
+          lastUpdate = now;
+        }
+      }
+      
     } catch (error) {
+      if (!silent) {
+        finishLine();
+      }
       logger.error(`Batch ${batchNum} failed:`, error.message);
       errors.push({
         batch: batchNum,
@@ -252,7 +285,10 @@ export async function deleteProductsBySKUs(skus, options = {}) {
     }
   }
   
-  logger.info(`Product deletion complete: ${deletedCount}/${skus.length} deleted`);
+  if (!silent) {
+    finishLine();
+  }
+  logger.debug(`Product deletion complete: ${deletedCount}/${skus.length} deleted`);
   
   return {
     deleted: deletedCount,

@@ -33,8 +33,8 @@ export async function getAllProductSKUs(options = {}) {
   const { promises: fs } = await import('fs');
   const allSKUs = [];
   
-  // Read all product types
-  const files = ['products.json', 'variants.json', 'bundles.json'];
+  // Read all product types (no bundles - ACO-only feature removed)
+  const files = ['products.json', 'variants.json'];
   
   for (const file of files) {
     try {

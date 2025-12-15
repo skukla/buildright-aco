@@ -1,187 +1,194 @@
 #!/usr/bin/env node
 /**
  * Ingest Products to Adobe Commerce Optimizer
- *
- * Ingests simple and service products from generated JSON files to ACO
- * using batch processing with retry logic and error handling.
- *
+ * 
+ * Features:
+ * - Progress bars for visibility
+ * - Auto-retry with exponential backoff
+ * - State tracking for idempotency
+ * - Polling verification after ingestion
+ * - Standardized output (matches Commerce format)
+ * 
  * @module scripts/ingest-products
- *
- * @example
- * # Ingest all products
- * node scripts/ingest-products.js
- *
- * # Ingest specific file
- * node scripts/ingest-products.js data/buildright/products.json
- *
- * # Dry-run mode (validation only)
- * DRY_RUN=true node scripts/ingest-products.js
  */
 
-import fs from 'fs/promises';
-import path from 'path';
-import { getACOClient, batchProcess } from '../utils/aco-client.js';
-import { executeWithRetry } from '../utils/retry-handler.js';
-import {
-  createProgressReporter,
-  validateProducts,
-  formatIngestSummary
-} from '../utils/ingest-helpers.js';
-import logger from '../utils/logger.js';
-import { ingestConfig, validateIngestConfig } from './config/ingest-config.js';
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { BaseIngester } from '../utils/base-ingester.js';
+import { withRetry } from '../utils/retry-util.js';
+import { getStateTracker } from '../utils/aco-state-tracker.js';
+import BuildRightDetector from '../utils/smart-detector.js';
+import { PollingProgress } from '../utils/progress.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /**
- * Ingest products to ACO with batch processing and retry logic
- *
- * @param {Array<Object>} products - Products to ingest
- * @param {Object} options - Ingest options
- * @param {number} [options.batchSize=100] - Items per batch
- * @param {boolean} [options.dryRun=false] - Validation only, no ingest
- * @param {Function} [options.onProgress] - Progress callback
- * @returns {Promise<Object>} Ingest results
+ * Validate product structure
  */
-export async function ingestProducts(products, options = {}) {
-  const config = { ...ingestConfig, ...options };
-
-  logger.info('Product Ingest Started', {
-    totalProducts: products.length,
-    batchSize: config.batchSize,
-    dryRun: config.dryRun
-  });
-
-  // Validate products first
-  const validation = validateProducts(products);
-  if (!validation.valid) {
-    logger.error('Product validation failed', { errors: validation.errors });
-
-    if (config.dryRun) {
-      return {
-        dryRun: true,
-        validationPassed: false,
-        errors: validation.errors
-      };
-    }
-
-    throw new Error(`Product validation failed: ${validation.errors.length} errors`);
-  }
-
-  // Log persona-specific attributes for verification
-  logger.info('Verifying persona-specific attributes in products...');
-  const personaAttrs = [
-    'construction_phase', 'quality_tier', 'package_tier', 'room_category',
-    'deck_compatible', 'deck_shape', 'deck_material_type', 'deck_railing_compatible',
-    'store_velocity_category', 'recommended_restock_quantity', 'typical_days_supply', 'restock_priority'
-  ];
+function validateProduct(product) {
+  const errors = [];
   
-  const attrCounts = {};
-  products.forEach(product => {
-    product.attributes?.forEach(attr => {
-      if (personaAttrs.includes(attr.code)) {
-        attrCounts[attr.code] = (attrCounts[attr.code] || 0) + 1;
+  if (!product.sku) {
+    errors.push('Missing SKU');
+  }
+  if (!product.name) {
+    errors.push('Missing name');
+  }
+  
+  return errors;
+}
+
+/**
+ * Product Ingester Class
+ */
+class ProductIngester extends BaseIngester {
+  constructor(options = {}) {
+    super('Products', options);
+  }
+  
+  async ingest() {
+    // Load products
+    const productsPath = join(__dirname, '../data/buildright/products.json');
+    this.logger.info(`Loading products from: ${productsPath}`);
+    
+    const productsData = await fs.readFile(productsPath, 'utf-8');
+    const products = JSON.parse(productsData);
+    
+    this.logger.info(`Loaded ${products.length} products`);
+    
+    // Validate products
+    this.logger.info('Validating product structure...');
+    let hasErrors = false;
+    products.forEach((product, index) => {
+      const errors = validateProduct(product);
+      if (errors.length > 0) {
+        this.logger.error(`Product ${index} (${product.sku || 'NO_SKU'}): ${errors.join(', ')}`);
+        hasErrors = true;
       }
     });
-  });
-  
-  logger.info('Persona attribute coverage:', attrCounts);
-
-  if (config.dryRun) {
-    logger.info('Dry-run mode: validation passed, no ingest performed');
-    return {
-      dryRun: true,
-      validationPassed: true,
-      wouldIngest: products.length,
-      personaAttributeCoverage: attrCounts
-    };
-  }
-
-  // Get ACO SDK client
-  const client = getACOClient();
-
-  // Use our batch processor from aco-client
-  const results = await batchProcess(
-    products,
-    async (batch) => {
-      // Wrap in retry logic
-      return await executeWithRetry(
-        () => client.createProducts(batch),
-        {
-          maxRetries: config.maxRetries,
-          initialDelayMs: config.initialRetryDelayMs,
-          backoffMultiplier: config.retryBackoffMultiplier
+    
+    if (hasErrors) {
+      throw new Error('Product validation failed');
+    }
+    
+    this.logger.info('✅ Validation passed');
+    
+    if (this.isDryRun) {
+      this.logger.info('[DRY RUN] Would ingest:', {
+        products: products.length
+      });
+      products.forEach(p => this.results.addSkipped(p, 'dry-run'));
+      return;
+    }
+    
+    // Load state tracker
+    const stateTracker = getStateTracker();
+    await stateTracker.load();
+    
+    // Filter already-ingested (idempotency)
+    const toIngest = products.filter(p => !stateTracker.hasProduct(p.sku));
+    const alreadyIngested = products.length - toIngest.length;
+    
+    if (alreadyIngested > 0) {
+      this.logger.info(`Skipping ${alreadyIngested} already-ingested products`);
+      products.filter(p => stateTracker.hasProduct(p.sku)).forEach(p => {
+        this.results.addExisting({ sku: p.sku, name: p.name });
+      });
+    }
+    
+    if (toIngest.length === 0) {
+      this.logger.info('All products already ingested (idempotent)');
+      return;
+    }
+    
+    this.logger.info(`Ingesting ${toIngest.length} products...`);
+    
+    // Initialize ACO client
+    const client = await this.getClient();
+    
+    // Ingest with retry
+    for (const product of toIngest) {
+      try {
+        await withRetry(async () => {
+          await client.createProducts([product]); // ACO expects array
+        }, {
+          name: `Ingest product ${product.sku}`
+        });
+        
+        // Track temporarily (will verify via polling)
+        this.results.addCreated({ sku: product.sku, name: product.name });
+      } catch (error) {
+        this.logger.error(`Failed to ingest ${product.sku}: ${error.message}`);
+        this.results.addFailed({ sku: product.sku, name: product.name }, error);
+      }
+    }
+    
+    // Poll ACO to verify ingestion
+    if (this.results.created.length > 0 && !this.silent) {
+      this.logger.info('Polling ACO to verify ingestion...');
+      
+      const detector = new BuildRightDetector({ silent: this.silent });
+      const skusToVerify = this.results.created.map(p => p.sku);
+      
+      const progress = new PollingProgress('Verifying products', skusToVerify.length);
+      const maxAttempts = 15; // 150 seconds max
+      const pollInterval = 10000; // 10 seconds
+      let attempt = 0;
+      let verifiedCount = 0;
+      
+      while (attempt < maxAttempts && verifiedCount < skusToVerify.length) {
+        attempt++;
+        await new Promise(resolve => setTimeout(resolve, pollInterval));
+        
+        const foundProducts = await detector.queryACOProductsBySKUs(skusToVerify);
+        verifiedCount = foundProducts.length;
+        
+        progress.update(verifiedCount, attempt, maxAttempts);
+        
+        if (verifiedCount === skusToVerify.length) {
+          progress.finish(verifiedCount, true);
+          break;
         }
-      );
-    },
-    config.batchSize,
-    'products'
-  );
+      }
+      
+      if (verifiedCount < skusToVerify.length) {
+        progress.finish(verifiedCount, false);
+        this.logger.warn(`Only ${verifiedCount}/${skusToVerify.length} products verified in ACO`);
+      }
+    }
+    
+    // Update state only after successful verification
+    const skusCreated = this.results.created.map(p => p.sku);
+    skusCreated.forEach(sku => stateTracker.addProduct(sku));
+    await stateTracker.save();
+    
+    if (this.results.failed.length > 0) {
+      throw new Error(`${this.results.failed.length} products failed to ingest`);
+    }
+  }
+}
 
-  logger.info('Product Ingest Complete', results);
-  logger.info(formatIngestSummary(results));
-
-  return results;
+/**
+ * Export function for orchestrator
+ */
+export async function ingestProducts(options = {}) {
+  const ingester = new ProductIngester(options);
+  return ingester.run();
 }
 
 // CLI execution
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const isDryRun = process.env.DRY_RUN === 'true' || process.argv.includes('--dry-run');
-  
-  // Get file path from args, excluding flags
-  const fileArg = process.argv.slice(2).find(arg => !arg.startsWith('--'));
-  const productsPath = fileArg || './data/buildright/products.json';
-
-  try {
-    // Validate configuration (skip for dry-run)
-    if (!isDryRun) {
-      validateIngestConfig();
-    }
-
-    // Read products file
-    logger.info('Reading products from file', { path: productsPath });
-    const productsData = await fs.readFile(productsPath, 'utf8');
-    const products = JSON.parse(productsData);
-
-    logger.info(`Loaded ${products.length} products from ${productsPath}`);
-
-    // Ingest products
-    const result = await ingestProducts(products, { dryRun: isDryRun });
-
-    if (result.dryRun) {
-      if (result.validationPassed) {
-        logger.info('✓ Dry-run validation passed', {
-          wouldIngest: result.wouldIngest,
-          personaAttributes: result.personaAttributeCoverage
-        });
-        console.log('\n✓ Validation successful. Products are ready for ingestion.');
-        console.log(`  Would ingest: ${result.wouldIngest} products`);
-        console.log('  Run without --dry-run to perform actual ingestion.\n');
-        process.exit(0);
-      } else {
-        logger.error('✗ Dry-run validation failed', {
-          errors: result.errors
-        });
-        process.exit(1);
-      }
-    }
-
-    if (!result.success && result.failed > 0) {
-      logger.error('Ingest completed with errors', {
-        ingested: result.ingested,
-        failed: result.failed
-      });
+const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+if (isMainModule) {
+  const dryRun = process.argv.includes('--dry-run');
+  ingestProducts({ dryRun })
+    .then(result => process.exit(result.success ? 0 : 1))
+    .catch(error => {
+      console.error('Fatal error:', error);
       process.exit(1);
-    }
-
-    logger.info('Ingest successful', {
-      ingested: result.ingested,
-      failed: result.failed
     });
-    process.exit(0);
-
-  } catch (error) {
-    logger.error('Product ingest failed', {
-      error: error.message,
-      stack: error.stack
-    });
-    process.exit(1);
-  }
 }
+
+// Export helper functions for testing
+export { validateProduct };

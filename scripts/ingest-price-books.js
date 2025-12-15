@@ -1,34 +1,34 @@
 #!/usr/bin/env node
 /**
  * Ingest Price Books to Adobe Commerce Optimizer
- *
+ * 
  * Ingests price books in hierarchical order (parents before children).
  * Supports 4-level hierarchy: Base → Regional → Tier → Promotional
- *
+ * 
+ * Features:
+ * - Progress bars for visibility
+ * - Auto-retry with exponential backoff
+ * - State tracking for idempotency
+ * - Standardized output (matches Commerce format)
+ * 
  * @module scripts/ingest-price-books
- *
- * @example
- * # Ingest all price books
- * node scripts/ingest-price-books.js
- *
- * # Ingest specific file
- * node scripts/ingest-price-books.js data/buildright/price-books.json
  */
 
-import fs from 'fs/promises';
-import { getACOClient } from '../utils/aco-client.js';
-import { executeWithRetry } from '../utils/retry-handler.js';
+import { promises as fs } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
+import { BaseIngester } from '../utils/base-ingester.js';
+import { withRetry } from '../utils/retry-util.js';
+import { getStateTracker } from '../utils/aco-state-tracker.js';
 import logger from '../utils/logger.js';
-import { ingestConfig, validateIngestConfig } from './config/ingest-config.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /**
  * Sort price books by hierarchy level (parents before children)
- *
- * @param {Array<Object>} priceBooks - Price books to sort
- * @returns {Array<Object>} Sorted price books
  */
 function sortByHierarchy(priceBooks) {
-  // Determine levels
   const levelMap = new Map();
 
   function calculateLevel(priceBook) {
@@ -59,143 +59,147 @@ function sortByHierarchy(priceBooks) {
   // Calculate levels for all price books
   priceBooks.forEach(pb => calculateLevel(pb));
 
-  // Sort by level, then by ID
-  return priceBooks.slice().sort((a, b) => {
-    const levelA = levelMap.get(a.priceBookId) || 1;
-    const levelB = levelMap.get(b.priceBookId) || 1;
-
-    if (levelA !== levelB) {
-      return levelA - levelB;
-    }
-
-    return a.priceBookId.localeCompare(b.priceBookId);
+  // Sort by level (ascending)
+  return priceBooks.sort((a, b) => {
+    const levelA = levelMap.get(a.priceBookId);
+    const levelB = levelMap.get(b.priceBookId);
+    return levelA - levelB;
   });
 }
 
 /**
- * Ingest price books in hierarchical order
- *
- * @param {Array<Object>} priceBooks - Price books to ingest
- * @param {Object} options - Ingest options
- * @returns {Promise<Object>} Ingest results
+ * Validate price book structure
  */
-export async function ingestPriceBooks(priceBooks, options = {}) {
-  const config = { ...ingestConfig, ...options };
-
-  logger.info('Price Book Ingest Started', {
-    totalPriceBooks: priceBooks.length,
-    dryRun: config.dryRun
-  });
-
-  // Sort by hierarchy
-  const sorted = sortByHierarchy(priceBooks);
-
-  logger.info('Price books sorted by hierarchy', {
-    order: sorted.map(pb => ({ id: pb.priceBookId, parent: pb.parentId || 'none' }))
-  });
-
-  if (config.dryRun) {
-    logger.info('Dry-run mode: validation passed, no ingest performed');
-    return {
-      dryRun: true,
-      validationPassed: true,
-      wouldIngest: sorted.length
-    };
+function validatePriceBook(priceBook) {
+  const errors = [];
+  
+  if (!priceBook.priceBookId) {
+    errors.push('Missing priceBookId');
   }
+  if (!priceBook.name) {
+    errors.push('Missing name');
+  }
+  
+  return errors;
+}
 
-  // Get ACO SDK client
-  const client = getACOClient();
-
-  const results = {
-    success: true,
-    ingested: 0,
-    failed: 0,
-    errors: []
-  };
-
-  // Ingest sequentially in hierarchy order
-  for (const priceBook of sorted) {
-    try {
-      logger.info(`Ingesting price book: ${priceBook.priceBookId}`, {
-        name: priceBook.name,
-        parent: priceBook.parentId || 'none'
+/**
+ * Price Book Ingester Class
+ */
+class PriceBookIngester extends BaseIngester {
+  constructor(options = {}) {
+    super('Price Books', options);
+  }
+  
+  async ingest() {
+    // Load price books
+    const priceBookPath = join(__dirname, '../data/buildright/price-books.json');
+    this.logger.info(`Loading price books from: ${priceBookPath}`);
+    
+    const priceBookData = await fs.readFile(priceBookPath, 'utf-8');
+    const priceBooks = JSON.parse(priceBookData);
+    
+    this.logger.info(`Loaded ${priceBooks.length} price books`);
+    
+    // Sort by hierarchy
+    const sorted = sortByHierarchy(priceBooks);
+    this.logger.info('Sorted by hierarchy (parents first)');
+    
+    // Validate price books
+    this.logger.info('Validating price book structure...');
+    let hasErrors = false;
+    sorted.forEach((priceBook, index) => {
+      const errors = validatePriceBook(priceBook);
+      if (errors.length > 0) {
+        this.logger.error(`Price Book ${index} (${priceBook.priceBookId || 'NO_ID'}): ${errors.join(', ')}`);
+        hasErrors = true;
+      }
+    });
+    
+    if (hasErrors) {
+      throw new Error('Price book validation failed');
+    }
+    
+    this.logger.info('✅ Validation passed');
+    
+    if (this.isDryRun) {
+      this.logger.info('[DRY RUN] Would ingest:', {
+        priceBooks: sorted.length
       });
-
-      await executeWithRetry(
-        () => client.createPriceBooks([priceBook]),
-        {
-          maxRetries: config.maxRetries,
-          initialDelayMs: config.initialRetryDelayMs,
-          backoffMultiplier: config.retryBackoffMultiplier
-        }
-      );
-
-      results.ingested++;
-      logger.info(`Price book ingested: ${priceBook.priceBookId}`);
-
-    } catch (error) {
-      results.failed++;
-      results.errors.push({
-        id: priceBook.priceBookId,
-        error: error.message
+      sorted.forEach(pb => this.results.addSkipped(pb, 'dry-run'));
+      return;
+    }
+    
+    // Load state tracker
+    const stateTracker = getStateTracker();
+    await stateTracker.load();
+    
+    // Filter already-ingested (idempotency)
+    const toIngest = sorted.filter(pb => !stateTracker.hasPriceBook(pb.priceBookId));
+    const alreadyIngested = sorted.length - toIngest.length;
+    
+    if (alreadyIngested > 0) {
+      this.logger.info(`Skipping ${alreadyIngested} already-ingested price books`);
+      sorted.filter(pb => stateTracker.hasPriceBook(pb.priceBookId)).forEach(pb => {
+        this.results.addExisting({ id: pb.priceBookId, name: pb.name });
       });
-
-      logger.error(`Failed to ingest price book: ${priceBook.priceBookId}`, {
-        error: error.message
-      });
-
-      if (!config.continueOnError) {
-        throw error;
+    }
+    
+    if (toIngest.length === 0) {
+      this.logger.info('All price books already ingested (idempotent)');
+      return;
+    }
+    
+    this.logger.info(`Ingesting ${toIngest.length} price books...`);
+    
+    // Initialize ACO client
+    const client = await this.getClient();
+    
+    // Ingest each price book (must be sequential due to hierarchy)
+    for (const priceBook of toIngest) {
+      try {
+        await withRetry(async () => {
+          await client.createPriceBooks([priceBook]); // ACO expects array
+          stateTracker.addPriceBook(priceBook.priceBookId);
+        }, {
+          name: `Ingest price book ${priceBook.priceBookId}`
+        });
+        
+        this.results.addCreated({ id: priceBook.priceBookId, name: priceBook.name });
+      } catch (error) {
+        this.logger.error(`Failed to ingest price book ${priceBook.priceBookId}: ${error.message}`);
+        this.results.addFailed({ id: priceBook.priceBookId, name: priceBook.name }, error);
       }
     }
+    
+    // Save state
+    await stateTracker.save();
+    
+    if (this.results.failed.length > 0) {
+      throw new Error(`${this.results.failed.length} price books failed to ingest`);
+    }
   }
+}
 
-  results.success = results.failed === 0;
-
-  logger.info('Price Book Ingest Complete', {
-    ingested: results.ingested,
-    failed: results.failed
-  });
-
-  return results;
+/**
+ * Export function for orchestrator
+ */
+export async function ingestPriceBooks(options = {}) {
+  const ingester = new PriceBookIngester(options);
+  return ingester.run();
 }
 
 // CLI execution
-if (import.meta.url === `file://${process.argv[1]}`) {
-  const priceBooksPath = process.argv[2] || './data/buildright/price-books.json';
-
-  try {
-    // Validate configuration
-    validateIngestConfig();
-
-    // Read price books file
-    logger.info('Reading price books from file', { path: priceBooksPath });
-    const priceBooksData = await fs.readFile(priceBooksPath, 'utf8');
-    const priceBooks = JSON.parse(priceBooksData);
-
-    logger.info(`Loaded ${priceBooks.length} price books from ${priceBooksPath}`);
-
-    // Ingest price books
-    const result = await ingestPriceBooks(priceBooks);
-
-    if (!result.success && result.failed > 0) {
-      logger.error('Ingest completed with errors', {
-        ingested: result.ingested,
-        failed: result.failed
-      });
+const isMainModule = import.meta.url === `file://${process.argv[1]}`;
+if (isMainModule) {
+  const dryRun = process.argv.includes('--dry-run');
+  ingestPriceBooks({ dryRun })
+    .then(result => process.exit(result.success ? 0 : 1))
+    .catch(error => {
+      console.error('Fatal error:', error);
       process.exit(1);
-    }
-
-    logger.info('Price book ingest successful', {
-      ingested: result.ingested
     });
-    process.exit(0);
-
-  } catch (error) {
-    logger.error('Price book ingest failed', {
-      error: error.message,
-      stack: error.stack
-    });
-    process.exit(1);
-  }
 }
+
+// Export helper functions for testing
+export { sortByHierarchy, validatePriceBook };

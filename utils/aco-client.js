@@ -27,7 +27,7 @@
  * });
  */
 
-import { createClient } from '@adobe-commerce/aco-ts-sdk';
+import { createClient, consoleLogger, LogLevel } from '@adobe-commerce/aco-ts-sdk';
 import dotenv from 'dotenv';
 import logger from './logger.js';
 
@@ -84,8 +84,8 @@ export function createACOClient(customConfig = null) {
     );
   }
 
-  // Log configuration (without secrets)
-  logger.info('Creating ACO client with configuration:', {
+  // Log configuration (without secrets) - debug only
+  logger.debug('Creating ACO client with configuration:', {
     tenantId: config.tenantId,
     region: config.region,
     environment: config.environment,
@@ -93,10 +93,13 @@ export function createACOClient(customConfig = null) {
     endpoint: constructEndpoint(config)
   });
 
-  // Create and return SDK client
+  // Create and return SDK client with WARN-level logging to suppress verbose DEBUG logs
   try {
-    const client = createClient(config);
-    logger.info('ACO client created successfully');
+    const client = createClient({
+      ...config,
+      logger: consoleLogger(LogLevel.WARN) // Only show warnings and errors
+    });
+    logger.debug('ACO client created successfully');
     return client;
   } catch (error) {
     logger.error('Failed to create ACO client:', error);
