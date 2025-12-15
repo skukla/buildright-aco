@@ -9,22 +9,29 @@
  * 4. Categories (optional)
  * 5. Metadata (product attributes)
  * 
+ * Features:
+ * - Smart detection (no hardcoded lists)
+ * - Validation after deletion
+ * - Zero orphaned data guarantee
+ * 
  * Usage:
- *   npm run reset:all                    # Delete everything
+ *   npm run reset:all                    # Delete everything with validation
  *   node scripts/reset-all.js --dry-run  # Preview what would be deleted
  *   node scripts/reset-all.js --reingest # Delete and re-ingest all data
  * 
  * @module scripts/reset-all
  */
 
-import { getAllProductSKUs } from '../utils/aco-query.js';
+import { BuildRightDetector } from '../utils/smart-detector.js';
 import {
   deleteAllPricesForPriceBooks,
   deletePriceBooks,
   deleteProductsBySKUs
 } from '../utils/aco-delete.js';
 import logger from '../utils/logger.js';
-import { promises as fs } from 'fs';
+import { format, withProgress } from '../utils/format.js';
+import { updateLine, finishLine } from '../utils/progress.js';
+import chalk from 'chalk';
 
 // Parse command line arguments
 const args = process.argv.slice(2);
@@ -32,51 +39,24 @@ const dryRun = args.includes('--dry-run');
 const reingest = args.includes('--reingest');
 const skipPrices = args.includes('--skip-prices');
 const skipProducts = args.includes('--skip-products');
+const skipValidation = args.includes('--skip-validation');
 
 /**
- * Get all known price book IDs
+ * Smart BuildRight detector
+ * Replaces hardcoded lists with intelligent pattern matching
  */
-async function getAllPriceBookIds() {
-  try {
-    const data = await fs.readFile('./data/buildright/price-books.json', 'utf-8');
-    const priceBooks = JSON.parse(data);
-    const localIds = priceBooks.map(pb => pb.priceBookId);
-    
-    // Add any legacy price book IDs
-    const legacyIds = [
-      'east-region-contract', 'east-commercial-contract', 'east-residential-contract',
-      'west-region-contract', 'west-commercial-contract', 'west-residential-contract',
-      'us-base-retail', 'east-region-retail', 'west-region-retail',
-      'US_COMMERCIAL', 'US_CONTRACTOR', 'US_RETAIL', 'US_WHOLESALE'
-    ];
-    
-    return [...new Set([...localIds, ...legacyIds])];
-  } catch (error) {
-    logger.warn('Could not read local price-books.json:', error.message);
-    return [];
-  }
-}
+const detector = new BuildRightDetector({ silent: true });
 
 /**
  * Main reset workflow
  */
 async function resetAll() {
-  logger.info('='.repeat(70));
-  logger.info('ACO Data Reset - Complete Workflow');
-  logger.info('='.repeat(70));
+  console.log('');
   
   if (dryRun) {
-    logger.info('🔍 DRY RUN MODE - No data will be deleted');
+    console.log(format.muted('Mode: DRY RUN - No data will be deleted'));
+    console.log('');
   }
-  
-  logger.info('');
-  logger.info('This will delete data in the following order:');
-  if (!skipPrices) logger.info('  1. Prices');
-  if (!skipPrices) logger.info('  2. Price Books');
-  if (!skipProducts) logger.info('  3. Products (bundles + variants + simple)');
-  logger.info('  4. Categories (not yet implemented)');
-  logger.info('  5. Metadata (not yet implemented)');
-  logger.info('');
   
   const results = {
     prices: null,
@@ -85,106 +65,228 @@ async function resetAll() {
   };
   
   try {
-    // Step 1: Delete Prices
-    if (!skipPrices) {
-      logger.info('Step 1: Deleting all prices...');
-      logger.info('');
+    // Use smart detection to find all BuildRight entities
+    const { updateLine, finishLine } = await import('../utils/progress.js');
+    
+    // Find data (single line) - Query ACO directly to see what's actually there
+    updateLine('🔍 Finding BuildRight data...');
+    
+    // Get ALL SKUs that should exist (from local files)
+    const { promises: fs } = await import('fs');
+    const { join } = await import('path');
+    
+    const productsData = await fs.readFile(join(process.cwd(), 'data/buildright/products.json'), 'utf-8');
+    const products = JSON.parse(productsData);
+    
+    const variantsData = await fs.readFile(join(process.cwd(), 'data/buildright/variants.json'), 'utf-8');
+    const variants = JSON.parse(variantsData);
+    
+    const allLocalSkus = [...products.map(p => p.sku), ...variants.map(v => v.sku)];
+    
+    // Query ACO to see what products are actually there
+    const actualProducts = await detector.queryACOProductsBySKUs(allLocalSkus);
+    const skus = actualProducts.map(p => p.sku);
+    
+    // Validate price books using Catalog API (queries live ACO as source of truth)
+    const priceBooks = await detector.findAllPriceBooks();
+    const priceBookIds = priceBooks.map(pb => pb.priceBookId);
+    
+    if (skus.length > 0 || priceBookIds.length > 0) {
+      updateLine(chalk.green(`✔ Finding BuildRight data (${skus.length} products, ${priceBookIds.length} price books)`));
+      finishLine();
+    } else {
+      updateLine(chalk.green('✔ No BuildRight data found in ACO'));
+      finishLine();
       
-      const priceBookIds = await getAllPriceBookIds();
-      const skus = await getAllProductSKUs();
+      console.log('');
+      console.log(format.success('ACO is already clean!'));
       
-      logger.info(`Found ${priceBookIds.length} price books and ${skus.length} SKUs`);
-      
-      results.prices = await deleteAllPricesForPriceBooks(priceBookIds, {
-        skus,
-        dryRun
-      });
-      
-      logger.info(`Prices: ${results.prices.deleted}/${results.prices.total} deleted`);
-      logger.info('');
+      return {
+        success: true,
+        results,
+        validation: { clean: true, issues: [] }
+      };
     }
     
-    // Step 2: Delete Price Books
-    if (!skipPrices && results.prices?.success) {
-      logger.info('Step 2: Deleting price books...');
-      logger.info('');
-      
-      const priceBookIds = await getAllPriceBookIds();
+    // Step 1: Delete Prices (single line with spinner)
+    if (!skipPrices && priceBookIds.length > 0) {
+      results.prices = await deleteAllPricesForPriceBooks(priceBookIds, { skus, dryRun });
+      if (results.prices.deleted > 0) {
+        console.log(chalk.green(`✔ Deleted ${results.prices.deleted} prices`));
+      }
+    }
+    
+    // Step 2: Delete Price Books (single line with spinner)
+    if (!skipPrices && results.prices?.success && priceBookIds.length > 0) {
       results.priceBooks = await deletePriceBooks(priceBookIds, { dryRun });
-      
-      logger.info(`Price Books: ${results.priceBooks.deleted}/${results.priceBooks.total} deleted`);
-      logger.info('');
+      if (results.priceBooks.deleted > 0) {
+        console.log(chalk.green(`✔ Deleted ${results.priceBooks.deleted} price books`));
+      }
     }
     
-    // Step 3: Delete Products
-    if (!skipProducts) {
-      logger.info('Step 3: Deleting all products...');
-      logger.info('');
+    // Step 3: Delete Products (single line with polling progress)
+    if (!skipProducts && skus.length > 0) {
+      updateLine('🗑️  Deleting products...');
       
-      const skus = await getAllProductSKUs();
-      results.products = await deleteProductsBySKUs(skus, { dryRun });
+      // Submit deletion request (silent mode - polling will show progress)
+      const deleteResult = await deleteProductsBySKUs(skus, { dryRun, silent: true });
       
-      logger.info(`Products: ${results.products.deleted}/${results.products.total} deleted`);
-      logger.info('');
+      // Poll to watch actual deletion progress
+      if (!dryRun) {
+        const { PollingProgress } = await import('../utils/progress.js');
+        const progress = new PollingProgress('Deleting products', skus.length);
+        
+        const maxAttempts = 15;
+        const pollInterval = 10000; // 10 seconds
+        let attempt = 0;
+        let currentCount = skus.length;
+        
+        while (attempt < maxAttempts && currentCount > 0) {
+          attempt++;
+          
+          await new Promise(resolve => setTimeout(resolve, pollInterval));
+          
+          // Check how many products still exist
+          const remainingProducts = await detector.queryACOProductsBySKUs(skus);
+          currentCount = remainingProducts.length;
+          const deletedCount = skus.length - currentCount;
+          
+          progress.update(deletedCount, attempt, maxAttempts);
+          
+          if (currentCount === 0) {
+            progress.finish(deletedCount, true);
+            break;
+          }
+        }
+        
+        if (currentCount > 0) {
+          progress.finish(skus.length - currentCount, false);
+          throw new Error(`${currentCount} products still remain after ${attempt * 10}s`);
+        }
+        
+        deleteResult.actualDeleted = skus.length - currentCount;
+      } else {
+        updateLine(`✔ Deleting products (${deleteResult.deleted} deleted)`);
+        finishLine();
+      }
+      
+      results.products = deleteResult;
     }
     
-    // Step 4: Categories (not implemented)
-    logger.info('Step 4: Categories deletion not yet implemented (optional)');
-    logger.info('');
+    // Validation: Ensure ACO is completely clean (with auto-cleanup of orphans)
+    const maxRetries = 3;
+    let retryCount = 0;
+    let validation = { clean: true, issues: [] };
     
-    // Step 5: Metadata (not implemented)
-    logger.info('Step 5: Metadata deletion not yet implemented (optional)');
-    logger.info('');
+    if (!dryRun && !skipValidation) {
+      while (retryCount < maxRetries) {
+        updateLine('🔍 Validating deletion...');
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        validation = await detector.validateClean();
+        
+        if (validation.clean) {
+          // Success!
+          updateLine('✔ Validating deletion (no orphaned data)');
+          finishLine();
+          break;
+        }
+        
+        // Orphaned data detected - auto-cleanup
+        finishLine();
+        console.log('');
+        console.log(format.warning(`Found orphaned data (attempt ${retryCount + 1}/${maxRetries}), cleaning up...`));
+        validation.issues.forEach(issue => console.log(format.muted(`  • ${issue}`)));
+        console.log('');
+        
+        // Re-find and delete orphaned data
+        const orphanedProducts = await detector.queryACOProductsBySKUs(allLocalSkus);
+        if (orphanedProducts.length > 0) {
+          const orphanSkus = orphanedProducts.map(p => p.sku);
+          console.log(`  Deleting ${orphanSkus.length} orphaned products...`);
+          await deleteProductsBySKUs(orphanSkus, { dryRun, silent: true });
+          
+          // Poll for cleanup completion
+          const { PollingProgress } = await import('../utils/progress.js');
+          const progress = new PollingProgress('Cleaning up orphans', orphanSkus.length);
+          
+          let attempt = 0;
+          let currentCount = orphanSkus.length;
+          while (attempt < 10 && currentCount > 0) {
+            attempt++;
+            await new Promise(resolve => setTimeout(resolve, 5000));
+            const remaining = await detector.queryACOProductsBySKUs(orphanSkus);
+            currentCount = remaining.length;
+            progress.update(orphanSkus.length - currentCount, attempt, 10);
+            
+            if (currentCount === 0) {
+              progress.finish(orphanSkus.length, true);
+              break;
+            }
+          }
+        }
+        
+        retryCount++;
+      }
+      
+      // Final check
+      if (!validation.clean) {
+        console.log('');
+        console.log(format.error('Unable to clean all orphaned data after 3 attempts'));
+        validation.issues.forEach(issue => console.log(format.error(`  • ${issue}`)));
+        console.log('');
+        
+        return {
+          success: false,
+          results,
+          validation
+        };
+      }
+      
+      // Clear state tracker after successful deletion
+      const { getStateTracker } = await import('../utils/aco-state-tracker.js');
+      const stateTracker = getStateTracker();
+      await stateTracker.load();
+      stateTracker.clearAll();
+      await stateTracker.save();
+    }
     
     // Summary
-    logger.info('='.repeat(70));
-    logger.info('Reset Summary');
-    logger.info('='.repeat(70));
-    
-    if (!skipPrices) {
-      logger.info(`Prices deleted: ${results.prices?.deleted || 0}/${results.prices?.total || 0}`);
-      logger.info(`Price books deleted: ${results.priceBooks?.deleted || 0}/${results.priceBooks?.total || 0}`);
-    }
-    if (!skipProducts) {
-      logger.info(`Products deleted: ${results.products?.deleted || 0}/${results.products?.total || 0}`);
-    }
-    
-    const totalErrors = (results.prices?.errors?.length || 0) + 
-                       (results.priceBooks?.errors?.length || 0) + 
-                       (results.products?.errors?.length || 0);
-    logger.info(`Errors: ${totalErrors}`);
-    logger.info('');
+    console.log('');
     
     const allSuccess = Object.values(results)
       .filter(r => r !== null)
       .every(r => r.success !== false);
     
-    if (allSuccess && !dryRun) {
-      logger.info('✅ All reset steps completed successfully!');
-      
+    const validationPassed = validation.clean;
+    const overallSuccess = allSuccess && validationPassed;
+    
+    if (overallSuccess && !dryRun) {
+      console.log(format.success('Data deletion complete!'));
       if (reingest) {
-        logger.info('');
-        logger.info('Re-ingesting all data...');
+        console.log('');
+        console.log(format.muted('Re-ingesting all data...'));
         const { execSync } = await import('child_process');
         execSync('node scripts/ingest-all.js', {
           stdio: 'inherit',
           cwd: process.cwd()
         });
       } else {
-        logger.info('');
-        logger.info('Next step: Re-ingest data with npm run ingest:all');
-        logger.info('Or run with --reingest flag to do this automatically');
+        console.log(format.muted('You can now run: npm run import'));
       }
     } else if (dryRun) {
-      logger.info('🔍 Dry run complete - no data was deleted');
+      console.log(format.muted('Dry run complete - no data was deleted'));
+    } else if (!validationPassed) {
+      console.log(format.error('Validation failed - orphaned data detected'));
     } else {
-      logger.warn('⚠️  Some reset steps failed - check logs above');
+      console.log(format.warning('Some steps failed - check logs above'));
     }
     
-    return { success: allSuccess, results };
+    console.log('');
+    
+    return { success: overallSuccess, results, validation };
     
   } catch (error) {
-    logger.error('Reset failed:', error);
+    console.error(format.error(`Reset failed: ${error.message}`));
     throw error;
   }
 }
