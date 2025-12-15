@@ -47,7 +47,6 @@ export class BuildRightDetector {
       tenantId: process.env.TENANT_ID,
       region: process.env.REGION || 'na1',
       environment: process.env.ENVIRONMENT || 'sandbox',
-      catalogViewId: '6792f1d5-9e79-4813-8d8e-df5ed76e5692', // BuildRight-Default view
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET
     };
@@ -89,7 +88,11 @@ export class BuildRightDetector {
   }
   
   /**
-   * Query ACO for specific SKUs (reliable, no Live Search required)
+   * Query ACO for specific SKUs
+   * 
+   * NOTE: Requires Live Search indexing (5-10 min delay after ingestion)
+   * Products exist in Catalog Service but won't be queryable until indexed.
+   * Not filtered by catalog view - returns all products matching SKUs.
    * 
    * @param {Array<string>} skus - SKUs to query
    * @returns {Promise<Array<{sku: string, name: string}>>}
@@ -120,8 +123,8 @@ export class BuildRightDetector {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
           'AC-Environment-Id': this.config.tenantId,
-          'AC-Source-Locale': 'en-US',
-          'AC-View-Id': this.config.catalogViewId
+          'AC-Source-Locale': 'en-US'
+          // Note: AC-View-Id not needed - products(skus) query is not filtered by catalog view
         },
         body: JSON.stringify({ query })
       });
