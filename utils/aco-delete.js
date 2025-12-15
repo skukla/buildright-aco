@@ -288,10 +288,18 @@ export async function deleteProductsBySKUs(skus, options = {}) {
   if (!silent) {
     finishLine();
   }
-  logger.debug(`Product deletion complete: ${deletedCount}/${skus.length} deleted`);
+  
+  const rejectedCount = skus.length - deletedCount;
+  if (rejectedCount > 0) {
+    logger.warn(`Product deletion: ${deletedCount}/${skus.length} accepted (${rejectedCount} rejected by ACO)`);
+    logger.warn(`This may indicate invisible variants (visibleIn: []) that cannot be deleted via API`);
+  } else {
+    logger.debug(`Product deletion complete: ${deletedCount}/${skus.length} deleted`);
+  }
   
   return {
     deleted: deletedCount,
+    rejected: rejectedCount,
     total: skus.length,
     errors,
     success: errors.length === 0

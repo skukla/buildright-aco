@@ -68,24 +68,36 @@ async function resetAll() {
     // Use smart detection to find all BuildRight entities
     const { updateLine, finishLine } = await import('../utils/progress.js');
     
-    // Find data (single line) - Query ACO directly to see what's actually there
+    // Find data (single line) - Use state tracker or local files as source
     updateLine('🔍 Finding BuildRight data...');
     
-    // Get ALL SKUs that should exist (from local files)
+    // Get ALL SKUs that should be deleted (from state tracker or local files)
+    // Note: We don't query ACO because invisible variants (visibleIn: []) are not
+    // searchable/queryable, but they still exist and need to be deleted.
     const { promises: fs } = await import('fs');
     const { join } = await import('path');
+    const { getStateTracker } = await import('../utils/aco-state-tracker.js');
     
-    const productsData = await fs.readFile(join(process.cwd(), 'data/buildright/products.json'), 'utf-8');
-    const products = JSON.parse(productsData);
+    let skus = [];
     
-    const variantsData = await fs.readFile(join(process.cwd(), 'data/buildright/variants.json'), 'utf-8');
-    const variants = JSON.parse(variantsData);
+    // Try state tracker first (most accurate - records what was actually ingested)
+    const stateTracker = getStateTracker();
+    await stateTracker.load();
+    const stateSkus = stateTracker.getAllProductSKUs();
     
-    const allLocalSkus = [...products.map(p => p.sku), ...variants.map(v => v.sku)];
-    
-    // Query ACO to see what products are actually there
-    const actualProducts = await detector.queryACOProductsBySKUs(allLocalSkus);
-    const skus = actualProducts.map(p => p.sku);
+    if (stateSkus.length > 0) {
+      // Use state tracker (knows exactly what was ingested)
+      skus = stateSkus;
+    } else {
+      // Fallback to local files (may include products that failed to ingest)
+      const productsData = await fs.readFile(join(process.cwd(), 'data/buildright/products.json'), 'utf-8');
+      const products = JSON.parse(productsData);
+      
+      const variantsData = await fs.readFile(join(process.cwd(), 'data/buildright/variants.json'), 'utf-8');
+      const variants = JSON.parse(variantsData);
+      
+      skus = [...products.map(p => p.sku), ...variants.map(v => v.sku)];
+    }
     
     // Validate price books using Catalog API (queries live ACO as source of truth)
     const priceBooks = await detector.findAllPriceBooks();

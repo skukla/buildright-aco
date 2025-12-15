@@ -58,3 +58,5 @@ skus.txt
 
 # Temporary backups
 *.backup-*
+temp-*.json
+test-*.js
