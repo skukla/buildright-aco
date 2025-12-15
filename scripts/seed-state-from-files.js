@@ -84,7 +84,7 @@ async function seedStateFromFiles() {
     console.log('');
     
     console.log(chalk.bold('✅ Ready to delete!'));
-    console.log(chalk.muted('   Run: npm run delete'));
+    console.log(chalk.dim('   Run: npm run delete'));
     console.log('');
     
     return { success: true, added, existing };

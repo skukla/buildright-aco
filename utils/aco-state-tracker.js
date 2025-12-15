@@ -148,6 +148,16 @@ class ACOStateTracker {
     return this.state.products.size;
   }
 
+  getAllProductSKUs() {
+    return Array.from(this.state.products);
+  }
+
+  markProductIngested(sku) {
+    const wasNew = !this.state.products.has(sku);
+    this.state.products.add(sku);
+    return wasNew;
+  }
+
   getPriceBooks() {
     return Array.from(this.state.priceBooks);
   }
