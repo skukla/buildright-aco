@@ -169,16 +169,17 @@ class VariantIngester extends BaseIngester {
     
     // Poll ACO to verify ingestion
     if (this.results.created.length > 0 && !this.silent) {
-      this.logger.info('Polling ACO to verify ingestion...');
+      this.logger.info('Polling ACO to verify ingestion (waiting for indexing to start)...');
       
       const detector = new BuildRightDetector({ silent: this.silent });
       const skusToVerify = this.results.created.map(v => v.sku);
       
       const progress = new PollingProgress('Verifying variants', skusToVerify.length);
-      const maxAttempts = 15; // 150 seconds max
+      const maxAttempts = 60; // 10 minutes max
       const pollInterval = 10000; // 10 seconds
       let attempt = 0;
       let verifiedCount = 0;
+      let indexingStarted = false;
       
       while (attempt < maxAttempts && verifiedCount < skusToVerify.length) {
         attempt++;
@@ -186,6 +187,12 @@ class VariantIngester extends BaseIngester {
         
         const foundVariants = await detector.queryACOProductsBySKUs(skusToVerify);
         verifiedCount = foundVariants.length;
+        
+        // Detect when indexing starts (first movement)
+        if (!indexingStarted && verifiedCount > 0) {
+          indexingStarted = true;
+          this.logger.info(`  ✓ Indexing started (${verifiedCount} variants indexed)`);
+        }
         
         progress.update(verifiedCount, attempt, maxAttempts);
         
@@ -197,7 +204,11 @@ class VariantIngester extends BaseIngester {
       
       if (verifiedCount < skusToVerify.length) {
         progress.finish(verifiedCount, false);
-        this.logger.warn(`Only ${verifiedCount}/${skusToVerify.length} variants verified in ACO`);
+        if (!indexingStarted) {
+          this.logger.warn(`Indexing has not started yet. Variants ingested but not yet searchable.`);
+        } else {
+          this.logger.warn(`Only ${verifiedCount}/${skusToVerify.length} variants verified in ACO`);
+        }
       }
     }
     

@@ -127,16 +127,18 @@ class ProductIngester extends BaseIngester {
     
     // Poll ACO to verify ingestion
     if (this.results.created.length > 0 && !this.silent) {
-      this.logger.info('Polling ACO to verify ingestion...');
+      this.logger.info('Polling ACO to verify ingestion (waiting for indexing to start)...');
       
       const detector = new BuildRightDetector({ silent: this.silent });
       const skusToVerify = this.results.created.map(p => p.sku);
       
       const progress = new PollingProgress('Verifying products', skusToVerify.length);
-      const maxAttempts = 15; // 150 seconds max
+      const maxAttempts = 60; // 10 minutes max
       const pollInterval = 10000; // 10 seconds
       let attempt = 0;
       let verifiedCount = 0;
+      let previousCount = 0;
+      let indexingStarted = false;
       
       while (attempt < maxAttempts && verifiedCount < skusToVerify.length) {
         attempt++;
@@ -145,17 +147,29 @@ class ProductIngester extends BaseIngester {
         const foundProducts = await detector.queryACOProductsBySKUs(skusToVerify);
         verifiedCount = foundProducts.length;
         
+        // Detect when indexing starts (first movement)
+        if (!indexingStarted && verifiedCount > 0) {
+          indexingStarted = true;
+          this.logger.info(`  ✓ Indexing started (${verifiedCount} products indexed)`);
+        }
+        
         progress.update(verifiedCount, attempt, maxAttempts);
         
         if (verifiedCount === skusToVerify.length) {
           progress.finish(verifiedCount, true);
           break;
         }
+        
+        previousCount = verifiedCount;
       }
       
       if (verifiedCount < skusToVerify.length) {
         progress.finish(verifiedCount, false);
-        this.logger.warn(`Only ${verifiedCount}/${skusToVerify.length} products verified in ACO`);
+        if (!indexingStarted) {
+          this.logger.warn(`Indexing has not started yet. Products ingested but not yet searchable.`);
+        } else {
+          this.logger.warn(`Only ${verifiedCount}/${skusToVerify.length} products verified in ACO`);
+        }
       }
     }
     

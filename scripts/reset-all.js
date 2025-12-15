@@ -136,10 +136,12 @@ async function resetAll() {
         const { PollingProgress } = await import('../utils/progress.js');
         const progress = new PollingProgress('Deleting products', skus.length);
         
-        const maxAttempts = 15;
+        const maxAttempts = 60; // 10 minutes max
         const pollInterval = 10000; // 10 seconds
         let attempt = 0;
         let currentCount = skus.length;
+        let previousCount = skus.length;
+        let deletionStarted = false;
         
         while (attempt < maxAttempts && currentCount > 0) {
           attempt++;
@@ -151,17 +153,29 @@ async function resetAll() {
           currentCount = remainingProducts.length;
           const deletedCount = skus.length - currentCount;
           
+          // Detect when deletion starts (first movement)
+          if (!deletionStarted && currentCount < previousCount) {
+            deletionStarted = true;
+            console.log(format.success(`\n  ✓ Deletion processing started (${deletedCount} removed)`));
+          }
+          
           progress.update(deletedCount, attempt, maxAttempts);
           
           if (currentCount === 0) {
             progress.finish(deletedCount, true);
             break;
           }
+          
+          previousCount = currentCount;
         }
         
         if (currentCount > 0) {
           progress.finish(skus.length - currentCount, false);
-          throw new Error(`${currentCount} products still remain after ${attempt * 10}s`);
+          if (!deletionStarted) {
+            console.log(format.warning(`\nDeletion submitted but not yet processed. Products may still appear in search.`));
+          } else {
+            throw new Error(`${currentCount} products still remain after ${attempt * 10}s`);
+          }
         }
         
         deleteResult.actualDeleted = skus.length - currentCount;
@@ -211,17 +225,30 @@ async function resetAll() {
           
           let attempt = 0;
           let currentCount = orphanSkus.length;
-          while (attempt < 10 && currentCount > 0) {
+          let previousCount = orphanSkus.length;
+          let cleanupStarted = false;
+          const maxAttempts = 30; // 5 minutes max
+          
+          while (attempt < maxAttempts && currentCount > 0) {
             attempt++;
-            await new Promise(resolve => setTimeout(resolve, 5000));
+            await new Promise(resolve => setTimeout(resolve, 10000)); // 10 seconds
             const remaining = await detector.queryACOProductsBySKUs(orphanSkus);
             currentCount = remaining.length;
-            progress.update(orphanSkus.length - currentCount, attempt, 10);
+            
+            // Detect when cleanup starts
+            if (!cleanupStarted && currentCount < previousCount) {
+              cleanupStarted = true;
+              console.log(format.muted(`  ✓ Cleanup processing (${orphanSkus.length - currentCount} removed)`));
+            }
+            
+            progress.update(orphanSkus.length - currentCount, attempt, maxAttempts);
             
             if (currentCount === 0) {
               progress.finish(orphanSkus.length, true);
               break;
             }
+            
+            previousCount = currentCount;
           }
         }
         
