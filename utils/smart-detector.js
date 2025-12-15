@@ -546,53 +546,88 @@ export class BuildRightDetector {
     // Check products - Poll until deletion completes (ACO is async)
     // Use products(skus) query to hit Catalog Service, not productSearch (Live Search index)
     try {
-      if (!this.silent) {
-        logger.info('⏳ Waiting for ACO deletion to complete (this may take 30-60s)...');
-      }
+      // Get expected SKUs from state tracker (source of truth for what was ingested)
+      const { getStateTracker } = await import('./aco-state-tracker.js');
+      const stateTracker = getStateTracker();
+      await stateTracker.load();
+      const expectedSKUs = stateTracker.getAllProductSKUs();
       
-      // Get expected SKUs from local files
-      const expectedSKUs = await this.getAllProductSKUsFromLocalFiles();
-      logger.debug(`Checking ${expectedSKUs.length} SKUs for deletion...`);
-      
-      const maxAttempts = 10;
-      const pollInterval = 10000; // 10 seconds between checks
-      let attempt = 0;
-      let productCount = -1;
-      
-      while (attempt < maxAttempts) {
-        attempt++;
-        
-        // Wait BEFORE checking (ACO needs time to process)
+      if (expectedSKUs.length > 0) {
         if (!this.silent) {
-          logger.info(`   ⏳ Waiting 10s before check ${attempt}/${maxAttempts}...`);
-        }
-        await new Promise(resolve => setTimeout(resolve, pollInterval));
-        
-        // Query Catalog Service directly via products(skus) - NOT productSearch
-        const acoProducts = await this.queryACOProductsBySKUs(expectedSKUs);
-        productCount = acoProducts.length;
-        
-        if (!this.silent) {
-          logger.info(`   📊 ${productCount} products remaining in Catalog Service`);
+          logger.info('⏳ Waiting for ACO deletion to complete (this may take 30-60s)...');
         }
         
-        if (productCount === 0) {
+        logger.debug(`Checking ${expectedSKUs.length} SKUs for deletion...`);
+        
+        const maxAttempts = 10;
+        const pollInterval = 10000; // 10 seconds between checks
+        let attempt = 0;
+        let productCount = -1;
+        
+        while (attempt < maxAttempts) {
+          attempt++;
+          
+          // Wait BEFORE checking (ACO needs time to process)
           if (!this.silent) {
-            logger.info('✅ No products in ACO - deletion complete!');
+            logger.info(`   ⏳ Waiting 10s before check ${attempt}/${maxAttempts}...`);
           }
-          break;
+          await new Promise(resolve => setTimeout(resolve, pollInterval));
+          
+          // Query Catalog Service directly via products(skus) - NOT productSearch
+          // Note: This only finds visible products, but that's ok for validation
+          const acoProducts = await this.queryACOProductsBySKUs(expectedSKUs);
+          productCount = acoProducts.length;
+          
+          if (!this.silent) {
+            logger.info(`   📊 ${productCount} visible products remaining in Catalog Service`);
+          }
+          
+          if (productCount === 0) {
+            if (!this.silent) {
+              logger.info('✅ No visible products in ACO - deletion complete!');
+            }
+            break;
+          }
         }
-      }
-      
-      if (productCount > 0) {
-        issues.push(`${productCount} products still exist in ACO after ${maxAttempts * pollInterval / 1000}s`);
-        const remainingSKUs = (await this.queryACOProductsBySKUs(expectedSKUs.slice(0, 10))).map(p => p.sku).join(', ');
-        logger.debug(`Remaining products: ${remainingSKUs}...`);
+        
+        if (productCount > 0) {
+          issues.push(`${productCount} products still exist in ACO after ${maxAttempts * pollInterval / 1000}s`);
+          const remainingSKUs = (await this.queryACOProductsBySKUs(expectedSKUs.slice(0, 10))).map(p => p.sku).join(', ');
+          logger.debug(`Remaining products: ${remainingSKUs}...`);
+        }
+      } else {
+        // State tracker is empty - skip checking expected SKUs
+        logger.debug('State tracker is empty - skipping expected SKU validation');
       }
     } catch (error) {
       if (!this.silent) {
         logger.warn('Could not verify product deletion:', error.message);
       }
+    }
+    
+    // Check for unknown orphans (products we don't know about)
+    // Note: This only finds VISIBLE orphans (invisible variants are not queryable)
+    try {
+      if (!this.silent) {
+        logger.info('🔍 Checking for unknown orphaned products...');
+      }
+      
+      const orphanProducts = await this.queryACOProductsDirect('', 500);
+      if (orphanProducts.length > 0) {
+        // Filter to BuildRight products (br_ prefix or known categories)
+        const buildRightOrphans = orphanProducts.filter(p => 
+          p.sku.match(/^(LBR|DOOR|WINDOW|ROOF|DRYWALL|PLY|NAIL|SCREW|STUD)-/) ||
+          p.name.includes('BuildRight')
+        );
+        
+        if (buildRightOrphans.length > 0) {
+          issues.push(`${buildRightOrphans.length} unknown orphaned products found (visible only)`);
+          logger.debug(`Orphaned SKUs: ${buildRightOrphans.map(p => p.sku).slice(0, 10).join(', ')}...`);
+        }
+      }
+    } catch (error) {
+      // Non-critical - Live Search might not be enabled
+      logger.debug('Could not query for orphaned products (Live Search may not be enabled):', error.message);
     }
 
     // Price books - local files only (no GraphQL API)

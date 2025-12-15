@@ -68,35 +68,21 @@ async function resetAll() {
     // Use smart detection to find all BuildRight entities
     const { updateLine, finishLine } = await import('../utils/progress.js');
     
-    // Find data (single line) - Use state tracker or local files as source
+    // Find data (single line) - Use state tracker as source of truth
     updateLine('🔍 Finding BuildRight data...');
     
-    // Get ALL SKUs that should be deleted (from state tracker or local files)
-    // Note: We don't query ACO because invisible variants (visibleIn: []) are not
-    // searchable/queryable, but they still exist and need to be deleted.
-    const { promises: fs } = await import('fs');
-    const { join } = await import('path');
+    // Get ALL SKUs from state tracker (records exactly what was ingested)
+    // This includes both visible products AND invisible variants (visibleIn: [])
+    // Note: We can't query ACO for invisible variants, but we can delete them by SKU
     const { getStateTracker } = await import('../utils/aco-state-tracker.js');
     
-    let skus = [];
-    
-    // Try state tracker first (most accurate - records what was actually ingested)
     const stateTracker = getStateTracker();
     await stateTracker.load();
-    const stateSkus = stateTracker.getAllProductSKUs();
+    const skus = stateTracker.getAllProductSKUs();
     
-    if (stateSkus.length > 0) {
-      // Use state tracker (knows exactly what was ingested)
-      skus = stateSkus;
-    } else {
-      // Fallback to local files (may include products that failed to ingest)
-      const productsData = await fs.readFile(join(process.cwd(), 'data/buildright/products.json'), 'utf-8');
-      const products = JSON.parse(productsData);
-      
-      const variantsData = await fs.readFile(join(process.cwd(), 'data/buildright/variants.json'), 'utf-8');
-      const variants = JSON.parse(variantsData);
-      
-      skus = [...products.map(p => p.sku), ...variants.map(v => v.sku)];
+    if (skus.length === 0) {
+      // No ingested products in state - check if ACO has orphans
+      logger.debug('State tracker is empty - checking for orphaned products in ACO...');
     }
     
     // Validate price books using Catalog API (queries live ACO as source of truth)
@@ -107,17 +93,15 @@ async function resetAll() {
       updateLine(chalk.green(`✔ Finding BuildRight data (${skus.length} products, ${priceBookIds.length} price books)`));
       finishLine();
     } else {
-      updateLine(chalk.green('✔ No BuildRight data found in ACO'));
+      // State tracker is empty - check for orphaned visible products
+      updateLine(chalk.green('✔ State tracker empty'));
       finishLine();
       
+      // Skip to validation to check for orphans
       console.log('');
-      console.log(format.success('ACO is already clean!'));
+      console.log(format.muted('No ingested products tracked - checking for orphans...'));
       
-      return {
-        success: true,
-        results,
-        validation: { clean: true, issues: [] }
-      };
+      // Don't return yet - continue to validation phase to detect orphans
     }
     
     // Step 1: Delete Prices (single line with spinner)
@@ -224,39 +208,52 @@ async function resetAll() {
         validation.issues.forEach(issue => console.log(format.muted(`  • ${issue}`)));
         console.log('');
         
-        // Re-find and delete orphaned data
-        const orphanedProducts = await detector.queryACOProductsBySKUs(allLocalSkus);
-        if (orphanedProducts.length > 0) {
-          const orphanSkus = orphanedProducts.map(p => p.sku);
-          console.log(`  Deleting ${orphanSkus.length} orphaned products...`);
-          await deleteProductsBySKUs(orphanSkus, { dryRun, silent: true });
+        // Find orphaned products (both expected SKUs and unknown orphans)
+        // 1. Check our expected SKUs first
+        const knownOrphans = await detector.queryACOProductsBySKUs(skus);
+        
+        // 2. Query for any unknown visible orphans
+        const unknownOrphans = await detector.queryACOProductsDirect('', 500);
+        const buildRightUnknowns = unknownOrphans.filter(p => 
+          p.sku.match(/^(LBR|DOOR|WINDOW|ROOF|DRYWALL|PLY|NAIL|SCREW|STUD)-/)
+        );
+        
+        // Combine and dedupe
+        const allOrphanSkus = [...new Set([
+          ...knownOrphans.map(p => p.sku),
+          ...buildRightUnknowns.map(p => p.sku)
+        ])];
+        
+        if (allOrphanSkus.length > 0) {
+          console.log(`  Deleting ${allOrphanSkus.length} orphaned products (${knownOrphans.length} expected, ${buildRightUnknowns.length} unknown)...`);
+          await deleteProductsBySKUs(allOrphanSkus, { dryRun, silent: true });
           
           // Poll for cleanup completion
           const { PollingProgress } = await import('../utils/progress.js');
-          const progress = new PollingProgress('Cleaning up orphans', orphanSkus.length);
+          const progress = new PollingProgress('Cleaning up orphans', allOrphanSkus.length);
           
           let attempt = 0;
-          let currentCount = orphanSkus.length;
-          let previousCount = orphanSkus.length;
+          let currentCount = allOrphanSkus.length;
+          let previousCount = allOrphanSkus.length;
           let cleanupStarted = false;
-          const maxAttempts = 30; // 5 minutes max
+          const maxAttempts = 60; // 10 minutes max (matching main deletion)
           
           while (attempt < maxAttempts && currentCount > 0) {
             attempt++;
             await new Promise(resolve => setTimeout(resolve, 10000)); // 10 seconds
-            const remaining = await detector.queryACOProductsBySKUs(orphanSkus);
+            const remaining = await detector.queryACOProductsBySKUs(allOrphanSkus);
             currentCount = remaining.length;
             
             // Detect when cleanup starts
             if (!cleanupStarted && currentCount < previousCount) {
               cleanupStarted = true;
-              console.log(format.muted(`  ✓ Cleanup processing (${orphanSkus.length - currentCount} removed)`));
+              console.log(format.muted(`  ✓ Cleanup processing (${allOrphanSkus.length - currentCount} removed)`));
             }
             
-            progress.update(orphanSkus.length - currentCount, attempt, maxAttempts);
+            progress.update(allOrphanSkus.length - currentCount, attempt, maxAttempts);
             
             if (currentCount === 0) {
-              progress.finish(orphanSkus.length, true);
+              progress.finish(allOrphanSkus.length, true);
               break;
             }
             
