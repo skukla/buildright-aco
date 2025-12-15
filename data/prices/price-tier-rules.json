@@ -1,0 +1,57 @@
+{
+  "defaultTiers": [
+    {
+      "minQty": 1,
+      "discount": 0
+    },
+    {
+      "minQty": 10,
+      "discount": 0.05
+    },
+    {
+      "minQty": 50,
+      "discount": 0.1
+    },
+    {
+      "minQty": 100,
+      "discount": 0.15
+    }
+  ],
+  "categoryOverrides": {
+    "lumber": [
+      {
+        "minQty": 1,
+        "discount": 0
+      },
+      {
+        "minQty": 50,
+        "discount": 0.08
+      },
+      {
+        "minQty": 200,
+        "discount": 0.18
+      }
+    ],
+    "fasteners": [
+      {
+        "minQty": 1,
+        "discount": 0
+      },
+      {
+        "minQty": 100,
+        "discount": 0.1
+      },
+      {
+        "minQty": 500,
+        "discount": 0.2
+      }
+    ]
+  },
+  "tierDiscounts": {
+    "US-Retail": 0.0,
+    "Production-Builder": 0.15,
+    "Trade-Professional": 0.1,
+    "Wholesale-Reseller": 0.25,
+    "Retail-Registered": 0.05
+  }
+}

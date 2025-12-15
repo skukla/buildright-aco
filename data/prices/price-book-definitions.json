@@ -1,0 +1,42 @@
+{
+  "base": {
+    "priceBookId": "US-Retail",
+    "name": "US Retail Catalog Pricing",
+    "currency": "USD",
+    "description": "Base retail pricing for all products"
+  },
+  "tiers": [
+    {
+      "priceBookId": "Production-Builder",
+      "name": "Production Builder Pricing",
+      "parentId": "US-Retail",
+      "description": "Volume pricing for production home builders (120+ homes/year)",
+      "discount": 0.15,
+      "persona": "Sarah Martinez - Production Builder"
+    },
+    {
+      "priceBookId": "Trade-Professional",
+      "name": "Trade Professional Pricing",
+      "parentId": "US-Retail",
+      "description": "Professional pricing for licensed contractors and remodelers",
+      "discount": 0.1,
+      "persona": "Marcus Johnson (GC), Lisa Chen (Remodeler)"
+    },
+    {
+      "priceBookId": "Wholesale-Reseller",
+      "name": "Wholesale Reseller Pricing",
+      "parentId": "US-Retail",
+      "description": "Wholesale pricing for retail stores buying for resale",
+      "discount": 0.25,
+      "persona": "Kevin Rodriguez - Store Manager"
+    },
+    {
+      "priceBookId": "Retail-Registered",
+      "name": "Registered Customer Pricing",
+      "parentId": "US-Retail",
+      "description": "Loyalty pricing for registered DIY customers",
+      "discount": 0.05,
+      "persona": "David Thompson - Pro Homeowner (optional - can use base retail)"
+    }
+  ]
+}
