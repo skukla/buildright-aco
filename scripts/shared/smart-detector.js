@@ -330,7 +330,7 @@ export class BuildRightDetector {
     try {
       // Get expected price book IDs from local files
       const { promises: fs } = await import('fs');
-      const data = await fs.readFile('./data/buildright/price-books.json', 'utf-8');
+      const data = await fs.readFile('./output/buildright/price-books.json', 'utf-8');
       const expectedPriceBooks = JSON.parse(data);
       
       if (!this.silent) {
@@ -376,7 +376,7 @@ export class BuildRightDetector {
       
       let testSku = 'TEST-SKU';
       try {
-        const productsData = await fs.readFile(join(process.cwd(), 'data/buildright/products.json'), 'utf-8');
+        const productsData = await fs.readFile(join(process.cwd(), 'output/buildright/products.json'), 'utf-8');
         const products = JSON.parse(productsData);
         if (products.length > 0) {
           testSku = products[0].sku;
@@ -664,7 +664,7 @@ export class BuildRightDetector {
   async getAllProductSKUsFromLocalFiles() {
     try {
       const { promises: fs } = await import('fs');
-      const data = await fs.readFile('./data/buildright/products.json', 'utf-8');
+      const data = await fs.readFile('./output/buildright/products.json', 'utf-8');
       const products = JSON.parse(data);
       return products.map(p => p.sku);
     } catch (error) {

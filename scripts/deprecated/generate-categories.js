@@ -36,7 +36,7 @@ export async function generateCategories(config = {}) {
   const {
     count = 19,
     seed = Date.now(),
-    outputPath = './data/buildright/categories.json',
+    outputPath = './output/buildright/categories.json',
     maxDepth = 3,
     includeSpecialChars = false,
     forceInvalidParent = false
@@ -265,7 +265,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const config = {
     count: parseInt(process.env.CAT_COUNT) || 19,
     seed: parseInt(process.env.SEED) || 12345,
-    outputPath: process.env.OUTPUT_PATH || './data/buildright/categories.json',
+    outputPath: process.env.OUTPUT_PATH || './output/buildright/categories.json',
     maxDepth: parseInt(process.env.MAX_DEPTH) || 3
   };
 

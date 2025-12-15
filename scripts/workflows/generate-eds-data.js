@@ -6,7 +6,7 @@
  * Transforms ACO-format data into EDS-compatible JSON files for the buildright-eds frontend.
  * 
  * This script:
- * 1. Reads ACO data from buildright-aco/data/buildright/
+ * 1. Reads ACO data from buildright-aco/output/buildright/
  * 2. Transforms to EDS format
  * 3. Writes to buildright-eds/data/
  * 

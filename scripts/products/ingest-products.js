@@ -50,7 +50,7 @@ class ProductIngester extends BaseIngester {
   
   async ingest() {
     // Load products
-    const productsPath = join(__dirname, '../data/buildright/products.json');
+    const productsPath = join(__dirname, '../output/buildright/products.json');
     this.logger.info(`Loading products from: ${productsPath}`);
     
     const productsData = await fs.readFile(productsPath, 'utf-8');

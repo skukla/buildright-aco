@@ -28,7 +28,7 @@ const reingest = args.includes('--reingest');
  */
 async function getLocalPriceBookIds() {
   try {
-    const data = await fs.readFile('./data/buildright/price-books.json', 'utf-8');
+    const data = await fs.readFile('./output/buildright/price-books.json', 'utf-8');
     const priceBooks = JSON.parse(data);
     return priceBooks.map(pb => pb.priceBookId);
   } catch (error) {

@@ -95,9 +95,9 @@ export async function validateIngest(options = {}) {
 
     // Validate products if requested
     if (options.products || options.all) {
-      const productsPath = './data/buildright/products.json';
-      const variantsPath = './data/buildright/variants.json';
-      const bundlesPath = './data/buildright/bundles.json';
+      const productsPath = './output/buildright/products.json';
+      const variantsPath = './output/buildright/variants.json';
+      const bundlesPath = './output/buildright/bundles.json';
 
       const skus = [];
 

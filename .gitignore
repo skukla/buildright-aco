@@ -59,4 +59,10 @@ skus.txt
 # Temporary backups
 *.backup-*
 temp-*.json
-test-*.js
+
+# Test files (except those in tests/ directory)
+/test-*.js
+
+# Output - generated ingestion files
+# (BUT commit output/buildright/ for locked demo deployment)
+!output/buildright/

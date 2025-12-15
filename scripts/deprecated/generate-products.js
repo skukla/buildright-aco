@@ -18,9 +18,9 @@ const SEED = 12345; // Fixed seed for deterministic output
 const random = new SeededRandom(SEED);
 
 // Paths
-const OUTPUT_FILE = path.join(__dirname, '../data/buildright/products.json');
-const CATEGORIES_FILE = path.join(__dirname, '../data/buildright/categories.json');
-const METADATA_FILE = path.join(__dirname, '../data/buildright/metadata.json');
+const OUTPUT_FILE = path.join(__dirname, '../output/buildright/products.json');
+const CATEGORIES_FILE = path.join(__dirname, '../output/buildright/categories.json');
+const METADATA_FILE = path.join(__dirname, '../output/buildright/metadata.json');
 const SCHEMA_FILE = path.join(__dirname, './schemas/aco-product-schema.json');
 
 /**

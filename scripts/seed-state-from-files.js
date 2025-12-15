@@ -31,13 +31,13 @@ async function seedStateFromFiles() {
     console.log('📂 Reading local product files...');
     
     const productsData = await fs.readFile(
-      join(__dirname, '../data/buildright/products.json'), 
+      join(__dirname, '../output/buildright/products.json'), 
       'utf-8'
     );
     const products = JSON.parse(productsData);
     
     const variantsData = await fs.readFile(
-      join(__dirname, '../data/buildright/variants.json'), 
+      join(__dirname, '../output/buildright/variants.json'), 
       'utf-8'
     );
     const variants = JSON.parse(variantsData);

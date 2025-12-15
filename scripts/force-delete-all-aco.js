@@ -45,7 +45,7 @@ async function forceDeleteAll() {
     
     // The SDK doesn't expose a "list all" easily, so we'll use our local list
     // and then try to discover any extras by querying common prefixes
-    const localData = await fs.readFile('./data/buildright/products.json', 'utf-8');
+    const localData = await fs.readFile('./output/buildright/products.json', 'utf-8');
     const localProducts = JSON.parse(localData);
     const localSKUs = localProducts.map(p => p.sku);
     
@@ -73,7 +73,7 @@ async function forceDeleteAll() {
     logger.info('⚠️  Recommend: Use ACO Web UI to manually delete remaining products.');
     logger.info('');
     
-    const localData = await fs.readFile('./data/buildright/products.json', 'utf-8');
+    const localData = await fs.readFile('./output/buildright/products.json', 'utf-8');
     const localProducts = JSON.parse(localData);
     allSKUs = localProducts.map(p => p.sku);
   }

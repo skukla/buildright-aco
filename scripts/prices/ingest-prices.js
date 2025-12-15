@@ -56,7 +56,7 @@ class PriceIngester extends BaseIngester {
   
   async ingest() {
     // Load prices
-    const pricesPath = join(__dirname, '../data/buildright/prices.json');
+    const pricesPath = join(__dirname, '../output/buildright/prices.json');
     this.logger.info(`Loading prices from: ${pricesPath}`);
     
     const pricesData = await fs.readFile(pricesPath, 'utf-8');

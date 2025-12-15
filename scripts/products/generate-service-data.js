@@ -6,7 +6,7 @@
  * Transforms ACO template data into the format needed by buildright-service.
  * 
  * This script:
- * 1. Reads template/variant/package data from buildright-aco/data/buildright/
+ * 1. Reads template/variant/package data from buildright-aco/output/buildright/
  * 2. Transforms to service format (currently 1:1, but allows future transformations)
  * 3. Writes to buildright-service/lib/data/
  * 

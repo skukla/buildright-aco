@@ -53,7 +53,7 @@ class VariantIngester extends BaseIngester {
   
   async ingest() {
     // Load variants
-    const variantsPath = join(__dirname, '../data/buildright/variants.json');
+    const variantsPath = join(__dirname, '../output/buildright/variants.json');
     this.logger.info(`Loading variants from: ${variantsPath}`);
     
     const variantsData = await fs.readFile(variantsPath, 'utf-8');

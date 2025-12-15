@@ -93,7 +93,7 @@ class PriceBookIngester extends BaseIngester {
   
   async ingest() {
     // Load price books
-    const priceBookPath = join(__dirname, '../data/buildright/price-books.json');
+    const priceBookPath = join(__dirname, '../output/buildright/price-books.json');
     this.logger.info(`Loading price books from: ${priceBookPath}`);
     
     const priceBookData = await fs.readFile(priceBookPath, 'utf-8');

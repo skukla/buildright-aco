@@ -138,7 +138,7 @@ class MetadataIngester extends BaseIngester {
   
   async ingest() {
     // Load metadata JSON
-    const metadataPath = path.join(__dirname, '../data/buildright/metadata.json');
+    const metadataPath = path.join(__dirname, '../output/buildright/metadata.json');
     this.logger.info(`Loading metadata from: ${metadataPath}`);
     
     const metadataRaw = await fs.readFile(metadataPath, 'utf-8');

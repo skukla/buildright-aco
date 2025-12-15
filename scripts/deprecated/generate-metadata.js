@@ -698,7 +698,7 @@ function getBuildRightMetadata() {
  */
 export async function generateMetadata(config = {}) {
   const {
-    outputPath = './data/buildright/metadata.json'
+    outputPath = './output/buildright/metadata.json'
   } = config;
 
   logger.info('Metadata Generation Started', { outputPath });
@@ -742,7 +742,7 @@ export async function generateMetadata(config = {}) {
 // CLI execution
 if (import.meta.url === `file://${process.argv[1]}`) {
   const config = {
-    outputPath: process.env.OUTPUT_PATH || './data/buildright/metadata.json'
+    outputPath: process.env.OUTPUT_PATH || './output/buildright/metadata.json'
   };
 
   try {
